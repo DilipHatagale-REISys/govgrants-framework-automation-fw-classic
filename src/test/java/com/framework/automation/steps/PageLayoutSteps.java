@@ -851,19 +851,21 @@ public class PageLayoutSteps {
         I.amPerforming().click().on(modalButton);
     }
 
-    @And("I click on {string} arrow inside {string} field")public void iClickOnArrowInsideField(String arrow, String columnName) {
-        I.amPerforming().click().on(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
+    @And("I click on {string} arrow inside {string} field")
+    public void iClickOnArrowInsideField(String arrow, String columnName) {
+        I.amPerforming().click().on(ByUsing.xpath("//th//span[text()='" + columnName + "']/following::span[contains(@class,'" + arrow + "') and contains(@ng-if,'desc')] | //th//span[text()='" + columnName + "']/following::span[contains(@class,'" + arrow + "') and contains(@ng-if,'asc')] | //span[text()='" + columnName + "']/following::span[@class='fa fa-arrow-" + arrow + " ng-scope']"));
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" arrow is Displayed inside \"([^\"]*)\" field$")
     public void iSeeArrowIsDisplayedInsideField(String usage, String arrow, String columnName) {
 //        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
 //        Assert.assertTrue(ArrowDisplayed);
-pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName);
+        pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage, arrow, columnName);
     }
 
-    @And("I click on {string} column inside Internal Programs")public void iClickOnColumnInsideInternalPrograms(String columnValue) {
-        I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='"+ columnValue +"'] |  //th//span//span[text()='"+ columnValue +"']"));
+    @And("I click on {string} column inside Internal Programs")
+    public void iClickOnColumnInsideInternalPrograms(String columnValue) {
+        I.amPerforming().click().on(ByUsing.xpath("//a/span/span[@title='" + columnValue + "'] |  //th//span//span[text()='" + columnValue + "']"));
     }
 
     @And("I upload attachment {string} in attachment modal")
@@ -888,7 +890,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
                     }
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("more button is not available...");
         }
     }
@@ -899,7 +901,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
     }
 
     @Then("^I (see|do not see) help text icon is displayed for field \"([^\"]*)\"$")
-    public void iDoNotSeeHelpTextIconIsDisplayedForField(String usage,String fieldName) {
+    public void iDoNotSeeHelpTextIconIsDisplayedForField(String usage, String fieldName) {
         pageLayoutPage.assertDisplayedHelpIconornot(usage, fieldName);
     }
 
@@ -930,7 +932,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
 
     @Then("^I (see|do not see) \"([^\"]*)\" subtab is present with icon \"([^\"]*)\" in page details$")
     public void iSeeSubtabIsPresentWithIconInPageDetails(String usage, String subTab, String icon) {
-        pageLayoutPage.assertSubtabWithIcon(usage,subTab,icon);
+        pageLayoutPage.assertSubtabWithIcon(usage, subTab, icon);
     }
 
     @Then("^I (see|do not see) sequence of \"([^\"]*)\" subtab is \"([^\"]*)\" on page layout$")
@@ -950,7 +952,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
 
     @Then("^I (see|do not see) \"([^\"]*)\" page message displayed in page layout$")
     public void iSeeMessageDisplayedInPageLayout(String usage, String pageMessage) {
-        pageLayoutPage.isPageMessageDisplayedOnPageLayoutOrNot(usage,pageMessage);
+        pageLayoutPage.isPageMessageDisplayedOnPageLayoutOrNot(usage, pageMessage);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" shown at the number \"([^\"]*)\" inside page layout$")
@@ -959,7 +961,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
     }
 
     @Then("^I (see|do not see) contacts \"([^\"]*)\" in suggestion box$")
-    public void iSeeContactsInSuggestionBox(String usage,String contacts) {
-        pageLayoutPage.assertIfContactDisplayedInuggestionBox(usage,contacts);
+    public void iSeeContactsInSuggestionBox(String usage, String contacts) {
+        pageLayoutPage.assertIfContactDisplayedInuggestionBox(usage, contacts);
     }
 }

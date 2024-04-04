@@ -18,7 +18,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "PM" user
+    Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -28,7 +28,7 @@ Business Need: FrameworkCookies Component Scenarios
     #267851
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
 
@@ -47,11 +47,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -59,7 +59,7 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @267859 @US-265865
+  @267859p @US-265865
   Scenario: To verify when user changes the page size (Show entries) to 10, click on the another phase and again click on the same phase where page size was changed to 10 then table should get open on the page size (Show entries) to 10. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -67,19 +67,21 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientApplications | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | MonitoringScheduleGrantor | Name                      |                            |
   #      | Flex Table:General    | Sort Direction      | ASC           | RecipientApplications           | Name                      |                            |
-      | Flex Table:General    | Default Page Size   | 5             | RecipientApplications | Name                      |                            |
-      | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
-      | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 5             | MonitoringScheduleGrantor | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | MonitoringScheduleGrantor | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | MonitoringScheduleGrantor | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index   | true          | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Applications" tab
     And I navigate to "Monitoring" tab
     Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -99,12 +101,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -113,7 +115,7 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @267811 @267613 @267603 @Sprint-21 @Vrushali
+  @267811p @267613 @267603 @Sprint-21 @Vrushali
   Scenario Outline: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -121,22 +123,21 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -158,11 +159,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -182,11 +183,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -207,17 +208,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @267655 @267653 @Sprint-21 @Vrushali
+  @267655p @267653 @Sprint-21 @Vrushali
   Scenario Outline: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -225,23 +226,23 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
+    And I click on "Edit" icon in flex table for first draft record
     And I click on back arrow
-    #And I click toggle button to select "Internal Programs - Draft"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -262,12 +263,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -291,11 +292,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | ProgRecipientApplicationsrams | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -309,6 +310,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
@@ -316,13 +318,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I refresh the page
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -343,13 +346,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -358,7 +361,7 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @267604 @267631
+  @267604p @267631
   Scenario Outline: To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -373,14 +376,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
-    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -401,13 +404,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -432,10 +435,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "View" icon for "Vrush Application" inside table
     And I click on back arrow
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -455,13 +458,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I select value inside table "---program:-:programTableDivId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
@@ -485,13 +488,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -515,13 +518,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -545,13 +548,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -576,11 +579,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -601,11 +604,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -628,12 +631,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -657,12 +660,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -686,12 +689,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I refresh the page
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -708,26 +711,27 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I navigate to "Planning" tab
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
-  @267812
+  @267812p
   Scenario: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -743,13 +747,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Monitoring" tab
-    And I click toggle button to select "Scheduled Activities - All"
-    And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
-    And I navigate to "Monitoring" tab
-    Then I see "10" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    Given I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I navigate to "Applications" tab
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @267814 @267816
   Scenario Outline:To verify when user changes the page size (Show entries) to 20 and click on the same phase then table should get open on the page size (Show entries) to 20. (Admin)
@@ -766,11 +770,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -778,7 +782,7 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @267817
+  @267817p
   Scenario:To verify when user changes the page size (Show entries) to 20 and click on the same phase then table should get open on the page size (Show entries) to 20. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -794,13 +798,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Monitoring" tab
-    And I click toggle button to select "Scheduled Activities - All"
-    And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
-    And I navigate to "Monitoring" tab
-    Then I see "20" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    Given I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I navigate to "Applications" tab
+    Then I see "20" with page size dropdown at "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @267818
   Scenario Outline: To verify when user changes the page size (Show entries) to 50 and click on the same phase then table should get open on the page size (Show entries) to 50. (Admin)
@@ -817,12 +821,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
@@ -847,11 +851,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    Then I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     Then I see "50" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -871,12 +875,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "100"
-    And I see "100" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
@@ -901,11 +905,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "100"
-    And I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
+    Then I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     Then I see "100" with page size dropdown at "---program:-:MonitoringScheduleGrantorTableId---"
@@ -925,11 +929,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
@@ -953,11 +957,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I click toggle button to select "Applications - All"
     And I navigate to "Applications" tab
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -970,21 +974,22 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -1005,11 +1010,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "20"
-    And I see "20" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
+    Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
@@ -1033,12 +1038,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I select value inside table "---program:-:programTableDivId---" is "50"
-    And I see "50" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1063,7 +1068,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1093,11 +1098,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:programTableDivId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
@@ -1122,17 +1127,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    And I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Monitoring" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @268030 @268031
+  @268030p @268031
   Scenario Outline: -To verify when user changes pagination to next and click on the same phase then table should get open on the page where pagination was set to next (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1147,11 +1152,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Planning" tab
     Then I see the text containing :
@@ -1177,10 +1182,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Applications" tab
     Then I see the text containing :
@@ -1201,7 +1206,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1229,7 +1234,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1253,11 +1258,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
     And I navigate to "Planning" tab
@@ -1284,10 +1289,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Previous"
     And I navigate to "Applications" tab
@@ -1309,7 +1314,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1339,7 +1344,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     And I can see last page displayed in pagination inside "Applications"
@@ -1363,11 +1368,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     Then I see the text containing :
@@ -1393,10 +1398,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     Then I see the text containing :
@@ -1417,7 +1422,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1445,7 +1450,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1469,11 +1474,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
     And I refresh the page
@@ -1500,10 +1505,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Previous"
     And I refresh the page
@@ -1525,7 +1530,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -1555,7 +1560,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1581,14 +1586,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
@@ -1614,11 +1619,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -1641,14 +1646,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
     And I pause execution for "3" seconds
     And I can see last page displayed in pagination inside "Programs"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I can see last page displayed in pagination inside "Programs"
@@ -1673,7 +1678,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
@@ -1698,15 +1703,15 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
@@ -1732,11 +1737,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Previous"
     When I click on "Edit" icon for "Application In Created State Only" inside table
@@ -1760,7 +1765,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1768,7 +1773,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I pause execution for "5" seconds
     When I can see last page displayed in pagination inside "Programs"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "First"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
@@ -1793,14 +1798,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
@@ -1826,11 +1831,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     When I click on "View" icon for "Program For Application" inside table
     And I click on back arrow
@@ -1853,14 +1858,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
     And I pause execution for "3" seconds
     And I can see last page displayed in pagination inside "Programs"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I can see last page displayed in pagination inside "Programs"
@@ -1885,7 +1890,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
@@ -1910,15 +1915,15 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
@@ -1944,11 +1949,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Previous"
     When I click on "View" icon for "Vrush Application" inside table
@@ -1972,7 +1977,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 10            | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1986,9 +1991,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  | Record                                  |
-      | ADMIN | Automation Internal Program for Testing |
-      | PM    | Automation Internal Program for Testing |
+      | User  | Record             |
+      | ADMIN | Automation Program |
+      | PM    | Automation Program |
 
   @268136
   Scenario: To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(SPI)
@@ -2006,7 +2011,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     And I can see last page displayed in pagination inside "Applications"
@@ -2030,11 +2035,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
@@ -2061,11 +2066,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Applications" tab
     And I navigate to "Monitoring" tab
@@ -2087,7 +2092,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -2116,7 +2121,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -2141,16 +2146,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
-    And I see the text containing :
+    Then I see the text containing :
       | Page 1 |
     Examples:
       | User  |
@@ -2173,11 +2178,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Previous"
     And I navigate to "Monitoring" tab
@@ -2201,7 +2206,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Last"
@@ -2232,7 +2237,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -2259,7 +2264,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Program For Application"
@@ -2287,7 +2292,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -2311,13 +2316,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
       | User  |
       | ADMIN |
@@ -2339,7 +2344,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -2363,13 +2368,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
-    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     And I refresh the page
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
       | User  |
       | ADMIN |
@@ -2391,11 +2396,11 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
-    And I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -2414,13 +2419,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
-    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     And I navigate to "Planning" tab
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
       | User  |
       | ADMIN |
@@ -2442,10 +2447,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
-    And I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Applications" tab
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -2464,14 +2469,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
-    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    When I perform quick search for "Automation Program"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
       | User  |
       | ADMIN |
@@ -2493,10 +2498,10 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
-    And I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Monitoring" tab
     And I navigate to "Applications" tab
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -2520,20 +2525,20 @@ Business Need: FrameworkCookies Component Scenarios
      # | Flex Grid:General     | Order By            | Percentage__c  | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true           | Programs           | Name                      |                            |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268461 @268462
   Scenario Outline: To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
@@ -2543,22 +2548,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268464 @268466
   Scenario Outline:To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (Admin)
@@ -2568,20 +2573,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
-  @268469 @268471
+  @268469p @268471
   Scenario Outline:To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2589,18 +2594,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268476 @268478
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2610,7 +2615,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
@@ -2621,8 +2626,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Custom Data Type - Picklist *********
   @268482 @268560
@@ -2633,20 +2638,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    And I see "down" arrow is Displayed inside "Type" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Type" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268563 @268564
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
@@ -2656,22 +2661,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    And I see "down" arrow is Displayed inside "Type" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Type" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268565 @268569
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (Admin)
@@ -2681,18 +2686,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    And I see "down" arrow is Displayed inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268572 @268574
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (Admin)
@@ -2702,18 +2707,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
     And I click on "up" arrow inside "Type" field
-    And I see "down" arrow is Displayed inside "Type" field
+    Then I see "down" arrow is Displayed inside "Type" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268581 @268582
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
@@ -2723,7 +2728,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Type" column inside Internal Programs
@@ -2734,8 +2739,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 ##### Custom Data Type- Text #####
   @268588 @268589
@@ -2746,20 +2751,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
     When I see "down" arrow is Displayed inside "Abbreviation" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268592 @268593
   Scenario Outline:  To verify when sort direction of data type-Text is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
@@ -2769,22 +2774,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Abbreviation" column inside Internal Programs
     And I click on "up" arrow inside "Abbreviation" field
-    And I see "down" arrow is Displayed inside "Abbreviation" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Abbreviation" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268595 @268596
   Scenario Outline: To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
@@ -2794,7 +2799,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2804,8 +2809,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268602 @268603
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(Admin)
@@ -2815,7 +2820,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2825,8 +2830,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268607 @268609
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2836,7 +2841,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Abbreviation" column inside Internal Programs
@@ -2847,8 +2852,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ###### Custom Data Type - Lookup *********
   @268615 @268617
@@ -2859,20 +2864,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    And I see "down" arrow is Displayed inside "Internal Organization" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268619 @268620
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Lookup (Admin)
@@ -2882,22 +2887,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Internal Organization" column inside Internal Programs
     And I click on "up" arrow inside "Internal Organization" field
-    And I see "down" arrow is Displayed inside "Internal Organization" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Internal Organization" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268623 @268624
   Scenario Outline:To verify when sort direction of data type-Lookup is set in ascending order and click on same phase then records should be in ascending order for data type-Lookup (Admin)
@@ -2907,7 +2912,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2917,8 +2922,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268628 @268631
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (Admin)
@@ -2928,7 +2933,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2938,8 +2943,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268633 @268634
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2949,7 +2954,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Internal Organization" column inside Internal Programs
@@ -2960,8 +2965,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Data Type - Number ********
   @268637 @268638
@@ -2972,22 +2977,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
-  @268640 @268641
+  @268640p @268641
   Scenario Outline:To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2995,22 +3000,21 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
+    And I click on "Edit" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+#      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268644 @268646
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (Admin)
@@ -3020,18 +3024,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I navigate to "Planning" tab
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268652 @268660
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (Admin)
@@ -3041,18 +3045,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I refresh the page
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268667 @268668
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3062,19 +3066,19 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    When I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    When I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 #### Data type - Date ***************
   @268673 @268674
@@ -3085,20 +3089,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    And I see "down" arrow is Displayed inside "Start Date" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268677 @268678
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
@@ -3108,22 +3112,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Start Date" column inside Internal Programs
     And I click on "up" arrow inside "Start Date" field
-    And I see "down" arrow is Displayed inside "Start Date" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Start Date" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268680 @268682
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (Admin)
@@ -3133,7 +3137,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3143,8 +3147,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268684 @268685
   Scenario Outline:To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
@@ -3154,7 +3158,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3164,8 +3168,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268687 @268688
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3175,7 +3179,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Start Date" column inside Internal Programs
@@ -3186,8 +3190,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 #### Data Type - Date and Time ***********
   @268699 @268700
@@ -3198,20 +3202,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
     When I see "down" arrow is Displayed inside "Date and Time" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268707 @268708
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
@@ -3221,22 +3225,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Date and Time" column inside Internal Programs
     And I click on "up" arrow inside "Date and Time" field
-    And I see "down" arrow is Displayed inside "Date and Time" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Date and Time" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268713 @268715
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(Admin)
@@ -3246,7 +3250,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3256,8 +3260,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268721 @268723
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(Admin)
@@ -3267,7 +3271,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3277,8 +3281,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268734 @268735
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3288,7 +3292,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Date and Time" column inside Internal Programs
@@ -3299,8 +3303,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
       | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Data Type - Percentage **************
   @268791 @268792
@@ -3311,20 +3315,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
-    And I see "down" arrow is Displayed inside "Percentage" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Percentage" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268794 @268796
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(Admin)
@@ -3334,22 +3338,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Percentage" column inside Internal Programs
     And I click on "up" arrow inside "Percentage" field
     When I see "down" arrow is Displayed inside "Percentage" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268799 @268802
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(Admin)
@@ -3359,7 +3363,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3369,8 +3373,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268807 @268810
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
@@ -3380,7 +3384,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3390,8 +3394,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268819 @268820
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3401,7 +3405,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Percentage" column inside Internal Programs
@@ -3412,8 +3416,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
       | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ##### Data Type - Formula****
   @268822 @268823
@@ -3424,20 +3428,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    And I see "down" arrow is Displayed inside "Address" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Address" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268827 @268828
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
@@ -3447,22 +3451,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Address" column inside Internal Programs
     And I click on "up" arrow inside "Address" field
-    And I see "down" arrow is Displayed inside "Address" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Address" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268830 @268831
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (Admin)
@@ -3472,7 +3476,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3482,8 +3486,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268833 @268834
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
@@ -3493,7 +3497,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3503,8 +3507,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268836 @268837
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3514,7 +3518,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Address" column inside Internal Programs
@@ -3525,8 +3529,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
       | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
     ##### Data Type - Checkbox****
   @268839 @268840
@@ -3537,20 +3541,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
     When I see "down" arrow is Displayed inside "CFDA Data" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268842 @268843
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
@@ -3560,22 +3564,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    And I see "down" arrow is Displayed inside "CFDA Data" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268845 @268846
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(Admin)
@@ -3585,18 +3589,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
     And I click on "up" arrow inside "CFDA Data" field
-    And I see "down" arrow is Displayed inside "CFDA Data" field
+    Then I see "down" arrow is Displayed inside "CFDA Data" field
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268850 @268856
   Scenario Outline:To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(Admin)
@@ -3606,7 +3610,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3616,8 +3620,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268863 @268864
   Scenario Outline: To verify when sort direction of data type-Checkboxis set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3627,7 +3631,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "CFDA Data" column inside Internal Programs
@@ -3638,8 +3642,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
    ##### Data Type - Email ****
   @268948 @268949
@@ -3650,20 +3654,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
     When I see "down" arrow is Displayed inside "DND_Email" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268951 @268952
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
@@ -3673,22 +3677,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "DND_Email" column inside Internal Programs
     And I click on "up" arrow inside "DND_Email" field
-    And I see "down" arrow is Displayed inside "DND_Email" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "DND_Email" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268954 @268956
   Scenario Outline:  To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (Admin)
@@ -3698,7 +3702,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3708,8 +3712,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268958 @268959
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (Admin)
@@ -3719,7 +3723,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3729,8 +3733,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268961 @268962
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3740,7 +3744,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "DND_Email" column inside Internal Programs
@@ -3751,8 +3755,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
       | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ######## Data Type - Currency *******
   @268965 @268966
@@ -3763,20 +3767,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    And I see "down" arrow is Displayed inside "Funded Amount" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268968 @268969
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (Admin)
@@ -3786,22 +3790,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    And I see "down" arrow is Displayed inside "Funded Amount" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268971 @268972
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (Admin)
@@ -3811,7 +3815,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3821,8 +3825,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268975 @268976
   Scenario Outline:To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (Admin)
@@ -3832,18 +3836,18 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
     And I click on "up" arrow inside "Funded Amount" field
-    And I see "down" arrow is Displayed inside "Funded Amount" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268978 @268979
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3853,7 +3857,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Funded Amount" column inside Internal Programs
@@ -3864,8 +3868,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ########## Data Type - URL **************
   @268981 @268983
@@ -3876,20 +3880,20 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
     When I see "down" arrow is Displayed inside "URL" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268985 @268986
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
@@ -3899,22 +3903,22 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
     When I see "down" arrow is Displayed inside "URL" field
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268990 @268991
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (Admin)
@@ -3924,7 +3928,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3934,8 +3938,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268993 @268994
   Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (Admin)
@@ -3945,7 +3949,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3955,8 +3959,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268996 @268997
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3966,7 +3970,7 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "URL" column inside Internal Programs
@@ -3977,8 +3981,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ############## Quick search  ##############
   @269088 @269089
@@ -3995,14 +3999,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
-    When I click on "View" icon for "Automation Program" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Program Name" field
@@ -4025,7 +4028,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4051,23 +4054,25 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Order By          | ProgramName__c    | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | configurationCategory | fieldName         | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC            | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5              | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Order By          | ProgramName__c | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    When I see "down" arrow is Displayed inside "Program Name" field
+    And I click on "down" arrow inside "Program Name" field
+    When I see "up" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "up" arrow is Displayed inside "Program Name" field
     Examples:
       | User  |
       | ADMIN |
@@ -4087,23 +4092,22 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I refresh the page
     And I pause execution for "5" seconds
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
-    Then I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @269100 @269101
+  @269100p @269101
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4111,18 +4115,19 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Order By          | ProgramName__c    | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | configurationCategory | fieldName         | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC            | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5              | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Order By          | ProgramName__c | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     When I perform quick search for "Automation Program"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
@@ -4132,11 +4137,11 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   ########### Quick search,sorting, pagination #############
 
-  @269105 @269106
+  @269105p @269106
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search, user clicks on row level view action and click on page back arrow then table should restore search results and page size (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4144,26 +4149,29 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:4 |
+
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    When I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    When I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I perform quick search for "Automation Program"
-    When I click on "View" icon for "Automation Program" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+#    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @269108 @269111
   Scenario Outline:To verify when page size is 10 and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and page size (Admin)
@@ -4173,23 +4181,25 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I perform quick search for "Automation Edit Mode Program"
     When I click on "Edit" icon for "Automation Edit Mode Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Edit Mode Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
@@ -4210,15 +4220,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I perform quick search for "Automation Program"
     When I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I navigate to "Planning" tab
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
@@ -4233,21 +4244,23 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I perform quick search for "Automation Program"
     When I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
@@ -4262,21 +4275,23 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Sort Direction    | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    When I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    When I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I perform quick search for "Automation Program"
-    And I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
@@ -4298,14 +4313,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Program"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    When I click on "View" icon for "Automation Program" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see the text containing :
       | Page 2 |
@@ -4329,20 +4344,20 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "Automation Program"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see the text containing :
       | Page 2 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4362,18 +4377,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "Automation Program"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I navigate to "Planning" tab
     Then I see the text containing :
       | Page 2 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4393,18 +4408,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "Automation Program"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    When I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    When I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I refresh the page
     Then I see the text containing :
       | Page 2 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4424,20 +4439,20 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size  | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "Automation Program"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-    And I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Previous"
     Then I see the text containing :
       | Page 1 |
-    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4452,24 +4467,25 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Program Name" field
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4483,26 +4499,27 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Program Name" field
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4516,23 +4533,24 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Program Name" field
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4546,23 +4564,24 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Program Name" field
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4576,24 +4595,25 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Table:General    | Enable Auto Index   | true          | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "down" arrow is Displayed inside "Program Name" field
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Program Name" field
-    Then I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
       | User  |
       | ADMIN |
@@ -4614,19 +4634,19 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-   # When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   # When I perform quick search for "Automation Program"
+    And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     And I pause execution for "5" seconds
-    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "11 to 20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Then I see the text containing :
       | Page 2 |
     Examples:
@@ -4648,21 +4668,21 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
-   # When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+   # When I perform quick search for "Automation Program"
+    When I click on "Edit" icon for "Automation Program" inside table
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
-    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "11 to 20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Then I see the text containing :
       | Page 2 |
     Examples:
@@ -4670,7 +4690,7 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @269250 @269251
+  @269250p @269251
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and click on same phase then table should restore page size and Pagination(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -4684,22 +4704,22 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    And I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
     And I navigate to "Planning" tab
-    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "11 to 20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Then I see the text containing :
       | Page 2 |
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @269253 @269255
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(Admin)
@@ -4715,16 +4735,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
-    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "11 to 20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Then I see the text containing :
       | Page 2 |
     Examples:
@@ -4746,16 +4766,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
-    Then I see "11 to 20" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "11 to 20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Then I see the text containing :
       | Page 2 |
     Examples:
@@ -4779,14 +4799,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
@@ -4813,15 +4832,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
@@ -4835,28 +4853,29 @@ Business Need: FrameworkCookies Component Scenarios
       | ADMIN |
       | PM    |
 
-  @269267 @269268
+  @269267p @269268
   Scenario Outline:To verify when Pagination is changed to next and Sort direction-ascending order and click on same phase then table should restore Pagination and sorting (Admin)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
-      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
-      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Sort Direction    | ASC               | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:3 |
+      | Flex Table            | Order By          | ProgramName__c    | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | configurationCategory | fieldName         | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Sort Direction    | ASC            | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5              | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Order By          | ProgramName__c | Programs           | Name                      |                            |
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4866,7 +4885,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @269270 @269271
   Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order and  refreshes the page then table should restore Pagination and sorting (Admin)
@@ -4882,14 +4901,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     And I pause execution for "5" seconds
@@ -4915,14 +4933,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "Program Name" column inside Internal Programs
-    And I click on "up" arrow inside "Program Name" field
-    And I see "down" arrow is Displayed inside "Program Name" field
+    Then I see "down" arrow is Displayed inside "Program Name" field
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Announcements" tab
     And I navigate to "Planning" tab
@@ -4953,12 +4970,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
-    And I see "down" arrow is Displayed inside "Owner" field
+    Then I see "down" arrow is Displayed inside "Owner" field
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Owner" field
@@ -4978,12 +4995,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
-    And I see "down" arrow is Displayed inside "Owner" field
+    Then I see "down" arrow is Displayed inside "Owner" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5008,12 +5025,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
-    And I see "down" arrow is Displayed inside "Owner" field
+    Then I see "down" arrow is Displayed inside "Owner" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Owner" field
@@ -5036,12 +5053,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
-    And I see "down" arrow is Displayed inside "Owner" field
+    Then I see "down" arrow is Displayed inside "Owner" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Owner" field
@@ -5064,12 +5081,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
-    And I see "down" arrow is Displayed inside "Owner" field
+    Then I see "down" arrow is Displayed inside "Owner" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5094,12 +5111,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Status" column inside Internal Programs
     And I click on "up" arrow inside "Status" field
-    And I see "down" arrow is Displayed inside "Status" field
+    Then I see "down" arrow is Displayed inside "Status" field
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Applications - All"
@@ -5123,12 +5140,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Status" column inside Internal Programs
     And I click on "up" arrow inside "Status" field
-    And I see "down" arrow is Displayed inside "Status" field
+    Then I see "down" arrow is Displayed inside "Status" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Status" field
@@ -5151,12 +5168,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Status" column inside Internal Programs
     And I click on "up" arrow inside "Status" field
-    And I see "down" arrow is Displayed inside "Status" field
+    Then I see "down" arrow is Displayed inside "Status" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Status" field
@@ -5179,12 +5196,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Status" column inside Internal Programs
     And I click on "up" arrow inside "Status" field
-    And I see "down" arrow is Displayed inside "Status" field
+    Then I see "down" arrow is Displayed inside "Status" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5209,12 +5226,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "EGMS ID" field
@@ -5234,12 +5251,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5264,12 +5281,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "EGMS ID" field
@@ -5292,12 +5309,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "EGMS ID" field
@@ -5320,12 +5337,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5350,17 +5367,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - Draft"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
       | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
@@ -5380,17 +5397,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - Draft"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
       | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
@@ -5410,15 +5427,15 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
       | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
@@ -5438,15 +5455,15 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
       | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
@@ -5466,16 +5483,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "Number of Approval Steps" column inside Internal Programs
-    And I click on "up" arrow inside "Number of Approval Steps" field
-    And I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    And I click on "X_Number of Approval Steps" column inside Internal Programs
+    And I click on "up" arrow inside "X_Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    Then I see "down" arrow is Displayed inside "Number of Approval Steps" field
+    Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
       | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
@@ -5496,12 +5513,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Due Date" column inside Internal Programs
     And I click on "up" arrow inside "Application Due Date" field
-    And I see "down" arrow is Displayed inside "Application Due Date" field
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5526,12 +5543,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Due Date" column inside Internal Programs
     And I click on "up" arrow inside "Application Due Date" field
-    And I see "down" arrow is Displayed inside "Application Due Date" field
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5556,12 +5573,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Due Date" column inside Internal Programs
     And I click on "up" arrow inside "Application Due Date" field
-    And I see "down" arrow is Displayed inside "Application Due Date" field
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Application Due Date" field
@@ -5584,12 +5601,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Due Date" column inside Internal Programs
     And I click on "up" arrow inside "Application Due Date" field
-    And I see "down" arrow is Displayed inside "Application Due Date" field
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Application Due Date" field
@@ -5612,12 +5629,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Due Date" column inside Internal Programs
     And I click on "up" arrow inside "Application Due Date" field
-    And I see "down" arrow is Displayed inside "Application Due Date" field
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5642,12 +5659,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Negotiation Submitted On" column inside Internal Programs
     And I click on "up" arrow inside "Negotiation Submitted On" field
-    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5672,12 +5689,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Negotiation Submitted On" column inside Internal Programs
     And I click on "up" arrow inside "Negotiation Submitted On" field
-    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5702,12 +5719,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Negotiation Submitted On" column inside Internal Programs
     And I click on "up" arrow inside "Negotiation Submitted On" field
-    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
@@ -5730,12 +5747,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Negotiation Submitted On" column inside Internal Programs
     And I click on "up" arrow inside "Negotiation Submitted On" field
-    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
@@ -5758,12 +5775,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Negotiation Submitted On" column inside Internal Programs
     And I click on "up" arrow inside "Negotiation Submitted On" field
-    And I see "down" arrow is Displayed inside "Negotiation Submitted On" field
+    Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5789,12 +5806,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Required Match Percentage." column inside Internal Programs
     And I click on "up" arrow inside "Required Match Percentage." field
-    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5819,12 +5836,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Required Match Percentage." column inside Internal Programs
     And I click on "up" arrow inside "Required Match Percentage." field
-    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5849,12 +5866,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Required Match Percentage." column inside Internal Programs
     And I click on "up" arrow inside "Required Match Percentage." field
-    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
@@ -5877,12 +5894,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Required Match Percentage." column inside Internal Programs
     And I click on "up" arrow inside "Required Match Percentage." field
-    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
@@ -5905,12 +5922,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Required Match Percentage." column inside Internal Programs
     And I click on "up" arrow inside "Required Match Percentage." field
-    And I see "down" arrow is Displayed inside "Required Match Percentage." field
+    Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -5935,12 +5952,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Announcement Name" column inside Internal Programs
     And I click on "up" arrow inside "Announcement Name" field
-    And I see "down" arrow is Displayed inside "Announcement Name" field
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5965,12 +5982,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Announcement Name" column inside Internal Programs
     And I click on "up" arrow inside "Announcement Name" field
-    And I see "down" arrow is Displayed inside "Announcement Name" field
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -5995,12 +6012,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Announcement Name" column inside Internal Programs
     And I click on "up" arrow inside "Announcement Name" field
-    And I see "down" arrow is Displayed inside "Announcement Name" field
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Announcement Name" field
@@ -6023,12 +6040,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Announcement Name" column inside Internal Programs
     And I click on "up" arrow inside "Announcement Name" field
-    And I see "down" arrow is Displayed inside "Announcement Name" field
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Announcement Name" field
@@ -6051,12 +6068,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Announcement Name" column inside Internal Programs
     And I click on "up" arrow inside "Announcement Name" field
-    And I see "down" arrow is Displayed inside "Announcement Name" field
+    Then I see "down" arrow is Displayed inside "Announcement Name" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -6081,12 +6098,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Review Initiated" column inside Internal Programs
     And I click on "up" arrow inside "Review Initiated" field
-    And I see "down" arrow is Displayed inside "Review Initiated" field
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6111,12 +6128,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Review Initiated" column inside Internal Programs
     And I click on "up" arrow inside "Review Initiated" field
-    And I see "down" arrow is Displayed inside "Review Initiated" field
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6141,12 +6158,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Review Initiated" column inside Internal Programs
     And I click on "up" arrow inside "Review Initiated" field
-    And I see "down" arrow is Displayed inside "Review Initiated" field
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Review Initiated" field
@@ -6169,12 +6186,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Review Initiated" column inside Internal Programs
     And I click on "up" arrow inside "Review Initiated" field
-    And I see "down" arrow is Displayed inside "Review Initiated" field
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Review Initiated" field
@@ -6197,12 +6214,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Review Initiated" column inside Internal Programs
     And I click on "up" arrow inside "Review Initiated" field
-    And I see "down" arrow is Displayed inside "Review Initiated" field
+    Then I see "down" arrow is Displayed inside "Review Initiated" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -6227,12 +6244,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Email Address" column inside Internal Programs
     And I click on "up" arrow inside "Email Address" field
-    And I see "down" arrow is Displayed inside "Email Address" field
+    Then I see "down" arrow is Displayed inside "Email Address" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6257,12 +6274,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Email Address" column inside Internal Programs
     And I click on "up" arrow inside "Email Address" field
-    And I see "down" arrow is Displayed inside "Email Address" field
+    Then I see "down" arrow is Displayed inside "Email Address" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6287,12 +6304,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Email Address" column inside Internal Programs
     And I click on "up" arrow inside "Email Address" field
-    And I see "down" arrow is Displayed inside "Email Address" field
+    Then I see "down" arrow is Displayed inside "Email Address" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Email Address" field
@@ -6315,12 +6332,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Email Address" column inside Internal Programs
     And I click on "up" arrow inside "Email Address" field
-    And I see "down" arrow is Displayed inside "Email Address" field
+    Then I see "down" arrow is Displayed inside "Email Address" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Email Address" field
@@ -6343,12 +6360,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Email Address" column inside Internal Programs
     And I click on "up" arrow inside "Email Address" field
-    And I see "down" arrow is Displayed inside "Email Address" field
+    Then I see "down" arrow is Displayed inside "Email Address" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -6373,12 +6390,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Award Ceiling" column inside Internal Programs
     And I click on "up" arrow inside "Award Ceiling" field
-    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6403,12 +6420,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Award Ceiling" column inside Internal Programs
     And I click on "up" arrow inside "Award Ceiling" field
-    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6433,12 +6450,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Award Ceiling" column inside Internal Programs
     And I click on "up" arrow inside "Award Ceiling" field
-    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
@@ -6461,12 +6478,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Award Ceiling" column inside Internal Programs
     And I click on "up" arrow inside "Award Ceiling" field
-    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
@@ -6489,12 +6506,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Award Ceiling" column inside Internal Programs
     And I click on "up" arrow inside "Award Ceiling" field
-    And I see "down" arrow is Displayed inside "Award Ceiling" field
+    Then I see "down" arrow is Displayed inside "Award Ceiling" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -6519,12 +6536,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    And I see "down" arrow is Displayed inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6549,12 +6566,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    And I see "down" arrow is Displayed inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
@@ -6579,12 +6596,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    And I see "down" arrow is Displayed inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "URL" field
@@ -6607,12 +6624,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    And I see "down" arrow is Displayed inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
     And I refresh the page
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "URL" field
@@ -6635,12 +6652,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true           | RecipientApplications |                           |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    Given I login to "Grants Portal" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "URL" column inside Internal Programs
     And I click on "up" arrow inside "URL" field
-    And I see "down" arrow is Displayed inside "URL" field
+    Then I see "down" arrow is Displayed inside "URL" field
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -6663,17 +6680,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - Draft"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269093
@@ -6689,17 +6706,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - Draft"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269096
@@ -6715,16 +6732,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     When I perform quick search for "Application In Created State Only"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269099
@@ -6740,16 +6757,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     When I perform quick search for "Application In Created State Only"
     And I refresh the page
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269100
@@ -6765,17 +6782,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     When I perform quick search for "Application In Created State Only"
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
       ###### Page Size and Quick Search #####
@@ -6792,16 +6809,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269112
@@ -6817,16 +6834,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269115
@@ -6842,16 +6859,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269118
@@ -6867,16 +6884,16 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     And I click toggle button to select "Applications - All"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269121
@@ -6892,17 +6909,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I see value "Application In Created State Only" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
     #################### Pagination and Quick Search For SPI ####################
@@ -6919,13 +6936,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Test"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
-    And I see the text containing :
+    #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
@@ -6947,13 +6964,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
-    And I see the text containing :
+    #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
@@ -6975,12 +6992,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -7000,12 +7017,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     And I click toggle button to select "Applications - All"
@@ -7025,12 +7042,12 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
@@ -7052,19 +7069,19 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269153
@@ -7080,19 +7097,19 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     When I perform quick search for "Application In Created State Only"
     When I click on "Edit" icon for "Application In Created State Only" inside table
     And I click on back arrow
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269156
@@ -7108,17 +7125,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269159
@@ -7134,17 +7151,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I refresh the page
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @269162
@@ -7160,18 +7177,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
     And I click on "up" arrow inside "Application Title" field
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Grants" tab
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I see "down" arrow is Displayed inside "Application Title" field
+    Then I see "down" arrow is Displayed inside "Application Title" field
     Then I see "10" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
 
  ################## Pagination and Page Size combination #############
@@ -7190,18 +7207,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
-    And I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
+    Then I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
 
@@ -7220,17 +7237,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
-    And I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
+    Then I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
 
@@ -7249,17 +7266,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:GrantsListTableId---"
+    Then I see "10" with page size dropdown at "---program:-:GrantsListTableId---"
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
 
@@ -7278,18 +7295,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
     Then I see "Showing 1 to 10" with page size dropdown at "---program:-:GrantsListTableId---"
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Applications" tab
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "Showing 11 to 20" with page size dropdown at "---program:-:GrantsListTableId---"
 
@@ -7309,19 +7326,19 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
     And I click on "up" arrow inside "Grant Title" field
-    And I see "down" arrow is Displayed inside "Grant Title" field
+    Then I see "down" arrow is Displayed inside "Grant Title" field
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "down" arrow is Displayed inside "Grant Title" field
 
@@ -7340,18 +7357,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
     And I click on "up" arrow inside "Grant Title" field
-    And I see "down" arrow is Displayed inside "Grant Title" field
+    Then I see "down" arrow is Displayed inside "Grant Title" field
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "down" arrow is Displayed inside "Grant Title" field
 
@@ -7370,18 +7387,18 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
     And I click on "up" arrow inside "Grant Title" field
-    And I see "down" arrow is Displayed inside "Grant Title" field
+    Then I see "down" arrow is Displayed inside "Grant Title" field
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
     And I click toggle button to select "Grants - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I see "down" arrow is Displayed inside "Grant Title" field
 
@@ -7402,17 +7419,17 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I refresh the page
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Examples:
       | User  |
@@ -7435,14 +7452,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
-    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     Examples:
@@ -7466,14 +7483,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
+    Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
@@ -7499,14 +7516,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
-    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -7532,7 +7549,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7564,7 +7581,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7595,14 +7612,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
 
@@ -7627,14 +7644,14 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Default Page Size | 5             | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid      |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -7661,13 +7678,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
-    And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+    Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
     And I refresh the page
     Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
 
@@ -7688,13 +7705,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
-    And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
+    Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
@@ -7716,13 +7733,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
@@ -7743,13 +7760,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7771,13 +7788,13 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
     Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7799,15 +7816,15 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @269365
   Scenario: Record level-To verify when user changes page size to 10, click on row level View action and click on page back arrow then records should be restored to page size to 10 (SPI)
@@ -7826,21 +7843,21 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
     And I click on back arrow
-    And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
 ############# Clear Session Message Test Cases ####
   @282365
   Scenario Outline:To verify when user changes the list view and clicks on row level 'Edit' action and click on page back arrow then list view value should be restored. (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
@@ -7861,14 +7878,14 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see "10" with page size dropdown at "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
-    And I see "5" with page size dropdown at "---program:-:programTableDivId---"
+    Then I see "5" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
       | User  |
       | ADMIN |
@@ -7876,15 +7893,15 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282226
   Scenario Outline:o verify when user changes pagination and clicks on clear session then pagination should set back to default value (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 1 |
     Examples:
       | User  |
@@ -7893,12 +7910,12 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282235
   Scenario Outline: To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
     And I click on "EGMS ID" column inside Internal Programs
@@ -7910,11 +7927,11 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282238
   Scenario Outline: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Program For Application"
-    And I see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
+    Then I see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
     Then I do not see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
@@ -7925,7 +7942,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282242
   Scenario Outline: To verify when user changes the list view and clicks on clear session button then list view should set back to the default. (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7946,12 +7963,12 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
-    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
@@ -7961,7 +7978,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282247
   Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
@@ -7976,14 +7993,14 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282261
   Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
-    And I see "down" arrow is Displayed inside "EGMS ID" field
+    Then I see "down" arrow is Displayed inside "EGMS ID" field
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
@@ -7993,12 +8010,12 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282271
   Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I cannot see the following message in the page details :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "Automation Program"
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
@@ -8014,10 +8031,10 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I select value inside table "---program:-:programTableDivId---" is "10"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I pause execution for "5" seconds
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
@@ -8030,7 +8047,7 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282354
   Scenario Outline: To verify when user changes pagination and clicks on clear session then 'Cleared session storage successfully' message should display (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
@@ -8054,12 +8071,12 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I select value inside table "---program:-:programTableDivId---" is "10"
-    And I see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
     And I pause execution for "5" seconds
     And I click toggle button to select "Internal Programs - Active"
     Then I do not see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
@@ -8070,11 +8087,11 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282367
   Scenario Outline: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I select value inside table "---program:-:programTableDivId---" is "20"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
     And I pause execution for "5" seconds
     Then I see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
     And I pause execution for "5" seconds
@@ -8087,19 +8104,19 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282369
   Scenario Outline: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     And I click toggle button to select "Internal Programs - Active"
     And I pause execution for "5" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I cannot see the following message in the page details :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
@@ -8111,19 +8128,19 @@ Business Need: FrameworkCookies Component Scenarios
 
   @282371 @Vrushali
   Scenario Outline: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (Admin/PM)
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     And I click toggle button to select "Internal Programs - Active"
     And I pause execution for "5" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     Then I cannot see the following message in the page details :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
@@ -8136,7 +8153,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282372 @282357
   Scenario: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -8157,7 +8174,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -8174,10 +8191,10 @@ Business Need: FrameworkCookies Component Scenarios
   @282227 @282248 @282355
   Scenario: To verify when user changes pagination and clicks on clear session then pagination should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     #282248
     Then I can see the following message in table :
@@ -8195,7 +8212,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282236 @282259
   Scenario:To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -8211,7 +8228,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282239 @282272 @282359
   Scenario: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Program For Application"
     #282272
@@ -8232,7 +8249,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -8248,7 +8265,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -8261,7 +8278,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282368
   Scenario: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -8276,11 +8293,11 @@ Business Need: FrameworkCookies Component Scenarios
   @282370
   Scenario: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
-    And I see the text containing :
+    Then I see the text containing :
       | Page 2 |
     And I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
