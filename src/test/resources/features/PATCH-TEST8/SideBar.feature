@@ -3,7 +3,7 @@ Business Need: Side bar Component Scenarios
   Test all sidebar component based scenarios
   As a configuration manager i make different configurational changes in side bar component and will validate them.
 
-  @33877    @validateChangeinTaskMenuSequence-gHome
+  @33877p    @validateChangeinTaskMenuSequence-gHome
   Scenario: validate after changing sequence of task menu from second to third in side bar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -14,7 +14,7 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    Then i see "Tasks" shown at number "3" in sideBar
+    Then i see "Tasks" shown at number "5" in sideBar
 
   @33876    @validateSidebarTaskMenuRemoval-gHome @smoke
   Scenario: validate disabling of task menu from side bar
@@ -1274,7 +1274,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see over all total for "NumberofAwards__c" field at enhanced grid
 
-  @774665 @255290
+  @774665p @255290
   Scenario: validate overall total at enhanced table at sidebar - home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

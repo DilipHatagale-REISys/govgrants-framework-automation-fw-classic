@@ -2536,7 +2536,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2561,7 +2561,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2582,7 +2582,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2603,7 +2603,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2625,7 +2625,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2649,7 +2649,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2674,7 +2674,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2695,7 +2695,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2716,7 +2716,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2738,7 +2738,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2762,7 +2762,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2787,7 +2787,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2808,7 +2808,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2829,7 +2829,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2851,7 +2851,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2875,7 +2875,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2900,7 +2900,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2921,7 +2921,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2942,7 +2942,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2964,7 +2964,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -2988,7 +2988,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3012,7 +3012,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 #      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3033,7 +3033,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3054,7 +3054,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3076,7 +3076,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3100,7 +3100,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3125,7 +3125,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3146,7 +3146,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3167,7 +3167,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3189,7 +3189,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3213,9 +3213,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268707 @268708
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
@@ -3238,9 +3238,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268713 @268715
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(Admin)
@@ -3259,9 +3259,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268721 @268723
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(Admin)
@@ -3280,11 +3280,11 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
-  @268734 @268735
+  @268734p @268735
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3302,9 +3302,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                    | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DateandTime__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Data Type - Percentage **************
   @268791 @268792
@@ -3326,7 +3326,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3351,7 +3351,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3372,7 +3372,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3393,7 +3393,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3415,7 +3415,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3439,7 +3439,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3464,7 +3464,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3485,7 +3485,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3506,7 +3506,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3528,7 +3528,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3552,7 +3552,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3577,7 +3577,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3598,7 +3598,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3619,7 +3619,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3641,12 +3641,12 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
    ##### Data Type - Email ****
-  @268948 @268949
+  @268948p @268949
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3665,9 +3665,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+#      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268951 @268952
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
@@ -3690,9 +3690,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268954 @268956
   Scenario Outline:  To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (Admin)
@@ -3711,9 +3711,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268958 @268959
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (Admin)
@@ -3732,9 +3732,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268961 @268962
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3754,9 +3754,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                 |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,DND_Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ######## Data Type - Currency *******
   @268965 @268966
@@ -3778,7 +3778,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3803,7 +3803,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3824,7 +3824,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3845,7 +3845,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3867,7 +3867,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3891,7 +3891,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3916,7 +3916,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3937,7 +3937,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3958,7 +3958,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
@@ -3980,7 +3980,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                 |
+      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
       | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
       | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
