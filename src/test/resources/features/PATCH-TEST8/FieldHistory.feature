@@ -429,7 +429,7 @@ Business Need: history Component Scenarios
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
 
-  @114727 @205598 @205599 @205604 @205605 @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
+  @114727p @205598 @205599 @205604 @205605 @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario Outline: validate the currency field format under field history table inside new value column
   History Field : Admin User -To verify, User change the currency field from backend then it should display changed and previous value in the new and old value column
   Field History -PM user - To verify, User change the currency field value from backend then it should display only one time in the field history table
@@ -461,14 +461,14 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
+  @114729p  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-4982                   | PBD-17091                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-4982                   | PBD-24009                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -482,10 +482,10 @@ Business Need: history Component Scenarios
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Edit" in the page details
-    And I enter value "$200,000.50" into field "fieldExpectedFunding__c"
+    And I enter value "$200,000.50" into field "ExpectedFunding__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-    And I enter value "$300,000.55" into field "fieldExpectedFunding__c"
+    And I enter value "$300,000.55" into field "ExpectedFunding__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
@@ -493,7 +493,7 @@ Business Need: history Component Scenarios
     Then I softly see "$200,000.50" shown inside "Old Value" column in history table
     Then I softly see "$300,000.55" shown inside "New Value" column in history table
 
-  @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
+  @120103p  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -504,9 +504,9 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -794,7 +794,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see "{SavedValue:FundedAmount}" shown inside "New Value" column in history table
 
-  @205603
+  @205603p
   Scenario:  History Field : PM User -To verify, User change the negative currency field value from backend then it should display in the new value column
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -802,11 +802,11 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
@@ -825,10 +825,10 @@ Business Need: history Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "Project Period End Date" as "OldEndDate"
@@ -1149,14 +1149,14 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205445 @205468
+  @205445p @205468
   Scenario Outline: Field history: PM user-To verify, User change the number field from backend then it should display changed and previous value in the new and old value column
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "12" into field "fieldNumber__c"

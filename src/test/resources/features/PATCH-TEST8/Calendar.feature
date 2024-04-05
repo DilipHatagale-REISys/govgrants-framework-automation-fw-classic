@@ -156,7 +156,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program" as "TITLE"
+    And I save the field labeled "Title" as "TITLE"
     And I save the field labeled "Type" as "PT"
     And I pause execution for "3" seconds
     And I navigate to "Home" tab
