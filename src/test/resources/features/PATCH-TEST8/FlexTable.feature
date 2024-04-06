@@ -4018,7 +4018,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338628 @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
+  @338628p @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4040,7 +4040,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+#      | PM    |
 
   @338630 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator

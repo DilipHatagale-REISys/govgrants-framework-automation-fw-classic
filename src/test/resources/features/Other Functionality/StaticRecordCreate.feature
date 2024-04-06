@@ -3,6 +3,7 @@ Business Need: Step Progress Bar Component Scenarios
 
   @flextableprocreate
   Scenario Outline: Create flextable records
+#    And I enter value "128291 testing program" into field "ProgramName__c"
 #    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"

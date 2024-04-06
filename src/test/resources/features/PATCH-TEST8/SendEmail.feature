@@ -4,12 +4,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
 
   ##########Test suite: Send Email UI/UX (Suite ID: 332319)##########
+  @createRecordForSenEmail
+  Scenario Outline:  create program
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I enter value "<programname>" into field "ProgramName__c"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Examples:
+      | Users | programname                         |
+      | Admin | Send Email Component active program |
+      | PM    | Send Email Component active program |
+      | Admin | Send Email Active program           |
+      | PM    | Send Email Active program           |
+
   @332320
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -22,7 +43,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -48,7 +69,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -61,7 +82,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -88,7 +109,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -101,7 +122,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -127,7 +148,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -140,7 +161,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -166,7 +187,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -179,7 +200,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -205,7 +226,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -218,7 +239,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -244,7 +265,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -257,7 +278,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -283,7 +304,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -295,7 +316,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -320,7 +341,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -338,7 +359,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -355,7 +376,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -371,7 +392,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -390,7 +411,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -409,7 +430,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -427,7 +448,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -446,7 +467,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -481,7 +502,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -500,7 +521,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -519,7 +540,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -538,7 +559,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -561,7 +582,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -584,7 +605,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -607,7 +628,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -627,7 +648,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -649,7 +670,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -670,7 +691,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -691,7 +712,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -712,7 +733,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -737,7 +758,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -762,7 +783,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -787,7 +808,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -811,7 +832,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -861,7 +882,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -873,7 +894,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -887,7 +908,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -908,7 +929,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -929,7 +950,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -943,7 +964,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -963,7 +984,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1010,7 +1031,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1030,7 +1051,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1145,7 +1166,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1170,7 +1191,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1197,7 +1218,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1225,7 +1246,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1252,7 +1273,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1283,7 +1304,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1304,7 +1325,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1326,7 +1347,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1356,7 +1377,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1387,7 +1408,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1422,7 +1443,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1449,7 +1470,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1473,7 +1494,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1500,7 +1521,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1521,7 +1542,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1541,7 +1562,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1561,7 +1582,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1588,7 +1609,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1616,7 +1637,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1642,7 +1663,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1675,7 +1696,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1709,7 +1730,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1735,7 +1756,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1753,7 +1774,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1783,7 +1804,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1814,7 +1835,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1835,7 +1856,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1860,7 +1881,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1886,7 +1907,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1915,7 +1936,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -1944,7 +1965,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Collab" sub tab
@@ -1962,7 +1983,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -1989,7 +2010,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2025,7 +2046,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2056,7 +2077,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2090,7 +2111,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2119,7 +2140,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2150,7 +2171,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2196,7 +2217,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2238,7 +2259,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2260,7 +2281,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2283,7 +2304,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2314,7 +2335,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2363,7 +2384,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
     When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
@@ -2393,7 +2414,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
     When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
@@ -2536,7 +2557,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2562,7 +2583,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2589,7 +2610,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2617,7 +2638,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2644,7 +2665,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2672,7 +2693,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2699,7 +2720,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2727,7 +2748,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2754,7 +2775,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2781,7 +2802,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2811,7 +2832,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2829,7 +2850,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2848,7 +2869,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2868,7 +2889,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2893,7 +2914,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -2927,7 +2948,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2949,7 +2970,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2971,7 +2992,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -2994,7 +3015,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -3018,7 +3039,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3043,7 +3064,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3072,7 +3093,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3095,7 +3116,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3121,7 +3142,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3149,7 +3170,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3176,7 +3197,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3203,7 +3224,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3236,7 +3257,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3277,7 +3298,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3329,7 +3350,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3369,7 +3390,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3411,7 +3432,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3459,7 +3480,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3501,7 +3522,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3549,7 +3570,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3601,7 +3622,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3651,7 +3672,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3690,7 +3711,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3729,7 +3750,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3772,7 +3793,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3892,7 +3913,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3950,7 +3971,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4006,7 +4027,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4074,7 +4095,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4120,7 +4141,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4170,7 +4191,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4219,7 +4240,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4263,7 +4284,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4305,7 +4326,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4350,7 +4371,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4399,7 +4420,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4447,7 +4468,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4489,7 +4510,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4526,7 +4547,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4562,7 +4583,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -4585,7 +4606,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4612,7 +4633,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4669,7 +4690,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4713,7 +4734,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4760,7 +4781,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4817,7 +4838,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4850,7 +4871,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4872,7 +4893,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4900,7 +4921,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4935,7 +4956,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4958,7 +4979,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4995,7 +5016,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5033,7 +5054,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -5054,7 +5075,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5092,7 +5113,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5114,7 +5135,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5140,7 +5161,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5165,7 +5186,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5199,7 +5220,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5233,7 +5254,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5284,7 +5305,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5333,7 +5354,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5377,7 +5398,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5435,7 +5456,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5489,7 +5510,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5539,7 +5560,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5568,7 +5589,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5604,7 +5625,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5644,7 +5665,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5682,7 +5703,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5703,7 +5724,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5732,7 +5753,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5766,7 +5787,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5799,7 +5820,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5837,7 +5858,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5867,7 +5888,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5900,7 +5921,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5935,7 +5956,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5969,7 +5990,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6004,7 +6025,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6037,7 +6058,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6069,7 +6090,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6115,7 +6136,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6145,7 +6166,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6176,7 +6197,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6207,7 +6228,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6242,7 +6263,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6274,7 +6295,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6307,7 +6328,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6342,7 +6363,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6372,7 +6393,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6402,7 +6423,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6429,7 +6450,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6456,7 +6477,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6485,7 +6506,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6517,7 +6538,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6549,7 +6570,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6582,7 +6603,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6615,7 +6636,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -6650,7 +6671,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6683,7 +6704,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6704,7 +6725,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6725,7 +6746,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6746,7 +6767,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6768,7 +6789,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6790,7 +6811,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6811,7 +6832,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6845,7 +6866,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6880,7 +6901,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6904,7 +6925,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6927,7 +6948,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6947,7 +6968,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6968,7 +6989,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -6989,7 +7010,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7010,7 +7031,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7031,7 +7052,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7052,7 +7073,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7074,7 +7095,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7100,7 +7121,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -7154,7 +7175,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7184,11 +7205,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
   @382774 @SanityPATCH  @SanityPATCHSendEmail
-    Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+  Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7214,7 +7235,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7273,7 +7294,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7302,7 +7323,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7328,7 +7349,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7355,7 +7376,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7406,7 +7427,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
 
   @382776 @SanityPATCH  @SanityPATCHSendEmail
-    Scenario: Sanity-TC-SPI-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+  Scenario: Sanity-TC-SPI-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -7445,7 +7466,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7458,7 +7479,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7470,7 +7491,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7482,7 +7503,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7512,7 +7533,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7534,7 +7555,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7555,7 +7576,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7569,7 +7590,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7582,7 +7603,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7596,7 +7617,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7619,7 +7640,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7642,7 +7663,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -7666,7 +7687,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7690,7 +7711,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7712,7 +7733,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7731,7 +7752,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7757,7 +7778,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7777,7 +7798,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7795,7 +7816,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7819,7 +7840,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7843,7 +7864,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7866,7 +7887,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7890,7 +7911,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7913,7 +7934,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7937,7 +7958,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7975,7 +7996,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -7993,7 +8014,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8010,7 +8031,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8027,7 +8048,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8045,7 +8066,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8057,7 +8078,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8096,7 +8117,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8109,7 +8130,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8122,7 +8143,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8135,7 +8156,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8152,7 +8173,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8169,7 +8190,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8195,7 +8216,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8212,7 +8233,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8229,7 +8250,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8246,7 +8267,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8263,7 +8284,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8278,7 +8299,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8295,7 +8316,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8312,7 +8333,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8331,7 +8352,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8350,7 +8371,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8369,7 +8390,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8395,7 +8416,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8412,7 +8433,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8438,7 +8459,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8483,7 +8504,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8503,7 +8524,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8520,7 +8541,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8534,7 +8555,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8557,7 +8578,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8569,7 +8590,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8588,7 +8609,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8602,7 +8623,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8622,7 +8643,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8641,7 +8662,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8664,7 +8685,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8684,7 +8705,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8704,7 +8725,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8729,7 +8750,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -8747,7 +8768,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8799,7 +8820,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8819,7 +8840,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8882,7 +8903,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8899,7 +8920,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8913,7 +8934,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8960,7 +8981,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -8986,7 +9007,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -9030,7 +9051,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9047,7 +9068,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9066,7 +9087,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9085,7 +9106,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9104,7 +9125,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9130,7 +9151,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9150,7 +9171,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9168,7 +9189,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9192,7 +9213,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9216,7 +9237,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9239,7 +9260,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9276,7 +9297,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9294,7 +9315,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9311,7 +9332,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
@@ -9353,7 +9374,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9370,7 +9391,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9401,7 +9422,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9433,7 +9454,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9464,7 +9485,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9502,7 +9523,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9541,7 +9562,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
@@ -9580,7 +9601,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
@@ -9605,7 +9626,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
     When I navigate to "Collab" sub tab
