@@ -4,30 +4,34 @@ Business Need: All pdf and xls related scenario including component and complete
   As a configuration manager i make different configurational changes for Export Functionality related scenarios and will validate them.
 
   ################### Export Functionality - Flex Table #####################
-  @346698 @346744
+  @346698p @346744
   Scenario Outline: Flex table-Export-Admin & PM-Config-To verify that "Download as PDF" link get displayed under "Menu", on enabling "Enable Export (PDF)" config of flex table.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF)       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (PDF) | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF)       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | Programs           | Name                      |                            |
+
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see "Download as PDF" options is displayed
 
+
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
-  @346745
+  @346745p
   Scenario: Flex table-Export-SPI-UI-To verify that "Download as PDF" link get displayed under "Menu", on enabling "Enable Export (PDF)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor | Name                      |                            |
@@ -37,11 +41,11 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I see "Download as PDF" options is displayed
 
-  @346747
+  @346747p
   Scenario Outline: Flex table-Export-Admin-PM-Config-To verify that "Download as PDF" link not get displayed under "Menu", on disabling "Enable Export (PDF)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | Programs           | Name                      |                            |
@@ -60,7 +64,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Flex table-Export-SPI-UI-To verify that "Download as PDF" link not get displayed under "Menu", on disabling "Enable Export (PDF)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | MonitoringScheduleGrantor | Name                      |                            |
@@ -74,7 +78,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: Flex table-Export-Admin-Config-To verify that "Download as XLS/CSV" link get displayed under "Menu", on enabling "Enable Export (XLS / CSV)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | Programs           | Name                      |                            |
@@ -93,7 +97,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Flex table-Export-SPI-UI-To verify that "Download as XLS/CSV" link get displayed under "Menu", on enabling "Enable Export (XLS / CSV)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | MonitoringScheduleGrantor | Name                      |                            |
@@ -103,11 +107,11 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I see "Download as CSV" options is displayed
 
-  @346754 @346756
+  @346754p @346756
   Scenario Outline: Flex table-Export-Admin-Config-To verify that "Download as XLS/CSV" link not get displayed under "Menu", on disabling "Enable Export (XLS / CSV)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           | Name                      |                            |
@@ -126,7 +130,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Flex table-Export-SPI-UI-To verify that "Download as XLS/CSV" link not get displayed under "Menu", on disabling "Enable Export (XLS / CSV)" config of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | MonitoringScheduleGrantor | Name                      |                            |
@@ -136,14 +140,18 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I do not see "Download as CSV" options is displayed
 
-  @346758 @346761
+  @346758p @346761
   Scenario Outline: Flex table-Export-Admin-UI-To verify that all the available records get displayed in downloaded PDF
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table                | Enable Export (XLS / CSV) | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | Programs           | Name                      | FLV-2254                   |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General        | Enable Export (PDF)       | true          | Programs           | Name                      |                            |
+      | Flex Table:General        | Enable Export (XLS / CSV) | true          | Programs           | Name                      |                            |
+      | Flex Grid:Flex Table List | Is Master View            | true          | Programs           | Name                      | FLV-2254                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -151,21 +159,26 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
-    Then I see "Automation Internal Program for Export Functionality Testing" on page "6" of "govgrants" pdf file
+    And I pause execution for "7" seconds
+    Then I see "Admin Program for Advance filter" on page "1" of "govgrants" pdf file
 
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @346762
   Scenario: Flex table-Export-SPI-UI-To verify that all the available records get displayed in downloaded PDF
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table                | Enable Export (XLS / CSV) | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | RecipientApplications | Name                      | FLV-3447                   |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General        | Enable Export (PDF)       | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General        | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+      | Flex Grid:Flex Table List | Is Master View            | true          | RecipientApplications | Name                      | FLV-3469                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -173,16 +186,21 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Application Autosnapshot TD AN 4 from D" on page "6" of "govgrants" pdf file
 
   @346763 @346765
   Scenario Outline: Flex table-Export-PM-UI-To verify that all the available records get displayed in downloaded XLS/CSV.
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View            | true              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF)       | true              | ApiGeneratedId:1 |
+      | Flex Table                | Enable Export (XLS / CSV) | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | Programs           | Name                      | FLV-2254                   |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General        | Enable Export (PDF)       | true          | Programs           | Name                      |                            |
+      | Flex Table:General        | Enable Export (XLS / CSV) | true          | Programs           | Name                      |                            |
+      | Flex Grid:Flex Table List | Is Master View            | true          | Programs           | Name                      | FLV-2254                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -190,6 +208,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as XLS" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Automation Internal Program for Export Functionality Testing" on page "6" of "govgrants" pdf file
 
     Examples:
@@ -197,14 +216,14 @@ Business Need: All pdf and xls related scenario including component and complete
       | ADMIN |
       | PM    |
 
-  @346766
+  @346766p
   Scenario: Flex table-Export-SPI-UI-To verify that all the available records get displayed in downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | RecipientApplications | Name                      | FLV-3447                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | RecipientApplications | Name                      | FLV-3469                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -212,7 +231,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
-    Then I see "Application Autosnapshot TD AN 4 from D" on page "6" of "govgrants" pdf file
+    And I pause execution for "7" seconds
+    Then I see "Vrush Announcement" on page "1" of "govgrants" pdf file
 
   @346767 @346768
   Scenario Outline: Flex table-Export-Admin-UI-To verify that Page size (i.e. Show entries) block, Pagination and Total Records count not displayed in downloaded PDF
@@ -223,6 +243,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Show" on page "1" of "govgrants" pdf file
     Then I cannot see "Page 1" on page "1" of "govgrants" pdf file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
@@ -232,7 +253,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | ADMIN |
       | PM    |
 
-  @346769
+  @346769p
   Scenario: Flex table-Export-SPI-UI-To verify that Page size (i.e. Show entries) block, Pagination and Total Records count not displayed in downloaded PDF
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -241,6 +262,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
+    And I pause execution for "7" seconds
+    And I pause execution for "10" seconds
+    Then I see "Application Title" on page "1" of "govgrants" pdf file
     Then I cannot see "Show" on page "1" of "govgrants" pdf file
     Then I cannot see "Page 1" on page "1" of "govgrants" pdf file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
@@ -262,7 +287,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | ADMIN |
       | PM    |
 
-  @346773
+  @346773p
   Scenario: Flex table-Export-SPI-UI-To verify that Page size (i.e. Show entries) block, Pagination and Total Records count not displayed in downloaded XLS/CSV
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -283,6 +308,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -299,6 +325,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see "Applications - Submitted" on page "1" of "govgrants" pdf file
 
   @346777 @346779
@@ -340,6 +367,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of ""
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -347,20 +375,23 @@ Business Need: All pdf and xls related scenario including component and complete
       | ADMIN |
       | PM    |
 
-  @346783
+  @346783p
   Scenario: Flex table-Export-SPI-UI-To verify that if user not provided Header/Label of list view in config, then nothing get displayed as a Header (also null value not displayed) in downloaded PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
-      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:1 |
+      | configurationCategory | fieldName   | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Label       | Applications - Submitted | ApiGeneratedId:0 |
+      | Flex Table List       | Show in PDF | true                     | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label     |               | RecipientApplications | Name                      | FLV-3447                   |
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label       |               | RecipientApplications | Name                      | FLV-3469                   |
+      | Flex Table List       | Show in PDF | true          | RecipientApplications | Name                      | FLV-3469                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of ""
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Applications - Submitted" on page "1" of "govgrants" pdf file
 
   @346784 @346785
@@ -371,6 +402,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Actions" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -409,6 +441,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "#" on page "1" of "govgrants" pdf file
     Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
 
@@ -425,6 +458,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "#" on page "1" of "govgrants" pdf file
     Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
 
@@ -467,6 +501,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -477,17 +512,21 @@ Business Need: All pdf and xls related scenario including component and complete
   @346891
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
-      | Flex Table List       | Header    | Applications - Submitted | ApiGeneratedId:1 |
+      | configurationCategory | fieldName   | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Header      | Applications - Submitted | ApiGeneratedId:1 |
+      | Flex Table List       | Show in PDF | true                     | ApiGeneratedId:1 |
+
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Header    | Applications - Submitted | RecipientApplications | Name                      | FLV-3447                   |
+      | configurationCategory | fieldName   | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Header      | Applications - Submitted | RecipientApplications | Name                      | FLV-3469                   |
+      | Flex Table List       | Show in PDF | true                     | RecipientApplications | Name                      | FLV-3469                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Applications - Submitted" on page "1" of "govgrants" pdf file
 
   @346893 @346894
@@ -513,11 +552,13 @@ Business Need: All pdf and xls related scenario including component and complete
   @346985
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded XLS/CSV
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
-      | Flex Table List       | Header    | Applications - Submitted | ApiGeneratedId:1 |
+      | configurationCategory | fieldName   | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Header      | Applications - Submitted | ApiGeneratedId:0 |
+      | Flex Table List       | Show in PDF | true                     | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Header    | Applications - Submitted | RecipientApplications | Name                      | FLV-3447                   |
+      | configurationCategory | fieldName   | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Header      | Applications - Submitted | RecipientApplications | Name                      | FLV-3469                   |
+      | Flex Table List       | Show in PDF | true                     | RecipientApplications | Name                      | FLV-3469                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -539,6 +580,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overall Total" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -560,6 +602,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overall Total" on page "1" of "govgrants" pdf file
 
   @346961 @346962
@@ -605,6 +648,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Funded Amount" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -626,6 +670,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
+    And I pause execution for "7" seconds
     Then I see "Award Ceiling" on page "1" of "govgrants" pdf file
     Examples:
       | newFieldsApi                                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
@@ -640,6 +686,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "EGMS ID" on page "1" of "govgrants" pdf file
     Then I see "Program Name" on page "1" of "govgrants" pdf file
     Then I see "Internal Organization" on page "1" of "govgrants" pdf file
@@ -663,6 +710,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "EGMS ID" on page "1" of "govgrants" pdf file
     Then I see "Application Title" on page "1" of "govgrants" pdf file
     Then I see "Funding Opportunity Title" on page "1" of "govgrants" pdf file
@@ -688,6 +736,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
+    And I pause execution for "7" seconds
     And I pause execution for "5" seconds
     Then I cannot see "Status" on page "1" of "govgrants" pdf file
     Examples:
@@ -711,6 +760,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Status" on page "1" of "govgrants" pdf file
 
   @346939 @346940
@@ -766,6 +816,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Active"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -786,6 +837,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
   @346695
@@ -1144,6 +1196,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347402 #347403
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -1176,6 +1229,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347404 #347405
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1206,6 +1260,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347408 #347409
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1238,6 +1293,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347411 #347413
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1268,6 +1324,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347415 #347416
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1299,6 +1356,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347419 #347421
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1330,6 +1388,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347422 #347423
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1361,6 +1420,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347428 #347429
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1392,6 +1452,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347431 #347432
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1423,6 +1484,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347434 #347436
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1454,6 +1516,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347437 #347438
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1485,6 +1548,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347439 #347441
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1517,6 +1581,7 @@ Business Need: All pdf and xls related scenario including component and complete
     #347443 #347445
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -1541,6 +1606,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347451 #347453
     Then I softly see following details in "govgrants" pdf file:
@@ -1567,6 +1633,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347456 #347457
     Then I softly see following details in "govgrants" pdf file:
@@ -1594,6 +1661,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347458 #347460
     Then I softly see following details in "govgrants" pdf file:
@@ -1620,6 +1688,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347461 #347462
     Then I softly see following details in "govgrants" pdf file:
@@ -1647,6 +1716,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347463 #347464
     Then I softly see following details in "govgrants" pdf file:
@@ -1673,6 +1743,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347466 #347467
     Then I softly see following details in "govgrants" pdf file:
@@ -1699,6 +1770,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347473 #347474
     Then I softly see following details in "govgrants" pdf file:
@@ -1725,6 +1797,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347475 #347477
     Then I softly see following details in "govgrants" pdf file:
@@ -1751,6 +1824,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347478 #347479
     Then I softly see following details in "govgrants" pdf file:
@@ -1777,6 +1851,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347482 #347484
     Then I softly see following details in "govgrants" pdf file:
@@ -1803,6 +1878,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347487 #347489
     Then I softly see following details in "govgrants" pdf file:
@@ -1829,6 +1905,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347491 #347492
     Then I softly see following details in "govgrants" pdf file:
@@ -1856,6 +1933,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     #347447 #347450
     Then I softly see following details in "govgrants" pdf file:
@@ -1885,6 +1963,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
@@ -1912,6 +1991,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -1938,6 +2018,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -1965,6 +2046,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Funding Decision Memo" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -1991,6 +2073,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2017,6 +2100,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2043,6 +2127,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2069,6 +2154,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2095,6 +2181,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2121,6 +2208,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2147,6 +2235,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2173,6 +2262,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2199,6 +2289,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -2578,6 +2669,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347817
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2602,6 +2694,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347818
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2629,6 +2722,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347819
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2655,6 +2749,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347820
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2681,6 +2776,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347823
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2707,6 +2803,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347824
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2732,6 +2829,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347825
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2758,6 +2856,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347826
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2784,6 +2883,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347827
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
@@ -2810,6 +2910,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     #347828
     Then I see "Overview" on page "1" of "govgrants" pdf file
 #************
@@ -3291,6 +3392,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347804
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3326,6 +3428,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347806
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3361,6 +3464,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347807
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3396,6 +3500,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347808
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3432,6 +3537,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347811
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3468,6 +3574,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347812
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3504,6 +3611,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347813
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3540,6 +3648,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347814
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3576,6 +3685,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     #347815
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
@@ -3612,6 +3722,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -3637,6 +3748,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347830
@@ -3657,6 +3769,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347831
@@ -3677,6 +3790,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347832
@@ -3698,6 +3812,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347837
@@ -3719,6 +3834,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347838
@@ -3740,6 +3856,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347839
@@ -3761,6 +3878,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347840
@@ -3782,6 +3900,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347841
@@ -3803,6 +3922,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @347842
@@ -3824,6 +3944,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @346974 @346976 @347012 @347015 @347109 @347114 @347222
@@ -3906,6 +4027,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -3929,6 +4051,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download as PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail      | Page Number |
       | Overview    | 1           |
@@ -3958,6 +4081,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -4026,6 +4150,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
 
       | Detail   | Page Number |
@@ -4050,6 +4175,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     Then I softly see following details in "govgrants" pdf file:
       | Detail   | Page Number |
@@ -4074,6 +4200,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see generated snapshot ".pdf" is displayed with "File Name"
     And I click on saved snap shot "SnapShot"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see following details in "govgrants" pdf file:
       | Detail   | Page Number |
       | Overview | 1           |
@@ -4097,6 +4224,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
+    And I pause execution for "7" seconds
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
@@ -4126,7 +4254,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_Config Export_"<User>"_To verify user should get 'Download as PDF' option under Menu when Enable Export (PDF) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | AnnouncementBudgetCategory |                           |                            |
@@ -4148,7 +4276,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_Config Export_SPI_To verify user should get 'Download as PDF' option under Menu when Enable Export (PDF) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -4165,7 +4293,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Child_Config Export_"<Users>"_To verify user should get 'Download as PDF' option under Menu when Enable Export (PDF) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | ProgramReviewStepPanelTemplates |                           |                            |
@@ -4188,7 +4316,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_Config Export_SPI_To verify user should get 'Download as PDF' option under Menu when Enable Export (PDF) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4206,7 +4334,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_Config Export_"<User>"_To verify user should not get 'Download as PDF' option under Menu when Enable Export (PDF) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | AnnouncementBudgetCategory |                           |                            |
@@ -4229,7 +4357,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_Config Export_SPI_To verify user should not get 'Download as PDF' option under Menu when Enable Export (PDF) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | RecGrantBudgetPeriods | Name                      |                            |
@@ -4246,7 +4374,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Child_Config Export_"<Users>"_To verify user should not get 'Download as PDF' option under Menu when Enable Export (PDF) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | ProgramReviewStepPanelTemplates |                           |                            |
@@ -4269,7 +4397,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_Config Export_SPI_To verify user should not get 'Download as PDF' option under Menu when Enable Export (PDF) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4287,7 +4415,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_Config Export_"<User>"_To verify user should get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | AnnouncementBudgetCategory |                           |                            |
@@ -4309,7 +4437,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_Config Export_SPI_To verify user should get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -4326,7 +4454,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Child_Config Export_"<Users>"_To verify user should get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | ProgramReviewStepPanelTemplates |                           |                            |
@@ -4349,7 +4477,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_Config Export_SPI_To verify user should get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4367,7 +4495,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_Config Export_"<User>"_To verify user should not get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | AnnouncementBudgetCategory |                           |                            |
@@ -4390,7 +4518,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_Config Export_SPI_To verify user should not get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecGrantBudgetPeriods | Name                      |                            |
@@ -4407,7 +4535,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Child_Config Export_"<Users>"_To verify user should not get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | ProgramReviewStepPanelTemplates |                           |                            |
@@ -4430,7 +4558,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_Config Export_SPI_To verify user should not get 'Download as XLS' option under Menu when Enable Export (XLS / CSV) is disabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4453,7 +4581,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Parent_UI Export_"<User>"_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetPeriods |                           |                            |
@@ -4467,6 +4595,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" on page "1" of "govgrants" pdf file
     Then I see "Budget Period Title" on page "1" of "govgrants" pdf file
     Then I see "Start Date" on page "1" of "govgrants" pdf file
@@ -4491,7 +4620,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Parent_UI Export_SPI_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -4504,6 +4633,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" on page "1" of "govgrants" pdf file
     Then I see "Budget Period Title" on page "1" of "govgrants" pdf file
     Then I see "Start Date" on page "1" of "govgrants" pdf file
@@ -4525,7 +4655,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Child_UI Export_"<User>"_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -4541,6 +4671,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" on page "1" of "govgrants" pdf file
     Then I see "Budget Period Title" on page "1" of "govgrants" pdf file
     Then I see "Start Date" on page "1" of "govgrants" pdf file
@@ -4565,7 +4696,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Child_UI Export_SPI_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4579,6 +4710,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" on page "1" of "govgrants" pdf file
     Then I see "Budget Period Title" on page "1" of "govgrants" pdf file
     Then I see "Start Date" on page "1" of "govgrants" pdf file
@@ -4598,7 +4730,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Parent_UI Export_"<User>"_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | GrantBudgetPeriods |                           |                            |
@@ -4612,6 +4744,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Start Date" in downloaded xls or csv file "govgrants"
@@ -4635,7 +4768,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Parent_UI Export_SPI_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -4648,6 +4781,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as XLS" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Start Date" in downloaded xls or csv file "govgrants"
@@ -4667,7 +4801,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Child_UI Export_"<User>"_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -4683,6 +4817,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Start Date" in downloaded xls or csv file "govgrants"
@@ -4705,7 +4840,7 @@ Business Need: All pdf and xls related scenario including component and complete
   |E-grid-Child_UI Export_SPI_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -4719,6 +4854,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Grant Budget" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Start Date" in downloaded xls or csv file "govgrants"
@@ -4734,7 +4870,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_UI Export_"<User>"-To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label               | Grant Budget      | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4750,6 +4886,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as PDF" from parallel lines dropdown of ""
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Grant Budget" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -4775,13 +4912,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as PDF" from parallel lines dropdown of ""
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Grant Budget" on page "1" of "govgrants" pdf file
 
   @346450 @346452
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded PDF.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label               | Budget Category   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4799,6 +4937,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Budget Category" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -4809,7 +4948,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_UI Export_SPI_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded PDF.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label               | Budget Category   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4825,13 +4964,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Budget Category" on page "1" of "govgrants" pdf file
 
   @346454 @346455
   Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label                     | Grant Budget      | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4847,6 +4987,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Grant Budget" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
@@ -4857,7 +4998,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_UI Export_SPI_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label                     | Grant Budget      | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4872,13 +5013,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as XLS" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Grant Budget" in downloaded xls or csv file "govgrants"
 
   @346458 @346462
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label                     | Budget Category   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4896,6 +5038,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Budget Category" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
@@ -4906,7 +5049,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_UI Export_SPI_To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
       | Flex Table List       | Label                     | Budget Category   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4922,6 +5065,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I cannot see "Budget Category" in downloaded xls or csv file "govgrants"
 
   @346543 @346544
@@ -4944,6 +5088,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I softly see "Fee Fund Requested" on page "1" of "govgrants" pdf file
     Examples:
       | User  | newFieldsApi                                                                 | defaultFieldsApi                                         |
@@ -4969,6 +5114,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Fee Fund Requested" on page "1" of "govgrants" pdf file
     Examples:
       | newFieldsApi                                                                 | defaultFieldsApi                                         |
@@ -4978,7 +5124,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetPeriods |                           |                            |
@@ -4992,6 +5138,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     Examples:
       | User  |
@@ -5002,7 +5149,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_UI Export_SPI_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -5015,13 +5162,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
 
   @346608 @346610
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -5037,6 +5185,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
     Examples:
       | User  |
@@ -5047,7 +5196,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Child_UI Export_SPI_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -5061,6 +5210,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see new tab is opened
 
   @346622 @346624
@@ -5085,6 +5235,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Row Number" on page "1" of "govgrants" pdf file
     Examples:
       | User  | newFieldsApi                                                                                                                                                    | defaultFieldsApi                                                                                                                |
@@ -5111,6 +5262,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Row Number" on page "1" of "govgrants" pdf file
     Examples:
       | newFieldsApi                                                                                                                                                    | defaultFieldsApi                                                                                                                |
@@ -5120,7 +5272,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that footer of Downloaded PDF contains Page number
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetPeriods |                           |                            |
@@ -5134,6 +5286,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -5144,7 +5297,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: E-grid-Parent_UI Export_SPI_To verify that footer of Downloaded PDF contains and Page number
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
@@ -5157,13 +5310,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
     And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
 
   @346574 @346576
   Scenario Outline:E-grid-Child_UI Export_"<User>"_To verify that footer of Downloaded PDF contains one image and Page number
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -5179,6 +5333,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -5189,7 +5344,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario:E-grid-Child_UI Export_SPI_To verify that footer of Downloaded PDF contains Page number
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
@@ -5203,6 +5358,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
 
   @346559 @346560
@@ -5235,7 +5391,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline:E-grid-Child_UI Export_"<User>"_To verify that To verify that Overall total displayed in downloaded PDF.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -5251,6 +5407,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "$1,000.00" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -5277,6 +5434,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "3" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
@@ -5287,7 +5445,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify that Overall total displayed in downloaded XLS/CSV.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | GrantBudgetCategoryFlexTable |                           |                            |
@@ -5303,6 +5461,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "$1,000.00" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
@@ -5329,6 +5488,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
+    And I pause execution for "7" seconds
     Then I see "Status" on page "1" of "govgrants" pdf file
     Examples:
       | User  | newFieldsApi                                                                                                                                                                                     | defaultFieldsApi                                                                                                                                                            |

@@ -217,7 +217,7 @@ public class PageLayoutSteps {
         pageLayoutPage.assertTopRightButtonNotDisplayed(buttonName);
     }
 
-    @Then("^I (see|do not see) \"([^\"]*)\" options is displayed")
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" options is displayed$")
     public void assertTopRightParallelLinesBarOptionsAtPageLayout(String usage, String options) {
         pageLayoutPage.assertTopRightParallelLinesBarOptionsAtPageLayout(usage, options);
     }
