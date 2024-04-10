@@ -14,18 +14,15 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF)       | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | Programs           | Name                      |                            |
-
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on "Menu" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see "Download as PDF" options is displayed
-
-
     Examples:
       | User  |
       | ADMIN |
-#      | PM    |
+      | PM    |
 
   @346745p
   Scenario: Flex table-Export-SPI-UI-To verify that "Download as PDF" link get displayed under "Menu", on enabling "Enable Export (PDF)" config of flex table.
