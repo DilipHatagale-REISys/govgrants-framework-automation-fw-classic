@@ -1,4 +1,4 @@
-@EnhancedFlexTable-PATCHcomponent @regression-PATCH @DataTableEnhanced
+@date13April @EnhancedFlexTable-PATCHcomponent @regression-PATCH @DataTableEnhanced
 Business Need: DataTableEnhanced Component Scenarios
   Test all DataTableEnhanced component based scenarios
   As a configuration manager i make different configurational changes in DataTableEnhanced component and will validate them.
