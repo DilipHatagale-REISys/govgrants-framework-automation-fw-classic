@@ -1,4 +1,4 @@
-@date13April @ApprovalHistoryTable-PATCHcomponent @regression-PATCH @approvalhistorytable
+@ApprovalHistoryTable-PATCHcomponent @regression-PATCH @approvalhistorytable
 Business Need: ApprovalHistoryTable Component Scenarios
   Test all approvalhistorytable Component based scenarios
   As a configuration manager I make different changes related to flow and will validate them in approvalhistorytable component.
