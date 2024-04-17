@@ -1,4 +1,4 @@
-@PageLayout-PATCHcomponent @regression-PATCH @PageLayout
+@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -6306,7 +6306,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Program Sub Type is required to save under Overview. |
 
-  @137275    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
+  @137275p    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save date field is hidden using hide field json
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -12174,9 +12174,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     Then I see "Submit to grantor" button is displayed
     Then I see "Edit" button is displayed
 
@@ -12201,7 +12200,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Vrush Application" inside table

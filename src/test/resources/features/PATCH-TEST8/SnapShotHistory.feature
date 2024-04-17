@@ -1,9 +1,9 @@
-@SnapshotHistory-PATCHcomponent @regression-PATCH
+@SnapshotHistory-PATCHcomponent @regression-PATCH @vrush-module
 Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 
-  @70014    @verifyAutoSnapShotNotCapturedWithIsActiveField
+  @70014p    @verifyAutoSnapShotNotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is not getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |

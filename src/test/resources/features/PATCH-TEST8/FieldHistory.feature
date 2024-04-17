@@ -535,7 +535,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
-  @121152  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
+  @121152p  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
   Scenario: validate that approval history table , field history table and snapshot history is displayed a newly created record
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -687,7 +687,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205098 @205099
+  @205098 @205099 @skiponjenkins
   Scenario Outline:Field History- PM user - User should be able to perform export functionality 'Download as PDF' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as PDF' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -707,7 +707,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205100 @205101 @needtocheckmanually
+  @205100 @205101 @needtocheckmanually @skiponjenkins
   Scenario Outline: Field History- PM user - User should be able to perform export functionality 'Download as CSV' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as CSV' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -816,7 +816,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see "{SavedValue:FundedAmount}" shown inside "New Value" column in history table
 
-  @205606 @205607
+  @205606p @205607
   Scenario Outline: Field History - ADMIN user - To verify, User change the date field from edit layout then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -824,7 +824,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -973,11 +973,11 @@ Business Need: history Component Scenarios
     And I enter value "State" into field "InternalOrganization__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
-    And I save the field labeled "Internal Organization" as "OldInternalOrganization"
+    And I save the field labeled "Internal Organization Text" as "OldInternalOrganization"
     And I click on "Edit" in the page details
     And I enter value "Nation" into field "InternalOrganization__c"
     And I click on "Save" in the page details
-    And I save the field labeled "Internal Organization" as "NewInternalOrganization"
+    And I save the field labeled "Internal Organization Text" as "NewInternalOrganization"
     And I refresh the page
     When I navigate to "History" sub tab
     Then I see "{SavedValue:NewInternalOrganization}" shown inside "New Value" column in history table
@@ -1095,7 +1095,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205506 @205507
+  @205506p @205507
   Scenario Outline: Field history: PM user-To verify, User change the percent field from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"

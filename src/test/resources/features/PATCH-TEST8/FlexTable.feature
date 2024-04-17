@@ -1,4 +1,4 @@
-@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent
+@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent @vrush-module
 Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface,Quick Search
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in FlexTable_AllComponent component and will validate them.
@@ -4018,11 +4018,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338628 @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
+  @338628p @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -4030,7 +4030,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsFlexTableToggleId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values in table id "---program:-:ProgramsFlexTableToggleId---"
       | Start Date | Greater than or equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
@@ -19780,6 +19780,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
@@ -19790,6 +19791,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
@@ -19802,6 +19804,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
