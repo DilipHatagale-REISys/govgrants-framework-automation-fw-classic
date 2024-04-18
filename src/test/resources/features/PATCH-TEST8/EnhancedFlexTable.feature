@@ -188,50 +188,37 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ActiveGrants       | Name                      | FLV-3294                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ActiveGrants       | Name                      | FLV-3447                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I navigate to "Component testing " sub tab
+    And I navigate to "Grants" tab
     Then I see the following message in the page details :
       | Two Master List Views are not allowed |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2872                   |
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @wip @271915 @ToverifynolistviewsaremarkedastrueforIsmasterview'thengettingerrormessageasatleast1listviewmustbemasterview.(SPI) @vrushali @sprint-19
+  @271915p @ToverifynolistviewsaremarkedastrueforIsmasterview'thengettingerrormessageasatleast1listviewmustbemasterview.(SPI) @vrushali @sprint-19
   Scenario: To verify when no list views are marked as true for 'Is master view' then getting error message as at least 1 list view must be master view. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | false          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | GrantsList         | Name                      | FLV-3480                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Component testing " sub tab
+    And I navigate to "Grants" tab
     Then I see the following message in the page details :
       | Atleast one list view should be marked as a Master List View |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
 
   @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
   Scenario: To verify when any 2 list views are marked as true for 'Is master view' then getting the error message as only list view can be master view. (SPI)
@@ -696,8 +683,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
-      | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
+      | Flex Table List       | Enable Sub Total    | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
+      | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -731,8 +718,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
-      | Flex Table List       | Enable Row Grouping  | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
+      | Flex Table List       | Hide Grouping Column | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
+      | Flex Table List       | Enable Row Grouping  | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -969,7 +956,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable3 | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable3 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -984,7 +971,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable4 | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable4 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1031,7 +1018,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-6747                    |
+      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-6895                    |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1052,7 +1039,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-6747                    |
+      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-6895                    |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1126,7 +1113,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-9118                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -1143,7 +1130,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-9118                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -1183,7 +1170,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Header Help Text | <defaultHelpText> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active        | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active        | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Header Help Text | <newHelpText> | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
@@ -1239,8 +1226,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1262,8 +1249,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1292,8 +1279,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1321,8 +1308,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1346,8 +1333,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
@@ -1370,8 +1357,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
@@ -1396,8 +1383,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1422,8 +1409,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1449,8 +1436,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1477,8 +1464,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1502,8 +1489,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Record Selection Column Position | none           | Programs                        | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1529,8 +1516,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1560,8 +1547,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1584,8 +1571,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
@@ -1612,8 +1599,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1638,8 +1625,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
     Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1665,8 +1652,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1695,8 +1682,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
@@ -1721,8 +1708,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1748,8 +1735,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1775,8 +1762,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1800,8 +1787,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
@@ -1820,7 +1807,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | false         | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
@@ -1844,7 +1831,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Default Page Size          | 5             | RecipientGrantNotes | Name                      |                            |
@@ -1870,7 +1857,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Total Records Count | false         | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | false         | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
@@ -1894,7 +1881,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
@@ -1942,7 +1929,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Record Selection    | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
@@ -1966,7 +1953,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName               | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active               | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active               | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Record Selection | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1986,7 +1973,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -2074,7 +2061,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
@@ -2107,7 +2094,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-8924                    |
+      | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Page Size           | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
@@ -2127,7 +2114,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
-  @205078 @205080 @379015 @SanityPATCH @SanityPATCHEnhancedTable
+  @20507p8 @205080 @379015 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option should not available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option should not available on UI
     Given I have "default" configuration as below:
@@ -2142,8 +2129,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | false          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
@@ -2166,8 +2153,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
@@ -2230,8 +2217,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I click on "Column Name" after click advance filter
@@ -2285,8 +2272,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
@@ -2346,8 +2333,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "11,000" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2391,8 +2378,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Ronald Clar" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2435,8 +2422,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Othe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2480,8 +2467,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "sds@dv.com" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2525,8 +2512,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "'apostrophe 'apostrophe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2570,8 +2557,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "'apostrophe 'apostrophe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2624,8 +2611,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see action name "View" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2667,8 +2654,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text    | Test Button Help Text | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
@@ -2716,8 +2703,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Location            | Row            | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2767,8 +2754,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Header Action Display Type | Button                  | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2814,8 +2801,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Sequence            | 1              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2836,8 +2823,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Where To Open ? | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2877,8 +2864,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Where To Open ? | NewWindow     | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2924,8 +2911,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2950,8 +2937,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -3018,8 +3005,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Modal Width     | 50              | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -3072,8 +3059,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -3121,8 +3108,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -3256,7 +3243,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
     When I enter "Contacts" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save"
-    
+
 
     Examples:
       | User  |
