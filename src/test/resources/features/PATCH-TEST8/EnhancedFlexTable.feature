@@ -233,8 +233,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Component testing " sub tab
     Then I see the following message in the page details :
       | Two Master List Views are not allowed |
@@ -256,8 +256,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Component testing " sub tab
       #271925
     Then I see "Test 4" page block displayed
@@ -289,8 +289,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Component testing " sub tab
     #271926
     Then I see "Test 3" page block displayed
@@ -323,8 +323,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Component testing " sub tab
     #271927
     Then I see "Test 2" page block displayed
@@ -355,8 +355,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Component testing " sub tab
     #271928
     Then I see "Test 1" page block displayed
@@ -1101,8 +1101,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -1117,9 +1117,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I do not see Header field "Notes" displayed as a Header on flex table
 
@@ -1134,9 +1134,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see Header field "Notes" displayed as a Header on flex table
 
@@ -1175,9 +1175,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I hovering mouse on help text "Notes" icon
     Then I see "Help text for Automation" shown as help text
@@ -1239,9 +1239,9 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario Outline: Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually,Page Size- PM- UI- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
-      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:3 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:3 |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
@@ -1289,7 +1289,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205007 @205008
+  @205007p @205008
   Scenario Outline: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI,
   Total Records Count- PM- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
@@ -1298,7 +1298,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
@@ -1813,9 +1813,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I do not see "Entries" page size inside table "---program:-:FlexTableEnhancedNotesId---"
@@ -1838,9 +1838,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Entries" page size inside table "---program:-:FlexTableEnhancedNotesId---"
@@ -1863,9 +1863,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I do not see "---program:-:FlexTableEnhancedNotesId---" table contains "Page 1 of"
     Then I do not see "Total Records:" text-allignment is "center" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1888,9 +1888,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1911,9 +1911,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I do not see "#" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I do not see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1938,9 +1938,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "#" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1958,9 +1958,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1978,9 +1978,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
@@ -1995,9 +1995,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I performed quick search "Showing 1 to 5 of 8 records" inside table id "---program:-:FlexTableEnhancedNotesId---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2015,9 +2015,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientsGrantPackages" of table id "---program:-:FlexTableEnhancedNotesId---"
     When I enter advance filter values in table id "advfRecipientsGrantPackages"
@@ -2038,9 +2038,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Test Page description" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2069,9 +2069,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     And I click on page navigation arrow "---program:-:FlexTableEnhancedNotesId---" for table id "Last"
@@ -2102,9 +2102,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     And I click on page navigation arrow "---program:-:FlexTableEnhancedNotesId---" for table id "Last"
@@ -2175,9 +2175,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:FlexTableEnhancedNotesId---" in flex table
 
@@ -2194,9 +2194,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:FlexTableEnhancedNotesId---" in flex table
 
@@ -2245,9 +2245,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
     And I click on "Column Name" after click advance filter
@@ -2301,9 +2301,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
     When I enter advance filter values in table id "advfRecipientGrantNotes"
@@ -2356,9 +2356,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "11,000" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2401,9 +2401,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2445,9 +2445,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2490,9 +2490,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2535,9 +2535,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2549,7 +2549,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
+      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
@@ -2583,9 +2583,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2634,9 +2634,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     Then I see "Actions" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I see action name "Edit" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
@@ -2675,9 +2675,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
@@ -2731,9 +2731,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
@@ -2779,9 +2779,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
@@ -2845,9 +2845,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -2886,9 +2886,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -2953,9 +2953,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Test Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Delete" icon for "Test Notes" inside table without accept popup
@@ -2980,9 +2980,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -3035,9 +3035,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -3085,9 +3085,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -3134,9 +3134,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -3179,9 +3179,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
