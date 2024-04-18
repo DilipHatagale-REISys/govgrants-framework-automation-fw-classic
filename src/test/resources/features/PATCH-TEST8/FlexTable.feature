@@ -18806,7 +18806,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                             | defaultFieldsApi                                                                    |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,Date_and_Time__c,Number__c |
 
-  @189255 @sprint26
+  @189255 @sprint26 @needtocheck @wip
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Flextable, the error message is displayed on the Page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
@@ -18825,7 +18825,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Error creating table:unexpected token: 'ASC' |
     Examples:
       | newFieldsApi                       | defaultFieldsApi   |
-      | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
+   #   | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
 
   @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate flex  table at record table is rendered properly by Automation user

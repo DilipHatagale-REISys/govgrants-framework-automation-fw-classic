@@ -642,7 +642,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205059 @205060
+  @205059p @205060
   Scenario Outline: Field History - PM user - User should be able search field history by applying advance filter.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -780,8 +780,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Time Zone Testing For Admin"
-    When I click on "Edit" icon for "Automation Internal Program for Time Zone Testing For Admin" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I enter value "10" into field "fieldFundedAmount__c"
     And I enter value "0" into field "fieldStartDate__c"
@@ -915,12 +915,12 @@ Business Need: history Component Scenarios
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I enter value "8456321479" into field "fieldPhone_Field__c"
+    And I enter value "8456321479" into field "Phone_Number__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Phone Number" as "OldPhoneNumber"
     And I click on "Edit" in the page details
-    And I enter value "9845632147" into field "fieldPhone_Field__c"
+    And I enter value "9845632147" into field "Phone_Number__c"
     And I click on "Save" in the page details
     And I save the field labeled "Phone Number" as "NewPhoneNumber"
     And I refresh the page
@@ -932,7 +932,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205770 @205771
+  @205770p @205771
   Scenario Outline: Field History : PM user - To verify, User change the checkbox field value from edit layout then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -960,7 +960,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205572 @205584
+  @205572p @205584
   Scenario Outline: Field History -PM user -To verify, User change the text field value from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -987,7 +987,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205760 @205762
+  @205760p @205762
   Scenario Outline: Field History : PM user - To verify, User change the date time field from backend then it should display changed and previous value in the new and old value column
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -997,12 +997,12 @@ Business Need: history Component Scenarios
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
+    And I enter value "09/27/2023 07:37 PM" into field "Date_and_Time__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Date and Time" as "OldDateAndTime"
     And I click on "Edit" in the page details
-    And I enter value "08/27/2027 10:00 PM" into field "DateandTime__c"
+    And I enter value "08/27/2027 10:00 PM" into field "Date_and_Time__c"
     And I click on "Save" in the page details
     And I save the field labeled "Date and Time" as "NewDateAndTime"
     And I refresh the page
@@ -1068,7 +1068,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205546 @205547
+  @205546p @205547
   Scenario Outline: Field History - PM user- To verify, User change the negative value for percent field from backend then it should display value inside bracket in the new value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
