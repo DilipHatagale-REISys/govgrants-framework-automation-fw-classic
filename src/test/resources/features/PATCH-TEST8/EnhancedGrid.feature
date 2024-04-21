@@ -647,7 +647,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257551
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
 
-  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smoke
+  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -665,7 +665,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379184
     Then I see Advance Filter is disabled from table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
-  @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
+  @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -682,7 +682,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see Menu icon is disabled from planning flex table "Budget Periods"
 
-  @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of child flex table at enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -702,7 +702,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
 
-  @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -723,7 +723,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Construction" inside table
     Then I see input box is not displayed for ID inside child Flex table
 
-  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -742,7 +742,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Focus Area" not displayed in enhanced grid table column title
 
-  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -799,7 +799,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:appBudgetPeriodTableId---"
 
-  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
+  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -817,7 +817,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as PDF" options inside "Budget Periods" disabled
 
-  @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smoke
+  @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -835,7 +835,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
 
-  @35439  @379181 @smoke @SanityPATCH @SanityPATCHEGrid
+  @35439  @379181 @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -852,7 +852,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smoke
+  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -905,7 +905,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in enhanced flex grid
 
-  @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smoke
+  @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smokePATCH
   Scenario Outline: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -965,7 +965,7 @@ Business Need: EnhancedGrid Component Scenarios
       | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
-  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
+  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1123,7 +1123,7 @@ Business Need: EnhancedGrid Component Scenarios
    # And I expand nested table containing column value "BP01"
     Then I see "Test Automation" shown inside flex table with id "---program:-:appBudgetPeriodTableId---"
 
-  @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smoke
+  @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -1141,7 +1141,7 @@ Business Need: EnhancedGrid Component Scenarios
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
 
-  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smoke
+  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1160,7 +1160,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Edit" icon for "Travel" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     Then I see input box is not displayed for budget period end date
 
-  @41375    @hideColumnJSONfieldAtEnhancedGrid-gPlanning @smoke
+  @41375    @hideColumnJSONfieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -1177,7 +1177,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Fee Fund Requested" not displayed in enhanced grid table column title
 
-  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smoke
+  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -1359,7 +1359,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Test Automation" shown inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
+  @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1401,7 +1401,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see column "Fee Fund Requested" value is in "Descending" order
 
-  @44535    @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
+  @44535    @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1443,7 +1443,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see column "Category Name" value is in "Descending" order
 
-  @wip @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smoke @Doubted
+  @wip @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smokePATCH @Doubted
   Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1464,7 +1464,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newSoqlFilter                      | oldSoqlFilter                      |
       | Application__c ='{!applicationid}' | Application__c ='{!applicationid}' |
 
-  @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smoke
+  @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing sequence of edit row level action item at enhanced grid parent table from config and validating it inside enhanced grid table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1519,7 +1519,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379203
     Then I see Advance Filter is disabled from table "---program:-:appBudgetPeriodTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
-  @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Disabling the Menu Field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1538,7 +1538,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then Then I see Menu icon is disabled from planning child flex table "Budget Categories" under Monitoring Schedule For All Active Grants table
 
-  @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1558,7 +1558,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
     Then I see "Download as PDF" options inside "Budget Categories" disabled
 
-  @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of XLS download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -1598,7 +1598,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379200
     Then I see quick search option disabled from enhanced grid for child flex table "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smoke
+  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1731,7 +1731,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see new tab is opened
 
-  @45275    @viewActionOpenInSameWindowAtChildFlexTableForEnhancedGrid-gPlanning @smoke
+  @45275    @viewActionOpenInSameWindowAtChildFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate enhanced grid view action open in same window for child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1752,7 +1752,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see no new tab is opened
 
-  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
+  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1815,7 +1815,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" button inside "Budget Categories" enhanced grid
 
-  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario: row from config anf validating it inside enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1833,7 +1833,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Test New" row action Button at position "4" inside tableid "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
-  @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario:  Verify Location field = row at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1853,7 +1853,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Test New" icon for "Personnel" is displayed inside flex table
 
-  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smoke
+  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify  Sequence field at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1911,7 +1911,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
+  @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Grouping field at parent flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1947,7 +1947,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Budget Period" not displayed in enhanced grid table column title
 
-  @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
+  @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Sub Total at parent flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2046,7 +2046,7 @@ Business Need: EnhancedGrid Component Scenarios
       | styleClassValue                                             |
       | {negativeValue:row[column]='Road Construction Annoumsment'} |
 
-  @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smoke
+  @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario:  Verifying Enable Row Grouping (Child Flex Table )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2373,7 +2373,7 @@ Business Need: EnhancedGrid Component Scenarios
       | fieldNewValue                                      |
       | BudgetPeriodTitle__c DESC,FeeFundRequested__c DESC |
 
-  @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
+  @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @smokePATCH
   Scenario Outline: Verify Sort by multiple field at Child Enhanced flex grid for ascending order
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2399,7 +2399,7 @@ Business Need: EnhancedGrid Component Scenarios
       | fieldNewValue                      |
       | TotalMatch__c ASC,CashMatch__c ASC |
 
-  @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @Smoke
+  @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @smokePATCH
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2424,7 +2424,7 @@ Business Need: EnhancedGrid Component Scenarios
       | fieldNewValue                        |
       | TotalMatch__c DESC,CashMatch__c DESC |
 
-  @wip @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke @doubted
+  @wip @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH @doubted
   Scenario Outline:  Verify Filter Clause field at child flex table config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |

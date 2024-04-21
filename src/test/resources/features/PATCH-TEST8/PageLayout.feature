@@ -50,7 +50,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "New" in flex table with id "Programs"
     Then I see "Creating New Program for Automation" shown as over view header
 
-  @34052    @hideDecisionExpression-gPlanning @smoke
+  @34052    @hideDecisionExpression-gPlanning @smokePATCH
   Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
@@ -79,7 +79,7 @@ Business Need: Page Layout Component Scenarios
       | new_hide_config     | old_hide_config                                                                                                                                                                                                      |
       | Status__c='Created' | Status__c='Active' OR Status__c='Submitted for Approval' OR Status__c='Approved' OR Status__c='Closed' OR Status__c='Disapproved' OR Status__c='Change Requested' OR Status__c='Disapproved' OR Status__c='Rejected' |
 
-  @34053    @hideExpressionJSON-gPlanning @smoke
+  @34053    @hideExpressionJSON-gPlanning @smokePATCH
   Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -95,7 +95,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @34069 @smoke
+  @34069 @smokePATCH
   Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -171,7 +171,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
-  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
+  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smokePATCH
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -223,7 +223,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
-  @35817p    @hideForContextFieldAtPageLayout-gPlanning @smoke
+  @35817p    @hideForContextFieldAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide overview for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -303,7 +303,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see pencil icon as "Overview" sub tab
 
-  @35949    @isActiveFieldAtPageTab-gPlanning @smoke
+  @35949    @isActiveFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Disabling of Overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -319,7 +319,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35955    @hideForUserAtPageTab-gPlanning @smoke
+  @35955    @hideForUserAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -335,7 +335,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35956    @hideForProfileAtPageTab-gPlanning @smoke
+  @35956    @hideForProfileAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -351,7 +351,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
+  @35959    @hideDecisionFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for created state from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -383,7 +383,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see complete header overview tab is displayed at view detail page
 
-  @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
+  @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding overview tab from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -415,7 +415,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Program Information Automation" page block displayed
 
-  @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
+  @35980    @isActiveFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Disabling of program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -463,7 +463,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
 
-  @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
+  @36037    @hideForContextFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hide program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -479,7 +479,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
+  @36038    @hideForUserFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
@@ -535,7 +535,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @36039    @hideForProfileAtPageBlock-gPlanning @smoke
+  @36039    @hideForProfileAtPageBlock-gPlanning @smokePATCH
   Scenario: Hide program information page block for particular user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -607,7 +607,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
+  @36042    @hideDecisionFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding of program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -623,7 +623,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke @wip
+  @36045    @flexTableNameFieldAtPageBlock-gPlanning @smokePATCH @wip
   Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -642,7 +642,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Roles And Responsibilities flex table inside page block
 
-  @36046    @flexGridNameFieldAtPageBlock-gPlanning @smoke
+  @36046    @flexGridNameFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Changing flex grid rendering by changing name inside flex grid name field at page block from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -661,7 +661,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 
-  @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
+  @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -703,7 +703,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Award Letter" is not displayed inside flex table
 
-  @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
+  @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -721,7 +721,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see field "Budgeting Preference" inside page block
 
-  @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
+  @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -785,7 +785,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
+  @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hide program name field at page block detail from config validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -801,7 +801,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
+  @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
@@ -817,7 +817,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
+  @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -889,7 +889,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
+  @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
@@ -905,7 +905,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
+  @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -926,7 +926,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program Sub Type is required to save. |
 
-  @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
+  @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                  | fieldOrignalValue                                     | coreComponentField    | filterId         |
@@ -960,7 +960,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
+  @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -978,7 +978,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
+  @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name while making change for is hidden field as false from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
@@ -994,7 +994,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
+  @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name while making change for read decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1043,7 +1043,7 @@ Business Need: Page Layout Component Scenarios
     When I click search icon for lookup "Internal Organization"
     Then I see modal box with body "Organization Automation" is displayed
 
-  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
+  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
@@ -1060,7 +1060,7 @@ Business Need: Page Layout Component Scenarios
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
-  @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke @wip
+  @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smokePATCH @wip
   Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1084,7 +1084,7 @@ Business Need: Page Layout Component Scenarios
       | oldLookupFilter                                                                    | newLookupFilter       | newLookupDisplayName |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Status__c = 'Created' | Name,Status__c       |
 
-  @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smoke
+  @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue   | filterId         |
@@ -1118,7 +1118,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
 
-  @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
+  @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: Disabling of edit button action at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1151,7 +1151,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
-  @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smoke
+  @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: validate page layout action button field- Edit opens in New window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -1180,7 +1180,7 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I see new tab is opened
 
-  @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smoke
+  @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1273,7 +1273,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText                                       |
       | Help Text for Automation | Name represents for what the program is meant for. |
 
-  @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
+  @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding program information page block from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1289,7 +1289,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
+  @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1305,7 +1305,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
+  @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
