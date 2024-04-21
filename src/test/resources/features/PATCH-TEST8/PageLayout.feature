@@ -1940,7 +1940,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I pause execution for "3" seconds
     Then I see "<requiredValue>" shown as inside "SelectNGOContacts"
 
@@ -4174,7 +4174,7 @@ Business Need: Page Layout Component Scenarios
     When I close modal by clicking the top right x button
     Then I see table with header "Notes" contains records "Notes Record"
 
-  @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
+  @120237p    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4183,7 +4183,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I pause execution for "5" seconds
     Then I do not see loading icon at "Associate" modal
 
@@ -4196,7 +4196,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I wait for "5" seconds
     Then I do not see loading icon at "Associate" modal
 

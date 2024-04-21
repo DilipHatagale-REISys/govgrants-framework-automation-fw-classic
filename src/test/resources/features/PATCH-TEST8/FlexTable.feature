@@ -5330,7 +5330,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages" displayed as a Header on flex table
 
@@ -5365,7 +5365,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -5380,7 +5380,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -12387,7 +12387,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
     Examples:
@@ -12420,7 +12420,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12522,7 +12522,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12574,7 +12574,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
     Examples:
@@ -12611,7 +12611,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
     Examples:
@@ -12648,7 +12648,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -12686,7 +12686,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12726,7 +12726,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12767,7 +12767,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12810,7 +12810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -12856,7 +12856,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -12900,7 +12900,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -18675,7 +18675,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details

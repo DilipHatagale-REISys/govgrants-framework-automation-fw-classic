@@ -19,6 +19,7 @@ Business Need: history Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
+    And I pause execution for "5" seconds
     Then I softly see "{SavedValue:PEGMSID}" value in flex table id "---program:-:historyTableId---"
 
   @69578p    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
@@ -108,7 +109,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
 
-  @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
+  @69943p    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
   Scenario: Validating status as REJECTED inside Approval history table after approval of record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

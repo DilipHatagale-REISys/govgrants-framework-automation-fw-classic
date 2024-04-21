@@ -157,7 +157,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206343 @208666
+  @206343p @208666
   Scenario: All forms- SPI- UI- Verify in Edit Form ID should get populated UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -167,13 +167,17 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01313" is displayed on form layout
+    Then I see Form Id "FN-03527" is displayed on form layout
     #208666
     Then I see Form Name "Program Specific Application form" is displayed on form layout
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01314" is displayed on form layout
+#    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+#    When I click on "Edit" icon for "{SavedValue:SPI3 Username}" inside flex table with id "---applicationReview:-:flexGridAppContactTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
+    Then I see Form Id "FN-03528" is displayed on form layout
     #208666
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
 
@@ -964,8 +968,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Application Program For Announcement Testing"
+    When I click on "View" icon for "Application Program For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
