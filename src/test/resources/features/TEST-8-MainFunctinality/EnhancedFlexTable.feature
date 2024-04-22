@@ -439,14 +439,14 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
-  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity @SanityEnhancedTable
+  @76932o @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity @SanityEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Quick Search | false         | DataTableEnhanceProgramContacts |                           |                            |
+      | Flex Table:General     | Enable Quick Search | false         | DataTableEnhanceProgramContacts |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

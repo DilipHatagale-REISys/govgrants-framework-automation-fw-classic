@@ -652,7 +652,7 @@ public class FlexTableSteps {
     }
 
     @And("^I click on \"([^\"]*)\" button for \"([^\"]*)\" inside table id \"([^\"]*)\"$")
-    public void iClickOnButtonForInsideTableId(String buttonNmae, String columnName, String tableId) {
-        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//div[@class='row ng-scope']//td//span[@title='" + columnName + "']/ancestor::div//td//div[@class='actionColIconWrap']//span//a[@title='" + buttonNmae + "']"));
+    public void iClickOnButtonForInsideTableId(String buttonName, String columnName, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='"+tableId+"']//table//tr//*[@title='"+columnName+"']//ancestor::td//following-sibling::td//action//*[@title='"+buttonName+"']"));
     }
 }
