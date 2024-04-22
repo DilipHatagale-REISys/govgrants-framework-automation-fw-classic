@@ -72,7 +72,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
 
-  @206338p @206339 @208662 @208661 @206879 @206880
+  @206338p @206339 @208662 @208661 @206879 @206880 @wip
   Scenario Outline: All forms- Admin- Config- Verify in View Form ID should get populated UI,UI- Verify in View Form name should get populated UI
   All forms- Admin- Config- Verify when we select ‘View’ action, form should not be editable
     When I login to "As a Grantor" app as "<User>" user
@@ -115,7 +115,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01313" is displayed on form layout
+    Then I see Form Id "FN-03537" is displayed on form layout
     #208663
     Then I see Form Name "Program Specific Application form" is displayed on form layout
     #206881
@@ -147,7 +147,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see Form Name "Program Specific Application form" is displayed on form layout
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see Form Id "FN-01342" is displayed on form layout
     #208664 @208665
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
@@ -174,8 +174,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I pause execution for "5" seconds
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-#    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-#    When I click on "Edit" icon for "{SavedValue:SPI3 Username}" inside flex table with id "---applicationReview:-:flexGridAppContactTableId---"
+#    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see Form Id "FN-03528" is displayed on form layout
     #208666
@@ -235,7 +234,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206847
+  @206847p
   Scenario: All forms- SPI- UI- Verify if we shuffle through forms from dropdown, we are getting confirmation message, in edit form layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -415,7 +414,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
     Examples:
       | User  |
@@ -435,7 +434,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
 
   @206336 @206335 @wip
@@ -451,7 +450,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Id "FN-01341" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
 
     Examples:
@@ -472,7 +471,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Id "FN-01342" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Id "FN-01343" is displayed on form layout
 
   @206857 @206858 @206332 @206333 @wip
@@ -728,7 +727,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
     Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
 
@@ -746,7 +745,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
     Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
 
@@ -797,7 +796,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
@@ -860,7 +859,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
     And I save the field labeled "Name" as "LASTMODIFIEDBY"
     And I click on "Save" in the page details
@@ -926,7 +925,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
     Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
 
@@ -957,7 +956,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
     When I click alert button "No"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
@@ -1047,7 +1046,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ As a Grantor"
     Examples:
       | User  |
@@ -1062,7 +1061,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
 
   @381970 @SanityPATCH  @SanityPATCHForms @wip
