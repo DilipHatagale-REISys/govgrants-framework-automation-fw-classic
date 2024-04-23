@@ -4040,7 +4040,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+#      | PM    |
 
   @338630 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator

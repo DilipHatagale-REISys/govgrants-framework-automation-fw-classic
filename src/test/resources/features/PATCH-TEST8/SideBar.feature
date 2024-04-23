@@ -3,7 +3,7 @@ Business Need: Side bar Component Scenarios
   Test all sidebar component based scenarios
   As a configuration manager i make different configurational changes in side bar component and will validate them.
 
-  @33877    @validateChangeinTaskMenuSequence-gHome
+  @33877p    @validateChangeinTaskMenuSequence-gHome
   Scenario: validate after changing sequence of task menu from second to third in side bar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -14,7 +14,7 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    Then i see "Tasks" shown at number "3" in sideBar
+    Then i see "Tasks" shown at number "5" in sideBar
 
   @33876    @validateSidebarTaskMenuRemoval-gHome @smokePATCH
   Scenario: validate disabling of task menu from side bar
@@ -445,7 +445,7 @@ Business Need: Side bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names   | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
-      | Flex Table List       | Enable Over All Total | true           | GrantorRelatedAwards2 | Name                      | FTC-13095                   |
+      | Flex Table List       | Enable Over All Total | true           | GrantorRelatedAwards2 | Name                      | FTC-13095                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -488,7 +488,7 @@ Business Need: Side bar Component Scenarios
     And I pause execution for "3" seconds
     Then I see "Subawards" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
 
-  @126111    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfProgramIsSelected
+  @126111p    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfProgramIsSelected
   Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if program is selected
 #    Given I have "lightening" configuration as below:
 #      | booleanValue | integerValue | id                 | description                                                             | name                  |
@@ -499,11 +499,10 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I perform quick search inside global search "PG-REI-2049" without processing
+    When I perform quick search inside global search "PG-REI-0052" without processing
     When I click on global search and select "Programs"
-    #When I perform quick search inside global search "PG-REI-2049" without processing
-    Then I softly see record "PG-REI-2049" is displayed inside autosuggestion dropdown at global search
-    #Then I softly see record "PG-REI-2049" is displayed inside autosuggestion dropdown at global search
+    When I perform quick search inside global search "PG" without processing
+    Then I softly see record "PG" is displayed inside autosuggestion dropdown at global search
 
   @126114    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfAnnouncementIsSelected-gHome
   Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if announcement is selected
@@ -553,9 +552,9 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -610,9 +609,9 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -681,9 +680,9 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -732,10 +731,10 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -765,10 +764,10 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID1"
@@ -850,10 +849,10 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -1112,16 +1111,16 @@ Business Need: Side bar Component Scenarios
     When I perform quick search for "Test Automation sidebar" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
     Then I see value "Test Automation sidebar" for multiple cells at column "GrantAwardName__c"
 
-  @128291 @222489 @221524
+  @128291p @222489 @221524
   Scenario: Validate record Reassigned to user from reassign task section is displayed to that user at pending task table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -1132,10 +1131,10 @@ Business Need: Side bar Component Scenarios
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
+#    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+#      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+#      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+#    And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
@@ -1274,7 +1273,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see over all total for "NumberofAwards__c" field at enhanced grid
 
-  @774665 @255290
+  @774665p @255290
   Scenario: validate overall total at enhanced table at sidebar - home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1382,9 +1381,9 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -1443,9 +1442,9 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"

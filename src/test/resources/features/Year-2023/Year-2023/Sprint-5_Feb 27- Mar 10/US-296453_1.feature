@@ -17,8 +17,15 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    And I click on "fa fa-pencil" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "Automation Internal Program for Testing" into field "ProgramName__c"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
     When I enter value "Test_Description" into field "fieldBeneficiaryEligibility__c"
     When I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -42,8 +49,15 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    And I click on "fa fa-pencil" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "Automation Internal Program for Testing" into field "ProgramName__c"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
     When I enter values into fields
       | Value                                                 | Field                          |
       | <xss onafterscriptexecute=alert(1)><script>1</script> | fieldBeneficiaryEligibility__c |

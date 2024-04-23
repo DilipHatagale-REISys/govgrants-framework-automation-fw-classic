@@ -49,7 +49,7 @@ Business Need: Approval Process Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-#      | PM    |
+      | PM    |
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
