@@ -5406,8 +5406,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I softly do not see "Fee Fund Requested" in flex table header "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
-  @192950 @sprint1 @userstory_176992
-  Scenario: E-grid- To verify , Number  field should restrict the field limit
+  @192950 @sprint1 @u serstory_176992
+  Scenario Outline: E-grid- To verify , Number  field should restrict the field limit
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
@@ -5433,7 +5433,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @190160 @sprint25
-  Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
+  Scenario Outline: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior         |                   | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |

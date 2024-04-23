@@ -239,11 +239,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
