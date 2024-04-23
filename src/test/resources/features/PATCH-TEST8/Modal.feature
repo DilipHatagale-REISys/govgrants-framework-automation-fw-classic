@@ -23,7 +23,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
+    When I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
