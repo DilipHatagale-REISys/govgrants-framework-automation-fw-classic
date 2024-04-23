@@ -1,4 +1,4 @@
-@CustomApp-PATCHcomponent @regression-PATCH @customApp
+@CustomApp-PATCHcomponent @regression-PATCH @customApp @vrush-module
 Business Need: customApp Component Scenarios
   Test all customApp component based scenarios
   As a configuration manager i make different configurational changes in customApp component and will validate them.

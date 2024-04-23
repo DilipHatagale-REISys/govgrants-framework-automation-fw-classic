@@ -1,4 +1,4 @@
-@FooterLinks-PATCHcomponent @regression-PATCH @footerLinks
+@FooterLinks-PATCHcomponent @regression-PATCH @footerLinks @vrush-module
 Business Need: Footer Links Component Scenarios
   Test all Footer configuration based scenarios
   As a configuration manager i make different changes related to footer links and will validate them in history component.

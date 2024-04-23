@@ -3,7 +3,7 @@ Business Need: Expression Builder Component Scenarios
   Test all expression builder component based scenarios
   As a configuration manager i make different configurational changes in expression builder component and will validate them.
 
-  @42233    @hideExpressioJsonForRightOperandForPMUser-gAnnouncement @smoke
+  @42233    @hideExpressioJsonForRightOperandForPMUser-gAnnouncement @smokePATCH
   Scenario: validate disabling of create button for PM user from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -91,7 +91,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table
 
-  @42479    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement @smoke
+  @42479    @hideExpressioJsonForRightOperandForUserTypeInternalWithOperatorIn-gAnnouncement @smokePATCH
   Scenario: validate disabling of create button for user type Internal with Operator In from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -175,7 +175,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
+  @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smokePATCH
   Scenario: validate disabling of create button for context view with operator IN -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -339,7 +339,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "Test announcement 06-06" inside table
     Then I see "Create Application" button is not displayed at view detail page
 
-  @42708    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorAND-gPlanning @smoke
+  @42708    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorAND-gPlanning @smokePATCH
   Scenario: validate disabling of Associate button for profile system adminitrator with operator AND -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -662,7 +662,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
-  @43226    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEquals-gPlanning @smoke
+  @43226    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEquals-gPlanning @smokePATCH
   Scenario: validate Associate button is present for Field with operator NotEquals -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -696,7 +696,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
-  @43720    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorEqualsTo-gPlanning @smoke
+  @43720    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorEqualsTo-gPlanning @smokePATCH
   Scenario: validate disabling of Associate button for field using picklist value grant with operator Equals To -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -747,7 +747,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table
 
-  @43723    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorNotEqualsTo-gPlanning @smoke
+  @43723    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorNotEqualsTo-gPlanning @smokePATCH
   Scenario: validate Associate button is present for Field using lookup with operator Not Equals To -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -781,7 +781,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
-  @43883    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEquals-gAnnouncement @smoke
+  @43883    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEquals-gAnnouncement @smokePATCH
   Scenario: validate disabling of Associate button for field with operator Less than equals -gAnnouncement
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -916,7 +916,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @43891    @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning @smoke
+  @43891    @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide Submit for approval button for Profile PM (PM and System Admin)using hide expression Json -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -964,7 +964,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is displayed
 
-  @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smoke
+  @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide Submit for approval button for system admin using Profile PM with operator Not In -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1141,7 +1141,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Submit For Approval" button is not displayed
 
-  @44282    @hideExpressioJsonForLeftOperandForUserAppStateAsAdministratorWithOperatorInAtPageLayout-gPlanning @smoke @wip
+  @44282    @hideExpressioJsonForLeftOperandForUserAppStateAsAdministratorWithOperatorInAtPageLayout-gPlanning @smokePATCH @wip
   Scenario: Hide Activate button for user type state as Administrator with operator IN-gSetup
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1173,7 +1173,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @44285    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning @smoke
+  @44285    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator AND-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1237,7 +1237,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @44318    @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning @smoke
+  @44318    @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1285,7 +1285,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @45294    @HideExpressionLeftOperandUseAllDataTypesOfFieldUsingANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning @smoke
+  @45294    @HideExpressionLeftOperandUseAllDataTypesOfFieldUsingANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning @smokePATCH
   Scenario: Hide Submit for approval button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1301,7 +1301,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside tableAnd I pause execution for "10" seconds
     Then I see "Submit For Approval" button is not displayed
 
-  @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smoke
+  @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smokePATCH
   Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using OR operator for fields text,picklist,date,lookup,longtextarea -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1366,7 +1366,7 @@ Business Need: Expression Builder Component Scenarios
     Then I cannot see "Overview" sub tab at view detail page
 
 
-  @45313    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smoke
+  @45313    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smokePATCH
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1414,7 +1414,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smoke
+  @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smokePATCH
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1462,7 +1462,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
+  @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smokePATCH
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1494,7 +1494,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
+  @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smokePATCH
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1574,7 +1574,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @45705    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_ADMIN_User_Profile @smoke
+  @45705    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_ADMIN_User_Profile @smokePATCH
   Scenario: Hide Information from Overview Tab for PM-ADMIN User type internal using IN operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1606,7 +1606,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @45707    @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM @smoke
+  @45707    @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM @smokePATCH
   Scenario: Hide Information from Overview Tab for ADMIN PM User type internal using LeftOperandsprofileNOTINoperator(ADMIN,PM)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1750,7 +1750,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @45715    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile @smoke
+  @45715    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile @smokePATCH
   Scenario: Hide Information from Overview Tab for ADMIN User type internal using (Context NOT IN( Edit,Create) OR Profile IN (System Administrator ))-Validate using PM profile
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1910,7 +1910,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
-  @45843    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_ProgramType__c_Grant @smoke
+  @45843    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_ProgramType__c_Grant @smokePATCH
   Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field(Equals) ProgramType__c = Grant)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1974,7 +1974,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
-  @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smoke
+  @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smokePATCH
   Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field Greater than equals( StartDate__c >= 11/30/2020 )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2006,7 +2006,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
-  @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
+  @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smokePATCH
   Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field Not Equals( Account__r.Name != Department of Community Health )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2108,7 +2108,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
-  @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
+  @45917    @hide_expression_ProgramCode_With_UserType_Internal @smokePATCH
   Scenario: Set up configuration for Hide Program code from Overview page block using user type internal at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2156,7 +2156,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
-  @45920    @hide_expression_ProgramCode_With_Context_In_View @smoke
+  @45920    @hide_expression_ProgramCode_With_Context_In_View @smokePATCH
   Scenario: Set up configuration for Hide Program code from Overview page block using context In view at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2220,7 +2220,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
-  @45925    @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor @smoke
+  @45925    @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor @smokePATCH
   Scenario: Set up configuration for Hide Program code from Overview page block using UserApp In State As Grantor at program edit page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2492,7 +2492,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see "Contacts" page block displayed
 
-  @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
+  @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smokePATCH
   Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2572,7 +2572,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smoke
+  @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smokePATCH
   Scenario: Set up configuration to hide Information inside Overview Tab using Profile IN System Administrator AND Profile IN PM
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2620,7 +2620,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
-  @45991    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer @smoke
+  @45991    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer @smokePATCH
   Scenario: Set up configuration to hide Information inside Overview Tab using (UserType IN(Internal,Applicant,Reviewer ))
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -2700,7 +2700,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smoke
+  @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smokePATCH
   Scenario: Set up configuration for Hide Website address from Overview page block details using Field (FunderType__c CONTAINS Federal) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2748,7 +2748,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
-  @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
+  @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smokePATCH
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c >= 11/30/2020) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2780,7 +2780,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
-  @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smoke
+  @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smokePATCH
   Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2860,7 +2860,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
-  @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smoke
+  @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smokePATCH
   Scenario: Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2972,7 +2972,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
-  @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smoke @wip
+  @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smokePATCH @wip
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN(Internal) -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
@@ -3000,7 +3000,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
-  @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke @wip
+  @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smokePATCH @wip
   Scenario: Set up configuration for display Manage funding source from side bar using Profile IN (System Administrator) -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
@@ -3084,7 +3084,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
-  @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke @wip
+  @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH @wip
   Scenario: Set up configuration for hide Manage funding source from side bar using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | coreComponentField | filterId         |
@@ -3168,7 +3168,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
-  @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
+  @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smokePATCH
   Scenario: Set up configuration for display state as grantor custom app using User Type IN Internal -gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -3252,7 +3252,7 @@ Business Need: Expression Builder Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
-  @46413    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM @smoke
+  @46413    @render_expression_CustomApp_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM @smokePATCH
   Scenario: Set up configuration for display state as grantor custom app using Profile IN System Administrator OR Profile IN PM -gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -3276,7 +3276,7 @@ Business Need: Expression Builder Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
-  @46414    @render_expression_CustomApp_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
+  @46414    @render_expression_CustomApp_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
   Scenario: Set up configuration for hide state as grantor custom app using (UserType NOT IN (Internal) AND Profile NOT IN (System Administrator) -gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -3386,7 +3386,7 @@ Business Need: Expression Builder Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
-  @47296    @render_expression_CustomApp_With_Profile_IN_PM_OR_UserType_IN_Internal @smoke
+  @47296    @render_expression_CustomApp_With_Profile_IN_PM_OR_UserType_IN_Internal @smokePATCH
   Scenario: Set up configuration for display state as grantor custom app using Profile IN PM OR UserType IN Internal -gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -3410,7 +3410,7 @@ Business Need: Expression Builder Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
-  @47302    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smoke @egrid
+  @47302    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3446,7 +3446,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
 
-  @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke @egrid
+  @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3518,7 +3518,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
 
-  @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke @egrid
+  @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH @egrid
   Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3590,7 +3590,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
 
-  @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke @egrid
+  @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserApp IN State As grantor and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3626,7 +3626,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is displayed inside flex table
 
-  @47318    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @smoke @egrid
+  @47318    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3680,7 +3680,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
 
-  @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smoke @egrid
+  @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of child enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3718,7 +3718,7 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" icon for "Personnel" is displayed inside flex table
 
-  @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smoke @egrid
+  @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3794,7 +3794,7 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" icon for "Personnel" is not displayed inside flex table
 
-  @47331    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke @egrid
+  @47331    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH @egrid
   Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3870,7 +3870,7 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" icon for "Personnel" is displayed inside flex table
 
-  @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smoke @egrid
+  @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -3980,7 +3980,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
-  @48481    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal @smoke
+  @48481    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal @smokePATCH
   Scenario: Set up configuration to display view action of program flex table using UserType NOTIN Internal and validating it inside flex table of program-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4070,7 +4070,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
-  @48597    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal @smoke
+  @48597    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal @smokePATCH
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
@@ -4102,7 +4102,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
-  @48601    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor @smoke
+  @48601    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH
   Scenario: Set up configuration to hide Edit action of program flex table using User App IN State As grantor and validating it inside flex table of program-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4267,7 +4267,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
-  @48611    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @smoke
+  @48611    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @smokePATCH
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal OR profile NOTIN system administrator and validating it inside flex table of program-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -4297,7 +4297,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
-  @48613    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator @smoke
+  @48613    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator @smokePATCH
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator and validating it inside program detail page-planning
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
@@ -4361,7 +4361,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
-  @48617    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
+  @48617    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
   Scenario: Set up configuration to display submit for approval status of program from step progress bar using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating it inside program detail page-planning
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
@@ -4425,7 +4425,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
-  @48621    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor @smoke
+  @48621    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor @smokePATCH
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using User App IN State AS Grantor and validating it inside program detail page-planning
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
@@ -4505,7 +4505,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
-  @48626    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient @smoke
+  @48626    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient @smokePATCH
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using UserApp IN State As grantor, Admin, Recipient and validating it inside program detail page-planning
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
@@ -4609,7 +4609,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
-  @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smoke
+  @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smokePATCH
   Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4684,7 +4684,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Forward" in the approval decision
 
-  @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smoke
+  @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smokePATCH
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4834,7 +4834,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send back |
 
-  @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
+  @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
   Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5211,7 +5211,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Send back" in the approval decision
 
-  @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smoke
+  @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smokePATCH
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -6154,7 +6154,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
 
-  @82059    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smoke @egrid
+  @82059    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON by using OR and AND operator in multiple groups at row level action - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6206,7 +6206,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
-  @82256    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByORAndANDOperatorAtTopLevelActions-EGrid @enhancedGrid @smoke @egrid
+  @82256    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByORAndANDOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6223,7 +6223,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
-  @82263    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smoke @egrid
+  @82263    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at row level action - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6242,7 +6242,7 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Edit" icon for "Personnel" is not displayed inside flex table
 
-  @82268    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtTopLevelActions-EGrid @enhancedGrid @smoke @egrid
+  @82268    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at top level action - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6261,7 +6261,7 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see no "Test New" button inside "Budget Categories" enhanced grid
 
-  @82364    @verifyHideExpressionJSONAtDataTableEnhanceProgramContactsForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @flexTableEnhanced @smoke
+  @82364    @verifyHideExpressionJSONAtDataTableEnhanceProgramContactsForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @flexTableEnhanced @smokePATCH
   Scenario: Verify Hide expression JSON at enhanced data table by using OR and AND operator in multiple groups at row level action - enhanced data table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6279,7 +6279,7 @@ Business Need: Expression Builder Component Scenarios
     #When I perform quick search for "Test Announcement 24-04-2018" in "---program:-:flexGridDataTableEnhanceProgramContactsId---" panel
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
 
-  @82629   @verifyHideExpressionJSONForDataTableEnhanceProgramContactsForMultipleGroupsByORAndANDOperatorAtTopLevelActions @flexTableEnhanced @smoke
+  @82629   @verifyHideExpressionJSONForDataTableEnhanceProgramContactsForMultipleGroupsByORAndANDOperatorAtTopLevelActions @flexTableEnhanced @smokePATCH
   Scenario: Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced data table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |

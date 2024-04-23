@@ -3,14 +3,14 @@ Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
 
-  @69537   @VerifyDisplayOfRecordsInHistoryTableAsPerSelectedObjectFromDropDown
+  @69537p   @VerifyDisplayOfRecordsInHistoryTableAsPerSelectedObjectFromDropDown
   Scenario: Validate all program records are shown in Field History table if Program object is selected in dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19,16 +19,17 @@ Business Need: history Component Scenarios
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
+    And I pause execution for "5" seconds
     Then I softly see "{SavedValue:PEGMSID}" value in flex table id "---program:-:historyTableId---"
 
-  @69578    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
+  @69578p    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -72,7 +73,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -108,14 +109,14 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
 
-  @69943    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
+  @69943p    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordRejection
   Scenario: Validating status as REJECTED inside Approval history table after approval of record
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -158,7 +159,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -202,7 +203,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -245,7 +246,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -284,7 +285,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -305,7 +306,7 @@ Business Need: history Component Scenarios
       | en_US  | America/New_York |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
@@ -326,7 +327,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -429,7 +430,7 @@ Business Need: history Component Scenarios
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
 
-  @114727 @205598 @205599 @205604 @205605 @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
+  @114727p @205598 @205599 @205604 @205605 @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario Outline: validate the currency field format under field history table inside new value column
   History Field : Admin User -To verify, User change the currency field from backend then it should display changed and previous value in the new and old value column
   Field History -PM user - To verify, User change the currency field value from backend then it should display only one time in the field history table
@@ -438,7 +439,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -461,14 +462,14 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
+  @114729p  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-4982                   | PBD-17091                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-4982                   | PBD-24009                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -482,10 +483,10 @@ Business Need: history Component Scenarios
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Edit" in the page details
-    And I enter value "$200,000.50" into field "fieldExpectedFunding__c"
+    And I enter value "$200,000.50" into field "ExpectedFunding__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-    And I enter value "$300,000.55" into field "fieldExpectedFunding__c"
+    And I enter value "$300,000.55" into field "ExpectedFunding__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
@@ -493,20 +494,20 @@ Business Need: history Component Scenarios
     Then I softly see "$200,000.50" shown inside "Old Value" column in history table
     Then I softly see "$300,000.55" shown inside "New Value" column in history table
 
-  @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
+  @120103p  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -535,7 +536,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
-  @121152  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
+  @121152p  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
   Scenario: validate that approval history table , field history table and snapshot history is displayed a newly created record
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -642,7 +643,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205059 @205060
+  @205059p @205060
   Scenario Outline: Field History - PM user - User should be able search field history by applying advance filter.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -687,7 +688,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205098 @205099
+  @205098 @205099 @skiponjenkins
   Scenario Outline:Field History- PM user - User should be able to perform export functionality 'Download as PDF' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as PDF' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -707,7 +708,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205100 @205101 @needtocheckmanually
+  @205100 @205101 @needtocheckmanually @skiponjenkins
   Scenario Outline: Field History- PM user - User should be able to perform export functionality 'Download as CSV' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as CSV' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -780,8 +781,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Time Zone Testing For Admin"
-    When I click on "Edit" icon for "Automation Internal Program for Time Zone Testing For Admin" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I enter value "10" into field "fieldFundedAmount__c"
     And I enter value "0" into field "fieldStartDate__c"
@@ -794,7 +795,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see "{SavedValue:FundedAmount}" shown inside "New Value" column in history table
 
-  @205603
+  @205603p
   Scenario:  History Field : PM User -To verify, User change the negative currency field value from backend then it should display in the new value column
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -802,11 +803,11 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
@@ -816,7 +817,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see "{SavedValue:FundedAmount}" shown inside "New Value" column in history table
 
-  @205606 @205607
+  @205606p @205607
   Scenario Outline: Field History - ADMIN user - To verify, User change the date field from edit layout then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -824,11 +825,11 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "Project Period End Date" as "OldEndDate"
@@ -915,12 +916,12 @@ Business Need: history Component Scenarios
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I enter value "8456321479" into field "fieldPhone_Field__c"
+    And I enter value "8456321479" into field "Phone_Number__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Phone Number" as "OldPhoneNumber"
     And I click on "Edit" in the page details
-    And I enter value "9845632147" into field "fieldPhone_Field__c"
+    And I enter value "9845632147" into field "Phone_Number__c"
     And I click on "Save" in the page details
     And I save the field labeled "Phone Number" as "NewPhoneNumber"
     And I refresh the page
@@ -932,7 +933,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205770 @205771
+  @205770p @205771
   Scenario Outline: Field History : PM user - To verify, User change the checkbox field value from edit layout then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -960,7 +961,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205572 @205584
+  @205572p @205584
   Scenario Outline: Field History -PM user -To verify, User change the text field value from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -973,11 +974,11 @@ Business Need: history Component Scenarios
     And I enter value "State" into field "InternalOrganization__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
-    And I save the field labeled "Internal Organization" as "OldInternalOrganization"
+    And I save the field labeled "Internal Organization Text" as "OldInternalOrganization"
     And I click on "Edit" in the page details
     And I enter value "Nation" into field "InternalOrganization__c"
     And I click on "Save" in the page details
-    And I save the field labeled "Internal Organization" as "NewInternalOrganization"
+    And I save the field labeled "Internal Organization Text" as "NewInternalOrganization"
     And I refresh the page
     When I navigate to "History" sub tab
     Then I see "{SavedValue:NewInternalOrganization}" shown inside "New Value" column in history table
@@ -987,7 +988,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205760 @205762
+  @205760p @205762
   Scenario Outline: Field History : PM user - To verify, User change the date time field from backend then it should display changed and previous value in the new and old value column
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -997,12 +998,12 @@ Business Need: history Component Scenarios
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
+    And I enter value "09/27/2023 07:37 PM" into field "Date_and_Time__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Date and Time" as "OldDateAndTime"
     And I click on "Edit" in the page details
-    And I enter value "08/27/2027 10:00 PM" into field "DateandTime__c"
+    And I enter value "08/27/2027 10:00 PM" into field "Date_and_Time__c"
     And I click on "Save" in the page details
     And I save the field labeled "Date and Time" as "NewDateAndTime"
     And I refresh the page
@@ -1068,7 +1069,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205546 @205547
+  @205546p @205547
   Scenario Outline: Field History - PM user- To verify, User change the negative value for percent field from backend then it should display value inside bracket in the new value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1095,7 +1096,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205506 @205507
+  @205506p @205507
   Scenario Outline: Field history: PM user-To verify, User change the percent field from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1149,14 +1150,14 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205445 @205468
+  @205445p @205468
   Scenario Outline: Field history: PM user-To verify, User change the number field from backend then it should display changed and previous value in the new and old value column
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "12" into field "fieldNumber__c"

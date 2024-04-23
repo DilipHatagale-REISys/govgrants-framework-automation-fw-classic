@@ -1,9 +1,9 @@
-@SnapshotHistory-PATCHcomponent @regression-PATCH
+@SnapshotHistory-PATCHcomponent @regression-PATCH @vrush-module
 Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 
-  @70014    @verifyAutoSnapShotNotCapturedWithIsActiveField
+  @70014p    @verifyAutoSnapShotNotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is not getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
@@ -22,10 +22,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     When I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -61,10 +61,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -103,10 +103,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -131,11 +131,11 @@ Business Need: Snapshot Config Component Scenarios
      # | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -143,10 +143,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -177,11 +177,11 @@ Business Need: Snapshot Config Component Scenarios
      # | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -189,10 +189,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -230,11 +230,11 @@ Business Need: Snapshot Config Component Scenarios
    #   | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -242,10 +242,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -275,11 +275,11 @@ Business Need: Snapshot Config Component Scenarios
     #  | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
       #| Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -287,10 +287,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -320,11 +320,11 @@ Business Need: Snapshot Config Component Scenarios
      # | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
+      | configurationCategory             | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action                | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
+      | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -332,10 +332,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -376,10 +376,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -421,10 +421,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -457,10 +457,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -500,8 +500,8 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot                     | Snapshot File Name              |                   | ApiGeneratedId:0 |
       | Auto Snapshot                     | Is Active                       | false             | ApiGeneratedId:1 |
      # | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
-      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
-      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:4 |
+      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:2 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0013                   |
@@ -516,10 +516,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -542,7 +542,7 @@ Business Need: Snapshot Config Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+    # | PM    |
 
   @201420 @201422
   Scenario Outline: Auto Snapshot-Admin-Config-To verify Auto Snapshot functionality when is Active is unchecked
@@ -565,10 +565,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -617,7 +617,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
+  @217197p @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
   Scenario Outline:Snapshot History Table -Admin- Config-To verify Date Taken should captured when user taken snapshot
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -626,10 +626,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -659,14 +659,14 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217477 @217478
+  @217477p @217478
   Scenario Outline: Snapshot History Table - Admin- Config - Verify Snapshot History Table should not present in History Tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-8141                    |
+      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-8358                    |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -674,10 +674,10 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -756,8 +756,8 @@ Business Need: Snapshot Config Component Scenarios
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snaphot | true          | ApplicationView    | Name                      |                            |
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -770,21 +770,21 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409 @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
+  @201409p @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-    And I execute batch file:
-      | programName | announcementName | objectType | projectTitle               | status |
-      | NA          | NA               | Program    | Automation Runtime Program | Active |
+  #  Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Record" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
@@ -800,7 +800,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Financials" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I click "Associate" after selection of "FA-ST-01" in the table "---program:-:fundingAccTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
     And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
     And I refresh the page
@@ -826,7 +826,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "ADMIN" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -884,7 +884,7 @@ Business Need: Snapshot Config Component Scenarios
     And I refresh the page
     Then I see generated snapshot "SnapShot" is displayed with "File Name"
 
-  @201434
+  @201434p
   Scenario:Auto Snapshot-SPI-UI-To verify Auto Snapshot functionality when is Active is checked
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                   | fieldOrignalValue | filterId         |
@@ -893,24 +893,24 @@ Business Need: Snapshot Config Component Scenarios
      # | Page Tabs Config                  | Is Active                   | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c            | Name                      | SAS-0011                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | true                             | Application__c            | Name                      | SAS-0011                   |
+      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c     | Name                      | SAS-0014                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | true                             | Application__c     | Name                      | SAS-0014                   |
      # | Page Tabs Config:Page Layout Action | Is Active                   | true                             | Recipient ApplicationView | Name                      | TAB-2845                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c            |                           |                            |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c     |                           |                            |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-    And I execute batch file:
-      | programName | announcementName | objectType | projectTitle               | status |
-      | NA          | NA               | Program    | Automation Runtime Program | Active |
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Recordl" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
@@ -953,7 +953,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "ADMIN" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1016,28 +1016,27 @@ Business Need: Snapshot Config Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                   | fieldOrignalValue | filterId         |
       | Auto Snapshot                     | SnapShot File Name          |                   | ApiGeneratedId:0 |
-      | Auto Snapshot                     | Is Active                   | false             | ApiGeneratedId:1 |
+      | Auto Snapshot                     | Is Active                   | true              | ApiGeneratedId:1 |
    #   | Page Tabs Config                  | Is Active                   | false             | ApiGeneratedId:2 |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c            | Name                      | SAS-0011                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | false                            | Application__c            | Name                      | SAS-0011                   |
+      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c     | Name                      | SAS-0014                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | true                             | Application__c     | Name                      | SAS-0014                   |
    #   | Page Tabs Config:Page Layout Action | Is Active                   | true                             | Recipient ApplicationView | Name                      | TAB-2845                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c            |                           |                            |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c     |                           |                            |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-    And I execute batch file:
-      | programName | announcementName | objectType | projectTitle               | status |
-      | NA          | NA               | Program    | Automation Runtime Program | Active |
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Record}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"

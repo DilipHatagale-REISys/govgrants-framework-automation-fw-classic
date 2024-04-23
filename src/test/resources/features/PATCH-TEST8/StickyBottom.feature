@@ -1,4 +1,4 @@
-@Stickybottom-PATCHcomponent @regression-PATCH @stickyBottom
+@Stickybottom-PATCHcomponent @regression-PATCH @stickyBottom @vrush-module
 Business Need: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
@@ -6,11 +6,11 @@ Business Need: Sticky Bottom Component Scenarios
   @69394p @validateEnableGovGrantSetupAndEnablePlatformSetupOptionsAreNotShownInStickyBottomForUser
   Scenario: Disabling Enable Admin setup custom setting and validating display of Enable GovGrant Setup And Enable Platform Setup Options in sticky bottom
     Given I have "global" configuration as below:
-      | id                 | ownerId            | booleanValue                  | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableAdminSetup__c:true | GNT__GlobalConfig__c |
+      | id              | ownerId         | booleanValue                  | customSettingApiName |
+      | 0054T000001V8h6 | 00DDa000000AP2p | GNT__EnableAdminSetup__c:true | GNT__GlobalConfig__c |
     And I update custom global setting changes:
-      | id                 | ownerId            | booleanValue                   | customSettingApiName |
-      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableAdminSetup__c:false | GNT__GlobalConfig__c |
+      | id              | ownerId         | booleanValue                   | customSettingApiName |
+      | 0054T000001V8h6 | 00DDa000000AP2p | GNT__EnableAdminSetup__c:false | GNT__GlobalConfig__c |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"

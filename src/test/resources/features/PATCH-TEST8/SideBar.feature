@@ -16,7 +16,7 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Home" tab
     Then i see "Tasks" shown at number "5" in sideBar
 
-  @33876    @validateSidebarTaskMenuRemoval-gHome @smoke
+  @33876    @validateSidebarTaskMenuRemoval-gHome @smokePATCH
   Scenario: validate disabling of task menu from side bar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -28,7 +28,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I do not see "Tasks" at sidebar
 
-  @33879    @validateSidebarActivityMenuRemoval-gHome @smoke
+  @33879    @validateSidebarActivityMenuRemoval-gHome @smokePATCH
   Scenario: validate disabling of activity menu from side bar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -40,7 +40,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I do not see "Activities" at sidebar
 
-  @33881    @validateLabelChangeOfAccordionContent-gHome @smoke
+  @33881    @validateLabelChangeOfAccordionContent-gHome @smokePATCH
   Scenario: validate change of label in My tasks accordion content
     Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -52,7 +52,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side bar sub menu
 
-  @33880    @validateChangeAccordianHeaderSeq-gHome @smoke
+  @33880    @validateChangeAccordianHeaderSeq-gHome @smokePATCH
   Scenario: validate after changing accordian header sequence for activities
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -91,7 +91,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
 
-  @33885    @validateChangeAccordianContentSeq-gHome @smoke
+  @33885    @validateChangeAccordianContentSeq-gHome @smokePATCH
   Scenario: validate after changing accordion content sequence for completed inside my tasks
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -103,7 +103,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Completed" shown at number "2" inside "Tasks"
 
-  @33886    @validateAccordionContentOpensInNewWindow-gHome @smoke
+  @33886    @validateAccordionContentOpensInNewWindow-gHome @smokePATCH
   Scenario Outline: validate accordion content opens in new window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -165,7 +165,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "5" records inside enhanced grid id "---program:-:GrantorRelatedAwards2gridTableId---"
 
-  @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome @smoke
+  @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -181,7 +181,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see column "GrantAwardName__c" value is in "Ascending" order
 
-  @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome @smoke
+  @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome @smokePATCH
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -197,7 +197,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see column "GrantAwardName__c" value is in "Descending" order
 
-  @77467    @enableFormulaFieldAtFlexTableAtEnhancedDataTableAtSidebar-gHome @smoke
+  @77467    @enableFormulaFieldAtFlexTableAtEnhancedDataTableAtSidebar-gHome @smokePATCH
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config and validating it inside enhanced flex table at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -211,7 +211,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see cell subtotal as expected as given formula at "AmendmentNumber__c" field
 
-  @77468    @hideCellJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
+  @77468    @hideCellJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smokePATCH
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table at sidebar -Home
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -225,7 +225,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
 
-  @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
+  @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smokePATCH
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table at sidebar -Home
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -241,7 +241,7 @@ Business Need: Side bar Component Scenarios
     When I perform quick search for "AD-GTR-01" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
     Then I see "Edit" icon for "AD-GTR-01" is not displayed inside flex table
 
-  @77614    @enablePageSizeFieldAndValidateInsideEnhancedGridAtAtSidebar-gHome @smoke
+  @77614    @enablePageSizeFieldAndValidateInsideEnhancedGridAtAtSidebar-gHome @smokePATCH
   Scenario: enabling of page size dropdown at bottom inside enhanced grid at sidebar - Home phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -289,7 +289,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see column "GrantAwardName__c" value is in "Ascending" order
 
-  @77623    @orderBySortByDescFieldAtParentDataTableEnhancedGridForDescendingOrderAtSidebar-gHome @smoke
+  @77623    @orderBySortByDescFieldAtParentDataTableEnhancedGridForDescendingOrderAtSidebar-gHome @smokePATCH
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -305,7 +305,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see column "GrantAwardName__c" value is in "Descending" order
 
-  @77701     @hideCellJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
+  @77701     @hideCellJsonFieldAtEnhancedGridAtSideBar-gHome @smokePATCH
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -321,7 +321,7 @@ Business Need: Side bar Component Scenarios
     When I pause execution for "10" seconds
     Then I see "*****" shown inside enhanced grid table for specified record "product flow start"
 
-  @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
+  @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome @smokePATCH
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -335,7 +335,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see "Project Period" not displayed in enhanced grid table column title
 
-  @77721    @hideExpressionJSONAtEnhancedGridViewActionForInternalUserAtSideBar-gHome @smoke
+  @77721    @hideExpressionJSONAtEnhancedGridViewActionForInternalUserAtSideBar-gHome @smokePATCH
   Scenario: Set up configuration to hide view action in config and validating it inside enhanced grid at sidebar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |

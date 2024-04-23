@@ -326,7 +326,7 @@ public class FlexTableSteps {
                 "| //span[@id='theErrorPage:theError' and contains(text(),'" + errorMessage + "')] " +
                 "| //div[@class='slds-text-longform']//h3[text()='" + errorMessage + "'] " +
                 "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'" + errorMessage + "')] |" +
-                "//div//p[@class='requiredError Question1__c' and contains(text(),'"+ errorMessage + "')]"));
+                "//div//p[@class='requiredError Question1__c' and contains(text(),'" + errorMessage + "')]"));
         Assert.assertTrue(errorMessageDisplayed);
     }
 
@@ -466,7 +466,7 @@ public class FlexTableSteps {
     public void selectValue(String usage, String fieldValue, String fieldApiName, String flextableId) {
         govgrants.perform().inputForms().inputFormDataByFieldApiName(fieldApiName, fieldValue, usage.contains("modal"));
         I.amPerforming().click().on(By.xpath("//div[@id='select2-drop']//ul[contains(@class, 'select2-results')]//div"));
-        I.amPerforming().click().on(By.xpath("//div[@id='"+flextableId+"']//a[@title='Add Filter']/span"));
+        I.amPerforming().click().on(By.xpath("//div[@id='" + flextableId + "']//a[@title='Add Filter']/span"));
     }
 
     @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
@@ -623,7 +623,7 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) pagination \"([^\"]*)\" arrow displayed inside table id \"([^\"]*)\"$")
     public void iSeePaginationArrowDisplayedInsideTableId(String usage, String arrow, String tableId) {
-        flexTablePage.assertIfPagiNationArrowDisplyed_or_not(usage,arrow,tableId);
+        flexTablePage.assertIfPagiNationArrowDisplyed_or_not(usage, arrow, tableId);
     }
 
     @Then("^I (see|do not see) action name \"([^\"]*)\" itself get displayed inside tableid \"([^\"]*)\"$")
@@ -633,22 +633,26 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) \"([^\"]*)\" row action Button at position \"([^\"]*)\" inside tableid \"([^\"]*)\"$")
     public void iSeeRowActionButtonAtPositionInsideTableid(String usage, String action, int intvalue, String tableId) {
-        flexTablePage.assertActionPositionOnUiInsideTable(usage, action,intvalue, tableId);
+        flexTablePage.assertActionPositionOnUiInsideTable(usage, action, intvalue, tableId);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" icon inside table id \"([^\"]*)\"$")
     public void iSeeIconInsideTableId(String usage, String actionName, String tableId) {
-        flexTablePage.assertIfActionInEnhanceTableIsDisplyed(usage,actionName,tableId);
+        flexTablePage.assertIfActionInEnhanceTableIsDisplyed(usage, actionName, tableId);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" with record name \"([^\"]*)\" in table id \"([^\"]*)\"$")
     public void iSeeWithRecordNameInTableId(String usage, String starValue, String name, String tableId) {
-        flexTablePage.assertIfStarValueDisplayedInRecordLevel(usage,starValue,name,tableId);
+        flexTablePage.assertIfStarValueDisplayedInRecordLevel(usage, starValue, name, tableId);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" icon inside record subject as \"([^\"]*)\"$")
     public void seeIconInsideRecordSubjectAs(String usage, String ActionIcon, String SubjectName) {
-        flexTablePage.assertIfActionDisplayedInRecordLevel(usage,ActionIcon,SubjectName);
+        flexTablePage.assertIfActionDisplayedInRecordLevel(usage, ActionIcon, SubjectName);
     }
 
+    @And("^I click on \"([^\"]*)\" button for \"([^\"]*)\" inside table id \"([^\"]*)\"$")
+    public void iClickOnButtonForInsideTableId(String buttonName, String columnName, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='"+tableId+"']//table//tr//*[@title='"+columnName+"']//ancestor::td//following-sibling::td//action//*[@title='"+buttonName+"']"));
+    }
 }

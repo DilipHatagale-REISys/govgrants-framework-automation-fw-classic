@@ -1,4 +1,4 @@
-@PageLayout-PATCHcomponent @regression-PATCH @PageLayout
+@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -50,7 +50,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "New" in flex table with id "Programs"
     Then I see "Creating New Program for Automation" shown as over view header
 
-  @34052    @hideDecisionExpression-gPlanning @smoke
+  @34052    @hideDecisionExpression-gPlanning @smokePATCH
   Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
@@ -79,7 +79,7 @@ Business Need: Page Layout Component Scenarios
       | new_hide_config     | old_hide_config                                                                                                                                                                                                      |
       | Status__c='Created' | Status__c='Active' OR Status__c='Submitted for Approval' OR Status__c='Approved' OR Status__c='Closed' OR Status__c='Disapproved' OR Status__c='Change Requested' OR Status__c='Disapproved' OR Status__c='Rejected' |
 
-  @34053    @hideExpressionJSON-gPlanning @smoke
+  @34053    @hideExpressionJSON-gPlanning @smokePATCH
   Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -95,7 +95,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @34069 @smoke
+  @34069 @smokePATCH
   Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -171,7 +171,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
-  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
+  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smokePATCH
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -223,7 +223,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
-  @35817p    @hideForContextFieldAtPageLayout-gPlanning @smoke
+  @35817p    @hideForContextFieldAtPageLayout-gPlanning @smokePATCH
   Scenario: Hide overview for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -303,7 +303,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see pencil icon as "Overview" sub tab
 
-  @35949    @isActiveFieldAtPageTab-gPlanning @smoke
+  @35949    @isActiveFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Disabling of Overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -319,7 +319,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35955    @hideForUserAtPageTab-gPlanning @smoke
+  @35955    @hideForUserAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -335,7 +335,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35956    @hideForProfileAtPageTab-gPlanning @smoke
+  @35956    @hideForProfileAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -351,7 +351,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
+  @35959    @hideDecisionFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding of overview page tab for created state from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -383,7 +383,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see complete header overview tab is displayed at view detail page
 
-  @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
+  @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smokePATCH
   Scenario: Hiding overview tab from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -415,7 +415,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Program Information Automation" page block displayed
 
-  @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
+  @35980    @isActiveFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Disabling of program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -463,7 +463,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
 
-  @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
+  @36037    @hideForContextFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hide program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -479,7 +479,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
+  @36038    @hideForUserFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
@@ -535,7 +535,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @36039    @hideForProfileAtPageBlock-gPlanning @smoke
+  @36039    @hideForProfileAtPageBlock-gPlanning @smokePATCH
   Scenario: Hide program information page block for particular user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -607,7 +607,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
+  @36042    @hideDecisionFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding of program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -623,7 +623,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke @wip
+  @36045    @flexTableNameFieldAtPageBlock-gPlanning @smokePATCH @wip
   Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -642,11 +642,11 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Roles And Responsibilities flex table inside page block
 
-  @36046    @flexGridNameFieldAtPageBlock-gPlanning @smoke
+  @36046    @flexGridNameFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Changing flex grid rendering by changing name inside flex grid name field at page block from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Page Block            | Flex Grid Name | ApiGeneratedId:0  | ApiGeneratedId:2 |
+      | Page Block            | Flex Grid Name |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName             | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General            | Flex Grid Config Name | ProgramOutcomes    | ProgramOutcomes       |                           |                            |
@@ -661,17 +661,16 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 
-  @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
+  @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -686,14 +685,13 @@ Business Need: Page Layout Component Scenarios
   @36053    @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -705,7 +703,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Award Letter" is not displayed inside flex table
 
-  @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
+  @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -723,7 +721,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see field "Budgeting Preference" inside page block
 
-  @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
+  @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -787,7 +785,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
+  @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hide program name field at page block detail from config validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -803,7 +801,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
+  @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
@@ -819,7 +817,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
+  @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -891,7 +889,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
+  @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
@@ -907,7 +905,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
+  @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -928,7 +926,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program Sub Type is required to save. |
 
-  @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
+  @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                  | fieldOrignalValue                                     | coreComponentField    | filterId         |
@@ -962,7 +960,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
+  @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -980,7 +978,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
+  @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name while making change for is hidden field as false from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
@@ -996,7 +994,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
+  @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name while making change for read decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1028,31 +1026,31 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
+  @36169p    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization      | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName          | fieldOrignalValue     | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Internal Organization | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName          | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | PBD-17097                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
-    When I click search icon for lookup "Organization Lookup (New Window)"
+    When I click search icon for lookup "Internal Organization"
     Then I see modal box with body "Organization Automation" is displayed
 
-  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
+  @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantor State Program | Name                      | PBD-17097                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1062,7 +1060,7 @@ Business Need: Page Layout Component Scenarios
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
-  @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke @wip
+  @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smokePATCH @wip
   Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1070,8 +1068,8 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantor State Program | Name                      | PBD-23999                  |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantor State Program | Name                      | PBD-17097                  |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantor State Program | Name                      | PBD-17097                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1086,11 +1084,11 @@ Business Need: Page Layout Component Scenarios
       | oldLookupFilter                                                                    | newLookupFilter       | newLookupDisplayName |
       | RecordType.Name='Internal' AND GroupCode__c='{!GroupCode}' AND Status__c ='Active' | Status__c = 'Created' | Name,Status__c       |
 
-  @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smoke
+  @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue   | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Attachment Classifications | FOA;CFA;CFDA;Other; | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName                  | fieldOrignalValue   | filterId         |
+      | Page Block Config:Page Block Rule Detail | Attachment Classifications | FOA;CFA;CFDA;Other; | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2;  | Annoucement Profile-FOA | Name                      | PBD-5205                   |
@@ -1120,7 +1118,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
 
-  @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
+  @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: Disabling of edit button action at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1153,7 +1151,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
-  @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smoke
+  @36202    @editButtonActionOpensInNewWindowAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: validate page layout action button field- Edit opens in New window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -1182,7 +1180,7 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I see new tab is opened
 
-  @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smoke
+  @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smokePATCH
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1275,7 +1273,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText                                       |
       | Help Text for Automation | Name represents for what the program is meant for. |
 
-  @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
+  @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smokePATCH
   Scenario: Hiding program information page block from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1291,7 +1289,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed in page details
 
-  @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
+  @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1307,7 +1305,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
-  @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
+  @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smokePATCH
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1323,14 +1321,14 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
-  @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+  @53094
+  Scenario: Verify Hide for Context at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for Context | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | Edit                       |
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for Context | View          | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1338,113 +1336,61 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
+    Then I do not see "Attachments" page block displayed
 
-  @53095    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit action from attachment page block from config validating it at attachments table
+  @53095p @53100
+  Scenario Outline:  Verify Hide for Profile at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
-
-  @53096    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for User |                   | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
-
-  @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
-    Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantor State Program | Name                      | Edit                       |
-    Given I setup test configuration as below:
-      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    | OR                   | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
-
-  @53097    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantor State Program | Name                      | Edit                       |
-    Given I setup test configuration as below:
-      | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    | AND                  | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
-
-  @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
-  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Context |                   |                    | Internal Unique Id        | <value>                    |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Context | View          |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I do not see "Attachments" page block displayed
 
     Examples:
-      | value                          |
-      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
+      | User  |
+      | ADMIN |
 
-  @53100    @hideForProfileFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
-  Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
+  @53096 @53101
+  Scenario Outline:Page Block Detail – Verify Hide for User at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide for Profile |                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide for Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory        | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for User | Internal      | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Files" sub tab
+    Then I do not see "Attachments" page block displayed
+    Examples:
+      | User |
+      | PM   |
+
+  @53098 @53103
+  Scenario Outline: Hide edit row level action using OR operator from configuration and validating it at attachments table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Hide For Profile |                   | ApiGeneratedId:0 |
+      | Page Block            | Hide For User    |                   | ApiGeneratedId:1 |
+      | Page Block            | Hide Operator    |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Operator    | OR                   | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1452,20 +1398,24 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
-
+    Then I do not see "Attachments" page block displayed
     Examples:
-      | value                          |
-      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
+      | User  |
+      | ADMIN |
+      | PM    |
 
-  @53101    @hideForUserFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning @wip
-  Scenario Outline: Hide edit action from attachment page block using Hide For User field from config validating it at attachments table
+  @53097 @53102
+  Scenario Outline:  Verify Hide for User And Profile System administration at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide for User |                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
+      | Page Block            | Hide For Profile |                   | ApiGeneratedId:0           |
+      | Page Block            | Hide For User    |                   | ApiGeneratedId:1           |
+      | Page Block            | Hide Operator    |                   | ApiGeneratedId:2           |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide for User | Internal      |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Operator    | AND                  | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1473,24 +1423,20 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
-
+    Then I do not see "Attachments" page block displayed
     Examples:
-      | value                          |
-      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
+      | User  |
+      | ADMIN |
+      | PM    |
 
-  @53102    @hideOperatorFieldUsingANDOperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning @wip
-  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
+  @53099
+  Scenario: Verify Hide for Context at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide Operator    |                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for Context | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide Operator    | AND                  |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for Context | View          | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1498,24 +1444,16 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
+    Then I do not see "Attachments" page block displayed
 
-    Examples:
-      | value                          |
-      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
-
-  @53103    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning @wip
-  Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
+  @53260p
+  Scenario:  Page Block Detail – Verify Hide decision field at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Profile |                   |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide For User    |                   |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide Operator    |                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
-      | Uid Config:Uid        | Hide Operator    | OR                   |                    | Internal Unique Id        | <value>                    |
+      | configurationCategory        | fieldName           | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Decision Field | HideDeleteBtn__c | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1523,28 +1461,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
-
-    Examples:
-      | value                          |
-      | DXkA4qiwvbHfLbAaiAs6wiiVyPIp3D |
-
-  @53260    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
-  Scenario: Hide edit action from attachment page block from config validating it at attachments table
-    Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide Decision Field |                   | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                  | fieldName           | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide Decision Field | HideDeleteBtn__c | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Active Programs"
-    When I perform quick search for "Test Demo"
-    When I click on "View" icon for "Test Demo" inside table
-    When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
+    Then I see "Delete" icon is disabled inside "Attachments" page block
 
   @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning @wip
   Scenario Outline: Hide edit action from attachment page block from config validating it at attachments table
@@ -1604,34 +1521,50 @@ Business Need: Page Layout Component Scenarios
     And I see "Save" at bottom of Attachment Modal
     Then I see "Save and Close" at bottom of Attachment Modal
 
-  @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
+  @53388p   @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue |  filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   |  ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23600                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
-    When I enter value "   " into field "ProgramNameText__c"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    When I enter value "   " into field "ProgramName__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
       | Program Name Text is required to submit under Overview. |
 
   @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
-  Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
+  Scenario: changing value of required behaviour and removing Internal Organization value and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17097                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1639,11 +1572,11 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
-    When I enter value "" into field "fieldAccount__c"
+    When I enter value "" into field "Account__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
-      | Owner Organization is required to submit under Overview. |
+      | Internal Organization is required to submit under Overview. |
 
   @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
@@ -1672,7 +1605,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17519                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17201                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1713,14 +1646,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17605                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17091                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
-    When I enter value "0" into field "fieldStartDate__c"
+   # When I enter value "0" into field "fieldStartDate__c"
     When I enter value "" into field "fieldExpectedFunding__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1843,7 +1776,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
-    When I enter value "" into field "fieldAuthorization__c"
+    When I enter value "" into field "Authorization__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
@@ -2007,7 +1940,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I pause execution for "3" seconds
     Then I see "<requiredValue>" shown as inside "SelectNGOContacts"
 
@@ -2261,7 +2194,7 @@ Business Need: Page Layout Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
     Then I see the sub-header is "Automation Internal Program for Approval and Snapshot scenarios" in the page details
 
-  @84760   @verifyDateAndTimeFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
+  @84760p   @verifyDateAndTimeFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to EST Local
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
@@ -2276,8 +2209,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    And I save the field labeled "Application Deadline" as "saveDate"
-    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
+    And I save the field labeled "Application Due Date" as "saveDate"
+    Then I softly see field "Application Due Date" as "{savedValue:saveDate}"
 
   @84765   @verifyDateAndTimeFieldFormatForLocalAsEDTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to EDT Local
@@ -2294,8 +2227,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    And I save the field labeled "Application Deadline" as "saveDate"
-    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
+    And I save the field labeled "Application Due Date" as "saveDate"
+    Then I softly see field "Application Due Date" as "{savedValue:saveDate}"
 
   @84766   @verifyDateAndTimeFieldFormatForLocalAsISTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date and time field format under page layout in view mode with respective to IST Local
@@ -2312,8 +2245,8 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    And I save the field labeled "Application Deadline" as "saveDate"
-    Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
+    And I save the field labeled "Application Due Date" as "saveDate"
+    Then I softly see field "Application Due Date" as "{savedValue:saveDate}"
 
   @86802   @verifyDateFieldFormatForLocalAsESTUnderUnderPageLayoutInViewMode-gAnnouncement
   Scenario: validate displayed of date field format under page layout in view mode with respective to EST Local
@@ -2394,7 +2327,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultValue>    | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newValue>    | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newValue>    | Grantor State Program | Name                      | PBD-17097                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3554,7 +3487,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination15 | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination15 | Grantor State Program | Name                      | PBD-17097                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Department of Community Health" into field "Account__c"
@@ -4241,7 +4174,7 @@ Business Need: Page Layout Component Scenarios
     When I close modal by clicking the top right x button
     Then I see table with header "Notes" contains records "Notes Record"
 
-  @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
+  @120237p    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4250,7 +4183,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I pause execution for "5" seconds
     Then I do not see loading icon at "Associate" modal
 
@@ -4263,7 +4196,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactPatchTableId---"
     And I wait for "5" seconds
     Then I do not see loading icon at "Associate" modal
 
@@ -6373,7 +6306,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Program Sub Type is required to save under Overview. |
 
-  @137275    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
+  @137275p    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save date field is hidden using hide field json
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6579,15 +6512,15 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-17097                  |
     When I click on "Edit" in the page details
     And I enter value "Project Grants" into field "Type__c"
  # @137290 verify that lookup field is hidden on the basis of program type field value
-    Then I softly cannot see field "Owner Organization" inside page block
+    Then I softly cannot see field "Internal Organization" inside page block
     When I click on "Save" in the page details
  # @137290 verify that req field message is not displayed for hidden lookup field
     Then I cannot see the following message in the page details contains:
-      | Owner Organization is required to save under Overview. |
+      | Internal Organization is required to save under Overview. |
 
   @137291    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save text field is hidden using hide field json
@@ -7739,8 +7672,8 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-24007                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-24007                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-24011                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-24011                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7784,8 +7717,8 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-24007                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-24007                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-24011                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-24011                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8216,7 +8149,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24007                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24011                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8236,7 +8169,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24007                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24011                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8256,7 +8189,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24007                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-24011                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8293,7 +8226,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23985                 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23985                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8850,7 +8783,7 @@ Business Need: Page Layout Component Scenarios
     Then I see field "Queue Lookup" inside page block
 
   @161413 @VerifyIfWeDisabledOwnerOrganizationFieldOnPBDJsonExpressionUsingEqualToOperatorThenOwnerOrganizationFieldDisabled @vaibhavC
-  Scenario: Verify If We Disabled Owner Organization Field On PBD Json Expression Using Equal To Operator Then Owner Organization Field Disabled
+  Scenario: Verify If We Disabled Internal Organization Field On PBD Json Expression Using Equal To Operator Then Internal Organization Field Disabled
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
@@ -8870,7 +8803,7 @@ Business Need: Page Layout Component Scenarios
     Then I see field "Account__c" is disabled
 
   @161419 @VerifyIfWeEnabledOwnerOrganizationFieldOnPBDJsonExpressionUsingNotEqualToOperatorThenOwnerOrganizationFieldEnabled @vaibhavC
-  Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
+  Scenario: Verify If We Enabled Internal Organization Field On PBD Json Expression Using Not EqualTo Operator Then Internal Organization Field Enabled
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
@@ -8888,7 +8821,7 @@ Business Need: Page Layout Component Scenarios
     And I save the field labeled "EGMS ID" as "EGMSID"
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    Then I see field "Owner Organization" inside page block
+    Then I see field "Internal Organization" inside page block
 
   @161475 @VerifyOnViewModeDisableQueuedLookupFieldOnPBDJsonExpressionUsingEqualToOperatorThenQueuedLookupFieldIsDisable @vaibhavC @wip
   Scenario: Verify On View Mode Disable Queued Lookup Field On PBD Json Expression Using Equal To Operator Then Queued Lookup Field Is Disable
@@ -8936,7 +8869,7 @@ Business Need: Page Layout Component Scenarios
      # | Queue Lookup |
 
   @161568    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingJsonExpEqualToOpreatorThenFeildIsDoNotShowOnPageLayout   @abhishekS
-  Scenario: verify Owner organization field is not displayed if user is not displayed using hide field json on Page layout
+  Scenario: verify Internal Organization field is not displayed if user is not displayed using hide field json on Page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
@@ -8953,7 +8886,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
     And I enter value "Project Grants" into field "Type__c"
-    Then I softly cannot see field "Owner Organization" inside page block
+    Then I softly cannot see field "Internal Organization" inside page block
 
   @162122    @verifySuccessMessageSetFromPageMessageOnPageBlockAndNoNullTextIsDisplay @wip
   Scenario: validate success message set from page message config is displayed at view page block and no null text is display
@@ -9005,7 +8938,7 @@ Business Need: Page Layout Component Scenarios
       | Select All |
 
   @161670    @verifyThatOnEditActionIfUserDoNotShowTheFeildUsingPBDJsonExpNOTEqualToOpreatorThenFeildIsDoNotDisplayOnPageLayout   @abhishekS
-  Scenario: verify Owner organization field is not displayed if user is not displayed using hide field PBD json exp Not Equal To operator on Page layout
+  Scenario: verify Internal Organization field is not displayed if user is not displayed using hide field PBD json exp Not Equal To operator on Page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
@@ -9022,7 +8955,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
     And I enter value "Project Grants" into field "Type__c"
-    Then I softly cannot see field "Owner Organization" inside page block
+    Then I softly cannot see field "Internal Organization" inside page block
 
   @161571    @verifyQueueLookupFieldIsDisableOnPBDJsonExpressionUsingEqualToOpratorWhenUserDoNotShow @abhishekS @wip
   Scenario: Set up BPD JSON expression of Queue lookup feild to Disable using 'Equal To' operator the Queue look up feild is disable on modal window
@@ -9349,7 +9282,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
+  @205808p @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -9676,7 +9609,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172215 @jyoti
   Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
@@ -9685,7 +9618,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17097                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -9702,7 +9635,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172178 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
@@ -9711,7 +9644,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17097                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -9728,7 +9661,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172212 @jyoti
   Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
@@ -9748,7 +9681,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172179 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
@@ -9757,7 +9690,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17097                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -9775,16 +9708,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172154 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the object level  side
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Owner Organization | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue     | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Internal Organization | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-17097                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -9811,7 +9744,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-23999                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17097                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -9829,7 +9762,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I navigate to "Overview" sub tab
     And I hover mouse on text with id "Account__c"
-    Then I see lookup link "Owner Organization" inside page block
+    Then I see lookup link "Internal Organization" inside page block
 
   @172155 @jyoti @wip
   Scenario: Page layout-To verify User hover over the lookup field icon on (Required Behavior-required to save)  modal   then it should display the Field label override name from the GovGrants side.
@@ -10413,11 +10346,11 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
-    Then I see "Owner Organization" is not displayed inside page block detail
+    Then I see "Internal Organization" is not displayed inside page block detail
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I cannot see the following message in the page details :
-      | Owner Organization is required to save |
+      | Internal Organization is required to save |
 
   @208829 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonNumberField @Jyoti
   Scenario: To verify, When hidden the Number fields which are required for save then no validation error is displayed on UI on saving the record
@@ -11037,7 +10970,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @219872 @219873
+  @219872 @219873 @wip @notapplicableinTFS
   Scenario Outline: Page Layout Action-Admin-UI-To verify page layout "Cancel" and "Save" actions should not displayed on edit layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -11073,11 +11006,11 @@ Business Need: Page Layout Component Scenarios
     Then I see "Cancel" button is displayed on top right of pagelayout
     Then I see "Save" button is displayed on top right of pagelayout
 
-  @219875 @219876
+  @219875p @219876
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1             | Grantor State Program | Name                      | Edit1                      |
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Action Name | Edit1             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                      |
@@ -11097,8 +11030,8 @@ Business Need: Page Layout Component Scenarios
   @219877
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1             | Recipient Recipient ApplicationView | Name                      | Edit1                      |
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Layout Action    | Action Name | Edit1             | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Recipient Recipient ApplicationView | Name                      | Edit1                      |
@@ -11194,7 +11127,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200266 @200245 @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
+  @200266p @200245 @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11213,7 +11146,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Published Date" inside page block
     Then I softly see field "TestPicklist" inside page block
     Then I softly see field "Project Goals" inside page block
-    Then I softly see field "Program Type" inside page block
+    Then I softly see field "Type" inside page block
     Then I softly see field "Primary Funder Type" inside page block
     Examples:
       | User  |
@@ -11403,7 +11336,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Overview" subtab is present in page details
-    Then I see "Setup tabs" subtab is present in page details
+    Then I see "Setup" subtab is present in page details
     Then I see "Responsibilities" subtab is present in page details
     Then I see "Files" subtab is present in page details
     Then I see "History" subtab is present in page details
@@ -11439,7 +11372,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Overview" subtab is present in page details
-    Then I do not see "Setup tabs" subtab is present in page details
+    Then I do not see "Setup" subtab is present in page details
     Then I do not see "Responsibilities" subtab is present in page details
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
@@ -11520,7 +11453,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I see "Files" subtab is present with icon "fa fa-file" in page details
     Then I see "History" subtab is present with icon "fa fa-history" in page details
@@ -11571,7 +11504,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I do not see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I do not see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I do not see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I do not see "Files" subtab is present with icon "fa fa-file" in page details
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
@@ -11620,7 +11553,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see sequence of "Overview" subtab is "1" on page layout
-    Then I see sequence of "Setup tabs" subtab is "2" on page layout
+    Then I see sequence of "Setup" subtab is "2" on page layout
     Then I see sequence of "Responsibilities" subtab is "3" on page layout
     Then I see sequence of "Files" subtab is "4" on page layout
     Then I see sequence of "History" subtab is "5" on page layout
@@ -11661,7 +11594,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see sequence of "Overview" subtab is "1" on page layout
-#      Then I do not see sequence of "Setup tabs" subtab is "2" on page layout
+#      Then I do not see sequence of "Setup" subtab is "2" on page layout
 #      Then I do not see sequence of "Responsibilities" subtab is "3" on page layout
 #      Then I do not see sequence of "Files" subtab is "4" on page layout
 #      Then I do not see sequence of "History" subtab is "5" on page layout
@@ -11677,8 +11610,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config      | Sort Order | 6             | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11995,9 +11928,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
     Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
-    Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
-    Then I see "Responsibilities" subtab is present with icon "fa fa-file" in page details
-    Then I see "Files" subtab is present with icon "fa fa-history" in page details
+    #Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
+    Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
+    Then I see "Files" subtab is present with icon "fa fa-file" in page details
     Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
 
     Examples:
@@ -12015,7 +11948,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Overview" subtab is present in page details
     Then I see "Setup" subtab is present in page details
     Then I see "Responsibilities" subtab is present in page details
-    Then I see "Related Log" subtab is present in page details
+    #Then I see "Related Log" subtab is present in page details
     Then I see "Files" subtab is present in page details
     Then I see "Messages" subtab is present in page details
 
@@ -12241,9 +12174,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     Then I see "Submit to grantor" button is displayed
     Then I see "Edit" button is displayed
 
@@ -12268,7 +12200,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Vrush Application" inside table

@@ -1,9 +1,9 @@
-@Forms-PATCHComponent @regression-PATCH @Forms
+@Forms-PATCHComponent @regression-PATCH @Forms @vrush-module
 Business Need: Forms Scenarios flextable UI,Forms Interface
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in Forms component and will validate them.
 
-  @206305 @206306
+  @206305 @206306 @wip
   Scenario Outline: All forms- Admin- Config- Verify forms displays under All forms page block
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -19,7 +19,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206308p @206309
+  @206308p @206309 @wip
   Scenario Outline: All forms- Admin- Config- Verify Actions like Preview, view, edit are available
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -36,7 +36,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @208996 @208997 @382041 @382042 @SanityPATCH  @SanityPATCHForms
+  @208996 @208997 @382041 @382042 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All Forms - Admin- Config- Verify we can download form as PDF
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -63,7 +63,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
@@ -72,7 +72,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
 
-  @206338p @206339 @208662 @208661 @206879 @206880
+  @206338p @206339 @208662 @208661 @206879 @206880 @wip
   Scenario Outline: All forms- Admin- Config- Verify in View Form ID should get populated UI,UI- Verify in View Form name should get populated UI
   All forms- Admin- Config- Verify when we select ‘View’ action, form should not be editable
     When I login to "As a Grantor" app as "<User>" user
@@ -110,12 +110,12 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01313" is displayed on form layout
+    Then I see Form Id "FN-03537" is displayed on form layout
     #208663
     Then I see Form Name "Program Specific Application form" is displayed on form layout
     #206881
@@ -132,7 +132,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I softly see field "fieldAppplicationSubmitted__c" is not editable
     Then I softly see field "fieldSubmittedOnForm__c" is not editable
 
-  @206341 @206342 @208664 @208665
+  @206341 @206342 @208664 @208665 @wip
   Scenario Outline: All forms- Admin- Config- Verify in Edit Form ID should get populated UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -147,7 +147,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see Form Name "Program Specific Application form" is displayed on form layout
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see Form Id "FN-01342" is displayed on form layout
     #208664 @208665
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
@@ -157,27 +157,30 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206343 @208666
+  @206343p @208666
   Scenario: All forms- SPI- UI- Verify in Edit Form ID should get populated UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01313" is displayed on form layout
+    Then I see Form Id "FN-03527" is displayed on form layout
     #208666
     Then I see Form Name "Program Specific Application form" is displayed on form layout
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01314" is displayed on form layout
+#    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
+    Then I see Form Id "FN-03528" is displayed on form layout
     #208666
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
 
-  @206344 @206345 @206347 @206348
+  @206344 @206345 @206347 @206348 @wip
   Scenario Outline: All forms- Admin- Config- Verify all forms displays under dropdown
   All forms- Admin- Config- Verify we can select forms from dropdown
     When I login to "As a Grantor" app as "<User>" user
@@ -203,7 +206,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -212,7 +215,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I select "Standard Assurances Form" from dropdown at forms
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
 
-  @206845 @206846
+  @206845 @206846 @wip
   Scenario Outline: All forms- Admin- Config- Verify if we shuffle through forms from dropdown, we are getting confirmation message in Edit Layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -231,21 +234,21 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206847
+  @206847p
   Scenario: All forms- SPI- UI- Verify if we shuffle through forms from dropdown, we are getting confirmation message, in edit form layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
 
-  @206848 @206849
+  @206848 @206849 @wip
   Scenario Outline: All forms- Admin- Config- Verify In "Edit" mode, while we are shuffling through forms, if we hit ‘Cancel’ button on confirmation message modal we should not redirect to new form
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -270,7 +273,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -280,7 +283,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "Cancel"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
 
-  @206851p @206852
+  @206851p @206852 @wip
   Scenario Outline:All forms- Admin- Config- Verify in "Edit" mode,  while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -305,7 +308,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -315,7 +318,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "OK"
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
 
-  @206854 @206855 @206862 @206861 @382014 @382015 @SanityPATCH  @SanityPATCHForms
+  @206854p @206855 @206862 @206861 @382014 @382015 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button success message should pop-up
   All forms- PM- UI- Verify when we select Edit action, form should be open in edit mode
     When I login to "As a Grantor" app as "<User>" user
@@ -342,7 +345,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -358,7 +361,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -368,7 +371,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I download the file
     Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
 
-  @208803 @208804
+  @208803 @208804 @wip
   Scenario Outline: All Forms - Admin- Config- Verify when we hover on (i) icon Help text should be displayed
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -390,7 +393,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -398,7 +401,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I hovering mouse on help text icon inside "Standard Assurances Form"
     Then I see "Name that shows up on the User interface this is done because the Application and Pre-Application are using the same Templates and layouts and the Forms that show up on the Forms tab is currently showing up the names" shown as help text
 
-  @208658 @208659
+  @208658 @208659 @wip
   Scenario Outline: All forms- Admin- Config- Verify in preview Form name should not populate on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -411,7 +414,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
     Examples:
       | User  |
@@ -423,7 +426,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "do not delete Application forms test"
     When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
@@ -431,10 +434,10 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
 
-  @206336 @206335
+  @206336 @206335 @wip
   Scenario Outline: All forms- PM- UI- Verify in preview Form ID should not populate on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -447,7 +450,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Id "FN-01341" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
 
     Examples:
@@ -460,7 +463,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -468,10 +471,10 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I do not see Form Id "FN-01342" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Form Id "FN-01343" is displayed on form layout
 
-  @206857 @206858 @206332 @206333
+  @206857 @206858 @206332 @206333 @wip
   Scenario Outline: All forms- Admin- Config- Verify the success message will be automatically closed after the set interval of time out
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -496,7 +499,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -506,7 +509,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I cannot see the following message in the page details :
       | Form saved successfully. |
 
-  @208652 @208653
+  @208652 @208653 @wip
   Scenario Outline: All forms- Admin- Config- Verify fields which are required for save denoted with (*)
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -528,14 +531,14 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
 
-  @208655 @208656
+  @208655 @208656 @wip
   Scenario Outline: All forms- Admin- Config- Verify fields which are required for save ‘This field is required’ line should display on form
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -559,7 +562,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -568,7 +571,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Save" in the page details
     Then I see error message contains text "This field is required"
 
-  @206870 @206871 @382030 @382032 @SanityPATCH  @SanityPATCHForms
+  @206870 @206871 @382030 @382032 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, form should open in view mode
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -594,7 +597,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -605,7 +608,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "Yes"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @206873p @206874 @382025 @382026 @SanityPATCH  @SanityPATCHForms
+  @206873p @206874 @382025 @382026 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -631,7 +634,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -645,7 +648,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see the following message in the page details :
       | Form cannot be validated because data is missing in one or more fields that are required to submit. To view the fields that are required to submit, click the Edit button. |
 
-  @206876 @206877
+  @206876 @206877 @wip
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if all required fields are filled success message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -669,7 +672,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -679,7 +682,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see the following message in the page details :
       | Form Validated Successfully. |
 
-  @208649 @208650
+  @208649 @208650 @wip
   Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button, if data is missing in one or more fields which  are required to save error message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -704,7 +707,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -714,7 +717,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see the following message in the page details :
       | 1a. Describe the activities and/or services to be provided. (10 points) is required to save. |
 
-  @208676 @208677 @208667 @208668
+  @208676 @208677 @208667 @208668 @wip
   Scenario Outline: All forms- Admin- Config- Verify in preview Name under Authorized Representative should not populate on UI
   All forms- Admin- Config- Verify in preview Submitted on under Authorized Representative should not populate on UI
     When I login to "As a Grantor" app as "<User>" user
@@ -724,7 +727,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
     Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
 
@@ -738,15 +741,15 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
     Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
 
-  @208679 @208680 @208671 @208670
+  @208679 @208680 @208671 @208670 @wip
   Scenario Outline: All forms- Admin- Config- Verify in View Submitted on under Authorized Representative should get populated UI
   All forms- PM- UI- Verify in View Name under Authorized Representative should get populated UI
     When I login to "As a Grantor" app as "<User>" user
@@ -773,7 +776,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -783,7 +786,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
     Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
 
-  @208682 @208683 @208673 @208674
+  @208682 @208683 @208673 @208674 @wip
   Scenario Outline: All forms- Admin- Config- Verify in Edit Submitted on under Authorized Representative should get populated UI
   All forms- PM- UI- Verify in Edit Name under Authorized Representative should get populated UI
     When I login to "As a Grantor" app as "<User>" user
@@ -793,7 +796,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
@@ -809,7 +812,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "do not delete Application forms test"
     When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
@@ -817,7 +820,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see Name or Submitted On "Automation SPI" is displayed on form under Authorized Official Name or Authorized Representative
     Then I see Name or Submitted On "04/02/2024 5:00 PM" is displayed on form under Authorized Official Name or Authorized Representative
 
-  @206318p @206319 @206324 @206325 @206321 @206322 @206327 @206328
+  @206318p @206319 @206324 @206325 @206321 @206322 @206327 @206328 @wip
   Scenario Outline:Last modified- Admin- Config- Verify Last modified by name is captured
   Last modified- Admin- Config- Verify Last modified Date and time is captured
   Last modified- Admin- Config- Verify Last modified by name must be updated if form is modified by another user
@@ -849,14 +852,14 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
     And I save the field labeled "Name" as "LASTMODIFIEDBY"
     And I click on "Save" in the page details
@@ -865,7 +868,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
     Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
 
-  @206882 @206883
+  @206882 @206883 @wip
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -888,7 +891,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -896,7 +899,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Back" in the page details
     Then I softly see "All Forms " page block displayed
 
-  @206864 @382020 @382021 @SanityPATCH  @SanityPATCHForms
+  @206864 @382020 @382021 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message should open
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -918,15 +921,15 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
     Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
 
-  @206867 @206868
+  @206867 @206868 @wip
   Scenario Outline:All forms- Admin- Config- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -949,11 +952,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
     When I click alert button "No"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
@@ -964,8 +967,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Application Program For Announcement Testing"
+    When I click on "View" icon for "Application Program For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
@@ -997,7 +1000,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Cancel" in the page details
     Then I see "FN-01389" shown as over view header
 
-  @381941 @381942 @SanityPATCH  @SanityPATCHForms
+  @381941 @381942 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:
   |Sanity TC - Admin - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
   |Sanity TC - PM - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
@@ -1033,7 +1036,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Last Modified Date" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Allow Edit?" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
 
-  @381967 @381968 @SanityPATCH  @SanityPATCHForms
+  @381967 @381968 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:
   |Sanity TC - Admin - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
   |Sanity TC - PM - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
@@ -1043,7 +1046,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ As a Grantor"
     Examples:
       | User  |
@@ -1058,10 +1061,10 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
 
-  @381970 @SanityPATCH  @SanityPATCHForms
+  @381970 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
@@ -1086,7 +1089,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @381987 @381990 @381982 @381983 @SanityPATCH  @SanityPATCHForms
+  @381987 @381990 @381982 @381983 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:Sanity
   |TC - Admin - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
   |Sanity TC - PM - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
@@ -1123,7 +1126,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Organization Capacity" page block displayed
     Then I see "AwardFundingAccounts-SD1" page block displayed
 
-  @382001 @382003 @SanityPATCH  @SanityPATCHForms
+  @382001 @382003 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
@@ -1173,7 +1176,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see field "fieldTEXTAREAQuestion10__c" inside page block
     Then I see field "fieldTEXTAREAQuestion11__c" inside page block
 
-  @382035 @382036 @SanityPATCH  @SanityPATCHForms
+  @382035 @382036 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1197,7 +1200,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -1205,7 +1208,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Edit" in the page details
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @382038 @382039 @SanityPATCH  @SanityPATCHForms
+  @382038 @382039 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1229,7 +1232,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab

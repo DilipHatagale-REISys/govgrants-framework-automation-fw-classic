@@ -481,7 +481,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332791 @382442 @smoke
+  @332791 @382442 @smokePATCH
   Scenario: Send Email -To verify , When External user sends an Email with an Attachment  from TO (internal) field
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

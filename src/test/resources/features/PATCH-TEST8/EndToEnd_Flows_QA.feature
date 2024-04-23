@@ -1,4 +1,4 @@
-@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA @skiponjenkins
+@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA @vrush-module
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
@@ -715,7 +715,7 @@ Business Need: security review Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     And I pause execution for "3" seconds
     Then I softly see status in Progress-bar is "Active" and is "Green"
@@ -1658,18 +1658,18 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:GRANT_ID}" inside flex table with id "---program:-:grantsTableId---" without waiting for record
     Then I softly see status in Progress-bar is "Active" and is "green"
 
-  @110500  @VerifyDirectGrantCreationAndSubAwardActivation @flow
+  @110500p  @VerifyDirectGrantCreationAndSubAwardActivation @flow
   Scenario: Verify grant creation and grant, sub-award activation
     Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
-    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-    And I execute batch file:
-      | programName | announcementName | objectType | projectTitle               | status |
-      | NA          | NA               | Program    | Automation Runtime Program | Active |
+#    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
     And I click on top right button "New" in flex table with id "---program:-:activeGrantsTableId---"
     And I enter "GrantCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+    And I enter value "Send Email Component active program" into field "fieldProgram__c"
     And I click modal button "Continue"
     And I enter "Grant_Edition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click modal button "Save and Continue"
@@ -1694,12 +1694,12 @@ Business Need: security review Scenarios
     And I pause execution for "10" seconds
     And I navigate to "Budget" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:awardFundingAccountsTableId---"
-    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:selectAwardFundingAccountsTableId---"
+    When I click "Associate" after selection of "FA-ST-01" in the table "---program:-:selectAwardFundingAccountsTableId---"
     When I close "Associate Funding Accounts" modal by clicking the top right x button
     And I pause execution for "15" seconds
     When I edit the following rows inline in flex table with id "---program:-:awardFundingAccountsTableId---" by clicking "Edit" :
       | Funding Account | Encumbrance |
-      | FA-ST-04        | 1000        |
+      | FA-ST-01        | 1000        |
     And I pause execution for "15" seconds
     And I edit the following rows inline in flex table with id "---program:-:flexGridSubAwardBudgetCategoryID---" by clicking "Edit" :
       | Budget Category | Awarded Budget |

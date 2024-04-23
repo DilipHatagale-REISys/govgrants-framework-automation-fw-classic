@@ -1,4 +1,4 @@
-@EnhancedGrid-PATCHcomponent @regression-PATCH @EnhancedGrid
+@EnhancedGrid-PATCHcomponent @regression-PATCH @EnhancedGrid @vrush-module
 Business Need: EnhancedGrid Component Scenarios
   Test all EnhancedGrid component based scenarios
   As a configuration manager i make different configurational changes in EnhancedGrid component and will validate them.
@@ -12,7 +12,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
@@ -35,7 +35,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
@@ -57,7 +57,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
@@ -81,7 +81,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     And I expand nested table containing column value "SME Review"
@@ -99,7 +99,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -116,7 +116,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -143,7 +143,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -156,7 +156,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379185
     Then I see value "Test Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257472 @379204 @379202 @379193 @SanityPATCH @SanityPATCHEGrid
+  @257472p @379204 @379202 @379193 @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -170,34 +170,35 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
+    And I pause execution for "5" seconds
     #379193
-    Then I see "New" button inside "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" flex table
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+    Then I see "New" button inside "---program:-:ProgramReviewStepPanelSMEchildTableID---" flex table
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelSMEchildTableID---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Automation | 50              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelSMEchildTableID---" by clicking "New" :
       | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Testing   | 75              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
     #379202
     Then I see Advance Filter box is displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" in flex table
     When I click on advance filter "#advfProgramReviewStepPanelTemplates" of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
-    When I enter advance filter values inside id "advfProgramReviewStepPanelTemplates"
+    When I enter advance filter values inside id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
       | Form Weight (%) | equals to | 75 |
     And I pause execution for "5" seconds
     #379204
     Then I see value "75.00%" for title "Form Weight (%)" against the value "Testing" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
 
-  @206105 @206107 @DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
+  @206105 @206107 @US-196926 @Sprint-5
   Scenario Outline:Download as XLS should work for empty table currency,  Number &Percent  column should be available on the table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -205,7 +206,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
@@ -227,7 +228,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
@@ -248,8 +249,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "AP-A11-001"
-    When I click on "View" icon for "AP-A11-001" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
@@ -265,8 +266,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "AP-A11-001"
-    When I click on "View" icon for "AP-A11-001" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
@@ -286,11 +287,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
@@ -325,11 +326,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257481
@@ -351,11 +352,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257480
@@ -377,11 +378,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257482
@@ -403,11 +404,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -419,7 +420,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Description | contains | Review Step Desc |
     Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257502 @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
+  @257502p @ToVerifyAdvancedFilterShouldBeWorkingOnNewlyAddedRecordInTheTableForInternalUser @dilip @Sprint-19 @US-255921
   Scenario: Advanced filter should be working on newly added record in the table for internal user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -428,11 +429,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -452,7 +453,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -469,7 +470,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -491,11 +492,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -513,11 +514,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -538,11 +539,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -562,7 +563,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
@@ -581,7 +582,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -605,7 +606,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
@@ -627,11 +628,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
@@ -646,7 +647,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257551
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
 
-  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smoke
+  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -664,7 +665,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379184
     Then I see Advance Filter is disabled from table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
-  @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
+  @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -681,7 +682,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see Menu icon is disabled from planning flex table "Budget Periods"
 
-  @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45281    @hideCellJsonfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of child flex table at enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -701,7 +702,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
 
-  @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45284    @readOnlyCellJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -722,7 +723,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Construction" inside table
     Then I see input box is not displayed for ID inside child Flex table
 
-  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -741,7 +742,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Focus Area" not displayed in enhanced grid table column title
 
-  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -798,7 +799,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:appBudgetPeriodTableId---"
 
-  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
+  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -816,7 +817,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as PDF" options inside "Budget Periods" disabled
 
-  @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smoke
+  @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -834,7 +835,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
 
-  @35439  @379181 @smoke @SanityPATCH @SanityPATCHEGrid
+  @35439  @379181 @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -851,7 +852,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smoke
+  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -904,7 +905,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in enhanced flex grid
 
-  @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smoke
+  @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smokePATCH
   Scenario Outline: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -964,7 +965,7 @@ Business Need: EnhancedGrid Component Scenarios
       | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
-  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
+  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -990,8 +991,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see columnName "Application" is Displayed on "Budget Periods" table
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                                               | defaultFieldsApi                                      |
+      | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 #      | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
 #      | Current Budget Period End Date | BudgetPeriodEndDate__c,Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 #      | External Organization          | ExternalOrganization__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
@@ -1044,7 +1045,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:appBudgetPeriodTableId---"
 
-  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @SanityPATCH @SanityPATCHEGrid
+  @41304p @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @SanityPATCH @SanityPATCHEGrid
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1061,7 +1062,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     #379171
     And I expand nested table containing column value "BP01"
-    Then I see "10" records inside enhanced grid id "---program:-:appBudgetPeriodTableId---"
+    #Then I see "10" records inside enhanced grid id "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   @41308    @enableHelpFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: validate enabling of help inside menu option in enhanced flex grid planning-Program enhanced flex grid
@@ -1121,7 +1123,7 @@ Business Need: EnhancedGrid Component Scenarios
    # And I expand nested table containing column value "BP01"
     Then I see "Test Automation" shown inside flex table with id "---program:-:appBudgetPeriodTableId---"
 
-  @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smoke
+  @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -1139,7 +1141,7 @@ Business Need: EnhancedGrid Component Scenarios
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
 
-  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smoke
+  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1158,7 +1160,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Edit" icon for "Travel" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     Then I see input box is not displayed for budget period end date
 
-  @41375    @hideColumnJSONfieldAtEnhancedGrid-gPlanning @smoke
+  @41375    @hideColumnJSONfieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -1175,7 +1177,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Fee Fund Requested" not displayed in enhanced grid table column title
 
-  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smoke
+  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -1357,7 +1359,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Test Automation" shown inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
+  @44533    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrder-gPlanning @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1399,7 +1401,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see column "Fee Fund Requested" value is in "Descending" order
 
-  @44535    @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning @smoke
+  @44535    @orderBySortByFieldAtChildDataTableEnhancedGridForAscendingOrder-gPlanning @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1441,7 +1443,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see column "Category Name" value is in "Descending" order
 
-  @wip @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smoke @Doubted
+  @wip @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smokePATCH @Doubted
   Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1462,7 +1464,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newSoqlFilter                      | oldSoqlFilter                      |
       | Application__c ='{!applicationid}' | Application__c ='{!applicationid}' |
 
-  @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smoke
+  @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing sequence of edit row level action item at enhanced grid parent table from config and validating it inside enhanced grid table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1517,7 +1519,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379203
     Then I see Advance Filter is disabled from table "---program:-:appBudgetPeriodTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
-  @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
+  @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Disabling the Menu Field at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1536,7 +1538,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then Then I see Menu icon is disabled from planning child flex table "Budget Categories" under Monitoring Schedule For All Active Grants table
 
-  @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  @44995    @disablingPDFExportFileForChildFlextTableEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1556,7 +1558,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
     Then I see "Download as PDF" options inside "Budget Categories" disabled
 
-  @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smoke
+  @62814    @disablingXLSExportFileForChildFlextTableEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of XLS download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -1596,7 +1598,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379200
     Then I see quick search option disabled from enhanced grid for child flex table "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smoke
+  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smokePATCH
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1729,7 +1731,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see new tab is opened
 
-  @45275    @viewActionOpenInSameWindowAtChildFlexTableForEnhancedGrid-gPlanning @smoke
+  @45275    @viewActionOpenInSameWindowAtChildFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate enhanced grid view action open in same window for child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1750,7 +1752,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see no new tab is opened
 
-  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
+  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1813,7 +1815,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" button inside "Budget Categories" enhanced grid
 
-  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario: row from config anf validating it inside enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1831,7 +1833,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Test New" row action Button at position "4" inside tableid "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
-  @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
+  @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario:  Verify Location field = row at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1851,7 +1853,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Test New" icon for "Personnel" is displayed inside flex table
 
-  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smoke
+  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify  Sequence field at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1909,7 +1911,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
+  @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Grouping field at parent flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1945,7 +1947,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Budget Period" not displayed in enhanced grid table column title
 
-  @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smoke
+  @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Sub Total at parent flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2020,8 +2022,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
 
     Examples:
-      | styleAttributeValue | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | color: 'red'        | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | styleAttributeValue | newFieldsApi                                                                                                                                                                                                               | defaultFieldsApi                                      |
+      | color: 'red'        | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
@@ -2030,7 +2032,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2044,7 +2046,7 @@ Business Need: EnhancedGrid Component Scenarios
       | styleClassValue                                             |
       | {negativeValue:row[column]='Road Construction Annoumsment'} |
 
-  @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smoke
+  @49352    @enableGroupingFieldAtChildFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario:  Verifying Enable Row Grouping (Child Flex Table )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2092,7 +2094,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11882                   |
+      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11882                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2182,7 +2184,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Enable Over All Total | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List           | Enable Over All Total | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Grid:Flex Table List | Is Master View        | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
@@ -2322,14 +2324,14 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
   Scenario Outline: Verify order by multiple field at parent Enhanced flex grid for ascending order
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  |                   | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName | fieldOrignalValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <fieldDefaultValue> | EnhanceAppGrantorBudgetPeriods |                           |                            |
      # | Page Block:Page Block Detail | Is Active | true              | Grantee State Program          | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2345,14 +2347,14 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "BudgetPeriodTitle__c" and "FeeFundRequested__c" in "Ascending" order
 
     Examples:
-      | fieldNewValue                                    |
-      | BudgetPeriodTitle__c ASC,FeeFundRequested__c ASC |
+      | fieldDefaultValue                                     | fieldNewValue                                    |
+      | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c | BudgetPeriodTitle__c ASC,FeeFundRequested__c ASC |
 
   @48902    @orderByFieldAtParentDataTableEnhancedGridForDescendingOrderForMultipleField-gPlanning
   Scenario Outline: Changing specific columns values in descending order with order by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  |                   | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName | fieldOrignalValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <fieldDefaultValue> | EnhanceAppGrantorBudgetPeriods |                           |                            |
       #| Page Block:Page Block Detail | Is Active | true              | Grantee State Program          | GNT__PageBlockTitle__c    | Enhanced data table        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2368,18 +2370,17 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "BudgetPeriodTitle__c" and "FeeFundRequested__c" in "Descending" order
 
     Examples:
-      | fieldNewValue                                      |
-      | BudgetPeriodTitle__c DESC,FeeFundRequested__c DESC |
+      | fieldDefaultValue                                     | fieldNewValue                                      |
+      | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c | BudgetPeriodTitle__c DESC,FeeFundRequested__c DESC |
 
-  @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @Smoke
+  @48903    @orderByFieldAtChildDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning @smokePATCH
   Scenario Outline: Verify Sort by multiple field at Child Enhanced flex grid for ascending order
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-   #   | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-      | Flex Grid:General     | Order By  |                   | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | configurationCategory | fieldName           | fieldOrignalValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Order By            |                    | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi>  | EnhanceAppGrantorBudgetPeriods |                           |                            |
       | Flex Grid:General     | Order By  | <fieldNewValue> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2397,11 +2398,11 @@ Business Need: EnhancedGrid Component Scenarios
       | fieldNewValue                      |
       | TotalMatch__c ASC,CashMatch__c ASC |
 
-  @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @Smoke
+  @48905    @orderByFieldAtChildDataTableEnhancedGridDescendingOrderForMultipleField-gPlanning @smokePATCH
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By  |                   | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | configurationCategory | fieldName | fieldOrignalValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By  | <defaultFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Order By  | <fieldNewValue> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
@@ -2419,10 +2420,10 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "TotalMatch__c" and "CashMatch__c" in "Descending" order
 
     Examples:
-      | fieldNewValue                        |
-      | TotalMatch__c DESC,CashMatch__c DESC |
+      | defaultFieldsApi                                                                                                                           | fieldNewValue                        |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | TotalMatch__c DESC,CashMatch__c DESC |
 
-  @wip @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke @doubted
+  @wip @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH @doubted
   Scenario Outline:  Verify Filter Clause field at child flex table config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -2509,8 +2510,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Automation SPI" shown as over view header
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                  | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: Verify a blank value is shown if user select "None" value in pick-list field
@@ -2535,8 +2536,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "" for multiple cells at column "GrantType__c"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @80046    @verifyModalTitleFieldForEnhancedGridRowLevelPreviewAction-gPlanning
   Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
@@ -2730,8 +2731,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @86427  @verifyDateFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to EDT Local
@@ -2758,8 +2759,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @86430  @verifyDateFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to IST Local
@@ -2786,8 +2787,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "11/8/2022" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @86302  @verifyDateAndTimeFieldFormatForLocalAsESTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EST Local
@@ -2814,8 +2815,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "07/27/2023 6:38 PM" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @86303  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EDT Local
@@ -2843,8 +2844,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "{SavedValue:SaveDate}" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                                              | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @86304  @verifyDateAndTimeFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to IST Local
@@ -2871,8 +2872,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "7/5/2020 2:30 AM" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                                              | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @wip @87307   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
   Scenario Outline: Verify a 'Show Link as Text' field at child table by setting checkbox to false e-grid child table
@@ -2896,8 +2897,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see hyperlink at column value "AP-755-213" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                        |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @87314   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
   Scenario Outline: validate hyperlink is not present at column value after checking the Show Link as Text Field from config at e-grid child table
@@ -2921,8 +2922,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see hyperlink at column value "AP-755-213" inside "---program:-:EnhanceAppBudCateGrantorTableId---" table
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @87839    @VerifyTheDecimalValueShownForCurrencyFieldAtEnhancedGridParentFlexTable
   Scenario Outline: E-Grid :To verify the Decimal values are shown for the currency field on UI
@@ -2943,8 +2944,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "$100.50" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @88090    @VerifyTheDecimalValueShownForNumberFieldAtEnhancedGridChildFlexTable
   Scenario Outline: verify decimal places at Number field value of child flex table at enhanced grid
@@ -2966,8 +2967,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "35.35" shown inside enhanced grid table for specified record "Personnel"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @87565    @VerifyThatTheLookupFieldValueIsOverridesAsPerGivenDisplayFieldAtEnhancedGridParentFlexTable @doubted @wip
   Scenario Outline: E-Grid: To verify the lookup field is overrides as per Display Field when Enable Edit Display Field is False
@@ -2990,8 +2991,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "755" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @87573   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsUncheckedAtChildTable-gPlanning @doubted @wip
   Scenario Outline: validate lookup field is in view mode after unchecking the Enable Edit Display Field from config at e-grid child table - gplanning
@@ -3018,8 +3019,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Account__c" field is editable inside enhanced grid
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @87763 @doubted @wip
   Scenario Outline: validate lookup field is in view mode after checking the Enable Edit Display Field from config at e-grid child table- gplanning
@@ -3046,8 +3047,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "NonCashMatch__c" field is editable inside enhanced grid
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @88292  @VerifyThatTheLookupFieldValueIsOverridesAsPerGivenDisplayFieldAtEnhancedGridChildFlexTable @doubted @wip
   Scenario Outline: verify that the lookup field value is overrided as per given display field at child flex table at enhanced grid
@@ -3073,8 +3074,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "343" shown inside enhanced grid table for specified record "AD-GG PJ--00"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @87762  @VerifyThatTheLookupFieldValueIsOverridesIfEnableEditDisplayFieldIsCheckedAtEnhancedGridChildFlexTable @doubted @wip
   Scenario Outline: verify that the lookup field value is override if enable edit display field checkbox is checked at child tabl- enhanced grid
@@ -3101,8 +3102,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "343" shown inside enhanced grid table for specified record "AD-GG PJ--00"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @104863  @VerifySortingLabelInsideEnhancedGridTable
   Scenario: verify that sorting label displayed inside enhanced grid table
@@ -3130,7 +3131,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
-  @106419 @379183 @SanityPATCH @SanityPATCHEGrid
+  @106419p @379183 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3155,8 +3156,8 @@ Business Need: EnhancedGrid Component Scenarios
     #Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @106421   @validateAdvanceFilterValueForDateFieldWithOperatorEndWithAtEnhancedGrid
   Scenario Outline: validate Advance filter search for date field with end with operator At enhanced grid
@@ -3180,8 +3181,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly do not see value "2/15/2018--2/15/2022" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid @SkipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced
@@ -3239,8 +3240,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I donot see navigation logo on page
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @120976  @VerifyCrossIconIsDisplayedAtEnhancedGridQuickSearchBox
   Scenario: validate that cross icon is displayed at enhanced Grid quick search box
@@ -3360,8 +3361,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "12,345.0000" for title "NumberDecimal" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @148362    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
@@ -3382,8 +3383,8 @@ Business Need: EnhancedGrid Component Scenarios
       | 12,345.0000 |
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @148507  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table
@@ -3406,8 +3407,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "2,323.0000" shown inside enhanced grid table for specified record "Personnel"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @146709 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserRefreshButtonWithUnsavedDataInEnhancedGrid
   Scenario: validate that users should be warned when they click on browser refresh button with unsaved data in enhanced grid
@@ -3458,8 +3459,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "03/26/2023" for title "Start Date" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @145510   @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGrid
   Scenario: verify position of pagination bar displayed at top and bottom right corner of enhanced grid
@@ -3493,8 +3494,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @150251    @verifyWidthEnhancedGridChildTableColumnIfFieldWidthEnhancedIsConfiguredAs50Percent
   Scenario: verify width of enhanced grid child table column if Field width enhanced is configured as 50 %
@@ -3503,7 +3504,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Field width Enhanced |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11882                   |
+      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11882                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3568,8 +3569,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Saved Successfully! |
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @151610 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedGrid
   Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced grid
@@ -3672,8 +3673,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "$10,000.00" for title "Total Adjusted Amount" against the value "Temp Grant 3" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @159529 @VerifyInAdvanceFilterOnEgridWhenWeSelectAnyPickListDataTypeFieldSelectPickListValueThenValueReturnedByLoginAsAAdminUser @vaibhavC
   Scenario: Verify In Advance Filter On E Grid When We Select Any Pick List Data Type Field Select Pick List Value Then Value Returned
@@ -3810,11 +3811,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                        | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3833,8 +3834,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "-99.50%" for title "Test Percentage Result" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @164811   @verifyThatPercentageCalculationForPercentTypeFieldWhenCalculateValuePositive
   Scenario Outline: To verify Percentage change calculation for percent type field when the CalCulated value is positive.
@@ -3848,11 +3849,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                        | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3871,8 +3872,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "120.00%" for title "Test Percentage Result" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @163536   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValueNegative
   Scenario Outline: To verify Percentage change calculation for Numbertype field when the CalCulated value is negative.
@@ -3886,8 +3887,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1548                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
       | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
@@ -3909,8 +3910,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "0.00" for title "Test Number" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @164795   @verifyThatPercentageCalculationForCurrencyTypeFeildWhenCalculateValueNegative
   Scenario Outline: To verify Percentage change calculation for currency type field when the CalCulated value is negative.
@@ -3924,7 +3925,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1545                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1547                   |
@@ -3946,8 +3947,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "($100.00)" for title "testtotalcurrency" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
 
   @164808   @verifyThatPercentageCalculationForCurrencytypeFeildWhenCalculateValuePositive
@@ -3962,7 +3963,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1546                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1547                   |
@@ -3981,8 +3982,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "$20,000.00" for title "testtotalcurrency" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
 
   @164809   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValuePositive
@@ -3997,11 +3998,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                       | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4019,8 +4020,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "9,900.00" for title "Test Number Result" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @166740   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualToOprator
   Scenario:  E-grid-To verify in advanced filter when user select the picklist data type field then correct result display with equal to operator
@@ -4074,8 +4075,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @168722 @VerifyIfCurruncyReferenceFeildIsAvailableOnTheTableItDispalyDollerSignForViewLayout
   Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the View layout
@@ -4096,8 +4097,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:appBudgetPeriodTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @170496
   Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the View layout
@@ -4221,8 +4222,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "AD-ITSGT--00" inside table
     Then I softly see "Account__c" field is required
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @171871
   Scenario Outline: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
@@ -4246,8 +4247,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "test" in flex table with id "EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I softly see "Account__c" field is required
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @172133 @172143
   Scenario Outline: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
@@ -4278,8 +4279,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Account__c" field is required
     Then I softly see "ExternalOrganization__c" field is required
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @172150
   Scenario: Verify If User edits a Row level lookup field on parent table  (field is not Required to Save) then mandatory icon should not  display for lookup field
@@ -4337,8 +4338,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "AD-ITSGT--00" inside table
     Then I softly see "Account__c" field is required
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @172144
   Scenario Outline: Verify If User new record on child & parent  table  lookup fieldon child table  (Required to Save) then mandatory icon should display for lookup field
@@ -4370,8 +4371,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Account__c" field is required
     Then I softly see "ExternalOrganization__c" field is required
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @181124 @sprint20
   Scenario Outline: To verify, Hover over multiselect picklist in view mode then Value should be shown  on child table
@@ -4393,8 +4394,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @181122 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown  on child table
@@ -4417,8 +4418,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @181115 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown on child table
@@ -4439,8 +4440,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @181112 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in view mode then Value should be shown
@@ -4462,8 +4463,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
-      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
+      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
   @181116 @sprint20 @wip
   Scenario:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
@@ -5405,14 +5406,14 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I softly do not see "Fee Fund Requested" in flex table header "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
-  @192950 @sprint1 @userstory_176992
-  Scenario: E-grid- To verify , Number  field should restrict the field limit
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+  @192950 @sprint1 @u serstory_176992
+  Scenario Outline: E-grid- To verify , Number  field should restrict the field limit
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -5427,12 +5428,12 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "Save" in flex table with id "---program:-:appBudgetPeriodTableId---"
     Then I see the following message in the page details contains:
       | Saved Successfully! |
-#    Examples:
-#      | newFieldsApi                                                                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,Test_num__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+    Examples:
+      | newFieldsApi                                          | defaultFieldsApi                                      |
+      | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
 
   @190160 @sprint25
-  Scenario: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
+  Scenario Outline: To verify, if the users 'View' and close the record's modal on 2nd page of an E-Grid (Refresh Behaviour: Refresh all Flextables), they remain on the same page after Modal closing
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior         |                   | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
@@ -5454,10 +5455,10 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "Save" in flex table with id "---program:-:appBudgetPeriodTableId---"
     Then I see the following message in the page details contains:
       | Saved Successfully! |
-#    Examples:
-#      | newFieldsApi                                                                                                                                                                                                                                        | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,Test_Currency__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#
+    Examples:
+      | newFieldsApi                                          | defaultFieldsApi                                      |
+      | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+
   @192958 @sprint1
   Scenario: E-grid- To verify , Number  field should accept the negative value
 #    Given I have "default" configuration as below:
@@ -5615,7 +5616,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218432 @218434
   Scenario Outline:Is active- Admin- Config- Verify flex table should not be displayed
@@ -5637,7 +5638,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218437 @218438
   Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon
@@ -5655,7 +5656,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218440 @218441 @218443 @218444
   Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table
@@ -5712,7 +5713,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
@@ -5740,7 +5741,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218455 @218456
   Scenario Outline: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
@@ -5762,7 +5763,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218430 @218435
   Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
@@ -5776,8 +5777,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
 
@@ -5793,8 +5794,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly do not see "Grant Budget" page block displayed
 
@@ -5810,8 +5811,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I softly see "Budget Period Title" in flex table header "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
@@ -5844,7 +5845,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218448 @352285
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
@@ -5858,8 +5859,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5887,7 +5888,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218451 @352431
   Scenario: Page Size- SPI- UI- Verify dropdown to select page size manually should not appear on UI
@@ -5902,8 +5903,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5924,11 +5925,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
-    Then I see "5" records inside enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218457
   Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
@@ -5942,8 +5944,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
@@ -5960,8 +5962,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I do not see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5986,7 +5988,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @218454
   Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
@@ -6000,12 +6002,13 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
-    Then I see "5" records inside enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    #Then I see "5" records inside enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218466 @352422
   Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
@@ -6019,8 +6022,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6038,8 +6041,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6066,7 +6069,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @206019
   Scenario:Menu- SPI- UI- Verify Menu option should not appear on UI
@@ -6080,8 +6083,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
@@ -6108,7 +6111,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @205912 @205913
   Scenario Outline: Default value- Admin- Config- Verify set default value for regular field will get populated while creating any new record in the grid
@@ -6134,7 +6137,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @205918 @205919
   Scenario Outline: Default value- Admin- Config- Verify the different default values can be set for different fields
@@ -6164,7 +6167,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @206016
   Scenario: Menu- SPI- UI- Verify Menu option appears on UI
@@ -6178,8 +6181,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
@@ -6203,7 +6206,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @206022
   Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
@@ -6211,8 +6214,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     And I click on menu inside "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
     And I select "Reset Table" from parallel lines dropdown of "Grant Budget"
@@ -6233,8 +6236,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6244,7 +6247,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @352274 @352275
   Scenario Outline:Admin-Parent Table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
@@ -6267,7 +6270,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @352351 @352415
   Scenario Outline:Admin-Parent Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
@@ -6294,7 +6297,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
@@ -6308,8 +6311,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6319,7 +6322,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @352429 @352430 @379208 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
@@ -6333,8 +6336,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6343,7 +6346,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
@@ -6357,8 +6360,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6367,7 +6370,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   ################### Test suite: Detail config (Suite ID: 296508) ###################
   @296545 @296546
@@ -6390,7 +6393,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296549 @296550
   Scenario Outline: Admin_Child table_Verified that label of column displayed in table, what have been provided in "Field label override" config
@@ -6413,7 +6416,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296559 @296560
   Scenario Outline: Admin_Parent table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
@@ -6435,7 +6438,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
@@ -6476,7 +6479,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296597 @296598
   Scenario Outline: Admin_Child table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
@@ -6494,7 +6497,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296610 @296611
   Scenario Outline:Admin_Parent table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
@@ -6516,7 +6519,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296613 @296614
   Scenario Outline: Admin_Child table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
@@ -6539,7 +6542,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296617 @296623
   Scenario Outline: Admin_Parent table_Verified that user is able to add all characters, Sp. Characters and digits in help text
@@ -6562,7 +6565,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296627 @296628
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
@@ -6586,7 +6589,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296637 @296641
   Scenario Outline:Admin_Parent table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
@@ -6609,7 +6612,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296644 @296645
   Scenario Outline: Admin_Child table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
@@ -6623,8 +6626,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6634,7 +6637,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296658 @296659
   Scenario Outline: Admin_Parent table_Verified that user is able to apply row grouping on multiple fields/columns:
@@ -6659,7 +6662,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296661 @296662
   Scenario Outline:Admin_Child table_Verified that user is able to apply row grouping on multiple fields/columns:
@@ -6675,8 +6678,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6687,7 +6690,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296688 @296689
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
@@ -6717,7 +6720,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296692 @296693
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
@@ -6737,8 +6740,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6749,7 +6752,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296695 @296698
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
@@ -6778,7 +6781,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296701 @296702
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
@@ -6809,7 +6812,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296767 @296768
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
@@ -6840,7 +6843,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296948 @296950
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
@@ -6863,16 +6866,16 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
-    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
     ##subtotal
-    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
       ##disable overall total
     Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296953 @296957
   Scenario Outline: Admin_Parent table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
@@ -6903,7 +6906,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296968 @296974
   Scenario Outline: Admin_Child table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
@@ -6926,16 +6929,16 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
-    Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
     ##subtotal
-    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
       ##disable overall total
     Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297044 @297047
   Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
@@ -6958,7 +6961,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297067 @297069
   Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
@@ -6982,7 +6985,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297580 @297581
   Scenario Outline: Admin_Parent table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
@@ -7006,7 +7009,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297583 @297584
   Scenario Outline: Admin_Child table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
@@ -7027,12 +7030,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297589 @297592
   Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
@@ -7066,7 +7069,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297595 @297597
   Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
@@ -7090,15 +7093,15 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
     ##subtotal
-    Then I see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297601 @297602
   Scenario Outline: Admin_Parent table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
@@ -7127,7 +7130,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @297605 @297606
   Scenario Outline: Admin_Child table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
@@ -7149,14 +7152,14 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
     #subtotal label displayed
-    Then I see "Sub Total Testing Demo - Form Weight (%) : 15" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Sub Total Testing Demo - Form Weight (%) : 15" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @206030
   Scenario Outline: Hide logic- Admin- Config- Verify admin can enable parent hide logic
@@ -7180,7 +7183,7 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @206036 @206037
   Scenario Outline: Hide logic- Admin- Config- Verify the expression created by users using expression builder will refer to parent business object, where enhanced grid/ table is configured
@@ -7284,8 +7287,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in flex table
 
@@ -7301,8 +7304,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I do not see select check box enabled in flex table
 
@@ -7320,8 +7323,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
 

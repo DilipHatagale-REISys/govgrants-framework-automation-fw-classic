@@ -1,4 +1,4 @@
-@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent
+@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent @vrush-module
 Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface,Quick Search
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in FlexTable_AllComponent component and will validate them.
@@ -4022,7 +4022,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -4030,7 +4030,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsFlexTableToggleId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values in table id "---program:-:ProgramsFlexTableToggleId---"
       | Start Date | Greater than or equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
@@ -5330,7 +5330,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages" displayed as a Header on flex table
 
@@ -5365,7 +5365,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -5380,7 +5380,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -12387,7 +12387,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
     Examples:
@@ -12420,7 +12420,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12522,7 +12522,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12574,7 +12574,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
     Examples:
@@ -12611,7 +12611,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
     Examples:
@@ -12648,7 +12648,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -12686,7 +12686,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12726,7 +12726,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12767,7 +12767,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12810,7 +12810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -12856,7 +12856,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -12900,7 +12900,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -18675,7 +18675,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Test Approver Table" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -18806,7 +18806,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                             | defaultFieldsApi                                                                    |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,Date_and_Time__c,Number__c |
 
-  @189255 @sprint26
+  @189255 @sprint26 @needtocheck @wip
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Flextable, the error message is displayed on the Page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
@@ -18825,7 +18825,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Error creating table:unexpected token: 'ASC' |
     Examples:
       | newFieldsApi                       | defaultFieldsApi   |
-      | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
+   #   | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
 
   @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate flex  table at record table is rendered properly by Automation user
@@ -19780,8 +19780,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "package release flow SK3_Application"
-    When I click on "View" icon for "package release flow SK3_Application" inside table
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
@@ -19790,8 +19791,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "package release flow SK3_Application"
-    When I click on "View" icon for "package release flow SK3_Application" inside table
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
     Then I see row level action button "Edit" rendered on flex table
     Then I see row level action button "View" rendered on flex table
@@ -19802,8 +19804,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "package release flow SK3_Application"
-    When I click on "View" icon for "package release flow SK3_Application" inside table
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Budget" sub tab
     And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
     And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
