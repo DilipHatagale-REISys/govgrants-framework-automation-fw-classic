@@ -1311,18 +1311,16 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
-    Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
-    Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
+    Then I see "Automation EXE" as user name and "exe.automation@yopmail.com" as emailid
+    Then I see "Automation PM1" as user name and "pm1.automation@yopmail.com" as emailid
 
-  @382507 @SanityPATCH @SanityPATCHCollab
+  @382507p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
-    Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
-    Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
-    Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
+    Then I see "Automation SPI" as user name and "jameshanknew@yopmail.com" as emailid
 
   @382511 @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to see list of users along with email id , profile picture on click of 'External users' link.

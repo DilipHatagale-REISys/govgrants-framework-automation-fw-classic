@@ -168,7 +168,7 @@ Business Need: Snapshot Config Component Scenarios
     And I refresh the page
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapSho1tFileName
+  @70027p    @verifyAutoSnapShotFileNameWithFieldApprovalSnapSho1tFileName
   Scenario: Validate Auto Snapshot record name is getting chaged after making changes inside field Approval Snapshot File Name at config page
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |

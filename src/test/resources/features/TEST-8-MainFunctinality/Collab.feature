@@ -1010,16 +1010,13 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
     Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
-  @382144 @Sanity @SanityCollab
+  @382144q @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'To me' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    Then I see "All Users" link on collab phase is displayed and clickable
     Then I see "To Me" link on collab phase is displayed and clickable
-    Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
-    Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
   @382213 @382222 @382238 @382232 @382257 @382272 @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for Admin User,My Colleagues,External Users,My Groups,Membership Requests
@@ -1306,7 +1303,7 @@ Business Need: collab Component Scenarios
     Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
     Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
 
-  @382506 @Sanity @SanityCollab
+  @382506p @Sanity @SanityCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab

@@ -100,6 +100,10 @@ public class PageLayoutPage extends GovGrantsManager {
             Assert.assertTrue(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
         } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options)).isFalse();
         }
     }
 
@@ -727,7 +731,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPDFOptionForVerification(String options) {
-        return I.amPerforming().getElementReference().of(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li |" +
+        return I.amPerforming().getElementReference().of(By.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] |" +
+                " //ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li |" +
                 "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] |" +
                 "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')]"));
     }
@@ -1794,14 +1799,16 @@ public class PageLayoutPage extends GovGrantsManager {
      * @modifier - ashwini.mahore
      */
     private boolean isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(String options) {
-        TestingBlazeGlobal.setVariable("highlightElements", "off");
-        boolean flag = true;
-
-        if (getPDFOptionForVerification(options).getAttribute("style").toLowerCase().contains("display: none")) {
-            flag = false;
-
-        } else if (getPDFOptionForVerification(options).isDisplayed()) {
-            flag = true;
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
+                    "//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
+                    "//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li | " +
+                    "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] | " +
+                    "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
