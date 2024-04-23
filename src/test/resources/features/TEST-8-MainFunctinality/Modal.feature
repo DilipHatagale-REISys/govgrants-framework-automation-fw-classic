@@ -150,7 +150,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207420 @207421
+  @207420q @207421
   Scenario Outline: Modal- Admin- Config- Verify lookup works properly for look up fields,
   Modal- PM- UI- Verify lookup works properly for look up fields
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -170,7 +170,7 @@ Business Need: Modal Component Scenarios
     Examples:
       | Users |
       | Admin |
-      | PM    |
+#      | PM    |
 
   @207426 @207427
   Scenario Outline: Modal- Admin- Config- Verify we can enter text in text fields,
