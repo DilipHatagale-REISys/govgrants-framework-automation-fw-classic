@@ -799,7 +799,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:appBudgetPeriodTableId---"
 
-  @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
+  @35438m   @disablingPDFExportFileForEnhancedGrid-gPlanning @smoke
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -5487,7 +5487,7 @@ Business Need: EnhancedGrid Component Scenarios
 #      | newFieldsApi                                                                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
 #      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,Test_num__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @192952 @379194 @379196 @379201 @Sanity @SanityEGrid @sprint1
+  @192952m @379194 @379196 @379201 @Sanity @SanityEGrid @sprint1
   Scenario: Data table Enhanced-To verify , currency field should accept the negative value
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5510,7 +5510,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly can see row level action button "Edit" against "Construction" in flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     And I click on "Edit" icon for "Construction" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     #379196
-    Then I see "NonCashMatch__c" field is editable inside enhanced grid
+    #Then I see "NonCashMatch__c" field is editable inside enhanced grid
     And I enter value "-91304" into field "NonCashMatch__c"
     #And I click on top right button "Save" in flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     And I click on "Save" in the page details

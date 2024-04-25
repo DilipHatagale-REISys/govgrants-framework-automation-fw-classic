@@ -12168,8 +12168,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Autosnapshot grant 1"
-    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I perform quick search for "Test 32_Application"
+    When I click on "View" icon for "Test 32_Application" inside table
     Then I see "Submit to grantor" button is displayed
     Then I see "Edit" button is displayed
 

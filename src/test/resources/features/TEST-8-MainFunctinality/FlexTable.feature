@@ -3354,6 +3354,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335216 @382206 @Sanity  @SanityFlexTable
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -3378,6 +3384,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335220 @382207 @Sanity  @SanityFlexTable
   Scenario: Flex table-Total records count-PM-UI-To verify that Total records get changed on creating a new record or deleting/moving records
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -17416,7 +17428,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17716,7 +17728,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23587                  |
-      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-13619                   |
+      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-13619                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17744,7 +17756,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

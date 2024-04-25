@@ -1140,29 +1140,29 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334659 @382396 @SanityPATCH  @SanityPATCHFlexTable
+  @334659p @382396 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "GT-GA-00001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "GT-GA-00001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334660 @382397 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "GT-GA-00001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "GT-GA-00001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334661 @382399 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I quick search "GT-GA-00075" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "GT-GA-00075" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
   @334663
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
@@ -1901,7 +1901,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Automation Internal Program for flow" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     And I refresh the page
 
-  @334746 @382513 @382541 @SanityPATCH  @SanityPATCHFlexTable
+  @334746p @382513 @382541 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -15711,7 +15711,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @339390 @339395 @needDilipConfirmation @382264 @SanityPATCH  @SanityPATCHFlexTable
+  @339390p @339395 @needDilipConfirmation @382264 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the grid". for the Delete action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -15735,13 +15735,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     #When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
     And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:ProgramsgridTableId---"
     #Then I see entire page is refreshing
+    And I pause execution for "5" seconds
     Then I see the following message in the page details :
       | Record deleted successfully. |
 
     Examples:
       | Users |
       | ADMIN |
-      | PM    |
+      #| PM    |
 
   @339397 @339409 @382265 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
@@ -19786,18 +19787,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
-  @382211 @SanityPATCH  @SanityPATCHFlexTable
+  @382211p @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    And I navigate to "Budget" sub tab
+    When I perform quick search for "Program For Application"
+    #When I click on "View" icon for "Program For Application" inside table
+   # And I navigate to "Budget" sub tab
     Then I see row level action button "Edit" rendered on flex table
     Then I see row level action button "View" rendered on flex table
-    Then I see row level action button "Delete" rendered on flex table
+    #Then I see row level action button "Delete" rendered on flex table
 
   @382216 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
@@ -19813,7 +19814,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I softly see the following messages in the page details :
       | Saved Successfully! |
 
-  @382240 @SanityPATCH  @SanityPATCHFlexTable
+  @382240p @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

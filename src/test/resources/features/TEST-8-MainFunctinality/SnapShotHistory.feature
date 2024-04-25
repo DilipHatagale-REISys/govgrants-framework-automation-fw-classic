@@ -770,7 +770,7 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409 @217476 @382811 @382843 @Sanity @SanitySnap
+  @201409m @217476 @382811 @382843 @Sanity @SanitySnap
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
