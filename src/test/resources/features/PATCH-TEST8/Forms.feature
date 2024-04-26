@@ -351,7 +351,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #206863
-    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+    Then I see page title "Applications: Program Specific Application form View ~ Grants Portal"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
       | Form saved successfully. |
@@ -366,6 +366,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -606,7 +607,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Save" button is displayed
     And I click on "Cancel" in the page details
     When I click alert button "Yes"
-    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+    Then I see page title "Applications: Program Specific Application form View ~ Grants Portal"
 
   @206873p @206874 @382025 @382026 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
@@ -635,8 +636,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #382028
@@ -921,9 +922,9 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
@@ -1021,7 +1022,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381964 @SanityPATCH  @SanityPATCHForms
+  @381964p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1029,12 +1030,12 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    Then I see "Form Name" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "Mandatory" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "Percentage" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "Last Modified By" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "Last Modified Date" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "Allow Edit?" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Form Name" shown inside flex table with id "---program:-:AllFormsTableId---"
+    Then I see "Mandatory" shown inside flex table with id "---program:-:AllFormsTableId---"
+    Then I see "Percentage" shown inside flex table with id "---program:-:AllFormsTableId---"
+    Then I see "Last Modified By" shown inside flex table with id "---program:-:AllFormsTableId---"
+    Then I see "Last Modified Date" shown inside flex table with id "---program:-:AllFormsTableId---"
+    Then I see "Allow Edit?" shown inside flex table with id "---program:-:AllFormsTableId---"
 
   @381967 @381968 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:
@@ -1053,7 +1054,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381969 @SanityPATCH  @SanityPATCHForms
+  @381969p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1061,7 +1062,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
+    And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
 
   @381970 @SanityPATCH  @SanityPATCHForms @wip
@@ -1086,7 +1087,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
 
   @381987 @381990 @381982 @381983 @SanityPATCH  @SanityPATCHForms @wip
@@ -1194,19 +1195,19 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @382037 @SanityPATCH  @SanityPATCHForms
+  @382037p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Edit" in the page details
-    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+    Then I see page title "Applications: Program Specific Application form View ~ Grants Portal"
 
   @382038 @382039 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
@@ -1227,14 +1228,16 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @382040 @SanityPATCH  @SanityPATCHForms
+  @382040p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "Edit" icon for "Program For Application" inside table
+    Given I enter "ProgramApplicationForm_v" values from "Program_Field_Values_PATCH_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     When I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Validate" in the page details

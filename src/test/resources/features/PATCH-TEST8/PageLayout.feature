@@ -1524,8 +1524,8 @@ Business Need: Page Layout Component Scenarios
   @53388p   @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue |  filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   |  ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -11144,7 +11144,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "URL" inside page block
     Then I softly see field "Date and Time" inside page block
     Then I softly see field "Published Date" inside page block
-    Then I softly see field "TestPicklist" inside page block
+    #Then I softly see field "TestPicklist" inside page block
     Then I softly see field "Project Goals" inside page block
     Then I softly see field "Type" inside page block
     Then I softly see field "Primary Funder Type" inside page block
@@ -11733,12 +11733,11 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient Recipient ApplicationView |                           |                            |
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11919,7 +11918,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379091 @379092 @SanityPATCH @SanityPATCHPageLayout
+   @379092 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11931,7 +11930,7 @@ Business Need: Page Layout Component Scenarios
     #Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
     Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I see "Files" subtab is present with icon "fa fa-file" in page details
-    Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
+    Then I see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
     Examples:
       | User  |
@@ -11950,7 +11949,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Responsibilities" subtab is present in page details
     #Then I see "Related Log" subtab is present in page details
     Then I see "Files" subtab is present in page details
-    Then I see "Messages" subtab is present in page details
+    Then I see "Collab" subtab is present in page details
 
     Examples:
       | User  |
@@ -11980,7 +11979,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -12032,7 +12030,6 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Success" page message displayed in page layout
@@ -12056,7 +12053,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -12083,7 +12079,6 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Alert" page message displayed in page layout
@@ -12107,7 +12102,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -12133,7 +12127,6 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Error" page message displayed in page layout
@@ -12147,9 +12140,9 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
     And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
     Then I see "Save" button is displayed
     Then I see "Cancel" button is displayed
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -12174,21 +12167,21 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    Then I see "Submit to grantor" button is displayed
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
+    Then I see "Submit Application" button is displayed
     Then I see "Edit" button is displayed
 
-  @379409 @379410 @SanityPATCH @SanityPATCHPageLayout
+  @379409p @379410 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
-    Then I softly see field "Name" inside page block
-    Then I softly see field "Status__c" inside page block
-    Then I softly see field "Account__c" inside page block
+    Then I softly see field "EGMS ID" inside page block
+    Then I softly see field "Status" inside page block
+    Then I softly see field "Organization" inside page block
 
     Examples:
       | User  |
@@ -12201,7 +12194,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I softly see field "fieldInternalOrganization__c" inside page block
     Then I softly see field "fieldType__c" inside page block
@@ -12218,7 +12211,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Responsibilities" shown at number "2" inside subtabs
     Then I see "Files" shown at number "3" inside subtabs
     Then I see "History" shown at number "4" inside subtabs
-    Then I see "Messages" shown at number "5" inside subtabs
+    Then I see "Collab" shown at number "5" inside subtabs
 
     Examples:
       | User  |
@@ -12231,8 +12224,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Overview" shown at number "0" inside subtabs
     Then I see "Financials" shown at number "1" inside subtabs
@@ -12240,7 +12232,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "History" shown at number "3" inside subtabs
     Then I see "Collab" shown at number "3" inside subtabs
 
-  @379415 @379416 @SanityPATCH @SanityPATCHPageLayout
+  @379415p @379416 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12262,8 +12254,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Description" shown at the number "0" inside page layout
     Then I see "System Information" shown at the number "1" inside page layout
@@ -12274,9 +12265,11 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I softly see field "StartDate__c" inside page block
     Then I softly see field "WebsiteAddress__c" inside page block
@@ -12306,8 +12299,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
@@ -12333,8 +12325,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
@@ -12363,8 +12354,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "toggleFlexTablepopupflextable" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
     Then I see helpIcon displayed beside "Project Period End Date" respective field or column

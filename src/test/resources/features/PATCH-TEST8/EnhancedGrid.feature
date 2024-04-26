@@ -6236,8 +6236,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Grant Automation"
+    When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6311,8 +6311,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Grant Automation"
+    When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6324,7 +6324,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @352429 @352430 @379208 @SanityPATCH @SanityPATCHEGrid
+  @352429p @352430 @379208 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6336,8 +6336,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Grant Automation"
+    When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6360,8 +6360,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Grant Automation"
+    When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"

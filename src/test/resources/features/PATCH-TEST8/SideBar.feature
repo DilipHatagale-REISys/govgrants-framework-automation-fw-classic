@@ -112,8 +112,8 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Content     | Open in new window | true          | GrantorHome        | Phase Name                | Completed                  |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    When I navigate to "Completed" content inside "Tasks" subheader on left panel
+    And I setup my app as "As a Grantor"
+    And I navigate to "Completed" content inside "Tasks" subheader on left panel
     Then I see "<Page title>" in new tab
     Examples:
       | Page title      |
