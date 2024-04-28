@@ -9638,3 +9638,58 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "automationadminpatch@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"
+
+
+  @419375 @utahpatch
+  Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
+  UTAH - Send Email - Admin - To verify that in the email, before NOTE statement, "To view this record, please click here" line should be available
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "External User (Victoria Leeds): UTAH - Patch testing" into field "Subject" on send email modal
+    When I enter value "External User (Victoria Leeds): UTAH - Patch testing" into field "Body Content" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com" into field "{testData:CcField}" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "180" seconds
+    Then I refresh the page
+    Then I see the mail subject is as follows :
+      | Sandbox: External User (Victoria Leeds): UTAH - Patch testing                                           |
+      | To view this record, please click here                                                                  |
+      | Note: This e-mail was sent from Framework Version1 via Salesforce. Please do not delete the text below. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @419375 @utahpatch
+  Scenario: UTAH - Send Email - PM - To verify that in the email, before NOTE statement, "To view this record, please click here" line should be available
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Automationadminpm@yopmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "External User (Victoria Leeds): UTAH - Patch testing" into field "Subject" on send email modal
+    When I enter value "Test Automation Email" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "180" seconds
+    Then I refresh the page
+    Then I see the mail subject is as follows :
+      | Sandbox: External User (Victoria Leeds): UTAH - Patch testing                                           |
+      | To view this record, please click here                                                                  |
+      | Note: This e-mail was sent from Framework Version1 via Salesforce. Please do not delete the text below. |
