@@ -7,7 +7,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @createRecordForSenEmail
   Scenario Outline:  create program
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -25,14 +24,15 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin | Send Email Active program           |
       | PM    | Send Email Active program           |
 
-  @332320
+  @332320p
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "To" inside Send Email Modal
@@ -40,12 +40,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332321
   Scenario: when PM user Hover on the  TO field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "To" inside Send Email Modal
@@ -66,12 +67,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332323
   Scenario: when Internal user Hover on the  CC field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Cc" inside Send Email Modal
@@ -79,12 +81,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332324
   Scenario: when  PM user Hover on the  CC field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Cc" inside Send Email Modal
@@ -106,12 +109,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332326
   Scenario: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
@@ -119,12 +123,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332327
   Scenario: when  Internal user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
@@ -145,12 +150,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332329
   Scenario: Send Email -UI - when  Internal user Hover on the Subject field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Subject" inside Send Email Modal
@@ -158,12 +164,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332330
   Scenario: Send Email -UI - when user Hover on the Subject field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Subject" inside Send Email Modal
@@ -184,12 +191,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332332
   Scenario: Send Email -UI - when user Hover on the Body Content  field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
@@ -197,12 +205,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332333
   Scenario: Send Email -UI - when Internal user Hover on the Body Content  field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
@@ -223,12 +232,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332335
   Scenario: Send Email -UI - when Internal user Hover on the Attachments field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
@@ -236,12 +246,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332337
   Scenario: Send Email -UI - when  user Hover on the Attachments field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
@@ -262,12 +273,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332339
   Scenario: Send Email -UI - when  user Hover on the Select file field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
@@ -275,12 +287,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332340
   Scenario: Send Email -UI - when Internal  user Hover on the Select file field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
@@ -301,24 +314,26 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332342
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for admin user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
 
   @332343
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for Internal user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
@@ -338,12 +353,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     ##########Test suite: Send Email Attachments (Suite ID: 332777)#########
   @332780
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'internal'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -356,12 +372,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332781 @382441 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'External'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -373,12 +390,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332784
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'Group'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -389,12 +407,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332785
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'internal'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -408,12 +427,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332786
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'External'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -427,12 +447,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332787
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'Group'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -445,12 +466,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332788 @382439 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -464,12 +486,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332790
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO (internal) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -499,12 +522,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332792
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (External) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -518,12 +542,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332794
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (External) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -537,12 +562,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332795
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -556,12 +582,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332796
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -579,12 +606,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332798
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -602,12 +630,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332799
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group)
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -625,12 +654,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332800
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -645,12 +675,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332801
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -667,12 +698,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332803
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -688,12 +720,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332804
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -709,12 +742,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332805
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -730,12 +764,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332806
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -755,12 +790,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332807
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -780,12 +816,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332808
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -805,12 +842,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332809 @382756 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "dilip.hatagale@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test" in send email LWC
@@ -829,12 +867,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -879,24 +918,26 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332815
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Attachment upto 1.5MB Limit Exceeded." error massage in attachment section
 
   @332816
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -905,12 +946,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332821
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then " Insert links to file(s) from the record"' message is displayed on the LWC- reply email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -926,12 +968,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332822
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -947,12 +990,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332833
   Scenario: Send Email -Attachment - To verify ,  user are remove the attachement from  sends email modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -961,12 +1005,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @382774
   Scenario: Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
@@ -981,12 +1026,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see Attachment section is displayed under send email modal
@@ -1001,7 +1047,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -1028,12 +1073,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -1048,12 +1094,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -1069,7 +1116,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -1137,7 +1183,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
   Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -1163,12 +1208,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -1188,12 +1234,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1215,12 +1262,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1243,12 +1291,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1270,12 +1319,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1301,12 +1351,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field
@@ -1322,12 +1373,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field
@@ -1345,7 +1397,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1375,7 +1426,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1406,7 +1456,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1440,12 +1489,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1467,12 +1517,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1491,12 +1542,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1518,12 +1570,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
@@ -1539,12 +1592,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1559,12 +1613,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1579,12 +1634,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1606,12 +1662,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1634,12 +1691,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1660,12 +1718,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1693,12 +1752,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1728,7 +1788,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | en_US  | America/Panama |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1753,12 +1812,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see select files section is displayed under send email modal
@@ -1771,12 +1831,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I do not see select files section is displayed under send email modal
@@ -1801,12 +1862,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I update custom metadata setting changes:
       | id                 | label                          | booleanValue | customMetaDataApiName    |
       | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1832,12 +1894,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I update custom metadata setting changes:
       | id                 | label                          | booleanValue | customMetaDataApiName    |
       | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1854,7 +1917,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1879,7 +1941,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1904,25 +1965,26 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I enter value "Demo Email select files" into field "Subject" on send email modal
     And I click modal button "Select Files"
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     When I close modal by clicking the top right x button
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
-    Then I see attachment "TC Collab.png" is present in send email modal
+    Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
 
   @101273 @SentDateOfEmailAtSendEmailModalForNewlyCreatedRecord
   Scenario: Validate send date of an email on send email modal for newly created record
@@ -1934,7 +1996,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -1963,7 +2024,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
@@ -1980,12 +2040,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2007,12 +2068,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2043,12 +2105,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2074,12 +2137,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "test@123.com;test@gmail.com" into field "{testData:ToField}" on send email modal
@@ -2109,7 +2173,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2137,12 +2200,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2169,7 +2233,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2214,12 +2277,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -2256,12 +2320,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -2278,12 +2343,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -2301,12 +2367,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2315,12 +2382,12 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test multiple file" into field "Subject" on send email modal
     And I click modal button "Select Files"
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "4" seconds
     When I close modal by clicking the top right x button
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
-    Then I see attachment "TC Collab.png" is present in send email modal
+    Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
 
 
   @147282  @verifyTextInsideCkEditorInputBoxIsDisplayedAsItalicInsideSendEmailModal
@@ -2333,7 +2400,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2382,7 +2448,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332834 @382365 @382366 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline: Sanity TC-Admin/PM-Verify that the user can attach file in the  Attachement section.
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -2412,7 +2477,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382371 @382372 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity -TC-Admin-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -2442,7 +2506,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382375 @382376 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -2473,7 +2536,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382419 @382420 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity -TC-Admin/PM- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -2510,7 +2572,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382428 @382429 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline: Sanity-TC-Admin/PM- Verify that if the email is sent without email address, a pop-up is generated warning "Enter To Email Address.
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
@@ -2555,7 +2616,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2580,12 +2640,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2608,7 +2669,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2636,7 +2696,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2663,7 +2722,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2691,7 +2749,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2718,7 +2775,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2746,7 +2802,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2773,7 +2828,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2800,7 +2854,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2829,12 +2882,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see the text "Send Copy (Cc) to Me" in send email page
@@ -2847,12 +2901,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hovering mouse on help text icon at "{testData:SendCopyCheckbox}" inside send email modal
@@ -2866,12 +2921,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
@@ -2887,7 +2943,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2912,7 +2967,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -2945,12 +2999,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2967,12 +3022,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -2989,12 +3045,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -3012,12 +3069,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -3037,7 +3095,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3062,7 +3119,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3091,7 +3147,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3114,7 +3169,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3140,7 +3194,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3168,7 +3221,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3195,7 +3247,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3212,7 +3263,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see the following messages in the page details :
       | Email Sent Successfully. |
 
-  @169493 @tejal
+  @169493
   Scenario: verify,User send the email from TO &CC field as 'External' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3222,7 +3273,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3245,7 +3295,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "View" icon for "Test" inside table
     Then I see "test for external" as "Body Content" on send email modal
 
-  @169491 @tejal @wip
+  @169491 @wip
   Scenario: verify User send the email from TO&CC  field as 'internal' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3255,7 +3305,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3286,7 +3335,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test" as "Body Content" on send email modal
 
-  @169289 @tejal @wip
+  @169289 @wip
   Scenario: verify User send the email from TO field as 'Group' with multiple attachment & files  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3296,7 +3345,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3338,7 +3386,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
     Then I see "test group for attachment and files" as "Body Content" on send email modal
 
-  @169263 @tejal @wip
+  @169263 @wip
   Scenario: Verify User send the email from TO field as 'internal' with attachment  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3348,7 +3396,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3378,7 +3425,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test for internal with attachment" as "Body Content" on send email modal
 
-  @169286 @tejal @wip
+  @169286 @wip
   Scenario: Verify User send the email from TO field as 'Group' with multiple attachment and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3388,7 +3435,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3420,7 +3466,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test group for attachment" as "Body Content" on send email modal
 
-  @169287 @tejal @wip
+  @169287 @wip
   Scenario: Verify User send the email from TO field as 'Group' with multiple files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3430,7 +3476,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3468,7 +3513,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
     Then I see "test group for files" as "Body Content" on send email modal
 
-  @169527 @tejal
+  @169527
   Scenario: Verify User send the email from TO&CC field as 'Group' with multiple files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3478,7 +3523,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3510,7 +3554,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "test group for files" as "Body Content" on send email modal
 
-  @169529 @tejal
+  @169529
   Scenario: Verify User send the email from TO&  CC field as 'Group' with multiple attachment & files  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3520,7 +3564,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3558,7 +3601,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see attachment "captureModalFields.png" is present in send email modal
     Then I see attachment "actionsAtEgrid.png" is present in send email modal
 
-  @169266 @tejal @wip
+  @169266 @wip
   Scenario: Verify User send the email from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3568,7 +3611,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3610,7 +3652,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "test for files & attachment" as "Body Content" on send email modal
 
-  @169265 @tejal @wip
+  @169265 @wip
   Scenario: Verify user send the email from TO field as 'internal' with files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3620,7 +3662,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3670,7 +3711,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3709,7 +3749,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3748,7 +3787,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3791,7 +3829,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3843,7 +3880,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login as "Automation" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3901,7 +3937,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
 
-  @169703 @tejal @wip
+  @169703 @wip
   Scenario: Verify user reply email previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3911,7 +3947,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -3969,7 +4004,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4025,7 +4059,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4093,7 +4126,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4139,7 +4171,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4189,7 +4220,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4238,7 +4268,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4282,7 +4311,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4324,7 +4352,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4346,7 +4373,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     And I click modal button "Select Files"
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
@@ -4369,7 +4396,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4392,7 +4418,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     And I click modal button "Select Files"
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
@@ -4418,7 +4444,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4456,7 +4481,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Subject:" as "Body Content" on send email modal
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
 
-  @169699 @tejal
+  @169699
   Scenario: Verify user reply email  previously send from  TO field as 'internal' with attachment  and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4466,7 +4491,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4508,7 +4532,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 #      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                    |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4545,7 +4568,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4580,12 +4602,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -4604,7 +4627,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4621,7 +4643,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
-  @169810 @tejal
+  @169810
   Scenario: Verify User reply email from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4631,7 +4653,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4678,7 +4699,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "DuplicateFile.txt" as "Body Content" on send email modal
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
 
-  @169700 @tejal
+  @169700
   Scenario: Verify user reply email with attachment to previously send from  TO field as 'internal' with attachment  and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4688,7 +4709,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4722,7 +4742,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Name" as "Attachments" on send email modal
     Then I see "Action" as "Attachments" on send email modal
 
-  @169703 @tejal
+  @169703
   Scenario: Verify user reply email previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4732,7 +4752,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4769,7 +4788,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
-  @169710 @tejal
+  @169710
   Scenario: Verify reply email with attachment & files that previously send from TO& CC field as 'internal' with attachment & files and click on reply View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4779,7 +4798,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4807,13 +4825,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "actionsAtEgrid.png" in send email modal
     And I click modal button "Select Files"
     And I pause execution for "5" seconds
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
     And I refresh the page
     When I click on "View" icon for "RE: test reply" inside table
-    Then I see "TC Collab.png" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From: automationadminpatch@yopmail.com" as "Body Content" on send email modal
@@ -4836,7 +4854,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4869,7 +4886,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4891,7 +4907,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4919,7 +4934,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4954,7 +4968,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -4977,7 +4990,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5014,7 +5026,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5051,12 +5062,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -5073,7 +5085,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5111,7 +5122,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5133,7 +5143,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5159,7 +5168,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5184,7 +5192,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5218,7 +5225,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5242,7 +5248,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
-  @169708 @tejal
+  @169708
   Scenario: Verify Send Email-User reply email previously send from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5252,7 +5258,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5293,17 +5298,10 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see the text containing :
       | Attachments |
 
-  @169825 @tejal
+  @169825p
   Scenario: Verify user reply the email with files&attachment  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5318,10 +5316,10 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
     When I enter value "reply TO& CC internal" into field "Subject" on send email modal
     When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
-    When I upload attachment "TC Collab.png" in send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
     And I click modal button "Select Files"
     And I pause execution for "5" seconds
-    When I check "TC Collab.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
@@ -5340,9 +5338,9 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Subject:" as "Body Content" on send email modal
     Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
     Then I see text as "Links to Additional Attachments" on reply email modal
-    Then I see "TC Collab.png" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
-  @169832 @tejal
+  @169832
   Scenario: Verify user reply the email from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5352,7 +5350,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5386,7 +5383,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" as "Body Content" on send email modal
     Then I see text as "reply for to &cc external 2" in reply email modal
 
-  @169813 @tejal
+  @169813
   Scenario: Verify user reply email with attachment& files from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5396,7 +5393,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5454,7 +5450,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5508,7 +5503,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5558,7 +5552,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5587,7 +5580,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Scenario: Send email -To verify,When User click on  reply icon when attachment is attached for the mail , then  reply back content is aligned properly
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5623,7 +5615,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5663,7 +5654,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5691,7 +5681,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Subject: test                          |
 
 
-  @173457 @tejal
+  @173457
   Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5701,7 +5691,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5722,7 +5711,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5751,7 +5739,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5785,7 +5772,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5818,7 +5804,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5856,7 +5841,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5886,7 +5870,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5919,7 +5902,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5954,7 +5936,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -5988,7 +5969,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6023,7 +6003,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
 #    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6056,7 +6035,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6088,7 +6066,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6134,7 +6111,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6164,7 +6140,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6195,7 +6170,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6226,7 +6200,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6261,7 +6234,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6293,7 +6265,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6326,7 +6297,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6361,7 +6331,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6391,7 +6360,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6421,7 +6389,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6448,7 +6415,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6475,7 +6441,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6504,7 +6469,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6536,7 +6500,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6568,7 +6531,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6601,7 +6563,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6634,7 +6595,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -6668,12 +6628,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6701,12 +6662,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -6722,12 +6684,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6743,12 +6706,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6764,12 +6728,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -6786,12 +6751,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6808,12 +6774,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -6829,12 +6796,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6863,12 +6831,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -6898,12 +6867,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6922,12 +6892,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6937,7 +6908,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see the following messages in the page details :
       | Email Sent Successfully. |
 
-  @194897 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
+  @194897p @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: Send Email - To verify , User should not be able to see "Upload file modal" when type any text in " TO " field and press "Enter"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6945,12 +6916,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -6965,12 +6937,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -6986,12 +6959,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -7007,12 +6981,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7028,12 +7003,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -7049,12 +7025,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -7070,12 +7047,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "3" seconds
@@ -7092,12 +7070,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7109,7 +7088,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Automation PM1   |
       | Automation Admin |
 
-  @169705 @tejal
+  @169705
   Scenario: Verify user reply email with select file that previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7119,7 +7098,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2675                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -7172,12 +7150,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |Send Email -"Send Copy (Cc) to Me" - To verify ,l user  checked checkbox for "Send Copy (Cc) to Me" on Reply modal   it will show checked on after send reply|
   |send email-User Click on View  LWC action then View LWC modal is displayed|
   |send email-User Click on Reply LWC action then Reply LWC modal is displayed|
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7207,7 +7186,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382774 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
@@ -7232,12 +7210,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |Send Email -Verified when internal user every fields kept empty then error message is displying when clicked on send button|
   |Send Email -when  External user only filled subject field then 'Please add a recipient' message|
   |Send Email -when  user only filled subject field then 'Please add a recipient' message|
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "Send" button in send email modal
@@ -7291,12 +7270,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |send email- Admin User can see the Body content  field on the send email modal|
   |send email-User can see the Send Copy (Cc) to Me field on the send email modal|
   |send email- 'Send Copy (Cc) to Me' field display on the send email  modal|
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     #333104
@@ -7320,12 +7300,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333066
   Scenario: SE other Scenarios
   |send email-User send email with Internal email ID's in TO &CC field|
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7346,12 +7327,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |send email-When User check the checkbox for  the internal from dropdown then Group field is getting hidden   from CC field|
   |send email-When User check the checkbox for  the group  from dropdown then internal &External  field is getting hidden   from CC field|
   |Send email- admin  User send email then 'Email Sent Successfully.' message is displayed|
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7373,12 +7355,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Scenario: SE other Scenarios2
   |send email-Admin User can see the select file  field on the send email modal |
   |send email- Admin User click on select file field then modal should open     |
-    Given I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "Select Files" button in send email modal
@@ -7463,12 +7446,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332910 @332967
   Scenario: Send email -TO field should displayed as expected for admin user.
   | Send email -Body Content field should displayed as expected for admin user. |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I softly see field "To" inside page block
@@ -7476,36 +7460,39 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333103
   Scenario: Send email- CC field should displayed as expected.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I softly see field "Cc" inside page block
 
   @332912 @332969
   Scenario:Send email- User can see the subject field on the send email modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I softly see field "Subject" inside page block
 
   @332914 @332972
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC-External" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -7530,12 +7517,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332929 @332994
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC-External" email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -7552,12 +7540,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332389 @332390 @332391
   Scenario: Send Email -"Send Copy (Cc) to Me" - To verify , checked checkbox for "Send Copy (Cc) to Me" on send modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7573,12 +7562,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332833
   Scenario: Send Email -Attachment - To verify ,  user are remove the attachement from  sends email modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -7587,12 +7577,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332815
   Scenario: Send Email -To verify , when user try to add file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "File.pdf" in Send Email Modal
@@ -7600,12 +7591,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332816 @333015
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7614,12 +7606,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332924 @332991
   Scenario: Send email- User should be able to see "true" when select file is attached to "TO-External"   email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7637,12 +7630,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332821
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then " Insert links to file(s) from the record"' message is displayed on the LWC- reply email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7660,12 +7654,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332822 @333011
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7684,12 +7679,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332923 @332989
   Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Internal "   email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7708,12 +7704,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332926 @332993
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -7730,12 +7727,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332931 @332995
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group " email
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -7749,12 +7747,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332916 @332973
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -7775,12 +7774,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332925 @332992
   Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Group " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -7795,12 +7795,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332933 @332997
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7813,12 +7814,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332917 @332974
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7837,12 +7839,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332918 @332977
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7861,12 +7864,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332919 @332979
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -7884,12 +7888,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332920 @332980
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -7908,12 +7913,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332921 @332982
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -7931,12 +7937,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332922 @332984
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -7955,12 +7962,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332342
   Scenario: Send Email - Required to save fields  (*)  is displayed for admin user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
@@ -7993,12 +8001,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332944 @333005
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -8011,12 +8020,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332947 @333008
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -8028,12 +8038,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332949 @333009
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" email
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8045,12 +8056,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332908
   Scenario: Send Email -"Send Copy (Cc) to Me" - To verify , checked checkbox for "Send Copy (Cc) to Me" on send modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8064,7 +8076,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332343 @333049
   Scenario: Send Email - Required to save fields  (*)  is displayed for Internal user
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
@@ -8075,12 +8086,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332337 @332951
   Scenario: Send Email - when user Hover on the Attachments field help icon and help text is displayed.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
@@ -8114,21 +8126,25 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332339 @333036
   Scenario: Send Email - when  user Hover on the Select file field help icon and help text is displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
     Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
 
-  @332335
+  @332335p
   Scenario: Send Email - when Internal user Hover on the Attachments field help icon and help text is displayed
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
@@ -8141,7 +8157,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332340 @332954
   Scenario: Send Email - when Internal  user Hover on the Select file field help icon and help text is displayed
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
@@ -8153,12 +8168,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332936 @332999
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8170,12 +8186,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332938 @333001
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -8187,12 +8204,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332908
   Scenario: Send email- when we attach the single file at Select Files field   then files are visible to sender and receiver.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8213,12 +8231,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333046
   Scenario: Send email-To verify ,when select file  is added and   body content is not available then correct spacing display.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8230,12 +8249,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333048 @332841
   Scenario: Send email-To verify ,when attachment is added and   body content is not available then correct spacing display.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -8247,12 +8267,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333037 @332840
   Scenario: Send email- To verify , if body content is not available then correct spacing display.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8264,12 +8285,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333038
   Scenario: Send email- To verify ,in TO field select as  'Group'& in CC field select as 'internal'  and body content is not available then correct spacing display.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -8281,12 +8303,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333039 @332835
   Scenario: Send email- To verify ,in TO/CC field 'External' is selected   and body content is not available then correct spacing display.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "Send" button in send email modal
@@ -8296,12 +8319,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332347 @332351
   Scenario: Send Email -Select File - To verify , When  user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8313,12 +8337,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332349
   Scenario: Send Email -Select File - To verify , When  user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8330,12 +8355,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332352
   Scenario: Send Email Select File, When Internal user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8349,12 +8375,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332353 @332357
   Scenario: Send Email -Select File - To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -8368,12 +8395,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332354
   Scenario: Send Email -Select File - To verify , When External user sends an Email with an file  from TO field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8387,12 +8415,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332355 @332356
   Scenario: Send Email -Select File - To verify , When Internal user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8413,12 +8442,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332346 @332350
   Scenario: Send Email -Select File, When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8430,12 +8460,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332348
   Scenario: Send Email - To verify , When  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -8456,13 +8487,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   | Send email Send Button should displayed as expected for admin user. |
   | Send email- User should be able to see "true" when select file is attached to "CC- External " email. |
   | Send email- User should be able to see value for title Subject. |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
-    When I navigate to "Collab" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     #332366
     Then I softly can see top right button "Send Email" in page detail
     #332365
@@ -8501,12 +8532,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332369 @332370
   Scenario: Send Email When Internal user sends an Email with file from CC (Internal/External) field then attached file is displayed on the View modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -8521,12 +8553,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332372
   Scenario: Send Email To verify When user sends an Email with an file  from TO & CC (Internal/External) field then attached file is displayed on Send modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8538,12 +8571,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332373
   Scenario: Send Email To verify When  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -8552,12 +8586,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332374 @332388
   Scenario: Send Email Select File, When internal  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8575,24 +8610,26 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332375
   Scenario: Send Email -Select File - To verify , When internal  user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I upload attachment "File.pdf" in Send Email Modal
     Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
 
   @332376
   Scenario: Send Email To verify, When user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -8606,12 +8643,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332377
   Scenario: Send Email To verify, When Internal user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -8620,12 +8658,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332378
   Scenario: Send Email Select File, When user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8640,12 +8679,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332379 @332387
   Scenario: Send Email Select File, When user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -8659,12 +8699,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332380
   Scenario: Send Email When Internal user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8682,12 +8723,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332381 @332386
   Scenario: Send Email When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send modal.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -8702,12 +8744,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332382 @332385
   Scenario: Send Email To verify, On reply modal user are attached the file.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8722,12 +8765,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332383
   Scenario: Send Email -Select File - To verify, On reply modal user are attached the multiple  file.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -8747,12 +8791,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332384
   Scenario: Send Email On reply modal Internal user are attached to file.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -8766,7 +8811,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332346 @332347 @332348
   Scenario Outline: To verify, Admin User try to attach the file more than 10 then  errror message is getting dispalyed
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
@@ -8818,7 +8862,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332351 @332352
   Scenario Outline: To verify, Admin User can not add the duplicate file if user can try then "File with this name already exist.' error message is displayed
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
@@ -8835,10 +8878,9 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | ADMIN |
       | PM    |
 
-  @332353 @332354
+  @332353p @332354
   Scenario Outline: To verify, Internal user can Download file by clicking on download action button in the Attachments table in front of the attached file on send email Reply  modal
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
@@ -8900,12 +8942,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332360
   Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email  modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
@@ -8917,12 +8960,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332361 @332362
   Scenario: To verify, Internal User should be able to see Attachment button when select file is attached  to  reply email modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -8931,12 +8975,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332363 @332364 @332365 @332366 @332367 @332368 @332369 @332370 @332372 @332373 @332374 @332375 @332376 @332377 @332378 @332379 @332380 @332381 @332382 @332383 @332384 @332385 @332386 @332387 @332388 @332389
   Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     #332363
@@ -8978,12 +9023,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332390 @332391 @333018
   Scenario: Verify Send Email LWC Modal for ADMIN checkbox selected
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     #332390
@@ -9005,7 +9051,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333019 @333022 @333023 @333024
   Scenario Outline: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
@@ -9048,12 +9093,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333026
   Scenario: When User check the checkbox for  the group  from dropdown then internal &External  field is getting hidden from CC field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see and check "To" field dropdown is displayed with "Internal" value
@@ -9065,12 +9111,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333027
   Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Internal "   email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -9084,12 +9131,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333029
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -9103,12 +9151,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333030
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group " email
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -9122,12 +9171,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333031
   Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -9148,12 +9198,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333032
   Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Group " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -9168,12 +9219,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333033
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -9186,12 +9238,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333035
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -9210,12 +9263,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333036
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -9234,12 +9288,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332852 @332793
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -9257,12 +9312,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332797
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " reply  email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -9294,12 +9350,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332813
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -9312,12 +9369,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332818
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" email.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -9330,7 +9388,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332820
   Scenario Outline: To verify, If Admin and PM try to download attach file then It will open in the new tab
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
@@ -9371,12 +9428,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @332836
   Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" email
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -9389,7 +9447,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332837
   Scenario: To verify , When Internal  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9420,7 +9477,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332838
   Scenario: To verify , When Internal   user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9452,7 +9508,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332840
   Scenario: To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9483,7 +9538,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332841
   Scenario: To verify , When   user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9521,7 +9575,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333068
   Scenario: To verify , When Internal   user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9560,7 +9613,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333070
   Scenario: To verify , When  user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -9598,12 +9650,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333102 @333072
   Scenario: Send Email -Select File - To verify, On reply modal user are attached the multiple  file.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "Cc" field and Select "Groups" value
@@ -9623,12 +9676,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @333088
   Scenario: Send Email On reply modal Internal user are attached to file.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -9644,7 +9698,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
   UTAH - Send Email - Admin - To verify that in the email, before NOTE statement, "To view this record, please click here" line should be available
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
