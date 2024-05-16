@@ -1,4 +1,4 @@
-@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA @skiponjenkins
+@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
@@ -499,7 +499,7 @@ Business Need: security review Scenarios
     When I perform quick search inside global search "An"
     Then I see expected table with id "toggleFlexTableAnnouncement__c"
 
-  @doubt @107807 @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
+  @doubt @107807p @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, applications Table is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

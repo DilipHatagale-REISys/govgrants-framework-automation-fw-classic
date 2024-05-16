@@ -2127,6 +2127,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
+    When I close "Send Email" modal by clicking on x top right button
+    When I navigate to "Collab" sub tab
+    When I perform quick search for "Demo Email select files" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "View" icon for "Demo Email select files" inside table
+    Then I softly see "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.)" on html page
     Then I see hyperlink at value "SendEmailAttachment.pdf" inside "sendEmail" modal
 
   @116303 @validateIfOneMailIdIsRemovedFromReplyEmailToFieldThenEmailSentSuccessfullyOnIt
@@ -2357,7 +2362,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see "group 1" on html page
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
 
   @121365 @validateThatMultipleFilesUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInEditMode
   Scenario: validate that multiple files uploaded from select files section in send email modal in view mode
@@ -2933,7 +2939,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
-  @141604    @validateSuccessMsgDisplayedBySendingEmailSuccessFullyByLoginAsAdminUser
+  @141604p    @validateSuccessMsgDisplayedBySendingEmailSuccessFullyByLoginAsAdminUser
   Scenario: validate success msg displayed by sucessfully sending of email by admin user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2954,8 +2960,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    Then I see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @159444 @validateAttentionToFieldValueAtSendEmailMessageTable @wip
   Scenario: Validate Attention To field at reply email inside message table at send email

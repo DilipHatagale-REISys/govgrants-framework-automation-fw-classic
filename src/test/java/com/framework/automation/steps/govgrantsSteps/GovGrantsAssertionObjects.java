@@ -490,7 +490,7 @@ public final class GovGrantsAssertionObjects {
      * @modifier aashish.pardeshi
      */
     public void assertPageMessageValue(boolean contains, List<String> unsanitizedDesiredMessages, String isSoftly) {
-        By pageMessagesSelector = By.xpath("//div[@id='errorDiv']//li//descendant-or-self::*[text()]" // Page messages
+        By pageMessagesSelector = By.xpath("//span[contains(text(),'"+unsanitizedDesiredMessages+"')] | //div[@id='errorDiv']//li//descendant-or-self::*[text()]" // Page messages
                 + " | //div[contains(@class, 'alert') and @ng-repeat]" // First variant of flex table messages
                 + " | //div[contains(@class,'alertMessages')]//div[contains(@class,'alertMessage')]//span[@class='ng-binding']" // Second variant of flex table messages
                 + " | //div[contains(@class,'alert-danger')]" // get the alert danger message...

@@ -8,7 +8,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
-      | Page Tabs Config          | Is Active      | false              | ApiGeneratedId:0 |
+      | Page Tabs Config          | Is Active      | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List           | Is Master View | false         | FederalPrograms       | Name                      | FLV-3834                   |
@@ -84,7 +84,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       | PM    |
 
- @wip @258163 @258166 @258385 @258386 @258393 @258394 @Toverifywhen'Ismasterview'istruefor'Test2'listviewandpageisrefreshedthenitwilllandon'Test2listview(PM) @vrushali @sprint-19
+  @wip @258163 @258166 @258385 @258386 @258393 @258394 @Toverifywhen'Ismasterview'istruefor'Test2'listviewandpageisrefreshedthenitwilllandon'Test2listview(PM) @vrushali @sprint-19
   Scenario Outline:To verify when 'Is master view' is true for 'Test 2' list view and the page is refreshed then it will land on 'Test 2' list view (PM)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -122,7 +122,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | PM    |
       | ADMIN |
 
- @wip @258164 @258165 @258375 @258381 @258382 @258384 @Toverifywhen'Ismasterview'istruefor'Test1'listviewandpageisrefreshedthenitwilllandon'Test1'listview(PM) @vrushali @sprint-19
+  @wip @258164 @258165 @258375 @258381 @258382 @258384 @Toverifywhen'Ismasterview'istruefor'Test1'listviewandpageisrefreshedthenitwilllandon'Test1'listview(PM) @vrushali @sprint-19
   Scenario Outline:To verify when 'Is master view' is true for 'Test 1' list view and the page is refreshed then it will land on 'Test 1' list view (PM)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -187,11 +187,14 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario Outline:To verify when any 2 list views are marked as true for 'Is master view' then getting the error message as only list view can be master view. (Admin , PM)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Page Tabs Config          | Is Active      | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
+      | configurationCategory               | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active      | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Flex Grid:Flex Table List           | Is Master View | true          | FederalPrograms       | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List           | Is Master View | true          | FederalPrograms       | Name                      | FLV-3835                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -203,10 +206,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Component testing " sub tab
     Then I see the following message in the page details :
       | Two Master List Views are not allowed |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3835                   |
     Examples:
       | User  |
       | ADMIN |
@@ -233,7 +232,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
 
- @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
+  @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
   Scenario: To verify when any 2 list views are marked as true for 'Is master view' then getting the error message as only list view can be master view. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -289,7 +288,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
     Then I softly see "Test 4" on page "1" of "govgrants" pdf file
 
- @wip  @271926 @271919 @271920 @Toverifywhen'Ismasterview'istruefor'Test3'listviewpageisrefreshedhenitwilllandon'Test3'listview(SPI) @vrushali @Sprint-19
+  @wip  @271926 @271919 @271920 @Toverifywhen'Ismasterview'istruefor'Test3'listviewpageisrefreshedhenitwilllandon'Test3'listview(SPI) @vrushali @Sprint-19
   Scenario: To verify when 'Is master view' is true for 'Test 3' list view and the page is refreshed then it will land on 'Test 3' list view (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -356,7 +355,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
     Then I softly see "Test 2" on page "1" of "govgrants" pdf file
 
- @wip @271928 @271924 @271923 @Toverifywhen'Ismasterview'istruefor'Test1'listviewpageisrefreshedthenitwilllandon'Test1'listview(SPI) @Vrushali @Sprint-19
+  @wip @271928 @271924 @271923 @Toverifywhen'Ismasterview'istruefor'Test1'listviewpageisrefreshedthenitwilllandon'Test1'listview(SPI) @Vrushali @Sprint-19
   Scenario: To verify when 'Is master view' is true for 'Test 1' list view and the page is refreshed then it will land on 'Test 1' list view (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |

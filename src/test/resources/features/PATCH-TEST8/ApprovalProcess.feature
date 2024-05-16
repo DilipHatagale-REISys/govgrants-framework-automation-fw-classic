@@ -1349,7 +1349,7 @@ Business Need: Approval Process Component Scenarios
 
     ################ Approval Decision Action ########################
 
-  @201541 @201584 @201542 @201544 @201545 @201585 @201586 @201587
+  @201541p @201584 @201542 @201544 @201545 @201585 @201586 @201587
   Scenario Outline:Approval Decision Action-Admin-Config-To verify Approve, Reject, Send Back, Forward option should present in Approval Decision box
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
