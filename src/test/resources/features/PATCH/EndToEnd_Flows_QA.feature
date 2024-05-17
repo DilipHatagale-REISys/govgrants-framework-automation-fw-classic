@@ -629,7 +629,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I see "$5,000" shown inside "New Value" column in history table
 
-  @109617    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsPMUser
+  @109617p    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsPMUser
   Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as PM user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
