@@ -688,7 +688,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205098 @205099 @skiponjenkins
+  @205098p @205099 @skiponjenkins
   Scenario Outline:Field History- PM user - User should be able to perform export functionality 'Download as PDF' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as PDF' for selected record.
     When I login to "As a Grantor" app as "<User>" user

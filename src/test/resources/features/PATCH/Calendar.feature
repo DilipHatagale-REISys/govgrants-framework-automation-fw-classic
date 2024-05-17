@@ -596,7 +596,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Day" Button at calendar
     Then I see calender displayed in "Day" format
 
-  @127482  @verifyProgramIDDisplayedAtMonthWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
+  @127482p  @verifyProgramIDDisplayedAtMonthWiseCalendarInsideRespectiveRecordDetailPageForAdminUser
   Scenario: validate that program ID is displayed at month wise calendar inside respective record detail page for admin user
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -696,7 +696,7 @@ Business Need: Calender Config Component Scenarios
     When I enter value "365" into field "fieldEndDate__c"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program" as "TITLE"
+    And I save the field labeled "Title" as "TITLE"
     And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -704,7 +704,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Month" Button at calendar
     And I click on "more" button in current date
     And I click on lookup link contains "{SavedValue:PEGMSID}"
-    Then I see the header is "Internal Program" in the page details
+    Then I see the header is "Program" in the page details
 
   @127488    @verifyByClickOnRecordIdDisplayedAtRecordLevelCalendarCalendarItShouldRedirectToRespectiveRecordDetailPageForInternalUser
   Scenario: validate that Internal user is redirected to respective record detail page by click on record id at record detail
@@ -732,7 +732,7 @@ Business Need: Calender Config Component Scenarios
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:PEGMSID}"
-    Then I see the header is "Internal Program" in the page details
+    Then I see the header is "Program" in the page details
 
   @127491    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarAtRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at page detail layout
@@ -753,7 +753,7 @@ Business Need: Calender Config Component Scenarios
     #When I enter value "0" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program" as "TITLE"
+    And I save the field labeled "Title" as "TITLE"
     And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
