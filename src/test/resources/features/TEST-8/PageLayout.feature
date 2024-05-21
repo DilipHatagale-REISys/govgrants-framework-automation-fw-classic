@@ -27,6 +27,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12023,7 +12024,6 @@ Business Need: Page Layout Component Scenarios
       | User  |
       | ADMIN |
       | PM    |
-
 
   @379392 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.

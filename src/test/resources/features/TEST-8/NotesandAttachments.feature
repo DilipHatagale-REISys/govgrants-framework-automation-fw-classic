@@ -31,8 +31,8 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed
@@ -64,8 +64,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table
 
@@ -96,8 +96,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Attachments" flex table
 
@@ -130,8 +130,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
     Then I see "Add Attachments" opens in overLay window
@@ -165,8 +165,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Notes"
     Then I see "Add Notes" opens in overLay window
@@ -200,8 +200,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Edit" against "Notes testing" in table name "Notes"
@@ -235,8 +235,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Delete" against "Notes testing" in table name "Notes"
@@ -270,8 +270,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "View" against "Notes testing" in table name "Notes"
@@ -305,8 +305,8 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
     Then I see row level action button "Download" against "Notes testing" in table name "Notes"
