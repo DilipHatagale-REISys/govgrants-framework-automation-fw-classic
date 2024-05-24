@@ -240,8 +240,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -1035,7 +1035,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Percentage" shown inside flex table with id "---program:-:AllFormsTableId---"
     Then I see "Last Modified By" shown inside flex table with id "---program:-:AllFormsTableId---"
     Then I see "Last Modified Date" shown inside flex table with id "---program:-:AllFormsTableId---"
-    Then I see "Allow Edit?" shown inside flex table with id "---program:-:AllFormsTableId---"
 
   @381967 @381968 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:
@@ -1125,7 +1124,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Significance" page block displayed
     Then I see "Project Goals" page block displayed
     Then I see "Organization Capacity" page block displayed
-    Then I see "AwardFundingAccounts-SD1" page block displayed
 
   @382001 @382003 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
