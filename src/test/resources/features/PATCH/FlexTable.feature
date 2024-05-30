@@ -257,11 +257,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
-  @335004
+  @335004p
   Scenario: Flex table-Default page size-Admin-Config-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
@@ -388,7 +388,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1108,9 +1108,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @334658 @336251 @wip @bug341819
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
@@ -1177,7 +1177,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334664
@@ -1226,7 +1226,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334668
@@ -1275,7 +1275,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "60" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334672
@@ -1324,7 +1324,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,AwardedToDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334678
@@ -1373,7 +1373,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334683
@@ -1422,7 +1422,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334689
@@ -1438,7 +1438,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "PG-A11-1252" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334690
@@ -1472,7 +1472,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,KPIsRequired__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334692
@@ -1521,7 +1521,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334695
@@ -1570,7 +1570,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334698
@@ -1652,7 +1652,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,Email__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334705
@@ -1702,7 +1702,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334708
@@ -3994,7 +3994,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #      | Start Date | Greater than | 09/22/2023 |
 #    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
-      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 #      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
@@ -4038,7 +4038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
 #      | PM    |
 
@@ -6187,9 +6187,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | Pm    |
+      | Pm   |
 
   @336149
   Scenario Outline: Flex table-Order By-Admin-Config-To verify the order of records displayed in a flex table when user not provided any field in Order By field
@@ -13178,7 +13178,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see header "Submitted On" in flex table id "toggleFlexTableAppReviewList" get sorted in "6" order
     Then I see header "Status" in flex table id "toggleFlexTableAppReviewList" get sorted in "7" order
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338797
@@ -13239,7 +13239,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see "up" arrow is displayed inside "Owner" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338802
@@ -13294,7 +13294,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338806
@@ -13313,7 +13313,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338808
@@ -13351,7 +13351,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "down" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338810
@@ -13408,7 +13408,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338814
@@ -13475,7 +13475,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Submitted On" under field name "Column Name" inside flex table
     Then I see dropdown value "Status" under field name "Column Name" inside flex table
     Examples:
-      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Users | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @338819
@@ -14059,9 +14059,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Budget Redirection Threshold | Equals to | 10 |
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334567
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Percent field
@@ -14299,9 +14299,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Status" in downloaded xls or csv file "govgrants"
     Then I see "Application ID" in downloaded xls or csv file "govgrants"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @336308
   Scenario:Download as XLS/CSV - SPI - UI - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded XLS/CSV
@@ -14390,7 +14390,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @336320
@@ -14455,7 +14455,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Email | Contains | testing@gamil--com |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                            |
+      | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c,Email__c |
 
   @336324
@@ -14580,9 +14580,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "up" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @336339
   Scenario Outline:Sort Direction - SPI - UI - To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
@@ -14740,9 +14740,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I do not see helpIcon displayed beside "Award Ceiling" respective field or column
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336350
   Scenario Outline: Detail config - Help text - SPI - UI - To verify that when user not entered any data in Help text field then help icon not displayed beside respective field/column
@@ -14778,9 +14778,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336353
   Scenario Outline: Detail config - Field label override - SPI - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
@@ -14816,7 +14816,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi | newFieldsApi |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336357
@@ -14855,9 +14855,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336361
   Scenario Outline: Detail config - Hide Cell Json - SPI - UI - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
@@ -14895,9 +14895,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336365
   Scenario Outline: Detail config - Read Only column Json - SPI - UI - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
@@ -14935,9 +14935,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336368
   Scenario Outline: Detail config - Read Only cell Json - SPI - UI - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
@@ -14975,9 +14975,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336371
   Scenario Outline: Action config - Button Help text - SPI - UI - To verify that when user not entered any button help text, then on hovering mouse over respective action no any help text get displayed
@@ -15013,9 +15013,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336374
   Scenario Outline: Action config - Action URL - SPI - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
@@ -15051,9 +15051,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
     Examples:
-      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | User | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
       #| ADMIN | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
-      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM   | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
 
   @336377
   Scenario Outline: Action config - Action URL Long - SPI - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
@@ -15093,9 +15093,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Vrush Announcement" inside table
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
-      | User  | actionUrlOldValue                               | actionUrlNewValue                                       |
+      | User | actionUrlOldValue                               | actionUrlNewValue                                       |
       #| ADMIN | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
-      | PM    | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
+      | PM   | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
 
   @336381
   Scenario Outline: Action config - Action behavior - SPI - UI - To verify that when user selects "None" option in Action behavior field, then respective page get opened in unexpected format
@@ -15170,9 +15170,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Project Period | Contains | 1/18/2023 |
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334578 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Formula field
@@ -15209,9 +15209,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value "BP-8834" in field "s2id_autogen1" in table id "advfActiveGrants"
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334581
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Lookup field
@@ -15249,9 +15249,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Status | Equals to | Created |
     Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @334585 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Picklist field
@@ -15405,9 +15405,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Subaward Amount | Greater than or Equal to | 1000 |
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @334598 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Checkbox field
@@ -15481,9 +15481,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | URL | Contains | www |
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
+      | User | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
   @3346071
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using URL field
@@ -18825,7 +18825,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see the following message in the page details contains:
       | Error creating table:unexpected token: 'ASC' |
     Examples:
-      | newFieldsApi                       | defaultFieldsApi   |
+      | newFieldsApi | defaultFieldsApi |
    #   | Name,Id,ProgramName__c,Account__c, | BudgetStartDate__c |
 
   @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
@@ -19630,9 +19630,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "5" seconds
     Then I do not see select check box enabled in flex table
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @217291 @verifydisablingEnableRecordSelectionrecordselectioncolumnnotgetdisplayedforrespectiveflextable.
   Scenario:SPI-To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
@@ -19661,9 +19661,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "#" shown inside flex table with id "toggleFlexTablePrograms"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @231997 @ToVerifyEnterTheValueManuallyIt'sGettingResult
   Scenario: Quick search-To verify, Enter the value manually it's getting the result
