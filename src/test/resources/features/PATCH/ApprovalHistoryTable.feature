@@ -3,6 +3,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
   Test all approvalhistorytable Component based scenarios
   As a configuration manager I make different changes related to flow and will validate them in approvalhistorytable component.
 
+
   @204868p @204869 @204880 @204881 @204967 @204972 @204985 @204987 @204976 @204979
   Scenario Outline: Validate all program records are shown in Field History table if Program object is selected in dropdown
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -86,7 +87,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+#      | PM    |
 
   @205000 @205002 @205003 @205004 @205016 @205017 @205019 @205020 @205021 @205022
   Scenario Outline: Approval History - PM User - User should be able to see the 'Assigned To' users for selected record.

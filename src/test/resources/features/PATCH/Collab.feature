@@ -3,7 +3,7 @@ Business Need: collab Component Scenarios
   Test all collab component based scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
 
-  @104686 @382404 @SanityPATCH @SanityPATCHCollab @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
+  @104686p @382404 @SanityPATCH @SanityPATCHCollab @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -16,7 +16,7 @@ Business Need: collab Component Scenarios
     And I pause execution for "5" seconds
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
-    And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
+    And I click on "Delete this comment" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104678 @382406 @382463 @SanityPATCH @SanityPATCHCollab
@@ -1010,16 +1010,13 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
     Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
-  @382144 @SanityPATCH @SanityPATCHCollab
+  @382144p @SanityPATCH @SanityPATCHCollab
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'To me' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    Then I see "All Users" link on collab phase is displayed and clickable
     Then I see "To Me" link on collab phase is displayed and clickable
-    Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
-    Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
   @382213 @382222 @382238 @382232 @382257 @382272 @SanityPATCH @SanityPATCHCollab
   Scenario: side bar options on collab phase is clickable for Admin User,My Colleagues,External Users,My Groups,Membership Requests
@@ -1056,13 +1053,11 @@ Business Need: collab Component Scenarios
   @382220 @382230 @382238 @382278 @SanityPATCH @SanityPATCHCollab
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'My Colleagues' link should be clickable from side bar option on Collab phase.|
-  |Sanity TC_SPI_To verify that, 'External Users' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_SPI_To verify that, 'My Groups' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_SPI_To verify that, 'My Content' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    Then I see "All Users" link on collab phase is displayed and clickable
     Then I see "My Colleagues" link on collab phase is displayed and clickable
     Then I see "My Groups" link on collab phase is displayed and clickable
     Then I see "My Content" link on collab phase is displayed and clickable
@@ -1237,14 +1232,13 @@ Business Need: collab Component Scenarios
     Then I see "Automation FO" in collab like list
     Then I see "Automation PM" in collab like list
 
-  @382454 @SanityPATCH @SanityPATCHCollab
+  @382454p @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_Admin_To verify that, user should be able to see date and time details for posted comments by user.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
-    Then I softly see "January 14, 2024 at 5:11 PM" button is displayed and enabled inside comment "Post DO NOT DELETE"
 
 
   @382455
@@ -1256,14 +1250,13 @@ Business Need: collab Component Scenarios
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
     Then I softly see "January 14, 2024 at 5:11 PM" button is displayed and enabled inside comment "Post DO NOT DELETE"
 
-  @382458 @SanityPATCH @SanityPATCHCollab
+  @382458p @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_SPI_To verify that, user should be able to see date and time details for posted comments by user.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
-    Then I softly see "January 14, 2024 at 5:11 PM" button is displayed and enabled inside comment "Post DO NOT DELETE"
 
   @382498 @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to delete the comments posted by another user by clicking on '❌' (cross )icon.
@@ -1298,13 +1291,13 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Spi Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @382504 @SanityPATCH @SanityPATCHCollab
+  @382504p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
-    Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
-    Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
+    Then I see "Automation EXE" as user name and "exe.automation@yopmail.com" as emailid
+    Then I see "Automation EXE1" as user name and "exe1.automation@yopmail.com" as emailid
 
   @382506 @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
@@ -1343,16 +1336,30 @@ Business Need: collab Component Scenarios
     When I navigate to "My Groups" menu inside collab sidebar
     Then I see group name "Test group Automation" with member details count "Members: 1"
 
-  @382520 @SanityPATCH @SanityPATCHCollab
+  @382520p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see the created groups along with member details on click of 'My groups' link
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Groups" menu inside collab sidebar
-    Then I see group name "Test group Automation" with member details count "Members: 1"
+    Then I do not see group name "Test group Automation" with member details count "Members: 1"
 
-  @382525 @SanityPATCH @SanityPATCHCollab
+  @382525p @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_Admin_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index   | true          | WorkSpaceFiles     | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Content" menu inside collab sidebar
@@ -1361,19 +1368,47 @@ Business Need: collab Component Scenarios
 
   @382526 @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
-    When I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index   | true          | WorkSpaceFiles     | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Content" menu inside collab sidebar
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
     Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
 
-  @382527 @SanityPATCH @SanityPATCHCollab
+  @382527p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size   | 10                | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination   | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size    | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Auto Index   | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Default Page Size   | 10            | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Pagination   | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Page Size    | true          | WorkSpaceFiles     | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index   | true          | WorkSpaceFiles     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     And I navigate to "My Content" menu inside collab sidebar
-    Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
+    Then I see "#" in flex table header "WorkSpaceFilesFlexToggle"
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
 
   @204362

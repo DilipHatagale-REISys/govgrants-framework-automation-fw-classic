@@ -13,7 +13,7 @@ public class QuickSearch {
     private final By
             searchInput = By.cssSelector("div>div.quick-search>div>input, div>input[id='Programs_quickserchtext']"),
             quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search"),
-            globalSearchInput = By.cssSelector("div.input-group>input#isTypeNotAhead"),
+            globalSearchInput = By.cssSelector("div.input-group>input#isTypeAhead, div.input-group>input#isTypeNotAhead"),
             globalSearchButton = By.cssSelector("div.input-group>a>i.fa.fa-search");
 
     /******* "Key Methods with complete functionality - Public" *****************/
