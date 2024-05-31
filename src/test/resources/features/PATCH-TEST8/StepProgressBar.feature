@@ -581,9 +581,9 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
       | PM   |
 
-  @382819 @382821 @SanityPATCH  @SanityPATCHStepProgressBar
+  @382819p @382821 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Sanity -TC-Admin-To verify whether the display values colors are getting changed to red  with a cross mark if any  record is  rejected
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
