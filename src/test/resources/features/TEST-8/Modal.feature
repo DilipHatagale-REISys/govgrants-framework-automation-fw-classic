@@ -469,7 +469,7 @@ Business Need: Modal Component Scenarios
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
     Examples:
       | Users |
-     # | Admin |
+      | Admin |
       | PM    |
 
   @382276 @382277 @Sanity  @SanityModal

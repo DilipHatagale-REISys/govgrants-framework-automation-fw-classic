@@ -1693,7 +1693,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @207596 @207597
+  @207596p @207597
   Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page,
   Page description - PM- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
     Given I have "default" configuration as below:
@@ -1820,7 +1820,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I do not see "Entries" page size inside table "---program:-:FlexTableEnhancedNotesId---"
 
-  @204990 @204996
+  @204990p @204996
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually,
   Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:

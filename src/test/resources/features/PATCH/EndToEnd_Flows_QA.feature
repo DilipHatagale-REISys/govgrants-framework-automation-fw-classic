@@ -1,4 +1,4 @@
-@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA @vrush-module
+@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
@@ -499,7 +499,7 @@ Business Need: security review Scenarios
     When I perform quick search inside global search "An"
     Then I see expected table with id "toggleFlexTableAnnouncement__c"
 
-  @doubt @107807 @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
+  @doubt @107807p @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, applications Table is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1195,12 +1195,6 @@ Business Need: security review Scenarios
 
   @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
   Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-#      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab

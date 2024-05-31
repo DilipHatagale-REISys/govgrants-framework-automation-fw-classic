@@ -346,7 +346,7 @@ Business Need: Modal Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
-  @207458 @2074
+  @207458p @2074
   Scenario Outline: Modal- Admin- Config- Verify if all required field are filled then we should be able to save and continue
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user

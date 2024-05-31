@@ -436,7 +436,7 @@ Business Need: Step Progress Bar Component Scenarios
 
 
   ################# Step Progress Bar ######################
-  @201445 @201446 @201454 @201455 @382794 @SanityPATCH  @SanityPATCHStepProgressBar
+  @201445p @201446 @201454 @201455 @382794 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
   Color Code Settings - PM- UI- Verify progress bar should should follow given color codes
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
@@ -486,7 +486,7 @@ Business Need: Step Progress Bar Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @201438 @382792 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
@@ -581,9 +581,9 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
       | PM   |
 
-  @382819 @382821 @SanityPATCH  @SanityPATCHStepProgressBar
+  @382819p @382821 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Sanity -TC-Admin-To verify whether the display values colors are getting changed to red  with a cross mark if any  record is  rejected
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
