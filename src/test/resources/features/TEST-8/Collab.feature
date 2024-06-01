@@ -3,7 +3,7 @@ Business Need: collab Component Scenarios
   Test all collab component based scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
 
-  @104686 @382404 @Sanity @SanityCollab @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
+  @104686q @382404 @Sanity @SanityCollab @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
