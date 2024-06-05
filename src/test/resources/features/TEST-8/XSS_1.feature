@@ -24,7 +24,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
-    And I click on "Edit" in the page details
+    When I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     When I enter value "Test_Description" into field "fieldBeneficiaryEligibility__c"
     When I click on "Save" in the page details
