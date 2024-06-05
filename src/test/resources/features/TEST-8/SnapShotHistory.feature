@@ -716,14 +716,14 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @Sanity @SanitySnap
+  @217469q @217463 @217199 @217457 @217473 @207366 @207362 @382796 @Sanity @SanitySnap
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I pause execution for "5" seconds
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I save the field labeled "Created By" as "OWNER"
     When I click on "Menu" in the page details

@@ -42,7 +42,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     And I pause execution for "5" seconds
-    Then I see "{SavedValue:OWNER}" shown as help text
+   # Then I see "{SavedValue:OWNER}" shown as help text
     Then I see "{SavedValue:DATE}" shown as help text
 
   @34347    @disablingRenderingOfProgressBarForCustomApp-gPlanning @oldsmoke

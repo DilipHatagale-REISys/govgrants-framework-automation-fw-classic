@@ -15,11 +15,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "TPA01" shown as over view title in header "Program"
 
-  @34047    @setUpPageInstructionText-gPlanning
+  @34047q    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
@@ -32,8 +31,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Automation Instruction Text" shown as page instruction text
 
   @34049    @setUpHeaderOverRideField-gPlanning
@@ -784,8 +782,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
@@ -888,8 +885,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
@@ -904,8 +900,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
@@ -993,8 +988,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
@@ -1009,8 +1003,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
@@ -1041,8 +1034,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
@@ -1058,8 +1050,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
@@ -1077,8 +1068,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     When I perform quick search for "Automation test organization" in "---program:-:AccountTableId---" panel
     Then I see "Created" status in lookup modal table
@@ -1320,8 +1310,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
@@ -1617,8 +1606,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "   " into field "ProgramNameText__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1637,8 +1625,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
     When I enter value "" into field "fieldAccount__c"
     When I click on "Save" in the page details
@@ -1658,8 +1645,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "fieldNumber__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1678,8 +1664,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1698,8 +1683,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "No" into field "fieldKPIsRequired__c"
     When I enter value "" into field "fieldStartDate__c"
     When I click on "Save" in the page details
@@ -1719,8 +1703,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "" into field "fieldExpectedFunding__c"
     When I click on "Save" in the page details
@@ -1740,8 +1723,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "50000" into field "fieldExpectedFunding__c"
     When I enter value "" into field "fieldWebsiteAddress__c"
     When I click on "Save" in the page details
@@ -1761,8 +1743,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
     When I enter value "" into field "fieldProjectGoals__c"
     When I click on "Save" in the page details
@@ -1782,8 +1763,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "fieldPercent__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1802,8 +1782,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1822,8 +1801,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "fieldTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1842,8 +1820,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "fieldAuthorization__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1884,8 +1861,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see icon for "Link" is present in rich text area description field
 
@@ -1895,8 +1871,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -1909,8 +1884,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -2383,8 +2357,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2401,8 +2374,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2464,8 +2436,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period End Date" is not displayed inside page block detail
 
   @102114    @verifyHideFieldJsonFieldByDisablingTitleFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -2480,8 +2451,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "ProgramName__c" is disabled
 
   @102115    @verifyHideFieldJsonFieldByDisablingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -2496,8 +2466,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "EndDate__c" is disabled
 
   @102248    @verifyIdDateTimeFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
@@ -2512,8 +2481,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see value "11/30/2022" of "Project Period End Date" field is not changed on page scroll
 
   @102251    @verifyIdDateFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
@@ -2528,8 +2496,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see value "10/15/2021 7:43 AM" of "Date &Time" field is not changed on page scroll
 
   @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @wip
@@ -2544,8 +2511,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "www.google.com" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2564,8 +2530,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2584,8 +2549,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2648,8 +2612,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
   @112540   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionFieldForPMUser-gPlanning
@@ -2664,8 +2627,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
   @112009  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
@@ -2689,8 +2651,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -2735,8 +2696,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2805,8 +2765,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2824,8 +2783,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see missing field badge on "Overview" tab
 
   @112363    @verifyThatAdminUserIsAbleToAccessChatterNativePage-gPlanning @wip
@@ -2934,8 +2892,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I do not see missing field badge on "Overview" tab
 
   @114071    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
@@ -2944,8 +2901,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -2968,8 +2924,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -2992,8 +2947,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3017,8 +2971,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3041,8 +2994,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3065,8 +3017,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3090,8 +3041,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3115,8 +3065,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3141,8 +3090,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3167,8 +3115,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3193,8 +3140,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3217,8 +3163,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3243,8 +3188,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3268,8 +3212,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3292,8 +3235,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3316,8 +3258,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3340,8 +3281,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3364,8 +3304,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3388,8 +3327,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3414,8 +3352,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3438,8 +3375,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3462,8 +3398,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3487,8 +3422,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3514,8 +3448,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3541,8 +3474,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3566,8 +3498,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3611,8 +3542,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3709,8 +3639,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -3738,8 +3667,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3757,8 +3685,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3776,8 +3703,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3795,8 +3721,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -4089,8 +4014,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -4136,8 +4060,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "ProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4155,8 +4078,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4187,8 +4109,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -4213,8 +4134,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Files"
     And I wait for "5" seconds
@@ -4243,8 +4163,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "5" seconds
@@ -4293,8 +4212,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I pause execution for "7" seconds
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Automation Notes" inside table
@@ -4308,8 +4226,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -4446,8 +4363,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I do not see missing field badge on "Overview" tab
 
   @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
@@ -4464,8 +4380,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I click on "Save" in the page details
     Then I do not see missing field badge on "Overview" tab
 
@@ -4485,8 +4400,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I do not see missing field badge on "Overview" tab
 
   @121226  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsHidden
@@ -4586,8 +4500,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "Department of Children health" into field "fieldAccount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -4597,8 +4510,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
@@ -4871,8 +4783,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see below message at page detail in "Green" color:
       | TEST PAGE SUCCESS MSG DND |
 
@@ -5103,8 +5014,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
 
@@ -5137,8 +5047,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see below message at page detail in "Brown" color:
       | TEST PAGE BLOCK ALERT MSG DND |
 
@@ -5154,8 +5063,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see the following messages in the page details contains:
       | TEST PAGE BLOCK WARNING MSG DND |
 
@@ -5259,8 +5167,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
@@ -5278,8 +5185,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
       | TEST PAGE SUCCESS MSG DND       |
@@ -5357,8 +5263,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
@@ -5374,8 +5279,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see the following page detail buttons :
       | Cancel |
       | Save   |
@@ -5392,8 +5296,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Description" field is rendered as rich text area
 
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout @skipOnJenkins @wip
@@ -5408,8 +5311,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Christine GGPTEST5" at table
@@ -5428,8 +5330,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "40,000" text enter in field "fieldFundedAmount__c"
 
@@ -5445,8 +5346,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly see expected table with id "toggleFlexTableProgramContacts"
 
@@ -5462,8 +5362,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "11/30/2020" text enter in field "fieldStartDate__c"
 
@@ -5496,8 +5395,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<helpText>" shown as help text
 
@@ -5517,8 +5415,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
     Then I see value "Christine GGPTEST5" for title "Full Name" inside table "toggleFlexTableProgramContacts"
@@ -5535,8 +5432,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @131795  @verifyCharacterCountDisplayedInsideCKEditorBoxAtRichTextAreaFieldInsideEditPageLayout
@@ -5551,8 +5447,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5575,8 +5470,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
     When I pause execution for "20" seconds
     Then I see CK editor box color changed to "green"
@@ -5593,8 +5487,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5614,8 +5507,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5635,8 +5527,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5656,8 +5547,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5679,8 +5569,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5702,8 +5591,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5880,8 +5768,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "Grant" into field "Type__c"
     When I click dropdown field "fieldProgramSubType__c"
@@ -5938,8 +5825,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "StartDate__c" is disabled
@@ -5956,8 +5842,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -5975,8 +5860,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "ProgramName__c" is disabled
@@ -5993,8 +5877,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "FundedAmount__c" is disabled
@@ -6011,8 +5894,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "StartDate__c" is disabled
 
   @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -6027,8 +5909,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -6047,8 +5928,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "ProgramName__c" is disabled
 
   @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6063,8 +5943,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "Type__c" is disabled
 
   @133896    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6079,8 +5958,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see field "FundedAmount__c" is disabled
 
   @134132    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOPicklistFieldValueOnModal @wip
@@ -6095,8 +5973,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6114,8 +5991,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6133,8 +6009,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6152,8 +6027,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6172,8 +6046,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6193,8 +6066,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "CFDA_Data__c" is disabled
@@ -6211,8 +6083,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "Type__c" is disabled
@@ -6248,8 +6119,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "Account__c" is disabled
@@ -6336,8 +6206,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6363,8 +6232,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6390,8 +6258,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6417,8 +6284,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6444,8 +6310,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6471,8 +6336,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6498,8 +6362,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6525,8 +6388,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6552,8 +6414,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6579,8 +6440,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6872,8 +6732,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145526    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserTypeAsInternalInEditMode
@@ -6888,8 +6747,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145528    @verifyHideFieldJsonFieldByHidingDateFieldUsingContextAsEditInEditMode
@@ -6904,8 +6762,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145533    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserAppAsAGrantorInEditMode
@@ -6920,8 +6777,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145661    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_AdminInEditMode
@@ -6936,8 +6792,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145662    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=InternalInEditMode
@@ -6952,8 +6807,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145663    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_EditInEditMode
@@ -6968,8 +6822,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145664    @verifyHideExpressionJsonFieldByHidingTabUsingUserAppAsAGrantorInEditMode
@@ -6984,8 +6837,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145666    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserTypeAsInternalInEditMode
@@ -7000,8 +6852,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7017,8 +6868,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
 
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
@@ -7035,8 +6885,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7052,8 +6901,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7069,8 +6917,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145836    @verifyHideExpressioJsonByHidingFieldsUsingPicklistFieldValueInEditMode
@@ -7085,8 +6932,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145839    @verifyHideExpressioJsonByHidingFieldsUsingUserOperatoreInEditMode
@@ -7101,8 +6947,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145844    @verifyHideExpressioJsonByHidingTabUsingUserOperatoreInEditMode
@@ -7117,8 +6962,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
   @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
@@ -7133,8 +6977,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7150,8 +6993,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7373,8 +7215,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "Tax Credit" into field "Type__c"
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
@@ -7387,8 +7228,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "XYZ" into field "Authorization__c"
     When I click on "Save" in the page details
     Then I softly see field "Authorization" as "XYZ"
@@ -7601,8 +7441,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -7621,8 +7460,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -7648,8 +7486,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I enter value "12344" into field "Removenumber__c"
     And I click on "Save" in the page details
     Then I see field "Removenumber" as "12,344.0000"
@@ -7707,8 +7544,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I clear the value from field "Phone_Field__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -7728,8 +7564,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I clear the value from field "phonetest__c"
@@ -7778,8 +7613,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" inside table
     When I clear the value from field "phonetest__c"
@@ -7794,8 +7628,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7808,8 +7641,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "123" into field "ProgramName__c"
     And I refresh the page
     And I pause execution for "3" seconds
@@ -7835,8 +7667,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7847,8 +7678,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Number__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7861,8 +7691,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7874,8 +7703,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7886,8 +7714,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "fieldFundedAmount__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7900,8 +7727,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "fieldFundedAmount__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7913,8 +7739,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "fieldFundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7925,8 +7750,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Percent__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7939,8 +7763,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Percent__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7952,8 +7775,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1" into field "Percent__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7964,8 +7786,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "www.google.com" into field "URL__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7978,8 +7799,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "www.google.com" into field "URL__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7991,8 +7811,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "www.google.com" into field "URL__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8003,8 +7822,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8017,8 +7835,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "fieldProjectGoals__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8030,8 +7847,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "fieldProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8042,8 +7858,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "Authorization__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8056,8 +7871,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "Authorization__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8069,8 +7883,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test" into field "Authorization__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8127,8 +7940,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test@yopmail.com" into field "Email__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8147,8 +7959,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8166,8 +7977,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8184,8 +7994,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8204,8 +8013,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8223,8 +8031,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8241,8 +8048,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8260,8 +8066,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8271,8 +8076,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -8285,8 +8089,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I click dropdown field "fieldIsProjectServiceAreaneeded__c"
     Then I see only the following ordered options in dropdown field "fieldIsProjectServiceAreaneeded__c" :
       | --None-- |
@@ -8305,8 +8108,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I click on "Save" in the page details
     And I pause execution for "4" seconds
     Then I see "programview" in current url
@@ -8886,8 +8688,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -8909,8 +8710,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -8941,8 +8741,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -8960,8 +8759,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see below checkbox options for field "TypesOfAssistance__c"
       | Select All |
@@ -8978,8 +8776,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -9036,8 +8833,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly see that "TypesOfAssistance__c" rendered in view mode only
 
@@ -9071,8 +8867,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see checkbox is displayed for field "fieldCFDA_Data__c"
 
@@ -9125,8 +8920,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
 
   @170112 @tejal @wip
@@ -9141,8 +8935,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -9175,8 +8968,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9217,8 +9009,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9256,8 +9047,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "60" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
@@ -9302,8 +9092,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9317,8 +9106,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9332,8 +9120,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
@@ -9347,8 +9134,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9362,8 +9148,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9377,8 +9162,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9392,8 +9176,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
@@ -9407,8 +9190,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9422,8 +9204,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9444,8 +9225,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9464,8 +9244,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9484,8 +9263,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9504,8 +9282,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9524,8 +9301,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9544,8 +9320,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9564,8 +9339,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I pause execution for "4" seconds
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9585,8 +9359,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -9599,8 +9372,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
@@ -9826,8 +9598,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9894,8 +9665,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9928,8 +9698,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select all" inside page block
 
@@ -10013,8 +9782,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -10030,8 +9798,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -10076,8 +9843,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
     When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
@@ -10102,8 +9868,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10122,8 +9887,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "123456783456789456789045678945678" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10142,8 +9906,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1234567834567834567834567834567834567" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10162,8 +9925,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "13456789034567894567890234567" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10182,8 +9944,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10202,8 +9963,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10222,8 +9982,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "145678967890673456784567894567896788" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10242,8 +10001,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10262,8 +10020,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10275,8 +10032,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10289,8 +10045,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10303,8 +10058,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10317,8 +10071,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10331,8 +10084,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10351,8 +10103,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "Title" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10372,8 +10123,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "Owner Organization" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10393,8 +10143,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "fieldNumber__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10414,8 +10163,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "fieldDateandTime__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10435,8 +10183,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "fieldFundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10456,8 +10203,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
     Then I see "fieldPercent__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10478,8 +10224,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10571,8 +10316,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10656,8 +10400,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10671,8 +10414,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "--None--" into field "fieldType__c"
     When I enter value "100" into field "fieldNumber__c"
@@ -10685,8 +10427,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter value "12345" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -10699,8 +10440,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
@@ -10711,8 +10451,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     Then I softly see field "Address__c" is not editable
@@ -10981,8 +10720,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Cancel" button is displayed on top right of pagelayout
     Then I see "Save" button is displayed on top right of pagelayout
 
@@ -11005,8 +10743,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Cancel" button is not displayed
     Then I see "Save" button is not displayed
 

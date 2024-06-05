@@ -312,8 +312,7 @@ Business Need: history Component Scenarios
       | en_US  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Program specific for History"
-    When I click on "View" icon for "Test Program specific for History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I navigate to "History" sub tab
@@ -373,8 +372,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
+   And I click on "View" icon in flex table for first draft record   
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
@@ -391,8 +389,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on "Edit" in the page details
     And I enter value "05/22/2023" into field "fieldStartDate__c"
     And I click on "Save" in the page details
@@ -416,8 +413,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on "Edit" in the page details
     And I enter value "05/22/2023" into field "fieldStartDate__c"
     And I click on "Save" in the page details
@@ -443,8 +439,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldFundedAmount__c"
     And I enter value "0" into field "fieldStartDate__c"
@@ -505,8 +500,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -519,8 +513,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
@@ -530,8 +523,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
@@ -567,8 +559,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "History" sub tab
     Then I softly see expected table with id "---program:-:snapshotHistoryTableId---"
     Then I softly see the text containing :
@@ -579,8 +570,7 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -648,8 +638,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Send Email Component active program"
-    When I click on "View" icon for "Send Email Component active program" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -853,8 +842,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Testing OK" into field "fieldAuthorization__c"
@@ -882,8 +870,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Automation Admin" into field "fieldAuthorizedSignatory__c"
@@ -911,8 +898,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "8456321479" into field "fieldPhone_Field__c"
@@ -939,8 +925,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Checked" into field "CFDA_Data__c"
@@ -966,8 +951,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "State" into field "InternalOrganization__c"
@@ -993,8 +977,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
@@ -1020,8 +1003,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-20" into field "Number__c"
@@ -1047,8 +1029,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "www.google.com" into field "URL__c"
@@ -1074,8 +1055,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-78" into field "Percent__c"
@@ -1101,8 +1081,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "74" into field "Percent__c"
@@ -1128,8 +1107,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Project Grants" into field "Type__c"
@@ -1155,8 +1133,7 @@ Business Need: history Component Scenarios
       When I setup my app as "As a Grantor"
       And I navigate to "Planning" tab
       And I click toggle button to select "Internal Programs - Draft"
-      When I perform quick search for "Demo Testing Program For Field History"
-      When I click on "View" icon for "Demo Testing Program For Field History" inside table
+      And I click on "View" icon in flex table for first draft record
       When I navigate to "Overview" sub tab
       And I click on "Edit" in the page details
       And I enter value "12" into field "fieldNumber__c"
@@ -1183,8 +1160,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-12" into field "fieldNumber__c"

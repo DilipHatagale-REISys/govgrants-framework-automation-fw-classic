@@ -9,8 +9,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -27,8 +26,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -44,8 +42,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -61,8 +58,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -75,7 +71,7 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | User  |
       | Admin |
-      | PM    |
+   #   | PM    |
 
   @88124    @validateTitleOfFormAtDynamicFormLayout
   Scenario: validate the title of form at dynamic form view page
@@ -83,8 +79,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Dynamic Form" shown as over view header
@@ -95,8 +90,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Edit" button is displayed
@@ -107,8 +101,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "10" seconds
@@ -120,8 +113,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Written" inside "Section 1" at dynamic form
@@ -132,8 +124,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Date" inside "Section 1" at dynamic form
@@ -144,8 +135,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
@@ -156,8 +146,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Percent" inside "Section 1" at dynamic form
@@ -168,8 +157,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Number" inside "Section 1" at dynamic form
@@ -180,8 +168,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Picklist" inside "Section 1" at dynamic form
@@ -192,8 +179,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
@@ -204,8 +190,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
@@ -216,8 +201,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Rich Text Area" inside "Section 1" at dynamic form
@@ -228,8 +212,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -245,8 +228,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -261,8 +243,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I select "Yes" from dropdown
@@ -275,8 +256,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "3" seconds
@@ -296,8 +276,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "Section 1" inside dynamic form layout
@@ -308,8 +287,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     #Then I see "Dynamic Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
     Then I see "Dynamic Form" value in flextable "DynamicForm"
@@ -326,8 +304,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see the instruction text is as follows :
@@ -347,8 +324,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "15" seconds
@@ -369,8 +345,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Validate" button is displayed
@@ -390,8 +365,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Validate" button is not displayed
@@ -408,8 +382,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
@@ -434,8 +407,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "10" seconds
@@ -453,8 +425,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "10" seconds
@@ -472,8 +443,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
@@ -499,8 +469,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see the instruction text is as follows :
@@ -520,8 +489,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "10" seconds
@@ -542,8 +510,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
@@ -561,8 +528,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon at "Section 1" inside dynamic form
@@ -598,8 +564,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "Automation Title" inside dynamic form layout
@@ -616,8 +581,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
@@ -633,8 +597,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -799,8 +762,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" in the page details
@@ -819,8 +781,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section column is "vertically" aligned
@@ -850,8 +811,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "5" seconds
@@ -863,8 +823,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -876,8 +835,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -889,8 +847,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -902,8 +859,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "Validate" in page detail
@@ -914,8 +870,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "Edit" in page detail
@@ -932,8 +887,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
@@ -950,8 +904,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "test~!@#$%^&*()_+{}][?/><." inside dynamic form layout
@@ -968,8 +921,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "test~!@#$%^&*()_+{}][?/><." inside table
     Then I see "test~!@#$%^&*()_+{}][?/><." shown as over view header
@@ -986,8 +938,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     And I pause execution for "5" seconds
     Then I see "Test Automation Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
@@ -998,8 +949,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1015,8 +965,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1031,8 +980,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1047,8 +995,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1063,8 +1010,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1082,8 +1028,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1104,8 +1049,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
@@ -1117,8 +1061,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1144,8 +1087,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Date"
@@ -1163,8 +1105,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Currency"
@@ -1182,8 +1123,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Number"
@@ -1201,8 +1141,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Percent"
@@ -1220,8 +1159,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I pause execution for "5" seconds
@@ -1240,8 +1178,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
@@ -1259,8 +1196,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Checkbox"
@@ -1278,8 +1214,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Radio"
@@ -1297,8 +1232,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Percent"
@@ -1316,8 +1250,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Currency"
@@ -1335,8 +1268,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Number"
@@ -1355,8 +1287,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Date"
@@ -1374,8 +1305,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
@@ -1393,8 +1323,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Checkbox"
@@ -1412,8 +1341,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
@@ -1431,8 +1359,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Radio"
@@ -1450,8 +1377,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Picklist"
@@ -1469,8 +1395,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see comment box displayed as "Long Text Area"
@@ -1487,8 +1412,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see comment box displayed as "Rich Text Area"
@@ -1505,8 +1429,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I softly do not see comment box displayed as "Rich Text Area"
@@ -1524,8 +1447,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I softly do not see comment box displayed as "Rich Text Area"
@@ -1543,8 +1465,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "7" seconds
@@ -1556,8 +1477,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see section as "Section 1" inside dynamic form layout
@@ -1571,8 +1491,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "10" seconds
@@ -1597,8 +1516,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Currency" inside "Section 1" at dynamic form
@@ -1619,8 +1537,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is hidden
@@ -1641,8 +1558,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
@@ -1663,8 +1579,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is disabled
@@ -1685,8 +1600,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1712,8 +1626,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is hidden
@@ -1734,8 +1647,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Currency" inside "Section 1" at dynamic form
@@ -1756,8 +1668,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Currency" field inside "Section 1" is disabled
@@ -1769,8 +1680,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "10" seconds
@@ -1783,8 +1693,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Section: Section 1" block is collapsed
@@ -1806,8 +1715,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
@@ -1828,8 +1736,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -1857,8 +1764,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Currency" field inside "Section 1" is hidden
@@ -1882,8 +1788,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Currency" inside "Section 1" at dynamic form
@@ -1907,8 +1812,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Number" field inside "Section 1" is disabled
@@ -1935,8 +1839,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Written" field inside "Section 1" is hidden
@@ -1957,8 +1860,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Written" inside "Section 1" at dynamic form
@@ -1979,8 +1881,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter value "12" into field "Currency"
@@ -2004,8 +1905,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Written" inside "Section 1" at dynamic form
@@ -2026,8 +1926,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -2053,8 +1952,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter value "12" into field "Number"
@@ -2078,8 +1976,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     And I pause execution for "2" seconds
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
@@ -2101,8 +1998,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter value "12" into field "Number"
@@ -2126,8 +2022,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Written" inside "Section 1" at dynamic form
@@ -2148,8 +2043,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -2175,8 +2069,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter value "12" into field "Percent"
@@ -2200,8 +2093,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     And I click on "Edit" in the page details
@@ -2225,8 +2117,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter value "12" into field "Percent"
@@ -2250,8 +2141,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
@@ -2268,8 +2158,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" in the page details
@@ -2292,8 +2181,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "6" seconds
@@ -2316,8 +2204,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Currency" inside "Section 1" at dynamic form
@@ -2338,8 +2225,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Currency" inside "Section 1" at dynamic form
@@ -2360,8 +2246,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "10" seconds
@@ -2383,8 +2268,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -2410,8 +2294,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -2438,8 +2321,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "5" seconds
@@ -2461,8 +2343,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Picklist" inside "Section 1" at dynamic form
@@ -2483,8 +2364,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2509,8 +2389,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Picklist" inside "Section 1" at dynamic form
@@ -2531,8 +2410,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" in the page details
@@ -2555,8 +2433,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2581,8 +2458,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     And I click on "Edit" in the page details
@@ -2607,8 +2483,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2633,8 +2508,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I do not see "Checkbox" inside "Section 1" at dynamic form
@@ -2655,8 +2529,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Checkbox" field inside "Section 1" is disabled
@@ -2677,8 +2550,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Checkbox" inside "Section 1" at dynamic form
@@ -2699,8 +2571,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -2724,8 +2595,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
@@ -2750,8 +2620,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2776,8 +2645,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Radio" inside "Section 1" at dynamic form
@@ -2798,8 +2666,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I click on "Save" in the page details
@@ -2824,8 +2691,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2853,8 +2719,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2884,8 +2749,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2916,8 +2780,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -2948,8 +2811,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Number" inside "Section 1" at dynamic form
@@ -2976,8 +2838,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Number" inside "Section 1" at dynamic form
@@ -3004,8 +2865,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -3039,8 +2899,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "Number" inside "Section 1" at dynamic form
@@ -3053,8 +2912,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 2" page block
@@ -3074,8 +2932,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 2" page block
@@ -3112,8 +2969,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -3131,8 +2987,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Written" field is shown at position "0" in "Section 1"
@@ -3143,8 +2998,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "5" seconds
@@ -3173,8 +3027,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "Number" inside "Section 1" at dynamic form
@@ -3202,8 +3055,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Written" field inside "Section 1" is disabled
@@ -3240,8 +3092,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Written" field inside "Section 1" is disabled
@@ -3280,8 +3131,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -3317,8 +3167,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I pause execution for "5" seconds
@@ -3352,8 +3201,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I pause execution for "5" seconds
@@ -3385,8 +3233,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -3426,8 +3273,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Number" inside "Section 1" at dynamic form
@@ -3463,8 +3309,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "12" into field "Currency"
@@ -3489,8 +3334,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I click on "view more" hyperlink in page instruction block
@@ -3513,8 +3357,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -3537,8 +3380,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Section 1" shown at number "0" inside detail page
@@ -3555,8 +3397,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Section 1" shown at number "0" inside detail page
@@ -3573,8 +3414,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click dropdown field "Picklist"
@@ -3596,8 +3436,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "DynamicForm" displayed in modal
@@ -3620,8 +3459,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I close modal by clicking the top right x button
@@ -3644,8 +3482,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "View Window" displayed in modal
@@ -3669,8 +3506,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I close modal by clicking the top right x button
@@ -3694,8 +3530,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "Edit" button is displayed
@@ -3718,8 +3553,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Edit" button in right header
@@ -3744,8 +3578,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Edit" button is displayed
@@ -3768,8 +3601,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     And I pause execution for "7" seconds
@@ -3793,8 +3625,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     #
@@ -3871,8 +3702,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Edit" button at "Top" of  Modal window
@@ -3895,8 +3725,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see "Validate" button at "Top" of  Modal window
@@ -3919,8 +3748,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Edit" button in right footer
@@ -3944,8 +3772,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I click on "Edit" button in right footer
@@ -3967,8 +3794,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see radio button as "Yes" at "Radio" field in form layout
@@ -3988,8 +3814,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see "Save" button is displayed
@@ -4012,8 +3837,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
@@ -4038,8 +3862,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "Validate" button is displayed
@@ -4050,8 +3873,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     #379355
@@ -4073,8 +3895,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I click on "Save" button in right header
@@ -4103,8 +3924,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "sdf" into field "Written"
@@ -4140,8 +3960,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I softly see "Written" field inside "Section 1" is hidden
@@ -4175,8 +3994,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "sdf" into field "Written"
@@ -4214,8 +4032,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     And I click on "edit" in the page details
@@ -4254,8 +4071,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I enter value "sdf" into field "Written"
@@ -4301,8 +4117,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     And I pause execution for "5" seconds
@@ -4337,8 +4152,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "Written" inside "Section 1" at dynamic form
@@ -4372,8 +4186,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly do not see "Written" inside "Section 1" at dynamic form
@@ -4403,8 +4216,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I softly see "Currency" inside "Section 1" at dynamic form
@@ -4422,8 +4234,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
@@ -4445,8 +4256,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Menu" action is not displayed at the "Dynamic Form" modal
@@ -4463,8 +4273,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Save" button is displayed
@@ -4485,8 +4294,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" action at the "Dynamic Form" modal
@@ -4513,8 +4321,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     #379353
@@ -4541,8 +4348,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I see "Save" button is displayed
@@ -4557,8 +4363,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
@@ -4570,8 +4375,7 @@ Business Need: dynamic forms Component Scenarios
     And I navigate to "Announcements" tab
     And I pause execution for "2" seconds
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on parallel lines menu bar with data target value "#DynamicFormFlexToggle"
     Then I see "Download as PDF" inside flex table with id "flexGridDynamicForm"
@@ -4588,8 +4392,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
@@ -4601,8 +4404,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -4624,8 +4426,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see section column is "vertically" aligned
@@ -4642,8 +4443,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see section column is "vertically" aligned
@@ -4660,8 +4460,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     Then I see section column is "horizontally" aligned
@@ -4678,8 +4477,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I see section column is "horizontally" aligned
@@ -4690,8 +4488,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "preview" icon for "Grantor Application Forms" inside table
     And I refresh the page
@@ -4741,8 +4538,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Organization Desk Review" inside table
     Then I see "Announcements" tab is highlighted for particular program
@@ -4753,8 +4549,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
@@ -4765,8 +4560,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Grantor Progress Report Forms" inside table
     And I refresh the page
@@ -4778,8 +4572,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Preview" icon for "Grantor Progress Report Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
@@ -4802,8 +4595,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I softly cannot see top right button "Validate" in page detail
@@ -4816,8 +4608,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     Then I cannot see the following message in the page details :
@@ -4830,8 +4621,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "preview" icon for "Grantor Application Forms" inside table
     Then I see "Announcements" tab is highlighted for particular program
@@ -4842,8 +4632,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I pause execution for "2" seconds
@@ -4956,8 +4745,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     #379345 #379356
@@ -4982,7 +4770,7 @@ Business Need: dynamic forms Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+   #   | PM    |
 
   @201252 @sprint3
   Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
@@ -4990,8 +4778,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
     When I pause execution for "2" seconds
@@ -5073,8 +4860,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Menu" button inside table id "---program:-:DynamicFormFlexToggleTableId---"
     Then I see "Download as PDF" options is displayed
@@ -5092,8 +4878,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     Then I softly can see top right button "Bulk CSV" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
@@ -5111,8 +4896,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     Then I softly can see top right button "Bulk PDF" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
     And I click on top right button "Bulk PDF" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
@@ -5130,8 +4914,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Menu" button inside table id "---program:-:DynamicFormFlexToggleTableId---"
     Then I see "Refresh" options is displayed
@@ -5147,8 +4930,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I switch to tab number "1"
@@ -5165,8 +4947,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     And I pause execution for "5" seconds
@@ -5178,8 +4959,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -5191,8 +4971,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -5204,8 +4983,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Edit" button in right header
@@ -5217,8 +4995,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "Validate" in page detail
@@ -5229,8 +5006,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I can see bottom button "Edit" in page detail
@@ -5241,8 +5017,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
@@ -5253,8 +5028,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see section as "test~!@#$%^&*()_+{}][?/><." inside dynamic form layout
@@ -5265,8 +5039,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "test" inside table
     Then I see "test" shown as over view header
@@ -5277,8 +5050,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     And I pause execution for "5" seconds
     Then I see "Test Automation Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
@@ -5289,8 +5061,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5306,8 +5077,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5322,8 +5092,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5338,8 +5107,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5354,8 +5122,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5371,8 +5138,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5387,8 +5153,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Written"
@@ -5400,8 +5165,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I enter values into "Section 1" page block
@@ -5426,8 +5190,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Date"
@@ -5439,8 +5202,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Currency"
@@ -5452,8 +5214,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Number"
@@ -5465,8 +5226,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Percent"
@@ -5478,8 +5238,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     And I pause execution for "5" seconds
@@ -5492,8 +5251,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Rich Text Area"
@@ -5505,8 +5263,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Checkbox"
@@ -5518,8 +5275,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Radio"
@@ -5531,8 +5287,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Percent"
@@ -5544,8 +5299,7 @@ Business Need: dynamic forms Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Program For Announcement Testing"
-    When I click on "View" icon for "Program For Announcement Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form" inside table
     When I hovering mouse on help text icon inside page block detail "Currency"

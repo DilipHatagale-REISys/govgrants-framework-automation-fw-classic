@@ -143,8 +143,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see expected table with id "AppContactFlexToggle"
 
@@ -203,8 +202,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see expected table with id "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
@@ -416,8 +414,7 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleFlexTableHistory"
 
@@ -726,8 +723,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -986,8 +982,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Project Director/Manager" in "---program:-:flexTableEnhancedAppContactId---" panel
     Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
@@ -1011,8 +1006,7 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:programContactsTableId---"
     When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
