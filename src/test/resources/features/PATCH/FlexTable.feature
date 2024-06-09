@@ -5,7 +5,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   ############Test suite: Flex Table UI (Suite ID: 334515)############
 
-  @ew @334978 @382479 @SanityPATCH  @SanityPATCHFlexTable
+  @ew @334978 @382479 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -44,7 +44,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334981 @336206 @382486 @SanityPATCH  @SanityPATCHFlexTable
+  @334981 @336206 @382486 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Page size-Admin-Config-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - Admin - Config - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -88,7 +88,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "Entries" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334986
+  @334986 @wip
   Scenario: Flex table-Total Records count-Admin-Config-To verify that on enabling Total records count, value of total record count displayed at bottom of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -133,7 +133,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334990 @336233
+  @334990 @336233 @wip
   Scenario: Flex table-Total Records count-Admin-Config-To verify that on disabling Total records count, value of total record count not displayed at bottom of flex table
   Total Record count - Admin - Config - To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -180,7 +180,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "Total Records" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334995 @382489 @SanityPATCH  @SanityPATCHFlexTable
+  @334995 @382489 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario:Flex table-Pagination-Admin-Config-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -227,7 +227,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335000 @336242 @382493 @SanityPATCH  @SanityPATCHFlexTable
+  @335000 @336242 @382493 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario:Flex table-Pagination-Admin-Config-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
   Pagination - Admin - Config - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -257,7 +257,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
-  @335004
+  @335004 @wip
   Scenario: Flex table-Default page size-Admin-Config-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -290,7 +290,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @335008
+  @335008 @wip
   Scenario: Flex table-Default page size-Admin-Config-To verify that if user not provided any number in "Default page size" field, then by default 20 records displayed on a page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -329,7 +329,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335017
+  @335017 @wip
   Scenario: Flex table-Auto Index-Admin-Config-To verify that on enabling auto index, Index column get displayed to the left of flex table, and all records get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -368,7 +368,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "#" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335022
+  @335022 @wip
   Scenario: Flex table-Auto Index-Admin-Config-To verify that on disabling auto index, Index column not get displayed to the left of flex table, and all records not get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -446,7 +446,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "5" with page size dropdown at "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335040 @336285
+  @335040 @336285 @wip
   Scenario: Flex table-Auto Index Behavior-Admin-Config-To verify that on selecting auto index behavior-None, all the rows in flex table get indexes
   Auto Index Behavior - Admin - Config - To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
@@ -498,7 +498,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335049 @382499 @SanityPATCH  @SanityPATCHFlexTable
+  @335049 @382499 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Enable Record Selection-Admin-Config-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -551,7 +551,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335055 @382508 @SanityPATCH  @SanityPATCHFlexTable
+  @335055 @382508 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Disable Record Selection-Admin-Config-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -602,7 +602,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335063
+  @335063 @wip
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
@@ -647,7 +647,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335070
+  @335070 @wip
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
@@ -692,7 +692,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335076 @336292
+  @335076 @336292 @wip
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
   Record selection column position - Admin - Config - To verify that when user selected 'None' option for 'Record selection column position' field, then Record selection column displayed on left side by default
     Given I have "default" configuration as below:
@@ -740,7 +740,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335088 @336281
+  @335088 @336281 @wip
   Scenario: Flex table-Disable Menu-Admin-Config-To verify that on disabling Menu, Menu option not displayed on UI for the flex table,
   Menu - Admin - Config - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
@@ -794,7 +794,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "Menu" action is displayed at the "---program:-:grantsFlexTableIdForSPIuser---" modal
 
-  @335116
+  @335116 @wip
   Scenario: Flex table-Enable Menu-Admin-Config-To verify that on enabling Menu, Menu option displayed on UI for the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -889,7 +889,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
@@ -899,9 +899,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see table contains "Showing 1 to 10" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335131
+  @335131 @wip
   Scenario: Flex table-Page size-PM-UI-To verify that different page sizes  are available in Show Entries block
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
@@ -923,13 +923,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335137
   Scenario: Flex table-Page size-Admin-UI-To verify that on selecting All page size, all available records displayed on a page
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
     Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335139
+  @335139 @wip
   Scenario: Flex table-Page size-PM-UI-To verify that on selecting All page size, all available records displayed on a page
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -945,7 +945,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     Then I see table contains "Showing 1 to 7 of 7 records" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @335150
+  @335150 @wip
   Scenario: Flex table-Page size-Admin-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -969,7 +969,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of"
 
-  @335158
+  @335158 @wip
   Scenario: Flex table-Pagination-Admin-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -993,7 +993,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     Then I see user on "Last" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
 
-  @335174
+  @335174 @wip
   Scenario: Flex table-Pagination-Admin-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1017,7 +1017,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "First"
     Then I see user on "First" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
 
-  @335200
+  @335200 @wip
   Scenario: LWC-Flex table-Page Size-Admin-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1046,7 +1046,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
 #######################Test suite: Quick Search (Suite ID: 334512)#############################\
 
-  @334650
+  @334650 @wip
   Scenario: Flex table-Quick Search-Admin-Config-To verify that on enabling Quick search, it displayed on top of the flex table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1140,7 +1140,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334659p @382396 @SanityPATCH  @SanityPATCHFlexTable
+  @334659p @382396 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

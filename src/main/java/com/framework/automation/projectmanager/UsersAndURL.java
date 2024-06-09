@@ -190,7 +190,7 @@ public class UsersAndURL implements UsersController {
         password.put("ADMIN", "Admin@March2024");
         password.put("PM", "PM@11March");
         password.put("PM1", "PM1@AutoMarch");
-        password.put("FO", "AutoPatch@08March");
+        password.put("FO", "Patch@08june");
         password.put("EXE", "Exe@11March");
         password.put("SPI", "SPI@March2024");
         if (userType.toUpperCase() != null) {
