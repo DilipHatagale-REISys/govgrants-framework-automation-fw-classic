@@ -414,6 +414,6 @@ Business Need: NotesandAttachments Component Scenarios
     And I enter value "Notes testing" into field "Description"
     And I click modal button "Save"
     And I close modal by clicking the top right x button
-    And I refresh the page
+    When I refresh the page
     When I navigate to "Files" sub tab
     Then I see row level action button "View" against "Notes testing" in table name "Notes"
