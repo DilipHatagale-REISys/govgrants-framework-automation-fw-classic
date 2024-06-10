@@ -187,7 +187,7 @@ public class UsersAndURL implements UsersController {
 
     private String getPATCHEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Admin@March2024");
+        password.put("ADMIN", "Patch@08june");
         password.put("PM", "PM@11March");
         password.put("PM1", "PM1@AutoMarch");
         password.put("FO", "Patch@08june");
