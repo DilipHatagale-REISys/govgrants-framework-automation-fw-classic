@@ -722,7 +722,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see field "Budgeting Preference" inside page block
 
-  @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
+  @36099u    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -734,8 +734,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    When I perform quick search for "sanity active program for classic"
+    When I click on "View" icon for "sanity active program for classic" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36100    @sortOrderFieldAtPageBlockDetail-gPlanning
@@ -10767,10 +10767,10 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1              | Grantor State Program | Name                      | Edit1                       |
+      | Page Layout Action    | Action Name | Edit1             | Grantor State Program | Name                      | Edit1                      |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                       |
+      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                      |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10788,10 +10788,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1              | Recipient ApplicationView | Name                      |                            |
+      | Page Layout Action    | Action Name | Edit1             | Recipient ApplicationView | Name                      |                            |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit1                       |
+      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
