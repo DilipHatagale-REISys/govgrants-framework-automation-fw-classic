@@ -5669,8 +5669,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     Then I see the following page detail buttons :
       | Cancel |
       | Save   |
@@ -5687,8 +5687,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see "2,106.00" text enter in field "fieldInitialRequestedAmount__c"
 
@@ -5704,8 +5704,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see "6/30/2018" text enter in field "fieldProjectPeriodStartDate__c"
 
@@ -5721,8 +5721,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     When I hover mouse on lookup link "AN-603-055"
     And I pause execution for "3" seconds
@@ -5740,8 +5740,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see expected table with id "toggleFlexTableGrantorApplicationRolesandResponsibilities"
 
@@ -5757,8 +5757,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see "6/19/2018 5:41 AM" text enter in field "fieldSubmittedOn__c"
 
@@ -5774,8 +5774,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon inside page block detail "Funding Opportunity ID"
     Then I see "<helpText>" shown as help text
@@ -5796,8 +5796,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @133037  @verifyQuickSearchWorkingAtEnhancedFlexEditLayoutAtSPIUser @wip
@@ -5812,8 +5812,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "Edit1" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "Edit1" icon for "Application For Announcement Testing" inside table
     When I navigate to "Roles" sub tab
     When I perform quick search for "John Walker" in "toggleFlexTableGrantorApplicationRolesandResponsibilities" panel
     Then I see value "John Walker" for title "Assigned to User" inside table "toggleFlexTableGrantorApplicationRolesandResponsibilities"
@@ -11897,8 +11897,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I softly see field "fieldAddressline1__c" is not editable
     Then I softly see field "fieldAddressline2__c" is not editable
     Then I softly see field "fieldCity__c" is not editable
@@ -11980,8 +11980,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed
@@ -12030,8 +12030,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Automation Test Success" page message displayed in page layout
 
   @379393 @379394 @SanityPATCH @SanityPATCHPageLayout
@@ -12054,8 +12054,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Automation Test Information" page message displayed in page layout
 
 
@@ -12079,8 +12079,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Automation Test Alert" page message displayed in page layout
 
   @379400 @379401 @SanityPATCH @SanityPATCHPageLayout
@@ -12103,8 +12103,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Automation Test Warning" page message displayed in page layout
 
   @379403 @379404 @SanityPATCH @SanityPATCHPageLayout
@@ -12127,8 +12127,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Automation Test Error" page message displayed in page layout
 
   @379406 @379407 @SanityPATCH @SanityPATCHPageLayout
@@ -12194,8 +12194,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I softly see field "fieldInternalOrganization__c" inside page block
     Then I softly see field "fieldType__c" inside page block
 
@@ -12224,8 +12224,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Overview" shown at number "0" inside subtabs
     Then I see "Financials" shown at number "1" inside subtabs
     Then I see "Files" shown at number "2" inside subtabs
@@ -12254,8 +12254,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see "Description" shown at the number "0" inside page layout
     Then I see "System Information" shown at the number "1" inside page layout
 
@@ -12299,8 +12299,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
@@ -12325,8 +12325,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
@@ -12354,8 +12354,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
     Then I see helpIcon displayed beside "Project Period End Date" respective field or column
     Then I see helpIcon displayed beside "Due Date" respective field or column

@@ -3302,8 +3302,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "View" icon for "Announcement for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
   @336175 @382547
@@ -3313,8 +3312,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "View" icon for "Announcement for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
   @336176 @382548
@@ -3323,8 +3321,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Overview" sub tab
     Then I see flex table with id "toggleFlexTableRecipientsBudgetPeriod" is displayed
 
@@ -5340,8 +5337,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages" displayed as a Header on flex table
 
@@ -5375,8 +5371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -5390,8 +5385,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -8635,8 +8629,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8657,8 +8650,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8680,8 +8672,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                         |
@@ -8701,8 +8692,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -8722,8 +8712,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -8744,8 +8733,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue |
@@ -8767,8 +8755,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -8789,8 +8776,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -8812,8 +8798,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -8835,8 +8820,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -8858,8 +8842,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -8883,8 +8866,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "15" seconds
     Then I see page title "Grant View"
     Examples:
@@ -8907,8 +8889,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -8937,8 +8918,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -8962,8 +8942,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue                     |
@@ -8992,8 +8971,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9022,8 +9000,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9047,8 +9024,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9077,8 +9053,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9107,8 +9082,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9138,8 +9112,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9161,8 +9134,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9184,8 +9156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9215,8 +9186,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Grant View" in new tab
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9238,8 +9208,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9261,8 +9230,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9286,8 +9254,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Grant View" modal window is displayed
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9309,8 +9276,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9332,8 +9298,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9357,8 +9322,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9380,8 +9344,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9403,8 +9366,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9428,8 +9390,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -10131,8 +10092,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12053,8 +12013,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12399,8 +12358,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
     Examples:
@@ -12432,8 +12390,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12455,8 +12412,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12501,8 +12457,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
 
@@ -12516,8 +12471,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -12533,8 +12487,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12560,8 +12513,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12584,8 +12536,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
     Examples:
@@ -12604,8 +12555,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
 
@@ -12620,8 +12570,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
     Examples:
@@ -12640,8 +12589,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
 
@@ -12656,8 +12604,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -12676,8 +12623,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
 
@@ -12693,8 +12639,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12715,8 +12660,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12732,8 +12676,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12754,8 +12697,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12772,8 +12714,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12794,8 +12735,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12814,8 +12754,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -12839,8 +12778,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -12859,8 +12797,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | 12345678980   | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -12882,8 +12819,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -12902,8 +12838,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -12925,8 +12860,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -14213,8 +14147,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click on "View" icon in flex table for first draft record
     #Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
@@ -14226,8 +14159,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click on "View" icon in flex table for first draft record
     #Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
@@ -15091,8 +15023,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | User  | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -15845,8 +15776,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Admin Program for Advance filter"
-    And I click on "Edit" icon for "Admin Program for Advance filter" inside flex table with id "---program:-:programsTableId---"
+   And I click on "Edit" icon in flex table for first draft record    
     When I navigate to "Overview" sub tab
     Then I softly can see top right button "Save" in page detail
 
@@ -16041,8 +15971,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see new tab is opened
 
   @34038    @editActionOpensInSameWindow-gPlanning
@@ -16057,8 +15986,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see no new tab is opened
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
@@ -16073,8 +16001,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see "Edit" opens in overLay window
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
@@ -16089,8 +16016,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
@@ -16112,8 +16038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16129,8 +16054,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation " is not displayed inside flex table
 
@@ -16146,8 +16070,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16167,8 +16090,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16188,8 +16110,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
 
@@ -16362,8 +16283,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -16400,8 +16320,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Edit" button inside "Contacts" flex table
 
@@ -16419,8 +16338,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "New" icon for "Contacts" is displayed inside flex table
 
@@ -16436,8 +16354,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableAnnouncementContacts"
     Then I see "New" options inside "Contacts" enabled
@@ -16454,8 +16371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "New" button inside "Contacts" flex table
 
@@ -16486,8 +16402,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
+   And I click on "View" icon in flex table for first draft record    
     Then I see confirmation box with body "null" is displayed
 
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -16504,8 +16419,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
+   And I click on "View" icon in flex table for first draft record    
     Then I see confirmation box with body "Automation" is displayed
 
   @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -16522,8 +16436,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     Then I see "Automation Title" opens in overLay window
 
   @wip @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning  @skiponjenkins @plscheckagain
@@ -16839,8 +16752,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -16859,8 +16771,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -16879,8 +16790,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Responsibilities" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilitiesInternalProgram" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilitiesInternalProgram" with wait for record
@@ -16894,8 +16804,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     Then I see "Program" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
@@ -16927,8 +16836,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Responsibilities" sub tab
     And I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
     Then I softly see "Save" button at "Bottom" of  Modal window
@@ -16948,8 +16856,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Responsibilities" sub tab
     And I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
     Then I see "Save" button at "Bottom" of  Modal window
@@ -17322,8 +17229,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     And I pause execution for "15" seconds
     When I hovering mouse on help text icon inside "Contacts@1234567890!@#$%^&*()" for flex table
     Then I see help text is displayed at bottom
@@ -17334,8 +17240,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I hovering mouse on help text icon inside "Contacts@1234567890!@#$%^&*()" for flex table
     Then I see help text is displayed at bottom
 
@@ -17345,8 +17250,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     When I hover mouse on lookup link "Automation PM" at table
@@ -17383,8 +17287,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
@@ -17405,8 +17308,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "12345678" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
@@ -17433,8 +17335,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -17473,8 +17374,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
@@ -17649,8 +17549,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -17701,8 +17600,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
@@ -17861,8 +17759,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -17882,8 +17779,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Automation PM" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -17902,8 +17798,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "Edit" icon for "PG-A11-1253" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     And I click on "Save" in the page details
@@ -17938,8 +17833,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     #And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     Then I see hyperlink at value "Automation SPI" inside "Contact__c" modal
@@ -17958,8 +17852,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -17981,8 +17874,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -18004,8 +17896,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18026,8 +17917,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "Edit" icon for "PG-A11-1253" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18325,8 +18215,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
@@ -18346,8 +18235,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -18367,8 +18255,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     And I pause execution for "5" seconds
     When I navigate to "Setup tabs" sub tab
     And I pause execution for "5" seconds
@@ -18514,8 +18401,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -18528,8 +18414,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see hyperlink at value "Test Automation Organization" inside "fieldAccountId" modal
@@ -18673,8 +18558,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -18755,8 +18639,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see field "Applicant Organization" inside page block
 
@@ -18832,8 +18715,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     Then I see "Name" shown as flex table column title
@@ -18844,8 +18726,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "govgrantsuat@gmail.com.invalid" in "---program:-:programContactsTableId---" panel
     Then I see "Email" shown as flex table column title
@@ -18965,8 +18846,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -18977,8 +18857,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -19141,8 +19020,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
@@ -19158,8 +19036,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Steup tabs" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
@@ -19175,8 +19052,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
 
@@ -19192,8 +19068,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     And I pause execution for "5" seconds
     Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
@@ -19210,8 +19085,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
 
@@ -19582,8 +19456,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Total:" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
 

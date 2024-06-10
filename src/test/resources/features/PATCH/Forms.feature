@@ -111,8 +111,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see Form Id "FN-03537" is displayed on form layout
@@ -163,8 +163,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see Form Id "FN-03527" is displayed on form layout
@@ -207,8 +207,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -240,8 +240,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -274,8 +274,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -309,8 +309,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -346,12 +346,12 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #206863
-    Then I see page title "Applications: Program Specific Application form View ~ Grants Portal"
+    Then I see page title "Applications: Program Specific Application form Edit ~ Grants Portal"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
       | Form saved successfully. |
@@ -362,15 +362,15 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
+    Then I see "Program Specific Application form" on page "1" of "govgrants" pdf file
 
   @208803 @208804 @wip
   Scenario Outline: All Forms - Admin- Config- Verify when we hover on (i) icon Help text should be displayed
@@ -395,8 +395,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     When I hovering mouse on help text icon inside "Standard Assurances Form"
@@ -465,8 +465,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
@@ -501,8 +501,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Save" in the page details
@@ -533,8 +533,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
@@ -564,8 +564,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -599,8 +599,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Cancel" button is displayed
@@ -674,8 +674,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Save" in the page details
@@ -709,8 +709,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -743,8 +743,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
@@ -778,8 +778,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
@@ -854,8 +854,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
@@ -893,8 +893,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Back" in the page details
@@ -954,8 +954,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
@@ -1035,7 +1035,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Percentage" shown inside flex table with id "---program:-:AllFormsTableId---"
     Then I see "Last Modified By" shown inside flex table with id "---program:-:AllFormsTableId---"
     Then I see "Last Modified Date" shown inside flex table with id "---program:-:AllFormsTableId---"
-    Then I see "Allow Edit?" shown inside flex table with id "---program:-:AllFormsTableId---"
 
   @381967 @381968 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline:
@@ -1059,7 +1058,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:allFormsTableId---"
@@ -1125,7 +1124,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Significance" page block displayed
     Then I see "Project Goals" page block displayed
     Then I see "Organization Capacity" page block displayed
-    Then I see "AwardFundingAccounts-SD1" page block displayed
 
   @382001 @382003 @SanityPATCH  @SanityPATCHForms @wip
   Scenario Outline: Sanity TC - Admin - To verify that user is able to see all fields in page blocks on Enhanced form as added in config

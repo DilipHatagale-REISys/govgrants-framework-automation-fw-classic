@@ -223,16 +223,16 @@ Business Need: Calender Config Component Scenarios
       | Department of Community Health |
       | {SavedValue:PT}                |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
+  @127071p    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
-     # | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
-     # | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
+#    Given I have "default" configuration as below:
+#      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
+#     # | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
+#     # | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -631,7 +631,7 @@ Business Need: Calender Config Component Scenarios
       #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-   #   | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+   #   | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-4404                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"

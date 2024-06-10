@@ -50,8 +50,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
     And I click modal button "Ok"
@@ -143,8 +142,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -154,8 +152,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:NewApplicationForForTestingOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:NewApplicationForForTestingOnly}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -165,8 +162,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:NewApplicationForForTestingOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:NewApplicationForForTestingOnly}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     #And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
     #And I click modal button "Ok"
@@ -182,8 +178,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     #And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
     #And I click modal button "Ok"
@@ -269,8 +264,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -283,8 +277,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
-    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -486,8 +479,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
-    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I pause execution for "5" seconds
     And I enter value "Post at record level" in my feed section and share the post
@@ -583,8 +575,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
-    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -639,8 +630,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
-    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I pause execution for "7" seconds
@@ -1464,8 +1454,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -1475,8 +1464,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -1486,8 +1474,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -1497,8 +1484,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I pause execution for "5" seconds
     And I enter value "Test Automation ADMIN application phase Comment" in my feed section and share the post
@@ -1512,8 +1498,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
@@ -1597,8 +1582,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -1611,8 +1595,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
@@ -1702,8 +1685,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I click on "Refresh" button inside collab tab
     Then I see collab my feed page refreshed
@@ -1930,8 +1912,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I click on "Refresh" button inside collab tab
     Then I see collab my feed page refreshed
@@ -2040,8 +2021,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I pause execution for "5" seconds
     And I enter value "Post at record level" in my feed section and share the post
@@ -2136,8 +2116,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -2191,8 +2170,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I pause execution for "7" seconds

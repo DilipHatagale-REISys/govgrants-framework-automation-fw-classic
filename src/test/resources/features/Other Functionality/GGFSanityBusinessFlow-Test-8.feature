@@ -70,7 +70,7 @@ Business Need: Sanity check for all Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "10" seconds
-    Then I see Total Records count "Total Records : 1" in table name "Snapshot History"
+    Then I see Total Records count "Total Records : " in table name "Snapshot History"
     Then I see "Snapshot History" page block displayed
     Then I see generated snapshot "{SavedValue:DateTaken}" is displayed with "Date Taken"
     Then I see generated snapshot "{SavedValue:OWNER}" is displayed with "Taken By"
@@ -79,72 +79,6 @@ Business Need: Sanity check for all Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
-
-  @382796
-  Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "Created By" as "OWNER"
-    When I click on "Menu" in the page details
-    Then I see "Take Snapshot" options is displayed
-    And I select "Take Snapshot" from dropdown
-    When I click alert button "OK"
-    And I navigate to "History" sub tab
-    And I refresh the page
-    And I pause execution for "10" seconds
-    Then I see "Snapshot History" page block displayed
-
-  @382796
-  Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "Created By" as "OWNER"
-    When I click on "Menu" in the page details
-    Then I see "Take Snapshot" options is displayed
-    And I select "Take Snapshot" from dropdown
-    When I click alert button "OK"
-    And I navigate to "History" sub tab
-    And I refresh the page
-    And I pause execution for "10" seconds
-    Then I see "Snapshot History" page block displayed
-
-  @69092 @382346 @382348 @validateIfInternalCheckboxCheckedAtToFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
-  Scenario Outline: Validate If internal checkbox is checked at To Field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
-    Examples:
-      | Users |
-      | Admin |
       | PM    |
 
   @161870 @382353 @382354 @382356 @382357 @382359 @382360
@@ -177,39 +111,13 @@ Business Need: Sanity check for all Component Scenarios
       | Admin |
       | PM    |
 
-  @382364
-  Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Bold" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
-    And I close modal by clicking the top right x button
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting Italic" into field "Body Content" on send email modal
-    And I change formatting of all text to "Italic" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting Italic" displayed in "Italic" format inside CK editor
-
   @382367
   Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal

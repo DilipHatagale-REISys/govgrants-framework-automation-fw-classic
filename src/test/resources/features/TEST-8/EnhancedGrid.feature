@@ -249,8 +249,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "AP-A11-001"
-    When I click on "View" icon for "AP-A11-001" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
@@ -266,8 +265,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "AP-A11-001"
-    When I click on "View" icon for "AP-A11-001" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ApplicationChecklistsFlexToggle"
@@ -659,8 +657,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #379184
     Then I see Advance Filter is disabled from table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
@@ -677,8 +674,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see Menu icon is disabled from planning flex table "Budget Periods"
 
@@ -694,8 +690,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     When I perform quick search for "BP01" in "---program:-:EnhanceAppBudCateGrantorTableId---" panel
@@ -714,8 +709,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP01" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -735,8 +729,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP01" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -754,8 +747,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP01" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -774,8 +766,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP01" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -794,8 +785,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Automation Enhanced Grid" shown as inside "---program:-:appBudgetPeriodTableId---"
 
@@ -811,8 +801,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as PDF" options inside "Budget Periods" disabled
@@ -829,8 +818,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
@@ -847,8 +835,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
@@ -863,8 +850,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
 #    And I expand nested table containing column value "BP01"
 #    And I pause execution for "5" seconds
@@ -883,8 +869,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:appBudgetPeriodTableId---"
 
@@ -900,8 +885,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in enhanced flex grid
 
@@ -923,8 +907,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
   #  When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
    # When I click on "Edit" icon for "BP01" inside table
@@ -954,8 +937,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I click on "Edit" icon for "Travel" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
@@ -977,8 +959,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #Then I see "<newFieldsApi>" in enhanced flex grid header "---program:-:appBudgetPeriodTableId---"
     Then I see columnName "Budget Period #" is Displayed on "Budget Periods" table
@@ -1017,8 +998,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I hovering mouse on help text icon inside "Budget Periods" for enhanced grid
     Then I see "<new_helpText>" shown as help text
@@ -1038,8 +1018,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "5" seconds
@@ -1057,8 +1036,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #379171
     And I expand nested table containing column value "BP01"
@@ -1077,8 +1055,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Help" options inside "Budget Periods" enabled
@@ -1095,8 +1072,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I hovering mouse on help text icon inside "Internal Organization" for enhanced grid table column
     And I pause execution for "3" seconds
@@ -1117,8 +1093,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # And I expand nested table containing column value "BP01"
     Then I see "Test Automation" shown inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -1135,8 +1110,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
@@ -1153,8 +1127,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I click on "Edit" icon for "Travel" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
@@ -1172,8 +1145,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Fee Fund Requested" not displayed in enhanced grid table column title
 
@@ -1189,8 +1161,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -1208,8 +1179,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "5" seconds
@@ -1230,8 +1200,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "5" seconds
@@ -1252,8 +1221,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "View" button inside "Budget Periods" enhanced grid
 
@@ -1269,8 +1237,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see cell subtotal as expected as given formula at "FeeFundRequested__c" field
 
@@ -1286,8 +1253,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1309,8 +1275,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1329,8 +1294,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1352,8 +1316,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1375,8 +1338,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see column "Fee Fund Requested" value is in "Ascending" order
 
@@ -1396,8 +1358,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see column "Fee Fund Requested" value is in "Descending" order
 
@@ -1415,8 +1376,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1436,8 +1396,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1455,8 +1414,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Open" shown inside enhanced grid table for specified record "BP01"
 
@@ -1476,8 +1434,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Edit" icon for "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" is at position "2" inside flex table
 
@@ -1493,8 +1450,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
@@ -1511,8 +1467,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1531,8 +1486,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1550,8 +1504,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1570,8 +1523,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1590,8 +1542,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1604,8 +1555,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1618,8 +1568,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1637,8 +1586,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1656,8 +1604,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "View" icon for "BP01" inside table
@@ -1678,8 +1625,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #379180
     Then I see "quick-search" is displayed on table id "---program:-:flexGridEnhancedTableId---"
@@ -1700,8 +1646,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1722,8 +1667,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
   #  #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1743,8 +1687,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1758,8 +1701,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1785,8 +1727,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1808,8 +1749,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1828,8 +1768,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Test New" row action Button at position "4" inside tableid "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
@@ -1846,8 +1785,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1865,8 +1803,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1884,8 +1821,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
   #  #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1903,8 +1839,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -1923,8 +1858,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
 
@@ -1942,8 +1876,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Budget Period" not displayed in enhanced grid table column title
 
@@ -1961,8 +1894,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
 
@@ -1979,8 +1911,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
@@ -1997,8 +1928,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
 
@@ -2016,8 +1946,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
 
@@ -2037,8 +1966,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Road Construction Annoumsment" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
 
@@ -2058,8 +1986,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2080,8 +2007,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2099,8 +2025,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -2122,8 +2047,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -2146,8 +2070,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -2168,8 +2091,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "GT-12132-001"
@@ -2191,8 +2113,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see over all total for "NumberofAwards__c" field at enhanced grid
 
@@ -2214,8 +2135,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2238,8 +2158,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I check "Road Construction Annoumsment" boxes in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I click on top right button "Edit Selected" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -2262,8 +2181,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "GT-FIN.1-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2288,8 +2206,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on top right button "Edit All" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I enter values "Test Automation" into textarea for table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -2311,8 +2228,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-CMAQ-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "GT-CMAQ-001"
@@ -2341,8 +2257,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "BudgetPeriodTitle__c" and "FeeFundRequested__c" in "Ascending" order
 
@@ -2364,8 +2279,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "BudgetPeriodTitle__c" and "FeeFundRequested__c" in "Descending" order
 
@@ -2386,8 +2300,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP01"
     When I pause execution for "5" seconds
@@ -2410,8 +2323,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Financials 1" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2435,8 +2347,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2460,8 +2371,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on "Edit" icon for "BP01" inside table
     When I enter value "" into field "SequenceNumber__c"
@@ -2483,8 +2393,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I click on "AP-A11-00" icon for "BP01" inside table
@@ -2502,8 +2411,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I click on "Automation SPI" icon for "BP01" inside table
@@ -2525,8 +2433,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "test Program for automation DND" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I click on "Edit" icon for "test Program for automation DND" inside table
@@ -2551,8 +2458,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
   #  When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
     When I click on "View" icon for "BP01" inside table
@@ -2570,8 +2476,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on top right button "Test New" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     #379176
@@ -2589,8 +2494,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see value "USA" for multiple cells at column "InternalOrganization__c"
@@ -2609,8 +2513,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see over all total sum is not displayed for "FeeFundRequested__c" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
@@ -2628,8 +2531,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -2649,8 +2551,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
@@ -2668,8 +2569,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
@@ -2686,8 +2586,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
@@ -2698,8 +2597,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #379175
     Then I softly can see row level action button "Edit" against "BP01" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -2724,8 +2622,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
@@ -2752,8 +2649,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
@@ -2780,8 +2676,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "11/8/2022" shown inside enhanced grid table for specified record "BP01"
@@ -2808,8 +2703,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "07/27/2023 6:38 PM" shown inside enhanced grid table for specified record "BP01"
@@ -2836,8 +2730,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     And I save the value from row "1" for column name "Date and Time" as "SaveDate" from flex table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -2865,8 +2758,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "7/5/2020 2:30 AM" shown inside enhanced grid table for specified record "BP01"
@@ -2889,8 +2781,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2914,8 +2805,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2937,8 +2827,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "$100.50" shown inside enhanced grid table for specified record "BP01"
@@ -2959,8 +2848,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -2984,8 +2872,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "755" shown inside enhanced grid table for specified record "BP01"
@@ -3010,8 +2897,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3038,8 +2924,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3066,8 +2951,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3093,8 +2977,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3111,8 +2994,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:appBudgetPeriodTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:appBudgetPeriodTableId---" table
@@ -3123,8 +3005,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3145,8 +3026,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in flex table
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -3171,8 +3051,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I enter advance filter values inside id "advfEnhanceAppGrantorBudgetPeriods"
@@ -3190,8 +3069,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Road Construction Annoumsment" in "---program:-:appBudgetPeriodTableId---" panel
     When I hovering mouse on table id "---program:-:appBudgetPeriodTableId---" with table row level icon "<new_helpText>" for column value "GT-12132-001"
@@ -3207,8 +3085,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "USAID/Burundi TUBITEHO Health Activity" in "---program:-:appBudgetPeriodTableId---" panel
     When I expand nested table containing column value "USAID/Burundi TUBITEHO Health Activity"
@@ -3233,8 +3110,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I donot see navigation logo on page
@@ -3249,8 +3125,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see cross icon is displayed at search box at "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -3261,8 +3136,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I pause execution for "2" seconds
     Then I see border box is displayed at "EnhanceAppGrantorBudgetPeriodsFlexToggle" table
@@ -3273,8 +3147,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I hovering mouse on help text icon inside "Budget Periods" for enhanced grid
     Then I see help text is displayed at bottom
@@ -3285,8 +3158,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I hovering mouse on help text icon inside "Budget Periods" for enhanced grid
     Then I see help text is displayed at bottom
@@ -3297,8 +3169,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I hover mouse on lookup link "AP-A11-006" at table
@@ -3311,8 +3182,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I click on top right button "New" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Then I see loading icon at "EnhanceAppGrantorBudgetPeriods" modal
@@ -3323,8 +3193,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Page" with pagination arrow at "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" at "Top"
     Then I see "Page" with pagination arrow at "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" at "Bottom"
@@ -3335,8 +3204,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP01"
     Then I see "Page" with pagination arrow at "AwardBudgetCategoryFlexGridgrid" at "Top"
@@ -3354,8 +3222,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see value "12,345.0000" for title "NumberDecimal" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -3376,8 +3243,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see the text :
       | 12,345.0000 |
@@ -3398,8 +3264,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "GT-FD123-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3416,8 +3281,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -3432,8 +3296,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -3452,8 +3315,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see value "03/26/2023" for title "Start Date" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -3468,8 +3330,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see pagination is displayed at the top and bottom right of table "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
@@ -3487,8 +3348,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
@@ -3509,8 +3369,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -3578,8 +3437,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
@@ -3594,8 +3452,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Demo_Title" inside table
@@ -3611,8 +3468,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP01"
     Then I see pagination is displayed at the top and bottom right of table "AwardBudgetCategoryFlexTableFlexToggle"
@@ -3629,8 +3485,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     #379186
@@ -3653,8 +3508,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I enter the following values into flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" by clicking "New" :
       | Project Title | Status |
@@ -3682,8 +3536,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:appBudgetPeriodTableId---"
@@ -3703,8 +3556,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
@@ -3720,8 +3572,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see no "New" button inside "Budget Periods" enhanced grid
@@ -3738,8 +3589,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see no "View" button inside "Budget Periods" enhanced grid
@@ -3758,11 +3608,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "Grant Created for default value testing" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -3785,11 +3633,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "Grant Created for default value testing" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -3821,8 +3667,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "GT-GGREI-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -3859,8 +3704,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "GT-GGREI-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -3897,8 +3741,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
@@ -3935,8 +3778,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "GT-GGREI-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -3973,8 +3815,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "GT-GGREI-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -4008,8 +3849,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I perform quick search for "GT-GT007-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -4029,8 +3869,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -4068,8 +3907,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "Edit" icon for "Program For Application" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:appBudgetPeriodTableId---"
@@ -4090,8 +3928,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see value "$0.00" for title "testcurrency" inside table "---program:-:appBudgetPeriodTableId---"
@@ -4112,8 +3949,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Active Grants"
-    When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
-    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
   @170497
@@ -4128,8 +3964,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Active Grants"
-    When I perform quick search for "{Framework_recordUsed:AutomationPermanentGrant}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
   @171798
@@ -4194,8 +4029,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click on top right button "New" in flex table with id "---program:-:appBudgetPeriodTableId---"
     Then I softly see "ExternalOrganization__c" field is required
@@ -4214,8 +4048,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -4239,8 +4072,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-FIN.1-001" in "---program:-:appBudgetPeriodTableId---" panel
     When I expand nested table containing column value "GT-FIN.1-001"
@@ -4269,8 +4101,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -4289,8 +4120,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     When I click on "Edit" icon for "GT-ITSGT-001" inside table
@@ -4303,8 +4133,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     And I pause execution for "2" seconds
@@ -4327,8 +4156,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     When I expand nested table containing column value "GT-ITSGT-001"
@@ -4360,8 +4188,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on top right button "New" in flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -4386,8 +4213,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -4409,8 +4235,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I save the field labeled "ID" as "id"
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
@@ -4433,8 +4258,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -4455,8 +4279,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -4472,8 +4295,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
    # When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
@@ -4486,8 +4308,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4501,8 +4322,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4516,8 +4336,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4531,8 +4350,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4547,8 +4365,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4562,8 +4379,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4577,8 +4393,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "15" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4593,8 +4408,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "15" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4612,8 +4426,7 @@ Business Need: EnhancedGrid Component Scenarios
 #    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
 #    When I enter "Creation" values from "Program_Field_Values.xlsx"
 #    And I click on "Save and Close Modal" in the page details
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "10" seconds
     When I navigate to "Budget" sub tab
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
@@ -4627,8 +4440,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
 #    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
 #    When I enter "Creation" values from "Program_Field_Values.xlsx"
 #    And I click on "Save and Close Modal" in the page details
@@ -4651,8 +4463,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4671,8 +4482,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4691,8 +4501,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4711,8 +4520,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4731,8 +4539,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4751,8 +4558,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4771,8 +4577,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4791,8 +4596,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4811,8 +4615,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4831,8 +4634,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4851,8 +4653,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4871,8 +4672,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4891,8 +4691,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4911,8 +4710,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4931,8 +4729,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4951,8 +4748,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -4972,8 +4768,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I pause execution for "5" seconds
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as XLS" from dropdown
@@ -4992,8 +4787,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCatGrantorFlexGridgrid"
     And I select "Download as PDF" from dropdown
@@ -5014,8 +4808,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
   #  When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5040,8 +4833,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5066,8 +4858,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5092,8 +4883,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5118,8 +4908,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5144,8 +4933,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5170,8 +4958,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5196,8 +4983,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5222,8 +5008,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5248,8 +5033,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5274,8 +5058,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5298,8 +5081,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5318,8 +5100,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5338,8 +5119,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5358,8 +5138,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5378,8 +5157,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5398,8 +5176,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from dropdown
@@ -5418,8 +5195,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I pause execution for "5" seconds
     #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
@@ -5446,8 +5222,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:appBudgetPeriodTableId---" panel
     And I click on "Edit" icon for "BP01" inside flex table with id "---program:-:appBudgetPeriodTableId---"
@@ -5471,8 +5246,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I pause execution for "5" seconds
     When I perform quick search for "Construction" in "---program:-:EnhanceAppBudCateGrantorTableId---" panel
@@ -5499,8 +5273,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "10" seconds
@@ -5529,8 +5302,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I edit the following rows inline in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" by clicking "Edit" :
       | Project Title                 | Status |
@@ -5553,8 +5325,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see cell subtotal as expected as given formula at "FeeFundRequested__c" field
 
@@ -5572,8 +5343,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
@@ -5586,8 +5356,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
 
@@ -5608,8 +5377,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Autosnapshot TD AN 4"
-    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
 
@@ -5630,8 +5398,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Autosnapshot TD AN 4"
-    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I do not see "Review Steps" page block displayed
 
@@ -5646,8 +5413,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Autosnapshot TD AN 4"
-    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     When I hovering mouse on help text icon inside "Review Steps"
@@ -5670,8 +5436,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Autosnapshot TD AN 4"
-    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I softly see "Step Order" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
@@ -5703,8 +5468,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Review Steps" page block displayed
       # 379190
@@ -5731,8 +5495,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Review Steps" page block displayed
       # 379191
@@ -5755,8 +5518,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5777,8 +5539,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
 
@@ -5794,8 +5555,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly do not see "Grant Budget" page block displayed
 
@@ -5811,8 +5571,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I softly see "Budget Period Title" in flex table header "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
@@ -5835,8 +5594,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     #379188
@@ -5859,8 +5617,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5878,8 +5635,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     #379189
@@ -5903,8 +5659,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5921,8 +5676,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5944,8 +5698,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
@@ -5962,8 +5715,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I do not see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -5980,8 +5732,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I do not see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6002,8 +5753,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6022,8 +5772,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6041,8 +5790,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6060,8 +5808,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
@@ -6083,8 +5830,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
@@ -6102,8 +5848,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
@@ -6125,8 +5870,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6153,8 +5897,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6181,8 +5924,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
@@ -6193,8 +5935,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     And I click on menu inside "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6214,8 +5955,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     And I click on menu inside "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
     And I select "Reset Table" from parallel lines dropdown of "Grant Budget"
@@ -6236,8 +5976,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6261,8 +6000,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6288,8 +6026,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Review Steps" page block displayed
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6311,8 +6048,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6336,8 +6072,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6360,8 +6095,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6385,8 +6119,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6407,8 +6140,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
@@ -6430,8 +6162,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Step Number" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6452,8 +6183,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
     #379172
@@ -6470,8 +6200,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I hovering mouse on help text icon inside "Step Order" for flex table column
     Then I see "This is the order in which the associated reviews will need to be completed." shown as help text
@@ -6487,8 +6216,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
@@ -6511,8 +6239,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I do not see help text icon is displayed for field "Step Order"
 
@@ -6533,8 +6260,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
     Then I do not see help text icon is displayed for field "Form Weight (%)"
@@ -6556,8 +6282,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I hovering mouse on help text icon inside "Step Order" for flex table column
     Then I see "@#$%^&*()!<>1234567890" shown as help text
@@ -6579,8 +6304,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
@@ -6603,8 +6327,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I see field "Manual Test" inside page block
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6626,8 +6349,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6653,8 +6375,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6678,8 +6399,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6710,8 +6430,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
    # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6740,8 +6459,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
@@ -6770,8 +6488,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
    # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6799,8 +6516,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
@@ -6832,8 +6548,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I do not see " Step Name : Manual Test " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -6861,8 +6576,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
@@ -6895,8 +6609,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I do not see "Manual Test" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -6924,8 +6637,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
@@ -6954,8 +6666,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Step Number" not displayed in enhanced grid table column title
     Examples:
@@ -6977,8 +6688,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
@@ -7001,8 +6711,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
 
@@ -7025,8 +6734,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
@@ -7057,8 +6765,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -7089,8 +6796,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
@@ -7119,8 +6825,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -7148,8 +6853,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
@@ -7175,8 +6879,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" flex table not displayed
 
@@ -7199,8 +6902,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
@@ -7220,8 +6922,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see select check box enabled in flex table
     Examples:
@@ -7241,8 +6942,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I do not see select check box enabled in flex table
     Examples:
@@ -7265,8 +6965,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+   And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup tabs" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramReviewStepTemplatesTableId---"
 
@@ -7287,8 +6986,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in flex table
 
@@ -7304,8 +7002,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I do not see select check box enabled in flex table
 
@@ -7323,8 +7020,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
 
@@ -7340,8 +7036,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"

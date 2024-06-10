@@ -84,8 +84,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -504,8 +503,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
@@ -517,8 +515,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Week" Button at calendar
@@ -530,8 +527,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Day" Button at calendar
@@ -631,8 +627,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     When I click on "Save" in the page details
@@ -687,8 +682,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -720,8 +714,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -748,8 +741,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -770,8 +762,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
@@ -791,8 +782,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -824,8 +814,7 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement For Calendar Testing"
-    When I click on "Edit" icon for "Announcement For Calendar Testing" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I pause execution for "10" seconds
     When I enter value "0" into field "fieldApplicationDueDate__c"
     When I click on "Save" in the page details
@@ -854,9 +843,8 @@ Business Need: Calender Config Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Grants - Draft"
-    When I perform quick search for "Automation Test Grant"
-    When I click on "Edit" icon for "Automation Test Grant" inside table
+    And I click toggle button to select "Grants - All"
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldProjectPeriodStartDate__c"
     When I enter value "365" into field "fieldProjectPeriodStartDate__c"
     When I click on "Save" in the page details
@@ -881,8 +869,7 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Grants - Draft"
-    When I perform quick search for "Automation Test Grant"
-    When I click on "Edit" icon for "Automation Test Grant" inside table
+    And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldProjectPeriodStartDate__c"
     When I enter value "365" into field "fieldProjectPeriodStartDate__c"
     When I click on "Save" in the page details

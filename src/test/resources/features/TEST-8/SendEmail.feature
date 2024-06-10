@@ -966,8 +966,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Static Internal Program for Testing"
-    When I click on "View" icon for "Static Internal Program for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -2270,8 +2269,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal

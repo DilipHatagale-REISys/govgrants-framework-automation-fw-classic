@@ -559,8 +559,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
     Then I see page title "Applications: Program Specific Application form View ~ As a Grantor"
     Examples:
@@ -574,8 +573,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
     Then I softly see "Program Name" inside page block detail
     Then I softly see "Type" inside page block detail
@@ -594,8 +592,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "Award Title" inside page block detail
     Then I softly see "Type" inside page block detail
     Then I softly see "Award ID" inside page block detail
@@ -615,8 +612,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     When I hovering mouse on i icon for field "Award Title" inside modal
     Then I see "<new_helpText>" shown as help text
 
@@ -636,8 +632,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     When I hovering mouse on help text icon inside "Schedule Details"
     Then I see "<new_helpText>" shown as help text
 
@@ -657,8 +652,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
@@ -676,8 +670,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
@@ -695,8 +688,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "<New Label>" shown as page instruction text
     Examples:
       | User | New Label     | Old Label      |

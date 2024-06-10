@@ -223,8 +223,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
     Then I see the following message in the page details :
       | Atleast one list view should be marked as a Master List View |
@@ -245,8 +244,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
     Then I see the following message in the page details :
       | Two Master List Views are not allowed |
@@ -268,8 +266,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
       #271925
     Then I see "Test 4" page block displayed
@@ -301,8 +298,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
     #271926
     Then I see "Test 3" page block displayed
@@ -335,8 +331,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
     #271927
     Then I see "Test 2" page block displayed
@@ -367,8 +362,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Component testing " sub tab
     #271928
     Then I see "Test 1" page block displayed
@@ -397,8 +391,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as PDF" options inside "Contacts@1234567890!@#$%^&*()" disabled
@@ -415,8 +408,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as XLS" options inside "Contacts@1234567890!@#$%^&*()" disabled
@@ -433,8 +425,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
@@ -442,16 +433,15 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table             | Enable Quick Search | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General     | Enable Quick Search | false         | DataTableEnhanceProgramContacts |                           |                            |
+      | Flex Table:General    | Enable Quick Search | false         | DataTableEnhanceProgramContacts |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see quick search option disabled from enhanced grid
 
@@ -467,8 +457,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
 
@@ -486,8 +475,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:programContactsTableId---"
     Examples:
@@ -507,8 +495,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
@@ -524,8 +511,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
     Examples:
@@ -545,8 +531,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
 
@@ -562,8 +547,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
 
@@ -581,8 +565,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
@@ -600,8 +583,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
@@ -617,8 +599,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see over all total for "AmountAwarded__c" field at enhanced grid
     Then I see "BaseSalary" in enhanced flex grid header "---program:-:programContactsTableId---"
 
@@ -649,8 +630,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Organization" not displayed in enhanced grid table column title
 
@@ -716,8 +696,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
@@ -745,8 +724,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "10" seconds
     Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
@@ -815,8 +793,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     When I hovering mouse on table id "---program:-:programContactsTableId---" with table row level icon "<new_helpText>" for column value "Automation FO"
@@ -832,8 +809,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:programContactsTableId---" panel
     And I pause execution for "10" seconds
@@ -997,8 +973,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     And I hover mouse on link "Automation PM" at table
@@ -1013,8 +988,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I hover mouse on lookup link "Department of Higher Education" at table
@@ -1035,8 +1009,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -1056,8 +1029,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -1077,8 +1049,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -1096,8 +1067,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -1113,8 +1083,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Internal Programs - Draft"
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -1130,8 +1099,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I do not see Header field "Notes" displayed as a Header on flex table
 
@@ -1147,8 +1115,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see Header field "Notes" displayed as a Header on flex table
 
@@ -1164,8 +1131,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text "Contacts@1234567890!@#$%^&*()" icon
     Then I see "Help text for Automation" shown as help text
@@ -1188,8 +1154,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I hovering mouse on help text "Notes" icon
     Then I see "Help text for Automation" shown as help text
@@ -1210,8 +1175,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names | <newFieldsApi>                | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Project Role" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Name" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
@@ -1238,8 +1203,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1261,8 +1226,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1291,8 +1256,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1320,8 +1285,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1345,8 +1310,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
@@ -1369,8 +1334,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
@@ -1395,8 +1360,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1421,8 +1386,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1448,8 +1413,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1476,8 +1441,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1501,8 +1466,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Record Selection Column Position | none           | Programs                        | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1528,8 +1493,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1559,8 +1524,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1583,8 +1548,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
@@ -1611,8 +1576,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1637,8 +1602,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
     Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1664,8 +1629,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1694,8 +1659,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
@@ -1720,8 +1685,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1747,8 +1712,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1774,8 +1739,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
@@ -1799,8 +1764,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
@@ -1826,8 +1791,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I do not see "Entries" page size inside table "---program:-:FlexTableEnhancedNotesId---"
@@ -1851,8 +1815,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Entries" page size inside table "---program:-:FlexTableEnhancedNotesId---"
@@ -1876,8 +1839,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I do not see "---program:-:FlexTableEnhancedNotesId---" table contains "Page 1 of"
     Then I do not see "Total Records:" text-allignment is "center" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1901,8 +1863,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1924,8 +1885,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I do not see "#" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I do not see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1951,8 +1911,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "#" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1971,8 +1930,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "Select All Check Box" displayed inside table id "---program:-:FlexTableEnhancedNotesId---"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:FlexTableEnhancedNotesId---"
@@ -1991,8 +1949,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
@@ -2008,8 +1965,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I performed quick search "Showing 1 to 5 of 8 records" inside table id "---program:-:FlexTableEnhancedNotesId---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2028,8 +1984,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientsGrantPackages" of table id "---program:-:FlexTableEnhancedNotesId---"
     When I enter advance filter values in table id "advfRecipientsGrantPackages"
@@ -2051,8 +2006,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Test Page description" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2082,8 +2036,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     And I click on page navigation arrow "---program:-:FlexTableEnhancedNotesId---" for table id "Last"
@@ -2115,8 +2068,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
     And I click on page navigation arrow "---program:-:FlexTableEnhancedNotesId---" for table id "Last"
@@ -2141,8 +2093,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | false          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
@@ -2165,8 +2117,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
@@ -2188,8 +2140,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:FlexTableEnhancedNotesId---" in flex table
 
@@ -2207,8 +2158,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see Advance Filter box is displayed inside table id "---program:-:FlexTableEnhancedNotesId---" in flex table
 
@@ -2229,8 +2179,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I click on "Column Name" after click advance filter
@@ -2258,8 +2208,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
     And I click on "Column Name" after click advance filter
@@ -2284,8 +2233,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
@@ -2314,8 +2263,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
     When I enter advance filter values in table id "advfRecipientGrantNotes"
@@ -2345,8 +2293,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "11,000" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2369,8 +2317,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "11,000" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2390,8 +2337,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Ronald Clar" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2414,8 +2361,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2434,8 +2380,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Othe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2458,8 +2404,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2479,8 +2424,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "sds@dv.com" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2503,8 +2448,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2524,8 +2468,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "'apostrophe 'apostrophe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2546,10 +2490,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - Active"And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2569,8 +2510,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "'apostrophe 'apostrophe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2594,10 +2535,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - Active"And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -2623,8 +2561,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see action name "View" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2645,10 +2583,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Grants - Active"And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     Then I see "Actions" in flex table header "---program:-:FlexTableEnhancedNotesId---"
     Then I see action name "Edit" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
@@ -2666,8 +2601,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text    | Test Button Help Text | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
@@ -2688,8 +2623,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
@@ -2715,8 +2649,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Location            | Row            | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2744,11 +2678,11 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
+
 
   @205434 @205435
   Scenario Outline: Action- Admin- Config- Verify action rendered as per expected ‘Header Action Display Type’,
@@ -2766,8 +2700,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Header Action Display Type | Button                  | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2792,8 +2726,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
@@ -2813,8 +2746,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Sequence            | 1              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2835,8 +2768,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Where To Open ? | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2858,8 +2791,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -2876,8 +2808,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Where To Open ? | NewWindow     | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2899,8 +2831,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -2923,8 +2854,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2949,8 +2880,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -2966,8 +2897,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Test Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Delete" icon for "Test Notes" inside table without accept popup
@@ -2993,8 +2923,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -3017,8 +2946,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Modal Width     | 50              | DataTableEnhanceProgramContacts | Name                      | View                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "View" icon for "Lisa Mitchell" inside table
@@ -3048,8 +2977,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
@@ -3071,8 +2999,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -3098,8 +3026,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -3120,8 +3047,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -3147,8 +3074,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -3167,8 +3093,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -3192,8 +3117,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Files" sub tab
     When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
@@ -3213,8 +3137,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Total Records" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -3228,8 +3151,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
     Examples:

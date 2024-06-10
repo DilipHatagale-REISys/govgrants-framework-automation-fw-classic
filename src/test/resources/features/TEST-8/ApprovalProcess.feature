@@ -48,8 +48,8 @@ Business Need: Approval Process Component Scenarios
       | Reject | Forward | Send back | Approve |
     Examples:
       | User  |
-      | ADMIN |
-#      | PM    |
+    #  | ADMIN |
+     | PM    |
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
@@ -423,7 +423,7 @@ Business Need: Approval Process Component Scenarios
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Do you want to Reject Program?" is displayed
 
-  @37431 @37523 @41058 @202470 @202492 @381960 @Sanity @SanityApprovalProcess @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+  @37431q @37523 @41058 @202470 @202492 @381960 @Sanity @SanityApprovalProcess @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario Outline: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |

@@ -775,9 +775,9 @@ Business Need: Snapshot Config Component Scenarios
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
   #  Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-#    And I execute batch file:
-#      | programName | announcementName | objectType | projectTitle               | status |
-#      | NA          | NA               | Program    | Automation Runtime Program | Active |
+    And I execute batch file:
+      | programName | announcementName | objectType | projectTitle               | status |
+      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     #Announcement Creation
