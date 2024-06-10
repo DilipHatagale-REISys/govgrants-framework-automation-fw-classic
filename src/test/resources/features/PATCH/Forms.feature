@@ -351,7 +351,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #206863
-    Then I see page title "Applications: Program Specific Application form View ~ Grants Portal"
+    Then I see page title "Applications: Program Specific Application form Edit ~ Grants Portal"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
       | Form saved successfully. |
@@ -370,7 +370,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
+    Then I see "Program Specific Application form" on page "1" of "govgrants" pdf file
 
   @208803 @208804 @wip
   Scenario Outline: All Forms - Admin- Config- Verify when we hover on (i) icon Help text should be displayed
@@ -1058,7 +1058,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:allFormsTableId---"

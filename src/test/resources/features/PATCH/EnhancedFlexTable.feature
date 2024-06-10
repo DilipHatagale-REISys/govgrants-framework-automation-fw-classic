@@ -3250,7 +3250,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       #  | PM    |
 
-  @379011 @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable
+  @379011p @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3265,6 +3265,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Iron America" in the table "---program:-:associateProgramContactsTableId---"
     When I performed quick search "Iron America" inside table id "---program:-:programContactsTableId---" on page block
     Then I see value "Iron America" for title "Name" against the value "Grants Administrator" inside table "---program:-:programContactsTableId---"
     When I click on "View" icon for "Iron America" inside table
@@ -3280,7 +3284,9 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Remove" icon for "12 21" inside table
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I click on "Remove" icon for "Automation PM" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
   @379008 @SanityPATCH @SanityPATCHEnhancedTable
@@ -3292,6 +3298,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     #When I click on "Edit" icon for "12 21" inside table without accept popup
     When I click on "Edit" icon for "Automation PM" inside table
     And I enter value "Program Manager" into field "ProjectRole__c"
