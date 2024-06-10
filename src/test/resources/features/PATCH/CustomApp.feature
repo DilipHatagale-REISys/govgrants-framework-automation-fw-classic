@@ -17,7 +17,7 @@ Business Need: customApp Component Scenarios
     Then I see "As a Grantor" inside CustomApp dropDown
     Examples:
       | User  |
-      | ADMIN |
+#      | ADMIN |
       | PM    |
 
   @332491

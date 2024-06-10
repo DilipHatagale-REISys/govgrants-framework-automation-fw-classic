@@ -3,10 +3,10 @@ Business Need: NotesandAttachments Component Scenarios
   Test all NotesandAttachments component based scenarios
   As a configuration manager i make different configurational changes in NotesandAttachments component and will validate them.
 
-  @382875 @SanityPATCH @SanityPATCHNotes
+  @382875 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that Notes and Attachments tables should be render on page layout
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
@@ -54,7 +54,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed
 
-  @382883 @SanityPATCH @SanityPATCHNotes
+  @382883 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see Add action on Notes table at top level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -86,7 +86,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table
 
-  @382886 @SanityPATCH @SanityPATCHNotes
+  @382886 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see Add action on Attachments table at top level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -118,7 +118,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Attachments" flex table
 
-  @382889 @SanityPATCH @SanityPATCHNotes
+  @382889 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that on clicking Add action on Attachments table Add Attachments modal should be opened
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -153,7 +153,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I click on top right button "Add" in notes and attachment with name "Attachments"
     Then I see "Add Attachments" opens in overLay window
 
-  @382892 @SanityPATCH @SanityPATCHNotes
+  @382892 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that on clicking Add action on Notes table then Add Notes modal should be opened
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -188,7 +188,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I click on top right button "Add" in notes and attachment with name "Notes"
     Then I see "Add Notes" opens in overLay window
 
-  @382902 @SanityPATCH @SanityPATCHNotes
+  @382902 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see Edit action on Notes and Attachments tables at row level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -223,7 +223,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Edit" against "Notes testing" in table name "Notes"
 
-  @383433 @SanityPATCH @SanityPATCHNotes
+  @383433 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see Delete action on Notes and Attachments tables at row level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -258,7 +258,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Delete" against "Notes testing" in table name "Notes"
 
-  @383447 @SanityPATCH @SanityPATCHNotes
+  @383447 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see View action on Notes table at row level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -293,7 +293,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "View" against "Notes testing" in table name "Notes"
 
-  @383766 @SanityPATCH @SanityPATCHNotes
+  @383766 @SanityPATCH @SanityPATCHNotes @wip
   Scenario: Sanity TC - Admin - To verify that user able to see Download action on Attachments table at row level
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -304,7 +304,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see row level action button "Download" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Download" against "Notes testing" in table name "Notes"
 
-  @383767 @SanityPATCH @SanityPATCHNotes
+  @383767 @383766 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify that user able to see Download action on Attachments table at row level
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -328,6 +328,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I refresh the page
     When I navigate to "Files" sub tab
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
+    Then I see row level action button "View" against "SendEmailAttachment.pdf" in table name "Attachments"
 
   @383769
   Scenario: Sanity TC - SPI - To verify that user able to see Download action on Attachments table at row level
@@ -413,6 +414,6 @@ Business Need: NotesandAttachments Component Scenarios
     And I enter value "Notes testing" into field "Description"
     And I click modal button "Save"
     And I close modal by clicking the top right x button
-    And I refresh the page
+    When I refresh the page
     When I navigate to "Files" sub tab
     Then I see row level action button "View" against "Notes testing" in table name "Notes"

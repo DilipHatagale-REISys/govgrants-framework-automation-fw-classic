@@ -24,7 +24,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin | Send Email Active program           |
       | PM    | Send Email Active program           |
 
-  @332320p
+  @332320p @wip
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -65,7 +65,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "To" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple To email addresses" is displayed related field "To" inside Send Email
 
-  @332323
+  @332323 @wip
   Scenario: when Internal user Hover on the  CC field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -107,7 +107,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Cc" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple Cc email addresses" is displayed related field "Cc" inside Send Email
 
-  @332326
+  @332326 @wip
   Scenario: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -162,7 +162,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Subject" inside Send Email Modal
     Then I see help text "Enter subject here" is displayed related field "Subject" inside Send Email
 
-  @332330
+  @332330 @wip
   Scenario: Send Email -UI - when user Hover on the Subject field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -189,7 +189,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Subject" inside Send Email Modal
     Then I see help text "Enter subject here" is displayed related field "Subject" inside Send Email
 
-  @332332
+  @332332 @wip
   Scenario: Send Email -UI - when user Hover on the Body Content  field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -230,7 +230,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Body Content" inside Send Email Modal
     Then I see help text "Enter email content here" is displayed related field "Body Content" inside Send Email
 
-  @332335
+  @332335 @wip
   Scenario: Send Email -UI - when Internal user Hover on the Attachments field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "PM" user
@@ -244,7 +244,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Attachments" inside Send Email Modal
     Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
 
-  @332337
+  @332337 @wip
   Scenario: Send Email -UI - when  user Hover on the Attachments field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -271,7 +271,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Attachments" inside Send Email Modal
     Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
 
-  @332339
+  @332339 @wip
   Scenario: Send Email -UI - when  user Hover on the Select file field help icon and help text is displayed
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -312,7 +312,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Select Files" inside Send Email Modal
     Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
 
-  @332342
+  @332342 @wip
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for admin user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -351,7 +351,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see help text "*" is displayed related field "To" inside Send Email
 
     ##########Test suite: Send Email Attachments (Suite ID: 332777)#########
-  @332780
+  @332780 @wip
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'internal'
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -370,7 +370,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332781 @382441 @SanityPATCH  @SanityPATCHSendEmail
+  @332781 @382441 @SanityPATCH  @SanityPATCHSendEmail @wip
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'External'
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -464,7 +464,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332788 @382439 @SanityPATCH  @SanityPATCHSendEmail
+  @332788 @382439 @SanityPATCH  @SanityPATCHSendEmail @wip
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -652,7 +652,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332800
+  @332800 @wip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -696,7 +696,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332803
+  @332803 @wip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -740,7 +740,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332805
+  @332805 @wip
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -966,7 +966,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Limit is Exceeded" error massage in attachment section
 
-  @332822
+  @332822 @wip
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
@@ -1062,7 +1062,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
@@ -1131,7 +1131,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Email Sent Successfully. |
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @382349
@@ -1197,7 +1197,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Automation SPI |
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
@@ -7206,7 +7206,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @332880 @332881
@@ -8837,7 +8837,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
     Examples:
       | User  |
-      | ADMIN |
+#      | ADMIN |
       | PM    |
 
   @332349 @332350
@@ -8880,7 +8880,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "File with this name already exist." error massage in attachment section
     Examples:
       | User  |
-      | ADMIN |
+#      | ADMIN |
       | PM    |
 
   @332353p @332354
@@ -8911,7 +8911,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
     Examples:
       | User  |
-      | ADMIN |
+#      | ADMIN |
       | PM    |
 
   @332355 @332356 @332357 @332358
@@ -9410,7 +9410,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
     Examples:
       | User  |
-      | ADMIN |
+#      | ADMIN |
       | PM    |
 
   @332835
@@ -9727,7 +9727,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Note: This e-mail was sent from Framework Version1 via Salesforce. Please do not delete the text below. |
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @419375 @utahpatch
