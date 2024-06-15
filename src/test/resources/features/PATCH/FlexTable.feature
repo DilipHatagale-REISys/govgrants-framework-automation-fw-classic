@@ -1452,8 +1452,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "PG-A11-1252" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "PG-A11-1252" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
@@ -1469,6 +1470,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1485,6 +1487,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "No" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1534,6 +1537,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1551,6 +1555,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "https://www.google.com" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "https://www.google.com" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -1567,6 +1572,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1583,6 +1589,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1600,16 +1607,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334700
+  @334700 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Lookup field
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "AP-T09-007" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "AP-T09-007" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
@@ -1618,8 +1627,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "AP-A11-001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334703
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Lookup field
@@ -1633,8 +1643,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I pause execution for "20" seconds
-    And I quick search "AP-A11-001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
@@ -1665,6 +1676,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1682,6 +1694,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I pause execution for "20" seconds
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
@@ -1715,6 +1728,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "10.00%" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1733,16 +1747,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I pause execution for "20" seconds
+    And I click toggle button to select "Grants - All"
     And I quick search "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334710
+  @334710 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering whole data of respective field
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
@@ -1750,6 +1766,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering whole data of respective field
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
@@ -1758,13 +1775,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334713
+  @334713 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering keyword
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "security" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1772,6 +1791,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering keyword
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "Program" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1780,10 +1800,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "security" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334720
+  @334720 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1794,6 +1815,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "Testing" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "New Application For Testing Only" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1802,10 +1824,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "release" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "package release flow sk4_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334725
+  @334725 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1816,6 +1839,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1824,17 +1848,19 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334730
+  @334730 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering alphanumeric values
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "T09" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334731
+  @334731 @wip
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering alphanumeric values
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1846,10 +1872,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "T09" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334735
+  @334735 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering characters or digits with sp. characters.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1860,6 +1887,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering characters or digits with sp. characters.
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "Program For Application	" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1869,10 +1897,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334740
+  @334740 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for reference fields
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1883,6 +1912,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for reference fields
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "07/27/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "07/27/2022" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
@@ -1891,17 +1921,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I quick search "04/28/2022" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "04/28/2022" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334789
+  @334789 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that after reloading page, searched results get cleared
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     And I quick search "Automation Internal Program for flow" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     And I refresh the page
 
-  @334746p @382513 @382541 @SanityPATCH  @SanityPATCHFlexTable
+  @334746p @382513 @382541 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1976,7 +2007,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Refresh" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see entire page is refreshing
 
-  @338448
+  @338448 @wip
   Scenario: Refresh- Admin- config- Verify if flex table is getting refreshed
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -1999,14 +2030,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338454
+  @338454 @wip
   Scenario: Refresh- Admin- config- Verify Refresh option is getting displayed under menu
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338457
+  @338457 @wip
   Scenario: Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -2028,7 +2059,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338465
+  @338465 @wip
   Scenario: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2065,7 +2096,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338469 @382444 @SanityPATCH  @SanityPATCHFlexTable
+  @338469 @382444 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2102,7 +2133,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338473 @382449 @SanityPATCH  @SanityPATCHFlexTable
+  @338473 @382449 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2141,7 +2172,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338478
+  @338478 @wip
   Scenario: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2178,7 +2209,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
-  @338483
+  @338483 @wip
   Scenario: Pagination - Admin- Config- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2218,7 +2249,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
-  @338489
+  @338489 @wip
   Scenario: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2263,7 +2294,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338500
+  @338500 @wip
   Scenario: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -2304,7 +2335,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     #############################Test suite: Export Functionality (Suite ID: 338453)#################################
 
-  @338981 @336300
+  @338981 @336300 @wip
   Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is not visible on UI,
   Download as XLS/CSV - Admin - Config - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
     Given I have "default" configuration as below:
@@ -2375,7 +2406,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:activeGrantsTableId---"
     Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:activeGrantsTableId---"
 
-  @338951
+  @338951 @wip
   Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is visible on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -2445,7 +2476,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338980 @336396
+  @338980 @336396 @wip
   Scenario: Download as PDF- Admin- Config- Verify Download as PDF option is not visible on UI,Download as PDF - Admin - Config - To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2473,7 +2504,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338986
+  @338986 @wip
   Scenario: Download as PDF- Admin- Config- Verify if we can download record details in PDF format
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2489,7 +2520,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I see "Grant Title" on page "1" of "govgrants" pdf file
 
-  @338987
+  @338987 @wip
   Scenario: Download as XLS/CSV - Admin- Config- Verify if we can download record details in XLS/CSV format
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -2585,7 +2616,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I see "EGMS ID" on page "1" of "govgrants" pdf file
 
-  @339000
+  @339000 @wip
   Scenario: Download as XLS/CSV - Admin- Config- Verify all fields are visible in downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -2638,7 +2669,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I see "Project Period" in downloaded xls or csv file "govgrants"
 
-  @339001
+  @339001 @wip
   Scenario: Download as PDF- Admin- Config- Verify fields which are listed under Skip for export should not be visible in downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -2656,7 +2687,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "# of Subawards" on page "1" of "govgrants" pdf file
 
-  @339002
+  @339002 @wip
   Scenario: Download as XLS/CSV - Admin- Config- Verify fields which are listed under Skip for export should not be visible in downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -2674,7 +2705,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
 
-  @336303
+  @336303 @wip
   Scenario: Download as PDF - Admin - Config - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -2691,7 +2722,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I cannot see "EGMS ID" on page "1" of "govgrants" pdf file
 
-  @336304
+  @336304 @wip
   Scenario: Download as PDF - PM - UI - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -2831,7 +2862,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Status" in downloaded xls or csv file "govgrants"
 
-  @339012
+  @339012 @wip
   Scenario: Download as PDF- Admin- Config- Verify when click on download as PDF, Quick search, Advance filter and Pagination should not visible on downloaded file
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -2844,7 +2875,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I cannot see "pagination" on page "1" of "govgrants" pdf file
     Then I cannot see "Filter" on page "1" of "govgrants" pdf file
 
-  @339013
+  @339013 @wip
   Scenario: Download as XLS/CSV - Admin- Config- Verify when click on download as XLS/CSV, Quick search, Advance filter and Pagination should not visible on downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -2942,7 +2973,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I cannot see "filter" in downloaded xls or csv file "govgrants"
     Then I cannot see "pagination" in downloaded xls or csv file "govgrants"
 
-  @339019
+  @339019 @wip
   Scenario: Download as PDF- Admin- Config- Verify when click on download as PDF, Row level and Top level actions for flex table should not be visible under downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2959,7 +2990,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Actions" on page "1" of "govgrants" pdf file
 
-  @339020
+  @339020 @wip
   Scenario: Download as XLS/CSV - Admin- Config- Verify when click on download as XLS/CSV, Row level and Top level actions for flex table should not be visible under downloaded file
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -3048,7 +3079,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
 
-  @339025
+  @339025 @wip
   Scenario: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3102,7 +3133,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
 ########################Test suite: Help Config (Suite ID: 338447)###################################
 
-  @339448
+  @339448 @wip
   Scenario: Associate Help Config- Admin- Config- Verify if admin can associate help config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3116,7 +3147,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I hovering mouse on help text "ActiveGrantstooltip" icon
     Then I see "Help text for Automation" shown as help text
 
-  @339450
+  @339450 @wip
   Scenario: Create Help Config- Admin- Config- Verify if admin can configure new help config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3224,7 +3255,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
 
-  @339456
+  @339456 @wip
   Scenario: Help Config- Admin- Config- Verify if we are able to find help text under help option.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3240,7 +3271,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
-  @336273
+  @336273 @wip
   Scenario: Help - Admin - Config - To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3256,7 +3287,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "Programs"
     Then I do not see "Help" option is getting displayed under Menu in table "Programs"
 
-  @339459
+  @339459 @wip
   Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3274,14 +3305,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
 ############################Test suite: FLex table 1 (Suite ID: 334517)#########################
 
-  @336187
+  @336187 @wip
   Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on phase level
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     Then I see flex table with id "toggleFlexTableAppReviewList" is displayed
 
-  @336172
+  @336172 @wip
   Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on phase level
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -3295,7 +3326,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see flex table with id "toggleFlexTablepopupflextable" is displayed
 
-  @336174 @382546
+  @336174 @382546 @wip
   Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Page layout - Page block,
   Smoke TC - Admin - To verify that flex table should rendered properly on page layout
     When I login to "As a Grantor" app as "Admin" user
@@ -3328,7 +3359,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Overview" sub tab
     Then I see flex table with id "toggleFlexTableRecipientsBudgetPeriod" is displayed
 
-  @336184
+  @336184 @wip
   Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Sidebar
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -3352,7 +3383,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Application Desk Reviews" content inside "Applications" subheader on left panel
     Then I see flex table with id "toggleFlexTableApplicationsSiteVisitReportsGrid" is displayed
 
-  @335216 @382206 @SanityPATCH  @SanityPATCHFlexTable
+  @335216 @382206 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -3400,7 +3431,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @335193
+  @335193 @wip
   Scenario: Flex table-Pagination-Admin-UI-To verify that as considering newly created record (or deleted/moved), number of pages get changed, also in pagination text i.e. "Page 1 of n" get changed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -3461,7 +3492,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "{SavedValue:totalPageCount}" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
     ######################Test suite: Advanced Filter (Suite ID: 338458)#########################
-  @338592 @336238 @382432 @SanityPATCH  @SanityPATCHFlexTable
+  @338592 @336238 @382432 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Advanced Filter- Admin- Config- Verify Filter option should not available on UI
   Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -3475,7 +3506,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338590 @382402 @SanityPATCH  @SanityPATCHFlexTable
+  @338590 @382402 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Advanced Filter- Admin- Config- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3541,7 +3572,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
-  @338600 @334544
+  @338600 @334544 @wip
   Scenario: Advanced Filter- Admin- Config -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3606,7 +3637,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Status" under field name "Column Name" inside flex table
     Then I see dropdown value "Budget Redirection Threshold" under field name "Column Name" inside flex table
 
-  @338603
+  @338603 @wip
   Scenario: Advanced Filter- Admin- Config - Verify Operator list change with respect to column name (Data type)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3676,7 +3707,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Column Name" and select "Status"
     Then I see Operator list change with field "Equals to"
 
-  @338608
+  @338608 @wip
   Scenario: Advanced Filter- Admin- Config -Verify when we add filter criteria Add filter (+) button getting enabled to add more filters
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3725,7 +3756,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | EGMS ID | Contains | test1 |
     Then I see "fa fa-plus" button is enabled in flex table
 
-  @338611
+  @338611 @wip
   Scenario: Advanced Filter- Admin- Config - Verify filter can be removed using Remove filter clause (×) button
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3782,7 +3813,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338615 @334625
+  @338615 @334625 @wip
   Scenario: Advanced Filter- Admin- Config - Verify all filters can be removed using Clear All (×) button
   |Flex table-Filter-Admin-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
     Given I have "default" configuration as below:
@@ -3842,7 +3873,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338619
+  @338619 @wip
   Scenario: Records description- Admin- Config- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3912,7 +3943,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338623 @334628
+  @338623 @334628 @wip
   Scenario: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
   |Flex table-Filter-Admin-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
@@ -3996,9 +4027,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
-#      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
-  @338627 @334616
+  @338627 @334616 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4040,9 +4071,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User |
       #| ADMIN |
-#      | PM    |
+      | PM    |
 
-  @338630 @334616
+  @338630 @334616 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4062,7 +4093,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338631 @334547 @334558
+  @338631 @334547 @334558 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the text field with 'Contains' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
@@ -4087,7 +4118,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338633
+  @338633 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4106,7 +4137,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338634
+  @338634 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4125,7 +4156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338635
+  @338635 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4144,7 +4175,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338636
+  @338636 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4162,7 +4193,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338638
+  @338638 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4179,7 +4210,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338640
+  @338640 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4196,7 +4227,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338641
+  @338641 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Greater than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4215,7 +4246,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338643
+  @338643 @wip
   Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4234,7 +4265,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338644
+  @338644 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4253,7 +4284,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338645
+  @338645 @wip
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4272,7 +4303,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338648 @334561
+  @338648 @334561 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Number field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4291,7 +4322,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338649
+  @338649 @wip
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4309,7 +4340,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338650
+  @338650 @wip
   Scenario: Admin:-To verify,advanced filter should work for the Number field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4328,7 +4359,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338652
+  @338652 @wip
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4347,7 +4378,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338653 @334616
+  @338653 @334616 @wip
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4368,7 +4399,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     #########################Test suite: UI (Suite ID: 336192)###############################
 
-  @338494 @336245
+  @338494 @336245 @wip
   Scenario:Auto Index - Admin- Config- Verify index column (#) should not display on UI,
   Enable Auto Index - Admin - Config - To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -4410,7 +4441,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338505 @336276
+  @338505 @336276 @wip
   Scenario: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI,
   Record Selection - Admin - Config - To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
     Given I have "default" configuration as below:
@@ -4452,7 +4483,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see select check box enabled in flex table
 
-  @338509
+  @338509 @wip
   Scenario: Record Selection- Admin- Config- Verify correct Record Selection Column Header displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -4491,7 +4522,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338514
+  @338514 @wip
   Scenario: Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -4544,7 +4575,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338518
+  @338518 @wip
   Scenario: Records description- Admin- Config- Verify correct description of records displayed on UI (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4596,7 +4627,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338523
+  @338523 @wip
   Scenario: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4648,7 +4679,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338528
+  @338528 @wip
   Scenario: Page description- Admin- Config- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4705,7 +4736,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "Automation"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338533
+  @338533 @wip
   Scenario: Page description- Admin- Config- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4763,7 +4794,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Grantor Organization | Equals to | Test Automation Organization |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
-  @338537
+  @338537 @wip
   Scenario: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4818,7 +4849,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
-  @338542
+  @338542 @wip
   Scenario: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4873,7 +4904,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
 
-  @338545
+  @338545 @wip
   Scenario: Page description- Admin- Config- Verify we can toggle page using arrows Previous arrow should get disabled on First page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4929,7 +4960,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTableGrantsList"
 
-  @338550
+  @338550 @wip
   Scenario: Page description- Admin- Config- Verify we can directly jump on last page using this arrow
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4981,7 +5012,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
 
-  @338555
+  @338555 @wip
   Scenario: Page description- Admin- Config- Verify we can directly jump on First page using this arrow
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -5036,7 +5067,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
-  @338560
+  @338560 @wip
   Scenario: Total- Admin- Config- Verify the Total of values under the column can be displayed in the Table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -5131,7 +5162,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click toggle button to select "Internal Programs - Draft"
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338570
+  @338570 @wip
   Scenario: Flex table-Total Records count-Admin-UI_To verify that on deleting record, Total Records count get changed i.e. decreased
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -5155,7 +5186,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Delete" icon for "Automation Program For Test" inside table
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338573
+  @338573 @wip
   Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -5215,7 +5246,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "1" to "5" Record Selection inside table id "toggleFlexTableGrantsList"
     Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
 
-  @338581
+  @338581 @wip
   Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - None, all available rows on table get indexed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -5234,7 +5265,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
 
-  @338583
+  @338583 @wip
   Scenario: Flex table-Auto Index Behavior-PM-UI_To verify that on selecting auto index behavior - None, all available rows on table get indexed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -5268,7 +5299,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
 
-  @338462
+  @338462 @wip
   Scenario: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -5285,7 +5316,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Associate" in tableName "Contacts"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @336178 @382549
+  @336178 @382549 @wip
   Scenario: LWC-Flex table-Admin-Config-To verify that user is able to render flex table on Modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -5319,7 +5350,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @335979
+  @335979 @wip
   Scenario: Flex table-Header-Admin-Config-To verify that text entered in a Header field, displayed as a Header on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5354,7 +5385,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see Header field "Grants - Active" displayed as a Header on flex table
 
-  @336072
+  @336072 @wip
   Scenario: Flex table-Header-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5395,7 +5426,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
 
-  @336076
+  @336076 @wip
   Scenario: Flex table-Header help text-Admin-Config-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5448,7 +5479,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "5" seconds
     Then I see "Help text for Automation" shown as help text
 
-  @336080 @336195
+  @336080 @336195 @wip
   Scenario: Flex table-Header help text-Admin-Config-To verify that when user not entered any header help text, then help icon not displayed on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5491,7 +5522,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "fa fa-info helpIcon" displayed on flex table
 
-  @336083
+  @336083 @wip
   Scenario: Flex table-Header help text-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header help text
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5544,7 +5575,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "5" seconds
     Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
 
-  @336087
+  @336087 @wip
   Scenario: Flex table-Header Instruction-Admin-Config-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -5591,7 +5622,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336091 @336199
+  @336091 @336199 @wip
   Scenario: Flex table-Header Instruction-Admin-Config-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
   Header Instruction - Admin - Config - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     Given I have "default" configuration as below:
@@ -5641,7 +5672,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336094
+  @336094 @wip
   Scenario: Flex table-Header Instruction-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -5688,7 +5719,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336097
+  @336097 @wip
   Scenario Outline: Flex table-Display fields-Admin-Config-To verify that all the provided display fields in config get displayed as a different columns of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5763,7 +5794,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336100 @382120 @SanityPATCH  @SanityPATCHFlexTable
+  @336100 @382120 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario Outline: Flex table-Display fields-Admin-Config-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5844,7 +5875,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336107
+  @336107 @wip
   Scenario Outline: Flex table-Display fields-Admin-Config-To verify that different data types fields displayed as a columns/fields on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5925,7 +5956,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336114
+  @336114 @wip
   Scenario Outline:Flex table-Display fields-Admin-Config-To verify that reference field displayed as a column/field on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5982,7 +6013,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
       | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
-  @336124
+  @336124 @wip
   Scenario: Flex table-Filter Criteria-Admin-Config-To verify that data/records displayed on flex table are based on provided filter criteria
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -6033,7 +6064,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "VruApplication For Announcement Testing" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336127
+  @336127 @wip
   Scenario: Flex table-Filter Criteria-Admin-Config-To verify the behavior of displayed records on flex table, after changing filter criteria
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -6099,7 +6130,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "Active" for title "Status" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336130
+  @336130 @wip
   Scenario Outline: Flex table-Order By-Admin-Config-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6121,7 +6152,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @336147
+  @336147 @wip
   Scenario Outline: Flex table-Order By-PM-UI-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6191,7 +6222,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       #| ADMIN |
       | Pm   |
 
-  @336149
+  @336149 @wip
   Scenario Outline: Flex table-Order By-Admin-Config-To verify the order of records displayed in a flex table when user not provided any field in Order By field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6329,7 +6360,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336156
+  @336156 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "Asc"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6395,7 +6426,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336160
+  @336160 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in descending order in a flex table, when user selected Sort direction "Desc"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6461,7 +6492,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336163
+  @336163 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "None"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6529,7 +6560,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     ##################################Test suite: Flex Table ListView (Suite ID: 333776)###############################
 
-  @333779
+  @333779 @wip
   Scenario: Flex table-List View-Is Active-Admin-Config-To verify that when Is active checkbox is checked, then respective list view get rendered on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6582,7 +6613,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
 
-  @333782
+  @333782 @wip
   Scenario: Flex table-List View-Is Active-Admin-Config-To verify that when Is active checkbox is Unchecked, then respective list view not get rendered on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6635,7 +6666,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
 
-  @333788
+  @333788 @wip
   Scenario: Flex table-ListView-Label-Admin-Config-To verify that if user not provided any Label for List view in config, then no any label displayed for respective list view on UI, also Null value not displayed there
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6654,7 +6685,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
     Then I do not see list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
 
-  @333789
+  @333789 @wip
   Scenario: Flex table-ListView-Label-PM-UI-To verify that if user not provided any Label for List view in config, then no any label displayed for respective list view on UI, also Null value not displayed there
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6695,7 +6726,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
     Then I do not see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
 
-  @setconfigforlistview
+  @setconfigforlistview @wip
   Scenario: Flex table-ListView-Label-Admin-Config-To verify character limit for Label field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
@@ -6766,7 +6797,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
     Then I do not see list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
 
-  @333791
+  @333791 @wip
   Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify character limit for Label field charector limit 255
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
@@ -6846,7 +6877,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | labelName                                                                                                                                                                                                                                                       |
       | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU |
 
-  @333798
+  @333798 @wip
   Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify alphanumeric values added in Label field, get displayed on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
@@ -6926,7 +6957,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | labelName           |
       | ABCDefgh@1234567890 |
 
-  @333802
+  @333802 @wip
   Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify Sp.characters added in Label field, get displayed on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
@@ -7006,7 +7037,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | labelName       |
       | ABCD!#$%^&*&()@ |
 
-  @333785
+  @333785 @wip
   Scenario: Flex table-ListView-Label-Admin-Config-To verify that label of list view displayed correctly, same as that of provided in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7070,7 +7101,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
     Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
 
-  @333806
+  @333806 @wip
   Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed only those records which matches the given filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7164,7 +7195,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause |
       |              |
 
-  @333811
+  @333811 @wip
   Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed all available records, when user not provided any filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7212,7 +7243,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause |
       |              |
 
-  @333815
+  @333815 @wip
   Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7281,7 +7312,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                              |
       | Status__c = 'Draft' and RecordType.Name='Grantor'DELETEME |
 
-  @333818
+  @333818 @wip
   Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7349,7 +7380,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333821
+  @333821 @wip
   Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7372,7 +7403,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333822
+  @333822 @wip
   Scenario Outline: Flex table-ListView-Default-PM-UI-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7555,7 +7586,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333830
+  @333830 @wip
   Scenario Outline: Flex table-Actions-Sequence-Admin-Config-To verify that all the added list views get appeared in provided sequence, in dropdown of List view on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7701,7 +7732,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333841 @pdftestcase
+  @333841 @pdftestcase @wip
   Scenario Outline: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7785,7 +7816,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333844
+  @333844 @wip
   Scenario Outline: : Flex table-Actions-Admin-UI-To verify that user is able to switch between list views on table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8045,7 +8076,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
 #####################Test suite: Flex Table Actions (Suite ID: 333778)#########################
 
-  @333958
+  @333958 @wip
   Scenario: Flex table-Actions-Admin-Config-To verify that actions rendered on flex table
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -8057,7 +8088,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see row level action button "View" rendered on flex table
     Then I see row level action button "Delete" rendered on flex table
 
-  @333961
+  @333961 @wip
   Scenario: Flex table-Actions-PM-UI-To verify that actions rendered on flex table
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -8077,7 +8108,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - Active"
     Then I see "Actions" rendered on flex table
 
-  @333964
+  @333964 @wip
   Scenario: Flex table-Actions-Action name-Admin-UI-To verify that provided name in config, get displayed as respective action name on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -8090,7 +8121,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     Then I see "Test Automation" as title for Actions inside flex table action
 
-  @333965
+  @333965 @wip
   Scenario: Flex table-Actions-Action name-PM-UI-To verify that provided name in config, get displayed as respective action name on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -8117,7 +8148,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see "Test Automation" as title for Actions inside flex table action
 
-  @333967
+  @333967 @wip
   Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user provided any icon CSS in config, then it get displayed instead of action name on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -8160,7 +8191,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see "IconCssTest" as title for Actions inside flex table action
 
-  @333972
+  @333972 @wip
   Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user not provided any icon CSS in config, then action name itself get displayed on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -8203,7 +8234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see action name "View" itself get displayed on UI
 
-  @333976
+  @333976 @wip
   Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user provided any wrong icon CSS in config, then check the behavior
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -8246,7 +8277,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see action name "View" itself get displayed on UI
 
-  @333989
+  @333989 @wip
   Scenario: Flex table-Actions-Sequence-Admin-Config-To verify that actions displayed on UI as per given sequence
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |

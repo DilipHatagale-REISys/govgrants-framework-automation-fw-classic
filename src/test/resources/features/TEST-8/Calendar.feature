@@ -868,7 +868,7 @@ Business Need: Calender Config Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Grants - Draft"
+    And I click toggle button to select "Grants - All"
     And I click on "Edit" icon in flex table for first draft record
     When I enter value "0" into field "fieldProjectPeriodStartDate__c"
     When I enter value "365" into field "fieldProjectPeriodStartDate__c"

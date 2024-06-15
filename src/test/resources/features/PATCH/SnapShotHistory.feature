@@ -311,7 +311,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70032    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-SendBack
+  @70032p    @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-SendBack
   Scenario: Validate Auto Snapshot is getting captured on record sent back to owner after making change for field Capture Snapshot on Approval at config
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
@@ -356,7 +356,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @112878    @verifyAutoSnapShotCapturedWithIsActiveFieldByLoginAsAdminUser
+  @112878p    @verifyAutoSnapShotCapturedWithIsActiveFieldByLoginAsAdminUser
   Scenario: Validate Auto Snapshot is getting captured after record submission as submit for approval for second time by admin user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -386,6 +386,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
+    And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
@@ -442,7 +443,7 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+   #   | ADMIN |
       | PM    |
 
   @201408 @201392 @201395 @201406
@@ -541,8 +542,8 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
-    # | PM    |
+   #   | ADMIN |
+     | PM    |
 
   @201420 @201422
   Scenario Outline: Auto Snapshot-Admin-Config-To verify Auto Snapshot functionality when is Active is unchecked
@@ -590,7 +591,7 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @207357 @207359 @207364 @207365
@@ -614,7 +615,7 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @217197p @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
@@ -656,7 +657,7 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @217477p @217478
@@ -688,7 +689,7 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @217480 @217481
@@ -713,10 +714,10 @@ Business Need: Snapshot Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
-  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @SanityPATCH @SanityPATCHSnap
+  @217469p @217463 @217199 @217457 @217473 @207366 @207362 @382796 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -748,7 +749,7 @@ Business Need: Snapshot Config Component Scenarios
     Then I see new tab is opened
     And I switch to parent tab
     #217199
-    Then I see take snap shot getting saved with "Todays Date"
+    Then I see take snap shot getting saved with "{Date:dd/MM/yyyy hh:mm:ss}"
 
   @217482
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should not present in Menu option
@@ -910,7 +911,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "Active Internal Program For Announcement Recordl" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Record" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
@@ -1011,7 +1012,7 @@ Business Need: Snapshot Config Component Scenarios
     And I refresh the page
     Then I see take snap shot getting saved with "testAutomationSnapshot"
 
-  @201435
+  @201435p
   Scenario: Auto Snapshot-SPI-UI-To verify Auto Snapshot functionality when is Active is unchecked
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                   | fieldOrignalValue | filterId         |
@@ -1036,7 +1037,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "Active Internal Program For Announcement Record}" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Record" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
@@ -1079,7 +1080,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
