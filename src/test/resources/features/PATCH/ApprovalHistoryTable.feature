@@ -4,7 +4,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
   As a configuration manager I make different changes related to flow and will validate them in approvalhistorytable component.
 
 
-  @204868p @204869 @204880 @204881 @204967 @204972 @204985 @204987 @204976 @204979
+  @204868 @204869 @204880 @204881 @204967 @204972 @204985 @204987 @204976 @204979
   Scenario Outline: Validate all program records are shown in Field History table if Program object is selected in dropdown
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
