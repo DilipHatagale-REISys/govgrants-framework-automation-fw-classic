@@ -209,10 +209,10 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Is Master View | false              | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
       | Flex Grid:Flex Table List | Is Master View | false         | GrantsList         | Name                      | FLV-3480                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1061,7 +1061,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | Contacts      | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3289,7 +3289,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Remove" icon for "Automation PM" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
-  @379008 @SanityPATCH @SanityPATCHEnhancedTable
+  @379008p @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: To verify that user is able to edit existing record by clicking on Edit action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

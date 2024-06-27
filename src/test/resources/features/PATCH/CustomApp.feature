@@ -27,7 +27,7 @@ Business Need: customApp Component Scenarios
       | Custom App Config     | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Default Theme Name |               | StateasGrantor     |
+      | Custom App Config:General | Default Theme Name |  ColorContrast_Grantor             | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
