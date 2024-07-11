@@ -704,8 +704,7 @@ Business Need: Snapshot Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I pause execution for "5" seconds
