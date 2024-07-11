@@ -91,8 +91,8 @@ Business Need: Sanity check for all Component Scenarios
       | configurationCategory | fieldName          | fieldOrignalValue     | filterId         |
       | Custom App Config     | Default Theme Name | ColorContrast_Grantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Default Theme Name |               | StateasGrantor     |
+      | configurationCategory     | fieldName          | fieldNewValue         | coreComponentField |
+      | Custom App Config:General | Default Theme Name | ColorContrast_Grantor | StateasGrantor     |
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see "ColorContrast_Grantor" on complete page for custom App as a Grantor
@@ -528,9 +528,9 @@ Business Need: Sanity check for all Component Scenarios
       | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
       #| Page Tabs Config      | Highlights Panel?         | false              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName                 | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General                  | Enable Data Import/Export | true           | Programs              |                           |                            |
-      | Flex Table:General                  | Display Field Names       | <newFieldsApi> | Programs              |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | true           | Programs           |                           |                            |
+      | Flex Table:General    | Display Field Names       | <newFieldsApi> | Programs           |                           |                            |
      # | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
