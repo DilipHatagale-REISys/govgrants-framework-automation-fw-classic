@@ -37,11 +37,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @334981 @336206 @382486 @SanityPATCH  @SanityPATCHFlexTable @wip
@@ -225,6 +226,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @335000 @336242 @382493 @SanityPATCH  @SanityPATCHFlexTable @wip
@@ -268,19 +270,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335006
   Scenario: Flex table-Default page size-PM-UI-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335007
@@ -288,32 +294,37 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @335008 @wip
   Scenario: Flex table-Default page size-Admin-Config-To verify that if user not provided any number in "Default page size" field, then by default 20 records displayed on a page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335010
   Scenario: Flex table-Default page size-PM-UI-To verify that if user not provided any number in "Default page size" field, then by default 20 records displayed on a page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335011
@@ -339,7 +350,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335019
@@ -352,7 +363,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335020
@@ -378,7 +389,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335024
@@ -391,7 +402,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335026
@@ -417,7 +428,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335030
@@ -430,7 +441,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "5" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
 
   @335031
@@ -459,7 +470,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -476,7 +487,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335045
@@ -514,7 +525,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335052 @382501 @SanityPATCH  @SanityPATCHFlexTable
@@ -531,7 +542,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335054 @382502 @SanityPATCH  @SanityPATCHFlexTable
@@ -565,7 +576,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335059 @382509 @SanityPATCH  @SanityPATCHFlexTable
@@ -582,7 +593,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335060 @382510 @SanityPATCH  @SanityPATCHFlexTable
@@ -614,7 +625,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335066
@@ -629,7 +640,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335068
@@ -659,7 +670,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335072
@@ -674,7 +685,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335075
@@ -705,7 +716,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335080 @336294
@@ -721,7 +732,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335085 @336295
@@ -755,7 +766,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Disable Menu      | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    And I navigate to "Planning" tabAnd I click toggle button to select "Internal Programs - All"
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335089 @336282
@@ -774,6 +785,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335090 @336283
@@ -809,6 +821,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335119
@@ -826,6 +839,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335120 @382517 @SanityPATCH  @SanityPATCHFlexTable
@@ -868,6 +882,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
     Then I see table contains "Showing 1 to 20" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -892,6 +907,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
     Then I see table contains "Showing 1 to 20" inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "5"
@@ -904,6 +920,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see table contains "Showing 1 to 10" inside table id "---program:-:ProgramsFlexTableToggleId---"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
@@ -926,6 +943,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
     Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -934,6 +952,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
     Then I see table contains "Showing 1 to 81 of 81 records" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -950,6 +969,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Next"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 2 of"
 
@@ -958,6 +978,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Next"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 2 of"
 
@@ -974,6 +995,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
     Then I see user on "Last" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
@@ -982,6 +1004,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
     Then I see user on "Last" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
@@ -998,6 +1021,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
     Then I see user on "First" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
@@ -1006,6 +1030,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
     Then I see user on "First" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
@@ -1022,6 +1047,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 3"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 6"
@@ -1031,6 +1057,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 3"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 5"
@@ -2048,6 +2075,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Page Size- PM- UI- Verify dropdown appears on UI to select page size manually
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Form Control-Number of Entries" button inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -2144,6 +2172,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @338475 @382456 @SanityPATCH  @SanityPATCHFlexTable
@@ -2157,6 +2186,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @338477 @382457 @SanityPATCH  @SanityPATCHFlexTable
@@ -3220,6 +3250,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
 
@@ -3236,6 +3267,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I do not see "Help" help text displayed in table "toggleFlexTablePrograms"
 
@@ -3252,6 +3284,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
 
@@ -3268,6 +3301,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
@@ -3284,6 +3318,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "Programs"
     Then I do not see "Help" option is getting displayed under Menu in table "Programs"
 
@@ -3300,6 +3335,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
@@ -3364,6 +3400,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     Then I see flex table with id "toggleFlexTablePrograms" is displayed
 
@@ -3372,6 +3409,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     Then I see flex table with id "toggleFlexTablePrograms" is displayed
 
@@ -3504,6 +3542,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
   @338590 @382402 @SanityPATCH  @SanityPATCHFlexTable @wip
@@ -3517,6 +3556,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
   @338595 @336239 @382433 @SanityPATCH  @SanityPATCHFlexTable
@@ -3530,6 +3570,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
   @338594 @382417 @SanityPATCH  @SanityPATCHFlexTable
@@ -3543,6 +3584,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
   @338598 @336241 @382434 @SanityPATCH  @SanityPATCHFlexTable
@@ -3583,6 +3625,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
@@ -3604,6 +3647,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
@@ -3648,6 +3692,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     And I click on "Column Name" and select "EGMS ID"
@@ -3672,6 +3717,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" and select "EGMS ID"
     Then I see Operator list change with field "Contains"
@@ -3718,6 +3764,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3735,6 +3782,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3767,6 +3815,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3786,6 +3835,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3825,6 +3875,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3845,6 +3896,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
@@ -3886,6 +3938,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
@@ -3910,6 +3963,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
@@ -3957,6 +4011,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
@@ -3978,6 +4033,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
@@ -4020,14 +4076,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
 #    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
 #    When I enter advance filter values in table id "advfPrograms"
 #      | Start Date | Greater than | 09/22/2023 |
 #    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
-      | User | newFieldsApi | defaultFieldsApi |
+      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
       #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @338627 @334616 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
@@ -4040,6 +4097,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
@@ -4060,6 +4118,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsFlexTableToggleId---"
     When I enter advance filter values in table id "---program:-:ProgramsFlexTableToggleId---"
       | Start Date | Greater than or equal to | 25/08/2023 |
@@ -4071,7 +4130,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @338630 @334616 @wip
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
@@ -4084,6 +4143,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
@@ -4107,6 +4167,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
@@ -4131,6 +4192,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Does not contains | Hi Automation |
@@ -4150,6 +4212,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Starts with | Automation |
@@ -4169,6 +4232,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Ends with | Testing |
@@ -4187,6 +4251,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
@@ -4204,6 +4269,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
@@ -4221,6 +4287,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
@@ -4537,6 +4604,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338516
@@ -4554,6 +4622,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338517
@@ -4588,6 +4657,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "5"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -4604,6 +4674,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "5"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -4640,6 +4711,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338525
