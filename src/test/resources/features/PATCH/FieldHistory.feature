@@ -713,8 +713,8 @@ Business Need: history Component Scenarios
   Field History- Admin user - User should be able to perform export functionality 'Download as CSV' for selected record.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    When I navigate to "Planning" tab
+    When I click toggle button to select "Internal Programs - Active"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
