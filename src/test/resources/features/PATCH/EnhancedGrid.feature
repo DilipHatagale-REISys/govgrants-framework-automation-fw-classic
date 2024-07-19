@@ -387,8 +387,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     #257482
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
-      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+      | Step Order | Step Name         | Description      | Step Weight (%) |
+      | 1          | Pre-Screen Review | Review Step Desc |                 |
     And I pause execution for "3" seconds
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"

@@ -1685,6 +1685,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
     When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
+
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
     Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"

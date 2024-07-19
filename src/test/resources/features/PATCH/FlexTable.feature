@@ -16,6 +16,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334979 @382480 @SanityPATCH  @SanityPATCHFlexTable
@@ -29,6 +30,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334980 @382483 @SanityPATCH  @SanityPATCHFlexTable
@@ -59,6 +61,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334984 @336208 @382487 @SanityPATCH  @SanityPATCHFlexTable
@@ -73,6 +76,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334985 @336232 @382488 @SanityPATCH  @SanityPATCHFlexTable
@@ -102,6 +106,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334988
@@ -117,6 +122,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334989
@@ -148,6 +154,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334993 @336234
@@ -162,6 +169,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334994 @336236
@@ -194,6 +202,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334997 @382491 @SanityPATCH  @SanityPATCHFlexTable
@@ -209,6 +218,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
   @334999 @382492 @SanityPATCH  @SanityPATCHFlexTable
@@ -243,6 +253,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
   @335001 @366243 @382495 @SanityPATCH  @SanityPATCHFlexTable
@@ -257,6 +268,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
   @335004 @wip
@@ -309,6 +321,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -324,6 +337,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -350,6 +364,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -363,6 +378,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -389,6 +405,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -402,6 +419,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -412,7 +430,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -428,6 +446,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -441,6 +460,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "5" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
 
@@ -456,6 +476,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "5" with page size dropdown at "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "#" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
   @335040 @336285 @wip
   Scenario: Flex table-Auto Index Behavior-Admin-Config-To verify that on selecting auto index behavior-None, all the rows in flex table get indexes
@@ -470,6 +491,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -487,6 +509,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
@@ -507,7 +530,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+    And I click toggle button to select "Grants - All"
+    #Then I see "1" to "10" indexing inside table id "---program:-:GrantsListFlexTableId---"
+    Then I see "#" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
   @335049 @382499 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Enable Record Selection-Admin-Config-To verify that on enabling record selection, a Record selection column displayed on flex table.
@@ -525,6 +550,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -542,6 +568,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -576,6 +603,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -593,6 +621,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -625,6 +654,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -640,6 +670,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -670,6 +701,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -685,6 +717,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -716,6 +749,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -732,6 +766,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -766,7 +801,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Disable Menu      | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tabAnd I click toggle button to select "Internal Programs - All"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
   @335089 @336282
@@ -5432,8 +5468,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages" displayed as a Header on flex table
 
@@ -5467,8 +5503,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -5482,8 +5518,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -5497,6 +5533,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
 
   @336076 @wip
   Scenario: Flex table-Header help text-Admin-Config-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
@@ -5511,6 +5548,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I hovering mouse on help text "Programstooltip" icon
     And I pause execution for "5" seconds
     Then I see "Help text for Automation" shown as help text
@@ -8975,8 +9013,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     And I pause execution for "15" seconds
     Then I see page title "Grant View"
     Examples:
@@ -9054,8 +9091,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue                     |
@@ -9139,8 +9175,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9230,8 +9265,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9307,8 +9341,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Grant View" in new tab
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9378,8 +9411,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see "Grant View" modal window is displayed
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9449,8 +9481,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -9520,8 +9551,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "security Review_Application"
-    When I click on "View" icon for "security Review_Application" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
@@ -12489,8 +12519,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
     Examples:
@@ -12522,8 +12552,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12545,9 +12575,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Help text for Automation" shown as help text
@@ -12562,8 +12591,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Announcement for Testing"
-    When I click on "View" icon for "Announcement for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
 
@@ -12577,8 +12605,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Announcement for Testing"
-    When I click on "View" icon for "Announcement for Testing" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -12592,8 +12619,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
 
@@ -12607,8 +12633,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -12624,8 +12649,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12651,9 +12676,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
     Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12676,8 +12700,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
     Examples:
@@ -12696,9 +12720,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
 
@@ -12713,8 +12736,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
     Examples:
@@ -12733,9 +12756,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
 
@@ -12750,8 +12772,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -12770,7 +12792,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -12788,8 +12810,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12810,7 +12832,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -12828,8 +12850,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12850,7 +12872,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -12869,8 +12891,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
     Examples:
@@ -12891,7 +12913,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -12912,8 +12934,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -12937,7 +12959,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -12958,8 +12980,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | 12345678980   | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -12981,7 +13003,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -13002,8 +13024,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -13025,7 +13047,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
     When I click on "View" icon for Application For Announcement Testing inside table
     When I navigate to "Collab" sub tab
@@ -14722,6 +14744,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "5" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @336343
@@ -14737,6 +14760,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "5" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @336344
@@ -17963,8 +17987,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -17984,8 +18007,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Automation PM" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -18016,7 +18038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Responsibilities" sub tab
@@ -18029,7 +18051,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Responsibilities" sub tab
@@ -18042,7 +18064,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -18078,10 +18100,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: :Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -18109,8 +18131,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18340,7 +18361,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
@@ -18361,7 +18382,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
@@ -18382,7 +18403,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
@@ -18430,8 +18451,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
@@ -18451,8 +18471,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -18501,12 +18520,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
-    When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
     And I enter value "1" into field "StepNumber__c"
+    And I enter value "Test1" into field "Name"
     And I enter value "Test Data" into field "Description__c"
     When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     And I expand nested table containing column value "1"
@@ -18619,8 +18642,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -18633,8 +18655,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see hyperlink at value "Test Automation Organization" inside "fieldAccountId" modal
@@ -18820,8 +18841,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly see value "Automation FO" for title "Name" inside table "---program:-:ProgramContactsTableId---"
 
@@ -18837,8 +18857,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     #Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
     Then I do not see hyperlink at value "ADMIN Test" inside "PrimaryFundingOrganization__c" columnname for tableId "Programs"
@@ -18860,6 +18879,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup" sub tab
@@ -18881,8 +18901,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:Field ProgramName__c not found for sobject BudgetPeriod__c : table:a0I1500000ITVOSEA5 |
@@ -18922,8 +18941,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:unexpected token: 'ASC' |
@@ -18937,8 +18955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     Then I see "Name" shown as flex table column title
@@ -18949,8 +18966,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I perform quick search for "govgrantsuat@gmail.com.invalid" in "---program:-:programContactsTableId---" panel
     Then I see "Email" shown as flex table column title
