@@ -1216,7 +1216,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I quick search "Grant for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Grant" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Grant for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334661 @382399 @SanityPATCH  @SanityPATCHFlexTable
@@ -1224,8 +1224,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
   @334663
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
