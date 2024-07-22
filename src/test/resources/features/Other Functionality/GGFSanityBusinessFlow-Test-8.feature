@@ -1,4 +1,4 @@
-@GGFSanityBusinessFlowQA @regression-QA @Sanity
+@GGFSanityBusinessFlowQA @regression-QA @SanityPatch
 Business Need: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 
