@@ -48,12 +48,12 @@ Business Need: history Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name           | Program |
+      | Automation EXE | Step 1  |
     And I pause execution for "5" seconds
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+      | Name          | Program |
+      | Automation FO | Step 2  |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
@@ -708,13 +708,13 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205100 @205101 @needtocheckmanually @skiponjenkins
+  @205100p @205101 @needtocheckmanually @skiponjenkins
   Scenario Outline: Field History- PM user - User should be able to perform export functionality 'Download as CSV' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as CSV' for selected record.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
+    When I navigate to "Planning" tab
+    When I click toggle button to select "Internal Programs - Active"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
@@ -723,7 +723,6 @@ Business Need: history Component Scenarios
     Then I see "Field History" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @205102 @205103

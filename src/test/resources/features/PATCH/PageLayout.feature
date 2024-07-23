@@ -10690,9 +10690,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Address__c" is not editable
     Then I softly see field "fieldCFDA_Data__c" is not editable
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @218838
   Scenario Outline: Page layout-To verify,  when user not entered any help text  on field then help icon  not displayed on UI.
@@ -10731,9 +10731,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Information" on page "1" of "govgrants" pdf file
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200552 @219537
   Scenario: Page Layout Export Functionality-SPI-UI-To verify download as PDF option should displayed for pagelayout.
@@ -10787,9 +10787,9 @@ Business Need: Page Layout Component Scenarios
     Then I see take snap shot getting saved with "Snapshot History"
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200529 @200531
   Scenario: Page Menu-SPI-UI-To verify Take snapshot option should be displayed
@@ -10830,9 +10830,9 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Take Snapshot" options is displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200530
   Scenario: Page Menu-SPI-UI-To verify take snapshot  option should not be displayed
@@ -10863,9 +10863,9 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Menu" icon is displayed on pagelayout
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219859
   Scenario: Menu- SPI-UI- Verify Menu option appears on UI
@@ -10894,9 +10894,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Submit For Approval" button is displayed on top right of pagelayout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200431 @200435
   Scenario Outline: Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should not displayed in view layout
@@ -10918,9 +10918,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Submit For Approval" button is not displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200439 @219883
   Scenario: Page Layout Action-SPI-UI-To verify page layout "Edit" and "Submit Application" actions should displayed on view layout
@@ -10966,9 +10966,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Save" button is displayed on top right of pagelayout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219872 @219873 @wip @notapplicableinTFS
   Scenario Outline: Page Layout Action-Admin-UI-To verify page layout "Cancel" and "Save" actions should not displayed on edit layout
@@ -10990,9 +10990,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Save" button is not displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219870
   Scenario: Page Layout Action-SPI-UI-To verify page layout "Cancel" and "Save" actions should displayed on edit layout
@@ -11023,9 +11023,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Edit Automation" button is displayed on top right of pagelayout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219877
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
@@ -11129,12 +11129,29 @@ Business Need: Page Layout Component Scenarios
 
   @200266p @200245 @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17070                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23985                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17199                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17218                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
     Then I softly see field "Project Period Start Date" inside page block
     Then I softly see field "Number" inside page block
     Then I softly see field "Project Period End Date" inside page block
@@ -11149,9 +11166,8 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Type" inside page block
     Then I softly see field "Primary Funder Type" inside page block
     Examples:
-      | User  |
-#      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @200267 @200246
   Scenario Outline: Page Block-PM-UI-To verify all fields should not displayed under pageblock.
@@ -11510,9 +11526,9 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219891
   Scenario: Page Tab - SPI- UI - Verify page tab label should not displayed properly with icon
@@ -11559,9 +11575,9 @@ Business Need: Page Layout Component Scenarios
     Then I see sequence of "History" subtab is "5" on page layout
     Then I see sequence of "Collab" subtab is "6" on page layout
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @219895 @379383 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
@@ -11647,9 +11663,9 @@ Business Need: Page Layout Component Scenarios
     Then I see bulb icon at header instruction is displayed
     Then I see "<new_helpText>" shown as page instruction text
     Examples:
-      | User  | new_helpText    | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | User | new_helpText    | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 #      | ADMIN | Automation Text | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
-    |PM | Automation Text | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+      | PM   | Automation Text | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
   @200162 @200166
   Scenario Outline: Page Instruction-Admin-config-To verify given page instruction should not be displayed on page lauout
@@ -11669,9 +11685,9 @@ Business Need: Page Layout Component Scenarios
     Then I do not see bulb icon at header instruction is displayed
 
     Examples:
-      | User  | new_helpText | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | User | new_helpText | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 #      | ADMIN |              | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
-      | PM    |              | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+      | PM   |              | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
   @200214
   Scenario Outline: Page Instruction-SPI-UI-To verify given page instruction should be displayed on page layout
@@ -11723,9 +11739,9 @@ Business Need: Page Layout Component Scenarios
     Then I see bulb icon at header instruction is displayed on pagelayout
 
     Examples:
-      | User  | new_helpText         | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | User | new_helpText         | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 #      | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
-      | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+      | PM   | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
   @200222 @379087 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
@@ -11770,9 +11786,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Status" inside page header
     Then I softly see field "Organization" inside page header
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200128 @200141 @200124 @200139
   Scenario Outline: Page Header-Admin-config-To verify fields should not be displayed in the page header
@@ -11796,9 +11812,9 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "Status" inside page header
    # Then I do not see field "Organization" inside page header
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @200145 @200155
   Scenario: Page header-SPI-UI-To verify page header should be diplayed
@@ -11858,9 +11874,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see step progress bar is displayed
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379088 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
@@ -11886,9 +11902,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "EndDate__c" is not editable
     Then I softly see field "Abbreviation__c" is not editable
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379071 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
@@ -11914,9 +11930,9 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see step progress bar is displayed
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379092 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
@@ -11933,9 +11949,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379380 @379382 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
@@ -11952,9 +11968,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Collab" subtab is present in page details
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379384 @379385 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
@@ -11970,9 +11986,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Notes" page block displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379386 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
@@ -11990,6 +12006,14 @@ Business Need: Page Layout Component Scenarios
 
   @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17070                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -12006,9 +12030,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Description" inside page block
     Then I softly see field "KPI's Required?" inside page block
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379390 @379391 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
@@ -12019,9 +12043,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     Then I see "Automation Test Success" page message displayed in page layout
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
 
   @379392 @SanityPATCH @SanityPATCHPageLayout
@@ -12044,9 +12068,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Automation Test Information" page message displayed in page layout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379395 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
@@ -12069,9 +12093,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Automation Test Alert" page message displayed in page layout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379398 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
@@ -12093,9 +12117,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Automation Test Warning" page message displayed in page layout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379402 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
@@ -12117,9 +12141,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Automation Test Error" page message displayed in page layout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379405 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
@@ -12141,25 +12165,24 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
     And I click on "Save and Continue" in the page details
     When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
-    Then I see "Save" button is displayed
-    Then I see "Cancel" button is displayed
+    Then I softly see "Save" button is displayed
+    Then I softly see "Cancel" button is displayed
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on top right button "Associate" in flex table with id "DataTableEnhanceProgramContacts"
-    When I click "Associate" after selection of "Automation Admin" in the table "DataTableEnhanceProgramContacts"
+    When I click "Associate" after selection of "Automation PM" in the table "DataTableEnhanceProgramContacts"
     When I navigate to "Overview" sub tab
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name             | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation Admin | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "15" seconds
+      | Name             | Program | Announcement |
+      | Automation Admin | Step 1  | Step 1       |
+    And I pause execution for "5" seconds
     Then I see "Submit For Approval" button is displayed
 
     Examples:
-      | User  |
-#      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @379408 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
@@ -12184,9 +12207,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Organization" inside page block
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379411 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
@@ -12214,9 +12237,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Collab" shown at number "5" inside subtabs
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379414 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
@@ -12244,9 +12267,9 @@ Business Need: Page Layout Component Scenarios
     Then I see "Program Specific Settings" shown at the number "2" inside page layout
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379417
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks are showing correct.
@@ -12279,9 +12302,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "KPIsRequired__c" inside page block
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379419 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
@@ -12315,9 +12338,9 @@ Business Need: Page Layout Component Scenarios
     Then I see helpIcon displayed beside "Information" respective field or column
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379423 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
@@ -12332,6 +12355,20 @@ Business Need: Page Layout Component Scenarios
 
   @379424 @379425 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17070                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23985                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17199                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17218                  |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -12344,9 +12381,9 @@ Business Need: Page Layout Component Scenarios
     Then I see helpIcon displayed beside "Internal Organization" respective field or column
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @379426 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
@@ -12379,7 +12416,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "quick-search" is displayed on table id "---program:-:associateProgramContactsTableId---"
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 

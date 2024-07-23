@@ -616,8 +616,8 @@ public final class PageDetails {
             I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']/ancestor::div[contains(@class,'singleComment')]//a[text()='" + actionName + "'] | " +
                     "//*[text()='" + comment + "']/ancestor::div[contains(@class,'media-body')]//a[text()='" + actionName + "'] | //div[text()='Test Automation Admin Comment']/ancestor::div[contains(@class ,'singleComment')]//span//a[text()='" + actionName + "']"));
         } else {
-            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='More Options']"));
-            I.amPerforming().click().on(By.xpath("//div[text()='" + comment + "']//a[text()='" + actionName + "']"));
+            I.amPerforming().click().on(By.xpath("//span[text()='" + comment + "']/parent::div//a[text()='More Options'] | //div[text()='" + comment + "']//a[text()='More Options']"));
+            I.amPerforming().click().on(By.xpath("//span[text()='" + comment + "']/parent::div//a[text()='" + actionName + "'] | //div[text()='" + comment + "']//a[text()='" + actionName + "']"));
         }
     }
 

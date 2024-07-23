@@ -119,9 +119,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
+#    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+#      | Step Order | Step Name   | Description |
+#      | 4          | Test Review | Description |
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name   | Description |
-      | 4          | Test Review | Description |
+      | Step Order | Step Name         | Description            | Step Weight (%) |
+      | 4          | Automation Review | Automation Description | 0               |
     And I expand nested table containing column value "Test Review"
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
       | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
