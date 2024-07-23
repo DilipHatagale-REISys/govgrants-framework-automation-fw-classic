@@ -390,8 +390,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     #257482
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
-      | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+      | Step Order | Step Name         | Description      |
+      | 1          | Pre-Screen Review | Review Step Desc |
     And I pause execution for "3" seconds
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -5865,7 +5865,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
@@ -5909,7 +5909,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218452 @218453
@@ -6009,7 +6009,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #Then I see "5" records inside enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
@@ -6029,7 +6029,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218463 @352269
@@ -6048,7 +6048,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @206017 @206018
@@ -6239,11 +6239,10 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Grant Automation"
-    When I click on "View" icon for "Grant Automation" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #379209
     Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
@@ -6318,7 +6317,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #379210
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
@@ -6343,7 +6342,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #379208
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
@@ -6367,7 +6366,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Grant Automation" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #379207
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
@@ -6633,7 +6632,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #Then I see field "Awarded Budget :" inside page block
     Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
@@ -6685,7 +6684,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     #Then I see field "Awarded Budget :" inside page block
     Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Then I softly see "Budget Category :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
@@ -6747,7 +6746,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I softly see "Budget Category : " inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
     Then I softly see "Budget Category : Equipment" inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
     Then I see over all total for "AwardedBudget__c" at enhanced grid

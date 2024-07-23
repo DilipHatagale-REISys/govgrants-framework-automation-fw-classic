@@ -52,6 +52,7 @@ public final class ChromeManager implements qrYoTsOWwA {
 
 
 
+
         if ("true".equalsIgnoreCase(System.getProperty("chromedebuglogs"))) {
             System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir") + "/target/chromedriver.log");
             System.setProperty("webdriver.chrome.verboseLogging", "true");
