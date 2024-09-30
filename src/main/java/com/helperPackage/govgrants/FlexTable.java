@@ -803,7 +803,8 @@ public final class FlexTable implements FlexTableComponent {
      * @author meenakshi.jha
      */
     public void clickTableTopRightButtonWithoutProcessing(String flexTableId, String buttonName) {
-        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + flexTableId + "']//div[contains(@class,'panel-heading')]//span/span//button[contains(text(),'" + buttonName + "')]"), false);
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + flexTableId + "']//div[contains(@class,'panel-heading')]//span/span//button[contains(text(),'" + buttonName + "')] |" +
+                "//div//a[@id='" + flexTableId + "']/ancestor::div[contains(@class,'header-title')]/following-sibling::div/action//button[@title='" + buttonName + "']"), false);
     }
 
     /**

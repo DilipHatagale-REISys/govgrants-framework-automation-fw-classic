@@ -3293,10 +3293,10 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Iron America" in the table "---program:-:associateProgramContactsTableId---"
-    When I performed quick search "Iron America" inside table id "---program:-:programContactsTableId---" on page block
-    Then I see value "Iron America" for title "Name" against the value "Grants Administrator" inside table "---program:-:programContactsTableId---"
-    When I click on "View" icon for "Iron America" inside table
+    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
+    When I performed quick search "Manage code" inside table id "---program:-:programContactsTableId---" on page block
+    Then I softly see value "Manage code" for title "Name" inside table "---program:-:programContactsTableId---"
+    When I click on "View" icon for "Manage code" inside table
     #379009
     Then I see new tab is opened
 

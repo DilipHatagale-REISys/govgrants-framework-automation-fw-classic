@@ -9,8 +9,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
 
@@ -42,8 +41,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     When I click on "Menu" in the page details
@@ -64,8 +62,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
@@ -79,8 +76,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "toggleFlexTableFormEnhancedTable" in Forms
     Then I see Form Id "FN-03525" is displayed on form layout
@@ -111,8 +107,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see Form Id "FN-03537" is displayed on form layout
@@ -138,8 +133,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see Form Id "FN-01341" is displayed on form layout
@@ -163,8 +157,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see Form Id "FN-03527" is displayed on form layout
@@ -187,8 +180,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -207,8 +199,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -221,8 +212,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -234,14 +224,13 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206847p
+  @206847
   Scenario: All forms- SPI- UI- Verify if we shuffle through forms from dropdown, we are getting confirmation message, in edit form layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -254,8 +243,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -274,8 +262,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -289,8 +276,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -309,8 +295,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
@@ -325,8 +310,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I pause execution for "5" seconds
@@ -376,8 +360,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     When I hovering mouse on help text icon inside "Standard Assurances Form"
@@ -393,8 +376,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     When I hovering mouse on help text icon inside "Standard Assurances Form"
@@ -406,8 +388,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
@@ -426,8 +407,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
@@ -442,8 +422,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Id "FN-01341" is displayed on form layout
@@ -463,8 +442,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
@@ -479,8 +457,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Save" in the page details
@@ -499,8 +476,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Save" in the page details
@@ -514,8 +490,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
@@ -531,8 +506,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
@@ -543,8 +517,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -562,8 +535,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -576,8 +548,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #382030 #382032
@@ -597,8 +568,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Cancel" button is displayed
@@ -613,8 +583,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Back" button is displayed
@@ -634,8 +603,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #382028
@@ -672,8 +640,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Save" in the page details
@@ -687,8 +654,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -707,8 +673,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
@@ -723,8 +688,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
@@ -741,8 +705,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Preview" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
@@ -755,8 +718,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
@@ -776,8 +738,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
@@ -792,8 +753,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
@@ -812,8 +772,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTableFlexToggle" in Forms
     Then I see Name or Submitted On "Automation SPI" is displayed on form under Authorized Official Name or Authorized Representative
@@ -852,8 +811,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Overview" sub tab
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
@@ -873,8 +831,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Back" in the page details
@@ -891,8 +848,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Back" in the page details
@@ -904,8 +860,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Cancel" in the page details
@@ -921,8 +876,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
@@ -934,8 +888,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Cancel" in the page details
@@ -952,15 +905,14 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     And I click on "Cancel" in the page details
     When I click alert button "No"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @test @112347 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByPMUser
+  @test @112347 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByPMUser @wip
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by PM user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -973,7 +925,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Cancel" in the page details
     Then I see "FN-01389" shown as over view header
 
-  @test @112350 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByAdminUser
+  @test @112350 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageByAdminUser @wip
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -992,8 +944,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
@@ -1007,8 +958,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     Then I see "Form Name" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Mandatory" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
@@ -1027,8 +977,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     Then I see "Form Name" shown inside flex table with id "---program:-:AllFormsTableId---"
     Then I see "Mandatory" shown inside flex table with id "---program:-:AllFormsTableId---"
@@ -1044,8 +993,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ As a Grantor"
@@ -1060,8 +1008,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" button for "Standard Assurances Form" inside table id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
@@ -1071,8 +1018,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ As a Grantor"
@@ -1087,8 +1033,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" button for "Standard Assurances Form" inside table id "---program:-:AllFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
@@ -1100,8 +1045,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -1121,8 +1065,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -1136,8 +1079,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -1165,8 +1107,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -1189,8 +1130,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-        And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
-
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Edit" in the page details
@@ -1201,15 +1141,14 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @382037p @SanityPATCH  @SanityPATCHForms
+  @382037 @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Edit" in the page details
@@ -1221,7 +1160,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
+    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Validate" in the page details
