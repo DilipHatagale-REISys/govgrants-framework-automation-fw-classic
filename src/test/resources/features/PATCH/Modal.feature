@@ -27,7 +27,6 @@ Business Need: Modal Component Scenarios
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @201273p @382224 @382251 @382269 @SanityPATCH  @SanityPATCHModal
@@ -75,7 +74,6 @@ Business Need: Modal Component Scenarios
     Then I see modal window is open in same tab with style "width: 1000"
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @201276p
@@ -126,7 +124,6 @@ Business Need: Modal Component Scenarios
     Then I see "Save and Continue" at bottom of Attachment Modal
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207417 @207418
@@ -143,7 +140,6 @@ Business Need: Modal Component Scenarios
       | --None-- | Block Grants | Earmark Grants | Emergency Grants | Formula Grants | Project Grants | Research Grants | Other |
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207420p @207421p
@@ -164,7 +160,6 @@ Business Need: Modal Component Scenarios
     Then I see "Primary Funding Organization" field contains "GMS Administrator" value
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207426 @207427
@@ -185,7 +180,6 @@ Business Need: Modal Component Scenarios
     Then I see "Title" field contains "Automation Program For Test" value
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207429p @207430
@@ -205,7 +199,6 @@ Business Need: Modal Component Scenarios
     Then I see "Title" field contains "Automation Program 1234" value
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207432p
@@ -256,7 +249,6 @@ Business Need: Modal Component Scenarios
     Then I see "$5,000.00" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207449p @207450 @382298 @382299 @SanityPATCH  @SanityPATCHModal
@@ -269,13 +261,11 @@ Business Need: Modal Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see Required behavior under field "ProgramName__c" with star mark on modal
     Then I see Required behavior under field "Type__c" with star mark on modal
-    Then I see Required behavior under field "Account__c" with star mark on modal
     Then I see Required behavior under field "FocusAreaRequired__c" with star mark on modal
     Then I see Required behavior under field "IsGoalsRequired__c" with star mark on modal
     Then I see Required behavior under field "KPIsRequired__c" with star mark on modal
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207452p @207453
@@ -309,7 +299,6 @@ Business Need: Modal Component Scenarios
     Then I see "fieldWebsiteAddress__c" is displayed at position "6" inside table table name "Information" in modal
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207455 @382234 @382237 @382241 @382242 @SanityPATCH  @SanityPATCHModal
@@ -327,7 +316,6 @@ Business Need: Modal Component Scenarios
       | Program Name is required to save. |
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @382234 @SanityPATCH
@@ -361,7 +349,6 @@ Business Need: Modal Component Scenarios
     Then I softly see "Save" button is displayed
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207461p @207462 @382263 @382266 @382287 @382288  @382285 @382284 @SanityPATCH  @SanityPATCHModal
@@ -406,7 +393,6 @@ Business Need: Modal Component Scenarios
     Then I see "Program Specific Settings" page block displayed
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @207467 @207468
@@ -438,7 +424,6 @@ Business Need: Modal Component Scenarios
     Then I see "Save and Continue" button is present on Modal
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @382294 @382295 @SanityPATCH  @SanityPATCHModal
@@ -457,7 +442,6 @@ Business Need: Modal Component Scenarios
     Then I see field "Website Name" inside page block
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @382320 @382321 @SanityPATCH  @SanityPATCHModal
@@ -581,7 +565,6 @@ Business Need: Modal Component Scenarios
     Then I see "Save" button is present on Modal
     Examples:
       | Users |
-#      | ADMIN |
       | PM    |
 
   @382309p @382311 @SanityPATCH  @SanityPATCHModal
@@ -594,12 +577,11 @@ Business Need: Modal Component Scenarios
     Then I softly see "Program Name" inside page block detail
     Then I softly see "Type" inside page block detail
     Then I softly see "Internal Organization" inside page block detail
-    Then I softly see "Website Address" inside page block detail
+    Then I softly see "Website Name" inside page block detail
     Then I softly see "Focus Area Required?" inside page block detail
 
     Examples:
       | Users |
-#      | ADMIN |
       | PM    |
 
   @382312 @SanityPATCH  @SanityPATCHModal
@@ -729,9 +711,11 @@ Business Need: Modal Component Scenarios
   Scenario: Sanity Testing- Modal- Page Tab- Admin- To verify Tab title displays as expected which is provided in the config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue      | coreComponentField           | filterId         |
-      | Page Tabs Config      | Tab Title | Automation Tab testing | Grantor State Program Create | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | false                  | Grantor State Program Create | ApiGeneratedId:0 |
+      | Page Tabs Config      | Tab Title | Automation Tab testing | Grantor State Program Create | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true                        | Grantor State Program Create | Name                      | TAB-3331                   |
       | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3331                   |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab

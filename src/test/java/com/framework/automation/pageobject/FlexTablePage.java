@@ -1715,7 +1715,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean assertIfHelpIconDisplayedBesideHeaderName(String headerName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@title='" + headerName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + headerName + "']//following-sibling::*/span[@class='fa fa-info helpIcon'] | //span[text()='" + headerName + "']/parent::a//following-sibling::*/helpicon | //span[@title='" + headerName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"))) {
                 flag = true;
             }
         } catch (Exception e) {

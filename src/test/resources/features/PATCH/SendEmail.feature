@@ -1182,11 +1182,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @147248  @382362 @382363 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
   Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"

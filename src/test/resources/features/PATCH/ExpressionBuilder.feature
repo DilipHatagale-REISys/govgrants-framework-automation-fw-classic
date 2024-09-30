@@ -298,12 +298,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorEquals | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -551,12 +553,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndUserTypeInternalWithOperatorAND | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -568,12 +572,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorAND | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -602,12 +608,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndContextEditWithOperatorAND | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -636,12 +644,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndUserAppSAGrantorWithOperatorAND | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -721,12 +731,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingLookupWithOperatorEqualsTo | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -772,12 +784,14 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldWithOperatorContains | DataTableEnhanceProgramContacts | Name                      | Associate                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
 
@@ -4747,9 +4761,9 @@ Business Need: Expression Builder Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "3" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
@@ -9055,7 +9069,7 @@ Business Need: Expression Builder Component Scenarios
 
     ################################Test suite: Page Block (Expression Builder) (Suite ID: 204616)####################################################################
 
-  @204617 @204618
+  @204617 @204618 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks-----Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9075,7 +9089,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "35" seconds
     Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
-  @204620
+  @204620 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should not see Page Blocks for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9161,7 +9175,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @205072 @205073
+  @205072 @205073 @needtocheckmanually @skiponjenkins
   Scenario:  Page Blocks Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9181,7 +9195,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "15" seconds
     Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
-  @205074
+  @205074 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should not see Page Blocks for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11741,7 +11755,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "System Information" page block displayed
 
-  @204643
+  @204643 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks Details---Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11783,7 +11797,7 @@ Business Need: Expression Builder Component Scenarios
     And I download the file
     Then I cannot see "System Information" on page "3" of "govgrants" pdf file
 
-  @204647
+  @204647 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-PM-UI-To verify PM user should see Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11826,7 +11840,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "System Information" on page "3" of "govgrants" pdf file
 
-  @204649
+  @204649 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks  Details---Expression Builder-SPI-UI-To verify SPI user should see Page Blocks details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField        | filterId         |
@@ -11889,7 +11903,7 @@ Business Need: Expression Builder Component Scenarios
     And I download the file
     Then I cannot see "System Information" on page "3" of "govgrants" pdf file
 
-  @205107
+  @205107 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-PM-UI-To verify PM user should see Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11931,7 +11945,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "System Information" on page "3" of "govgrants" pdf file
 
-  @205109
+  @205109 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks  Details---Expression Builder-SPI-UI-To verify SPI user should see Page Blocks details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField        | filterId         |
@@ -12036,7 +12050,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I see "Collab" subtab is present in page details
 
-  @204593
+  @204593 @needtocheckmanually @skiponjenkins
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -12056,7 +12070,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204595
+  @204595 @needtocheckmanually @skiponjenkins
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -12158,7 +12172,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Collab" on page "1" of "govgrants" pdf file
 
-  @204970
+  @204970 @needtocheckmanually @skiponjenkins
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |

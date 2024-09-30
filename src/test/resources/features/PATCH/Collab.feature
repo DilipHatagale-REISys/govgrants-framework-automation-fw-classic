@@ -52,6 +52,7 @@ Business Need: collab Component Scenarios
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
+    And I enter value "Test Automation SPI application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
     And I click modal button "Ok"
     When I pause execution for "5" seconds
@@ -643,7 +644,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM Comment" in my feed section and share the post
-    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    And I click on "Comment" action at "Test Automation PM Comment" comment inside my feed
     Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
 
   @123530    @verifyThatUploadFileFromComputerAndLibraryTabsIsDisplayedAtAttachFileModalAtHomePhaseOnlyForPostsFromRecord

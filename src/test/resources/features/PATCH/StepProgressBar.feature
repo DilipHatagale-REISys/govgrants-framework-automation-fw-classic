@@ -485,8 +485,7 @@ Business Need: Step Progress Bar Component Scenarios
     Then I softly see status in Progress-bar is "Active" and is "Green"
     Examples:
       | User  |
-      | ADMIN |
-#      | PM    |
+      | PM    |
 
   @201438 @382792 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
