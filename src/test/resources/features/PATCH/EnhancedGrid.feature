@@ -40,8 +40,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379174
-    Then I see "New" button inside "---program:-:ProgramReviewStepTemplatesTableId---" flex table
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
+    Then I see "New" button inside "---program:-:ProgramReviewStepTableId---" flex table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTableId---" without processing
     And I refresh the page
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
@@ -119,12 +119,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-#    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-#      | Step Order | Step Name   | Description |
-#      | 4          | Test Review | Description |
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description            | Step Weight (%) |
-      | 4          | Automation Review | Automation Description | 0               |
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
       | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
@@ -149,7 +146,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     When I navigate to "Setup" sub tab
@@ -176,7 +173,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -337,7 +334,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257481
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -363,7 +360,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257480
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -389,7 +386,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257482
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      |
       | 1          | Pre-Screen Review | Review Step Desc |
     And I pause execution for "3" seconds
@@ -414,7 +411,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -439,7 +436,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -459,7 +456,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -476,7 +473,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -502,7 +499,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -524,7 +521,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      |
       | 4          | Pre-Screen Review | Review Step Desc |
     And I pause execution for "3" seconds
@@ -549,7 +546,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name         | Description |
       | 4          | Pre-Screen Review | Test file   |
     And I pause execution for "3" seconds
@@ -588,7 +585,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
     Then I softly see value "Test Review" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -612,7 +609,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
     And I pause execution for "5" seconds
@@ -1650,45 +1647,42 @@ Business Need: EnhancedGrid Component Scenarios
   @45096 @379178  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate open new tab for view at parent flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | SameWindow        | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewTab            | ProgramReviewStepTemplates | Name                      | Test View                  |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | NewTab        | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewTab        | ProgramReviewStepTemplates | Name                      | Test View                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "View" icon for "BP01" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Setup" sub tab
+    And I pause execution for "4" seconds
+    When I click on "Test View" icon for "1" inside table
     #379178
     Then I see new tab is opened
 
   @45097  @379180 @379182  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate enhanced grid view action open in new window for parent flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?     | SameWindow        | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-      | Flex Table  Action    | Enable Quick Search | true              | ApiGeneratedId:1               |                           |                            |
+      | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?     | NewTab            | ProgramReviewStepTemplates | Name                      | Test View                  |
+      | Flex Table  Action    | Enable Quick Search | true              | ProgramReviewStepTemplates |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?     | NewWindow     | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-      | Flex Table:General    | Enable Quick Search | true          | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?     | NewWindow     | ProgramReviewStepTemplates | Name                      | Test View                  |
+      | Flex Table:General    | Enable Quick Search | true          | ProgramReviewStepTemplates | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #379180
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Setup" sub tab
+    And I pause execution for "4" seconds
     Then I see "quick-search" is displayed on table id "---program:-:flexGridEnhancedTableId---"
-    When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
+    When I click on "Test View" icon for "1" inside table
     #379182
-    When I click on "View" icon for "BP01" inside table
     Then I see new tab is opened
 
   @45098  @379197 @SanityPATCH @SanityPATCHEGrid
@@ -1706,7 +1700,6 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
     And I pause execution for "2" seconds
     When I click on "View" icon for "Equipment" inside table
@@ -3154,7 +3147,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see Advance Filter box is displayed inside table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in flex table
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I enter advance filter values inside id "advfEnhanceAppGrantorBudgetPeriods"
-      | Project Period | starts with | 10/1/2016 |
+      | Budget | equals to | 10/1/2016 |
     Then I softly see value "10/1/2016--12/31/2022" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     #Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
@@ -6314,8 +6307,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Grant Automation"
-    When I click on "View" icon for "Grant Automation" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
@@ -6339,8 +6331,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Grant Automation"
-    When I click on "View" icon for "Grant Automation" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
@@ -6363,8 +6354,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Grant Automation"
-    When I click on "View" icon for "Grant Automation" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2024-2034)"

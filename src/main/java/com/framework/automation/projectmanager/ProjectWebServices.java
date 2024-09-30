@@ -17,7 +17,9 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProjectWebServices {
     private String jobID;
@@ -86,6 +88,173 @@ public class ProjectWebServices {
         return response;
     }
 
+    public static void deleteRecordInHooks() {
+        List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
+                .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
+
+        for (String record : recordNameList) {
+            if (StringUtils.containsIgnoreCase(record, "focus area")) {
+                deleteFocusArea(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "funding source")) {
+                deleteFundingSource(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "kpi")) {
+                deleteKPI(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "program")) {
+                deleteProgram(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "strategic plan")) {
+                deleteStrategicPlan(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "site visit")) {
+                deleteSiteVisit(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "desk")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
+            }
+            if (StringUtils.containsIgnoreCase(record, "amendment")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Amendment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "payment")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "risk")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "ORGANIZATION RISKASSESSMENT");
+            }
+            if (StringUtils.containsIgnoreCase(record, "closeout")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Closeout");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "contact")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Contact");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "DUNS");
+            }
+            if (StringUtils.containsIgnoreCase(record, "application")) {
+                try {
+                    deleteAttachmentsForRecord(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication__c");
+                } catch (AssertionError error) {
+                }
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
+            }
+            if (StringUtils.containsIgnoreCase(record, "Organization")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "USER REGISTRATION");
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("award"))) {
+            for (String record : recordNameList) {
+                if (StringUtils.containsIgnoreCase(record, "award")) {
+                    deleteAward(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+                }
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("announcement"))) {
+            for (String record : recordNameList) {
+                if (StringUtils.containsIgnoreCase(record, "announcement")) {
+                    deleteAnnouncement(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+                }
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("fdm"))) {
+            deleteFDM(recordNameList);
+        }
+    }
+
+    private static void deleteFocusArea(String recordName) {
+        deletionApi(recordName, "Focus Area");
+    }
+    private static void deleteFundingSource(String recordName) {
+        deletionApi(recordName, "Funding Source");
+    }
+
+    private static void deleteKPI(String recordName) {
+        deletionApi(recordName, "KPI");
+    }
+
+    private static void deleteProgram(String recordName) {
+        deletionApi(recordName, "Program");
+    }
+
+    private static void deleteStrategicPlan(String recordName) {
+        deletionApi(recordName, "Strategic Plan");
+    }
+
+
+    private static void deleteSiteVisit(String recordName) {
+        deletionApi(recordName, "Site Visit");
+    }
+
+    public static void deleteAttachmentsForRecord(String recordName, String objectAPIName) {
+        String recordId = getIdOf(objectAPIName, recordName);
+        JsonObject parent = new JsonObject();
+        JsonArray array = new JsonArray();
+        array.add(recordId);
+        parent.add("recordid", array);
+        String finalEndPoint = endPoint + "/services/apexrest/deleteFiles";
+        Response response = I.amPerforming().restHttp().postCall(parent, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+    }
+
+    private static void deleteAward(String recordName) {
+        deletionApi(recordName, "Progress Report");
+        deletionApi(recordName, "Progress Report");
+        deletionApi(recordName, "Amendment Request");
+        deletionApi(recordName, "Payment Request");
+        deletionApi(recordName, "Award");
+        deletionApi(recordName, "Grant");
+    }
+
+    public static void deleteAnnouncement(String recordName) {
+        deletionApi(recordName, "APPLICATION REVIEWS");
+        deletionApi(recordName, "Application");
+        deletionApi(recordName, "PreApplication");
+        deletionApi(recordName, "Announcement");
+    }
+    private static void deleteFDM(List<String> recordNames) {
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "desk review")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "site visit")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Site Visit");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "application")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "announcement")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Announcement");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "fdm")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Progress Report");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "FDM");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "subaward");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Award");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Grant");
+            }
+        }
+    }
+
     public Response automationBatchExecuteApi(String objectType, String recordName, String... objectName) {
         String finalEndPoint, objectApiName = "";
         Response response = null;
@@ -118,7 +287,7 @@ public class ProjectWebServices {
         }
     }
 
-    private String defaultEndPointGetToken() {
+    private static String defaultEndPointGetToken() {
         String defaultEndPointGetToken = "";
         if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
@@ -329,7 +498,7 @@ public class ProjectWebServices {
         System.out.println("Completed.");
         assertStatusCode(response);
     }
-    public void deletionApi(String recordName, String objectType) {
+    public static void deletionApi(String recordName, String objectType) {
         System.out.print("Making API call... ");
         getAuthToken();
         try {
@@ -544,7 +713,7 @@ public class ProjectWebServices {
     /**
      * get token for authentication of Delete request
      */
-    private void getAuthToken() {
+    private static void getAuthToken() {
         Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), null, null, null);
         tokenString = response.body().jsonPath().getString("access_token");
     }

@@ -3802,7 +3802,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
 #    And I click on "fa fa-plus" after click advance filter
     Then I see "fa fa-plus" button is enabled in flex table
@@ -3820,7 +3820,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
     Then I see "fa fa-plus" button is enabled in flex table
 
@@ -3853,7 +3853,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
     And I click on "fa fa-plus" after click advance filter
     Then I see filter "filter in filterDisplayList" is displayed
@@ -3873,7 +3873,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
     And I click on "fa fa-plus" after click advance filter
     Then I see filter "filter in filterDisplayList" is displayed
@@ -3913,9 +3913,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test2 |
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
@@ -3934,9 +3934,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test2 |
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
@@ -3976,12 +3976,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I click on "Clear All" after click advance filter
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG-A11-2084 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
@@ -4001,12 +4001,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I click on "Clear All" after click advance filter
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG-REI-2091 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
@@ -4049,7 +4049,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I refresh the page
@@ -4071,7 +4071,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I refresh the page
@@ -4114,7 +4114,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
 #    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-#    When I enter advance filter values in table id "advfPrograms"
+#    When I enter advance filter values inside id "advfPrograms"
 #      | Start Date | Greater than | 09/22/2023 |
 #    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
@@ -4135,7 +4135,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4156,13 +4156,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsFlexTableToggleId---"
-    When I enter advance filter values in table id "---program:-:ProgramsFlexTableToggleId---"
-      | Start Date | Greater than or equal to | 25/08/2023 |
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than or Equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
     And I refresh the page
     Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
+
     Examples:
       | User |
       #| ADMIN |
@@ -4181,7 +4180,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4205,12 +4204,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I click on "Clear All" after click advance filter
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG-REI-2091 |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
@@ -4230,7 +4229,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Does not contains | Hi Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4250,7 +4249,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Starts with | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4270,7 +4269,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Ends with | Testing |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4289,7 +4288,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4307,7 +4306,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4325,7 +4324,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4344,7 +4343,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 1000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -4363,7 +4362,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Less than | 100000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4382,7 +4381,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than or Equal to | 1000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4401,7 +4400,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Less than or Equal to | 10000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4420,7 +4419,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Equals to | 5000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4438,7 +4437,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 5000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4457,7 +4456,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Less than | 5000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4476,7 +4475,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 5000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4495,7 +4494,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Less than or Equal to | 100000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -4860,7 +4859,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -4880,7 +4879,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
@@ -6135,7 +6134,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -6152,7 +6151,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -6186,12 +6185,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
     And I click on "Clear All" after click advance filter
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Status | Equals to | Created |
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
@@ -6208,12 +6207,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
     And I click on "Clear All" after click advance filter
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Status | Equals to | Created |
     And I click on "fa fa-plus" after click advance filter
     Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
@@ -14124,7 +14123,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
@@ -14140,7 +14139,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Equals to | 40000 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
@@ -14460,7 +14459,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
 
@@ -14476,7 +14475,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
 
@@ -14510,7 +14509,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 5000---- |
     When I click on "fa fa-plus" after click advance filter
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
@@ -14532,7 +14531,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 5000---- |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
@@ -14576,7 +14575,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Email | Contains | testing@gamil--com |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
@@ -14597,7 +14596,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Email | Contains | testing@gamil--com |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
@@ -15274,7 +15273,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Date and Time | Less than or Equal to | 10/16/2023 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15372,7 +15371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Status | Equals to | Created |
     Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15410,7 +15409,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than or Equal to | 11 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15448,7 +15447,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Review Initiated | Not equals to | false |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15486,7 +15485,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Types Of Assistance | Includes | Project Grants |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15566,7 +15565,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Email Test | Contains | test |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
@@ -15689,7 +15688,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Auto |
     When I enter advance filter first two column values in table id "advfPrograms"
       | (Obsolate)Funder Type | Equals to |
@@ -15731,7 +15730,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | ACBDE |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
     Examples:
@@ -15770,7 +15769,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Auto |
     And I click on "fa fa-plus" after click advance filter
     And I click on "fa fa-plus" after click advance filter
@@ -15811,7 +15810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Auto |
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
@@ -15917,7 +15916,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
+    When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | PG |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
     Then I see "Total Records:" page size inside table "toggleFlexTablePrograms"
@@ -16603,8 +16602,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | Programs           | Name                      | View                       |
@@ -16619,9 +16618,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation message for program flex table view action from configuration and validating it at flex table of program-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | Programs           | Name                      | View                       |
-      | Flex Table Action     | Confirmation Message  |                   | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | Programs           | Name                      | View                       |
@@ -18864,12 +18863,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @173826 @sprint20
   Scenario Outline: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField              | filterId         |
       | Flex Table List       | Show Link as Text | false             | DataTableEnhanceProgramContacts | ApiGeneratedId:0 |

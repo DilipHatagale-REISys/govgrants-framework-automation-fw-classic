@@ -8,6 +8,7 @@ import com.helperPackage.report.CSS;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.apache.commons.lang.StringUtils;
 
 import java.awt.*;
 import java.io.IOException;
@@ -48,5 +49,15 @@ public class setup {
         } catch (Exception e) {
             ProjectWebServices.thisValue = null;
         }
+    }
+
+    @After(order = 2)
+    public void deleteMe() {
+        if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
+            ProjectWebServices.deleteRecordInHooks();
+//        else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
+//            granteeWebServices.deleteRecordInHooks();
+        //It will deactivate the activated users.
+        //ProjectWebServices.changeUserActivationStatus("automationinternal", false);
     }
 }
