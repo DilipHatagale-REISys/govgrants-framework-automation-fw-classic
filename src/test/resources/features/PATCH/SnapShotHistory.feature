@@ -168,7 +168,7 @@ Business Need: Snapshot Config Component Scenarios
     And I refresh the page
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70027p    @verifyAutoSnapShotFileNameWithFieldApprovalSnapSho1tFileName
+  @70027    @verifyAutoSnapShotFileNameWithFieldApprovalSnapSho1tFileName
   Scenario: Validate Auto Snapshot record name is getting chaged after making changes inside field Approval Snapshot File Name at config page
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
@@ -209,12 +209,12 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Send to Owner" in the approval decision
+    When I "Send back" in the approval decision
+    And I pause execution for "15" seconds
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I navigate to "Planning" tab
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:programsTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     And I refresh the page
@@ -488,7 +488,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     And I pause execution for "3" seconds
     And I softly see status in Progress-bar is "Active" and is "Green"
@@ -770,14 +770,14 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409p @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
+  @201409 @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
   #  Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-    And I execute batch file:
-      | programName | announcementName | objectType | projectTitle               | status |
-      | NA          | NA               | Program    | Automation Runtime Program | Active |
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     #Announcement Creation
