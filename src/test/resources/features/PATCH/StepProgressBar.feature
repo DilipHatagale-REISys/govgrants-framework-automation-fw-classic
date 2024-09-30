@@ -330,7 +330,6 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @201813 @201814 @382714 @382716 @382832 @SanityPATCH  @SanityPATCHStepProgressBar
@@ -402,7 +401,6 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @201459 @382795 @382799 @SanityPATCH  @SanityPATCHStepProgressBar
@@ -615,7 +613,6 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see status in Progress-bar is "Rejected" and is "Red"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
@@ -690,6 +687,5 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 

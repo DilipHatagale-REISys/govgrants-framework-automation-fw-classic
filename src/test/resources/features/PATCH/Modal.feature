@@ -23,7 +23,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
+    When I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
@@ -590,8 +590,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     Then I softly see "Award Title" inside page block detail
     Then I softly see "Type" inside page block detail
     Then I softly see "Award ID" inside page block detail
@@ -611,8 +611,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     When I hovering mouse on i icon for field "Award Title" inside modal
     Then I see "<new_helpText>" shown as help text
 
@@ -632,8 +632,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     When I hovering mouse on help text icon inside "Schedule Details"
     Then I see "<new_helpText>" shown as help text
 
@@ -653,8 +653,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
@@ -672,8 +672,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
@@ -691,8 +691,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
     Then I softly see "<New Label>" shown as page instruction text
     Examples:
       | User | New Label     | Old Label      |
@@ -704,8 +704,8 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-39068"
-    When I click on "View" icon for "SC-39068" inside table
+    When I perform quick search for "SC-623375"
+    When I click on "View" icon for "SC-623375" inside table
 
   @382247p @SanityPATCH
   Scenario: Sanity Testing- Modal- Page Tab- Admin- To verify Tab title displays as expected which is provided in the config.

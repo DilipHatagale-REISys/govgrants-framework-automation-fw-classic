@@ -22,9 +22,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see fields "Name" is in edit mode
     Then I see fields "Description__c" is in edit mode
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @2576141 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
@@ -45,9 +45,9 @@ Business Need: EnhancedGrid Component Scenarios
     And I refresh the page
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @257558 @257557 @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
@@ -69,9 +69,9 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly.  @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
@@ -87,9 +87,9 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "SME Review"
     Then I softly see "Review Forms" page block displayed
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
@@ -219,9 +219,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Numbertest" in downloaded xls or csv file "govgrants"
     Then I see "percenttest" in downloaded xls or csv file "govgrants"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
@@ -242,9 +242,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Numbertest" on page "1" of "govgrants" pdf file
     Then I softly see "percenttest" on page "1" of "govgrants" pdf file
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
   Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
@@ -5410,6 +5410,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly do not see "Fee Fund Requested" in flex table header "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
   @192950 @sprint1 @u serstory_176992
+
   Scenario Outline: E-grid- To verify , Number  field should restrict the field limit
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5595,9 +5596,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Steps" page block displayed
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218431 @218433
   Scenario Outline: Is active- Admin- Config- Verify flex table should be displayed
@@ -5617,9 +5618,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Steps" page block displayed
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218432 @218434
   Scenario Outline:Is active- Admin- Config- Verify flex table should not be displayed
@@ -5639,9 +5640,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Review Steps" page block displayed
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218437 @218438
   Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon
@@ -5657,9 +5658,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "The table below lists the application review steps associated with this announcement." shown as help text
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218440 @218441 @218443 @218444
   Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table
@@ -5684,9 +5685,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "# of Panels" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
 
     Examples:
-      | User  | defaultFieldsApi                                                    | newFieldsApi                                                        |
+      | User | defaultFieldsApi                                                    | newFieldsApi                                                        |
       #| ADMIN | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
-      | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
+      | PM   | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
 
 
   @218461 @218462 @352192 @352197 @379190 @SanityPATCH @SanityPATCHEGrid
@@ -5714,9 +5715,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
@@ -5742,9 +5743,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218455 @218456
   Scenario Outline: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
@@ -5764,9 +5765,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Steps" page block displayed
     Then I see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218430 @218435
   Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
@@ -5846,9 +5847,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Show" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218448 @352285
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
@@ -5889,9 +5890,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218451 @352431
   Scenario: Page Size- SPI- UI- Verify dropdown to select page size manually should not appear on UI
@@ -5931,9 +5932,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218457
   Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
@@ -5989,9 +5990,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Steps" page block displayed
     Then I do not see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218454
   Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
@@ -6070,9 +6071,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206019
   Scenario:Menu- SPI- UI- Verify Menu option should not appear on UI
@@ -6112,9 +6113,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @205912 @205913
   Scenario Outline: Default value- Admin- Config- Verify set default value for regular field will get populated while creating any new record in the grid
@@ -6138,9 +6139,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "5" in "---program:-:ProgramReviewStepTemplatesgridTableId`---" panel
     Then I see value "Testing Name" for multiple cells at column "Name"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @205918 @205919
   Scenario Outline: Default value- Admin- Config- Verify the different default values can be set for different fields
@@ -6168,9 +6169,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see value "4" for multiple cells at column "NoOfCompletedReviews__c"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206016
   Scenario: Menu- SPI- UI- Verify Menu option appears on UI
@@ -6207,9 +6208,9 @@ Business Need: EnhancedGrid Component Scenarios
       | Table has been reset. |
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206022
   Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
@@ -6247,9 +6248,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @352274 @352275
   Scenario Outline:Admin-Parent Table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
@@ -6270,9 +6271,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @352351 @352415
   Scenario Outline:Admin-Parent Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
@@ -6297,9 +6298,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
@@ -6322,9 +6323,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @352429p @352430 @379208 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
@@ -6346,9 +6347,9 @@ Business Need: EnhancedGrid Component Scenarios
     #379208
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
@@ -6370,9 +6371,9 @@ Business Need: EnhancedGrid Component Scenarios
     #379207
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   ################### Test suite: Detail config (Suite ID: 296508) ###################
   @296545 @296546
@@ -6393,9 +6394,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296549 @296550
   Scenario Outline: Admin_Child table_Verified that label of column displayed in table, what have been provided in "Field label override" config
@@ -6416,9 +6417,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296559 @296560
   Scenario Outline: Admin_Parent table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
@@ -6438,9 +6439,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Step Number" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
@@ -6462,9 +6463,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Panel Name" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296594 @296595
   Scenario Outline:Admin_Parent table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
@@ -6479,9 +6480,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "This is the order in which the associated reviews will need to be completed." shown as help text
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296597 @296598
   Scenario Outline: Admin_Child table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
@@ -6497,9 +6498,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Scoring weight for this form in relation to all required panels in this review step. (% out of 100%)" shown as help text
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296610 @296611
   Scenario Outline:Admin_Parent table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
@@ -6519,9 +6520,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see help text icon is displayed for field "Step Order"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296613 @296614
   Scenario Outline: Admin_Child table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
@@ -6542,9 +6543,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see help text icon is displayed for field "Form Weight (%)"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296617 @296623
   Scenario Outline: Admin_Parent table_Verified that user is able to add all characters, Sp. Characters and digits in help text
@@ -6565,9 +6566,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "@#$%^&*()!<>1234567890" shown as help text
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296627 @296628
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
@@ -6589,9 +6590,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "@#$%^&*()!<>1234567890 " shown as help text
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296637 @296641
   Scenario Outline:Admin_Parent table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
@@ -6612,9 +6613,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296644 @296645
   Scenario Outline: Admin_Child table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
@@ -6637,9 +6638,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296658 @296659
   Scenario Outline: Admin_Parent table_Verified that user is able to apply row grouping on multiple fields/columns:
@@ -6662,9 +6663,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296661 @296662
   Scenario Outline:Admin_Child table_Verified that user is able to apply row grouping on multiple fields/columns:
@@ -6690,24 +6691,22 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Budget Category :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296688 @296689
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      #| Flex Table List       | Sub Total Label       | Testing Sub Total | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | configurationCategory | fieldName             | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping   | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Over All Total | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6720,9 +6719,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "StepNumber__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296692 @296693
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
@@ -6752,9 +6751,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "AwardedBudget__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296695 @296698
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
@@ -6781,9 +6780,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total sum is not displayed for "NoOfCompletedReviews__c" inside "---program:-:ProgramReviewStepTemplatesTableId---" table
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296701 @296702
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
@@ -6812,9 +6811,9 @@ Business Need: EnhancedGrid Component Scenarios
     ##disable overall total
     Then I see over all total sum is not displayed for "MinimumNumberOfReviewers__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296767 @296768
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
@@ -6843,9 +6842,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296948 @296950
   Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
@@ -6875,9 +6874,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296953 @296957
   Scenario Outline: Admin_Parent table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
@@ -6906,9 +6905,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @296968 @296974
   Scenario Outline: Admin_Child table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
@@ -6938,9 +6937,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297044 @297047
   Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
@@ -6961,9 +6960,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Step Number" not displayed in enhanced grid table column title
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297067 @297069
   Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
@@ -6985,9 +6984,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297580 @297581
   Scenario Outline: Admin_Parent table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
@@ -7009,9 +7008,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297583 @297584
   Scenario Outline: Admin_Child table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
@@ -7035,9 +7034,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297589 @297592
   Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
@@ -7069,9 +7068,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "NoOfCompletedReviews" not displayed in enhanced grid table column title
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297595 @297597
   Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
@@ -7101,9 +7100,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297601 @297602
   Scenario Outline: Admin_Parent table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
@@ -7130,9 +7129,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see " Testing SubTotal - NoOfCompletedReviews : 3 " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @297605 @297606
   Scenario Outline: Admin_Child table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
@@ -7159,9 +7158,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Sub Total Testing Demo - Form Weight (%) : 15" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206030
   Scenario Outline: Hide logic- Admin- Config- Verify admin can enable parent hide logic
@@ -7183,9 +7182,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "New" button inside "Review Steps" flex table not displayed
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @206036 @206037
   Scenario Outline: Hide logic- Admin- Config- Verify the expression created by users using expression builder will refer to parent business object, where enhanced grid/ table is configured
@@ -7206,9 +7205,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218467 @218468
   Scenario Outline: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI
@@ -7227,9 +7226,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see select check box enabled in flex table
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218470 @218471
   Scenario Outline:Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
@@ -7248,9 +7247,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I do not see select check box enabled in flex table
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218473 @218476 @218477 @218474
   Scenario Outline: Record Selection- Admin- Config- Verify correct Record Selection Column select all checkbox displays on UI
@@ -7273,9 +7272,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
-      | User  |
+      | User |
       #| ADMIN |
-      | PM    |
+      | PM   |
 
   @218469
   Scenario: Record Selection- SPI- UI- Verify ‘Record Selection Column’ displays on UI

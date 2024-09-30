@@ -149,8 +149,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
-      #| PM    |
+      | PM    |
 
   @204889 @204892 @204893
   Scenario: Approval History-External User-To verify user should be able to see available approval history for  specific record

@@ -177,6 +177,9 @@ public class UsersAndURL implements UsersController {
         username.put("PM1", "test8.pm1.automation@yopmail.com.frwpatch");
         username.put("SPI", "jameshanknew@yopmail.com");
         username.put("FO", "auto.fm@auto.com.atm.frwpatch");
+        username.put("PO", "test8.automationpo@yopmail.com.frwpatch");
+        username.put("FD", "test8.automationfd@yopmail.com.frwpatch");
+        username.put("EXE1", "test8.exe1.automation@yopmail.com.frwpatch");
         username.put("EXE", "test@gmaildemo.com.atm.frwpatch");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());
@@ -187,12 +190,15 @@ public class UsersAndURL implements UsersController {
 
     private String getPATCHEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Patch@08june");
-        password.put("PM", "Patch@08june");
-        password.put("PM1", "Patch@08june");
-        password.put("FO", "Patch@08june");
-        password.put("EXE", "Patch@08june");
-        password.put("SPI", "Patch@08june");
+        password.put("ADMIN", "Patch@02oct");
+        password.put("PM", "Patch@02oct");
+        password.put("PM1", "Patch@02oct");
+        password.put("FO", "Patch@02oct");
+        password.put("EXE", "Patch@02oct");
+        password.put("EXE1", "Patch@02oct");
+        password.put("PO", "Patch@02oct");
+        password.put("FD", "Patch@02oct");
+        password.put("SPI", "Patch@02oct");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {

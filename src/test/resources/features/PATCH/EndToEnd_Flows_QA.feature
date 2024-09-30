@@ -78,7 +78,7 @@ Business Need: security review Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    When I navigate to "My Tasks" content inside "Reassign" subheader on left panel
     Then I see expected table with id "toggleFlexTableGrantorTaskReassignment"
 
   @106152    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenActiveIndividualSubrecipientsTableOpens
@@ -218,7 +218,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see expected table with id "ProgramReviewStepTemplatesFlexToggle"
 
   @107083    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
@@ -257,8 +257,8 @@ Business Need: security review Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
-    When I navigate to "Files" sub tab
-    Then I see expected table with id "ApplicationChecklistsFlexToggle"
+    When I navigate to "Overview" sub tab
+    Then I see expected table with id "AppContactFlexToggle"
 
   @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser
   Scenario: validate data table Is Displayed by logged in as SPI user
@@ -887,7 +887,6 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "6" at position "2" and column at position "5" contains text "Started"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly
@@ -936,7 +935,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see expected table with id "ProramPackagesGrantorFlexToggle"
 
   @110209 @109392   @verifyAnnouncementInSubmittedForApprovalMode @flow

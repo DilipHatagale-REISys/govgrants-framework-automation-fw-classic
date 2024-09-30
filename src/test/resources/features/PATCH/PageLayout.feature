@@ -12162,16 +12162,16 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     Then I softly see "Save" button is displayed
     Then I softly see "Cancel" button is displayed
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "DataTableEnhanceProgramContacts"
-    When I click "Associate" after selection of "Automation PM" in the table "DataTableEnhanceProgramContacts"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Overview" sub tab
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
@@ -12339,7 +12339,6 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @379423 @SanityPATCH @SanityPATCHPageLayout
@@ -12382,7 +12381,6 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @379426 @SanityPATCH @SanityPATCHPageLayout
@@ -12417,6 +12415,5 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
