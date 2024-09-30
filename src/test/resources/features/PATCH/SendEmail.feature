@@ -9740,7 +9740,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    And I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Automationadminpm@yopmail.com" into field "{testData:ToField}" on send email modal
