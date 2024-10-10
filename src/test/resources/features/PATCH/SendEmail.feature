@@ -641,14 +641,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "Group" into field "{testData:ToField}" on send email modal
-    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I select value "group 0" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test automation" into field "Body Content" on send email modal
     When I enter value "Test SendEmailAttachment" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "Validate send email" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Test SendEmailAttachment" in "---program:-:communicationHistoryTableId---" panel
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
@@ -843,7 +843,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332809 @382756 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"

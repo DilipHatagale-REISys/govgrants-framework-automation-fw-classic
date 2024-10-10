@@ -3721,6 +3721,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see no "New" button inside "Budget Periods" enhanced grid
+    Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
 
   @160801    @verifyEGridTopLevelActionPreviewAreHideByUsingMultipleAND/ORLogic @abhishekS
   Scenario: validate E-grid-To,top-level action 'Preview' are hide by using multiple AND/OR hide logic
