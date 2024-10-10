@@ -552,7 +552,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Overview" sub tab
+    And I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
 
   @77220    @orderBySortByFieldAtEnhancedDataTable-gPlanning @smokePATCH
