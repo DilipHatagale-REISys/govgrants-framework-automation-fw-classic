@@ -3721,6 +3721,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see no "New" button inside "Budget Periods" enhanced grid
+    Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
 
   @160801    @verifyEGridTopLevelActionPreviewAreHideByUsingMultipleAND/ORLogic @abhishekS
   Scenario: validate E-grid-To,top-level action 'Preview' are hide by using multiple AND/OR hide logic
@@ -6690,15 +6691,13 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      #| Flex Table List       | Sub Total Label       | Testing Sub Total | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | configurationCategory | fieldName             | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping   | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Over All Total | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
