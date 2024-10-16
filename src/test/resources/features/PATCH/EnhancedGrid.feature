@@ -17,7 +17,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     And I expand nested table containing column value "Pre-Screen Review"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
+    When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     Then I see fields "StepNumber__c" is in edit mode
     Then I see fields "Name" is in edit mode
     Then I see fields "Description__c" is in edit mode
