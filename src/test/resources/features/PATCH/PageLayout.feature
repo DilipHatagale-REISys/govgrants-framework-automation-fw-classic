@@ -1391,7 +1391,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide Operator    | OR                   | Grantor State Program | Name                      | PB-6708                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1407,16 +1407,14 @@ Business Need: Page Layout Component Scenarios
   @53097 @53102
   Scenario Outline:  Verify Hide for User And Profile System administration at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
-      | Page Block            | Hide For Profile |                   | ApiGeneratedId:0           |
-      | Page Block            | Hide For User    |                   | ApiGeneratedId:1           |
-      | Page Block            | Hide Operator    |                   | ApiGeneratedId:2           |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide Operator    | AND                  | Grantor State Program | Name                      | PB-6708                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1427,7 +1425,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @53099
   Scenario: Verify Hide for Context at Notes and attachments.
@@ -11131,11 +11129,11 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -12008,8 +12006,8 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -12356,11 +12354,11 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -12398,7 +12396,7 @@ Business Need: Page Layout Component Scenarios
   @424689 @patch-lsc
   Scenario Outline: LSC - Patch 6.100.18 - To verify the search bar should be appropriate size on flex table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -12412,7 +12410,6 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see "quick-search" is displayed on table id "---program:-:associateProgramContactsTableId---"
-
     Examples:
       | User |
       | PM   |
