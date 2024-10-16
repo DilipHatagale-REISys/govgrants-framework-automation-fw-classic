@@ -32,7 +32,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I see "Download as PDF" options is displayed
@@ -65,7 +65,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I do not see "Download as PDF" options is displayed
@@ -98,7 +98,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I see "Download as CSV" options is displayed
@@ -131,7 +131,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I click on "Menu" button inside table id "---program:-:MonitoringScheduleGrantorTableId---"
     Then I do not see "Download as CSV" options is displayed
@@ -167,7 +167,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | RecipientApplications | Name                      | FLV-3447                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -206,7 +206,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | RecipientApplications | Name                      | FLV-3447                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -235,7 +235,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346769
   Scenario: Flex table-Export-SPI-UI-To verify that Page size (i.e. Show entries) block, Pagination and Total Records count not displayed in downloaded PDF
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -265,7 +265,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346773
   Scenario: Flex table-Export-SPI-UI-To verify that Page size (i.e. Show entries) block, Pagination and Total Records count not displayed in downloaded XLS/CSV
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -293,7 +293,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346776
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded PDF
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -319,7 +319,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346780
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded XLS/CSV
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Submitted"
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -356,7 +356,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Label     |               | RecipientApplications | Name                      | FLV-3447                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of ""
@@ -395,7 +395,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346789
   Scenario: Flex table-Export-SPI-UI-To verify that actions not get displayed in downloaded XLS/CSV
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Internal Programs - Active"
@@ -420,7 +420,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346792
   Scenario: Flex table-Export-SPI-UI-To verify that Record selection and Auto Index columns not displayed in downloaded PDF
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -446,7 +446,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346795
   Scenario: Flex table-Export-SPI-UI-To verify that Record selection and Auto Index columns not displayed in downloaded XLS/CSV
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Internal Programs - Active"
@@ -483,7 +483,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Header    | Applications - Submitted | RecipientApplications | Name                      | FLV-3447                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -519,7 +519,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName | fieldNewValue            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Header    | Applications - Submitted | RecipientApplications | Name                      | FLV-3447                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Applications - Submitted"
@@ -555,7 +555,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Over All Total | true          | RecipientApplications | Name                      | FTC-10992                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -591,7 +591,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Over All Total | true          | RecipientApplications | Name                      | FTC-10992                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Applications - Submitted"
@@ -621,7 +621,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -658,7 +658,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Flex table-Export-SPI-UI-To verify that all the fields of different data types displayed in downloaded PDF
   Flex table-Export-SPI-UI-To verify that reference field displayed in downloaded PDF
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -706,7 +706,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
@@ -747,7 +747,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as XLS" from parallel lines dropdown of "Applications - Submitted"
@@ -776,7 +776,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346852
   Scenario: Flex table-Filter-SPI-UI-To verify that export functionality(i.e. PDF/XLS) not supported filtered records
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
@@ -791,7 +791,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @346695
   Scenario: Flex table-Filter-SPI-UI-To verify that export functionality(i.e. PDF/XLS) not supported filtered records
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
@@ -2566,7 +2566,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient Pre-Application | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
@@ -2591,7 +2591,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application test"
@@ -2616,7 +2616,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | RecipientGrant     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
@@ -2643,7 +2643,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | RecipientAwards    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - Active"
@@ -2669,7 +2669,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient Grantor SiteVisit | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Site Visits - In Progress"
@@ -2695,7 +2695,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient DeskReview | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Desk Reviews - All"
@@ -2720,7 +2720,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | OrganizationRiskAssessmentView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Organization Risk Assessments - Active"
@@ -2746,7 +2746,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestsAdvance | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     And I click toggle button to select "Advances - All"
@@ -2772,7 +2772,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestReimbursement | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
     And I click toggle button to select "Reimbursements - All"
@@ -2798,7 +2798,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | SubrecipientCloseoutRequest | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
     And I click toggle button to select "Project Period Closeouts - All"
@@ -2822,7 +2822,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient Pre-Application | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
@@ -2842,7 +2842,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application test"
@@ -2861,7 +2861,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | RecipientGrant     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
@@ -2880,7 +2880,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | RecipientAwards    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - Active"
@@ -2900,7 +2900,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient Grantor SiteVisit | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Site Visits - In Progress"
@@ -2920,7 +2920,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | Recipient DeskReview | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Desk Reviews - All"
@@ -2940,7 +2940,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | OrganizationRiskAssessmentView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Organization Risk Assessments - Active"
@@ -2960,7 +2960,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestsAdvance | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     And I click toggle button to select "Advances - All"
@@ -2980,7 +2980,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestReimbursement | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
     And I click toggle button to select "Reimbursements - All"
@@ -3000,7 +3000,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | false         | SubrecipientCloseoutRequest | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
     And I click toggle button to select "Project Period Closeouts - All"
@@ -3024,7 +3024,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | Recipient Pre-Application | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Pre-Application | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
@@ -3049,7 +3049,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | Recipient ApplicationView | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application test"
@@ -3073,7 +3073,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | RecipientGrant     | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | RecipientGrant     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
@@ -3097,7 +3097,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | RecipientAwards    | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | RecipientAwards    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - Active"
@@ -3122,7 +3122,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | Recipient Grantor SiteVisit | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Grantor SiteVisit | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Site Visits - In Progress"
@@ -3147,7 +3147,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | Recipient DeskReview | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient DeskReview | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Desk Reviews - All"
@@ -3172,7 +3172,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | OrganizationRiskAssessmentView | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | OrganizationRiskAssessmentView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Organization Risk Assessments - Active"
@@ -3197,7 +3197,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | PaymentRequestsAdvance | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | PaymentRequestsAdvance | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     And I click toggle button to select "Advances - All"
@@ -3222,7 +3222,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | PaymentRequestReimbursement | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | PaymentRequestReimbursement | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
     And I click toggle button to select "Reimbursements - All"
@@ -3247,7 +3247,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout:General   | Hide Pdf Download      | true          | SubrecipientCloseoutRequest | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | SubrecipientCloseoutRequest | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
     And I click toggle button to select "Project Period Closeouts - All"
@@ -3272,7 +3272,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient Pre-Application | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
@@ -3308,7 +3308,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application test"
@@ -3343,7 +3343,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | RecipientGrant     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
@@ -3377,7 +3377,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | RecipientAwards    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - Active"
@@ -3413,7 +3413,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient Grantor SiteVisit | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Site Visits - In Progress"
@@ -3449,7 +3449,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient DeskReview | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Desk Reviews - All"
@@ -3485,7 +3485,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | OrganizationRiskAssessmentView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Organization Risk Assessments - Active"
@@ -3521,7 +3521,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | PaymentRequestsAdvance | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     And I click toggle button to select "Advances - All"
@@ -3557,7 +3557,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | PaymentRequestReimbursement | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
     And I click toggle button to select "Reimbursements - All"
@@ -3593,7 +3593,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | false         | SubrecipientCloseoutRequest | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
     And I click toggle button to select "Project Period Closeouts - All"
@@ -3627,7 +3627,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient Pre-Application | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
@@ -3648,7 +3648,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient ApplicationView | Name                      | TAB-2733                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application test"
@@ -3668,7 +3668,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | RecipientGrant     | Name                      | TAB-2698                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
@@ -3688,7 +3688,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | RecipientAwards    | Name                      | TAB-2697                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - Active"
@@ -3709,7 +3709,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient Grantor SiteVisit | Name                      | TAB-3008                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Site Visits - In Progress"
@@ -3730,7 +3730,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient DeskReview | Name                      | TAB-2941                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Desk Reviews - All"
@@ -3751,7 +3751,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | OrganizationRiskAssessmentView | Name                      | TAB-2819                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
     And I click toggle button to select "Organization Risk Assessments - Active"
@@ -3772,7 +3772,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | PaymentRequestsAdvance | Name                      | TAB-3084                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     And I click toggle button to select "Advances - All"
@@ -3793,7 +3793,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | PaymentRequestReimbursement | Name                      | TAB-2115                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
     And I click toggle button to select "Reimbursements - All"
@@ -3814,7 +3814,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | SubrecipientCloseoutRequest | Name                      | TAB-3028                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
     And I click toggle button to select "Project Period Closeouts - All"
@@ -3994,7 +3994,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @347716 @347728 @347741
   Scenario:Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Amendment Request record.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4010,7 +4010,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @347783
   Scenario Outline: Flex Layout_UI_SPI_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of Amendment Request  record.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4040,7 +4040,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout           | Hide PDF Download | false         | Recipient Amendment | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4058,7 +4058,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @347809
   Scenario: Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Amendment Request record.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4087,7 +4087,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory               | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient Amendment | Name                      | TAB-2916                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4111,7 +4111,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Layout           | Hide PDF Download      | true          | Recipient Amendment | Name                      |                            |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Amendment | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Amendment Requests" content inside "Grants" subheader on left panel
     And I click toggle button to select "Amendment Requests - All"
@@ -4153,7 +4153,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4193,7 +4193,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4234,7 +4234,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4274,7 +4274,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4314,7 +4314,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4354,7 +4354,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4395,7 +4395,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4435,7 +4435,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4496,7 +4496,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4570,7 +4570,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4640,7 +4640,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4710,7 +4710,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4767,7 +4767,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
       | Flex Table List       | Label               |               | RecGrantBudgetPeriods | Name                      | FLV-3328                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4816,7 +4816,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
       | Flex Table List       | Label               |               | RecGrantBudgetCategoryFlexTable | Name                      | FLV-3329                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4864,7 +4864,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetPeriods | Name                      |                            |
       | Flex Table List       | Label                     |               | RecGrantBudgetPeriods | Name                      | FLV-3328                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4913,7 +4913,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
       | Flex Table List       | Label                     |               | RecGrantBudgetCategoryFlexTable | Name                      | FLV-3329                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -4961,7 +4961,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantBudgetPeriods    | Name                      |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -5007,7 +5007,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -5052,7 +5052,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -5102,7 +5102,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Display Field Names | <newFieldsApi> | RecGrantBudgetCategoryFlexTable | Name                      |                            |
       | Flex Table:General    | Enable Export (PDF) | true           | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -5149,7 +5149,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table
@@ -5194,7 +5194,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
     When I click on "View" icon for "Testing Grant for Automation" inside table

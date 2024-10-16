@@ -318,7 +318,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUseAppRecipientWithOperatorIn | GrantProjectAreas  | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "GT-FDM18-001"
     When I click on "View" icon for "GT-FDM18-001" inside table
@@ -334,7 +334,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                             | coreComponentField                     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForUseAppRecipientandOperatorIn | Qualified Annoucement External Grantor | Name                      | Create Application         |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "Test announcement 06-06" in "QualifiedClosedAnnouncementsExternal" panel
@@ -6344,7 +6344,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1516                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                   | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
@@ -6391,7 +6391,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Column JSON    | govgrants_config:HideColumnJsonAtFormulaTypeFieldForEnhancedGridChildTable | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1517                   |
       | Flex Grid:General     | Display Field Names | <newFieldsApi>                                                             | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
@@ -6434,7 +6434,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
       | Flex Table Action     | Enable Parent Hide Logic | true                                                                        | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
@@ -6473,7 +6473,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionJsonIfParentHideLogicIsEnabledAtEnhancedGridChildTable | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
       | Flex Table Action     | Enable Parent Hide Logic | true                                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
@@ -9325,7 +9325,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | PB-7556                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Automation Application"
@@ -9342,7 +9342,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | TAB-2698                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Automation Application"
@@ -9395,7 +9395,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName      | fieldNewValue                                                              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideHideCellJSONForEncumburanceLoperandFieldAndOperatorIn | AwardFundingAccounts-SD1 | Name                      | FTC-13597                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9449,7 +9449,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9503,7 +9503,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9557,7 +9557,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9611,7 +9611,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9667,7 +9667,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9721,7 +9721,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9775,7 +9775,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9829,7 +9829,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandContextNotIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9883,7 +9883,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9937,7 +9937,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeNotIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -9991,7 +9991,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10045,7 +10045,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileNotIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10099,7 +10099,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10153,7 +10153,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppNotIn | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10207,7 +10207,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldInADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10261,7 +10261,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotInADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10315,7 +10315,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10369,7 +10369,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10423,7 +10423,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotContainsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10477,7 +10477,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserInADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10531,7 +10531,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10585,7 +10585,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10639,7 +10639,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:HideActionOnProgramApplicationform | Program Specific Application form | Name                      | Validate                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10698,7 +10698,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsSpi | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10740,7 +10740,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeIn | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10780,7 +10780,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileIn | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10819,7 +10819,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppIn | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10858,7 +10858,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotIn | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10884,7 +10884,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDollarEquals | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -10930,7 +10930,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -10979,7 +10979,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTableEdit | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11028,7 +11028,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11077,7 +11077,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11126,7 +11126,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11175,7 +11175,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11224,7 +11224,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11273,7 +11273,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11325,7 +11325,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldInMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11374,7 +11374,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotInMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11423,7 +11423,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11472,7 +11472,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11513,7 +11513,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -11550,7 +11550,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldGreaterThanEqualsGrants | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -11588,7 +11588,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -11625,7 +11625,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -11664,7 +11664,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -11730,7 +11730,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11747,7 +11747,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11828,7 +11828,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11849,7 +11849,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11933,7 +11933,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -11954,7 +11954,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12027,7 +12027,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12043,7 +12043,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12119,7 +12119,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2733                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12140,7 +12140,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2733                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12221,7 +12221,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2733                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12242,7 +12242,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2733                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12279,7 +12279,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
@@ -12330,7 +12330,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
@@ -12345,7 +12345,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
@@ -12392,7 +12392,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
@@ -12439,7 +12439,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldNewValue                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingUserApp | Program Progress Bar | Name                      | Submitted for Approval     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table

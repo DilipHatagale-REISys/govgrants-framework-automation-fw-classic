@@ -7,7 +7,7 @@ Business Need: Phase Config Component Scenarios
   @333604
   Scenario: Technical support - SPI- UI- Verify ‘Technical support’ is visible
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Technical Support" on left panel
 
@@ -25,7 +25,7 @@ Business Need: Phase Config Component Scenarios
   @333608
   Scenario: Recently Viewed - SPI- UI- Verify ‘Recently viewed’ is visible
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Recently Viewed" on left panel
 
@@ -43,7 +43,7 @@ Business Need: Phase Config Component Scenarios
   @333610
   Scenario: Sidebar search- SPI- UI- Verify Sidebar search menu is visible
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Search" on left panel
 
@@ -61,7 +61,7 @@ Business Need: Phase Config Component Scenarios
   @333615
   Scenario: Sidebar- SPI- UI- Verify Sidebar "Tasks" menu is visible
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Tasks" on left panel
 
@@ -85,7 +85,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "BI & Analytics" on left panel
 
@@ -120,7 +120,7 @@ Business Need: Phase Config Component Scenarios
   @333621
   Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Activities" on left panel
 
@@ -135,7 +135,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config:General  | Tab Display Label    | Home          | RecipientHome      |
       | Phase Config:General  | Default Landing Tab? | true          | RecipientHome      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Home" phase
 
   @333629 @333630 @333632 @333633 @333635 @333359
@@ -167,7 +167,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config:General  | Tab Display Label    | Home          | RecipientHome      |
       | Phase Config:General  | Default Landing Tab? | true          | RecipientHome      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Home" phase
 
   @333636
@@ -179,7 +179,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField    |
       | Phase Config:General  | Available for Profiles | <New-Profile> | RecipientApplications |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I do not see "Applications" phase
     Examples:
       | New-Profile                                                                                                   | Old-Profile                                                                                                        |
@@ -194,7 +194,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField |
       | Phase Config:General  | Available for Profiles | <New-Profile> | RecipientHome      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Home" phase
     Examples:
       | New-Profile                                                                                                        | Old-Profile                                                                                                        |
@@ -269,7 +269,7 @@ Business Need: Phase Config Component Scenarios
   @333648 @333651
   Scenario: Phase name- SPI- UI- Verify phase name displayed correctly on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Home" phase
     Then I see "Opportunities" phase
     Then I see "Applications" phase
@@ -280,7 +280,7 @@ Business Need: Phase Config Component Scenarios
   @333606
   Scenario: Sidebar Links - SPI- UI- Verify ‘Useful Links’ is visible.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see option "Useful Links" on left panel
 
@@ -392,7 +392,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue               | coreComponentField |
       | Phase Config:General  | Tab Icon Css | govgrants_config:TabIconCss | RecipientHome      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see book icon as "Home" tab
 
   @333556 @333560
@@ -492,7 +492,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue          | coreComponentField     |
       | Phase Config:General  | Tab Display Label | AutomationTestingPhase | RecipientAnnouncements |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "AutomationTestingPhase" phase
 
   @333570
@@ -504,7 +504,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField     |
       | Phase Config:General  | Tab Display Label | 01234567891   | RecipientAnnouncements |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "01234567891" phase
 
   @34484    @validatePhaseSequence-gplanning
@@ -564,7 +564,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue                                 | coreComponentField    |
       | Phase Config:General  | Body Top Page URL | /apex/GNT__ChartsView?t=RecipientApplications | RecipientApplications |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I charts are displayed at "Top"
 
@@ -577,7 +577,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                 | coreComponentField    |
       | Phase Config:General  | Body Bottom Page URL | /apex/GNT__ChartsView?t=RecipientApplications | RecipientApplications |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I charts are displayed at "Bottom"
 
@@ -590,7 +590,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
       | Phase Config:General  | Body Flex Table |               | RecipientAwards    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "New" button inside "Grants - Active" flex table not displayed
 
@@ -775,6 +775,6 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField     |
       | Phase Config:General  | Total Charts Allowed | 1             | RecipientAnnouncements |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     Then I see "1" charts are displayed

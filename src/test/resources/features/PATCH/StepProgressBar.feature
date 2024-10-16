@@ -406,7 +406,7 @@ Business Need: Step Progress Bar Component Scenarios
   @201459 @382795 @382799 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -424,7 +424,7 @@ Business Need: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | IsCreated | true          | External Application Progress Bar | Name                      | Created                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application Program For Announcement Testing"

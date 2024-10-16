@@ -7,7 +7,7 @@ Business Need: security review Scenarios
   @HomePhaseStabilitySPI
   Scenario: Classic UI/UX org home phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -34,7 +34,7 @@ Business Need: security review Scenarios
   @OpportunitiesPhaseStabilitySPI
   Scenario:Classic UI/UX org opportunity phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
@@ -57,7 +57,7 @@ Business Need: security review Scenarios
   @ApplicationsPhaseStabilitySPI
   Scenario: Classic UI/UX org applications phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "Application Tasks" subheader on left panel
@@ -84,7 +84,7 @@ Business Need: security review Scenarios
   @GrantsPhaseStabilitySPI
   Scenario: Classic UI/UX org grants phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -103,7 +103,7 @@ Business Need: security review Scenarios
   @MonitoringPhaseStabilitySPI
   Scenario: Classic UI/UX org monitoring phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -135,7 +135,7 @@ Business Need: security review Scenarios
   @CloseoutPhaseStabilitySPI
   Scenario: Classic UI/UX org closeout phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Closeout" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -150,7 +150,7 @@ Business Need: security review Scenarios
   @AnalyticsPhaseStabilitySPI
   Scenario:  Classic UI/UX org analytics phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Analytics" tab
     Then I see Global search on sidebar left side of page
     And I navigate to "View Dashboards" content inside "Dashboards" subheader on left panel
@@ -163,7 +163,7 @@ Business Need: security review Scenarios
   @CollabPhaseStabilitySPI
   Scenario:Classic UI/UX org collab phase stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     Then I see "Hello @Automation PM" inside flex table with id "---SPI-TableIDs:-:CollabCommentTableId---"
@@ -171,7 +171,7 @@ Business Need: security review Scenarios
   @ApplicationRecordStabilitySPI
   Scenario:Classic UI/UX org application level record stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -207,7 +207,7 @@ Business Need: security review Scenarios
   @GrantRecordStabilitySPI
   Scenario:Classic UI/UX org grant level record stability
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Grant for Automation"

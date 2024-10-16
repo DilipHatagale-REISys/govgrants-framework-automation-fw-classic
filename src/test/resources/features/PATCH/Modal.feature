@@ -42,7 +42,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 800              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Application Program For Announcement Testing"
@@ -89,7 +89,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 1000             | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Application Program For Announcement Testing"
@@ -587,7 +587,7 @@ Business Need: Modal Component Scenarios
   @382312 @SanityPATCH  @SanityPATCHModal
   Scenario: Sanity Testing- Modal- Page Block Detail- SPI- To verify all type of data type fields are getting rendered in the page block details.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     When I perform quick search for "SC-623375"

@@ -66,7 +66,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @109612    @verifyThatPageContentDisplayedProperlyByLoggedInAsSPIUserAndClickOnDownloadedPDFFromPageLayout
   Scenario: validate if logged in as SPI user and downloaded PDF from page layout then page content displayed in pdf file
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -85,7 +85,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | RecipientAwards    | GNT__PageBlockTitle__c    | Focus Areas                |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Activities" subheader on left panel
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
@@ -104,7 +104,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Activities" subheader on left panel
     When I click on "View" icon for "AD-REI-01" inside table
@@ -117,7 +117,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @test @109384    @verifyThatByLoginAsSPIUserFlexTableDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user flex table grid displayed inside downloaded pdf
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
@@ -128,7 +128,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @test @109387    @verifyThatByLoginAsSPIUserFlexTableEnhancedDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user flex table enhanced displayed inside downloaded pdf
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -142,7 +142,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @test @109385    @verifyThatByLoginAsSPIUserFlexGridEnhancedAtRecordLevelDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user flex grid enhanced at record level is displayed inside downloaded pdf
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -156,7 +156,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @test @109673    @verifyThatByLoginAsSPIUserFlexTableEnhancedDisplayedInsideDownloadedXLS
   Scenario: validate by logged in as SPI user flex table enhanced displayed inside downloaded XLS
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -169,7 +169,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @test @doubt @109766    @verifyThatByLoginAsSPIUserFlexTableDisplayedInsideDownloadedCSV
   Scenario: validate by logged in as SPI user flex table displayed inside downloaded csv
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
@@ -266,7 +266,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | RecipientAwards    | GNT__PageBlockTitle__c    | Focus Areas                |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Activities" subheader on left panel
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
@@ -284,7 +284,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Awards             | GNT__PageBlockTitle__c    | Site Visit Requirements    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Activities" subheader on left panel
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
@@ -2793,7 +2793,7 @@ Business Need: All pdf and xls related scenario including component and complete
   @113190 @validateThatSPIUserCanDownloadFormDataTablePDFAtApplicationPhase
   Scenario: Verify that SPI user can download form data table pdf at application phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Automation Internal Program for flow"
     When I click on "View" icon for "Automation Internal Program for flow" inside table

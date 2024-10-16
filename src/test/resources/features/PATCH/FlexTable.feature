@@ -42,7 +42,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -89,7 +89,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "Entries" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -136,7 +136,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -184,7 +184,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "Total Records" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -234,7 +234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index          | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -304,7 +304,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335007
   Scenario: Flex table-Default page size-SPI-UI-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -350,7 +350,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 20            | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -391,7 +391,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "#" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -432,7 +432,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -473,7 +473,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "5" with page size dropdown at "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "#" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -528,7 +528,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination       | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     #Then I see "1" to "10" indexing inside table id "---program:-:GrantsListFlexTableId---"
@@ -585,7 +585,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -638,7 +638,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -685,7 +685,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | Left          | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -732,7 +732,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | Right         | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -782,7 +782,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | none          | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -838,7 +838,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | GrantsList         | Name                      |                            |
       | Flex Table:General    | Disable Menu      | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "Menu" action is displayed at the "---program:-:grantsFlexTableIdForSPIuser---" modal
 
@@ -891,7 +891,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 10            | GrantsList         | Name                      |                            |
       | Flex Table:General    | Disable Menu      | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Menu" action is displayed at the "---program:-:grantsFlexTableIdForSPIuser---" modal
 
@@ -925,7 +925,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335128
   Scenario: Flex table-Page size-SPI-UI-To verify that user is able to change page size by clicking on Show Entries block
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "10"
     Then I see table contains "Showing 1 to 10" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -967,7 +967,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335134
   Scenario: Flex table-Page size-SPI-UI-To verify that different page sizes are available in Show Entries block
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "5"
     Then I see table contains "Showing 1 to" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -995,7 +995,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335148
   Scenario: Flex table-Page size-SPI-UI-To verify that on selecting All page size, all available records displayed on a page
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     Then I see table contains "Showing 1 to 7 of 7 records" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -1021,7 +1021,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335154
   Scenario: Flex table-Page size-SPI-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of"
@@ -1047,7 +1047,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335163
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     Then I see user on "Last" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
@@ -1073,7 +1073,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335180
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "First"
     Then I see user on "First" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
@@ -1101,7 +1101,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335212
   Scenario: Flex table-Page Size-SPI-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 1 of 17"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -1126,7 +1126,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334654
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on enabling Quick search, it displayed on top of the flex table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -1185,7 +1185,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | false         | Programs           | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -1198,7 +1198,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -1222,7 +1222,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334661 @382399 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
@@ -1836,7 +1836,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334712
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering whole data of respective field
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
@@ -1861,7 +1861,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334715
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering keyword
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "security" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -1885,7 +1885,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334724
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "release" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -1909,7 +1909,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334728
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only digits
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -1933,7 +1933,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334734
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering alphanumeric values
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "T09" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -1958,7 +1958,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334739
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering characters or digits with sp. characters.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -1982,7 +1982,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334742
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for reference fields
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "04/28/2022" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2042,7 +2042,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as PDF" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2056,7 +2056,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338444
   Scenario: Refresh- SPI- UI- Verify if flex table is getting refreshed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Refresh" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2081,7 +2081,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338451
   Scenario: Refresh- SPI- UI- Verify Refresh option is getting displayed under menu
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Refresh" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2118,7 +2118,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338461
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     When I click on "Form Control-Number of Entries" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "6" options are available under Show Entries dropdown inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2156,7 +2156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -2193,7 +2193,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -2234,7 +2234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -2271,7 +2271,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
@@ -2311,7 +2311,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Pagination | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
@@ -2356,7 +2356,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -2395,7 +2395,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "1" to "7" Record Selection inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -2453,7 +2453,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2509,7 +2509,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2537,7 +2537,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2565,7 +2565,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2643,7 +2643,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2659,7 +2659,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2816,7 +2816,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export | none          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2864,7 +2864,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2884,7 +2884,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2903,7 +2903,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -2921,7 +2921,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export    | Status__c     | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3010,7 +3010,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export | Status__c     | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3030,7 +3030,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export    | Status__c     | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3120,7 +3120,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3138,7 +3138,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Export (PDF)       | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3190,7 +3190,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Export (PDF)       | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -3236,7 +3236,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I hovering mouse on help text "GrantsListtooltip" icon
     Then I see "Help text for Automation" shown as help text
@@ -3252,7 +3252,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Help      | false                    | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I do not see "Help" option is getting displayed under Menu in table "---program:-:grantsFlexTableIdForSPIuser---"
@@ -3268,7 +3268,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Help      | true                     | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Help" option is getting displayed under Menu in table "---program:-:grantsFlexTableIdForSPIuser---"
@@ -3394,7 +3394,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @336173
   Scenario:Flex table-SPI-UI-To verify that user is able to view rendered flex table on phase level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see flex table with id "toggleFlexTablepopupflextable" is displayed
 
@@ -3424,7 +3424,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Page layout - Page block
   Smoke TC - SPI - To verify that flex table should rendered properly on page layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "Automation Direct Grant"
     When I click on "View" icon for "Automation Direct Grant" inside table
@@ -3452,7 +3452,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @336186
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Sidebar
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Application Desk Reviews" content inside "Applications" subheader on left panel
     Then I see flex table with id "toggleFlexTableApplicationsSiteVisitReportsGrid" is displayed
@@ -3558,7 +3558,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index          | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     And I save the total record from flex table id "---program:-:grantsFlexTableIdForSPIuser---" as "totalPageCount"
@@ -3633,7 +3633,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
@@ -3646,7 +3646,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
@@ -3703,7 +3703,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     And I click on "Column Name" after click advance filter
@@ -3775,7 +3775,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     And I click on "Column Name" and select "EGMS ID"
@@ -3833,7 +3833,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -3889,7 +3889,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -3951,7 +3951,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -4021,7 +4021,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -4088,7 +4088,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -4539,7 +4539,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -4581,7 +4581,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see select check box enabled in flex table
 
@@ -4620,7 +4620,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -4675,7 +4675,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
 #      | Flex Table:General    | Record Selection Column Position | Left          | GrantsList         | Name                      |            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -4728,7 +4728,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Record Selection    | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -4781,7 +4781,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -4837,7 +4837,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
     When I perform quick search for "Automation"
@@ -4894,7 +4894,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     When I enter advance filter values in table id "advfGrantsList"
@@ -4950,7 +4950,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
@@ -5005,7 +5005,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
@@ -5061,7 +5061,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
@@ -5114,7 +5114,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
@@ -5168,7 +5168,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
@@ -5219,7 +5219,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
 
@@ -5348,7 +5348,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Pagination       | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "1" to "5" Record Selection inside table id "toggleFlexTableGrantsList"
     Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
@@ -5402,7 +5402,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
 
@@ -5488,7 +5488,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @336067
   Scenario: Flex table-Header-SPI-UI-To verify that text entered in Header field, displayed as a Header on flex table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see Header field "Grants - Active" displayed as a Header on flex table
 
@@ -5582,7 +5582,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 5                        | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Help Text  | Help text for Automation | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I hovering mouse on help text "GrantsListtooltip" icon
     And I pause execution for "5" seconds
@@ -5627,7 +5627,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Help Text  |               | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "fa fa-info helpIcon" displayed on flex table
 
@@ -5678,7 +5678,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size | 5                                           | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Help Text  | Help text for Automation@1234567890!@#$%^&* | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I hovering mouse on help text "GrantsListtooltip" icon
     And I pause execution for "5" seconds
@@ -5727,7 +5727,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size  | 5                      | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction | Automation Header Text | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -5777,7 +5777,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size  | 5             | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction |               | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -5824,7 +5824,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Default Page Size  | 5                                   | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -5889,7 +5889,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -5968,7 +5968,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -6049,7 +6049,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -6114,7 +6114,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Header Instruction  |                | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "Application Due Date" in flex table header "toggleFlexTablepopupflextable"
 
@@ -6165,7 +6165,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -6226,7 +6226,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -6298,7 +6298,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      | ASC            | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "up" arrow is Displayed inside "Status" field
     Examples:
@@ -6392,7 +6392,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            |                | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "up" arrow is Displayed inside "Status" field
     Then I do not see "down" arrow is Displayed inside "Status" field
@@ -6461,7 +6461,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | ProjectTitle__c,Status__c | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      | ASC                       | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "up" arrow is Displayed inside "Status" field
     Then I see "up" arrow is Displayed inside "Grant Title" field
@@ -6528,7 +6528,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "up" arrow is Displayed inside "Status" field
     Examples:
@@ -6594,7 +6594,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      | DESC           | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "down" arrow is Displayed inside "Status" field
     Examples:
@@ -6660,7 +6660,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "up" arrow is Displayed inside "Status" field
     Examples:
@@ -6718,7 +6718,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
 
@@ -6771,7 +6771,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
 
@@ -6829,7 +6829,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
     Then I do not see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
@@ -6898,7 +6898,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see list view "1234567890" displayed inside table "toggleFlexTableGrantsList"
@@ -6975,7 +6975,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
@@ -7055,7 +7055,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
@@ -7135,7 +7135,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
@@ -7204,7 +7204,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
@@ -7273,7 +7273,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Pending"
     Then I softly see value "Draft" for title "Status" inside table "toggleFlexTableGrantsList"
@@ -7344,7 +7344,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Pending"
     Then I softly see value "Draft" for title "Status" inside table "toggleFlexTableGrantsList"
@@ -7414,7 +7414,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see error message contains text "Error creating table:unexpected token" if wrong or invalid filter clause provide
     Examples:
@@ -7482,7 +7482,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see default list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
     Examples:
@@ -7553,7 +7553,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see default list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
     Examples:
@@ -7621,7 +7621,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Is Master View | false          | GrantsList         | Name                      | FLV-3449                   |
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see default list view "Grants - Closed" displayed inside table "toggleFlexTableGrantsList"
     Examples:
@@ -7688,7 +7688,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3450                   |
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see default list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
     Examples:
@@ -7748,7 +7748,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #      | Flex Table List       | Sequence  | 4             | GrantsList         | Name                      | FLV-3346                   |
 #      | Flex Table List       | Sequence  | 5             | GrantsList         | Name                      | FLV-3449                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
     Then I see added list index "1" is "Grants - All" displayed in provided sequence
@@ -7829,7 +7829,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
@@ -7913,7 +7913,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Show in PDF    | true           | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Pending"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
@@ -7992,7 +7992,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Pending"
     Then I see default list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
@@ -8077,7 +8077,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
@@ -8171,7 +8171,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Show in PDF               | false          | GrantsList         | Name                      | FLV-3451                   |
       | Flex Table:General    | Enable Export (XLS / CSV) | true           | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
@@ -8212,7 +8212,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @333962
   Scenario: Flex table-Actions-SPI-UI-To verify that actions rendered on flex table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     Then I see "Actions" rendered on flex table
@@ -8252,7 +8252,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Name | Test Automation | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "Test Automation" as title for Actions inside flex table action
@@ -8295,7 +8295,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | IconCssTest   | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "IconCssTest" as title for Actions inside flex table action
@@ -8338,7 +8338,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  |               | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "View" itself get displayed on UI
@@ -8381,7 +8381,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "View" itself get displayed on UI
@@ -8436,7 +8436,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Sequence  | 1                                              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
@@ -8491,7 +8491,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Sequence  | 0                                              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
@@ -8541,7 +8541,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Button Help Text | Test Button Help Text                          | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I hovering mouse on action "Test Button Help Text" inside flex table
@@ -8588,7 +8588,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "View" itself get displayed on UI
@@ -8652,7 +8652,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Button Help Text | Test1234                                       | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "Test1234" itself get displayed on UI
@@ -8698,7 +8698,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Button Help Text | 1234567890                                     | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "1234567890" itself get displayed on UI
@@ -8744,7 +8744,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see action name "!@#$%%%^&*()" itself get displayed on UI
@@ -8806,7 +8806,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -8870,7 +8870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -8938,7 +8938,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -9009,7 +9009,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9087,7 +9087,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9171,7 +9171,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9261,7 +9261,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior   | Open in same window                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9337,7 +9337,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior   | Open in new window                             | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9407,7 +9407,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | Open in overlay                                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9477,7 +9477,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | Open in inline mode                            | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9547,7 +9547,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior  | none                                           | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -9615,7 +9615,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" button inside "Grants - All" flex table
@@ -9689,7 +9689,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "security Review_Application"
@@ -9750,7 +9750,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Location   | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "security Review_Application"
@@ -9813,7 +9813,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | None                | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I click on "Menu" button inside table id "toggleFlexTableGrantsList"
@@ -9876,7 +9876,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Menu                | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I click on "Menu" button inside table id "toggleFlexTableGrantsList"
@@ -9943,7 +9943,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" button inside "Grants - All" flex table
@@ -10009,7 +10009,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Link                | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" button inside "Grants - All" flex table
@@ -10083,7 +10083,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "security Review_Application"
@@ -10164,7 +10164,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | None                | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "security Review_Application"
@@ -10247,7 +10247,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -10316,7 +10316,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Display Area               | Sidebar                                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
 
@@ -10383,7 +10383,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Display Area               | Page Header                                    | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
 
@@ -10450,7 +10450,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Display Area               | Both                                           | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
 
@@ -10516,7 +10516,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
 #            | Flex Table Action     | Display Area               | None                                           | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
 
@@ -10587,7 +10587,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior       | Open in same window           | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -10659,7 +10659,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Show Confirmation Box | false                         | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -10733,7 +10733,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action Behavior       | Open in same window           | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -10805,7 +10805,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -10882,7 +10882,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Behavior       | Open in same window       | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -10952,7 +10952,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Confirmation Message  |                           | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11039,7 +11039,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | SameWindow                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | 50                        | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11126,7 +11126,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | Modal               | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11213,7 +11213,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11300,7 +11300,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11387,7 +11387,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | -1                  | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11474,7 +11474,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11561,7 +11561,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width           | -60                 | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11655,7 +11655,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title           | Test View           | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11748,7 +11748,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title           | Test1234            | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11841,7 +11841,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title           | 1234567890          | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -11934,7 +11934,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title           | Test!@#$%^&*()_+    | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -12027,7 +12027,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     And I click on "View" icon in flex table for first draft record
@@ -12168,7 +12168,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL  | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
@@ -12259,7 +12259,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action URL  | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -12351,7 +12351,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Sequence    | 1                   | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for Application For Announcement Testing
@@ -12412,7 +12412,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Help Text           | Hello Automation | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I hovering mouse on help text icon i inside column name "Subaward Amount" flex table
     Then I see "Hello Automation" shown as help text
@@ -12457,7 +12457,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override | Automation Test | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Automation Test" in flex table header "toggleFlexTableGrantsList"
     Examples:
@@ -12498,7 +12498,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "Total Awarded Amount" in flex table header "toggleFlexTableGrantsList"
     Examples:
@@ -12536,7 +12536,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
@@ -12572,7 +12572,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
@@ -12717,7 +12717,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
@@ -12753,7 +12753,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
@@ -12789,7 +12789,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -12829,7 +12829,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -12869,7 +12869,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -12910,7 +12910,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header             | Messages        | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -12956,7 +12956,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction |                      | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -13000,7 +13000,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header           | Messages      | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Help Text | 12345678980   | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -13044,7 +13044,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header           | Messages         | CommunicationHistory | Name                      |                            |
       | Flex Table:General    | Header Help Text | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for Application For Announcement Testing
@@ -13336,7 +13336,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see header "EGMS ID" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "1" order
     Then I see header "Grant Title" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "2" order
@@ -13394,7 +13394,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
       | Flex Table:General    | Order By            |                | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I do not see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
     Examples:
@@ -13452,7 +13452,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Order By            |                | GrantsList         |                           |                            |
       | Flex Table:General    | Sort Direction      | ASC            | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
     Examples:
@@ -13509,7 +13509,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
       | Flex Table:General    | Sort Direction      | DESC           | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "down" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
     Examples:
@@ -13566,7 +13566,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
       | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
     Examples:
@@ -13643,7 +13643,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
       | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     And I click on "Column Name" after click advance filter
@@ -13702,7 +13702,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     |                | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     And I click on "Column Name" after click advance filter
@@ -13754,7 +13754,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     When I enter advance filter values in table id "advfGrantsList"
@@ -13802,7 +13802,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     When I enter advance filter values in table id "advfGrantsList"
@@ -13850,7 +13850,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     When I enter advance filter values in table id "advfGrantsList"
@@ -13898,7 +13898,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
     When I enter advance filter values in table id "advfGrantsList"
@@ -13923,7 +13923,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Description" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -13952,7 +13952,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Project Period Start Date" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -13980,7 +13980,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
       | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     Then I see "Grant Monitor" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Owner Name" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -14053,7 +14053,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
@@ -14102,7 +14102,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
     Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
@@ -14245,7 +14245,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | false         | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     Then I do not see "Upload" button inside "Grants - Active" flex table
@@ -14272,7 +14272,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @336256
   Scenario: Quick Search - SPI - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "Hello Negative testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -14306,7 +14306,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Quick Search - SPI - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
   Quick Search - SPI - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I quick search "2020/09/16/" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
@@ -14438,7 +14438,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Skip Fields For Export    | none          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
@@ -14488,7 +14488,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I enter advance filter values in table id "advfpopupflextable"
@@ -14723,7 +14723,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
       | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "up" arrow is Displayed inside "Status" field
     Examples:
@@ -14773,7 +14773,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "1" to "5" indexing inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -14834,7 +14834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
       | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
@@ -14881,7 +14881,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
       | Flex Table List       | Help Text           |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see helpIcon displayed beside "Subaward Amount" respective field or column
     Examples:
@@ -14919,7 +14919,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -14958,7 +14958,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table List       | Hide Column JSON     | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -14998,7 +14998,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table List       | Hide Cell JSON       | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15038,7 +15038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override  | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table List       | Read Only Column JSON | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15078,7 +15078,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table List       | Read Only Cell JSON  | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15116,7 +15116,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15154,7 +15154,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15192,7 +15192,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15234,7 +15234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
       | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -15667,7 +15667,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
     When I enter advance filter values in table id "advfpopupflextable"
@@ -15788,7 +15788,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -15829,7 +15829,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
@@ -15941,7 +15941,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
     When I enter advance filter values in table id "advfpopupflextable"
@@ -18298,7 +18298,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217335 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdSPIuser
   Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I enter advance filter values inside id "advfApplications"
@@ -18999,7 +18999,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217242 @ToVerifyNoRecordsFoundDisplyedInFlexTableforspiuser
   Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Heloo"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
@@ -19025,7 +19025,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217245 @ToVerifyNotRecordFoundInsideTableForSPIuser
   Scenario:  To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "100.10,00"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
@@ -19042,7 +19042,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217274 @ToVerifyNotRecordFoundInsideTableForSPIuser(DateFormat)
   Scenario: To verify that when user entered Date in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "2020/09/16/"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
@@ -19068,7 +19068,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217277 @ToVerifyNotRecordFoundInsideTableForSPIuser(EGMDID)
   Scenario: To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
@@ -19137,7 +19137,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-2877                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see "EGMS ID" shown as flex table column title
 
@@ -19360,7 +19360,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217215 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI
   Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I do not see "Upload" button is displayed
 
@@ -19453,7 +19453,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramsgridTableId---"
 
@@ -19502,7 +19502,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
@@ -19525,7 +19525,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217417 @SortDirection
   Scenario:  To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see grouped row value is in "Ascending" order
 
@@ -19549,7 +19549,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217420 @FilterCriteria
   Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I softly see value "Converted to Award" for title "Status" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
@@ -19565,7 +19565,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
@@ -19638,7 +19638,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see "EGMS ID" in flex table header "---program:-:programTableDivId---"
 
@@ -19679,7 +19679,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-2877                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     And I pause execution for "8" seconds
     Then I see "EGMS ID" in flex table header "---program:-:programTableDivId---"
@@ -19710,7 +19710,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | EnhanceAppGrantorBudgetPeriods | Budget Period             | FTC-11516                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "AP-T09-002"
     When I click on "View" icon for "AP-T09-002" inside table
@@ -19728,7 +19728,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @217288 @Toverifydisabling'EnableHelp'HelpfeaturenotgedisplayedunderMenusectionforrespectiveflextable.
   Scenario: SPI-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTablepopupflextable"
     Then I do not see "Help" options inside "Applications - Submitted" enabled
@@ -19755,7 +19755,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I pause execution for "5" seconds
     Then I do not see select check box enabled in flex table
@@ -19857,7 +19857,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "#" shown inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
@@ -19891,7 +19891,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @382208 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Sanity TC - SPI - To verify that all top level actions are displayed on top of the parent table, which have been configured
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -19902,7 +19902,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @382211p @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -19915,7 +19915,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @382216 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -19929,7 +19929,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @382240p @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -19939,7 +19939,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @382261 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -19955,7 +19955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | false         | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
