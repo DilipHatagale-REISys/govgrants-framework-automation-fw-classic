@@ -12407,7 +12407,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
+    When I click on "Save" in the page details
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see "quick-search" is displayed on table id "---program:-:associateProgramContactsTableId---"
     Examples:
