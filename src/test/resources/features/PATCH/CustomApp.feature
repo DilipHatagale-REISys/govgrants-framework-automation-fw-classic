@@ -296,7 +296,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | Grants Portal | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I click CustomApp select dropdown
     Then I see "Grants Portal" inside CustomApp dropDown
 
@@ -309,7 +309,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 1             | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I click CustomApp select dropdown
     Then I see "Grants Portal" option of custom App is at position "1"
 
@@ -322,7 +322,7 @@ Business Need: customApp Component Scenarios
 #      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
 #      | Custom App Config:General | Abbreviation | RPT           | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I click CustomApp select dropdown
     Then I see "Grants Portal" inside CustomApp dropDown
 
@@ -335,7 +335,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
@@ -351,7 +351,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
       | Custom App Config:General | Default Theme Name |               | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I setup my app as "Grants Portal"
     Then I see "ColorContrast_Recipient" on complete page for custom App as a Grantor
 
@@ -364,7 +364,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName              | fieldNewValue | coreComponentField |
       | Custom App Config:General | Available For Profiles | <New-Profile> | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I click CustomApp select dropdown
     Then I see "Grants Portal" inside CustomApp dropDown
 
@@ -381,7 +381,7 @@ Business Need: customApp Component Scenarios
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | Grants Portal | Recipient          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I setup my app as "Grants Portal"
     Then I see govgrants logo "Current App logo" is displayed with name "Grants Portal"
 

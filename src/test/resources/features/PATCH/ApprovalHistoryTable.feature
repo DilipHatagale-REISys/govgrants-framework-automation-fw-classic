@@ -216,7 +216,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel

@@ -6,7 +6,7 @@ Business Need: Library Files Component Scenarios
   @70260 @validateThatAccessGivenLibraryShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -15,7 +15,7 @@ Business Need: Library Files Component Scenarios
   @70261 @validateThatAccessGivenFolderShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given folder is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -25,7 +25,7 @@ Business Need: Library Files Component Scenarios
   @70262 @validateThatAccessGivenFileShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given file is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -36,7 +36,7 @@ Business Need: Library Files Component Scenarios
   @70263 @validateThatDownloadDropdownOptionIsDisplayedAtFileForViewerProfileHomePhase
   Scenario: Verify that Dropdown Option as Download is Displayed at File under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1101,7 +1101,7 @@ Business Need: Library Files Component Scenarios
   @70437 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForViewerProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1441,7 +1441,7 @@ Business Need: Library Files Component Scenarios
   @81243 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForSPIProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at library under home phase for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1451,7 +1451,7 @@ Business Need: Library Files Component Scenarios
   @81309 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtFolderForSPIProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at folder under home phase library for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1468,7 +1468,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1483,7 +1483,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -1499,7 +1499,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label                       | booleanValue | customMetaDataApiName    |
       | m031C000000XZWkQAO | DisableUploadFromLibraryTab | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -1568,7 +1568,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -1585,7 +1585,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
@@ -2044,7 +2044,7 @@ Business Need: Library Files Component Scenarios
       | id                 | customMetaDataFullName | booleanValue | customSettingApiName |
       | m031C000000XZY7QAO | ShowSharingPrivacy     | false        | KeyValueHolder__mdt  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -2519,7 +2519,7 @@ Business Need: Library Files Component Scenarios
   @118594 @validateThatErrorMessageIsNotDisplayedInsideSelectChangeFolderAtAddFileModal-ApplicationPhaseRecordLevel @wip @functionalityDeprecated
   Scenario: Verify that error message should not displayed at selectChange folder modal at file uploaded from record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3291,7 +3291,7 @@ Business Need: Library Files Component Scenarios
   @122494 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3340,7 +3340,7 @@ Business Need: Library Files Component Scenarios
   @122495 @validateThatFileEditedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file edited by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3490,7 +3490,7 @@ Business Need: Library Files Component Scenarios
   @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @wip @functionalityDeprecated
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4375,7 +4375,7 @@ Business Need: Library Files Component Scenarios
   @136660 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel @needToUpdate
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4386,7 +4386,7 @@ Business Need: Library Files Component Scenarios
   @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed at edit file for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4694,7 +4694,7 @@ Business Need: Library Files Component Scenarios
   @155500 @validateThatShowOptionsSectionIsDisplayedAtFileUploadModalForExternalUserCollabTab-RecordLevel
   Scenario: Verify that show visibility options is displayed at add/upload file modal for EXTERNAL user at collab tab - Record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4706,7 +4706,7 @@ Business Need: Library Files Component Scenarios
   @155840 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromFilesLibraryTab-HomePhase
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from files library tab
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -4718,7 +4718,7 @@ Business Need: Library Files Component Scenarios
   @148277 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromAttachmentTab-RecordLevel
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from attachment tab - record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4955,7 +4955,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName                  | fieldNewValue                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | Other; Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Collab                     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5243,7 +5243,7 @@ Business Need: Library Files Component Scenarios
   @157843 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationSPIUser
   Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5287,7 +5287,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName                  | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Application Files          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5460,7 +5460,7 @@ Business Need: Library Files Component Scenarios
   @160806 @validateThatSPIUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from record level if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5483,7 +5483,7 @@ Business Need: Library Files Component Scenarios
   @160817 @validateThatSPIUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from Home- files library if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -5506,7 +5506,7 @@ Business Need: Library Files Component Scenarios
   @160828 @validateThatSPIUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from Home- files list if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
@@ -5579,7 +5579,7 @@ Business Need: Library Files Component Scenarios
   @157844 @validateThatUploadFileButtonIsActiveEvenIfVisibilityOptionIsDisabledForSPIUser
   Scenario: Verify that Upload button is active even if visibility option is disabled for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"

@@ -55,7 +55,7 @@ Business Need: Calender Config Component Scenarios
   @127051    @verifyByClickOnMonthButtonAtCalendarItIsRenderingInMonthFormatForSPIUser
   Scenario: validate that calender is displayed in month format if user click on 'Month' button at calendar for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     Then I see calender displayed in "Month" format
@@ -63,7 +63,7 @@ Business Need: Calender Config Component Scenarios
   @127054    @verifyByClickOnWeekButtonAtCalendarItIsRenderingInWeekFormatForSPIUser
   Scenario: validate that calender is displayed in Week format if user click on 'Week' button at calendar for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Week" Button at calendar
@@ -72,7 +72,7 @@ Business Need: Calender Config Component Scenarios
   @127056    @verifyByClickOnDayButtonAtCalendarItIsRenderingInDayFormatForSPIUser
   Scenario: validate that calender is displayed in Day format if user click on 'Day' button at calendar for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Day" Button at calendar
@@ -138,7 +138,7 @@ Business Need: Calender Config Component Scenarios
     And I pause execution for "5" seconds
     And I save the field labeled "ID" as "AnnEGMSID"
     And I pause execution for "3" seconds
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
@@ -247,7 +247,7 @@ Business Need: Calender Config Component Scenarios
     And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
     When I click on "My_Workspace_Calendar"
@@ -304,7 +304,7 @@ Business Need: Calender Config Component Scenarios
   @127069 @verifyByClickOnTodayButtonToday'sDateDisplayedInsideCalendarWithLightPinkBackgroundColorForSPIUser
   Scenario: validate that by click on 'Today' button at calendar, today's date displayed with light pink background color for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
@@ -854,7 +854,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory   | fieldName   | fieldNewValue                                             | coreComponentField   | CoreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtGrantorCalendarConfig | Recipient_Home_Grant |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Grants - All"
@@ -879,7 +879,7 @@ Business Need: Calender Config Component Scenarios
       | Calender Config:General | Date Fields | govgrants_config:NewDateFieldsJsonAtGrantorCalendarConfig | Recipient_Home_Grant |
       | Calender Config:General | Color Code  | #FFFFFF                                                   | Recipient_Home_Grant |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Grants - All"
@@ -987,7 +987,7 @@ Business Need: Calender Config Component Scenarios
   @127059  @verifyByClickAtPreviousArrowPreviousMonthIsDisplayedInMonthWiseCalendarForSPIUser
   Scenario: validate by click at previous arrow, previous month is displayed in month wise calendar at spi user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
@@ -997,7 +997,7 @@ Business Need: Calender Config Component Scenarios
   @134965  @verifyByClickAtPreviousArrowNextMonthIsDisplayedInMonthWiseCalendarForSPIUser
   Scenario: validate by click at previous arrow, Next month is displayed in month wise calendar at spi user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar

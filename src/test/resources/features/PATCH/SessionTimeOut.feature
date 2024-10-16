@@ -162,7 +162,7 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description                           | name                |
       | false        | 3            | a0b1C00000M9ljEQAR | Value for session timeout in a minute | SessionTimeoutValue |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on "View" icon in flex table for first draft record
     When I pause execution for "180" seconds
@@ -208,7 +208,7 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -232,7 +232,7 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table

@@ -44,7 +44,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382881 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that Notes and Attachments tables should be render on page layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -77,7 +77,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382885 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that user able to see Add action on Notes table at top level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -109,7 +109,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382888 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that user able to see Add action on Attachments table at top level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -143,7 +143,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382891 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that on clicking Add action on Attachments table Add Attachments modal should be opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -178,7 +178,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382894 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that on clicking Add action on Notes table then Add Notes modal should be opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -213,7 +213,7 @@ Business Need: NotesandAttachments Component Scenarios
   @382910 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that user able to see Edit action on Notes and Attachments tables at row level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -248,7 +248,7 @@ Business Need: NotesandAttachments Component Scenarios
   @383436 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that user able to see Delete action on Notes and Attachments tables at row level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -283,7 +283,7 @@ Business Need: NotesandAttachments Component Scenarios
   @383452 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that user able to see View action on Notes table at row level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -333,7 +333,7 @@ Business Need: NotesandAttachments Component Scenarios
   @383769
   Scenario: Sanity TC - SPI - To verify that user able to see Download action on Attachments table at row level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"

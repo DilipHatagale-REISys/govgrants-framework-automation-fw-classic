@@ -37,7 +37,7 @@ Business Need: collab Component Scenarios
   |validate the pop-up appears by performing delete action at my feed section by SPI user at collab phase|
   |Sanity TC_PM_To verify that, user should be able to delete the shared post by clicking on delete action button.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation SPI collab phase Comment" in my feed section and share the post
     When I pause execution for "5" seconds
@@ -47,7 +47,7 @@ Business Need: collab Component Scenarios
   @104679    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtApplicationPhase
   Scenario: validate the pop-up appears by performing delete action at my feed section by SPI user at application phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
@@ -116,7 +116,7 @@ Business Need: collab Component Scenarios
   @104683    @verifyThatByClickOnDeleteCommentActionCommentDeletedByLoggedInAsSPIUserFromHomePhase
   Scenario: validate the delete action at comment section at my feed section by SPI user from home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
@@ -129,7 +129,7 @@ Business Need: collab Component Scenarios
   @104338    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsSPIUserAtApplicationPhase
   Scenario: validate text wrap and alignment at my feed section by SPI user at application phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
@@ -208,7 +208,7 @@ Business Need: collab Component Scenarios
   @111866    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtCollabTabByLoginAsSPIUser
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -324,14 +324,14 @@ Business Need: collab Component Scenarios
   @112202    @verifyThatSPIUserCanNotSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
   @112217    @verifyThatSPIUserCanNotSeeAllUsersOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
@@ -388,14 +388,14 @@ Business Need: collab Component Scenarios
   @115344    @verifyThatOnlyMyFeedSectionDisplayedToSPIUserAtHomePhase
   Scenario: validate that only my feed section is displayed to SPI user at home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu bar is not displayed at my feed
 
   @115347    @verifyThatByClickOnRefreshIconALoadingIconAppearsAtHomeLevelCollabByLoginAsSPIUser
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -446,7 +446,7 @@ Business Need: collab Component Scenarios
   @115528    @verifyGovGrantLogoIsDisplayedAtCollabPhaseByLoginAsSPIUser
   Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
 
@@ -492,7 +492,7 @@ Business Need: collab Component Scenarios
   @lmn @115346    @verifyBurgerMenuIconIsNotDisplayedAtExternalUserCollabMyFeedSection-HomePhase
   Scenario: validate that burger menu icon is not displayed at my feed section by login as external user - home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
@@ -925,7 +925,7 @@ Business Need: collab Component Scenarios
   @382130 @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_SPI_To verify that, logged in user name & email id should be visible on Collab phase.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see Username "Automation SPI" is displayed Collab phase
     Then I see emailid "automationspi@yopmail.com" is displayed Collab phase
@@ -967,7 +967,7 @@ Business Need: collab Component Scenarios
   @382136 @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_SPI_To verify that, all side bar links should be visible on Collab phase.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see side bar links "My Feeds" is displayed on collab phase
     Then I see side bar links "My Colleagues" is displayed on collab phase
@@ -1005,7 +1005,7 @@ Business Need: collab Component Scenarios
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'To me' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see "To Me" link on collab phase is displayed and clickable
 
@@ -1047,7 +1047,7 @@ Business Need: collab Component Scenarios
   |Sanity TC_SPI_To verify that, 'My Groups' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_SPI_To verify that, 'My Content' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see "My Colleagues" link on collab phase is displayed and clickable
     Then I see "My Groups" link on collab phase is displayed and clickable
@@ -1081,7 +1081,7 @@ Business Need: collab Component Scenarios
   |Sanity TC_SPI_To verify that, user should be able to enter comment, tag people and share post by click on 'Share' button.|
   |Sanity TC_SPI_To verify that, user should be able to reply for the comment added by self and another user by clicking on  'Comment' action link.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
     When I perform quick search for "Hello @Automation PM"
@@ -1118,7 +1118,7 @@ Business Need: collab Component Scenarios
   |Sanity TC_SPI_To verify that, user should be able to share link by adding link URL & name under link section|
   |Sanity TC_SPI_To verify that, user should be able to add file by clicking on 'Attach file' link while adding comments.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     When I click on "Link" inside My Feed
     And I enter value "https://www.Rei.com" inside "Link URL" in My Feed
@@ -1204,7 +1204,7 @@ Business Need: collab Component Scenarios
   @382453
   Scenario: Sanity TC_SPI_To verify that, user should be able to see user details (who like this comment) by clicking on like count.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Like button testing" in my feed section and share the post
     And I click on "Like" action at "Like button testing" comment inside my feed
@@ -1244,7 +1244,7 @@ Business Need: collab Component Scenarios
   @382458p @SanityPATCH @SanityPATCHCollab
   Scenario: Sanity TC_SPI_To verify that, user should be able to see date and time details for posted comments by user.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
@@ -1276,7 +1276,7 @@ Business Need: collab Component Scenarios
   @382503 @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to delete the comments posted by another user by clicking on '❌' (cross )icon.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Spi Comment" in my feed section and share the post
     And I click on "Delete" action at "Test Automation Spi Comment" comment inside my feed
@@ -1301,7 +1301,7 @@ Business Need: collab Component Scenarios
   @382507p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Colleagues" menu inside collab sidebar
     Then I see "Automation SPI" as user name and "jameshanknew@yopmail.com" as emailid
@@ -1330,7 +1330,7 @@ Business Need: collab Component Scenarios
   @382520p @SanityPATCH @SanityPATCHCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see the created groups along with member details on click of 'My groups' link
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Groups" menu inside collab sidebar
     Then I do not see group name "Test group Automation" with member details count "Members: 1"
@@ -1396,7 +1396,7 @@ Business Need: collab Component Scenarios
       | Flex Table:General    | Enable Page Size    | true          | WorkSpaceFiles     | Name                      |                            |
       | Flex Table:General    | Enable Auto Index   | true          | WorkSpaceFiles     | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I navigate to "My Content" menu inside collab sidebar
     Then I see "#" in flex table header "WorkSpaceFilesFlexToggle"
@@ -1439,7 +1439,7 @@ Business Need: collab Component Scenarios
   @218748 @218750
   Scenario: validate the delete action at comment section at my feed section by SPI user from home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
@@ -1452,7 +1452,7 @@ Business Need: collab Component Scenarios
   @218751 @218754
   Scenario: validate text wrap and alignment at my feed section by SPI user at application phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "View" icon in flex table for first draft record
@@ -1526,7 +1526,7 @@ Business Need: collab Component Scenarios
   @204659
   Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -1642,14 +1642,14 @@ Business Need: collab Component Scenarios
   @204678
   Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
   @204679
   Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
@@ -1705,14 +1705,14 @@ Business Need: collab Component Scenarios
   @208158
   Scenario: validate that only my feed section is displayed to SPI user at home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu bar is not displayed at my feed
 
   @208159
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -1762,7 +1762,7 @@ Business Need: collab Component Scenarios
   @208177
   Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
 
@@ -1786,7 +1786,7 @@ Business Need: collab Component Scenarios
   |My Feed - External user - To verify , user should be able to see comments liked by which user on my feed.|
   |My Feed - External user - To verify , user should be able to see comments posted by another user on my feed.|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test @Automation PM" in my feed section and share the post
@@ -1869,14 +1869,14 @@ Business Need: collab Component Scenarios
   @208181 @204598
   Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
   @208182
   Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 
@@ -1932,14 +1932,14 @@ Business Need: collab Component Scenarios
   @208191 @208192
   Scenario: validate that only my feed section is displayed to SPI user at home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu bar is not displayed at my feed
 
   @208193
   Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
@@ -1989,7 +1989,7 @@ Business Need: collab Component Scenarios
   @208201
   Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
 
@@ -2034,7 +2034,7 @@ Business Need: collab Component Scenarios
   @208427
   Scenario: validate that burger menu icon is not displayed at my feed section by login as external user - home phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see Menu Icon is not displayed at my feed section
 

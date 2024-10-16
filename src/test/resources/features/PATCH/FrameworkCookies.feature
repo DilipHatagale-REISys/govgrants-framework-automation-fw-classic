@@ -77,7 +77,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Page Size    | true          | MonitoringScheduleGrantor | Name                      |                            |
       | Flex Table:General    | Enable Auto Index   | true          | MonitoringScheduleGrantor | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "10"
@@ -159,7 +159,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -183,7 +183,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -208,7 +208,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -292,7 +292,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | ProgRecipientApplicationsrams | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -435,7 +435,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
     Then I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -579,7 +579,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -747,7 +747,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---" is "10"
@@ -798,7 +798,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---" is "20"
@@ -851,7 +851,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "50"
@@ -905,7 +905,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I select value inside table "---program:-:MonitoringScheduleGrantorTableId---" is "100"
@@ -957,7 +957,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -1127,7 +1127,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -1182,7 +1182,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see the text containing :
@@ -1234,7 +1234,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1289,7 +1289,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see the text containing :
@@ -1344,7 +1344,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     And I can see last page displayed in pagination inside "Applications"
@@ -1398,7 +1398,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see the text containing :
@@ -1450,7 +1450,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1505,7 +1505,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see the text containing :
@@ -1560,7 +1560,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -1619,7 +1619,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
@@ -1678,7 +1678,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
@@ -1737,7 +1737,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
@@ -1831,7 +1831,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
@@ -1890,7 +1890,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
@@ -1949,7 +1949,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
@@ -2011,7 +2011,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
     And I can see last page displayed in pagination inside "Applications"
@@ -2066,7 +2066,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Next"
@@ -2121,7 +2121,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -2178,7 +2178,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
@@ -2237,7 +2237,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     And I click on page navigation arrow "---program:-:MonitoringScheduleGrantorTableId---" for table id "Last"
@@ -2292,7 +2292,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -2344,7 +2344,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -2396,7 +2396,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -2447,7 +2447,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -2498,7 +2498,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Vrush Application"
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -4970,7 +4970,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Owner" column inside Internal Programs
@@ -5226,7 +5226,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "EGMS ID" column inside Internal Programs
@@ -6680,7 +6680,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Title" column inside Internal Programs
@@ -6706,7 +6706,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "Application Title" column inside Internal Programs
@@ -6732,7 +6732,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -6757,7 +6757,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -6782,7 +6782,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -6809,7 +6809,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -6834,7 +6834,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -6859,7 +6859,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -6884,7 +6884,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -6909,7 +6909,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
@@ -6936,7 +6936,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Test"
@@ -6964,7 +6964,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
@@ -6992,7 +6992,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
@@ -7017,7 +7017,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
@@ -7042,7 +7042,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application"
@@ -7069,7 +7069,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -7097,7 +7097,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -7125,7 +7125,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -7151,7 +7151,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -7177,7 +7177,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination | true          | RecipientApplications |                           |                            |
       | Flex Table:General    | Enable Page Size  | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -7207,7 +7207,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
@@ -7237,7 +7237,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
@@ -7266,7 +7266,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
@@ -7295,7 +7295,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:GrantsListTableId---" is "10"
@@ -7326,7 +7326,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
@@ -7357,7 +7357,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
@@ -7387,7 +7387,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General    | Enable Pagination   | true          | GrantsList         | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     And I click on "Grant Title" column inside Internal Programs
@@ -7678,7 +7678,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7705,7 +7705,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7733,7 +7733,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7760,7 +7760,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7788,7 +7788,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7816,7 +7816,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -7843,7 +7843,7 @@ Business Need: FrameworkCookies Component Scenarios
       | Flex Table:General                  | Enable Pagination | true          | ActiveGrantsGrid_1        |                           |                            |
       | Flex Table:General                  | Enable Page Size  | true          | ActiveGrantsGrid_1        |                           |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "fa fa-eye" icon in flex table for first draft record
@@ -8153,7 +8153,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282372 @282357
   Scenario: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -8174,7 +8174,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -8191,7 +8191,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282227 @282248 @282355
   Scenario: To verify when user changes pagination and clicks on clear session then pagination should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see the text containing :
@@ -8212,7 +8212,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282236 @282259
   Scenario:To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on "Application Title" column inside Internal Programs
@@ -8228,7 +8228,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282239 @282272 @282359
   Scenario: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I perform quick search for "Program For Application"
     #282272
@@ -8249,7 +8249,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
     When I see "All" with page size dropdown at "---program:-:toggleFlexTablepopupflextableTableId---"
@@ -8265,7 +8265,7 @@ Business Need: FrameworkCookies Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
@@ -8278,7 +8278,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282368
   Scenario: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -8293,7 +8293,7 @@ Business Need: FrameworkCookies Component Scenarios
   @282370
   Scenario: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (SPI)
     Given I am on "SUBPORTAL" portal
-    Given I login to "Grants Portal" app as "SPI" user
+    Given I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"

@@ -719,7 +719,7 @@ Business Need: Snapshot Config Component Scenarios
   @217469p @217463 @217199 @217457 @217473 @207366 @207362 @382796 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -759,7 +759,7 @@ Business Need: Snapshot Config Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -842,7 +842,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
@@ -969,7 +969,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
@@ -1095,7 +1095,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel

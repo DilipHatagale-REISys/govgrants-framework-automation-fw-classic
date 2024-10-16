@@ -61,7 +61,7 @@ Business Need: smoke testing features
   Smoke TC_SPI_To verify that user is able to see sidebar Global search on left side of page, on Monitoring phase
   Smoke TC_SPI_To verify that user is able to see sidebar Global search on left side of page, on Closeout phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Home" tab
     Then I see Global search on sidebar left side of page
@@ -205,7 +205,7 @@ Business Need: smoke testing features
   Smoke TC_SPI_To verify that user is able to see sidebar on left side of page, on Monitoring phase,
   Smoke TC_SPI_To verify that user is able to see sidebar on left side of page, on Closeout phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see sidebar left side of page
     And I navigate to "Opportunities" tab
@@ -253,7 +253,7 @@ Business Need: smoke testing features
   Scenario: Smoke TC - SPI - To verify that on clicking ‘send email’ button, Modal is getting opened.
   Smoke TC - SPI - To verify that on clicking ‘send email’ button, Modal is getting opened.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
@@ -286,7 +286,7 @@ Business Need: smoke testing features
   @382065
   Scenario: Smoke TC - SPI - To verify that Enhanced form table with sobject Form is getting rendered on page layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
@@ -364,7 +364,7 @@ Business Need: smoke testing features
   @382073 @382077
   Scenario: Smoke TC_ SPI_To verify that, my feed section is rendered properly on click of Collab phase.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     Then I see "My Feed" section is rendered properly on collab phase
     Then I see "Post" section is rendered properly on collab phase
@@ -387,7 +387,7 @@ Business Need: smoke testing features
   Scenario: Smoke TC_ SPI_To verify that, quick search is working properly on Collab phase,
   Smoke TC_ SPI_To verify that, Post section is working properly on Collab phase.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello SPI User" in my feed section and share the post
     When I perform quick search for "Hello SPI User"
