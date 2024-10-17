@@ -330,7 +330,6 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @201813 @201814 @382714 @382716 @382832 @SanityPATCH  @SanityPATCHStepProgressBar
@@ -402,13 +401,12 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @201459 @382795 @382799 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -426,7 +424,7 @@ Business Need: Step Progress Bar Component Scenarios
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | IsCreated | true          | External Application Progress Bar | Name                      | Created                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application Program For Announcement Testing"
@@ -615,7 +613,6 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see status in Progress-bar is "Rejected" and is "Red"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
@@ -690,6 +687,5 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 

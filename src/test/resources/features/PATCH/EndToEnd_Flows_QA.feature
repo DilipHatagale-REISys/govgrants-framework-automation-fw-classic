@@ -78,7 +78,7 @@ Business Need: security review Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
+    When I navigate to "My Tasks" content inside "Reassign" subheader on left panel
     Then I see expected table with id "toggleFlexTableGrantorTaskReassignment"
 
   @106152    @verifyThatByLoginAsPMUserAndByClickOnSidebarLinkFromHomePhaseActivityMenuThenActiveIndividualSubrecipientsTableOpens
@@ -108,7 +108,7 @@ Business Need: security review Scenarios
   @106324    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from task menu then pending task assigned to me table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePendingTasks"
@@ -116,7 +116,7 @@ Business Need: security review Scenarios
   @106325    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenPendingTaskAssignedByMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from task menu then pending task assigned by me table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I navigate to "Pending Tasks" content inside "Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePendingTasksBy"
@@ -124,7 +124,7 @@ Business Need: security review Scenarios
   @106329    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTaskMenuThenSubrecipientOrganizationDetailPageOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from task menu then Subrecipient Organization detail page displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I navigate to "Organization Profile" content inside "Activities" subheader on left panel
     Then I see "Subrecipient Organization" shown as over view header
@@ -132,7 +132,7 @@ Business Need: security review Scenarios
   @106309    @verifyThatPhaseLevelFlexTableIsDisplayedByLoginAsSPIUser
   Scenario: validate by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     Then I see expected table with id "toggleFlexTablepopupflextable"
@@ -140,7 +140,7 @@ Business Need: security review Scenarios
   @106314    @verifyThatRecordLevelFlexTableIsDisplayedByLoginAsSPIUser
   Scenario: validate record Level flexTable IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -179,7 +179,7 @@ Business Need: security review Scenarios
   @106330    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromHomePhaseTechnicalSupportMenuThenRespectiveTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from Technical Support menu then respective table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I navigate to "Contact Us" content inside "Technical Support" subheader on left panel
     Then I see "CustomerSupport" in current url
@@ -200,7 +200,7 @@ Business Need: security review Scenarios
   @106323    @verifyThatEnhancedGridIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced grid IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -218,7 +218,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see expected table with id "ProgramReviewStepTemplatesFlexToggle"
 
   @107083    @verifyThatEnhancedDataTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
@@ -252,18 +252,18 @@ Business Need: security review Scenarios
   @106461    @verifyThatEnhancedDataTableIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced data table IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
-    When I navigate to "Files" sub tab
-    Then I see expected table with id "ApplicationChecklistsFlexToggle"
+    When I navigate to "Overview" sub tab
+    Then I see expected table with id "AppContactFlexToggle"
 
   @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser
   Scenario: validate data table Is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{Framework_recordUsed:securityReviewApplication}"
@@ -274,7 +274,7 @@ Business Need: security review Scenarios
   @107539    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromApplicationPhaseTaskMenuThenPendingTaskAssignedToMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from application phase task menu then pending task assigned to me table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "Application Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePhasePendingTasks"
@@ -282,7 +282,7 @@ Business Need: security review Scenarios
   @107545    @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkFromApplicationPhaseTaskMenuThenCompletedTaskAssignedToMeTableOpens
   Scenario: validate by logged in as SPI user and hit the sidebar link from application phase task menu then completed task assigned to me table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Completed Tasks" content inside "Application Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePhaseCompletedTasks"
@@ -290,14 +290,14 @@ Business Need: security review Scenarios
   @107256    @verifyThatDataTableAtPhaseLevelIsDisplayedByLoginAsSPIUser
   Scenario: validate data table at phase level is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see expected table with id "toggleFlexTableGrantsList"
 
   @107331    @verifyThatMEIsDisplayedByLoginAsSPIUser
   Scenario: validate flex table IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "GT-REI-00001"
@@ -308,7 +308,7 @@ Business Need: security review Scenarios
   @107841    @verifyThatByLoginAsSPIUserAndClickOnCompletedTaskThenCompletedTaskAssignedByMeTableDisplayed
   Scenario: validate by logged in as SPI user and click on  completed task from sidebar then assigned by me table displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Completed Tasks" content inside "Application Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePhaseCompletedTasksBy"
@@ -316,7 +316,7 @@ Business Need: security review Scenarios
   @107541    @verifyThatByLoginAsSPIUserAndViewCompletedTaskAssignedByMeThenApplicationShouldGetOpenInViewMode
   Scenario: validate by logged in as SPI user and view completed task from assigned by me table then respective record opens in view mode
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Completed Tasks" content inside "Application Tasks" subheader on left panel
     When I perform quick search for "PR-REI-0004"
@@ -326,7 +326,7 @@ Business Need: security review Scenarios
   @107550   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenApplicationsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from application then applications table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Applications" content inside "Applications" subheader on left panel
     Then I see expected table with id "toggleFlexTableRecipientApplications"
@@ -334,7 +334,7 @@ Business Need: security review Scenarios
   @107548   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenPreApplicationsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from pre-application then pre-applications table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - All"
@@ -345,7 +345,7 @@ Business Need: security review Scenarios
   @107549   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenPreApplicationsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from pre-application then pre-applications table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     Then I see expected table with id "toggleFlexTableRecipientPreApplications"
@@ -353,7 +353,7 @@ Business Need: security review Scenarios
   @107784   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenNotYetQualifiedOpportunityTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then Not Yet Qualified opportunities table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     Then I see expected table with id "toggleFlexTablenyqae"
@@ -361,7 +361,7 @@ Business Need: security review Scenarios
   @107785   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenQualifiedOpportunityTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then Qualified opportunities table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Qualified" content inside "Opportunities" subheader on left panel
     Then I see expected table with id "toggleFlexTableqae"
@@ -369,7 +369,7 @@ Business Need: security review Scenarios
   @107786   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenOpportunitiesConvertedToApplicationTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then opportunities Converted to Application table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Converted to Application" content inside "Opportunities" subheader on left panel
     Then I see expected table with id "toggleFlexTablecae"
@@ -377,7 +377,7 @@ Business Need: security review Scenarios
   @doubt @107551   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenApplicationDeskReviewsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then Application Desk Reviews table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Application Desk Reviews" content inside "Activities" subheader on left panel
     Then I softly see expected table with id "toggleFlexTableApplicationsSiteVisitReportsGrid"
@@ -386,7 +386,7 @@ Business Need: security review Scenarios
   @doubt @107561   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenApplicationSiteVisitsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then Application Site Visits table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Application Site Visits" content inside "Activities" subheader on left panel
     Then I softly see expected table with id "toggleFlexTableApplicationsSiteVisitReportsGrid"
@@ -395,7 +395,7 @@ Business Need: security review Scenarios
   @107562   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenApplicationNegotiationTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from activity then Application negotiation table opened
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I navigate to "Negotiations" content inside "Applications" subheader on left panel
     Then I see expected table with id "RecipientNegotiationApplicationsCompletedFlexToggle"
@@ -403,7 +403,7 @@ Business Need: security review Scenarios
   @doubt @107805 @validateThatIfAPSearchedInGlobalSearchThenApplicationAndPreApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, Application And PreApplications Table is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     When I perform quick search inside global search "AP"
     When I click on global search and select "Applications / Negotiations"
@@ -436,7 +436,7 @@ Business Need: security review Scenarios
   @109256    @verifyThatSnapshotHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsSPIUser
   Scenario: validate snapshot history flex table  is rendered properly by SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -493,7 +493,7 @@ Business Need: security review Scenarios
   @107806 @validateThatIfAnSearchedInGlobalSearchThenOpportunityTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, opportunity Table is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I click on global search and select "Opportunities"
     When I perform quick search inside global search "An"
@@ -502,7 +502,7 @@ Business Need: security review Scenarios
   @doubt @107807p @validateThatIfAnSearchedInGlobalSearchThenApplicationsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, applications Table is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on global search and select "Applications / Negotiations"
     When I perform quick search inside global search "AP"
@@ -511,7 +511,7 @@ Business Need: security review Scenarios
   @107809 @validateThatIfAnSearchedInGlobalSearchThenGrantsTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as AP is searched in global search then, grants Table is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I click on global search and select "Grants"
     When I perform quick search inside global search "Gr"
@@ -520,7 +520,7 @@ Business Need: security review Scenarios
   @107836 @validateThatIfAnSearchedInGlobalSearchThenAwardTableDisplayedByLoginAsSPIUser-HomePhase
   Scenario: Verify that if record name as Aw is searched in global search then, award Table is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     When I click on global search and select "Awards"
     When I perform quick search inside global search "Sub"
@@ -723,7 +723,7 @@ Business Need: security review Scenarios
   @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser
   Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -887,7 +887,6 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "6" at position "2" and column at position "5" contains text "Started"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly
@@ -936,7 +935,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see expected table with id "ProramPackagesGrantorFlexToggle"
 
   @110209 @109392   @verifyAnnouncementInSubmittedForApprovalMode @flow
@@ -983,7 +982,7 @@ Business Need: security review Scenarios
   @110868    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser
   Scenario: validate that quick search is working or not at flex table enhanced table by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -995,7 +994,7 @@ Business Need: security review Scenarios
   @110866    @verifyQuickSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
   Scenario: validate that quick search is working or not at flex grid enhanced by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "GT-REI-00001"
@@ -1196,7 +1195,7 @@ Business Need: security review Scenarios
   @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
   Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Automation Application"
@@ -1212,7 +1211,7 @@ Business Need: security review Scenarios
   @110869    @verifyAdvanceSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser
   Scenario: validate that advance search is working or not at flex table enhanced table by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "AP-A11-001"
@@ -1232,7 +1231,7 @@ Business Need: security review Scenarios
 #      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
 #      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Automation Application"
@@ -1248,7 +1247,7 @@ Business Need: security review Scenarios
   @110869    @verifyAdvanceSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser 
   Scenario: validate that advance search is working or not at flex table enhanced table by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "AP-A11-001"
@@ -1334,8 +1333,8 @@ Business Need: security review Scenarios
    Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-   # When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+   # When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
@@ -1627,7 +1626,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Sent to Subrecipient after Approval"
 
   # Sub-Award accpted by sub-recepient
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Grants" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1741,7 +1740,7 @@ Business Need: security review Scenarios
     When I click on "Send to Subrecipient" in the page details
     Then I softly see field "Status" as "Sent to Subrecipient after Approval"
   # Sub-Award accpted by sub-recepient
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Grants" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1838,7 +1837,7 @@ Business Need: security review Scenarios
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
     #Create Application
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
@@ -2127,7 +2126,7 @@ Business Need: security review Scenarios
     When I click on "Send to Subrecipient" in the page details
     Then I softly see field "Status" as "Sent to Subrecipient after Approval"
   # Sub-Award accpted by sub-recepient
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Grants" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2177,7 +2176,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Notified" and is "green"
     When I click on "Conduct" in the page details
     Then I softly see status in Progress-bar is "In Progress" and is "green"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:SV_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2225,7 +2224,7 @@ Business Need: security review Scenarios
     Given I click on "Send to Subrecipient" in the page details
     Then I softly see status in Progress-bar is "Sent to Subrecipient" and is "green"
   #@111198 site visit submitted to grantor
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:pendingTaskTableId---" panel
@@ -2266,7 +2265,7 @@ Business Need: security review Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-6730                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Application Program For Announcement Testing"

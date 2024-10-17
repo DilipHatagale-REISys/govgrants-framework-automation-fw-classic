@@ -512,7 +512,7 @@ Business Need: FlexTable Component Scenarios
   @267771 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating mode, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -534,7 +534,7 @@ Business Need: FlexTable Component Scenarios
   @267776 @sprint-21 @us_266643 @dilip
   Scenario: SPI_FlextableExport_To verify that after manipulating flexTableParam, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -556,7 +556,7 @@ Business Need: FlexTable Component Scenarios
   @267787 @sprint-21 @us_266643 @dilip
   Scenario: SPI_FlextableExport_To verify that after manipulating pageBlockId, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -577,7 +577,7 @@ Business Need: FlexTable Component Scenarios
   @267791 @sprint-21 @us_266643 @dilip
   Scenario: SPI_FlextableExport_To verify that after manipulating Agency Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -598,7 +598,7 @@ Business Need: FlexTable Component Scenarios
   @267796 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating application Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -619,7 +619,7 @@ Business Need: FlexTable Component Scenarios
   @267800 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating parentOwner Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -640,7 +640,7 @@ Business Need: FlexTable Component Scenarios
   @267803 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating User Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -661,7 +661,7 @@ Business Need: FlexTable Component Scenarios
   @267806 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating Program Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -682,7 +682,7 @@ Business Need: FlexTable Component Scenarios
   @267815 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating ParentrecordIdofFlextable, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -703,7 +703,7 @@ Business Need: FlexTable Component Scenarios
   @267825 @sprint-21 @us_266643 @dilip
   Scenario: SPI_FlextableExport_To verify that after manipulating Record Id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -724,7 +724,7 @@ Business Need: FlexTable Component Scenarios
   @267830 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating announcement id, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -745,7 +745,7 @@ Business Need: FlexTable Component Scenarios
   @267834 @sprint-21 @us_266643 @dilip
   Scenario:SPI_FlextableExport_To verify that after manipulating Flex table name, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -881,7 +881,7 @@ Business Need: FlexTable Component Scenarios
   @268189 @268178 @268200 @268194 @268203 @268206 @268209 @SPI_DynamicLayoutExport_ToVerifyThatAfterManipulatingParentownerIdValue,NoAnyAlertGetDisplayed
   Scenario:SPI_DynamicLayoutExport_To verify that after manipulating parentowner id value, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1098,7 +1098,7 @@ Business Need: FlexTable Component Scenarios
   @TToVerifyThatOnEnteringScriptInAvailableMultipleInputFieldsAtATimeNoAnyAlertGetDisplayed
   Scenario:SPI_Modal_To verify that on entering script in available input fields, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1186,7 +1186,7 @@ Business Need: FlexTable Component Scenarios
   @267684
   Scenario: SPI_Collab_To My Followers_Link_To verify that on entering script in My Feed input field, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
     When I click on "Link" inside My Feed
@@ -1198,7 +1198,7 @@ Business Need: FlexTable Component Scenarios
   @267677
   Scenario:SPI_Collab_To My Followers_Post_To verify that on entering script in My Feed input field, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "><img src=x onmouseover=alert`'collab'`>" in my feed section and share the post
     And I pause execution for "5" seconds
@@ -1231,7 +1231,7 @@ Business Need: FlexTable Component Scenarios
   @267605
   Scenario: SPI_Application View layout - Collab_To verify that on entering script in My Feed input field, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1265,7 +1265,7 @@ Business Need: FlexTable Component Scenarios
   @267651
   Scenario: SPI_Application View layout - Collab_To verify that on entering script in My Feed input field, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1294,7 +1294,7 @@ Business Need: FlexTable Component Scenarios
   @268148
   Scenario: SPI_DynamicForm_Edit layout_To Verify that after manipulating id value, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1346,7 +1346,7 @@ Business Need: FlexTable Component Scenarios
   @257011 @sprint-19 @us-256030 @dilip
   Scenario:SPI_View layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1385,7 +1385,7 @@ Business Need: FlexTable Component Scenarios
   @257021 @sprint-19 @us-256030 @dilip
   Scenario: SPI_View layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1424,7 +1424,7 @@ Business Need: FlexTable Component Scenarios
   @257030 @sprint-19 @us-256030 @dilip
   Scenario: SPI_View layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1464,7 +1464,7 @@ Business Need: FlexTable Component Scenarios
   @257042 @sprint-19 @us-256030 @dilip
   Scenario: SPI_View layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1503,7 +1503,7 @@ Business Need: FlexTable Component Scenarios
   @257095 @sprint-19 @us-256030 @dilip
   Scenario: SPI_View layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1622,7 +1622,7 @@ Business Need: FlexTable Component Scenarios
   @257108 @sprint-19 @us-256030 @dilip
   Scenario: SPI_View layout_To Verify that after manipulating id value, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1662,7 +1662,7 @@ Business Need: FlexTable Component Scenarios
   @257591 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To verify that after manipulating ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1701,7 +1701,7 @@ Business Need: FlexTable Component Scenarios
   @257597 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To verify that after manipulating Package ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1740,7 +1740,7 @@ Business Need: FlexTable Component Scenarios
   @257604 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To verify that after manipulating Parent ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1779,7 +1779,7 @@ Business Need: FlexTable Component Scenarios
   @257610 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To verify that after manipulating FormInstance ID (with adding template name immediately after ID) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1818,7 +1818,7 @@ Business Need: FlexTable Component Scenarios
   @257629 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To verify that after manipulating Table name (with adding template name immediately after table name) and template name both, alert not get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -1935,7 +1935,7 @@ Business Need: FlexTable Component Scenarios
   @257642 @sprint-19 @us-256030 @dilip
   Scenario: SPI_Edit layout_To Verify that after manipulating id value, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -2034,7 +2034,7 @@ Business Need: FlexTable Component Scenarios
   @267855
   Scenario: SPI_CK Editor_To Verify that on entering respective script into CK editor which exists on Modal, no any alert get appeared
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -2148,7 +2148,7 @@ Business Need: FlexTable Component Scenarios
   @268131
   Scenario: SPI_DynamicFormView_To Verify that after manipulating id value, no any alert get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -2289,7 +2289,7 @@ Business Need: FlexTable Component Scenarios
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
@@ -2371,7 +2371,7 @@ Business Need: FlexTable Component Scenarios
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <NewActionUrl> | CommunicationHistory | Name                      | Send Email                 |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"

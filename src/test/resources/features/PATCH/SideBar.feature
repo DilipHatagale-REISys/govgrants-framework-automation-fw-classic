@@ -465,7 +465,7 @@ Business Need: Side bar Component Scenarios
   @115099    @validateColorOfGlobalSearchBoxAtSidebarForExternalUser-gHome
   Scenario: validate color of global search box at sidebar for external user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see sidebar global search box displayed in "blue"
 
@@ -886,7 +886,7 @@ Business Need: Side bar Component Scenarios
   @115099
   Scenario: validate color of global search box at sidebar for external user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see sidebar global search box displayed in "blue"
 

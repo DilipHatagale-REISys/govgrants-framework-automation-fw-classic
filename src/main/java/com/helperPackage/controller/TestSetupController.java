@@ -75,7 +75,7 @@ public final class TestSetupController {
         }
         if ("android".equalsIgnoreCase(EnvironmentFactory.getDevice()) || "ios".equalsIgnoreCase(EnvironmentFactory.getDevice())) {
             AppiumController.startServer();
-            if (System.getProperty("appName")==null) {
+            if (System.getProperty("appName") == null) {
                 runBrowser();
             } else {
                 runMobileApp();
@@ -188,6 +188,16 @@ public final class TestSetupController {
 
         device.getDriver().manage().deleteAllCookies();
         device.getDriver().quit();
+        Runtime rt = Runtime.getRuntime();
+        Process pr = rt.exec("taskkill /F /IM chromedriver_for_browserVersion123.exe /T");
+        System.out.println("Command Executed:+ " + pr);
+        Process pr1 = rt.exec("taskkill /F /IM “chrome.exe” /T");
+        System.out.println("Command Executed:+ " + pr1);
+        if (pr.isAlive()) {
+            pr.destroyForcibly().destroy();
+        } else if (pr1.isAlive()) {
+            pr1.destroyForcibly().destroy();
+        }
         device.stopServiceProvider();
     }
 

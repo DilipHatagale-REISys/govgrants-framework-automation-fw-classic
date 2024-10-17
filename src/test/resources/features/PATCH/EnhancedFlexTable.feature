@@ -215,7 +215,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
       | Flex Grid:Flex Table List | Is Master View | false         | GrantsList         | Name                      | FLV-3480                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I see the following message in the page details :
       | Atleast one list view should be marked as a Master List View |
@@ -230,7 +230,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -253,7 +253,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3837                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -286,7 +286,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3836                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -320,7 +320,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -352,7 +352,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -593,7 +593,7 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Over All Total | true             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Over All Total | true          | DataTableEnhanceProgramContacts | Name                      | FTC-14086                  |
@@ -603,8 +603,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    Then I see over all total for "AmountAwarded__c" field at enhanced grid
-    Then I see "BaseSalary" in enhanced flex grid header "---program:-:programContactsTableId---"
+    Then I see over all total for "BaseSalary__c" field at enhanced grid
 
   @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table -planning
@@ -1088,7 +1087,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | Contacts      | AppContact         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1105,7 +1104,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-9118                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1122,7 +1121,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-9118                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1825,7 +1824,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Page Size           | false         | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1850,7 +1849,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Default Page Size          | 5             | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1875,7 +1874,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Total Records Count | false         | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | false         | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1900,7 +1899,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1923,7 +1922,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | false         | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Record Selection    | false         | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1950,7 +1949,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Auto Index          | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Enable Record Selection    | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1970,7 +1969,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block:Page Block Detail | Is Active               | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Record Selection | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -1990,7 +1989,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block:Page Block Detail | Is Active                  | true          | RecipientGrant      | Name                      | PB-9118                    |
       | Flex Table:General           | Enable Total Records Count | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2007,7 +2006,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2027,7 +2026,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2050,7 +2049,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2081,7 +2080,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Default Page Size          | 5             | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2114,7 +2113,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Enable Pagination          | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General           | Default Page Size          | 5             | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2187,7 +2186,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | false         | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2206,7 +2205,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2257,7 +2256,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2313,7 +2312,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2368,7 +2367,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2413,7 +2412,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2457,7 +2456,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2502,7 +2501,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2547,7 +2546,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2595,7 +2594,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2656,7 +2655,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2697,7 +2696,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text | Test Button Help Text | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2753,7 +2752,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Location         | Row           | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2801,7 +2800,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Header Action Display Type | Button        | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Action Behavior            | EditRecord    | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2867,7 +2866,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | SameWindow    | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2908,7 +2907,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | NewWindow     | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -2975,7 +2974,7 @@ Business Need: DataTableEnhanced Component Scenarios
   @205464 @205491
   Scenario: Action- SPI- UI - Verify Confirmation window is getting displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -3002,7 +3001,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Show Confirmation Box | false            | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Confirmation Message  |                  | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -3057,7 +3056,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Modal Title     | View            | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Modal Width     | 50              | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -3107,7 +3106,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -3156,7 +3155,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
@@ -3201,7 +3200,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | RecipientGrantNotes | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"

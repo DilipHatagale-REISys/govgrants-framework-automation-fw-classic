@@ -55,7 +55,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332322
   Scenario: when External user Hover on the  TO field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -97,7 +97,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332325
   Scenario: when External user Hover on the  cc field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -138,7 +138,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332328
   Scenario: Send Email -UI - when External user Hover on the  Send Copy (Cc) to Me field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -179,7 +179,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332331
   Scenario: Send Email -UI - when External user Hover on the Subject  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -220,7 +220,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332334
   Scenario: Send Email -UI - when External user Hover on the Body Content field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -261,7 +261,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332338
   Scenario: Send Email -UI - when External user Hover on the Attachments field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -302,7 +302,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332341
   Scenario: Send Email -UI - when External user Hover on the  Select file  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -341,7 +341,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332344
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for External user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -507,7 +507,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332791 @382442 @smokePATCH
   Scenario: Send Email -To verify , When External user sends an Email with an Attachment  from TO (internal) field
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -641,14 +641,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "Group" into field "{testData:ToField}" on send email modal
-    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I select value "group 0" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test automation" into field "Body Content" on send email modal
     When I enter value "Test SendEmailAttachment" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "Validate send email" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Test SendEmailAttachment" in "---program:-:communicationHistoryTableId---" panel
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
@@ -843,7 +843,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332809 @382756 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -895,7 +895,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382758 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: sanity TC-SPI-To verify if user is getting error message "File Size Exceeded Attachments Limits of 25MB" if the total file size is more than 25MB
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -1137,7 +1137,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382349
   Scenario:Sanity TC-SPI-To verify that user can enter email Ids in ‘To’, ‘cc’ sections and also user will get suggestions while typing the emailds based on the existing emailIds in user’s email list.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -1157,7 +1157,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
   Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -2432,7 +2432,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382364 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -2473,7 +2473,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382367 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -2502,7 +2502,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382373 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -2565,7 +2565,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382423 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity -TC-SPI- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7241,7 +7241,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |send email-User send email without filling subject field then error message should displayed on the modal|
   |Send Email -when Internal user only filled subject field then 'Please add a recipient' message|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7385,7 +7385,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   |Send Email -"Send Copy (Cc) to Me" - To verify ,External user  checked checkbox for "Send Copy (Cc) to Me" on displayed on send modal but not displayed on Reply modal|
   |Send Email -"Send Copy (Cc) to Me" - To verify ,External user  checked checkbox for "Send Copy (Cc) to Me" on Reply modal   it will show checked on after send reply|
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7420,7 +7420,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @382776 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity-TC-SPI-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7438,7 +7438,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332793
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (External) field
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7985,7 +7985,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333052 @332344
   Scenario: Send Email - Required to save fields  (*)  is displayed for External user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -7997,7 +7997,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332956 @332341
   Scenario: Send Email - when External user Hover on the  Select file  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -8109,7 +8109,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332334
   Scenario: Send Email - when External user Hover on the Body Content field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -8122,7 +8122,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332952 @332338
   Scenario: Send Email - when External user Hover on the Attachments field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -8846,7 +8846,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332349 @332350
   Scenario:To verify,External User try to attach the file more than 10 then  errror message is getting dispalyed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -8920,7 +8920,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332355 @332356 @332357 @332358
   Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email reply modal
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -9087,7 +9087,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @333025
   Scenario:When User check the checkbox for  the internal from dropdown then Group field is getting hidden from TO field
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -9346,7 +9346,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332802
   Scenario: Send Email - when External user Hover on the  Select file  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -9419,7 +9419,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @332835
   Scenario:  To verify, If External  User try to download attach file then It will open in the new tab
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
@@ -9736,11 +9736,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   @419375 @utahpatch
   Scenario: UTAH - Send Email - PM - To verify that in the email, before NOTE statement, "To view this record, please click here" line should be available
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    And I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Automationadminpm@yopmail.com" into field "{testData:ToField}" on send email modal

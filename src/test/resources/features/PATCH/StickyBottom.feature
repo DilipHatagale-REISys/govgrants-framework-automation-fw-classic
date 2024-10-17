@@ -78,7 +78,7 @@ Business Need: Sticky Bottom Component Scenarios
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1C00000KyIeBUAV | 00515000005xr9aAAA | GNT__EnableOrgName__c:false | GNT__GlobalConfig__c |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "GGPTEST5" inside bottom menu
 

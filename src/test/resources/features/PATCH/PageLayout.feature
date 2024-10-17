@@ -1391,7 +1391,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide Operator    | OR                   | Grantor State Program | Name                      | PB-6708                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1407,16 +1407,14 @@ Business Need: Page Layout Component Scenarios
   @53097 @53102
   Scenario Outline:  Verify Hide for User And Profile System administration at Notes and attachments.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
-      | Page Block            | Hide For Profile |                   | ApiGeneratedId:0           |
-      | Page Block            | Hide For User    |                   | ApiGeneratedId:1           |
-      | Page Block            | Hide Operator    |                   | ApiGeneratedId:2           |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PB-6708                    |
       | Page Block:Page Block Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide Operator    | AND                  | Grantor State Program | Name                      | PB-6708                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1427,7 +1425,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @53099
   Scenario: Verify Hide for Context at Notes and attachments.
@@ -2638,7 +2636,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -2685,7 +2683,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -2783,7 +2781,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -2847,7 +2845,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView | Name                      | PBD-24003                  |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Recipient ApplicationView | Name                      | PBD-24003                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -3535,7 +3533,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-24003                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -3603,7 +3601,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantor State Program | Name                      | PBD-24003                  |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-24003                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -3627,7 +3625,7 @@ Business Need: Page Layout Component Scenarios
   @115665 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForSPIUser-StateAsAGrantor
   Scenario: verify that very dark blue color is displayed as background for phases tab for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -4203,7 +4201,7 @@ Business Need: Page Layout Component Scenarios
   @120241    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewModeByLoginAsExternalUser
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode by login as external user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -4216,7 +4214,7 @@ Business Need: Page Layout Component Scenarios
   @120242    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInViewModeByLoginAsExternalUser
   Scenario: validate loading icon is not displayed at add attachments modal window when record is in view mode by login as external user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -4569,7 +4567,7 @@ Business Need: Page Layout Component Scenarios
   Scenario: Validating sidebar components, logo is rendering properly for EXTERNAL user even after deleting user entery from user preference config custom setting
     Given I delete the record "Automation spi" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
     Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
     Then I softly see "Tasks" at sidebar
@@ -5666,7 +5664,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5684,7 +5682,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5701,7 +5699,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5718,7 +5716,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5737,7 +5735,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5754,7 +5752,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5771,7 +5769,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5793,7 +5791,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -5809,7 +5807,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Applications       | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -10527,7 +10525,7 @@ Business Need: Page Layout Component Scenarios
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
     And I pause execution for "7" seconds
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -10738,7 +10736,7 @@ Business Need: Page Layout Component Scenarios
   @200552 @219537
   Scenario: Page Layout Export Functionality-SPI-UI-To verify download as PDF option should displayed for pagelayout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10759,7 +10757,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide PDF Download | true          | Recipient Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10794,7 +10792,7 @@ Business Need: Page Layout Component Scenarios
   @200529 @200531
   Scenario: Page Menu-SPI-UI-To verify Take snapshot option should be displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10843,7 +10841,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10870,7 +10868,7 @@ Business Need: Page Layout Component Scenarios
   @219859
   Scenario: Menu- SPI-UI- Verify Menu option appears on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10925,7 +10923,7 @@ Business Need: Page Layout Component Scenarios
   @200439 @219883
   Scenario: Page Layout Action-SPI-UI-To verify page layout "Edit" and "Submit Application" actions should displayed on view layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10945,7 +10943,7 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Is Active | false         | Recipient Recipient ApplicationView | Name                      | Edit                       |
       | Page Layout Action    | Is Active | false         | Recipient Recipient ApplicationView | Name                      | Submit Application         |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -10997,7 +10995,7 @@ Business Need: Page Layout Component Scenarios
   @219870
   Scenario: Page Layout Action-SPI-UI-To verify page layout "Cancel" and "Save" actions should displayed on edit layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11036,7 +11034,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Recipient Recipient ApplicationView | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11073,7 +11071,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Button Help Text | Edit The Record | Recipient Recipient ApplicationView | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11131,11 +11129,11 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -11228,7 +11226,7 @@ Business Need: Page Layout Component Scenarios
   @200249 @379389 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11254,7 +11252,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19725                  |
     #  | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-20168                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11268,7 +11266,7 @@ Business Need: Page Layout Component Scenarios
   @200251
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Opportunity ID, Opportunity Title, Funding Organization, Subaward Floor in Opportunity Overview
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11294,7 +11292,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-20364                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-23993                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11314,7 +11312,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Help Text | <new_helpText> | Recipient Recipient ApplicationView | GNT__PageBlockTitle__c    | Information                |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11418,7 +11416,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11448,7 +11446,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2924                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11482,7 +11480,7 @@ Business Need: Page Layout Component Scenarios
   @219888 @379093 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11547,7 +11545,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2924                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11582,7 +11580,7 @@ Business Need: Page Layout Component Scenarios
   @219895 @379383 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11629,7 +11627,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName  | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config      | Sort Order | 6             | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11698,7 +11696,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11713,7 +11711,7 @@ Business Need: Page Layout Component Scenarios
   @200216
   Scenario: Page Instruction-SPI-UI-To verify given page instruction should not  be displayed on page layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11752,7 +11750,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
@@ -11829,7 +11827,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient Recipient ApplicationView | Name                      | PBD-19757                  |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient Recipient ApplicationView | Name                      | PBD-19800                  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11854,7 +11852,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19800                  |
       | Page Tabs Config:Page Layout Action      | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2731                   |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11909,7 +11907,7 @@ Business Need: Page Layout Component Scenarios
   @379071 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
@@ -11993,7 +11991,7 @@ Business Need: Page Layout Component Scenarios
   @379386 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12008,8 +12006,8 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -12051,7 +12049,7 @@ Business Need: Page Layout Component Scenarios
   @379392 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12075,7 +12073,7 @@ Business Need: Page Layout Component Scenarios
   @379395 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12100,7 +12098,7 @@ Business Need: Page Layout Component Scenarios
   @379398 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12124,7 +12122,7 @@ Business Need: Page Layout Component Scenarios
   @379402 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12148,7 +12146,7 @@ Business Need: Page Layout Component Scenarios
   @379405 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12162,16 +12160,16 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     Then I softly see "Save" button is displayed
     Then I softly see "Cancel" button is displayed
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "DataTableEnhanceProgramContacts"
-    When I click "Associate" after selection of "Automation PM" in the table "DataTableEnhanceProgramContacts"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Overview" sub tab
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
@@ -12187,7 +12185,7 @@ Business Need: Page Layout Component Scenarios
   @379408 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
@@ -12214,7 +12212,7 @@ Business Need: Page Layout Component Scenarios
   @379411 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12244,7 +12242,7 @@ Business Need: Page Layout Component Scenarios
   @379414 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12274,7 +12272,7 @@ Business Need: Page Layout Component Scenarios
   @379417
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks are showing correct.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12319,7 +12317,7 @@ Business Need: Page Layout Component Scenarios
   @379420 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks detail fields are showing correct.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12339,13 +12337,12 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @379423 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12357,11 +12354,11 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false              | Grantor State Program | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
@@ -12382,13 +12379,12 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @379426 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application For Announcement Testing"
@@ -12400,7 +12396,7 @@ Business Need: Page Layout Component Scenarios
   @424689 @patch-lsc
   Scenario Outline: LSC - Patch 6.100.18 - To verify the search bar should be appropriate size on flex table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -12411,12 +12407,10 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
+    When I click on "Save" in the page details
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see "quick-search" is displayed on table id "---program:-:associateProgramContactsTableId---"
-
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 

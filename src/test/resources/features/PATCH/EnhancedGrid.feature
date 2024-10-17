@@ -246,7 +246,7 @@ Business Need: EnhancedGrid Component Scenarios
   @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
   Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -263,7 +263,7 @@ Business Need: EnhancedGrid Component Scenarios
   @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196296
   Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
@@ -3721,6 +3721,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     And I click toggle button to select "Budget Periods"
     Then I see no "New" button inside "Budget Periods" enhanced grid
+    Then I see "Internal Organization" column inside Enhanced grid id "---program:-:flexGridEnhancedTableId---" of width "50%"
 
   @160801    @verifyEGridTopLevelActionPreviewAreHideByUsingMultipleAND/ORLogic @abhishekS
   Scenario: validate E-grid-To,top-level action 'Preview' are hide by using multiple AND/OR hide logic
@@ -5771,7 +5772,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-8091                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5788,7 +5789,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-8091                    |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5853,7 +5854,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5897,7 +5898,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5938,7 +5939,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | true          | RecGrantBudgetCategoryFlexGrid |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5956,7 +5957,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | RecGrantBudgetCategoryFlexGrid |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -5996,7 +5997,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Default Page Size | 5             | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6016,7 +6017,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | false         | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6035,7 +6036,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6077,7 +6078,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | RecGrantBudgetCategoryFlexGrid |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6175,7 +6176,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | false         | RecGrantBudgetCategoryFlexGrid |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6208,7 +6209,7 @@ Business Need: EnhancedGrid Component Scenarios
   @206022
   Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6690,15 +6691,13 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      #| Flex Table List       | Sub Total Label       | Testing Sub Total | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | configurationCategory | fieldName             | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping   | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Over All Total | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7277,7 +7276,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -7294,7 +7293,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | false         | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -7313,7 +7312,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table:General    | Enable Record Selection          | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | Left          | RecGrantBudgetCategoryFlexGrid | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"

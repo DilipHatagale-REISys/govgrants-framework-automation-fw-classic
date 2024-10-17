@@ -59,7 +59,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Scenario: All forms- SPI- UI- Verify forms displays under All forms page block
   All forms- SPI- UI- Verify Actions like Preview, view, edit are available
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -104,7 +104,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206340 @208663 @206881
   Scenario: All forms- SPI- UI- Verify in View Form ID should get populated UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -154,7 +154,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206343p @208666
   Scenario: All forms- SPI- UI- Verify in Edit Form ID should get populated UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -196,7 +196,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Scenario: All forms- SPI- UI- Verify all forms displays under dropdown
   All forms- SPI- UI- Verify we can select forms from dropdown
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -227,7 +227,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206847
   Scenario: All forms- SPI- UI- Verify if we shuffle through forms from dropdown, we are getting confirmation message, in edit form layout.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -259,7 +259,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206850
   Scenario: All forms- SPI- UI- Verify in "Edit" mode, while we are shuffling through forms, if we hit ‘Cancel’ button on confirmation message modal we should not redirect to new form
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -292,7 +292,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206853
   Scenario: All forms- SPI- UI- Verify, in edit mode, while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -327,7 +327,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206856 @206863 @382018 @SanityPATCH  @SanityPATCHForms
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button success message should pop-up
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -342,7 +342,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208998 @382044 @SanityPATCH  @SanityPATCHForms
   Scenario: All Forms - SPI- UI- Verify we can download form as PDF
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -373,7 +373,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208805
   Scenario: All Forms - SPI- UI- Verify when we hover on (i) icon Help text should be displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -404,7 +404,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208660
   Scenario: All forms- SPI- UI- Verify in preview Form name should not populate on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -439,7 +439,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206337
   Scenario:All forms- SPI- UI- Verify in preview Form ID should not populate on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -473,7 +473,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206859 @206334
   Scenario:All forms- SPI- UI- Verify the success message will be automatically closed after the set interval of time out
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -503,7 +503,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208654
   Scenario: All forms- SPI- UI- Verify fields which are required for save denoted with (*)
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -532,7 +532,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208657
   Scenario:All forms- SPI- UI- Verify fields which are required for save ‘This field is required’ line should display on form
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -565,7 +565,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206872 @382033 @SanityPATCH  @SanityPATCHForms
   Scenario: All forms- SPI- UI- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, and opened into view mode.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -600,7 +600,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206875 @382028 @SanityPATCH  @SanityPATCHForms
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -637,7 +637,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206878
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if all required fields are filled success message should pop-up
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -670,7 +670,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208651
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button, if data is missing in one or more fields which  are required to save error message should pop-up
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -702,7 +702,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208678 @208669
   Scenario: All forms- SPI- UI- Verify in preview Submitted on under Authorized Representative should not populate on UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -735,7 +735,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Scenario: All forms- SPI- UI- Verify in View Submitted on under Authorized Representative should get populated UI
   All forms- SPI- UI- Verify in View Name under Authorized Representative should get populated UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -769,7 +769,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208684p @208675
   Scenario: All forms- SPI- UI- Verify in Edit Submitted on under Authorized Representative should get populated UI
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -808,7 +808,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Last modified -SPI -UI- Verify Last modified by name must be updated if form is modified by another user
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -845,7 +845,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Scenario: All forms- SPI- UI- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -873,7 +873,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206866 @382022 @SanityPATCH  @SanityPATCHForms
   Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -902,7 +902,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206869
   Scenario: All forms- SPI- UI- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -941,7 +941,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @test @112348 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageBySPIUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -974,7 +974,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @381964p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1005,7 +1005,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @381969p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1030,7 +1030,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @381972 @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1062,7 +1062,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @381994 @381986 @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to see all page blocks in tab on Enhanced form as added in config
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1104,7 +1104,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @382004
   Scenario:Sanity TC - SPI - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1145,7 +1145,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
@@ -1175,7 +1175,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @382040p @SanityPATCH  @SanityPATCHForms
   Scenario: Sanity TC - SPI - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     When I perform quick search for "Program For Application"
