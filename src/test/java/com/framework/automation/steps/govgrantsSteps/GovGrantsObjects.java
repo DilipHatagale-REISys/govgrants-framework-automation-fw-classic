@@ -345,7 +345,7 @@ public final class GovGrantsObjects {
         I.amPerforming().click().on(By.xpath("//button[text()='Upload']"));*/
 
         By classificationType = By.xpath("//select[@title='Classification' or @name='Classification']");
-        By filePath = By.xpath("//label[contains(@id,'file')]/../input");
+        By filePath = By.xpath("//label[contains(@id,'file')]/../input | //label[contains(@for,'file')]//following-sibling::div//input");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         String[] splitFileName = fileName.split("\\.");
         String newFileName = withoutRandomNumber ? fileName : splitFileName[0] + I.amPerforming().addOnsTo().getStringRandomNumber() + "." + splitFileName[1];
@@ -357,7 +357,7 @@ public final class GovGrantsObjects {
             I.amPerforming().dropDownSelection().from(classificationType).selectByValue(fileType);
             I.amPerforming().waitFor().makeThreadSleep(5000);
             I.amPerforming().textInput().in(filePath, defaultFilePath + newFileName);
-            I.amPerforming().click().on(By.xpath("//button[text()='Upload']"));
+            I.amPerforming().click().on(By.xpath("//button[text()='Upload'] | //textarea[@type='text']"));
         } finally {
             try {
                 I.amPerforming().waitFor().makeThreadSleep(10000);
