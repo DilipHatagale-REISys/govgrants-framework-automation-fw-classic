@@ -694,7 +694,7 @@ Business Need: security review Scenarios
     And I refresh the page
     #109928
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -702,7 +702,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -711,7 +711,7 @@ Business Need: security review Scenarios
     #109931
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -763,7 +763,7 @@ Business Need: security review Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -771,7 +771,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -779,7 +779,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -822,7 +822,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @83371 - first approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -833,7 +833,7 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   #83371 - send back to owner by second approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -842,7 +842,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
     Then I softly see status in Progress-bar is "Created" and is "Green"
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -851,7 +851,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   #83371 - approved by first approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -862,7 +862,7 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   #83371 - approved by second approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -872,7 +872,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "5" at position "2" and column at position "5" contains text "Approved"
   #83371 - activated by owner
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1046,7 +1046,7 @@ Business Need: security review Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1057,7 +1057,7 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
   # @110694 - rejected by second approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1094,7 +1094,7 @@ Business Need: security review Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1161,7 +1161,7 @@ Business Need: security review Scenarios
     #110210
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1169,14 +1169,14 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1184,7 +1184,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
@@ -1301,7 +1301,7 @@ Business Need: security review Scenarios
     #110210
    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-   When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+   When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
    And I navigate to "Home" tab
    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1309,14 +1309,14 @@ Business Need: security review Scenarios
    When I "Approve" in the approval decision
    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-   When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+   When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
    And I navigate to "Home" tab
    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
    When I "Approve" in the approval decision
     #3rd Approval process for announcement
-   When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+   When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
    And I navigate to "Home" tab
    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1324,7 +1324,7 @@ Business Need: security review Scenarios
    When I "Approve" in the approval decision
    Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-   When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+   When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
    And I navigate to "Announcements" tab
    And I click toggle button to select "All Announcements"
    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
@@ -1373,7 +1373,7 @@ Business Need: security review Scenarios
     When I click on "Submit Application" in the page details
     Then I softly see status in Progress-bar is "Submitted" and is "Green"
     # initiate review process
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1397,7 +1397,7 @@ Business Need: security review Scenarios
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
   # pre-screen review completed
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1410,7 +1410,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
 # initiated sme review
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1451,7 +1451,7 @@ Business Need: security review Scenarios
     And I click on "Next Review Step" in the page details
     Then I softly see field "Status" as "In Progress"
   #sme review completed
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1460,7 +1460,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1469,7 +1469,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1481,7 +1481,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
   # management review initiated
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1508,7 +1508,7 @@ Business Need: security review Scenarios
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
   # management review completed
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1520,7 +1520,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
      # create FDM
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1548,7 +1548,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     And I save the field labeled "Announcement EGMS ID" as "ANN_EGMSID"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1556,7 +1556,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1565,7 +1565,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Approved" and is "green"
 
     # create Sub-Award
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
     And I click toggle button to select "Approved Funding Decision Memos (FDM)"
@@ -1596,7 +1596,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1605,7 +1605,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1615,7 +1615,7 @@ Business Need: security review Scenarios
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
 
     # Sub-Award sent to sub-recepient
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -1635,7 +1635,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Accepted after Approval"
 
   # Sub-Award activation by owner
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -1705,7 +1705,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1714,7 +1714,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1722,7 +1722,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
     # 3rd Approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1730,7 +1730,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "green"
     # Sub-Award sent to sub-recepient
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -1749,7 +1749,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Accepted after Approval"
 
   # Sub-Award activation by owner
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -1806,7 +1806,7 @@ Business Need: security review Scenarios
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
      #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1814,14 +1814,14 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
      #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1829,7 +1829,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
@@ -1877,7 +1877,7 @@ Business Need: security review Scenarios
     #110218
     Then I softly see status in Progress-bar is "Submitted" and is "Green"
     # initiate review process
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1901,7 +1901,7 @@ Business Need: security review Scenarios
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
   #@110257 pre-screen review completed
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1914,7 +1914,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
 # initiated sme review
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -1955,7 +1955,7 @@ Business Need: security review Scenarios
     And I click on "Next Review Step" in the page details
     Then I softly see field "Status" as "In Progress"
   #sme review completed
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1964,7 +1964,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1973,7 +1973,7 @@ Business Need: security review Scenarios
     And I click on "Save" in the page details
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1985,7 +1985,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
   # management review initiated
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -2012,7 +2012,7 @@ Business Need: security review Scenarios
     And I click on top right button "Send for Review" in flex table with id "---program:-:appreviewsTableId---"
     Then I softly see field "Status" as "In Progress"
   # management review completed
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:APPEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2024,7 +2024,7 @@ Business Need: security review Scenarios
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
      # create FDM
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
     When I click toggle button to select "Application Reviews - All"
@@ -2052,14 +2052,14 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     And I save the field labeled "Announcement EGMS ID" as "ANN_EGMSID"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     When I navigate to "Applications" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2067,7 +2067,7 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "green"
     # create Sub-Award
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Applications" tab
     When I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
     And I click toggle button to select "Approved Funding Decision Memos (FDM)"
@@ -2098,7 +2098,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2107,7 +2107,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -2116,7 +2116,7 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Approved"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
     # Sub-Award sent to sub-recepient
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -2134,7 +2134,7 @@ Business Need: security review Scenarios
     And I click on "Accept after Approval" in the page details
     Then I softly see field "Status" as "Accepted after Approval"
   # Sub-Award activation by owner
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
@@ -2150,7 +2150,7 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:GRANT_ID}" inside flex table with id "---program:-:grantsTableId---" without waiting for record
     Then I softly see status in Progress-bar is "Active" and is "green"
     #createsitevisit
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "GT-REI-00001" in "---program:-:grantsTableId---" panel
@@ -2182,7 +2182,7 @@ Business Need: security review Scenarios
     And I perform quick search for "{SavedValue:SV_EGMSID}" in "---program:-:pendingTaskTableId---" panel
     When I click on "Start" icon for "{SavedValue:SV_EGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
   #@111198 submit site visit for approval
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:manageSiteVisitTableId---" panel
@@ -2200,7 +2200,7 @@ Business Need: security review Scenarios
     When I click on "Submit for Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   #@111198 site visit approved by 1st approval
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:pendingTaskTableId---" panel
@@ -2208,7 +2208,7 @@ Business Need: security review Scenarios
     And I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   #@111198 site visit approved by 2nd approval
-    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:pendingTaskTableId---" panel
@@ -2216,7 +2216,7 @@ Business Need: security review Scenarios
     And I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "green"
   #@111198 site visit sent to sub-recipient
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:manageSiteVisitTableId---" panel
@@ -2248,7 +2248,7 @@ Business Need: security review Scenarios
     When I click on "Submit to Grantor" in the page details
     Then I softly see status in Progress-bar is "Submitted to Grantor" and is "green"
   # site visit closure
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Monitoring" tab
     When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
     When I perform quick search for "SV-0739" in "---program:-:manageSiteVisitTableId---" panel
