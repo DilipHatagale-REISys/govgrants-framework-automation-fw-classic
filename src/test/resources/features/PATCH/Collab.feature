@@ -1163,15 +1163,15 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Like button testing" in my feed section and share the post
     And I click on "Like" action at "Like button testing" comment inside my feed
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You, Automation PM and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "You, Automation FO, and Automation PM like this." inside comment "Like button testing" in collab phase
     Then I see "Automation Admin" in collab like list
@@ -1186,15 +1186,15 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Like button testing" in my feed section and share the post
     And I click on "Like" action at "Like button testing" comment inside my feed
-    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You, Automation PM and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "You, Automation FO, and Automation Admin like this." inside comment "Like button testing" in collab phase
     Then I see "Automation Admin" in collab like list
@@ -1208,15 +1208,15 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Like button testing" in my feed section and share the post
     And I click on "Like" action at "Like button testing" comment inside my feed
-    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Like" action at "Like button testing" comment inside my feed
     Then I see "You, Automation PM and Automation Admin like this." inside flex table with id "---program:-:myFeedTableId---"
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "You, Automation FO, and Automation Admin like this." inside comment "Like button testing" in collab phase
     Then I see "Automation Admin" in collab like list
@@ -1256,7 +1256,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM Comment" in my feed section and share the post
     And I pause execution for "5" seconds
-    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
@@ -1268,7 +1268,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I pause execution for "5" seconds
-    When I re-login to "As a Grantor" app as "Admin" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "Admin" user on "INTERNAL" portal
     And I navigate to "Collaboration (Collab)" tab
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed

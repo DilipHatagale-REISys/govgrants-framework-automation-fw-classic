@@ -24,9 +24,9 @@ public class AttachmentSteps {
         attachmentsPage = new AttachmentsPage();
     }
 
-    @And("I enter value {string} into description box")
-    public void iEnterValueIntoDescriptionBox(String description) {
-        I.amPerforming().textInput().in(ByUsing.xpath("//label[text()='Description']/parent::div//textarea | //lightning-textarea//div//textarea[@name='attDescription']"), description);
+    @And("I enter value {string} into {string}")
+    public void iEnterValueIntoDescriptionBox(String value, String field) {
+        I.amPerforming().textInput().in(ByUsing.xpath("//label[text()='" + field + "']/parent::*//textarea | //label[@for='" + field + "']//following-sibling::input"), value);
     }
 
     @And("I click on {string} on LWC modal")
@@ -292,7 +292,7 @@ public class AttachmentSteps {
 
     @Then("I see generated snapshot {string} is displayed with {string}")
     public void iSeeGeneratedSnapshotIsDisplayedWith(String fileName, String columnName) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "'] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//a//span[contains(text(),'" + fileName + "')] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td//span[contains(text(),'"+ fileName +"')] "));
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "'] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//a//span[contains(text(),'" + fileName + "')] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td//span[contains(text(),'" + fileName + "')] "));
     }
 
     @And("I click on {string} in modal")

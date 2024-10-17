@@ -410,7 +410,7 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     #Then I see "Home" phase
     #Then I see "Planning" tab is highlighted for particular program
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     When I setup my app as "As a Grantor"
     Then I see "Planning" tab is highlighted for particular program
     Examples:

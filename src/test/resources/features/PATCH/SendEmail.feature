@@ -104,7 +104,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    And I hover mouse on text "Cc" inside Send Email Modal
+#    And I hover mouse on text "Cc" inside Send Email Modal
+    When I hovering mouse on help text icon inside modal "CC"
     Then I see help text "Use semicolon(;) to separate multiple Cc email addresses" is displayed related field "Cc" inside Send Email
 
   @332326 @wip
