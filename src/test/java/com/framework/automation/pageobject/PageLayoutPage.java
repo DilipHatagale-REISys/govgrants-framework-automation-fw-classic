@@ -3886,4 +3886,19 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void clickAfterSelectionOfInTheTables(String buttonName, String recordValue, String numberofEntries, String flexTableId) {
+        By entriesDropDown = ByUsing.xpath("//*[@id='" + flexTableId + "']//span[text()='Show' or text()='Records Per Page']/ancestor::div[1]//select");
+
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(entriesDropDown)
+                    || I.amPerforming().checkToSee().isEnabled(entriesDropDown)) {
+                govgrants.perform().flexTable().flexTableShowEntriesDropDown(flexTableId, numberofEntries);
+            }
+        } catch (Exception e) {
+
+        }
+        govgrants.perform().flexTable().selectCheckBoxes(flexTableId, recordValue);
+        govgrants.perform().phasePanel().clickAnyRightPannelButton(flexTableId, buttonName);
+    }
 }
