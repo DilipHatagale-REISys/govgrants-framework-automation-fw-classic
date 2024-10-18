@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-   @ovi @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @SanityPATCH @SanityPATCHApprovalProcess
+  @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @SanityPATCH @SanityPATCHApprovalProcess
   Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
   Sanity TC_PM_To verify that Start action is visible for submitted for approval record, under Pending task table(381944)
     Given I have "default" configuration as below:
@@ -14,87 +14,130 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Sequence              | 5             | ADAC-0156          |
       | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0156          |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
     And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "default" portal
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    #Then I softly can see row level action button "Start" against "{SavedValue:PEGMSID}" in flex table with id "---program:-:HomePendingTasksTableId---"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send back | Approve |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#       | ADMIN |
+      | PM   |
 
   @34306    @labelChangeOfApprovalDecision-Programs
-  Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
+  Scenario Outline: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0156          |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    Then I can see the radio button "Approve" in the approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
+      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0156          |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    Then I can see the radio button "Approve" in the approval decision
+    Examples:
+      | User |
+#       | ADMIN |
+      | PM   |
 
   @34309  @34314 @202383 @202386 @201946 @201948 @34308 @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario Outline: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
@@ -108,35 +151,53 @@ Business Need: Approval Process Component Scenarios
       | Approval Decision Action:General | Comments Required    | true                                 | ADAC-0156          |
       | Approval Decision Action:General | Confirmation Title   | Confirmation                         | ADAC-0156          |
       | Approval Decision Action:General | Confirmation Message | Do you want to approve this program? | ADAC-0156          |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     Then I can see the radio button "Approve" in the approval decision
     When I select radio button "Approve" in the approval decision
     And I submit the approval in the approval decision
@@ -147,49 +208,67 @@ Business Need: Approval Process Component Scenarios
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Do you want to approve this program?" is displayed
-
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+#       | ADMIN |
+      | PM   |
 
   @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
   Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName                         | fieldOrignalValue        | filterId         |
-      | Approval Decision Action | Filter Criteria for User Reassign | <oldFilterCriteriaValue> | ApiGeneratedId:1 |
+      | Approval Decision Action | Filter Criteria for User Reassign | <oldFilterCriteriaValue> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField |
       | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0154          |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
     And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    And I pause execution for "3" seconds
     When I select radio button "Forward" in the approval decision
     Then I can see user "Automation PM" in the user lookup in the approval decision
     Examples:
@@ -234,7 +313,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     Then I see approval with subject as "{SavedValue:PEGMSID}" is not displayed
 
-  @q1 @34313    @successEmailSentToProgramOwner-Programs
+  @34313    @successEmailSentToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
@@ -290,7 +369,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
+  @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs @wip
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
 #    Given I have "default" configuration as below:
 #      | configurationCategory   | fieldName                          | fieldOrignalValue | filterId         |
@@ -341,38 +420,61 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Task Config:Task Action             | Complete On View? | true          | Approve Program       |                           |                            |
-      | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantor State Program | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+      | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     And I "Send back" in the approval decision
-    When I re-login to "As a Grantor" app as "PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
@@ -1404,234 +1506,380 @@ Business Need: Approval Process Component Scenarios
       | Approval Decision Action:General | Hide Action | true          | ADAC-0157          |
       | Approval Decision Action:General | Hide Action | true          | ADAC-0154          |
       | Approval Decision Action:General | Hide Action | true          | ADAC-0155          |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    And I pause execution for "3" seconds
     Then I cannot see the radio button "Approve" in the approval decision
     Then I cannot see the radio button "Reject" in the approval decision
     Then I cannot see the radio button "Forward" in the approval decision
     Then I cannot see the radio button "Send back" in the approval decision
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @202385 @202390
   Scenario Outline:Approval Decision Action-Admin-Config-To verify confirmatiom message should display on Approve
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
+      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                        | coreComponentField |
+      | Approval Decision Action:General | Comments Required    | true                                 | ADAC-0156          |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                         | ADAC-0156          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to approve this program? | ADAC-0156          |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    Then I can see the radio button "Approve" in the approval decision
     When I select radio button "Approve" in the approval decision
+    And I submit the approval in the approval decision
+    #202385
+    Then I can see the message "Comments are Required." in the approval decision
+    #202390
+    Then I see comment box displayed as "Enter Your Comments"
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I do not see alert popup box
-
+    Then I see confirmation box with body "Do you want to approve this program?" is displayed
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#       | ADMIN |
+      | PM   |
 
   @202421 @202419
   Scenario Outline:Approval Decision Action-Admin-Config-To verify confirmation message should not display on Disapproved
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
+      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Comments Required    | true          | ADAC-0157          |
+      | Approval Decision Action:General | Confirmation Title   |               | ADAC-0157          |
+      | Approval Decision Action:General | Confirmation Message |               | ADAC-0157          |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    Then I can see the radio button "Approve" in the approval decision
+    And I pause execution for "3" seconds
     When I select radio button "Reject" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
     Then I do not see alert popup box
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @202450 @202453
   Scenario Outline: Approval Decision Action-Admin-config-To verify confirmation message should not display on sent back
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
+      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Comments Required    | true          | ADAC-0155          |
+      | Approval Decision Action:General | Confirmation Title   |               | ADAC-0155          |
+      | Approval Decision Action:General | Confirmation Message |               | ADAC-0155          |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    Then I can see the radio button "Send back" in the approval decision
+    And I pause execution for "13" seconds
     When I select radio button "Send back" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
     Then I do not see alert popup box
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @202471 @202493
   Scenario Outline: Approval Decision Action-PM-UI-To verify confirmation message should not display on Reassign
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
+    And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     When I select radio button "Forward" in the approval decision
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
     Then I do not see alert popup box
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @219929 @219930
   Scenario Outline: Approval Decision Action-Admin-Config-To verify snapshot should generated on approval
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
@@ -1639,9 +1887,9 @@ Business Need: Approval Process Component Scenarios
     Then I see take snap shot getting saved with "Submitted for Approval.pdf"
 
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @219932 @219933
   Scenario Outline: Approval Decision Action-Admin-Config-To verify snapshot should not generated on approval
@@ -1673,9 +1921,9 @@ Business Need: Approval Process Component Scenarios
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+#      | ADMIN |
+      | PM   |
 
   ########################## Approval Process Step Cache ###################
   @202629 @202630 @202636 @202637 @202767 @202769
@@ -2920,3 +3168,68 @@ The EGMS Team
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
+
+  @72341 @programActivation
+  Scenario: Validate the activation of Internal Program and the status changes to Active
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    When I get the "EGMS ID"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---" without waiting for record
+    And I click on "Activate" in the page details
+    And I wait for "5" seconds
+    Then I see status in Progress-bar is "Active" and is "Green"

@@ -40,8 +40,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379174
-    Then I see "New" button inside "---program:-:ProgramReviewStepTableId---" flex table
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTableId---" without processing
+    Then I see "New" button inside "---program:-:ProgramReviewStepTemplatesTableId---" flex table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     And I refresh the page
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
@@ -119,7 +119,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -146,7 +146,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     When I navigate to "Setup" sub tab
@@ -173,7 +173,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -334,7 +334,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257481
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -360,7 +360,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257480
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -386,7 +386,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     #257482
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      |
       | 1          | Pre-Screen Review | Review Step Desc |
     And I pause execution for "3" seconds
@@ -411,7 +411,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -436,7 +436,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
     And I pause execution for "3" seconds
@@ -456,7 +456,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -473,7 +473,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
@@ -499,9 +499,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
-      | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name         | Description      | Step Weight (%) |
+      | 4          | Pre-Screen Review | Review Step Desc |                 |
     And I pause execution for "3" seconds
     Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
@@ -521,7 +521,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      |
       | 4          | Pre-Screen Review | Review Step Desc |
     And I pause execution for "3" seconds
@@ -546,7 +546,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description |
       | 4          | Pre-Screen Review | Test file   |
     And I pause execution for "3" seconds
@@ -585,7 +585,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
     Then I softly see value "Test Review" for title "Step Order" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -609,7 +609,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTableId---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
     And I pause execution for "5" seconds
@@ -6694,10 +6694,10 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Row Grouping   | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Over All Total | true              | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
