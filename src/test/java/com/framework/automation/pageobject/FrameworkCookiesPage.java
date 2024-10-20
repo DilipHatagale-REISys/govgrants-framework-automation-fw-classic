@@ -106,7 +106,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
                     "| //div[@id='" + tableid + "']//span[@class='ng-scope']/span[@title='" + ProjectTitleList + "'] |" +
                     " //div[@id='" + tableid + "']//span[contains(@class,'ng-scope')]/span[@title='" + ProjectTitleList + "'] |" +
                     " //div[@id='" + tableid + "']//tbody/tr/td/span//a[contains(@title,'" + ProjectTitleList + "')] |" +
-                    " //div[@id='" + tableid + "']/div//table/tbody/tr/td[@class='tableCell pdf-wrap-td ng-scope']/span/span/span[contains(@title,'" + ProjectTitleList + "')]"));
+                    " //div[@id='" + tableid + "']/div//table/tbody/tr/td[@class='tableCell pdf-wrap-td ng-scope']/span/span/span[contains(@title,'" + ProjectTitleList + "')] |" +
+                    "//div[@id='" + tableid + "']//table//ancestor::table//tbody//td//span/span[contains(text(),'" + ProjectTitleList + "')]"));
             if (elements.size() > 0) {
                 flag = true;
             }
@@ -143,7 +144,7 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//span[text()='" + columnName + "']/parent::span/following::i[@class='ng-scope fa fa-long-arrow-" + arrow + "'] |" +
-                    " //div[@id='"+tableid+"']//thead//*[@title='"+columnName+"']/parent::span//span[contains(@class,'fa fa-arrow-"+arrow+"')]"))) {
+                    " //div[@id='" + tableid + "']//thead//*[@title='" + columnName + "']/parent::span//span[contains(@class,'fa fa-arrow-" + arrow + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
