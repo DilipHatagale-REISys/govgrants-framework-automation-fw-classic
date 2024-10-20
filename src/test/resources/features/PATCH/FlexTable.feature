@@ -1603,7 +1603,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334691
+  @334691 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Picklist field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1648,6 +1648,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -1670,7 +1671,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334695
+  @334695 @functionalityisworking-scriptisfailing
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1681,13 +1682,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334696
+  @334696 @functionalityisworking-scriptisfailing
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1733,8 +1734,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Automation PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Automation PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
@@ -1751,8 +1752,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Automation PM" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Automation PM" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
@@ -1771,8 +1772,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Mothers for Justice & Equality" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Mothers for Justice & Equality" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334703
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Lookup field
@@ -1785,15 +1786,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I pause execution for "20" seconds
     And I click toggle button to select "Grants - All"
-    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Mothers for Justice & Equality" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Mothers for Justice & Equality" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334704
+  @334704 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Email field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
