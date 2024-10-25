@@ -21,8 +21,8 @@ public class FlexGridSteps {
     }
 
     @And("^I click on page navigation arrow \"([^\"]*)\" for table id \"([^\"]*)\"$")
-    public void ClickOnPaginationArrow(String flexTableId, String NextPrevious) {
-        flexGridPage.performClickOnPaginationArrow(flexTableId, NextPrevious);
+    public void ClickOnPaginationArrow(String NextPrevious, String flexTableId) {
+        flexGridPage.performClickOnPaginationArrow(NextPrevious, flexTableId);
     }
 
     @Then("^I see \"([^\"]*)\" as header$")

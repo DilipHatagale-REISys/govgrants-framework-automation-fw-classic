@@ -107,7 +107,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
                     " //div[@id='" + tableid + "']//span[contains(@class,'ng-scope')]/span[@title='" + ProjectTitleList + "'] |" +
                     " //div[@id='" + tableid + "']//tbody/tr/td/span//a[contains(@title,'" + ProjectTitleList + "')] |" +
                     " //div[@id='" + tableid + "']/div//table/tbody/tr/td[@class='tableCell pdf-wrap-td ng-scope']/span/span/span[contains(@title,'" + ProjectTitleList + "')] |" +
-                    "//div[@id='" + tableid + "']//table//ancestor::table//tbody//td//span/span[contains(text(),'" + ProjectTitleList + "')]"));
+                    "//div[@id='" + tableid + "']//table//ancestor::table//tbody//td//span/span[contains(text(),'" + ProjectTitleList + "')] |" +
+                    "//div[@id='" + tableid + "']//table//ancestor::table//tbody//td//span//span[contains(text(),'" + ProjectTitleList + "')]"));
             if (elements.size() > 0) {
                 flag = true;
             }

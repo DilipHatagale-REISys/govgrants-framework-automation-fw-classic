@@ -1787,8 +1787,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "Mothers for Justice & Equality" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Mothers for Justice & Equality" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Test Automation Organization" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Test Automation Organization" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
@@ -1803,6 +1803,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1838,7 +1839,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I pause execution for "20" seconds
+    And I pause execution for "6" seconds
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
@@ -1889,9 +1890,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I pause execution for "20" seconds
+    And I pause execution for "6" seconds
     And I click toggle button to select "Grants - All"
-    And I quick search "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "10" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
@@ -1899,19 +1900,37 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334710 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering whole data of respective field
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
 
   @334711
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering whole data of respective field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
 
   @334712
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering whole data of respective field
@@ -1919,72 +1938,51 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see list contain "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @334713 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering keyword
+  Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "security" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334714
+  @334714 @334722
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering keyword
+  Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "Program" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    And I quick search "Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334715
+  @334715 @334724
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering keyword
+   Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "security" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @334720 @wip
-  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Applications" tab
-    And I quick search "snapshot" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Test application for snapshot 3" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @334722
-  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "Testing" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "New Application For Testing Only" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @334724
-  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "release" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "package release flow sk4_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-
-  @334725 @wip
+   @334725 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     And I quick search "016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
   @334726
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    And I quick search "1" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "1" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
   @334728
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only digits
@@ -1992,8 +1990,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "00" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "00" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334730 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering alphanumeric values
@@ -2003,12 +2001,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "T09" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334731 @wip
+  @334731
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering alphanumeric values
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Applications" tab
-    And I quick search "A11" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I quick search "PG-REI-5386" inside table "---program:-:programsTableId---"
+    Then I see list contain "PG-REI-5386" inside table "---program:-:programsTableId---"
 
   @334734
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering alphanumeric values
@@ -2016,8 +2014,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "T09" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "AP-REI-038" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-REI-038" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334735 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering characters or digits with sp. characters.
@@ -2028,21 +2026,30 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334736
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering characters or digits with sp. characters.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "Program For Application	" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I enter value "Program For @special charectars" into field "fieldProgramName__c"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "Title" as "PTITLE"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
 
-
-  @334739
+    @334739
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering characters or digits with sp. characters.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "AP-REI-016" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-REI-016" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334740 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for reference fields
@@ -3651,7 +3658,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |

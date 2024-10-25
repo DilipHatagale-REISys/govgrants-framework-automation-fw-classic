@@ -14,7 +14,7 @@ Business Need: Snapshot Config Component Scenarios
       | configurationCategory               | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
+      | Page Layout Action                  | History Snapshot-Action Enable? | true         | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"

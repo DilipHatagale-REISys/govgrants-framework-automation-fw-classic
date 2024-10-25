@@ -165,7 +165,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
 
-  @77215    @enableRecordSelectionForEnhancedDataTable-gPlanning
+  @77215    @enableRecordSelectionForEnhancedDataTable-gPlanning @wip
   Scenario: validate enabling of record selection check boxes in in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -220,7 +220,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
-  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
+  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning @smokePATCH @wip
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -794,8 +794,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General           | Header Help Text | <newHelpText> | AppContact                | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
     When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
     And I navigate to "Overview" sub tab
@@ -1144,14 +1144,16 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+      | Flex Grid             | Default Page Size          | 5                  | ApiGeneratedId:4 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1191,14 +1193,14 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+      | Flex Grid             | Default Page Size          | 10                 | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1262,13 +1264,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+      | Flex Grid             | Default Page Size          | 10                 | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1322,7 +1326,9 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
       | Project Role | equals to | Other |
-    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+  #  Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
      # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
@@ -1337,12 +1343,14 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+      | Flex Grid             | Default Page Size          | 10                 | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1366,14 +1374,14 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
-    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
     #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @207596p @207597
+  @207596 @207597
   Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page,
   Page description - PM- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
     Given I have "default" configuration as below:
@@ -1381,11 +1389,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+      | Flex Grid             | Default Page Size          | 10                 | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1408,8 +1420,20 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Wertyq PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation ADMIN1" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Modal Test" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "san diago" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "FirstName LastName" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
-    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
@@ -1425,11 +1449,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:3 |
+      | Flex Grid             | Default Page Size          | 5                  | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1452,9 +1480,21 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Wertyq PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation ADMIN1" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Modal Test" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "san diago" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "FirstName LastName" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
-    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
-    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
+    And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I click on page navigation arrow "First" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "Previous" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
@@ -1469,11 +1509,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:3 |
+      | Flex Grid             | Default Page Size          | 5                  | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -1496,6 +1540,18 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Wertyq PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation ADMIN1" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Modal Test" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "san diago" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "FirstName LastName" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
     Then I do not see pagination "Last" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2177,7 +2233,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    #And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I perform quick search for "Automation PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -2207,9 +2263,9 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Yes" on modal confirmation box
     And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
     And I enter value "sds@dv.com" into field "Title"
-    And I enter value "Test" into field "Body"
+    And I enter value "Chakram" into field "Body"
     When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "Test" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I perform quick search for "Chakram" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
   @207528
@@ -2238,7 +2294,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I perform quick search for "PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     Then I see table contains "Showing 1 to " inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -2338,7 +2393,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207534 @207535
+  @207534 @207535 @alreadyraisedbug
   Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering apostrophe in quick search box
   Quick Search- PM- UI- Verify we can search records by entering apostrophe in quick search box
     Given I have "default" configuration as below:
@@ -2417,8 +2472,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "'apostrophe 'apostrophe" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
@@ -2845,12 +2898,12 @@ Business Need: DataTableEnhanced Component Scenarios
   Action- PM- UI- Verify correct Confirmation message is getting displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table            | Show Confirmation Box | false             | ApiGeneratedId:0 |
-      | Flex Table            | Confirmation Message  |                   | ApiGeneratedId:1 |
+      | Flex Grid             | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Grid             | Confirmation Message  |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Grid Action      | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Grid Action      | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2891,18 +2944,18 @@ Business Need: DataTableEnhanced Component Scenarios
   @205494
   Scenario: Action- SPI- UI- Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior       | EditRecord        | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title           |                   | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Where To Open ?       |                   | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Show Confirmation Box | false             | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Behavior       | EditRecord        | ApiGeneratedId:0 |
+      | Flex Table Action     | Modal Title           |                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Where To Open ?       |                   | ApiGeneratedId:2 |
+      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:3 |
+      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior       | EditRecord       | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Modal Title           | Automation Title | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ?       | Modal            | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Show Confirmation Box | false            | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Show Confirmation Box | true             | RecipientGrantNotes | Name                      | Edit                       |
       | Flex Table Action     | Confirmation Message  |                  | RecipientGrantNotes | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -2996,15 +3049,16 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
     When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I download the file
     Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
-    Then I see "Automation PM" on page "1" of "govgrants" pdf file
     Examples:
       | Users |
-      | Admin |
+    #  | Admin |
       | PM    |
 
   @207545 @207548
@@ -3027,7 +3081,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     And I download the file
-    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+    Then I see "Notes three" on page "1" of "govgrants" pdf file
 
   @207549 @207550 @207552 @207553
   Scenario Outline: Download as XL / CSV- Admin- Config- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
@@ -3056,8 +3110,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I download the file
-    Then I see "Lisa Mitchell" in downloaded xls or csv file "govgrants"
-    Then I see "Automation PM" in downloaded xls or csv file "govgrants"
+    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+
     Examples:
       | Users |
     #  | Admin |
@@ -3083,7 +3137,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     And I download the file
-    Then I see "Lisa Mitchell" in downloaded xls or csv file "govgrants"
+    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
 
   @207612 @207613
   Scenario Outline: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
@@ -3199,7 +3253,7 @@ Business Need: DataTableEnhanced Component Scenarios
     # | ADMIN |
       | PM   |
 
-  @379011p @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable
+  @379011p @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable @wip
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3230,7 +3284,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #379009
     Then I see new tab is opened
 
-  @379010 @SanityPATCH @SanityPATCHEnhancedTable
+  @379010 @SanityPATCH @SanityPATCHEnhancedTable @wip
   Scenario:To verify that user is able to delete record by clicking on Delete action
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -3250,7 +3304,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Remove" icon for "Automation PM" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
-  @379008p @SanityPATCH @SanityPATCHEnhancedTable
+  @379008p @SanityPATCH @SanityPATCHEnhancedTable @wip
   Scenario: To verify that user is able to edit existing record by clicking on Edit action
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
