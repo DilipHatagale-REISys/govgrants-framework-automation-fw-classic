@@ -222,7 +222,12 @@ Business Need: EnhancedGrid Component Scenarios
 
   @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                              | coreComponentField | filterId         |
+      | Flex Table            | Display Field Names | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn} |                    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},currencytest__c,Numbertest__c,percenttest__c | ProgramChecklists  |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -245,6 +250,12 @@ Business Need: EnhancedGrid Component Scenarios
 
   @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
   Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                              | coreComponentField | filterId         |
+      | Flex Table            | Display Field Names | {flexgrid:SupportingDocumentsChecklistExternalUser.defaultdfn} |                    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | {flexgrid:SupportingDocumentsChecklistExternalUser.defaultdfn},currencytest__c,Numbertest__c,percenttest__c | ApplicationChecklists |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -262,6 +273,14 @@ Business Need: EnhancedGrid Component Scenarios
 
   @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196296
   Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue                                              | coreComponentField | filterId         |
+      | Flex Table            | Display Field Names       | {flexgrid:SupportingDocumentsChecklistExternalUser.defaultdfn} |                    | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | true                                                           |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names       | {flexgrid:SupportingDocumentsChecklistExternalUser.defaultdfn},currencytest__c,Numbertest__c,percenttest__c | ApplicationChecklists |                           |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true                                                                                                        | ApplicationChecklists |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -871,7 +890,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379187 #379206
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
-  @35434    @enableAutoIndexForEnhancedGrid-gPlanning
+  @35434 @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -879,12 +898,14 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Auto Index | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}"
+    When I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:appBudgetPeriodTableId---"
 
@@ -5403,8 +5424,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I softly do not see "Fee Fund Requested" in flex table header "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
-  @192950 @sprint1 @u serstory_176992
-
+  @192950 @sprint1 @userstory_176992
   Scenario Outline: E-grid- To verify , Number  field should restrict the field limit
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

@@ -41,6 +41,18 @@ public class ConfigurationSteps {
         projectAPI.deletionApiProgramRecord(recordName, objectType, fieldApiName);
     }
 
+    @Given("I initiated an application review for application {string} on announcement {string} with properties {string}")
+    public void iInitiatedAnApplicationReviewOnAnnouncement(String applicationTitle, String announcmentTitle, String filter) {
+        I.amPerforming().waitFor().makeThreadSleep(20000); //ToDO- This API gets failed as It needs Announcement Record, So added wait time as of now
+        projectAPI.initateApplicationReviewOnAnnouncement(applicationTitle, announcmentTitle, filter);
+    }
+
+    @Given("I created approved FDM on application {string}")
+    public void iCreatedApprovedFDMWithProperties(String applicationName) {
+        I.amPerforming().waitFor().makeThreadSleep(40000); //ToDO- This API gets failed as It needs Application Record, So added wait time as of now
+        projectAPI.approveDFM(applicationName);
+    }
+
     @And("I update the locale and timezone related changes:$")
     public void iUpdateTheLocaleAndTimezone(List<Map<String, String>> configParameters) {
         for (Map<String, String> parameters : configParameters)

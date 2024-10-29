@@ -44,6 +44,8 @@ public class Announcements {
                 return updateBudgetCategoryForTwoFocusAreasFifteenHundredAmt(defaultJson);
             case "SECOND_BUDGET_CAT_DETAILS_BUD_YES":
                 return updateBudgetCategoryForTwoFocusAreasDetailsBudgetYes(defaultJson);
+            case "BUDGET_CAT_DETAILS_BUD_YES":
+                return updateBudgetCategoryForOneFocusAreasDetailsBudgetYes(defaultJson);
             case "KYECONTACTS":
                 break;
             case "KEYOUTCOME":
@@ -53,6 +55,22 @@ public class Announcements {
         }
         return defaultJson;
     }
+
+    private JsonObject updateBudgetCategoryForOneFocusAreasDetailsBudgetYes(JsonObject defaultJson) {
+        JsonArray budgetCategoryArray = new JsonArray();
+        JsonObject budgetCategory1 = new JsonObject();
+        budgetCategory1.addProperty("Title", "Construction");
+        budgetCategory1.addProperty("Narrative", "Construction");
+        budgetCategory1.addProperty("BudgetRequest", 1000);
+        budgetCategory1.addProperty("CashMatch", 100);
+        budgetCategory1.add("NonCashMatch", JsonNull.INSTANCE);
+        budgetCategory1.add("OtherLeverageOptional", JsonNull.INSTANCE);
+        budgetCategory1.addProperty("ServiceAreaTitle", "Automation Permanent Focus Area");
+        budgetCategoryArray.add(budgetCategory1);
+        defaultJson.add("BuildUpItems", budgetCategoryArray);
+        return defaultJson;
+    }
+
 
     private JsonObject updateBudgetCategoryForTwoFocusAreasDetailsBudgetYes(JsonObject defaultJson) {
         JsonArray budgetCategoryArray = new JsonArray();
@@ -193,8 +211,8 @@ public class Announcements {
 
     public JsonObject defaultPayloadApplicationReview(String applicationName, String announcementName) {
 
-        String ownerName = "Automation SPI";
-        String contactName = "Automation SPI";
+        String ownerName = "Automation SPI3";
+        String contactName = "Automation SPI3";
         String kpiName = "Automation Permanent KPI";
 
         JsonObject parent = new JsonObject();
@@ -213,6 +231,9 @@ public class Announcements {
         application.add("PreApplication", JsonNull.INSTANCE);
         application.addProperty("RecordTypeId", ProjectWebServices.getRecordTypeId("Application__c", "Grantor"));
         application.addProperty("OwnerId", ProjectWebServices.getIdOf("User", ownerName));
+        application.addProperty("ApproachMethodology", "Approch methodology test");
+        application.addProperty("Capacity", "Capacity test");
+        application.addProperty("Qualifications", "Qualifications test");
         applicationArray.add(application);
         parent.add("Application", applicationArray);
 
@@ -298,7 +319,7 @@ public class Announcements {
         FDM.addProperty("SubawardAbbreviation", "AWD");
         FDM.addProperty("RecommendedForAward", "Yes");
         FDM.addProperty("RecommendedAmount", 1000);
-        FDM.addProperty("TotalCommitmentAmount",1000);
+        FDM.addProperty("TotalCommitmentAmount", 1000);
         FDMArray.add(FDM);
 
         parent.add("FDM", FDMArray);
@@ -561,15 +582,50 @@ public class Announcements {
                 return updateAnnouncementWithThreeFocusAreaByappRiskNo(json);
             case "SECOND_FOCUS_AREA_BY_APPLICANT_FOCUS_AREA_RISK_ASS_NO":
                 return updateAnnouncementWithSecondFocusAreaByappFocusAreaRiskNo(json);
+            case "SECOND_FOCUS_AREA_BY_APP_FOCUS_AREA_RISK_NO_IND_ORG":
+                return updateAnnouncementWithSecondFocusAreaByappFocusAreaRiskNoWithIndOrg(json);
             case "THREE_FOCUS_BY_APP_FOCUS_AREA_RISK_NO_PROGRAM_INCOME_NO_SUB_MATCH_NO":
                 return updateAnnouncementWithSecondFocusAreaByappFocusAreaRiskNoNOIncomeSubMatchNo(json);
             case "SECOND_FOCUS_AREA_DETAILS_BUDGET_YES_RISK_NO":
                 return updateAnnouncementWithSecondFocusAreaDetailBudgetYes(json);
             case "THREE_FOCUS_BY_APP_DETAILS_BUDGET_YES_RISK_NO":
                 return updateAnnouncementWithThreeFocusAreaByappDetailsYesRiskNo(json);
+            case "PROGRAM_FOR_PREAPP_SUPP_DOC_YES":
+                return updateAnnouncementWithProgramSuppDocYes(json);
             default:
                 return json;
         }
+    }
+
+    private JsonObject updateAnnouncementWithSecondFocusAreaByappFocusAreaRiskNoWithIndOrg(JsonObject json) {
+        JsonArray serviceArea = new JsonArray();
+        JsonObject serviceAreaB = new JsonObject();
+        serviceAreaB.addProperty("ServiceArea", ProjectWebServices.getIdOf("ServiceArea__c", "Automation Permanent Focus Area2"));
+        serviceArea.add(serviceAreaB);
+        json.add("AnnouncementServiceArea", serviceArea);
+        JsonObject jsonObject1 = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
+        JsonArray pre1 = new JsonArray();
+        jsonObject1.addProperty("Allocationlevel", "By Applicant and Focus Area");
+        jsonObject1.addProperty("RiskAssessment_Required", "No");
+        pre1.add(jsonObject1);
+        json.add("Announcement", pre1);
+        JsonObject invApp = new JsonObject();
+        JsonArray invAppA = new JsonArray();
+        invApp.addProperty("Organization", ProjectWebServices.getIdOf("Account", "Automation IND"));
+        invApp.addProperty("AllocatedAmount", 500);
+        invAppA.add(invApp);
+        json.add("InvitedApplicant", invAppA);
+        return json;
+    }
+
+    private JsonObject updateAnnouncementWithProgramSuppDocYes(JsonObject json) {
+        JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
+        JsonArray pre = new JsonArray();
+        jsonObject.addProperty("Program", ProjectWebServices.getIdOf("Program__c", "Automation Permanent PreApp Supp Doc Yes"));
+        jsonObject.addProperty("PreApplicationNeeded", "Yes");
+        pre.add(jsonObject);
+        json.add("Announcement", pre);
+        return json;
     }
 
     private JsonObject invitedIndUserSPIUerOrganization(JsonObject json) {
@@ -583,7 +639,7 @@ public class Announcements {
         json.add("InvitedApplicant", pre);
         JsonObject jsonObject1 = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre1 = new JsonArray();
-        jsonObject1.addProperty("Allocationlevel","N/A");
+        jsonObject1.addProperty("Allocationlevel", "N/A");
         pre1.add(jsonObject1);
         json.add("Announcement", pre1);
         return json;
@@ -763,7 +819,7 @@ public class Announcements {
         json.add("AnnouncementServiceArea", serviceArea);
         JsonObject jsonObject1 = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre1 = new JsonArray();
-        jsonObject1.addProperty("Allocationlevel","By Applicant");
+        jsonObject1.addProperty("Allocationlevel", "By Applicant");
         jsonObject1.addProperty("RiskAssessment_Required", "No");
         pre1.add(jsonObject1);
         json.add("Announcement", pre1);
@@ -784,7 +840,7 @@ public class Announcements {
         json.add("Announcement", pre1);
         JsonObject invApp = new JsonObject();
         JsonArray invAppA = new JsonArray();
-        invApp.addProperty("Organization", ProjectWebServices.getIdOf("Account", "Mothers for Justice & Equality"));
+        invApp.addProperty("Organization", ProjectWebServices.getIdOf("Account", "SAN DIEGO ELECTRICAL TRAINING TRUST"));
         invApp.addProperty("AllocatedAmount", 500);
         invAppA.add(invApp);
         json.add("InvitedApplicant", invAppA);
@@ -800,7 +856,7 @@ public class Announcements {
         json.add("InvitedApplicant", pre);
         JsonObject jsonObject1 = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre1 = new JsonArray();
-        jsonObject1.addProperty("Allocationlevel","N/A");
+        jsonObject1.addProperty("Allocationlevel", "N/A");
         pre1.add(jsonObject1);
         json.add("Announcement", pre1);
         return json;
@@ -830,7 +886,7 @@ public class Announcements {
         json.add("InvitedApplicant", pre);
         JsonObject jsonObject1 = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre1 = new JsonArray();
-        jsonObject1.addProperty("Allocationlevel","By Applicant");
+        jsonObject1.addProperty("Allocationlevel", "By Applicant");
         pre1.add(jsonObject1);
         json.add("Announcement", pre1);
         return json;
@@ -908,41 +964,41 @@ public class Announcements {
     private JsonObject byApplicantRiskAssessmentNo(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
+        jsonObject.addProperty("Allocationlevel", "By Applicant");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
         jsonObject.addProperty("RiskAssessment_Required", "No");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
     private JsonObject byApplicantFocusAreaRiskAssessmentNo(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant and Focus Area");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
+        jsonObject.addProperty("Allocationlevel", "By Applicant and Focus Area");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
         jsonObject.addProperty("RiskAssessment_Required", "No");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
     private JsonObject byApplicantFocusAreaNegotiationsYes(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant and Focus Area");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
+        jsonObject.addProperty("Allocationlevel", "By Applicant and Focus Area");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
     private void updateAnnouncementOwner(JsonObject json, String user) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray annOwner = new JsonArray();
-        jsonObject.addProperty("OwnerId",ProjectWebServices.getIdOf("User",user));
+        jsonObject.addProperty("OwnerId", ProjectWebServices.getIdOf("User", user));
         annOwner.add(jsonObject);
-        json.add("Announcement",annOwner);
+        json.add("Announcement", annOwner);
     }
 
     private JsonObject byApplicantFocusAreaNo(JsonObject json) {
@@ -967,10 +1023,10 @@ public class Announcements {
     private JsonObject byApplicantFocusAreaNegotiationsNo(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant and Focus Area");
-        jsonObject.addProperty("IsNegotiationsAllowed","No");
+        jsonObject.addProperty("Allocationlevel", "By Applicant and Focus Area");
+        jsonObject.addProperty("IsNegotiationsAllowed", "No");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
@@ -986,42 +1042,42 @@ public class Announcements {
     private JsonObject byApplicantFocusAreaNegotiationYes(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant and Focus Area");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
+        jsonObject.addProperty("Allocationlevel", "By Applicant and Focus Area");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
     private JsonObject byApplicantNegotiationNo(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray nego = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant");
-        jsonObject.addProperty("IsNegotiationsAllowed","No");
+        jsonObject.addProperty("Allocationlevel", "By Applicant");
+        jsonObject.addProperty("IsNegotiationsAllowed", "No");
         nego.add(jsonObject);
-        json.add("Announcement",nego);
+        json.add("Announcement", nego);
         return json;
     }
 
     private JsonObject byApplicantFocusAreaNoNegotiationsNo(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray nego = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant");
-        jsonObject.addProperty("FocusAreaRequired","No");
-        jsonObject.addProperty("IsNegotiationsAllowed","No");
+        jsonObject.addProperty("Allocationlevel", "By Applicant");
+        jsonObject.addProperty("FocusAreaRequired", "No");
+        jsonObject.addProperty("IsNegotiationsAllowed", "No");
         nego.add(jsonObject);
-        json.add("Announcement",nego);
+        json.add("Announcement", nego);
         return json;
     }
 
     private JsonObject byApplicantFocusAreaNoNegotiationsYes(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray nego = new JsonArray();
-        jsonObject.addProperty("Allocationlevel","By Applicant");
-        jsonObject.addProperty("FocusAreaRequired","No");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
+        jsonObject.addProperty("Allocationlevel", "By Applicant");
+        jsonObject.addProperty("FocusAreaRequired", "No");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
         nego.add(jsonObject);
-        json.add("Announcement",nego);
+        json.add("Announcement", nego);
         return json;
     }
 
@@ -1038,11 +1094,11 @@ public class Announcements {
     private JsonObject updatePreApplicationAndNegotiationAsYesAndFocusAreaNoForAnnouncement(JsonObject json) {
         JsonObject jsonObject = json.getAsJsonArray("Announcement").get(0).getAsJsonObject();
         JsonArray pre = new JsonArray();
-        jsonObject.addProperty("PreApplicationNeeded","Yes");
-        jsonObject.addProperty("IsNegotiationsAllowed","Yes");
-        jsonObject.addProperty("FocusAreaRequired","No");
+        jsonObject.addProperty("PreApplicationNeeded", "Yes");
+        jsonObject.addProperty("IsNegotiationsAllowed", "Yes");
+        jsonObject.addProperty("FocusAreaRequired", "No");
         pre.add(jsonObject);
-        json.add("Announcement",pre);
+        json.add("Announcement", pre);
         return json;
     }
 
@@ -1221,7 +1277,6 @@ public class Announcements {
     public JsonObject getDefaultPayloadPublishAnn(String annType, String annName) {
 
         String program = "Automation Permanent Internal Program";
-
         JsonObject parent = new JsonObject();
 
         JsonObject ann = new JsonObject();
@@ -1241,15 +1296,15 @@ public class Announcements {
                 .dateOperationsToGet().currentDateWithOffsetInDesiredFormat(10, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         ann.addProperty("ApplicationDueDate", I.amPerforming()
                 .dateOperationsToGet().currentDateWithOffsetInDesiredFormat(10, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-        ann.addProperty("FocusAreaRequired", "No");
-        ann.addProperty("IsGoalsRequired", "No");
-       // ann.addProperty("Allocationlevel", "N/A");
-        ann.addProperty("KPIsRequired", "No");
+        ann.addProperty("FocusAreaRequired", "Yes");
+        ann.addProperty("IsGoalsRequired", "Yes");
+        ann.addProperty("Allocationlevel", "N/A");
+        ann.addProperty("KPIsRequired", "Yes");
         ann.addProperty("WBSRequired", "No");
-        ann.addProperty("RiskAssessment_Required", "No");
+        ann.addProperty("RiskAssessment_Required", "Yes");
         ann.addProperty("AreExpensesBuildIUpLevel", "No");
         ann.addProperty("IsAdvancePermitted", "No");
-        ann.addProperty("IsNegotiationsAllowed", "No");
+        ann.addProperty("IsNegotiationsAllowed", "Yes");
         ann.addProperty("EligibleApplicantTypes", "04;05");
         ann.addProperty("DetailedBudgetingRequired", "No");
         ann.addProperty("AwardFloor", 1000);
@@ -1264,15 +1319,15 @@ public class Announcements {
         JsonObject serviceArea = new JsonObject();
         JsonArray serviceAreaA = new JsonArray();
         serviceArea.add("ServiceArea", JsonNull.INSTANCE);
-       // serviceArea.addProperty("ServiceArea",ProjectWebServices.getIdOf("ServiceArea__c","Automation Permanent Focus Area"));
+        //   serviceArea.addProperty("ServiceArea",ProjectWebServices.getIdOf("ServiceArea__c","Automation Permanent Focus Area"));
         serviceAreaA.add(serviceArea);
         parent.add("AnnouncementServiceArea", serviceAreaA);
 
         JsonObject awardFundingAccount = new JsonObject();
         JsonArray awardFundingAccountArray = new JsonArray();
-//        awardFundingAccount.addProperty("FundingAccount", ProjectWebServices.getIdOf("FundingAccount__c", I.amPerforming().propertiesFileOperationsTo()
-//                .getValue("fundingAccount")));
-        awardFundingAccount.addProperty("FundingAccount",ProjectWebServices.getIdOf("FundingAccount__c","FA-ST-01"));
+        awardFundingAccount.addProperty("FundingAccount", ProjectWebServices.getIdOf("FundingAccount__c", I.amPerforming().propertiesFileOperationsTo()
+                .getValue("fundingAccount")));
+        //   awardFundingAccount.addProperty("FundingAccount",ProjectWebServices.getIdOf("FundingAccount__c","FA-ST-01"));
         awardFundingAccount.addProperty("PreEncumbranceAmount", "1000");
         awardFundingAccountArray.add(awardFundingAccount);
         parent.add("AwardFundingAccount", awardFundingAccountArray);
@@ -1303,10 +1358,11 @@ public class Announcements {
 
         JsonObject invApp = new JsonObject();
         JsonArray invAppA = new JsonArray();
-        invApp.addProperty("Organization", ProjectWebServices.getIdOf("Account", "Mothers for Justice & Equality"));
+        invApp.addProperty("Organization", ProjectWebServices.getIdOf("Account", "SAN DIEGO ELECTRICAL TRAINING TRUST"));
         invApp.addProperty("AllocatedAmount", 1000);
         invAppA.add(invApp);
         parent.add("InvitedApplicant", invAppA);
+
         return parent;
     }
 
@@ -1367,6 +1423,8 @@ public class Announcements {
                 return createAwardWtithBuildUpFunctionalityYes(json);
             case "NO_PROGRAM_INCOME_ANTICIPATE":
                 return createAwardWtithNoProgramIncomeAnticipate(json);
+            case  "NO_BUDGETRedirectionThreshhold":
+                return createAwarForWithNoBudgetRedirectionThreshhold(json);
             case "AMENDMENT_REQUEST":
                 return createAwarForAmendmentRequest(json);
             case "AMENDMENT_REQUEST_BUILDUP_MATCH_YES":
@@ -1399,6 +1457,8 @@ public class Announcements {
                 return createAwarForIndUser(json);
             case "SUBRECIPIENT_ORG_SPI_USER":
                 return createAwarForSPIUser(json);
+            case "AWARD_NO_SUPPORTINGDOC_PROGRAM":
+                return awardWithNoSupportingDocProgram(json);
             case "SECOND_FOCUS_AREA":
                 if (Typeflag)
                     return createAwarForSecondFocusArea(json, Type[0]);
@@ -1459,6 +1519,26 @@ public class Announcements {
             default:
                 return json;
         }
+    }
+
+    private JsonObject awardWithNoSupportingDocProgram(JsonObject json) {
+        JsonObject grant = json.getAsJsonArray("Grant").get(0).getAsJsonObject();
+        JsonArray newA = new JsonArray();
+        grant.addProperty("Program", ProjectWebServices.getIdOf("Program__c", "Automation Permanent No Supporting Doc Program"));
+        newA.add(grant);
+        json.add("Grant", newA);
+        return json;
+    }
+
+    private JsonObject createAwarForWithNoBudgetRedirectionThreshhold(JsonObject json) {
+        JsonObject grant = json.getAsJsonArray("Grant").get(0).getAsJsonObject();
+        JsonArray newA = new JsonArray();
+        grant.addProperty("RiskAssessment_Required", "No");
+        grant.addProperty("BudgetRedirectionThreshhold", "No");
+        grant.addProperty("WBSRequired", "No");
+        newA.add(grant);
+        json.add("Grant", newA);
+        return json;
     }
 
     private JsonObject advancePermissibleYesnofocusareaDetailsBuildUpYes(JsonObject json) {
@@ -2476,7 +2556,7 @@ public class Announcements {
         grant.addProperty("BudgetCategoryPackage", "Construction");
         grant.addProperty("GrantDescription", "API Testing For Award Activation From Direct Grant");
         grant.addProperty("ExternalOrganization", ProjectWebServices.getIdOf("Account", "Test Automation Organization"));
-        grant.addProperty("InternalOrganization", ProjectWebServices.getIdOf("Account", "Mothers for Justice & Equality"));
+        grant.addProperty("InternalOrganization", ProjectWebServices.getIdOf("Account", "SAN DIEGO ELECTRICAL TRAINING TRUST"));
         grant.addProperty("Program", ProjectWebServices.getIdOf("Program__c", "Automation Permanent Internal Program"));
         grant.addProperty("DoesGrantAllowIndirect", "Yes");
         grant.addProperty("IsMatchRequired", "Yes");
@@ -2615,7 +2695,7 @@ public class Announcements {
         JsonObject keyContacts = new JsonObject();
         JsonArray keyContactsArray = new JsonArray();
         keyContacts.addProperty("ProjectRole", "Project Director/Manager");
-        keyContacts.addProperty("Contact", ProjectWebServices.getIdOf("Contact", "Automation SPI")); // Automation SPI id
+        keyContacts.addProperty("Contact", ProjectWebServices.getIdOf("Contact", "Automation SPI3")); // Automation SPI id
         keyContacts.addProperty("IsKeyContact", true);
         keyContactsArray.add(keyContacts);
         parent.add("KeyContacts", keyContactsArray);
