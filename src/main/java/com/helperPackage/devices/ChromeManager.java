@@ -46,7 +46,7 @@ public final class ChromeManager implements qrYoTsOWwA {
 
     @Override
     public void setupController() {
-        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion129.exe");
+        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion123.exe");
 
 
         if ("true".equalsIgnoreCase(System.getProperty("chromedebuglogs"))) {
