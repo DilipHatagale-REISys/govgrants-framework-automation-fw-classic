@@ -28,7 +28,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @2576141 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
