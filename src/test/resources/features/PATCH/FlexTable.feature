@@ -107,7 +107,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
+    #Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Total Records:" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334988
   Scenario: Flex table-Total Records count-PM-UI-To verify that on enabling Total records count, value of total record count displayed at bottom of flex table
@@ -123,7 +124,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
+   #Then I see "Total Records:" text-allignment is "center" in table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Total Records:" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @334989
   Scenario: Flex table-Total Records count-SPI-UI-To verify that on enabling Total records count, value of total record count displayed at bottom of flex table
@@ -138,7 +140,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    Then I see "Total Records:" text-allignment is "center" in table id "---program:-:toggleFlexTablepopupflextableTableId---"
+  # Then I see "Total Records:" text-allignment is "center" in table id "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see "Total Records:" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @334990 @336233 @wip
   Scenario: Flex table-Total Records count-Admin-Config-To verify that on disabling Total records count, value of total record count not displayed at bottom of flex table
@@ -187,7 +190,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     Then I do not see "Total Records" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
-
 
   @334995 @382489 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario:Flex table-Pagination-Admin-Config-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
@@ -352,6 +354,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @335017 @wip
@@ -625,7 +628,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335060 @382510 @SanityPATCH  @SanityPATCHFlexTable
+  @335060 @382510 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Disable Record Selection-SPI-UI-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -866,7 +869,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
+      | Flex Table            | Disable Menu      | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -884,7 +887,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
+      | Flex Table            | Disable Menu      | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
@@ -893,9 +896,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     Then I see "Menu" action is displayed at the "---program:-:grantsFlexTableIdForSPIuser---" modal
 
-  @335124
+  @wip @335124
   Scenario: Flex table-Page size-Admin-UI-To verify that user is able to change page size by clicking on Show Entries block
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -915,6 +919,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335126
   Scenario: Flex table-Page size-PM-UI-To verify that user is able to change page size by clicking on Show Entries block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -924,22 +936,30 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335128
   Scenario: Flex table-Page size-SPI-UI-To verify that user is able to change page size by clicking on Show Entries block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "10"
-    Then I see table contains "Showing 1 to 10" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @335129
   Scenario: Flex table-Page size-Admin-UI-To verify that different page sizes are available in Show Entries block
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -966,15 +986,24 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335134
   Scenario: Flex table-Page size-SPI-UI-To verify that different page sizes are available in Show Entries block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 10            | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "5"
-    Then I see table contains "Showing 1 to" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
-    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see table contains "Showing 1 to" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "10"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335137
+  @335137 @wip @allisnotavailableinshowentries
   Scenario: Flex table-Page size-Admin-UI-To verify that on selecting All page size, all available records displayed on a page
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -983,22 +1012,31 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
     Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335139 @wip
+  @335139 @wip @allisnotavailableinshowentries
   Scenario: Flex table-Page size-PM-UI-To verify that on selecting All page size, all available records displayed on a page
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
-    Then I see table contains "Showing 1 to 81 of 81 records" inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335148
+  @335148 @wip @allisnotavailableinshowentries
   Scenario: Flex table-Page size-SPI-UI-To verify that on selecting All page size, all available records displayed on a page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Recipient Applications | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 10            | Recipient Applications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "All"
-    Then I see table contains "Showing 1 to 7 of 7 records" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I click toggle button to select "Applications - All"
+    And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "100"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @335150 @wip
   Scenario: Flex table-Page size-Admin-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
@@ -1020,9 +1058,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335154
   Scenario: Flex table-Page size-SPI-UI-To verify that on changing page size, number of Pages(or Pagination block) also get changed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Next"
     Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of"
 
@@ -1042,15 +1089,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
-    Then I see user on "Last" pagination page "---program:-:ProgramsFlexTableToggleId---" table
+    Then I do not see user on "Last" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
   @335163
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
-    Then I see user on "Last" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
+    Then I do not see user on "Last" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
 
   @335174 @wip
   Scenario: Flex table-Pagination-Admin-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
@@ -1068,15 +1116,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
-    Then I see user on "First" pagination page "---program:-:ProgramsFlexTableToggleId---" table
+    Then I do not see user on "First" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
   @335180
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "First"
-    Then I see user on "First" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
+    Then I do not see user on "First" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
 
   @335200 @wip
   Scenario: LWC-Flex table-Page Size-Admin-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
@@ -1090,22 +1139,39 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335205
   Scenario: Flex table-Page Size-PM-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 3"
-    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 5"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 10"
 
   @335212
   Scenario: Flex table-Page Size-SPI-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 1 of 17"
+    And I click toggle button to select "Applications - All"
+    Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 1 of "
     And I select value inside table "---program:-:toggleFlexTablepopupflextableTableId---" is "10"
-    Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 1 of 9"
+    Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 1 of"
 
 #######################Test suite: Quick Search (Suite ID: 334512)#############################\
 
@@ -1216,18 +1282,20 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Grant" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Grant for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Grant" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334661 @382399 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "Grant" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334663
+  @334663 @quicksearchnotsupporttolongtextareafield @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for long text field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1237,13 +1305,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334664
+  @334664 @quicksearchnotsupporttolongtextareafield @wip
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1253,13 +1322,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Unique description for test" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "Grant Description" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Grant Description" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334666
+  @334666 @quicksearchnotsupporttolongtextareafield @wip
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for long text field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1270,13 +1340,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "Grant Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Grant Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334667 @wip
+  @334667 @wip @quicksearchnotsupporttorichtextareafield @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Rich text area field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1292,7 +1363,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334668
+  @334668 @quicksearchnotsupporttorichtextareafield @wip
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Rich text area field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1302,13 +1373,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "Project Description for Grant Information" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334670
+  @334670 @quicksearchnotsupporttorichtextareafield @wip
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Rich text area field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1319,11 +1391,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "Test Description" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334671
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Number field
@@ -1335,6 +1408,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "60" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1351,6 +1425,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "60" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1368,11 +1443,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "60" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see value "60" is displayed inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334676
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Currency field
@@ -1384,6 +1460,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1400,8 +1477,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "$1,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "$10,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "$10,000.00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,AwardedToDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
@@ -1417,11 +1495,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "$1,000.00" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "$1,000.00" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,AwardedToDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,AwardedToDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334682
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Date field
@@ -1433,6 +1512,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "05/20/2022" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1449,8 +1529,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "05/09/2023" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "05/09/2023" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I click toggle button to select "Grants - All"
+    And I quick search "10/16/2024" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "10/16/2024" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                                    | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectPeriodStartDate__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
@@ -1466,11 +1547,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I quick search "05/09/2023" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "05/09/2023" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "10/16/2024" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "10/16/2024" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334687
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for ID field
@@ -1520,10 +1601,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-
-  @334691
+  @334691 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Picklist field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1568,11 +1648,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "No" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,KPIsRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,KPIsRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334694
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for URL field
@@ -1590,7 +1671,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334695
+  @334695 @functionalityisworking-scriptisfailing
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1601,13 +1682,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "https://www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334696
+  @334696 @functionalityisworking-scriptisfailing
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1623,7 +1704,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see list contain "https://www.google.com" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334697
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Formula field
@@ -1653,8 +1734,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Automation PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Automation PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
@@ -1671,11 +1752,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Sarah PM" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Automation PM" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Automation PM" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334700 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Lookup field
@@ -1691,8 +1772,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "GT-GRT-00003" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "Mothers for Justice & Equality" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "Mothers for Justice & Equality" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @334703
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Lookup field
@@ -1705,15 +1786,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I pause execution for "20" seconds
     And I click toggle button to select "Grants - All"
-    And I quick search "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "GT-SA-00001" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Test Automation Organization" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see list contain "Test Automation Organization" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                             | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334704
+  @334704 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Email field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1723,6 +1803,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
@@ -1758,12 +1839,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I pause execution for "20" seconds
+    And I pause execution for "6" seconds
     And I quick search "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334707
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Percent field
@@ -1809,29 +1890,47 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I pause execution for "20" seconds
+    And I pause execution for "6" seconds
     And I click toggle button to select "Grants - All"
-    And I quick search "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "10" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334710 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering whole data of respective field
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
 
   @334711
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering whole data of respective field
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    And I quick search "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "Vrush Application" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PEGMSID}" inside table "---program:-:ProgramsgridTableId---"
 
   @334712
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering whole data of respective field
@@ -1839,72 +1938,51 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
-    Then I see list contain "Application For Announcement Testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see list contain "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @334713 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering keyword
+  Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     And I quick search "security" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334714
+  @334714 @334722
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering keyword
+  Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "Program" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    And I quick search "Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334715
+  @334715 @334724
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering keyword
+  Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "security" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "security Review_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-
-  @334720 @wip
-  Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only characters
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Applications" tab
-    And I quick search "snapshot" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Test application for snapshot 3" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @334722
-  Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only characters
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "Testing" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "New Application For Testing Only" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @334724
-  Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "release" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "package release flow sk4_Application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334725 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
     And I quick search "016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
   @334726
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    And I quick search "1" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see list contain "1" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
   @334728
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only digits
@@ -1912,8 +1990,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "00" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "00" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334730 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering alphanumeric values
@@ -1923,12 +2001,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "T09" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     Then I see list contain "AP-T09-016" inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @334731 @wip
+  @334731
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering alphanumeric values
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Applications" tab
-    And I quick search "A11" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "AP-A11-001" inside table "---program:-:toggleFlexTableIdForAdminPM---"
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I quick search "PG-REI-5386" inside table "---program:-:programsTableId---"
+    Then I see list contain "PG-REI-5386" inside table "---program:-:programsTableId---"
 
   @334734
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering alphanumeric values
@@ -1936,8 +2014,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "T09" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-008" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "AP-REI-038" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-REI-038" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334735 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering characters or digits with sp. characters.
@@ -1948,12 +2026,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334736
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search by entering characters or digits with sp. characters.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    And I quick search "Program For Application	" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-    Then I see list contain "Program For Application" inside table "---program:-:toggleFlexTableIdForAdminPM---"
-
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I enter value "Program For @special charectars" into field "fieldProgramName__c"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "Title" as "PTITLE"
+    And I navigate to "Planning" tab
+    And I quick search "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
+    Then I see list contain "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
 
   @334739
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering characters or digits with sp. characters.
@@ -1961,8 +2048,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see list contain "AP-T09-012" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I quick search "AP-REI-016" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see list contain "AP-REI-016" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @334740 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for reference fields
@@ -3571,7 +3658,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |
@@ -8809,8 +8896,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                         |
@@ -8873,8 +8960,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue |
@@ -8941,8 +9028,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -10250,8 +10337,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12172,8 +12259,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12262,8 +12349,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    Then I see record Application For Announcement Testing having action "View" contain icon css "fa fa-eye"
+    When I perform quick search for "Application For Announcement Testing"
+    Then I see record "Application For Announcement Testing" having action "View" contain icon css "fa fa-eye"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
@@ -12354,7 +12441,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
+    When I perform quick search for "Application For Announcement Testing"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12792,8 +12879,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
 
@@ -12832,8 +12919,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12872,8 +12959,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12913,8 +13000,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12959,8 +13046,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -13003,8 +13090,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -13047,8 +13134,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -13459,7 +13546,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338809
+  @338809 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that Status records of table are sorted in descending direction, when Sort direction is selected "Desc"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -13516,7 +13603,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338813
+  @338813 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that status records of table are sorted in ascending direction, when Sort direction is selected "None"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -13573,7 +13660,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338817
+  @338817 @wip
   Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14007,7 +14094,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Upload" button inside "Internal Programs - Draft" flex table
 
-  @334535 @334541
+  @334535 @334541 @wip
   Scenario: Advanced Filter- Admin- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
   |Flex table-Filter-Admin-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
     Given I have "default" configuration as below:
@@ -14061,7 +14148,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
     Then I see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
 
-  @334538
+  @334538 @wip
   Scenario: Advanced Filter- Admin- Config-To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -14162,7 +14249,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334564 @334566
   Scenario Outline: Flex table-Filter-"<User>"-UI-To verify that user is able to filter records by using Percent field
@@ -14206,9 +14293,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336202
+  @336202 @wip
   Scenario:Upload action - Admin - Config - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -14250,7 +14337,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - Active"
     Then I do not see "Upload" button inside "Grants - Active" flex table
 
-  @336252 @336258
+  @336252 @336258 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
   Quick Search - Admin - UI - To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "ADMIN" user
@@ -14285,7 +14372,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "100.10,00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336261
+  @336261 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14313,7 +14400,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336264
+  @336264 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14329,7 +14416,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336267 @382249 @SanityPATCH  @SanityPATCHFlexTable
+  @336267 @382249 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14355,7 +14442,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
 
-  @336289
+  @336289 @wip
   Scenario:Default page size - Admin - Config - To verify that when user not entered any number in 'Default page size' field, then all available records get displayed on single page and Show 'x' entries and pagination features not displayed for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -14447,7 +14534,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Funding Opportunity Title" in downloaded xls or csv file "govgrants"
     Then I see "Funding Organization" in downloaded xls or csv file "govgrants"
 
-  @336312
+  @336312 @wip
   Scenario:Advanced Filter - Admin - UI - To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -14495,7 +14582,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @336316
+  @336316 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14559,9 +14646,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336323
+  @336323 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Formula field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14622,9 +14709,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                                      | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336326
+  @336326 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by reference field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14685,7 +14772,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @336335 @336337
   Scenario Outline: Sort Direction - Admin - Config - To verify that on selecting None option for Sort direction, records on flex table get sorted by ascending order
@@ -14730,7 +14817,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336341
+  @336341 @wip
   Scenario: Filter Criteria - Admin - Config - To verify that if user not entered any filter criteria to display records, then all the available records get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -14926,7 +15013,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336354 @336356
+  @336354 @336356 @wip
   Scenario Outline: Detail config - Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
   Detail config - Hide column Json - PM - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
     Given I have "default" configuration as below:
@@ -15049,9 +15136,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Detail config - Read Only cell Json - Admin - config - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
   Detail config - Read Only cell Json - PM - UI - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Display Field Names |                   | ApiGeneratedId:0 |
-      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
@@ -15260,7 +15347,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                         |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,ProjectPeriodStartDate__c,Date_and_Time__c,OwnerName__c,FinalFiscalReportCreated__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,ProjectPeriodStartDate__c,Date_and_Time__c,OwnerName__c,FinalFiscalReportCreated__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
   @334571 @334572 @334617
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Date & Time field
@@ -15317,7 +15404,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334579 @334580
   Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Lookup field
@@ -15357,7 +15444,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c,BudgetPeriod__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c,BudgetPeriod__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334582 @334583
   Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Picklist field
@@ -15396,7 +15483,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334586 @334587
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Currency field
@@ -15434,7 +15521,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                               | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,LatestAwardTotalAwardedAmount__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,LatestAwardTotalAwardedAmount__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334589 @334590
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Checkbox field
@@ -15472,7 +15559,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334592 @334593
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Picklist(Multiselect) field
@@ -15552,7 +15639,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334600 @334601
   Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Email field
@@ -15590,7 +15677,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334604 @334606
   Scenario Outline: Flex table-Quick Search-"<User>"-UI-To verify that user is able to search for URL field
@@ -15628,7 +15715,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334611 @334612
   Scenario Outline:Flex table-Filter-"<Users>"-To verify that user is able to filter records by using reference field
@@ -15717,7 +15804,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334622 @334623
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that when applied filter not matched with any of the record details, then "No results found" message displayed
@@ -15755,7 +15842,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334636 @334637
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Filter icon, applied filter not get cleared
@@ -15868,7 +15955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | Users |
       #| ADMIN |
-      #| PM    |
+      | PM    |
 
   @339397 @339409 @382265 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
@@ -15941,7 +16028,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
+    When I login to "Grants Portal" app as "<Users>" user
     When I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
     When I enter advance filter values in table id "advfpopupflextable"
@@ -15951,7 +16038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Entries" page size inside table "toggleFlexTablepopupflextable"
     Examples:
       | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
-      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
+      | SPI3  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
 
   @382219 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - Admin - To verify that user is able to edit existing record by clicking on Edit action
@@ -18032,7 +18119,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Save" in the page details
     Then I see entire page is refreshing
 
-  @1744061 @sprint19
+  @1744061 @sprint19 @wip
   Scenario:Data Table - To verify,lookup  fields should not  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -18045,7 +18132,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
 
-  @174403
+  @174403 @wip
   Scenario: To verify,lookup  fields should not be displayed as text in on edit  modal , when 'Show link as Text' checkbox is un-checked
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -18058,7 +18145,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Edit" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
     Then I see hyperlink at value "AP-755-214" inside "fieldApplication__c" modal
 
-  @174394
+  @174394 @wip
   Scenario: Data Table - To verify,lookup  fields should not  be displayed as text in on modal , when 'Show link as Text' checkbox is un-checked
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

@@ -1147,10 +1147,10 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
-                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "']"));
+                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "']"));
     }
 
 
@@ -1212,7 +1212,8 @@ public class FlexTablePage extends GovGrantsManager {
     public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "'] | //*[@field-name='" + columnName + "']//select//option[text()='Other']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "'] | //*[@field-name='" + columnName + "']//select//option[text()='Other'] |" +
+                    "(//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "'])[5]"))) {
                 flag = true;
             }
         } catch (Exception e) {
