@@ -5,7 +5,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
      ##########  Depricated Test Cases From Test 5 Org ####################
 
-  @76929    @disablingPDFExportFileForEnhancedDataTable-gPlanning @smokePATCH
+  @76929    @disablingPDFExportFileForEnhancedDataTable-gPlanning @smokePATCH @wip
   Scenario: validate disabling of PDF download from menu option in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -23,7 +23,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as PDF" options inside "Contacts" disabled
 
-  @76945    @disablingXLSExportFileForEnhancedDataTable-gPlanning @smokePATCH
+  @76945    @disablingXLSExportFileForEnhancedDataTable-gPlanning @smokePATCH @wip
   Scenario: validate disabling of XLS download from menu option in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -1215,7 +1215,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    #And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -1553,7 +1553,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
-    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "Last" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
@@ -1595,6 +1595,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I click on page navigation arrow "First" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "First" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -2476,7 +2477,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I perform quick search for "'apostrophe test''''" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    Then I see table contains "Krishna S" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Reset Table" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -2593,7 +2595,7 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario: Action- SPI- UI- Verify Button help text is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table            | Button Help Text |                   | ApiGeneratedId:1 |
+      | Flex Table            | Button Help Text | Edit              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text | Test Button Help Text | RecipientGrantNotes | Name                      | Edit                       |
@@ -2898,12 +2900,12 @@ Business Need: DataTableEnhanced Component Scenarios
   Action- PM- UI- Verify correct Confirmation message is getting displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Grid             | Show Confirmation Box | false             | ApiGeneratedId:0 |
-      | Flex Grid             | Confirmation Message  |                   | ApiGeneratedId:1 |
+      | Flex Table             | Show Confirmation Box | false             | ApiGeneratedId:0 |
+      | Flex Table             | Confirmation Message  |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid Action      | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Grid Action      | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action      | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action      | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"

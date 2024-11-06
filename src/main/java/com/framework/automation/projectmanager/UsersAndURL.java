@@ -63,10 +63,10 @@ public class UsersAndURL implements UsersController {
         }
         else
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            userName = getQAEnvironmentUser(userLevel);
+            userName = getQAEnvironmentUser(setUpUserLevel(userLevel));
         }else
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
-            userName = getPATCHEnvironmentUser(userLevel);
+            userName = getPATCHEnvironmentUser(setUpUserLevel(userLevel));
         }
         else {
             userName = getQAEnvironmentUser(userLevel);
@@ -79,11 +79,11 @@ public class UsersAndURL implements UsersController {
     public String getPassword(String userType) {
         String password = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
-            password = getTEST5EnvironmentPassword(userType);
+            password = getTEST5EnvironmentPassword(setUpUserLevel(userType));
         } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            password = getQAEnvironmentPassword(userType);
+            password = getQAEnvironmentPassword(setUpUserLevel(userType));
         }else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
-            password = getPATCHEnvironmentPassword(userType);
+            password = getPATCHEnvironmentPassword(setUpUserLevel(userType));
         }else {
             password = getQAEnvironmentPassword(userType);
         }

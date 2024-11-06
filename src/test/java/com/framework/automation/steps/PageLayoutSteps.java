@@ -964,4 +964,9 @@ public class PageLayoutSteps {
     public void iSeeContactsInSuggestionBox(String usage, String contacts) {
         pageLayoutPage.assertIfContactDisplayedInuggestionBox(usage, contacts);
     }
+
+    @When("I click {string} after selection of {string} by showing entries {string} in flex table with id {string}")
+    public void iClickAfterSelectionOfInTheTables(String buttonName, String recordValue, String numberOfEntries, String flexTableId) {
+        pageLayoutPage.clickAfterSelectionOfInTheTables(buttonName, recordValue, numberOfEntries, flexTableId);
+    }
 }

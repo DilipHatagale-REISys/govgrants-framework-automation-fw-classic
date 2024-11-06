@@ -1961,7 +1961,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334715 @334724
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering keyword
-   Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
+  Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering only characters
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -1969,7 +1969,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see list contain "application" inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-   @334725 @wip
+  @334725 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering only digits
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Applications" tab
@@ -2042,7 +2042,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
     Then I see list contain "{SavedValue:PTITLE}" inside table "---program:-:ProgramsgridTableId---"
 
-    @334739
+  @334739
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search by entering characters or digits with sp. characters.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -8896,8 +8896,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                         |
@@ -8960,8 +8960,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue |
@@ -9028,8 +9028,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -10337,8 +10337,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12259,8 +12259,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12349,8 +12349,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
-    Then I see record Application For Announcement Testing having action "View" contain icon css "fa fa-eye"
+    When I perform quick search for "Application For Announcement Testing"
+    Then I see record "Application For Announcement Testing" having action "View" contain icon css "fa fa-eye"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
@@ -12441,7 +12441,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for Application For Announcement Testing
+    When I perform quick search for "Application For Announcement Testing"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12879,8 +12879,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
 
@@ -12919,8 +12919,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -12959,8 +12959,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13000,8 +13000,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13046,8 +13046,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -13090,8 +13090,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -13134,8 +13134,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for Application For Announcement Testing
-    When I click on "View" icon for Application For Announcement Testing inside table
+    When I perform quick search for "Application For Announcement Testing"
+    When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -13546,7 +13546,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338809
+  @338809 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that Status records of table are sorted in descending direction, when Sort direction is selected "Desc"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -13603,7 +13603,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338813
+  @338813 @wip
   Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that status records of table are sorted in ascending direction, when Sort direction is selected "None"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -13660,7 +13660,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338817
+  @338817 @wip
   Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14094,7 +14094,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Upload" button inside "Internal Programs - Draft" flex table
 
-  @334535 @334541
+  @334535 @334541 @wip
   Scenario: Advanced Filter- Admin- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
   |Flex table-Filter-Admin-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
     Given I have "default" configuration as below:
@@ -14148,7 +14148,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
     Then I see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
 
-  @334538
+  @334538 @wip
   Scenario: Advanced Filter- Admin- Config-To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -14295,7 +14295,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336202
+  @336202 @wip
   Scenario:Upload action - Admin - Config - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -14337,7 +14337,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - Active"
     Then I do not see "Upload" button inside "Grants - Active" flex table
 
-  @336252 @336258
+  @336252 @336258 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
   Quick Search - Admin - UI - To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "ADMIN" user
@@ -14372,7 +14372,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "100.10,00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336261
+  @336261 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14400,7 +14400,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336264
+  @336264 @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14416,7 +14416,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336267 @382249 @SanityPATCH  @SanityPATCHFlexTable
+  @336267 @382249 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14442,7 +14442,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
 
-  @336289
+  @336289 @wip
   Scenario:Default page size - Admin - Config - To verify that when user not entered any number in 'Default page size' field, then all available records get displayed on single page and Show 'x' entries and pagination features not displayed for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -14534,7 +14534,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Funding Opportunity Title" in downloaded xls or csv file "govgrants"
     Then I see "Funding Organization" in downloaded xls or csv file "govgrants"
 
-  @336312
+  @336312 @wip
   Scenario:Advanced Filter - Admin - UI - To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -14582,7 +14582,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @336316
+  @336316 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14648,7 +14648,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336323
+  @336323 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Formula field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14711,7 +14711,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                                      | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @336326
+  @336326 @wip
   Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by reference field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -14817,7 +14817,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336341
+  @336341 @wip
   Scenario: Filter Criteria - Admin - Config - To verify that if user not entered any filter criteria to display records, then all the available records get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -15013,7 +15013,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336354 @336356
+  @336354 @336356 @wip
   Scenario Outline: Detail config - Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
   Detail config - Hide column Json - PM - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
     Given I have "default" configuration as below:
@@ -15136,9 +15136,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Detail config - Read Only cell Json - Admin - config - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
   Detail config - Read Only cell Json - PM - UI - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Display Field Names |                   | ApiGeneratedId:0 |
-      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
@@ -15955,7 +15955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | Users |
       #| ADMIN |
-      #| PM    |
+      | PM    |
 
   @339397 @339409 @382265 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
@@ -16028,7 +16028,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
+    When I login to "Grants Portal" app as "<Users>" user
     When I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
     When I enter advance filter values in table id "advfpopupflextable"
@@ -16038,7 +16038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Entries" page size inside table "toggleFlexTablepopupflextable"
     Examples:
       | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
-      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
+      | SPI3  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
 
   @382219 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - Admin - To verify that user is able to edit existing record by clicking on Edit action

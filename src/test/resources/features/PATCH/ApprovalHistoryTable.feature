@@ -112,8 +112,8 @@ Business Need: ApprovalHistoryTable Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
-      #| PM    |
+     # | ADMIN |
+      | PM    |
 
   @204894 @204871
   Scenario Outline: Approval history-PM user-To verify, user should able to see completed state of step should be highlighted in blue color.
@@ -157,7 +157,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
   Approval history-External User-To verify, user should able to see each step approval history should be highlighted in blue color.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
-    When I login to "As a Grantor" app as "<User>" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

@@ -3,7 +3,7 @@ Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
 
-  @70014p    @verifyAutoSnapShotNotCapturedWithIsActiveField
+  @70014    @verifyAutoSnapShotNotCapturedWithIsActiveField
   Scenario: Validate Auto Snapshot is not getting captured after record submission as submit for approval
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
@@ -15,7 +15,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | true         | Grantor State Program | Name                      | Submit For Approval        |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -54,7 +54,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0013                   |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                                    | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -96,7 +96,7 @@ Business Need: Snapshot Config Component Scenarios
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -136,7 +136,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -182,7 +182,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -235,7 +235,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -280,7 +280,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
       #| Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -325,7 +325,7 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -369,7 +369,7 @@ Business Need: Snapshot Config Component Scenarios
       #| Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
     #  | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -415,7 +415,7 @@ Business Need: Snapshot Config Component Scenarios
   @201391 @201405 @217474 @217475 @201407 @201393
   Scenario Outline: Snapshot History-Admin-Config-To verify snapshot history when program is submitted for approval state
   Snapshot History-PM-UI-To verify snapshot history not generated when program is submitted for approval state
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -451,7 +451,7 @@ Business Need: Snapshot Config Component Scenarios
   Snapshot History-Admin-Snapshot History-Admin-Config-To verify snapshot history when program is activated state
   Snapshot History-PM-UI-To verify snapshot history when program is activated state
   Snapshot History-Admin-To verify snapshot history not generated when program is activated state
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -510,7 +510,7 @@ Business Need: Snapshot Config Component Scenarios
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -559,17 +559,17 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false                  | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                   | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                  | Grantor State Program | Name                      | Submit For Approval        |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -620,7 +620,7 @@ Business Need: Snapshot Config Component Scenarios
 
   @217197p @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
   Scenario Outline:Snapshot History Table -Admin- Config-To verify Date Taken should captured when user taken snapshot
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -668,7 +668,7 @@ Business Need: Snapshot Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-8358                    |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Internal Program" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

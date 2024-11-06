@@ -40,8 +40,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379174
-    Then I see "New" button inside "---program:-:ProgramReviewStepTableId---" flex table
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTableId---" without processing
+    Then I see "New" button inside "---program:-:ProgramReviewStepTemplatesTableId---" flex table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     And I refresh the page
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
@@ -499,8 +499,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
-      | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
-      | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
+      | Step Order | Step Name         | Description      | Step Weight (%) |
+      | 4          | Pre-Screen Review | Review Step Desc |                 |
     And I pause execution for "3" seconds
     Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
