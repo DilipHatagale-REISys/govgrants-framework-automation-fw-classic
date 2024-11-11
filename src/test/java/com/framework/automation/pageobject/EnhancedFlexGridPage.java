@@ -993,7 +993,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     private Boolean isRecordSelectionEnabledOnChildFlexTable() {
-        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']"));
+        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox'] | //input[@id='ProgramReviewStepPanelTemplatescheckBox']"));
     }
 
     /**
