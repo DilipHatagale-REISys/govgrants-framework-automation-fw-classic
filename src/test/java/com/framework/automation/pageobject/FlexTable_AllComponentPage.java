@@ -103,7 +103,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         try {
 
             for (int i = recordSelectionStart; i <= recordSelectionEnd; i++) {
-                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/tbody/tr/td[@class='ng-scope ng-binding' and contains(text(),'" + i + "')]/preceding-sibling::td[@class='pdf-wrap-td ng-scope']"));
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/tbody/tr/td[@class='ng-scope ng-binding' and contains(text(),'" + i + "')]/preceding-sibling::td[@class='pdf-wrap-td ng-scope'] |" +
+                        "//div[@id='" + tableId + "']//div//table//tbody//tr/td[@class='ng-scope ng-binding' and contains(text(),'1')]/preceding-sibling::td[@class='pdf-wrap-td ng-scope']"));
             }
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -278,6 +279,25 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "'] |" +
                     " //span[contains(text(),'" + description + "')]//ancestor::div[@id='" + tableId + "']//descendant::a[@ng-disabled='false' and @title='" + button + "'] |" +
                     "(//span[contains(text(),'" + description + "')]//ancestor::div[@id='" + tableId + "']//descendant::a[@ng-disabled='false' and @title='" + button + "'])[2]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertButtonIsDisplayed(String usage, String icon) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isButtonisEnabled(icon));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isButtonisEnabled(icon));
+        }
+    }
+
+    private boolean isButtonisEnabled(String icon) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div//a[@title='" + icon + "' and @class]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

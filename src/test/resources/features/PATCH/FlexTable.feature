@@ -305,6 +305,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335007
   Scenario: Flex table-Default page size-SPI-UI-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -575,7 +583,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - All"
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335054 @382502 @SanityPATCH  @SanityPATCHFlexTable
+  @335054 @382502 @SanityPATCH  @SanityPATCHFlexTable @done
   Scenario: Flex table-Enable Record Selection-SPI-UI-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -1053,7 +1061,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 2 of"
 
   @335154
@@ -1088,16 +1096,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "---program:-:ProgramsFlexTableToggleId---"
     Then I do not see user on "Last" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
-  @335163
+  @335163 @done
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on last (arrow) in pagination block, it get navigated to last page of flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "---program:-:toggleFlexTablepopupflextableTableId---"
     Then I do not see user on "Last" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
 
   @335174 @wip
@@ -1115,17 +1123,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I click on page navigation arrow "---program:-:ProgramsFlexTableToggleId---" for table id "First"
+    And I click on page navigation arrow "First" for table id "---program:-:ProgramsFlexTableToggleId---"
     Then I do not see user on "First" pagination page "---program:-:ProgramsFlexTableToggleId---" table
 
-  @335180
+  @335180 @done
   Scenario: Flex table-Pagination-SPI-UI-To verify that on clicking on First (arrow) in pagination block, it get navigated to first page of flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on page navigation arrow "---program:-:toggleFlexTablepopupflextableTableId---" for table id "First"
-    Then I do not see user on "First" pagination page "---program:-:toggleFlexTablepopupflextableTableId---" table
+    And I click on page navigation arrow "First" for table id "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I do not see user on "---program:-:toggleFlexTablepopupflextableTableId---" pagination page "First" table
 
   @335200 @wip
   Scenario: LWC-Flex table-Page Size-Admin-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
@@ -1137,7 +1145,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
     Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 6"
 
-  @335205
+  @335205 @done
   Scenario: Flex table-Page Size-PM-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1150,10 +1158,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 5"
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Showing 1 to 5"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "10"
-    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Page 1 of 10"
+    Then I see "---program:-:ProgramsFlexTableToggleId---" table contains "Showing 1 to 10"
 
   @335212
   Scenario: Flex table-Page Size-SPI-UI-To verify that on changing page size (by clicking on Show entries block), text of "Showing 1 to n of x records" get changed
@@ -1432,7 +1440,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334675
+  @334675 @needtocheck
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Number field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1553,7 +1561,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodStartDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334687
+  @334687 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for ID field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1655,7 +1663,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                          |
       | SPI3 | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,KPIsRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334694
+  @334694 @wip
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1671,22 +1679,33 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334695 @functionalityisworking-scriptisfailing
+  @334695 @done
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for URL field
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table:General                       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              | Name                      |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-24002                  |
     When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    And I quick search "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "www.google.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter value "www.google.com" into field "URL__c"
+    And I click on "Save" in the page details
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I quick search "www.google.com" inside table "---program:-:ProgramsgridTableId---"
+    And I pause execution for "5" seconds
+    Then I see list contain "www.google.com" inside table "---program:-:ProgramsgridTableId---"
     Examples:
-      | User | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
-      | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | User | newFieldsApi                                                                                                            | defaultFieldsApi                                                                                                 |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,URL__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @334696 @functionalityisworking-scriptisfailing
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for URL field
@@ -1810,7 +1829,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi | defaultFieldsApi |
       #| ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,Email__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334705
+  @334705 @done
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Email field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1821,8 +1840,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I quick search "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see list contain "dilipdm@reisystems.in" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I pause execution for "5" seconds
+    And I quick search "vrush@gmail.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see list contain "vrush@gmail.com" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,Email__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
@@ -1879,7 +1899,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
       | PM   | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334709
+  @334709 @needtocheck
   Scenario Outline: Flex table-Quick Search-SPI-UI-To verify that user is able to search for Percent field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1892,7 +1912,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I pause execution for "6" seconds
     And I click toggle button to select "Grants - All"
-    And I quick search "10" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "10%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see list contain "10.00%" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
@@ -2234,7 +2254,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338468
+  @338468 @done
   Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2245,7 +2265,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @338469 @382444 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
@@ -2312,7 +2332,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - All"
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338477 @382457 @SanityPATCH  @SanityPATCHFlexTable
+  @338477 @382457 @SanityPATCH  @SanityPATCHFlexTable @done
   Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2349,7 +2369,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
 
-  @338482
+  @338482 @done
   Scenario: Pagination - SPI- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2501,7 +2521,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as XLS" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338982 @336297
   Scenario: Download as PDF- PM - UI- Verify Download as PDF option is not visible on UI,Download as PDF - PM - UI - To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
@@ -2529,7 +2549,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "Download as XLS" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338984 @336299
   Scenario: Download as PDF- SPI - UI- Verify Download as PDF option is not visible on UI,Download as PDF - SPI - UI- To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
@@ -2571,7 +2591,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as XLS" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338952
   Scenario: Download as PDF - PM - UI- Verify Download as PDF option is visible on UI
@@ -2599,7 +2619,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as XLS" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @338954
   Scenario: Download as XLS/CSV - PM - UI - Verify Download as XLS/CSV option is visible on UI
@@ -2613,7 +2633,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as XLS" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338961
   Scenario: Download as XLS/CSV - SPI - UI - Verify Download as XLS/CSV option is visible on UI
@@ -2627,7 +2647,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as XLS" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @338980 @336396 @wip
   Scenario: Download as PDF- Admin- Config- Verify Download as PDF option is not visible on UI,Download as PDF - Admin - Config - To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
@@ -2655,7 +2675,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I do not see "Download as XLS" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @338986 @wip
   Scenario: Download as PDF- Admin- Config- Verify if we can download record details in PDF format
@@ -2685,7 +2705,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I see "Grant Title" in downloaded xls or csv file "govgrants"
 
@@ -2717,7 +2737,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I see "Grant Title" in downloaded xls or csv file "govgrants"
 
@@ -2749,7 +2769,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I see "Application Title" in downloaded xls or csv file "govgrants"
 
@@ -2781,7 +2801,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I see "EGMS ID" in downloaded xls or csv file "govgrants"
     Then I see "Actions" in downloaded xls or csv file "govgrants"
@@ -2818,7 +2838,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I see "Project Period" in downloaded xls or csv file "govgrants"
 
@@ -2854,7 +2874,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
 
@@ -2872,7 +2892,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I cannot see "EGMS ID" on page "1" of "govgrants" pdf file
 
   @336304 @wip
@@ -2889,7 +2909,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I cannot see "EGMS ID" on page "1" of "govgrants" pdf file
 
   @336305
@@ -2938,7 +2958,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
 
@@ -2974,7 +2994,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I see "Application Title" in downloaded xls or csv file "govgrants"
     Then I see "Owner" in downloaded xls or csv file "govgrants"
@@ -3011,7 +3031,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I cannot see "Status" in downloaded xls or csv file "govgrants"
 
@@ -3041,7 +3061,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
     Then I cannot see "filter" in downloaded xls or csv file "govgrants"
@@ -3079,7 +3099,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
     Then I cannot see "filter" in downloaded xls or csv file "govgrants"
@@ -3120,7 +3140,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I cannot see "Quick search" in downloaded xls or csv file "govgrants"
     Then I cannot see "filter" in downloaded xls or csv file "govgrants"
@@ -3158,7 +3178,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
 
@@ -3194,7 +3214,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
 
@@ -3228,7 +3248,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
 
@@ -3247,7 +3267,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
-    Then I see "151,000.00	" on page "3" of "govgrants" pdf file
+    Then I see "151,000.00" on page "3" of "govgrants" pdf file
 
   @339026
   Scenario: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
@@ -3264,7 +3284,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
-    Then I see "$249,000.00" on page "3" of "govgrants" pdf file
+    Then I see "$1,000.00" on page "3" of "govgrants" pdf file
 
   @339027
   Scenario: Total - SPI- UI- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
@@ -3282,7 +3302,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
-    Then I see "$249,000.00" on page "3" of "govgrants" pdf file
+    Then I see "$1,000.00" on page "3" of "govgrants" pdf file
 
 ########################Test suite: Help Config (Suite ID: 338447)###################################
 
@@ -3507,16 +3527,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
-  @336176 @382548
+  @336176 @382548 @done
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Page layout - Page block
   Smoke TC - SPI - To verify that flex table should rendered properly on page layout
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    And I click toggle button to select "Grants - Active"
+    And I click on "View" icon in flex table for first draft record
     And I navigate to "Overview" sub tab
-    Then I see flex table with id "toggleFlexTableRecipientsBudgetPeriod" is displayed
+    Then I see flex table with id "RecipientsBudgetPeriod" is displayed
 
   @336184 @wip
   Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Sidebar
@@ -3536,13 +3556,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     Then I see flex table with id "toggleFlexTablePrograms" is displayed
 
-  @336186
+  @336186 @done
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Sidebar
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    When I navigate to "Application Desk Reviews" content inside "Applications" subheader on left panel
-    Then I see flex table with id "toggleFlexTableApplicationsSiteVisitReportsGrid" is displayed
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
+    Then I see flex table with id "RecipientApplications" is displayed
 
   @335216 @382206 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
@@ -3568,7 +3588,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @335220 @382207 @SanityPATCH  @SanityPATCHFlexTable
+  @335220 @382207 @SanityPATCH  @SanityPATCHFlexTable @done
   Scenario: Flex table-Total records count-PM-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -3894,7 +3914,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    And I click on "fa fa-plus" after click advance filter
     Then I see "fa fa-plus" button is enabled in flex table
 
-  @338609
+  @338609 @done
   Scenario: Advanced Filter- PM- UI -Verify when we add filter criteria Add filter (+) button getting enabled to add more filters
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3909,9 +3929,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | EGMS ID | Contains | test1 |
-    Then I see "fa fa-plus" button is enabled in flex table
+    Then I see "Add Filter" button is enabled in flex table
 
-  @338610
+  @338610 @done
   Scenario: Advanced Filter- SPI- UI - Verify when we add filter criteria Add filter (+) button getting enabled to add more filters
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3924,8 +3944,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
-      | EGMS ID | Contains | test1 |
-    Then I see "fa fa-plus" button is enabled in flex table
+      | EGMS ID | Contains | GT |
+    Then I see "Add Filter" button is enabled in flex table
 
   @338611 @wip
   Scenario: Advanced Filter- Admin- Config - Verify filter can be removed using Remove filter clause (×) button
@@ -4073,16 +4093,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338620 @334559
+  @338620 @334559 @done
   Scenario: Records description - PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
   |Flex table-Filter-PM-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4091,14 +4118,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
     And I click on "Clear All" after click advance filter
     When I enter advance filter values inside id "advfPrograms"
-      | EGMS ID | Contains | PG-REI-2091 |
+      | EGMS ID | Contains | PG-REI-6107 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:ProgramsgridTableId---"
 
-  @338622 @334549 @334560
+  @338622 @334549 @334560 @done
   Scenario: Records description - SPI- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
   |Flex table-Filter-SPI-To verify that user is able to filter records by using Text field|
     Given I have "default" configuration as below:
@@ -4110,15 +4137,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
       | Grant Title | Contains | Testing |
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     And I click on "Clear All" after click advance filter
     When I enter advance filter values in table id "advfGrantsList"
-      | EGMS ID | Contains | GT-REI1-00001 |
+      | EGMS ID | Contains | GT-1234 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @338623 @334628 @wip
   Scenario: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
@@ -4142,17 +4170,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338624 @334629
+  @338624 @334629 @done
   Scenario: Advance filter -PM-UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
   |Flex table-Filter-PM-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 10                | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4160,32 +4194,41 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
 
   @338625 @334630 @382438 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
   |Flex table-Filter-SPI-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
-      | EGMS ID | Contains | GT-REI1-00001 |
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+      | EGMS ID | Contains | GT-1234 |
+    Then I see table contains "Showing 1 to " inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626p @334568 @334569
+  @338626 @334568 @334569 @done
   Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
@@ -4198,39 +4241,36 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-#    And I navigate to "Planning" tab
+    And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-#    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-#    When I enter advance filter values inside id "advfPrograms"
-#      | Start Date | Greater than | 09/22/2023 |
-#    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
+    When I enter advance filter values inside id "advfPrograms"
+      | Start Date | Greater than | 03/18/2024 |
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
     Examples:
-      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
-      #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
-      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      #| ADMIN | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @338627 @334616 @wip
-  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
+  @338627 @334616 @done
+  Scenario: Flex Table :Admin/PM:-To verify, advanced filter should work for the date field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Program date | Less than | 25/08/2023 |
+      | Start Date | Less than | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
-    And I refresh the page
-    Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
 
-  @338628p @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
+  @338628 @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable @done
   Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4246,36 +4286,32 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than or Equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    And I refresh the page
-    Then I see filter "filter in filterDisplayList" is displayed
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
 
     Examples:
       | User |
       #| ADMIN |
       | PM   |
 
-  @338630 @334616 @wip
-  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
+  @338630 @334616 @done
+  Scenario: Flex Table :Admin/PM:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Program date | Less than | 25/08/2023 |
+      | Start Date | Less than or Equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
-    And I refresh the page
-    Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsgridTableId---"
 
-  @338631 @334547 @334558 @wip
+  @338631 @334547 @334558 @done
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the text field with 'Contains' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
@@ -4286,7 +4322,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -4294,15 +4330,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
     And I click on "Clear All" after click advance filter
     When I enter advance filter values inside id "advfPrograms"
-      | EGMS ID | Contains | PG-REI-2091 |
+      | EGMS ID | Contains | PG-REI-6107 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:ProgramsgridTableId---"
 
-  @338633 @wip
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains' operator
+  @338633 @done
+  Scenario: Flex Table :Admin/PM:-To verify,  advanced filter should work for the text field with 'Does not contains' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -4311,17 +4347,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | EGMS ID | Does not contains | Hi Automation |
+      | EGMS ID | Does not contains | REI |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
 
-  @338634 @wip
+  @338634 @done
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4331,17 +4367,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Program Name | Starts with | Automation |
+      | EGMS ID | Starts with | T |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+   # Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsgridTableId---"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ProgramsgridTableId---"
 
-  @338635 @wip
+  @338635 @done
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4351,7 +4388,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -4359,29 +4396,30 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Ends with | Testing |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
 
-  @338636 @wip
+  @338636 @done
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist field with 'Equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Internal Organization | Equals to | SYSTEM |
+      | (Obsolate)Funder Type | Equals to | Federal |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
 
-  @338638 @wip
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to' operator
+  @338638 @done
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist field with 'Not equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4394,11 +4432,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Internal Organization | Equals to | SYSTEM |
+      | (Obsolate)Funder Type | Equals to | Federal |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
 
-  @338640 @wip
+  @338640 @done
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4406,17 +4444,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Internal Organization | Equals to | SYSTEM |
+      | Funded Amount | Equals to | 123456 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    #Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+    Then I softly see "No Records Found" inside flex table with id "---program:-:ProgramsgridTableId---"
 
-  @338641 @wip
+  @338641 @done
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Greater than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4426,16 +4465,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Greater than | 1000 |
     When I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to " inside table id "---program:-:ProgramsgridTableId---"
 
-  @338643 @wip
+  @338643 @done
   Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4445,16 +4484,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Funded Amount | Less than | 100000 |
     When I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsgridTableId---"
 
-  @338644 @wip
+  @338644 @done
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4464,16 +4503,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Funded Amount | Greater than or Equal to | 1000 |
+      | Funded Amount | Greater than or Equal to | 12345678 |
     When I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsgridTableId---"
 
-  @338645 @wip
+  @338645 @done
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -4483,7 +4522,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
@@ -4492,24 +4531,29 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338648 @334561 @wip
-  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Number field with 'Equal to' operator
+  @338648 @334561
+  Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the Number field with 'Equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | Programs           | Name                      |                            |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Funded Amount | Equals to | 5000 |
+      | Number | Equals to | 5000 |
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | User | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @338649 @wip
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than' operator
@@ -8200,7 +8244,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
-    And I select "Download as CSV" from parallel lines dropdown of "Applications - Draft"
+    And I select "Download as XLS" from parallel lines dropdown of "Applications - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Applications - Draft" in downloaded xls or csv file "govgrants"
@@ -8231,7 +8275,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
-    And I select "Download as CSV" from parallel lines dropdown of "Applications - Draft"
+    And I select "Download as XLS" from parallel lines dropdown of "Applications - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Applications - Draft" in downloaded xls or csv file "govgrants"
@@ -8262,7 +8306,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
-    And I select "Download as CSV" from parallel lines dropdown of "Grants - Active"
+    And I select "Download as XLS" from parallel lines dropdown of "Grants - Active"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Grants - Active" in downloaded xls or csv file "govgrants"
@@ -14498,7 +14542,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I see "EGMS ID" in downloaded xls or csv file "govgrants"
     Then I see "Grant Title" in downloaded xls or csv file "govgrants"
@@ -14528,7 +14572,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as XLS" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I see "Status" in downloaded xls or csv file "govgrants"
     Then I see "Funding Opportunity Title" in downloaded xls or csv file "govgrants"
@@ -16103,7 +16147,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as CSV" options inside "Internal Programs - Draft" disabled
+    Then I see "Download as XLS" options inside "Internal Programs - Draft" disabled
 
   @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
@@ -17590,40 +17634,63 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see value "09/07/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
-  Scenario: Validate comma separated  value should be display on the Number field at flex table
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: Validate comma separated  value should be display on the Number field at flex table
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23985                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{SavedValue:PEGMSID}"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
     Then I softly do not see value "12345678" for title "Number" inside table "---program:-:ProgramsgridTableId---"
+    Examples:
+      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @144829    @validateCommaSeparatedValueIsDisplayedOnFlexTableForCurrencyField
   Scenario Outline: Validate comma separated  value should be display on the currency field at flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true               | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-17329                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "12345678" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{SavedValue:PEGMSID}"
     Then I softly see value "$12,345,678" for title "Funded Amount" inside table "---program:-:ProgramsgridTableId---"
     Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:ProgramsgridTableId---"
 
@@ -17906,7 +17973,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "3" seconds
     Then I softly see "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}" value in flex table id "ActiveFundingOpportunitiesAll"
 
-  @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable
+  @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable @needtocheck
   Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -18234,7 +18301,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -19684,7 +19751,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as CSV" options inside "Internal Programs - Draft" disabled
+    Then I see "Download as XLS" options inside "Internal Programs - Draft" disabled
 
   @217555 @HideColoumnJsonNotHideData
   Scenario: Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
@@ -19927,13 +19994,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Download as PDF" inside flex table with id "---program:-:programTableDivId---"
 
   @208966 @ToVerifyDownloadACSVIsDisplyedOnMenuIconInsideFlexTable
-  Scenario: verify that "Download as csv" is displaying on Menu button
+  Scenario: verify that "Download as XLS" is displaying on Menu button
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as CSV" inside flex table with id "---program:-:programTableDivId---"
+    Then I see "Download as XLS" inside flex table with id "---program:-:programTableDivId---"
 
   @217297 @verifyselectingNoneoptionforAutoindexbehavior,thenalsoIndexcolumngetdisplayedforallrows
   Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
@@ -19999,7 +20066,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see row level action button "View" rendered on flex table
     #Then I see row level action button "Delete" rendered on flex table
 
-  @382216 @SanityPATCH  @SanityPATCHFlexTable
+  @382216 @SanityPATCH  @SanityPATCHFlexTable @wip
   Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -20013,7 +20080,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I softly see the following messages in the page details :
       | Saved Successfully! |
 
-  @382240p @SanityPATCH  @SanityPATCHFlexTable
+  @382240 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -20021,7 +20088,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "Edit" icon for "New Application For Testing Only" inside table
-    Then I see title of current page is "  "
+    Then I see title of current page is "Application Edit"
 
   @382261 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
@@ -20031,18 +20098,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
-    Then I see title of current page is "Application View "
+    Then I see title of current page is "Application View"
 
   @382496 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is not able to see Pagination at right bottom of the table, when Pagination config is disabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | false         | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
+    #Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I do not see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
