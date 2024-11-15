@@ -25,7 +25,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * Constructor to handle dependency injection and framework library
      */
     public EnhancedFlexGridPage() {
-        reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
+        reachOutToEnhancedGridCollapse = By.id("ProgramReviewStepTemplatesFlexCollapse");
         searchInputEnhancedGrid = By.cssSelector("div>grid>div>div>div>div>div>input.form-control");
         completeTableRowOfEnhancedGrid = By
                 .xpath("//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/tbody/tr");

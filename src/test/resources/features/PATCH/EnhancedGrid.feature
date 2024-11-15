@@ -800,7 +800,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightInReviewStepParentTable | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightInReviewStepParentTable | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1240,7 +1240,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightIsGreaterThanOrEqualToZero | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightIsGreaterThanOrEqualToZero | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1280,7 +1280,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightIsGreaterThanOrEqualToZero | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJSONForWeightIsGreaterThanOrEqualToZero | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1969,13 +1969,13 @@ Business Need: EnhancedGrid Component Scenarios
   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario:  Verify Location field = row at child flex table action
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Top               | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
-      | Flex Table Action     | Header Action Display Type | Button            | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | ProgramReviewStepTemplates | Name                      | Test New                   |
+      | Flex Table Action     | Header Action Display Type | Button            | ProgramReviewStepTemplates | Name                      | Test New                   |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row           | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
-      | Flex Table Action     | Header Action Display Type | Button        | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row           | ProgramReviewStepTemplates | Name                      | Test New                   |
+      | Flex Table Action     | Header Action Display Type | Button        | ProgramReviewStepTemplates | Name                      | Test New                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1984,26 +1984,29 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "Test New" icon for "Pre-Screen" is displayed inside flex table
+    Then I see "Test New" icon for "---program:-:flexGridEnhancedReviewStepID---" is at position "3" inside flex table
 
   @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify  Sequence field at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:1 |
+      | Flex Table Action     | Sequence  | 3                 | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Sequence  | 3             | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "---program:-:EnhanceAppBudCateGrantorTableId---" is at position "3" inside flex table
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence  | 1             | ProgramReviewStepPanelTemplates | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2             | ProgramReviewStepPanelTemplates | Name                      | Delete                     |
+      | Flex Table Action     | Sequence  | 3             | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I see "Edit" icon for "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" is at position "1" inside flex table
 
   @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Verify  Button Help Text field at child flex table action
@@ -2013,36 +2016,34 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text | Test Automation | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-  #  #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Test Automation" as title for "Personnel" inside flex table action
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I see "Test Automation" as title for "Pre-Screen" inside flex table action
 
   @45310    @changeOfChildFlexTableTitleForEnhancedGrid-gPlanning
   Scenario: Verify Label field at child flex table config
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Label     | Budget Categories | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Label     | Review Forms      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-3202                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
+      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | ProgramReviewStepPanelTemplates | Name                      | FLV-3486                   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
     And I pause execution for "5" seconds
-    Then I see "Automation Enhanced Grid" shown as inside "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I see "Automation Enhanced Grid" shown as inside "---program:-:flexGridEnhancedReviewStepID---"
 
   @49243    @enableGroupingFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Grouping field at parent flex table.
@@ -2050,16 +2051,16 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    Then I see "Step Order" inside row of enhance grid id "---program:-:flexGridEnhancedReviewStepID---"
 
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario:  Verify Hide Grouping column field at parent flex table.
@@ -2068,17 +2069,17 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
-      | Flex Table List       | Enable Row Grouping  | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Budget Period" not displayed in enhanced grid table column title
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    Then I see "Step Order" not displayed in enhanced grid table column title
 
   @49250    @enableSubTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @smokePATCH
   Scenario: Verify Enable Sub Total at parent flex table.
@@ -2087,52 +2088,58 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-13587                  |
-      | Flex Table List       | Enable Sub Total    | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-13587                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    Then I see "Step Order" inside row of enhance grid id "---program:-:flexGridEnhancedReviewStepID---"
 
-  @49251    @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning @Doubted
+  @49251
   Scenario:  To Verify Warning message if no list view is marked as Master View (Parent).
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2545                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
-  @49264    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtParentFlexTable-gPlanning @Doubted
+  @49264
   Scenario:To verify warning message if one list view is marked as a Master List View (Parent)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2545                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?       | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
 
   @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning @wip
@@ -2185,19 +2192,18 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11520                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
     And I pause execution for "5" seconds
-    Then I see "Non-Cash Match :" inside rows of enhanced grid id "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I see "Form Weight (%) :" inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
   @49353    @hideGroupingColumnFieldAtChildFlexTableForEnhancedGrid-gPlanning
   Scenario: Verifying Hide Grouping Column - column will get hide from UI  (Child Flex Table )
@@ -2206,19 +2212,18 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11520                  |
-      | Flex Table List       | Enable Row Grouping  | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11520                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Non-Cash Match" not displayed in enhanced grid table column title
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I see "Form Weight (%)" not displayed in enhanced grid table column title
 
   @49358    @styleClassFieldAtChildFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate color change of number of awards cells content after making changes at style class at chile flex table from config and validating it inside enhanced grid of programs-planning
@@ -2266,46 +2271,46 @@ Business Need: EnhancedGrid Component Scenarios
       | styleAttributeValue |
       | color: 'red'        |
 
-  @49240    @isMasterViewFieldUncheckedForAllFlexListViewAtChildFlexTable-gPlanning @doubted
+  @49240
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2544                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "GT-12132-001"
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
   @49241    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtChildFlexTable-gPlanning @doubted
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "GT-12132-001"
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
   @wip @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted
@@ -2340,20 +2345,19 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping   | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11521                  |
-      | Flex Table List       | Enable Over All Total | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11521                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    And I pause execution for "2" seconds
-    Then I see field "EnhanceAppGrantorBudgetPeriodsresizable" inside page block
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:Score__c}        |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:Score__c}        |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    And I pause execution for "5" seconds
+    Then I see over all total for "Score__c" at enhanced grid
 
   @wip @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -2383,7 +2387,7 @@ Business Need: EnhancedGrid Component Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @49364      @verifyEditSelectedAtChildFlexTableForEnhancedGrid-gPlanning @doubted
+  @49364
   Scenario: Verify Edit Selected works for Enhanced grid (Child)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -2391,21 +2395,23 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "GT-FIN.1-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    When I check "AD-FIN.1-BP01-00" boxes in flex table with id "---program:-:appBudgetPeriodTableId---"
-    When I click on top right button "Edit Selected" in flex table with id "---program:-:appBudgetPeriodTableId---"
-    When I enter value "10" into field "AmountDirectAssistance__c"
-    When I click on top right button "Save" in flex table with id "---program:-:appBudgetPeriodTableId---"
-    When I perform quick search for "GT-FIN.1-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see edited value inside textarea is "$390,800.00" for column value "AD-FIN.1-BP01-00" of table "---program:-:appBudgetPeriodTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    And I expand nested table containing column value "Test Review"
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
+      | Testing   | 50              | 1                                         | Checked   |
+    And I expand nested table containing column value "Test Review"
+    Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
   @wip @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
@@ -2438,27 +2444,24 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "GT-CMAQ-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "GT-CMAQ-001"
-    When I click on top right button "Edit All" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodstABLEiD1---"
-    When I enter values "Test Automation" into textarea for table id "Agreement1__c"
-    When I click on top right button "Save" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
-    When I perform quick search for "GT-CMAQ-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I pause execution for "10" seconds
-    Then I see value "Test Automation" for multiple cells at column "Agreement1__c"
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            |
+      | 4          | Test Review | Automation Description |
+    When I pause execution for "5" seconds
+    Then I see value "Automation Description" for multiple cells at column "Description__c"
 
     Examples:
-      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
-      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
+      | newFieldsApi                                                        | defaultFieldsApi                                                    |
+      | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
 
   @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
   Scenario Outline: Verify order by multiple field at parent Enhanced flex grid for ascending order
@@ -2582,46 +2585,44 @@ Business Need: EnhancedGrid Component Scenarios
   @66954 @verifyRequiredFieldsAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario: Verify Required Fields works for Enhanced grid at parent flex table.
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Is Master View  | true              | ApiGeneratedId:0 |
-      | Flex Grid                 | Required Fields |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName       | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Required Fields | StepNumber__c,Name | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName       | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true              | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
-      | Flex Grid:General         | Required Fields | SequenceNumber__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I click on "Edit" icon for "BP01" inside table
-    When I enter value "" into field "SequenceNumber__c"
-    When I click on top right button "Save" in flex table with id "---program:-:appBudgetPeriodTableId---"
-#    When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-#    Then I see value "Test Automation" for multiple cells at column "AddressProgramContact__c"
+      | configurationCategory | fieldName       | fieldNewValue      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields | StepNumber__c,Name | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name | Description            |
+      |            |           | Automation Description |
+    When I pause execution for "5" seconds
     Then I see the following message in the page details :
       | Required Field Missing |
 
   @78091    @verifyByClickOnLookupValueItShouldRedirectedToRespectiveRecordPageAtEnhancedGrid-gPlanning
   Scenario: Verify by click on lookup value in Table , it is redirecting to the respective page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Grid             | Display Field |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue                                          | filterId         |
+      | Flex Grid             | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Display Field |               | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1487                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I click on "AP-A11-00" icon for "BP01" inside table
-    Then I see "Application" shown as over view header
+      | configurationCategory | fieldName           | fieldNewValue                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Program__c | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Program" as "ProgramName"
+    When I navigate to "Setup" sub tab
+    And I click on Link containing value "{SavedValue:PEGMSID}" in flex table id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I see "{SavedValue:ProgramName}" shown as over view header
 
   @79675    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtEnhancedGrid-gPlanning @BugId=144971
   Scenario Outline: validate by click on user value in table , respective user page should get opens at EnhancedGrid - gPlanning
@@ -2629,22 +2630,22 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I click on "Automation SPI" icon for "BP01" inside table
-    Then I see "Automation SPI" shown as over view header
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Setup" sub tab
+    And I click on Link containing value "Automation PM" in flex table id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I see "Automation PM" shown as over view header
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                     | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Owner | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: Verify a blank value is shown if user select "None" value in pick-list field
@@ -2675,20 +2676,25 @@ Business Need: EnhancedGrid Component Scenarios
   @80046    @verifyModalTitleFieldForEnhancedGridRowLevelPreviewAction-gPlanning
   Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Modal Title |                   | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title     |                   | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | NewTab            | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | OpenURL           | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Modal Title     |                   | ProgramReviewStepTemplates | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Modal Title | Automation Title | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-  #  When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    When I click on "View" icon for "BP01" inside table
+      | configurationCategory | fieldName       | fieldNewValue    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title     | Automation Title | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal            | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in overlay  | ProgramReviewStepTemplates | Name                      | View                       |
+      | Flex Table Action     | Modal Title     | Automation Title | ProgramReviewStepTemplates | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Pre-Screen Review" inside table
     Then I see "Automation Title" opens in overLay window
 
   @80047  @379176  @verifyModalTitleFieldForEnhancedGridTopLevelPreviewAction-gPlanning
@@ -2710,42 +2716,51 @@ Business Need: EnhancedGrid Component Scenarios
     #379176
     Then I see "Automation Title" opens in overLay window
 
-  @80071    @verifyDisplayFieldValueAtInternalOrganizationAtEnhancedGrid-gPlanning @doubted
-  Scenario: Verify a 'Display field' field at parent flex table
+  @80071
+  Scenario Outline: Verify a 'Display field' field at parent flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table List       | Display Field |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Display Field | County__c     | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see value "USA" for multiple cells at column "InternalOrganization__c"
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Setup" sub tab
+    Then I see value "Automation PM" for multiple cells at column "Owner"
+    Examples:
+      | newFieldsApi                                                     | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Owner | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
-  @80183    @defaultOverallTotalForCurrencyFieldIsNotDisplayedAtParentFlexTableForEnhancedGrid-gPlanning
+
+  @80183
   Scenario: Verify default Total is not displayed at currency field at parent flex table at E-Grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:0 |
-     # | Flex Table            | Enable Total Row      | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue                                          | filterId         |
+      | Flex Grid             | Display Field Names   | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Over All Total | false                                                      | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Over All Total | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-13587                  |
-     # | Flex Table:General    | Enable Total Row      | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName             | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Flex Grid:General     | Display Field Names   | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},ReviewStepCurrency__c | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+      | Flex Table List       | Enable Over All Total | false                                                                            | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see over all total sum is not displayed for "FeeFundRequested__c" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | ReviewStepCurrency |
+      | 4          | Test Review | Automation Description | 100                |
+    And I pause execution for "5" seconds
+    Then I see over all total sum is not displayed for "ReviewStepCurrency__c" inside "---program:-:flexGridEnhancedReviewStepID---" table
 
   @80067   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsUnchecked-gPlanning @doubted @wip
   Scenario: validate lookup field is in view mode after unchecking the Enable Edit Display Field from config at e-grid - gplanning
@@ -2789,7 +2804,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
-  @80502   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsChecked-gPlanning @doubted
+  @80502 @wip @needconfirmationfromshambhavi
   Scenario: Verify a 'Show Link as Text' field at parent flex table by setting checkbox to true
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2807,7 +2822,7 @@ Business Need: EnhancedGrid Component Scenarios
    # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
 
-  @80506   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsUnchecked-gPlanning @doubted
+  @80506 @wip @needconfirmationfromshambhavi
   Scenario: validate hyperlink is present at column value after unchecking the Show Link as Text Field from config at e-grid - gplanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2827,17 +2842,16 @@ Business Need: EnhancedGrid Component Scenarios
 
   @82800 @379175  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify Quick Search disables on inline edit action-e grid
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    #379175
-    Then I softly can see row level action button "Edit" against "BP01" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see quick search box is disabled in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside table
+    Then I see quick search box is disabled in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
 
   @86421  @verifyDateFieldFormatForLocalAsESTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to EST Local
@@ -2848,24 +2862,26 @@ Business Need: EnhancedGrid Component Scenarios
       | locale | timeZone         |
       | en_US  | America/New_York |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
     And I update the locale and timezone related changes:
-      | locale | timeZone       |
-      | en_US  | America/Panama |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
-
+      | locale | timeZone         |
+      | en_CA  | America/New_York |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | X_End Date |
+      | 4          | Test Review | Automation Description | 11/08/2028 |
+    And I pause execution for "5" seconds
+    Then I see "11/08/2028" shown inside enhanced grid table for specified record "Test Review"
     Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                          | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},EndDate__c | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @86427  @verifyDateFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to EDT Local
@@ -2876,24 +2892,26 @@ Business Need: EnhancedGrid Component Scenarios
       | locale | timeZone         |
       | en_US  | America/New_York |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "11/08/2022" shown inside enhanced grid table for specified record "BP01"
-
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | X_End Date |
+      | 4          | Test Review | Automation Description | 11/08/2028 |
+    And I pause execution for "5" seconds
+    Then I see "11/08/2028" shown inside enhanced grid table for specified record "Test Review"
     Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                          | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},EndDate__c | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @86430  @verifyDateFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to IST Local
@@ -2904,24 +2922,26 @@ Business Need: EnhancedGrid Component Scenarios
       | locale | timeZone         |
       | en_US  | America/New_York |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "11/8/2022" shown inside enhanced grid table for specified record "BP01"
-
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | X_End Date |
+      | 4          | Test Review | Automation Description | 11/8/2028  |
+    And I pause execution for "5" seconds
+    Then I see "11/8/2028" shown inside enhanced grid table for specified record "Test Review"
     Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                          | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},EndDate__c | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @86302  @verifyDateAndTimeFieldFormatForLocalAsESTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EST Local
@@ -2932,24 +2952,26 @@ Business Need: EnhancedGrid Component Scenarios
       | locale | timeZone         |
       | en_US  | America/New_York |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "07/27/2023 6:38 PM" shown inside enhanced grid table for specified record "BP01"
-
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | X_End Date        |
+      | 4          | Test Review | Automation Description | 11/8/2028 6:38 PM |
+    And I pause execution for "5" seconds
+    Then I see "11/8/2028 6:38 PM" shown inside enhanced grid table for specified record "Test Review"
     Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                          | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},EndDate__c | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @86303  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EDT Local
@@ -3058,27 +3080,29 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
       | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
 
-  @87839    @VerifyTheDecimalValueShownForCurrencyFieldAtEnhancedGridParentFlexTable
-  Scenario Outline: E-Grid :To verify the Decimal values are shown for the currency field on UI
+  @87839
+  Scenario: E-Grid :To verify the Decimal values are shown for the currency field on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | configurationCategory | fieldName             | fieldOrignalValue                                          | filterId         |
+      | Flex Grid             | Display Field Names   | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Over All Total | false                                                      | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName             | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Flex Grid:General     | Display Field Names   | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},ReviewStepCurrency__c | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+      | Flex Table List       | Enable Over All Total | false                                                                            | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "$100.50" shown inside enhanced grid table for specified record "BP01"
-
-    Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | ReviewStepCurrency |
+      | 4          | Test Review | Automation Description | 100.50             |
+    And I pause execution for "5" seconds
+    Then I see "$100.50" shown inside enhanced grid table for specified record "Test Review"
 
   @88090    @VerifyTheDecimalValueShownForNumberFieldAtEnhancedGridChildFlexTable
   Scenario Outline: verify decimal places at Number field value of child flex table at enhanced grid
@@ -3087,21 +3111,28 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepPanelTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "35.35" shown inside enhanced grid table for specified record "Personnel"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    And I expand nested table containing column value "Test Review"
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
+      | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? | ReviewFormsCurrency |
+      | Testing   | 50              | 1                                         | Checked   | 35.35               |
+    And I expand nested table containing column value "Test Review"
+    Then I see "$35.35" shown inside enhanced grid table for specified record "Testing"
 
     Examples:
-      | newFieldsApi                                                                                                                               | defaultFieldsApi                                                                                                                           |
-      | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c |
+      | newFieldsApi                                                                 | defaultFieldsApi                                      |
+      | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn},ReviewFormsCurrency__c | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn} |
 
   @87565    @VerifyThatTheLookupFieldValueIsOverridesAsPerGivenDisplayFieldAtEnhancedGridParentFlexTable @doubted @wip
   Scenario Outline: E-Grid: To verify the lookup field is overrides as per Display Field when Enable Edit Display Field is False
@@ -3240,29 +3271,32 @@ Business Need: EnhancedGrid Component Scenarios
 
   @104863  @VerifySortingLabelInsideEnhancedGridTable
   Scenario: verify that sorting label displayed inside enhanced grid table
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I softly see sorting label as "* Records are sorted by " inside "---program:-:appBudgetPeriodTableId---" table
-    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:appBudgetPeriodTableId---" table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    Then I softly see sorting label as "* Records are sorted by " inside "---program:-:ProgramReviewStepTemplatesTableId---" table
+    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:ProgramReviewStepTemplatesTableId---" table
 
   @104864  @VerifySortingLabelInsideEnhancedGridChildTable
   Scenario: verify that sorting label displayed inside enhanced grid child table
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
-    #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
-    Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
+    Then I softly see sorting label as "Focus Area ascending order, Record ID ascending order, Category Name ascending order, Budget ascending order, Cash Match ascending order, Non-Cash Match ascending order, Total Match ascending order, Other Leverage ascending order, Total Project Cost ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
   @106419p @379183 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
