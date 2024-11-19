@@ -6841,13 +6841,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6894,13 +6894,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6952,13 +6952,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7020,14 +7020,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Label          | 1234567890    | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Label          | 1234567890    | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7097,14 +7097,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7177,14 +7177,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7257,14 +7257,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7326,14 +7326,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7394,15 +7394,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7465,15 +7465,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7535,15 +7535,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7603,15 +7603,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7673,16 +7673,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | false            | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | false            | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7743,14 +7743,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Is Master View | false          | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Is Master View | false          | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7810,14 +7810,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7873,11 +7873,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table List       | Sequence  | 1             | GrantsList         | Name                      | FLV-3380                   |
-#      | Flex Table List       | Sequence  | 2             | GrantsList         | Name                      | FLV-3451                   |
-#      | Flex Table List       | Sequence  | 3             | GrantsList         | Name                      | FLV-3450                   |
-#      | Flex Table List       | Sequence  | 4             | GrantsList         | Name                      | FLV-3346                   |
-#      | Flex Table List       | Sequence  | 5             | GrantsList         | Name                      | FLV-3449                   |
+#      | Flex Table List       | Sequence  | 1             | GrantsList         | Name                      | FLV-3423                   |
+#      | Flex Table List       | Sequence  | 2             | GrantsList         | Name                      |FLV-3482                   |
+#      | Flex Table List       | Sequence  | 3             | GrantsList         | Name                      | FLV-3481                  |
+#      | Flex Table List       | Sequence  | 4             | GrantsList         | Name                      | FLV-3236                   |
+#      | Flex Table List       | Sequence  | 5             | GrantsList         | Name                      |FLV-3480                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7889,21 +7889,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see added list index "5" is "Grants - Closed" displayed in provided sequence
 
   @333838 @pdftestcase
-  Scenario Outline: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
+  Scenario: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?            | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2738                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2749                   |
+      | configurationCategory | fieldName           | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true                     | AppReviewList      | Name                      |                            |
+      | Flex Table List       | Active ?            | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?            | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?            | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?           | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label               | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+     # | Flex Table List       | Filter Clause       | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF         | false                    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF         | false                    | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7912,9 +7914,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     And I pause execution for "5" seconds
     Then I cannot see "Applications - Submitted" on page "1" of "GovGrants" pdf file
-    Examples:
-      | FilterClause                                      |
-      | RecordType.Name='Grantor' and Status__c='Created' |
+#    Examples:
+#      | FilterClause                                      |
+#      | RecordType.Name='Grantor' and Status__c='Created' |
 
   @333839 @pdftestcase
   Scenario Outline: Flex table-Actions-Show in PDF-PM-UI-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
@@ -7951,14 +7953,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -8035,14 +8037,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Show in PDF    | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Show in PDF    | true           | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -8113,15 +8115,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -8198,15 +8200,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -8291,15 +8293,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3346                   |
-      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3380                   |
-      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3449                   |
-      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Is Master View            | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Default ?                 | true           | GrantsList         | Name                      | FLV-3450                   |
-      | Flex Table List       | Filter Clause             | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
-      | Flex Table List       | Show in PDF               | false          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3236                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3423                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3480                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Is Master View            | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Default ?                 | true           | GrantsList         | Name                      | FLV-3481                   |
+      | Flex Table List       | Filter Clause             | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
+      | Flex Table List       | Show in PDF               | false          | GrantsList         | Name                      | FLV-3482                   |
       | Flex Table:General    | Enable Export (XLS / CSV) | true           | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -16535,7 +16537,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <new_helpText> | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Help Text | <new_helpText> | Programs           | Name                      | FTC-11178                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -16554,7 +16556,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override | Test          | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Field Label Override | Test          | Programs           | Name                      | FTC-11178                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -18434,7 +18436,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
 #    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
 #      | EGMS ID | Contains | PG-343-036-- |
-    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+    When I enter advance filter values in table id "---program:-:programTableDivId---"
       | EGMS ID | Contains | PG-343-036-- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
@@ -18445,7 +18447,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+    When I enter advance filter values in table id "---program:-:programTableDivId---"
       | EGMS ID | Contains | PG-343-36--- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
@@ -18455,7 +18457,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     When I click on advance filter "#advfpopupflextable" of table id "---program:-:toggleFlexTablepopupflextableTableId---"
-    When I enter advance filter values inside id "advfApplications"
+    When I enter advance filter values inside id "---program:-:toggleFlexTablepopupflextableTableId---"
       | EGMS ID | Contains | 0392222AP-603- |
     Then I see "No records found" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
 
@@ -18472,7 +18474,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside id "advfPrograms"
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Number Test | Equals to | 11,1,1,1 |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
@@ -19251,58 +19253,41 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
 
-  @217552 @FiledNameFromBakenddisplyed
-  Scenario:  To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table List       | Field Label Override | EGMS EGMS ID      | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-2877                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" shown as flex table column title
-
-  @217553 @FiledNameFromBakenddisplyedPM
-  Scenario: To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+  @217552 @217553 @FiledNameFromBakenddisplyed
+  Scenario:  To verify that when PM/ADMIN not entered any data in Field label override field then respective field name from backend displayed as a label
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-2877                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    When I re-login as "PM" user on "INTERNAL" portal
+      | Flex Table List       | Field Label Override | ID            | Programs           | Name                      | FTC-11178                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" shown as flex table column title
+    Then I see "ID" shown as flex table column title
 
-  @217554p @FiledNameFromBakenddisplyedSPIuser
+  @217554 @FiledNameFromBakenddisplyedSPIuser
   Scenario: SPI - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-2877                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | ID            | RecipientApplications | Name                      | FTC-11178                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    Then I see "EGMS ID" shown as flex table column title
+    Then I see "ID" shown as flex table column title
 
   @190090 @sprint26 @wip
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
-      | Flex Table:General    | Order By  | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid:General     | Order By  | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Order By  | <newFieldsApi> | SearchGrantorProgram |                           |                            |
+      | Flex Grid:General     | Order By  | <newFieldsApi> | SearchGrantorProgram |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19315,7 +19300,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @206586 @BulkPdfandBulkCsv @sprint5
   Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -19324,10 +19309,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @206610 @BulkPdfandBulkCsv @sprint5
   Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19397,40 +19382,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
-  @207067 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-1491                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup" sub tab
-    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
-
-  @207072 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: To verify that on applying Row grouping, respective subtotal label display correctly on all pages.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-1491                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Steup tabs" sub tab
-    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
-
   @207074 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: E-Grid - To verify that on applying Row grouping, respective subtotal label display correctly on all pages.
     Given I have "default" configuration as below:
@@ -19447,41 +19398,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup" sub tab
     Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
-
-  @206942 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: E-grid-To verify Sub total label displayed after adding formula in "Name" field details config.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup" sub tab
-    And I pause execution for "5" seconds
-    Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
-
-  @207065 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
 
   @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI
   Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
@@ -19715,11 +19631,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
@@ -19760,7 +19673,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-11178                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19774,7 +19687,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-11178                  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19786,13 +19699,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-2877                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+      | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | RecipientApplications | Name                      | FTC-11178                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     Then I see "EGMS ID" in flex table header "---program:-:programTableDivId---"
 
@@ -19803,7 +19713,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-9347                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19817,7 +19727,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-2877                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-9347                   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19829,47 +19739,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-2877                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
-    And I navigate to "Applications" tab
-    And I pause execution for "8" seconds
-    Then I see "EGMS ID" in flex table header "---program:-:programTableDivId---"
-
-  @207133 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario:To verify that Sub total label displayed properly for PM user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | ProgramReviewStepPanelTemplates | Name                      | FTC-10972                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "Total:" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
-
-  @207134 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: To verify that Sub total label displayed properly for SPI user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | EnhanceAppGrantorBudgetPeriods | Budget Period             | FTC-11516                  |
+      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | RecipientApplications | Name                      | FTC-11178                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    When I perform quick search for "AP-T09-002"
-    When I click on "View" icon for "AP-T09-002" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:BudgetCategoryTableId---"
+    And I pause execution for "8" seconds
+    Then I see "EGMS ID" in flex table header "---program:-:programTableDivId---"
 
   @217286 @Toverifydisabling'EnableHelp'HelpfeaturenotgetdisplayedunderMenusecforrespectiveflextable.
   Scenario:AdminConfig-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
