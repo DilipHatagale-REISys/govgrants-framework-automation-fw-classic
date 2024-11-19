@@ -375,7 +375,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I download the file
     Then I see "Review Step Desc" in downloaded xls or csv file "govgrants"
 
-  @257480 @dilip @Sprint-19 @US-255921
+  @257480 @dilip @Sprint-19 @skipOnJenkins
   Scenario: To verify, In Record layout download PDF for newly added record in the table  should be displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | coreComponentField | filterId         |
@@ -549,7 +549,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-  @257518 @ToVerifyInternalUserShouldBeAbleToAddDetailsToTheNewlyDisplayedRecord @dilip @Sprint-19 @US-255921
+  @257518 @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add details to the newly displayed record
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -571,7 +571,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see value "Review Step Desc" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257535 @ToVerifyInPageBlockDownloadCSVForNewlyAddedRecordInTheTableShouldBeDisplayedForInternalUser @dilip @Sprint-19 @US-255921
+  @257535 @Sprint-19 @US-255921 @skipOnJenkins
   Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed  for internal user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -661,7 +661,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257520 @257526 @US-255921 @vrishali @Sprint-19 @US-255921
   Scenario: Internal User should be able to add details to the newly displayed record and click on save action then record is getting saved.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -879,18 +878,19 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario: validate after changing name of enhanced flex grid title inside planning-program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Label     | Budget Periods    | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Label     | Review Steps      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory     | fieldName | fieldNewValue            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Automation Enhanced Grid" shown as inside "---program:-:appBudgetPeriodTableId---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    Then I see "Automation Enhanced Grid" shown as inside "---program:-:flexGridEnhancedReviewStepID---"
 
   @35438    @disablingPDFExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex grid planning- Program enhanced flex grid
@@ -898,17 +898,17 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (PDF) | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
-    Then I see "Download as PDF" options inside "Budget Periods" disabled
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    Then I see "Download as PDF" options inside "Review Steps" disabled
 
   @62810    @disablingXLSExportFileForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of Excel download from menu option in enhanced flex grid planning- Program enhanced flex grid
@@ -916,17 +916,17 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
-    When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
-    Then I see "Download as XLS" options inside "Budget Periods" disabled
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    Then I see "Download as XLS" options inside "Review Steps" disabled
 
   @35439  @379181 @smokePATCH @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
@@ -936,12 +936,15 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
@@ -953,15 +956,17 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Total Records Count | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
-#    And I expand nested table containing column value "BP01"
-#    And I pause execution for "5" seconds
-    #379187 #379206
+    And I pause execution for "5" seconds
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @35434 @enableAutoIndexForEnhancedGrid-gPlanning
@@ -1062,14 +1067,16 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
-    #Then I see "<newFieldsApi>" in enhanced flex grid header "---program:-:appBudgetPeriodTableId---"
     Then I see columnName "Budget Period #" is Displayed on "Budget Periods" table
     Then I see columnName "Start Date" is Displayed on "Budget Periods" table
     Then I see columnName "End Date" is Displayed on "Budget Periods" table
@@ -1082,17 +1089,6 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | newFieldsApi                                                                                                                                                                                                               | defaultFieldsApi                                      |
       | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
-#      | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-#      | Current Budget Period End Date | BudgetPeriodEndDate__c,Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | External Organization          | ExternalOrganization__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Internal Organization          | InternalOrganization__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Project Period                 | CurrentProjectPeriod__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Number of Awards               | NumberofAwards__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Fee Fund Requested   | TotalAwardObligatedAmount__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Status                         | Status__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | CFDA Number                    | CFDANumber__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | isClosedOut                    | isClosedOut__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-#      | Program Contact Address        | AddressProgramContact__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
   @41297    @headerHelpTextFieldForParentFlexTableAtEnhancedGrid-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at parent flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
@@ -1123,12 +1119,15 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "5" seconds
@@ -3110,7 +3109,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepPanelTemplates |                           |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
