@@ -17,7 +17,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     And I expand nested table containing column value "Pre-Screen Review"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
+    When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     Then I see fields "StepNumber__c" is in edit mode
     Then I see fields "Name" is in edit mode
     Then I see fields "Description__c" is in edit mode
@@ -93,7 +93,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -110,7 +110,7 @@ Business Need: EnhancedGrid Component Scenarios
   @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -133,11 +133,11 @@ Business Need: EnhancedGrid Component Scenarios
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | ProgramReviewStepTemplates |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -164,7 +164,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | ProgramReviewStepPanelTemplates |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -196,8 +196,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379204
     Then I see value "75.00%" for title "Form Weight (%)" against the value "Testing" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-
-  @206105 @206107 @US-196926 @Sprint-5
+  @206105 @206107 @US-196926 @Sprint-5 @wip @pdf
   Scenario Outline:Download as XLS should work for empty table currency,  Number &Percent  column should be available on the table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue                                              | coreComponentField | filterId         |
@@ -302,11 +301,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "percenttest" in downloaded xls or csv file "govgrants"
 
   @wip @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
-  @ToverifyUsershouldbeabletoDeletethenewlyaddedrecord @UsershouldbeseeconfirmationboxwhenclickonDeleteactiononthenewlyaddedrecord @UsershouldbeabletoEditdetailstothenewlydisplayedrecord
-  @Usershouldbeabletoadddetailstothenewlyaddedrecordandclickonsaveactionthenrecordisgettingsaved @InpageblockdownloadPDFfornewlyaddedrecordinthetableshouldbedisplayed
   Scenario:To verify, User should be able to Delete the newly added  record
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -659,7 +656,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "Save" in flex table with id "---program:-:PeerReviewerEnhancedGridTableId---"
     Then I softly see value "Test Data" for title "Description" inside table "---program:-:PeerReviewerEnhancedGridTableId---"
 
-  @257520 @257526 @US-255921 @vrishali @Sprint-19 @US-255921
+  @257520 @257526 @US-255921 @Sprint-19 @US-255921
   Scenario: Internal User should be able to add details to the newly displayed record and click on save action then record is getting saved.
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -744,17 +741,19 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Filter | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Filter | false         | ProgramReviewStepTemplates |                           |                            |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Budget" sub tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
     #379184
-    Then I see Advance Filter is disabled from table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
+    Then I do not see Advance Filter box is displayed inside table id "---program:-:ProgramReviewStepTemplatesTableId---" in flex table
 
   @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smokePATCH
   Scenario: validate disabling of menu icon from Planning- Program enhanced flex grid
@@ -764,7 +763,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Disable Menu | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
@@ -811,7 +810,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Pre-Screen Review" inside table
     Then I do not see field "Weight__c" is editable field
 
-  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
+  @45285    @hideColumnJSONfieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH @wip
   Scenario: Hiding specific column value for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                     | filterId         |

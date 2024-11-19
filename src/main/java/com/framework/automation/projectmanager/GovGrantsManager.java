@@ -277,7 +277,7 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param flexTableId
      * @param NextPrevious
      */
-    public void performClickOnPaginationArrow(String flexTableId, String NextPrevious) {
+    public void performClickOnPaginationArrow(String NextPrevious, String flexTableId) {
         govgrants.perform().flexTable().flexTablePagination(flexTableId, NextPrevious);
     }
 
