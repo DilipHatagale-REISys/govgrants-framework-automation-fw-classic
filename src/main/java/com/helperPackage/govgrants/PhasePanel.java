@@ -362,7 +362,7 @@ public final class PhasePanel {
     }
 
     private By getTopRightButtonLocator(String panelTitleName, String buttonName) {
-        return By.xpath("//*[@title='" + panelTitleName + "' or text()='"
+        return By.xpath("//div[@id='" + panelTitleName + "']//action//*[@title='" + buttonName + "'] | //*[@title='" + panelTitleName + "' or text()='"
                 + panelTitleName
                 + "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
                 + buttonName + "'] | " +

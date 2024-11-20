@@ -711,7 +711,7 @@ public final class PageDetails {
      * @author komal.mukhekar
      */
     public void getHelpTextAtModalWindow(String modalFieldTitle) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@id,'modal')]//span[contains(text(),'" + modalFieldTitle + "')]/..//span[@class='fa fa-info helpIcon']/following-sibling::span | //label[contains(text(),'" + modalFieldTitle + "')]//span"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@id,'modal')]//span[contains(text(),'" + modalFieldTitle + "')]/..//span[@class='fa fa-info helpIcon']/following-sibling::span"));
     }
 
     /**

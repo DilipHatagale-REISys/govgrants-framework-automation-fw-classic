@@ -444,25 +444,36 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
 
   @391263 @SanityPATCH @SanityPATCHNotes
-  Scenario: Sanity TC - Admin- To verify after filling required details in Add Notes modal, notes record is getting saved on click of save action.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+  Scenario Outline: Sanity TC - Admin- To verify after filling required details in Add Notes modal, notes record is getting saved on click of save action.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I navigate to "Overview" sub tab
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in tableName "Notes"
-    And I enter value "Notes testing" into field "Title"
-    And I enter value "Notes testing" into field "Description"
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
     And I click modal button "Save"
-    And I close modal by clicking the top right x button
-    When I refresh the page
-    When I navigate to "Files" sub tab
-    Then I see row level action button "View" against "Notes testing" in table name "Notes"
+    And I click modal button "Close"
+    And I refresh the page
+    And I pause execution for "7" seconds
+    Then I see row level action button "Delete" against "Test Automation" in table name "Notes"
+    Examples:
+      | Users |
+     #| ADMIN |
+      | PM    |

@@ -25,14 +25,14 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * Constructor to handle dependency injection and framework library
      */
     public EnhancedFlexGridPage() {
-        reachOutToEnhancedGridCollapse = By.id("ProgramBudgetCategoryflexTable");
+        reachOutToEnhancedGridCollapse = By.id("ProgramReviewStepTemplatesFlexCollapse");
         searchInputEnhancedGrid = By.cssSelector("div>grid>div>div>div>div>div>input.form-control");
         completeTableRowOfEnhancedGrid = By
                 .xpath("//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/tbody/tr");
         selectRecordCheckBoxForEnhancedGrid = By
-                .xpath("//div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
+                .xpath("//div[@id='ProgramReviewStepTemplatesFlexToggle']//input[@aria-label='Select Record'] | //div[@id='Enhanced1grid']//input[@aria-label='Select Record']");
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
-        scrollToActionColumn = By.xpath("//div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
+        scrollToActionColumn = By.xpath("//div[@id='ProgramReviewStepTemplatesFlexToggle']//th[contains(text(),'Actions')] | //div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
         obligatedAmountSpecificCellsAtChildTable = By
                 .xpath("//table/tbody/tr/td//*[@field-name='TotalObligateAmount__c']");
@@ -993,7 +993,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      * @return
      */
     private Boolean isRecordSelectionEnabledOnChildFlexTable() {
-        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox']"));
+        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@id='TmpGrantorActiveAwardsGridcheckBox'] | //input[@id='ProgramReviewStepPanelTemplatescheckBox']"));
     }
 
     /**

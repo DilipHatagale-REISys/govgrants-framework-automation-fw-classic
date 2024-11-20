@@ -969,4 +969,9 @@ public class PageLayoutSteps {
     public void iClickAfterSelectionOfInTheTables(String buttonName, String recordValue, String numberOfEntries, String flexTableId) {
         pageLayoutPage.clickAfterSelectionOfInTheTables(buttonName, recordValue, numberOfEntries, flexTableId);
     }
+
+    @Then("^I (see|do not see|softly see|softly do not see) field \"([^\"]*)\" is editable field$")
+    public void iSeeFieldIseditableForTheUser(String usage, String fieldname) {
+        pageLayoutPage.assertIfFieldIsReadOnly(usage, fieldname);
+    }
 }
