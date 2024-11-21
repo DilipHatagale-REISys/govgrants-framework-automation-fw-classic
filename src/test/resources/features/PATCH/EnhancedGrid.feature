@@ -178,12 +178,12 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     And I pause execution for "5" seconds
     #379193
-    Then I see "New" button inside "---program:-:ProgramReviewStepPanelSMEchildTableID---" flex table
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelSMEchildTableID---" by clicking "New" :
+    Then I see "New" button inside "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" flex table
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Automation | 50              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelSMEchildTableID---" by clicking "New" :
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
       | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Testing   | 75              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
@@ -1187,7 +1187,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Help Text | This is the order in which the associated reviews will need to be completed. | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <new_helpText> | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Help Text | <new_helpText> | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2084,7 +2084,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2102,8 +2102,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2121,8 +2121,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6892,7 +6892,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text |               | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Help Text |               | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6900,7 +6900,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "1"
+    When I expand nested table containing column value "Pre-Screen Review"
     Then I do not see help text icon is displayed for field "Form Weight (%)"
 
     Examples:
@@ -6914,22 +6914,24 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue                                                            | filterId         |
       | Flex Table List       | Help Text | This is the order in which the associated reviews will need to be completed. | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | @#$%^&*()!<>1234567890 | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <newHelpText> | ProgramReviewStepTemplates | Name                      | {flexgrid:Description__c}  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I hovering mouse on help text icon inside "Step Order" for flex table column
-    Then I see "@#$%^&*()!<>1234567890" shown as help text
+    When I hovering mouse on help text icon inside "Description" for flex table column
+    Then I see "<newHelpText>" shown as help text
 
     Examples:
-      | User |
+      | User | newHelpText            |
       #| ADMIN |
-      | PM   |
+      | PM   | @#$%^&*()!<>1234567890 |
 
   @296627 @296628
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
@@ -6937,41 +6939,44 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
       | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | @#$%^&*()!<>1234567890 | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <newHelpText> | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "1"
+    When I expand nested table containing column value "Pre-Screen Review"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
-    Then I see "@#$%^&*()!<>1234567890 " shown as help text
+    Then I see "<newHelpText>" shown as help text
 
     Examples:
-      | User |
+      | User | newHelpText            |
       #| ADMIN |
-      | PM   |
+      | PM   | @#$%^&*()!<>1234567890 |
 
   @296637 @296641
   Scenario Outline:Admin_Parent table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I see field "Manual Test" inside page block
-    Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Step Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
       | User |
@@ -6982,21 +6987,21 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline: Admin_Child table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    #Then I see field "Awarded Budget :" inside page block
-    Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "SME Review"
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
       | User |
@@ -7007,21 +7012,23 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline: Admin_Parent table_Verified that user is able to apply row grouping on multiple fields/columns:
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Step Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Step Order : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
       | User |
@@ -7031,25 +7038,33 @@ Business Need: EnhancedGrid Component Scenarios
   @296661 @296662
   Scenario Outline:Admin_Child table_Verified that user is able to apply row grouping on multiple fields/columns:
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:4 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
-      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11709                  |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:PanelName__c}    |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:PanelName__c}    |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:PanelName__c}    |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    #Then I see field "Awarded Budget :" inside page block
-    Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
-    Then I softly see "Budget Category :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "SME Review"
+    Then I softly see "Form Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
       | User |
@@ -7062,22 +7077,23 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-11195                  |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-   # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I see over all total for "StepNumber__c" at enhanced grid
+    Then I see over all total sum is displayed for "Weight__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
 
     Examples:
       | User |
@@ -7089,27 +7105,27 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-13613                  |
-      #| Flex Table List       | Sub Total Label       | Testing Sub Total | GrantBudgetCategoryFlexTable | Name                      | FTC-10960                  |
-      | Flex Table List       | Enable Row Grouping   | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11709                  |
-      | Flex Table List       | Enable Over All Total | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepTemplates      | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    Then I softly see "Budget Category : " inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
-    Then I softly see "Budget Category : Equipment" inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
-    Then I see over all total for "AwardedBudget__c" at enhanced grid
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "SME Review"
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+    Then I see over all total sum is not displayed for "Weight__c" inside "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" table
 
     Examples:
       | User |
@@ -7121,24 +7137,24 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
-   # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I softly see "Step Name : Reference Testing " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I see over all total sum is not displayed for "NoOfCompletedReviews__c" inside "---program:-:ProgramReviewStepTemplatesTableId---" table
+    Then I softly see "Step Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see over all total sum is not displayed for "Weight__c" inside "---program:-:ProgramReviewStepTemplatesTableId---" table
 
     Examples:
       | User |
@@ -7154,23 +7170,25 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
+    When I expand nested table containing column value "SME Review"
     ##Row grouping
     Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     ##subtotal
-    Then I softly see "Form Weight (%) : 25" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Form Weight (%) : 50" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     ##disable overall total
-    Then I see over all total sum is not displayed for "MinimumNumberOfReviewers__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
+    Then I see over all total sum is not displayed for "Weight__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
     Examples:
       | User |
       #| ADMIN |
@@ -7182,25 +7200,22 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
-      | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I do not see " Step Name : Manual Test " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
+    Then I do not see over all total for "Weight__c" at enhanced grid
 
     Examples:
       | User |
@@ -7212,27 +7227,29 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
+    When I expand nested table containing column value "SME Review"
     ##Row grouping
-    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     ##subtotal
-    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I do not see "Form Weight (%) : 50" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
       ##disable overall total
-    Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
+    Then I do not see over all total for "Weight__c" at enhanced grid
 
     Examples:
       | User |
@@ -7244,26 +7261,23 @@ Business Need: EnhancedGrid Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
-      | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates |                           |                            |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I do not see "Manual Test" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I do not see "Step Name : Reference Testing" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
+    Then I see over all total for "Weight__c" at enhanced grid
 
     Examples:
       | User |
@@ -7279,23 +7293,25 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
-      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
+    When I expand nested table containing column value "SME Review"
     ##Row grouping
-    Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     ##subtotal
-    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I do not see "Form Weight (%) : 50" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
       ##disable overall total
-    Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
+    Then I do not see over all total for "Weight__c" at enhanced grid
 
     Examples:
       | User |
@@ -7310,16 +7326,18 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "Step Number" not displayed in enhanced grid table column title
+    Then I see "Step Order" not displayed in enhanced grid table column title
     Examples:
       | User |
       #| ADMIN |
@@ -7333,16 +7351,18 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
+    When I expand nested table containing column value "SME Review"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Examples:
       | User |
@@ -7357,17 +7377,18 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
-      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Hide Grouping Column | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
-
+    Then I see "Step Order" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
       #| ADMIN |
@@ -7381,18 +7402,20 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
+    When I expand nested table containing column value "SME Review"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
       | User |
@@ -7408,25 +7431,25 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
       | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:5 |
+      | Flex Table List       | Hide Grouping Column  | false             | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates |                           |                            |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Grid:General     | Default Page Size     | 5             | ProgramReviewStepTemplates |                           | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Hide Grouping Column  | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I see " NoOfCompletedReviews :  --  " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
-    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
-    Then I see "NoOfCompletedReviews" not displayed in enhanced grid table column title
+    Then I see "Step Order" not displayed in enhanced grid table column title
 
     Examples:
       | User |
@@ -7441,23 +7464,24 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Hide Grouping Column  | false             | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Hide Grouping Column  | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
-    ##subtotal
-    Then I see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    When I expand nested table containing column value "SME Review"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
 
     Examples:
@@ -7471,23 +7495,24 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
+#      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true             | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Enable Row Grouping | true             | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
-      | Flex Table List       | Sub Total Label     | Testing SubTotal | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+#      | Flex Table List       | Sub Total Label     | Testing SubTotal | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see "Step Order : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     #Sub Total Label Displayed
-    Then I see " Testing SubTotal - NoOfCompletedReviews : 3 " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see "Automation lable - Step Order : 1" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
       | User |
@@ -7500,23 +7525,25 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:5 |
+#      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true                   | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Enable Row Grouping | true                   | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
-      | Flex Table List       | Sub Total Label     | Sub Total Testing Demo | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+#      | Flex Table List       | Sub Total Label     | Sub Total Testing Demo | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Manual Test"
-    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    When I expand nested table containing column value "SME Review"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     #subtotal label displayed
-    Then I see "Sub Total Testing Demo - Form Weight (%) : 15" inside rows of table id "---program:-:ProgramReviewStepPanelSMEchildTableID---"
+    Then I see "Sub Total Testing Demo - Form Weight (%) : 0" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
       | User |
@@ -7536,9 +7563,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" flex table not displayed
 
@@ -7560,9 +7589,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
@@ -7574,18 +7605,19 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+      | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection | true          | ProgramReviewStepTemplates | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Grid:General     | Enable Record Selection | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see select check box enabled in flex table
+    Then I see select check box enabled in enhanced flex grid
     Examples:
       | User |
       #| ADMIN |
@@ -7595,18 +7627,19 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline:Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+      | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection | false         | ProgramReviewStepTemplates | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
+      | Flex Grid:General     | Enable Record Selection | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I do not see select check box enabled in flex table
+    Then I do not see select check box enabled in enhanced flex grid
     Examples:
       | User |
       #| ADMIN |
@@ -7616,21 +7649,20 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline: Record Selection- Admin- Config- Verify correct Record Selection Column select all checkbox displays on UI
   Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
-      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection          | true          | ProgramReviewStepTemplates | Name                      |                            |
-      | Flex Table:General    | Record Selection Column Position | Left          | ProgramReviewStepTemplates | Name                      | Record Selection           |
-    When I login to "As a Grantor" app as "<User>" user
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see select check box enabled in enhanced flex grid
 
     Examples:
       | User |
@@ -7658,7 +7690,7 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | false         | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
@@ -7672,15 +7704,12 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see select check box enabled in flex table
 
   @218475 @218478
-  Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
-      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
+  Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI    Given I have "default" configuration as below:
+  | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+  | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection          | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
-      | Flex Table:General    | Record Selection Column Position | Left          | RecGrantBudgetCategoryFlexGrid | Name                      | Record Selection           |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7688,7 +7717,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+    Then I see select check box enabled in enhanced flex grid
 
   @379199  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify that user is able to see Quick search input field on child table, when Quick search config is enabled
@@ -7711,4 +7740,4 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
     #379200
-    Then I see "quick-search" is displayed on table id "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I see "Search" is displayed on table id "---program:-:EnhanceAppBudCateGrantorTableId---"

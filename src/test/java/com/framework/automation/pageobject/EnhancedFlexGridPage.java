@@ -145,6 +145,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isSelectRecordCheckBoxEnabledAtEnhancedGrid());
     }
 
+    public void assertEnhancedFlexGridRecordSelectionDisable() {
+        Assert.assertFalse(isSelectRecordCheckBoxEnabledAtEnhancedGrid());
+    }
+
     /**
      * assert if Edit icon open in same tab or not for enhanced flex grid
      */
@@ -460,6 +464,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(fieldApiName));
     }
 
+    public void assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGridDisable(String fieldApiName) {
+        Assert.assertFalse(isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(fieldApiName));
+    }
     /**
      * return true if arrow is displayed in ascending order for multiple field
      */
@@ -474,6 +481,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         Assert.assertTrue(isOverAllTotalIsDisplayed(fieldApiNAme, tableId));
     }
 
+    public void assertOverAllTotalDisplayed(String fieldApiNAme, String tableId) {
+        Assert.assertFalse(isOverAllTotalIsDisplayed(fieldApiNAme, tableId));
+    }
     /**
      * return if lookup field is ediatble/not editable at enhanced grid
      */
