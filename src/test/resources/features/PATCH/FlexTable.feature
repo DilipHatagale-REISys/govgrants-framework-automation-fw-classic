@@ -1958,8 +1958,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I quick search "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
-    Then I see list contain "Application For Announcement Testing" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    And I quick search "{StaticRecords:FlexTableSPIRecord}" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
+    Then I see list contain "{StaticRecords:FlexTableSPIRecord}" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
   @334713 @wip
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search by entering keyword
@@ -4931,7 +4931,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338529
@@ -4948,7 +4948,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338531
@@ -6363,7 +6363,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values in table id "advfGrantsList"
       | Grant Title | Starts with | Vrush |
     And I click on "fa fa-plus" after click advance filter
-    Then I softly see value "Application For Announcement Testing" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I softly see value "{StaticRecords:FlexTableSPIRecord}" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     And I click on "Clear All" after click advance filter
     When I enter advance filter values in table id "advfGrantsList"
       | Status | Equals to | Active |
@@ -6892,6 +6892,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:1 |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:2 |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:3 |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3236                   |
@@ -6899,8 +6903,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3423                   |
       | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3481                   |
       | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3482                   |
-      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
-      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3481                   |
+     # | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3481                   |
+     # | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3481                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -7341,7 +7345,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
     Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
 
-  @333806 @wip
+  @333806 @wip @filterclause
   Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed only those records which matches the given filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7364,7 +7368,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333808
+  @333808 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed only those records which matches the given filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7387,7 +7391,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333809
+  @333809 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed only those records which matches the given filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7412,7 +7416,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333810
+  @333810 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed all available records, when user not provided any filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7435,7 +7439,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause |
       |              |
 
-  @333811 @wip
+  @333811 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed all available records, when user not provided any filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7458,7 +7462,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause |
       |              |
 
-  @333813
+  @333813 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed all available records, when user not provided any filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7483,7 +7487,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause |
       |              |
 
-  @333815 @wip
+  @333815 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7506,7 +7510,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                              |
       | RecordType.Name='Grantor' and Status__c='Created'DELETEME |
 
-  @333816
+  @333816 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7528,7 +7532,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                              |
       | RecordType.Name='Grantor' and Status__c='Created'DELETEME |
 
-  @333817
+  @333817 @filterclause @wip
   Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7552,7 +7556,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                              |
       | Status__c = 'Draft' and RecordType.Name='Grantor'DELETEME |
 
-  @333818 @wip
+  @333818 @filterclause @wip
   Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7574,7 +7578,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333819
+  @333819 @filterclause @wip
   Scenario Outline: Flex table-ListView-Default-PM-UI-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7596,7 +7600,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333820
+  @333820 @filterclause @wip
   Scenario Outline: Flex table-ListView-Default-SPI-UI-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7620,7 +7624,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333821 @wip
+  @333821 @wip@filterclause @wip
   Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7643,7 +7647,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333822 @wip
+  @333822 @filterclause @wip
   Scenario Outline: Flex table-ListView-Default-PM-UI-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7666,7 +7670,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333823
+  @333823 @filterclause @wip
   Scenario Outline: Flex table-ListView-Default-SPI-UI-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7691,7 +7695,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333824 @wip
+  @333824 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-Admin-Config-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7712,7 +7716,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333825 @wip
+  @333825 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-PM-UI-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7736,7 +7740,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333826 @wip
+  @333826 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-SPI-UI-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7759,7 +7763,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333827
+  @333827 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-Admin-Config-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7781,7 +7785,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333828
+  @333828 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-PM-UI-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7803,7 +7807,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333829
+  @333829 @filterclause @wip
   Scenario Outline: Flex table-ListView-IsMasterView-SPI-UI-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7826,7 +7830,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333830 @wip
+  @333830 @filterclause @wip
   Scenario Outline: Flex table-Actions-Sequence-Admin-Config-To verify that all the added list views get appeared in provided sequence, in dropdown of List view on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7888,7 +7892,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see added list index "4" is "Grants - Rejected" displayed in provided sequence
     Then I see added list index "5" is "Grants - Closed" displayed in provided sequence
 
-  @333838 @pdftestcase
+  @333838 @pdftestcase @filterclause @wip
   Scenario: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -7918,7 +7922,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #      | FilterClause                                      |
 #      | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333839 @pdftestcase
+  @333839 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Show in PDF-PM-UI-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7946,7 +7950,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333840 @pdftestcase
+  @333840 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Show in PDF-SPI-UI-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -7974,7 +7978,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333841 @pdftestcase @wip
+  @333841 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8002,7 +8006,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333842 @pdftestcase
+  @333842 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Show in PDF-PM-UI-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8030,7 +8034,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333843 @pdftestcase
+  @333843 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Show in PDF-SPI-UI-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8058,7 +8062,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333844 @wip
+  @333844 @filterclause @wip
   Scenario Outline: : Flex table-Actions-Admin-UI-To verify that user is able to switch between list views on table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8083,7 +8087,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333845
+  @333845 @filterclause @wip
   Scenario Outline: Flex table-Actions-PM-UI-To verify that user is able to switch between list views on table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8108,7 +8112,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333846
+  @333846 @filterclause @wip
   Scenario Outline: Flex table-Actions-SPI-UI-To verify that user is able to switch between list views on table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8164,7 +8168,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333848 @pdftestcase
+  @333848 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-PM-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded PDF or not
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8193,7 +8197,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333850 @pdftestcase
+  @333850 @pdftestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-SPI-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded PDF or not
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -8205,8 +8209,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3480                   |
       | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3481                   |
       | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3482                   |
-      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
-      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3481                   |
+     # | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3481                   |
+    #  | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3481                   |
       | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3482                   |
       | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3482                   |
     Given I am on "SUBPORTAL" portal
@@ -8223,7 +8227,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | Status__c = 'Draft' and RecordType.Name='Grantor' |
 
-  @333851 @xlscsvtestcase
+  @333851 @xlscsvtestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-Admin-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -8254,7 +8258,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333852 @xlscsvtestcase
+  @333852 @xlscsvtestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-PM-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -8285,7 +8289,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | FilterClause                                      |
       | RecordType.Name='Grantor' and Status__c='Created' |
 
-  @333853 @xlscsvtestcase
+  @333853 @xlscsvtestcase @filterclause @wip
   Scenario Outline: Flex table-Actions-SPI-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -8535,7 +8539,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     And I pause execution for "5" seconds
     Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
@@ -8590,7 +8594,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "Delete" Actions is "2" on UI as per given sequence in flex table
     Then I see sequence of "Edit" Actions is "3" on UI as per given sequence in flex table
@@ -8897,8 +8901,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8919,8 +8923,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8942,8 +8946,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                         |
@@ -8963,8 +8967,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -8984,8 +8988,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -9006,8 +9010,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue |
@@ -9029,8 +9033,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9051,8 +9055,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9074,8 +9078,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -9097,8 +9101,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9120,8 +9124,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9168,8 +9172,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -9198,8 +9202,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -9252,8 +9256,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9282,8 +9286,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9336,8 +9340,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9366,8 +9370,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9419,8 +9423,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9442,8 +9446,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9495,8 +9499,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9518,8 +9522,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9565,8 +9569,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9588,8 +9592,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9635,8 +9639,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9658,8 +9662,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9775,7 +9779,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9800,7 +9804,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9845,8 +9849,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    Then I see "View" icon for "{StaticRecords:AnnouncementRecord}" is not displayed inside flex table
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
@@ -9865,8 +9869,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    Then I see "View" icon for "{StaticRecords:AnnouncementRecord}" is not displayed inside flex table
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
@@ -9887,7 +9891,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "security Review_Application"
-    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    Then I see "View" icon for "{StaticRecords:AnnouncementRecord}" is not displayed inside flex table
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
@@ -10169,7 +10173,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10194,7 +10198,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10246,7 +10250,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10273,7 +10277,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10327,9 +10331,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10356,9 +10360,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10383,8 +10387,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12240,11 +12244,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12305,8 +12309,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12335,10 +12339,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    Then I see record "Vrush Announcement" having action "View" contain icon css "fa fa-eye"
-    Then I see record "Vrush Announcement" having action "Edit" contain icon css "fa fa-pencil"
-    Then I see record "Vrush Announcement" having action "Delete" contain icon css "fa fa-trash-o"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    Then I see record "{StaticRecords:AnnouncementRecord}" having action "View" contain icon css "fa fa-eye"
+    Then I see record "{StaticRecords:AnnouncementRecord}" having action "Edit" contain icon css "fa fa-pencil"
+    Then I see record "{StaticRecords:AnnouncementRecord}" having action "Delete" contain icon css "fa fa-trash-o"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
@@ -12395,8 +12399,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
-    Then I see record "Application For Announcement Testing" having action "View" contain icon css "fa fa-eye"
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    Then I see record "{StaticRecords:FlexTableSPIRecord}" having action "View" contain icon css "fa fa-eye"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
@@ -12424,11 +12428,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12487,7 +12491,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Application For Announcement Testing"
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
     Then I see "View" row action Button at position "1"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12925,8 +12929,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
 
@@ -12965,8 +12969,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13005,8 +13009,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13046,8 +13050,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13092,8 +13096,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -13136,8 +13140,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -13180,8 +13184,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -15348,8 +15352,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | User | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -16299,8 +16303,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see new tab is opened
 
   @34038    @editActionOpensInSameWindow-gPlanning
@@ -16315,8 +16319,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see no new tab is opened
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
@@ -16331,8 +16335,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see "Edit" opens in overLay window
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
@@ -16347,8 +16351,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
@@ -16370,8 +16374,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16387,8 +16391,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation " is not displayed inside flex table
 
@@ -16404,8 +16408,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16425,8 +16429,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16446,8 +16450,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
 
@@ -16537,7 +16541,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <new_helpText> | Programs           | Name                      | FTC-11178                  |
+      | Flex Table List       | Help Text | <new_helpText> | Programs           | Name                      | FTC-9347                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -16556,7 +16560,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override | Test          | Programs           | Name                      | FTC-11178                  |
+      | Flex Table List       | Field Label Override | Test          | Programs           | Name                      | FTC-9347                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -16590,7 +16594,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see "Edit" row action Button at position "1"
 
   @40014    @buttonHelpTextFieldAtFlexTableAction-gPlanning
@@ -16605,8 +16609,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Automation Help" as title for "Automation Internal Program for Testing" inside flex table action
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Automation Help" as title for "{StaticRecords:FlexTableDraftRecord}" inside flex table action
 
   @40015    @actionURLFieldAtFlexTableAction-gPlanning
   Scenario Outline: Changing action url of action url field for edit action from config and validating it at flex table of program-planning
@@ -16620,8 +16624,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -16640,8 +16644,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see external link icon as "Automation Internal Program for Testing" for "Edit" inside flex table action
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see external link icon as "{StaticRecords:FlexTableDraftRecord}" for "Edit" inside flex table action
 
   @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning
   Scenario: Changing location of roles and responsibilities flex table edit action from row to top from config anf validating it inside Roles and Responsibilities flex table
@@ -16658,8 +16662,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" button inside "Contacts" flex table
 
@@ -16677,8 +16681,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "New" icon for "Contacts" is displayed inside flex table
 
@@ -16694,8 +16698,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableAnnouncementContacts"
     Then I see "New" options inside "Contacts" enabled
@@ -16712,8 +16716,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "New" button inside "Contacts" flex table
 
@@ -16744,8 +16748,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "null" is displayed
 
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -16762,8 +16766,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -16780,8 +16784,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see "Automation Title" opens in overLay window
 
   @wip @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning  @skiponjenkins @plscheckagain
@@ -16800,8 +16804,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" is not displayed inside flex table
 
     Examples:
       | defaultExpression                                      | defaultHideDecisionField |
@@ -16823,8 +16827,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" is not displayed inside flex table
 
     Examples:
       | defaultExpression                                      | defaultHideDecisionField |
@@ -16846,8 +16850,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" is not displayed inside flex table
 
     Examples:
       | defaultExpression                                      | defaultHideDecisionField |
@@ -16944,8 +16948,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" is not displayed inside flex table
 
     Examples:
       | defaultExpression                                      | defaultHideDecisionField |
@@ -16971,7 +16975,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -16990,8 +16994,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    Then I see "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" is not displayed inside flex table
 
   @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
@@ -17097,8 +17101,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -17117,8 +17121,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "View" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -17137,8 +17141,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Responsibilities" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilitiesInternalProgram" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilitiesInternalProgram" with wait for record
@@ -17152,8 +17156,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     Then I see "Program" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
@@ -17185,8 +17189,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Responsibilities" sub tab
     And I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
     Then I softly see "Save" button at "Bottom" of  Modal window
@@ -17206,8 +17210,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Responsibilities" sub tab
     And I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
     Then I see "Save" button at "Bottom" of  Modal window
@@ -17478,7 +17482,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
 
   @126930    @validateHideColumnsFieldAtFlexTableUsingEqualsOperator
@@ -17580,8 +17584,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     And I pause execution for "15" seconds
     When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
@@ -17592,8 +17596,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
 
@@ -17603,8 +17607,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     When I hover mouse on lookup link "Automation PM" at table
@@ -17714,14 +17718,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I softly see value "90,000%" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
     Then I softly do not see value "90000" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
 
@@ -17739,33 +17743,40 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Does not contains | test |
     When I perform quick search for "Road Construction"
-    Then I softly do not see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "{StaticRecords:FlexTableDraftRecord}" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
     Then I softly see value "Road Construction" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
 
   @145998    @validateDecimalValueIsDisplayedOnFlexTableForNumberField
   Scenario Outline: Validate decimal value should be display on the Number field at flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true               | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program |                           | PBD-23985                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "12345678" into field "Number__c"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{SavedValue:PEGMSID}"
     Then I see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @146548    @verifyPaginationIsDisplayedAtTopAndBottomOfFlexTable-gPlanning
   Scenario: validate pagination is displayed attop and bottom in flex table of programs-planning
@@ -17930,14 +17941,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
@@ -17951,9 +17962,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     And I pause execution for "3" seconds
-    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:ProgramsgridTableId---"
+    Then I softly see "{StaticRecords:FlexTableDraftRecord}" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @151631    @validateIsSearchWorkingForShortTextSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for short text searched in flex table quick search box
@@ -17961,9 +17972,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
     And I pause execution for "3" seconds
-    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:ProgramsgridTableId---"
+    Then I softly see "{StaticRecords:FlexTableDraftRecord}" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148905    @validateIsSearchWorkingForSpecialCharNumberAndAlphabetsTogetherSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for special char,number,alphabets searched in flex table quick search box
@@ -17977,25 +17988,22 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable @needtocheck
   Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I clear the value from field "fieldTest_Description__c"
-    When I enter value "test temp data" into field "fieldTest_Description__c"
-    And I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "6" seconds
+    And I clear the value from field "fieldObjectives__c"
+    When I enter value "test temp data" into field "fieldObjectives__c"
+    And I click on "Save" in the page details
     Then I donot see navigation logo on page
 
   @136004    @validateCommasAreDisplayedIn4DecimalValueOnFlexTableForNumberFieldTotal
@@ -18130,7 +18138,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Start Date | Less than | 01/01/2029 |
     Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
-  @159944    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshTheGrid  @abhishekS
+  @159944    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshTheGrid  @abhishekS @refreshbehavior
   Scenario: validate flex table refresh behaviour-to refresh the grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -18150,7 +18158,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     #Then I see "Program Manager" inside Application Budget flex table for specified record "Program Manager"
     Then I see value "Program Manager" for title "Project Role" inside table "---program:-:programContactsTableId---"
 
-  @159986    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModelAndRefreshGrid @abhishekS
+  @159986    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModelAndRefreshGrid @abhishekS @refreshbehavior @wip
   Scenario: validate flex table refresh behaviour-Close modal and refresh grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -18169,7 +18177,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click modal button "Save"
     Then I see value "Program Manager" for title "Project Role" inside table "---program:-:programContactsTableId---"
 
-  @159863    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage @abhishekS
+  @159863    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage @abhishekS @refreshbehavior @wip
   Scenario: validate flex table refresh behaviour-to refresh entire page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -18181,8 +18189,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     And I click on "Save" in the page details
@@ -18240,8 +18248,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -18251,7 +18259,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
-  @173831
+  @173831 @wip @configisnotavailableontest8
   Scenario Outline: :Data Table Enhanced - To verify, Relationship fieldsshould displayed as hyperlink in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is un-checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -18263,8 +18271,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -18307,8 +18315,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18344,13 +18352,22 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see value "Apr 27, 2022" for title "Application Due Date" inside table "PageTemplateApp"
 
   @180704
-  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | SearchGrantorProgram | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on global search and select "Program"
-    When I perform quick search inside global search "Test Approver Table"
-    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    When I click on global search and select "Programs"
+    When I perform quick search inside global search "Automation"
+    Then I see value "11/27/2024 03:27 PM" for title "Date and Time" inside table "Program__c"
+    Examples:
+      | newFieldsApi                                                          | defaultFieldsApi                                     |
+      | Name,ProgramName__c,Account__c,CreatedById,Status__c,Date_and_Time__c | Name,ProgramName__c,Account__c,CreatedById,Status__c |
 
   @180719
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
@@ -18362,26 +18379,44 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see value "Apr 27, 2022" for title "Application Due Date" inside table "PageTemplateApp"
 
   @180705
-  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | SearchGrantorAnnouncement | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on global search and select "Announcement"
-    When I perform quick search inside global search "AN-343-028"
-    Then I see value "10/20/2021, 03:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
+    When I click on global search and select "Announcements"
+    When I perform quick search inside global search "AN"
+    Then I see value "11/11/2024 11:37 PM" for title "Last Modified Date" inside table "Announcement__c"
+    Examples:
+      | newFieldsApi                                                                                                 | defaultFieldsApi                                                                     |
+      | Name,AnnouncementName__c,Organization__c,ApplicationDueDate__c,CreatedById,Status__c,LeadLastModifiedDate__c | Name,AnnouncementName__c,Organization__c,ApplicationDueDate__c,CreatedById,Status__c |
 
   @180717
-  Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | SearchGrantorApplications | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on global search and select "Application"
-    When I perform quick search inside global search "AP-755-214"
-    Then I see value "11/27/2018, 07:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
+    When I click on global search and select "Applications"
+    When I perform quick search inside global search "AP"
+    Then I see value "11/07/2024 02:02 AM" for title "Submitted On" inside table "Application__c"
+    Examples:
+      | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,OrganizationApplications__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,OrganizationApplications__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
 
   @181411
   Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
@@ -18461,7 +18496,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | EGMS ID | Contains | 0392222AP-603- |
     Then I see "No records found" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @217336 @NumberFieldInWrongFormat
+  @217336 @NumberFieldInWrongFormat @wip
   Scenario Outline: To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -18475,12 +18510,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Number Test | Equals to | 11,1,1,1 |
+      | Number | Equals to | 1112 |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @217337 @NumberFieldInWrongFormatPMuser
   Scenario Outline: To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
@@ -18490,18 +18525,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside id "advfPrograms"
-      | Number Test | Equals to | 11,1,1,1 |
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | Number | Equals to | 11,1,1,1 |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                               | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout @wip
   Scenario: ME-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
@@ -18564,131 +18598,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
-    Then I see confirmation box with body "Automation" is displayed
-
-  @176527 @sprint20
-  Scenario: E-grid - To verify, when user more than single  -click on top level action button on child table  then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
-    When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
-    When I navigate to "Setup" sub tab
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
-    And I enter value "1" into field "StepNumber__c"
-    And I enter value "Test Data" into field "Description__c"
-    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    And I expand nested table containing column value "1"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepPanelTemplatesTableId---" without processing
-    Then I see confirmation box with body "Automation" is displayed
-
-  @176519  @sprint20
-  Scenario:E-grid - To verify, when user single-click on top level action button then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "Setup" sub tab
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
-    Then I see confirmation box with body "Automation" is displayed
-
-  @176522 @sprint20
-  Scenario: E-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "Setup" sub tab
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
-    Then I see confirmation box with body "Automation" is displayed
-
-  @176526 @sprint20
-  Scenario: E-grid - To verify, when user  double -click on top level action button on child table  then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    And I pause execution for "5" seconds
-    When I navigate to "Setup" sub tab
-    And I pause execution for "5" seconds
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
-    And I click on top right button "New" in flex table with id "ProgramReviewStepTemplatesgrid" without processing
-    And I enter value "1" into field "StepNumber__c"
-    And I enter value "Test Data" into field "Description__c"
-    When I click on top right button "Save" in flex table with id "ProgramReviewStepTemplatesgrid"
-    And I expand nested table containing column value "1"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepPanelTemplatesTableId---" without processing
-    And I pause execution for "5" seconds
-    Then I see confirmation box with body "Automation" is displayed
-
-  @176524 @sprint20
-  Scenario: E-grid - To verify, when user  single -click on top level action button on child table  then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepPanelTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepPanelTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Setup" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
-    And I enter value "1" into field "StepNumber__c"
-    And I enter value "Test1" into field "Name"
-    And I enter value "Test Data" into field "Description__c"
-    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-    And I expand nested table containing column value "1"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepPanelTemplatesTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @184286
@@ -18783,26 +18692,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Award Ceiling | Less than or Equal to | $1,000 |
     Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
-  @176520 @sprint20
-  Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepTemplates | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | ProgramReviewStepTemplates | Name                      | New                        |
-      | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "Setup" sub tab
-    #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
-    And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
-    And I pause execution for "5" seconds
-    Then I see confirmation box with body "Automation" is displayed
 
   @174396 @sprint20
   Scenario: Data Table - To verify,lookup  fields should  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
@@ -18895,13 +18784,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @184232
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist  field with ' Not Equals to ' Operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
-    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
-      | Internal Organization | Equals to | SYSTEM |
+    When I enter advance filter values in table id "---program:-:allAnnouncementTableId---"
+      | Type | Not equals to | Competitive |
     Then I softly do not see value "Competitive" for title "Type" inside table "---program:-:allAnnouncementTableId---"
 
   @184237
@@ -18950,12 +18839,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @187565
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -18964,14 +18853,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @184238
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less  than or eual to ' Operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
-    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+    When I enter advance filter values in table id "---program:-:allAnnouncementTableId---"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$0.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
+    Then I softly see value "$1000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
 #  @184238
 #  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
@@ -18979,12 +18868,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
 #    And I click toggle button to select "Internal Programs - Active"
-#    When I perform quick search for "Test Approver Table"
-#    When I click on "View" icon for "Test Approver Table" inside table
+#    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+#    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
 #    When I navigate to "Overview" sub tab
 #    Then I see field "Description Field" inside page block
 
-  @174393 @sprint20 @needtocheckshowlinknotrevertall
+  @174393 @sprint20 @needtocheckshowlinknotrevertall @wip @configisnotavailableontest8
   Scenario: Data Table - To verify, Relationship fields of a record in Data table should not be displayed as text when 'Show link as Text' checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
@@ -19008,7 +18897,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show Link as Text | true          | Programs           | Name                      | FTC-14084                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -19017,7 +18906,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     #Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
     Then I do not see hyperlink at value "ADMIN Test" inside "PrimaryFundingOrganization__c" columnname for tableId "Programs"
 
-  @173826 @sprint20
+  @173826 @sprint20 @wip @configisnotavailableontest8
   Scenario Outline: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField              | filterId         |
@@ -19025,12 +18914,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show Link as Text | true          | DataTableEnhanceProgramContacts | Name                      | FTC-14084                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Setup" sub tab
     Then I see field "Applicant Organization" inside page block
 
@@ -19235,8 +19124,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -19247,8 +19136,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -19260,7 +19149,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override | ID            | Programs           | Name                      | FTC-11178                  |
+      | Flex Table List       | Field Label Override | ID            | Programs           | Name                      | FTC-9347                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19274,7 +19163,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override | EGMS ID           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field Label Override | ID            | RecipientApplications | Name                      | FTC-11178                  |
+      | Flex Table List       | Field Label Override | ID            | RecipientApplications | Name                      | FTC-9347                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -19318,7 +19207,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @206612 @BulkPdfandBulkCsv @sprint5
   Scenario: To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -19328,7 +19217,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @206613 @BulkPdfandBulkCsv @sprint5
   Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for Automation user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -19337,7 +19226,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @206616 @BulkPdfandBulkCsv @sprint5
   Scenario:  To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for Automation user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -19381,23 +19270,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
-
-  @207074 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
-  Scenario: E-Grid - To verify that on applying Row grouping, respective subtotal label display correctly on all pages.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-1491                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
 
   @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI
   Scenario:  To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
@@ -19666,14 +19538,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as XLS" options inside "Internal Programs - Draft" disabled
 
-  @217555 @HideColoumnJsonNotHideData
+  @217555 @HideColoumnJsonNotHideData @wip
   Scenario: Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-11178                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-9347                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19687,7 +19559,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-11178                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-9347                  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19700,7 +19572,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | RecipientApplications | Name                      | FTC-11178                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | RecipientApplications | Name                      | FTC-9347                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -19740,7 +19612,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | RecipientApplications | Name                      | FTC-11178                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | RecipientApplications | Name                      | FTC-9347                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -19831,8 +19703,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     #When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -19844,8 +19716,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Vrush Announcement"
-    When I click on "Edit" icon for "Vrush Announcement" inside table
+    When I perform quick search for "{StaticRecords:AnnouncementRecord}"
+    When I click on "Edit" icon for "{StaticRecords:AnnouncementRecord}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     #When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -19924,8 +19796,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
@@ -19948,8 +19820,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
     And I navigate to "Budget" sub tab
     And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
     And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"

@@ -17,8 +17,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as PDF" options inside "Contacts" disabled
@@ -35,8 +35,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as XLS" options inside "Contacts" disabled
@@ -53,8 +53,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
@@ -70,8 +70,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see quick search option disabled from enhanced grid
 
@@ -87,8 +87,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
 
@@ -106,8 +106,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -139,8 +139,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
     Examples:
@@ -160,8 +160,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
 
@@ -177,8 +177,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    And I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     And I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
 
@@ -196,8 +196,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
@@ -215,8 +215,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
@@ -232,8 +232,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     Then I see over all total for "BaseSalary__c" field at enhanced grid
 
   @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
@@ -263,8 +263,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Organization" not displayed in enhanced grid table column title
 
@@ -280,8 +280,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "Edit" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "Edit" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Applicationg test88888" in "---program:-:programContactsTableId---" panel
     Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
@@ -326,12 +326,12 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedDataTable__TopAction_For_Specific_Program | DataTableEnhanceProgramContacts | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see no "New" button inside "Contacts" enhanced grid
@@ -346,7 +346,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Grouping Column | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
       | Flex Table List       | Enable Row Grouping  | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -355,24 +355,24 @@ Business Need: DataTableEnhanced Component Scenarios
 
   @104862  @VerifySortingLabelInsideEnhancedDataTable
   Scenario: verify that sorting label displayed inside enhanced data table
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "10" seconds
     Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
 
   @104409    @validatePicklistFieldValueAsNoneAtEnhancedDataTableInInlineMode-gPlanning
   Scenario: validate picklist field value as none inside enhanced data table in inline edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Overview" sub tab
@@ -430,8 +430,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     When I hovering mouse on table id "---program:-:programContactsTableId---" with table row level icon "<new_helpText>" for column value "Automation FO"
@@ -447,8 +447,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
     When I perform quick search for "Lisa Mitchell" in "---program:-:programContactsTableId---" panel
@@ -516,8 +516,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     And I navigate to "Overview" sub tab
     Then I softly do not see "Organization" in flex table header "Contacts"
 
@@ -617,8 +617,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -645,8 +645,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
     Examples:
@@ -666,8 +666,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
     Examples:
@@ -687,8 +687,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -704,8 +704,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -772,8 +772,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text "---program:-:EDataTableForHelpTextIconTableId---" icon
     Then I see "Help text for Automation" shown as help text
@@ -817,8 +817,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Project Role" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Name" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
@@ -870,8 +870,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -913,8 +913,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -3221,8 +3221,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I perform quick search for "{StaticRecords:ContactRecord}"
+    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table
     Examples:
@@ -3243,6 +3243,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
