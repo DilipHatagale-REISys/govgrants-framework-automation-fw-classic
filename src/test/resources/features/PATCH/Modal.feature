@@ -475,7 +475,7 @@ Business Need: Modal Component Scenarios
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
-      | Users | new_helpText             | old_helpText |
+      | Users | new_helpText                                                       | old_helpText                                                       |
 #      | ADMIN | Help Text for Automation |              |
       | PM    | Help Text for Automation |              |
 

@@ -46,17 +46,17 @@ Business Need: Page Layout Component Scenarios
   @34049    @setUpHeaderOverRideField-gPlanning
   Scenario: setting up header over ride configuration and validating its content after clicking New button
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue    | filterId         |
-      | Page Layout           | Create Header Override | Creating New Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Create Program    |                    | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue                       | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Create Header Override | Creating New Program for Automation | Grantor State Program Create |                           |                            |
+      | configurationCategory | fieldName   | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Creating New Program for Automation |                    | Name                      | New                        |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on top right button "New" in flex table with id "Programs"
-    Then I see "Creating New Program for Automation" shown as over view header
+    Then I see "Creating New Program for Automation" opens in overLay window
 
   @34052    @hideDecisionExpression-gPlanning @smokePATCH
   Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
