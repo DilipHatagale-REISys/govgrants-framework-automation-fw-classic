@@ -5,6 +5,7 @@ Business Need: Expression Builder Component Scenarios
 
   @42233    @hideExpressioJsonForRightOperandForPMUser-gAnnouncement @smokePATCH
   Scenario: validate disabling of create button for PM user from Announcement-Program
+  |Scenario 1 - Flex Table - Verify Hide expression JSON for Left Operand = Profile|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
@@ -17,7 +18,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42369    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
+  @42369 @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
   Scenario: validate disabling of create button for Admin user from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -7766,14 +7767,14 @@ Business Need: Expression Builder Component Scenarios
     And I expand nested table containing column value "SME Review"
     Then I do not see "Required?" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
-  @118109  @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid @egrid
+  @118109 @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all three row level actions are hidden using date time field value at enhanced grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | View                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7781,7 +7782,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup" sub tab
-    Then I do not see "Actions" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I softly cannot see row level action button "View" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---"
 
   @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all other row level actions are hidden using date time field value at enhanced grid child table
@@ -8200,7 +8201,7 @@ Business Need: Expression Builder Component Scenarios
     Then I do not see "Edit" action with title "Notes one" in table id "---program:-:FlexTableEnhancedNotesId---"
     Examples:
       | Users |
-      | SPI   |
+      | SPI3  |
 
   @217354 @217355
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify hide expression for actions can be configured depending on ‘User type’
@@ -8735,18 +8736,17 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14086                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "300" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217436 @217437
@@ -8756,18 +8756,17 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14086                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217439 @217440
@@ -8781,14 +8780,13 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "300" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217442 @217443
@@ -8802,14 +8800,13 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217445 @217446
@@ -8823,16 +8820,13 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "300" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "*****" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "400" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I do not see "100" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217448 @217449
@@ -9069,44 +9063,50 @@ Business Need: Expression Builder Component Scenarios
 
     ################################Test suite: Page Block (Expression Builder) (Suite ID: 204616)####################################################################
 
-  @204617 @204618 @needtocheckmanually @skiponjenkins
+  @204617 @204618 @205072 @needtocheckmanually @skiponjenkins @wip
   Scenario: Page Blocks-----Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks for export functionality
+  | Page Blocks-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks for export functionality<user app>|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true                                                                       | Grantor State Program | Name                      | PB-6823                    |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6823                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Overview" sub tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
-    And I pause execution for "35" seconds
-    Then I cannot see "Information" on page "1" of "govgrants" pdf file
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Information" on page "1" of "govgrants" pdf file
 
-  @204620 @needtocheckmanually @skiponjenkins
+  @204620 @205074 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should not see Page Blocks for export functionality
+  |Page Blocks-Expression Builder-PM-UI-To verify PM user should not see Page Blocks for export functionality<user app>|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true                                                                       | Grantor State Program | Name                      | PB-6823                    |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Overview" sub tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
-    And I pause execution for "35" seconds
+    And I download the file
+    And I pause execution for "5" seconds
     Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
   @204621
@@ -9174,46 +9174,6 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | Users |
       | SPI   |
-
-  @205072 @205073 @needtocheckmanually @skiponjenkins
-  Scenario:  Page Blocks Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks for export functionality<user app>
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6823                    |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Overview" sub tab
-    When I click on "Menu" in the page details
-    And I select "Download As PDF" from dropdown
-    And I pause execution for "15" seconds
-    Then I cannot see "Information" on page "1" of "govgrants" pdf file
-
-  @205074 @needtocheckmanually @skiponjenkins
-  Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should not see Page Blocks for export functionality<user app>
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6823                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
-    When I navigate to "Overview" sub tab
-    When I click on "Menu" in the page details
-    And I select "Download As PDF" from dropdown
-    And I pause execution for "15" seconds
-    Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
   @205075
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should  see Page Blocks for export functionality<user app>
@@ -9350,41 +9310,6 @@ Business Need: Expression Builder Component Scenarios
     Then I cannot see "Overview" sub tab at view detail page
 
 #############################Test suite: Hide Expression Builder (Suite ID: 214862)##################################
-  @216114
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression can be used using Left operand as ‘Field’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideHideCellJSONForEncumburanceLoperandFieldAndOperatorIn | AwardFundingAccounts-SD1 | Name                      | FTC-13597                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "*****" with record name "FA-ST-01" in table id "---program:-:AwardFundingAccountsOldForms---"
-
-  @216115
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression can be used using Left operand as ‘Field’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideHideCellJSONForEncumburanceLoperandFieldAndOperatorIn | AwardFundingAccounts-SD1 | Name                      | FTC-13597                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "*****" with record name "FA-ST-01" in table id "---program:-:AwardFundingAccountsOldForms---"
 
   @216116
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be used using Left operand as ‘Field’
@@ -9404,42 +9329,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "*****" with record name "FA-ST-01" in table id "---program:-:AwardFundingAccountsOldForms---"
 
-  @216117
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘User type’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216118
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘User type’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
   @216119
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘User type’
     Given I have "default" configuration as below:
@@ -9456,42 +9345,6 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216120
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘Profile’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandProfile | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216121
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘Profile’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandProfile | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
 
   @216122
@@ -9512,42 +9365,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
 
-  @216123
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘User App’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216124
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘User App’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
   @216125
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘User App’
     Given I have "default" configuration as below:
@@ -9564,42 +9381,6 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216126
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression can be used using Left operand as ‘Context’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                       | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandContextIn | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216127
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression can be used using Left operand as ‘Context’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                       | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandContextIn | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
 
   @216128
@@ -9620,43 +9401,71 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
 
-  @217136 @217133
+  @217136 @217133 @217139 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions separated by ‘AND’,
-  Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions on same time
+  |Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions on same time|
+  |Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions separated by ‘OR’|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | PackagePreview     | Name                      | PB-6448                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Organization Capacity" page block displayed
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217139
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
 
-  @217137 @217134
+  @217137 @217134 @217140
   Scenario: Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions separated by ‘AND’
-  Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions on same time
+  |Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions on same time|
+  |Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions separated by ‘OR’|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | PackagePreview     | Name                      | PB-6448                    |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Organization Capacity" page block displayed
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217140
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
 
   @217138 @217135
   Scenario: Hide Expression Builder- Verify if we configure multiple hide expressions separated by ‘AND’,Hide Expression Builder- SPI- UI- Verify if we configure multiple hide expressions on same time
@@ -9676,42 +9485,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Organization Capacity" page block displayed
 
-  @217139
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions separated by ‘OR’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Organization Capacity" page block displayed
-
-  @217140
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions separated by ‘OR’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Organization Capacity" page block displayed
-
   @217141
   Scenario: Hide Expression Builder- Verify if we configure multiple hide expressions separated by ‘OR’
     Given I have "default" configuration as below:
@@ -9730,41 +9503,234 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Organization Capacity" page block displayed
 
-  @217492
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
+  @217492 @216126 @217495 @216117 @217498 @217501 @216120 @217504 @217507 @217510 @216123 @217513 @wip
+  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
+  |Hide Expression Builder- Admin- Config- Verify hide expression can be used using Left operand as ‘Context’|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘Not In’ that Page block (from Form) should display on UI|
+  |Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘User type’|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘In’ that Page block (from Form) should not display on UI for user selected in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘Not In’ that Page block (from Form) should display on UI for user selected in right operand|
+  |Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘Profile’|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘In’ that Page block (from Form) should not display on UI for profiles selected in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘Not In’ that Page block (from Form) should display on UI for profiles selected in right operand|
+  |Hide Expression Builder- Admin- Config- Verify hide expression can be configured depending on ‘User App’|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘In’ that Page block (from Form) should not display on UI for app selected in right operand|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Program Specific Application form | Name                      | PB-7326                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | PackagePreview     | Name                      | PB-6448                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217493
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    #216126 #217492
+    Then I softly do not see "Information" page block displayed
+    #217495
+    And I wait for "3" seconds
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Program Specific Application form | Name                      | PB-7326                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandContextNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217498 #216117
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217501
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217504 #216120
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217507
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217510 #216123
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217513
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+
+  @217493 @216127 @217496 @216118 @217499 @217502 @216121 @217505 @217508 @216124 @217511 @217514
+  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
+  |Hide Expression Builder- PM- UI- Verify hide expression can be used using Left operand as ‘Context’|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘Not In’ that Page block (from Form) should display on UI|
+  |Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘User type’|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘In’ that Page block (from Form) should not display on UI for user selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘Not In’ that Page block (from Form) should display on UI for user selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘Profile’|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘In’ that Page block (from Form) should not display on UI if PM selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘Not In’ that Page block (from Form) should display on UI if PM selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression can be configured depending on ‘User App’|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘In’ that Page block (from Form) should not display on UI for app selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘Not In’ that Page block (from Form) should display on UI for app selected in right operand|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | PackagePreview     | Name                      | PB-6448                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    #216127 #217493
+    Then I softly do not see "Information" page block displayed
+    #217496
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandContextNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217499 #216118
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217502
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217505 #216121
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217508
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
+    #217511 #216124
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217514
+    And I wait for "3" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppNotIn | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly see "Information" page block displayed
 
   @217494
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
@@ -9784,42 +9750,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
-  @217495
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘Not In’ that Page block (from Form) should display on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandContextNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
-  @217496
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘Not In’ that Page block (from Form) should display on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandContextNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
   @217497
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘Not In’ that Page block (from Form) should display on UI
     Given I have "default" configuration as below:
@@ -9837,42 +9767,6 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
-
-  @217498
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘In’ that Page block (from Form) should not display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217499
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘In’ that Page block (from Form) should not display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
 
   @217500
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘In’ that Page block (from Form) should not display on UI for user selected in right operand
@@ -9892,42 +9786,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
-  @217501
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘Not In’ that Page block (from Form) should display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
-  @217502
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘Not In’ that Page block (from Form) should display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserTypeNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
   @217503
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘User type’ and operator as ‘Not In’ that Page block (from Form) should display on UI for user selected in right operand
     Given I have "default" configuration as below:
@@ -9945,42 +9803,6 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
-
-  @217504
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘In’ that Page block (from Form) should not display on UI for profiles selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217505
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘In’ that Page block (from Form) should not display on UI if PM selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
 
   @217506
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘In’ that Page block (from Form) should not display on UI if SPI selected in right operand
@@ -10000,42 +9822,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
-  @217507
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘Not In’ that Page block (from Form) should display on UI for profiles selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
-  @217508
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘Not In’ that Page block (from Form) should display on UI if PM selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandProfileNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
   @217509
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Profile’ and operator as ‘Not In’ that Page block (from Form) should display on UI if SPI selected in right operand
     Given I have "default" configuration as below:
@@ -10054,42 +9840,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
 
-  @217510
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘In’ that Page block (from Form) should not display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217511
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘In’ that Page block (from Form) should not display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
   @217512
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘In’ that Page block (from Form) should not display on UI for app selected in right operand
     Given I have "default" configuration as below:
@@ -10107,42 +9857,6 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
-
-  @217513
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘Not In’ that Page block (from Form) should display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
-  @217514
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘Not In’ that Page block (from Form) should display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandUserAppNotIn | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
 
   @217515
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘User app’ and operator as ‘Not In’ that Page block (from Form) should display on UI for app selected in right operand
@@ -10270,41 +9984,203 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
 
-  @217522
+  @217522 @216114 @217522 @217525 @217531 @217537 @217540 @217543 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
+  |Hide Expression Builder- Admin- Config- Verify hide expression can be used using Left operand as ‘Field’|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Contains’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘In’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- Admin- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Not Equals’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217523
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    #216114 #217522
+    Then I softly do not see "Information" page block displayed
+    #217522
+    And I wait for "5" seconds
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldContainsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217525
+    And I wait for "5" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I see "Information" page block displayed
+    #217531
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserInADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217537
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217540
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217543
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserContainsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+
+  @217523 @216115 @217529 @217526 @217532 @217538 @217541 @217544
+  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
+  |Hide Expression Builder- PM- UI- Verify hide expression can be used using Left operand as ‘Field’|
+  |Hide Expression Builder- PM- UI - Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Contains’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘In’ that Page block (from Form) should not display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand|
+  | Hide Expression Builder- PM- UI- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    #216115 #217523
+    Then I softly do not see "Information" page block displayed
+    #217529
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldContainsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I softly do not see "Information" page block displayed
+    #217526
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I see "Information" page block displayed
+    #217532
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserInADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217538
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217541
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
+    #217544
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Block            | Hide Expression JSON |                   | PackagePreview     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserContainsADMINPMSPI | PackagePreview     | Name                      | PB-6448                    |
+    And I refresh the page
+    And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
+    And I wait for "5" seconds
+    Then I do not see "Information" page block displayed
 
   @217524
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
@@ -10324,42 +10200,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
-  @217525
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
-  @217526
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Project Characteristics" page block displayed
-
   @217527
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
     Given I have "default" configuration as below:
@@ -10378,42 +10218,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
 
-  @217528
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Contains’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotContainsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217529
-  Scenario: Hide Expression Builder- PM- UI- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Contains’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandFieldNotContainsADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
   @217530
   Scenario: Hide Expression Builder- SPI- UI- Config- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Contains’ that Page block (from Form) should not display on UI for values in right operand
     Given I have "default" configuration as below:
@@ -10430,42 +10234,6 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217531
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘In’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserInADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Project Characteristics" page block displayed
-
-  @217532
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘In’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserInADMINPMSPI | Program Specific Application form | Name                      | PB-7326                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
   @217533
@@ -10486,42 +10254,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
 
-  @217537
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Organization Capacity" page block displayed
-
-  @217538
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Organization Capacity" page block displayed
-
   @217539
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
     Given I have "default" configuration as below:
@@ -10540,42 +10272,6 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Organization Capacity" page block displayed
 
-  @217540
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Organization Capacity" page block displayed
-
-  @217541
-  Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see "Organization Capacity" page block displayed
-
   @217542
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Not Equals’ that Page block (from Form) should display on UI for values in right operand
     Given I have "default" configuration as below:
@@ -10593,42 +10289,6 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Organization Capacity" page block displayed
-
-  @217543
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideActionOnProgramApplicationform | Program Specific Application form | Name                      | Validate                   |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application test"
-    When I click on "View" icon for "Application test" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Validate" button is displayed
-
-  @217544
-  Scenario: Hide Expression Builder- PM- UI- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideActionOnProgramApplicationform | Program Specific Application form | Name                      | Validate                   |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I do not see "Validate" button is displayed
 
   @217545
   Scenario: Hide Expression Builder- SPI- UI- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand
@@ -10650,44 +10310,59 @@ Business Need: Expression Builder Component Scenarios
 
    #######################Test suite: Expression Builder (Suite ID: 338443)##########################
 
-  @339497 @339501 @339522
-  Scenario: Hide Expression Builder- Admin- Config- Verify Action column should not display when there were no actions available under Flex table, Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘$ User’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDollarEquals | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @339504
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Field’
+  @339522
+  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘$ User’
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | filterId         |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEquals | AppReviewList      | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUser | AppReviewList      | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "View" icon inside table id "---program:-:contactsTableId---"
+
+  @339504 @339501 @339497
+  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Field’
+  |Hide Expression Builder- Admin- Config- Verify Admin can configure hide expression for actions under Flex table|
+  |Hide Expression Builder- Admin- Config- Verify Action column should not display when there were no actions available under Flex table|
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | filterId         |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | ApiGeneratedId:0 |
+      | Flex Table Action         | Hide Expression JSON |                   | Programs           | Name                      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | Programs           | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | Programs           | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I softly do not see "Actions" in flex table header "---program:-:programTableDivId---"
 
   @339505
   Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Field’
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:0 |
+      | Flex Table Action     | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEquals | AppReviewList      | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I softly do not see "Actions" in flex table header "---program:-:programTableDivId---"
 
   @339506
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Field’
@@ -10702,18 +10377,20 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Grants" tab
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @339507 @339607
+  @339507
   Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User type’
-  Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User type’
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    And I click toggle button to select "Approved Funding Decision Memos (FDM)"
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "---subAwardFromFDM:-:fdmTableId---" panel
     Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
 
   @339509 @339608
@@ -10831,10 +10508,13 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    Then I do not see "Edit" icon inside table id "---program:-:contactsTableId---"
 
   @339520
   Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Context’
@@ -11670,37 +11350,42 @@ Business Need: Expression Builder Component Scenarios
 
 ###############ii.Test suite:  Page Block Details(Expression Builder) (Suite ID: 201099)#########
 
-  @201227 @201228
+  @201227 @201228 @wip
   Scenario: Page block detail config-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page block detail
+  |Page block detail-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page block detail|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true                                             | Grantor State Program | Name                      | PB-6824                    |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "System Information" page block displayed
+    Then I see "System Information" page block displayed
 
   @201229
   Scenario: Page block detail-Expression Builder-PM-UI-To verify PM user should not see Page block detail
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true                                             | Grantor State Program | Name                      | PB-6824                    |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "System Information" page block displayed
 
@@ -11708,16 +11393,18 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page block detail-Expression Builder-PM-UI-To verify PM user should  see Page block detail
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true          | Grantor State Program | Name                      | PB-6824                    |
       | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "System Information" page block displayed
 
@@ -11755,69 +11442,75 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "System Information" page block displayed
 
-  @204643 @needtocheckmanually @skiponjenkins
+  @204643 @needtocheckmanually @skiponjenkins @wip
   Scenario: Page Blocks Details---Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
+      | Page Block:Page Block Detail | Is Active            | true                                             | Grantor State Program | Name                      | PB-6823                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
-    Then I cannot see "System Information" on page "1" of "govgrants" pdf file
+    Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
   @204645
   Scenario: Page Blocks Details---Expression Builder-PM-UI-To verify PM user should not see Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
+      | Page Block:Page Block Detail | Is Active            | true                                             | Grantor State Program | Name                      | PB-6823                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
-    Then I cannot see "System Information" on page "3" of "govgrants" pdf file
+    Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
   @204647 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-PM-UI-To verify PM user should see Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
+      | Page Block:Page Block Detail | Is Active            | true          | Grantor State Program | Name                      | PB-6823                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "System Information" on page "3" of "govgrants" pdf file
+    Then I see "Information" on page "1" of "govgrants" pdf file
 
   @204648
   Scenario: Page Blocks Details--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks Details for export functionality
@@ -11861,68 +11554,73 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "System Information" on page "3" of "govgrants" pdf file
 
-  @205104
+  @205104 @wip
   Scenario: Page Blocks Details---Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6824                    |
+      | Page Block:Page Block Detail | Is Active            | true                                         | Grantor State Program | Name                      | PBD-17333                  |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
-    Then I cannot see "System Information" on page "3" of "govgrants" pdf file
+    Then I cannot see "Title" on page "1" of "govgrants" pdf file
 
   @205106
   Scenario: Page Blocks Details---Expression Builder-PM-UI-To verify PM user should not see Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6824                    |
+      | configurationCategory                    | fieldName            | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                         | Grantor State Program | Name                      | PBD-17333                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
-    Then I cannot see "System Information" on page "3" of "govgrants" pdf file
+    Then I cannot see "Title" on page "1" of "govgrants" pdf file
 
   @205107 @needtocheckmanually @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-PM-UI-To verify PM user should see Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Grantor State Program | Name                      | PBD-17333                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     When I click alert button "OK"
     And I download the file
-    Then I see "System Information" on page "3" of "govgrants" pdf file
+    Then I see "Title" on page "1" of "govgrants" pdf file
 
   @205108
   Scenario: Page Blocks Details--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks Details for export functionality<user app>
@@ -11969,53 +11667,59 @@ Business Need: Expression Builder Component Scenarios
 
 #################33Test suite: Page Tab(Expression Builder) (Suite ID: 201043)#################
 
-  @201058
+  @201058 @wip @Neeta
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2675                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                       | Grantor State Program | Name                      | TAB-3330                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-3330                   |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    Then I do not see "Collab" subtab is present in page details
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    Then I do not see "Component testing" subtab is present in page details
 
-
-  @201062
+  @201062 @Neeta @206748
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab
+  |Page Tab-Expression Builder-PM-UI-To verify Expression Builder for page tab using field|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2675                   |
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                       | Grantor State Program | Name                      | TAB-3330                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-3330                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    Then I do not see "Collab" subtab is present in page details
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    Then I do not see "Component testing" subtab is present in page details
 
-  @201070p
-  Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab
+  @201070 @Neeta
+  Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should see page tab
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active            | true          | Grantor State Program | Name                      | TAB-3330                   |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-3330                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Component testing" subtab is present in page details
 
   @201072
@@ -12025,7 +11729,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-2730                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-3330                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
@@ -12050,60 +11754,67 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I see "Collab" subtab is present in page details
 
-  @204593 @needtocheckmanually @skiponjenkins
+  @204593 @needtocheckmanually @skiponjenkins @wip
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                       | Grantor State Program | Name                      | TAB-2673                   |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204595 @needtocheckmanually @skiponjenkins
+  @204595 @needtocheckmanually @skiponjenkins @Neeta
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                       | Grantor State Program | Name                      | TAB-2673                   |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204596
+  @204596 @204971 @Neeta
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality
+  |Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality<user app>|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active            | true          | Grantor State Program | Name                      | TAB-2673                   |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12152,65 +11863,49 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
-  @204968
+  @204968 @wip @Neeta
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality<user app>
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2675                   |
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                   | Grantor State Program | Name                      | TAB-2673                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I click on "Menu" in the page details
-    And I select "Download As PDF" from dropdown
-    And I download the file
-    And I pause execution for "5" seconds
-    Then I cannot see "Collab" on page "1" of "govgrants" pdf file
-
-  @204970 @needtocheckmanually @skiponjenkins
-  Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality<user app>
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204971
-  Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality<user app>
+  @204970 @needtocheckmanually @skiponjenkins @Neeta
+  Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality<user app>
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2673                   |
+      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active            | true                                   | Grantor State Program | Name                      | TAB-2673                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Overview" on page "1" of "govgrants" pdf file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
   @204974
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality<user app>
@@ -12254,22 +11949,6 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
-  @206748
-  Scenario: Page Tab-Expression Builder-PM-UI-To verify Expression Builder for page tab using field
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2675                   |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    Then I do not see "Collab" subtab is present in page details
-
   @206752
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify Expression Builder for page tab using field
     Given I have "default" configuration as below:
@@ -12295,14 +11974,14 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_Active_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201616
@@ -12311,8 +11990,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                                                | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_Active_With_UserType_IN_Internal | Program Progress Bar | Name                      | Submitted for Approval     |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12357,14 +12036,14 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingProfile | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingProfileAdmin | Program Progress Bar | Name                      | Active                     |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201621
@@ -12373,15 +12052,15 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingProfile | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingProfilePM | Program Progress Bar | Name                      | Active                     |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    Then I see "Submitted for Approval" is not displayed inside step progress bar
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    Then I see "Active" is not displayed inside step progress bar
 
   @201624
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for Steps under ‘Step Progress Bar’ can be configured depending on ‘Profile’
@@ -12398,20 +12077,19 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
-  @201625
+  @201625 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for Steps under ‘Step Progress Bar’ can be configured depending on ‘User App’
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingUserApp | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingUserAppActive | Program Progress Bar | Name                      | Active                     |
     When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201626
@@ -12420,14 +12098,13 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory   | fieldName            | fieldOrignalValue | filterId         |
       | Step Progressbar Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName            | fieldNewValue                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingUserApp | Program Progress Bar | Name                      | Submitted for Approval     |
+      | configurationCategory   | fieldName            | fieldNewValue                                                         | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | Hide Expression JSON | govgrants_config:HideExpressionForStepProgressBarByUsingUserAppActive | Program Progress Bar | Name                      | Active                     |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201782

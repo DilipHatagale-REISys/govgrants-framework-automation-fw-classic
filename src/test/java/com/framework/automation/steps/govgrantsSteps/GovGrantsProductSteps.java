@@ -119,8 +119,9 @@ public final class GovGrantsProductSteps {
         ggProductObjects.assertPageBlockIsNotDisplayed(usage, titleName);
     }
 
-    /****** Product Generic Consolidated Steps ***********/
 
+    /****** Product Generic Consolidated Steps ***********//*
+*/
     @Description("To complete all the fields from the given sheet in the given excel")
     @Given("^I complete the fields from the sheet \"([^\"]*)\" in excel \"([^\"]*)\"$")
     public void editionOfRecord(String sheetName, String excelFileName, List<List<String>> dataTable) {

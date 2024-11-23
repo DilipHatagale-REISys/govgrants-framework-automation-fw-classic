@@ -53,11 +53,11 @@ public class setup {
 
     @After(order = 2)
     public void deleteMe() {
-        if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
-            ProjectWebServices.deleteRecordInHooks();
+//        if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
+//            ProjectWebServices.deleteRecordInHooks();
 //        else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
 //            granteeWebServices.deleteRecordInHooks();
-        //It will deactivate the activated users.
-        //ProjectWebServices.changeUserActivationStatus("automationinternal", false);
+//        It will deactivate the activated users.
+//        ProjectWebServices.changeUserActivationStatus("automationinternal", false);
     }
 }

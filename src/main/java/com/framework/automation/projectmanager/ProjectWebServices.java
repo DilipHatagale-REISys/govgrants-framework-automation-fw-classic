@@ -88,173 +88,6 @@ public class ProjectWebServices {
         return response;
     }
 
-    public static void deleteRecordInHooks() {
-        List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
-                .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
-
-        for (String record : recordNameList) {
-            if (StringUtils.containsIgnoreCase(record, "focus area")) {
-                deleteFocusArea(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "funding source")) {
-                deleteFundingSource(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "kpi")) {
-                deleteKPI(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "program")) {
-                deleteProgram(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "strategic plan")) {
-                deleteStrategicPlan(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "site visit")) {
-                deleteSiteVisit(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-            }
-            if (StringUtils.containsIgnoreCase(record, "desk")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
-            }
-            if (StringUtils.containsIgnoreCase(record, "amendment")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Amendment Request");
-            }
-            if (StringUtils.containsIgnoreCase(record, "payment")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
-            }
-            if (StringUtils.containsIgnoreCase(record, "risk")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "ORGANIZATION RISKASSESSMENT");
-            }
-            if (StringUtils.containsIgnoreCase(record, "closeout")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Closeout");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
-            }
-            if (StringUtils.containsIgnoreCase(record, "contact")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Contact");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "DUNS");
-            }
-            if (StringUtils.containsIgnoreCase(record, "application")) {
-                try {
-                    deleteAttachmentsForRecord(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication__c");
-                } catch (AssertionError error) {
-                }
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
-            }
-            if (StringUtils.containsIgnoreCase(record, "Organization")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "USER REGISTRATION");
-            }
-        }
-
-        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("award"))) {
-            for (String record : recordNameList) {
-                if (StringUtils.containsIgnoreCase(record, "award")) {
-                    deleteAward(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-                }
-            }
-        }
-
-        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("announcement"))) {
-            for (String record : recordNameList) {
-                if (StringUtils.containsIgnoreCase(record, "announcement")) {
-                    deleteAnnouncement(I.amPerforming().propertiesFileOperationsTo().getValue(record));
-                }
-            }
-        }
-
-        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("fdm"))) {
-            deleteFDM(recordNameList);
-        }
-    }
-
-    private static void deleteFocusArea(String recordName) {
-        deletionApi(recordName, "Focus Area");
-    }
-    private static void deleteFundingSource(String recordName) {
-        deletionApi(recordName, "Funding Source");
-    }
-
-    private static void deleteKPI(String recordName) {
-        deletionApi(recordName, "KPI");
-    }
-
-    private static void deleteProgram(String recordName) {
-        deletionApi(recordName, "Program");
-    }
-
-    private static void deleteStrategicPlan(String recordName) {
-        deletionApi(recordName, "Strategic Plan");
-    }
-
-
-    private static void deleteSiteVisit(String recordName) {
-        deletionApi(recordName, "Site Visit");
-    }
-
-    public static void deleteAttachmentsForRecord(String recordName, String objectAPIName) {
-        String recordId = getIdOf(objectAPIName, recordName);
-        JsonObject parent = new JsonObject();
-        JsonArray array = new JsonArray();
-        array.add(recordId);
-        parent.add("recordid", array);
-        String finalEndPoint = endPoint + "/services/apexrest/deleteFiles";
-        Response response = I.amPerforming().restHttp().postCall(parent, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
-        assertStatusCode(response);
-    }
-
-    private static void deleteAward(String recordName) {
-        deletionApi(recordName, "Progress Report");
-        deletionApi(recordName, "Progress Report");
-        deletionApi(recordName, "Amendment Request");
-        deletionApi(recordName, "Payment Request");
-        deletionApi(recordName, "Award");
-        deletionApi(recordName, "Grant");
-    }
-
-    public static void deleteAnnouncement(String recordName) {
-        deletionApi(recordName, "APPLICATION REVIEWS");
-        deletionApi(recordName, "Application");
-        deletionApi(recordName, "PreApplication");
-        deletionApi(recordName, "Announcement");
-    }
-    private static void deleteFDM(List<String> recordNames) {
-
-        for (String record : recordNames) {
-            if (StringUtils.containsIgnoreCase(record, "desk review")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
-            }
-        }
-
-        for (String record : recordNames) {
-            if (StringUtils.containsIgnoreCase(record, "site visit")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Site Visit");
-            }
-        }
-
-        for (String record : recordNames) {
-            if (StringUtils.containsIgnoreCase(record, "application")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
-            }
-        }
-
-        for (String record : recordNames) {
-            if (StringUtils.containsIgnoreCase(record, "announcement")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Announcement");
-            }
-        }
-
-        for (String record : recordNames) {
-            if (StringUtils.containsIgnoreCase(record, "fdm")) {
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Progress Report");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "FDM");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "subaward");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Award");
-                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Grant");
-            }
-        }
-    }
-
     public Response automationBatchExecuteApi(String objectType, String recordName, String... objectName) {
         String finalEndPoint, objectApiName = "";
         Response response = null;
@@ -280,24 +113,24 @@ public class ProjectWebServices {
             I.amPerforming().waitFor().makeThreadSleep(7000);
         }
 
-        if (status.equalsIgnoreCase("Completed") && objectName.length == 1 && !objectApiName.equalsIgnoreCase("closeout"))  {
+        if (status.equalsIgnoreCase("Completed") && objectName.length == 1 && !objectApiName.equalsIgnoreCase("closeout")) {
             return getRecordId(recordName, "Title__c", objectApiName);
         } else {
             return response;
         }
     }
 
-    private static String defaultEndPointGetToken() {
+    private String defaultEndPointGetToken() {
         String defaultEndPointGetToken = "";
         if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
-        }else
-            if (EnvironmentFactory.getEnvironmentName().contains("QA")) {
-            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=C534061B026C5FBFF856CD31DBB1E722CD7D4D976F6154CA431A976E0C592927&client_id=3MVG9Iu66FKeHhIPe91yESdsJL200IDKuBwsrDV7WewsJy9p2d.Zhgw2ikOH2mpGFHDtoTBZ3c..nrgqTXz7R&username=automationadmin@ggp.test8.atm.fwautomat&password=Admin@April24";
-        }else
-            if (EnvironmentFactory.getEnvironmentName().contains("PATCH")) {
-                defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FED687A3A0BBA7AF7E537EB8D3EBE92281D7609031F0751FFCB10DD3E52DDF64&client_id=3MVG98im9TK34CUW45zaL1fTHaLLiykIdoQeUHbf1cm3OspjgGVFjNgpZvV5hcdc2ccKT1TS4snyshQJb9Nmy&username=automationadminpatch@yopmail.com.atm.frwpatch&password=Patch@02oct";
-            }
+        }
+        else if (EnvironmentFactory.getEnvironmentName().contains("FWPATCH")) {
+            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FED687A3A0BBA7AF7E537EB8D3EBE92281D7609031F0751FFCB10DD3E52DDF64&client_id=3MVG98im9TK34CUW45zaL1fTHaLLiykIdoQeUHbf1cm3OspjgGVFjNgpZvV5hcdc2ccKT1TS4snyshQJb9Nmy&username=automationadminpatch@yopmail.com.atm.frwpatch&password=Patch@02oct";
+        }
+        else if (EnvironmentFactory.getEnvironmentName().contains("FWLWC-GRANTOR")) {
+            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=9891CA2421B3307CEDFA0F2AB3113A94EB329125539A0B5C5F4FF8206C733369&client_id=3MVG9RHx1QGZ7Osjc_dBcgjE7QBmm0KFfeoguDyiCQ1onGF6O0ZH6vkmgaOlCmfE9TKiL6.l9OxRenPEaEN5o&username=govgrantsautomation@yopmail.com.frwklwcaut&password=FwLwc@02oct";
+        }
         return defaultEndPointGetToken;
     }
 
@@ -336,6 +169,14 @@ public class ProjectWebServices {
         }
     }
 
+    public static void changeUserActivationStatus(String usersToUpdate, boolean shouldBeActivated) {
+        String finalEndPoint = endPoint + "/services/apexrest/Active/" + usersToUpdate;
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("isActive", shouldBeActivated);
+        Response response = I.amPerforming().restHttp().patchCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+    }
+
     /**
      * It will accept and change locale and timezone value for internal/external user.
      *
@@ -352,7 +193,7 @@ public class ProjectWebServices {
     }
 
     private void publishAnnouncementPostCall(JsonObject jsonObject) {
-        String finalEndPoint = endPoint + "/services/apexrest/PublishAnnouncement";
+        String finalEndPoint = endPoint + "/services/apexrest/PublishAnnouncementCopy";
         Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
                 finalEndPoint, "Authorization", "Bearer " + tokenString, null);
         response.prettyPrint();
@@ -486,7 +327,7 @@ public class ProjectWebServices {
         System.out.print("Making API call... ");
         getAuthToken();
         String finalEndPoint = endPoint + "/services/apexrest/GNT/AutomationAPI/Delete";
-
+        System.out.println("Print final end point..." + finalEndPoint);
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("objectName", objectName);
         jsonObject.addProperty("criteria", "" + fieldApiName + "='" + recordName + "'");
@@ -498,7 +339,8 @@ public class ProjectWebServices {
         System.out.println("Completed.");
         assertStatusCode(response);
     }
-    public static void deletionApi(String recordName, String objectType) {
+
+    public void deletionApi(String recordName, String objectType) {
         System.out.print("Making API call... ");
         getAuthToken();
         try {
@@ -515,6 +357,7 @@ public class ProjectWebServices {
         System.out.println("Completed. ");
         assertStatusCode(response);
     }
+
     /**
      * calls the api to access and update custom meta data config
      *
@@ -535,7 +378,7 @@ public class ProjectWebServices {
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
 
-//    public void updateCustomMetaDynamicFieldConfigData(String id, String Name, String Type) {
+    //    public void updateCustomMetaDynamicFieldConfigData(String id, String Name, String Type) {
 //        getAuthToken();
 //        String finalEndPoint = endPoint + "/services/apexrest/frameworkCustomMetadataAPI/CustomMetadata?id=" + id;
 //        JsonArray jArray = new JsonArray();
@@ -563,6 +406,7 @@ public class ProjectWebServices {
         jArray.add(jsonContainer);
         I.amPerforming().restHttp().putCall(null, jArray.toString(), finalEndPoint, null, null, tokenString);
     }
+
     /**
      * calls the api to access and update custom dynamic field config
      *
@@ -713,8 +557,8 @@ public class ProjectWebServices {
     /**
      * get token for authentication of Delete request
      */
-    private static void getAuthToken() {
-        Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), null, null, null);
+    private void getAuthToken() {
+        Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), "Authorization", "Bearer ", null);
         tokenString = response.body().jsonPath().getString("access_token");
     }
 
@@ -899,6 +743,7 @@ public class ProjectWebServices {
             updateDynamicFieldConfig(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
         }
     }
+
     private void setDefaultCustomDynamicCustomMetadata(String key) {
         for (Map<String, String> customMap : ConfigurationParameters.getDefaultConfigurationParameters().get(key)) {
             updateCustomMetaDynamicFieldConfigData(customMap.get("id"), customMap.get("Name"), customMap.get("Type"));
@@ -944,14 +789,15 @@ public class ProjectWebServices {
         return response;
     }
 
-    public void executeBatchFileApi(String programName, String announcementName,String objectType, String projectTitle, String status) {
+    public void executeBatchFileApi(String programName, String announcementName, String objectType, String projectTitle, String status) {
         System.out.print("Making API call to execute batch file");
         String finalEndPoint = endPoint;
-        if(objectType.equalsIgnoreCase("Program")) {
+        if (objectType.equalsIgnoreCase("Program")) {
             recordCreationForProgram(projectTitle, status);
         }
     }
-    public void recordCreationForProgram (String projectTitle, String status) {
+
+    public void recordCreationForProgram(String projectTitle, String status) {
         getAuthToken();
         if (projectTitle.startsWith("Automation Runtime")) {
             String newRecordTitle = projectTitle + I.amPerforming().addOnsTo().getStringRandomNumber();
@@ -976,6 +822,274 @@ public class ProjectWebServices {
     public void publishAnnouncment(String annType, String annName, String filter) {
         getAuthToken();
         publishAnnouncementPostCall(projectApis.publishAnnPayload(annType, annName, filter));
+    }
+
+
+    public void initateApplicationReviewOnAnnouncement(String applicationTitle, String announcementTitle, String filter) {
+        initiateApplicationReview(projectApis.applicationReview(applicationTitle, announcementTitle, filter));
+    }
+
+    private void initiateApplicationReview(JsonObject jsonObject) {
+        String finalEndPoint = endPoint + "/services/apexrest/CreateFDMCopy/v1";
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+    }
+
+    public void approveDFM(String applicationName) {
+        approveDFMPostCall(projectApis.defaultRequestPayroleForApprovedDFM(), applicationName);
+    }
+
+    private void approveDFMPostCall(JsonObject jsonObject, String applicationName) {
+        String finalEndPoint = endPoint + "/services/apexrest/CreateFDM/v2?AppId=" + getIdOf("Application__c", applicationName);
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+    }
+
+    private void activateSubawardGetCall(JsonObject jsonObject, String awardName) {
+        getAuthToken();
+        String createAwardEndPoint = endPoint + "/services/apexrest/activateAwardFromGrantCopy/v1";
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                createAwardEndPoint, "Authorization", "Bearer " + tokenString, null);
+        response.prettyPrint();
+        assertStatusCode(response);
+        I.amPerforming().waitFor().makeThreadSleep(60000);
+        String activateAwardEndPoint = endPoint + "/services/apexrest/activateAwardFromGrant/v2?AwardId=" + getIdOf("Award__c", awardName);
+        Response response1 = I.amPerforming().restHttp().getCall(
+                activateAwardEndPoint, "Authorization", "Bearer " + tokenString);
+        response1.prettyPrint();
+        assertStatusCode(response1);
+    }
+
+    public void activateSubaward(String grantName, String filter, String... Type) {
+        getAuthToken();
+        if(Type.length>0)
+            activateSubawardGetCall(projectApis.payloadForCreateStandaloneAward(grantName, filter, Type[0]), grantName);
+        else
+            activateSubawardGetCall(projectApis.payloadForCreateStandaloneAward(grantName, filter), grantName);
+    }
+
+    public void getRecordIdFromResponse(String objectType, String recordName, String objectApiName) {
+        String response = "";
+        response = (automationBatchExecuteApi(objectType, recordName, objectApiName.split(","))).asString().replace("\"", "");
+        if (!response.equalsIgnoreCase("Completed")) {
+            govgrants.perform().pageDetails().idOfRecord = response;
+            I.amPerforming().propertiesFileOperationsTo().saveValue("Record Id", govgrants.perform().pageDetails().idOfRecord);
+        }
+    }
+
+    public void createAwardFromFDM(String announcementName) {
+        createAwardFromFDMPostCall(projectApis.defaultPayloadCreateAwardFromFDM(announcementName));
+    }
+
+    private void createAwardFromFDMPostCall(JsonObject jsonObject) {
+        String finalEndPoint = endPoint + "/services/apexrest/activateAwardFromFDM/v1.1";
+        I.amPerforming().waitFor().makeThreadSleep(5000);
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        response.prettyPrint();
+        assertStatusCode(response);
+    }
+
+    public void activateFMD(String applicationName) {
+        activateAwardFromFDMPostCall(projectApis.defaultPayloadActivateAwardFromFDM(), applicationName);
+    }
+
+    private void activateAwardFromFDMPostCall(JsonObject jsonObject, String applicationName) {
+        String finalEndPoint = endPoint + "/services/apexrest/activateAwardFromFDM/v2?GrantId=" + getIdOf("Grant__c", applicationName);
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        response.prettyPrint();
+        assertStatusCode(response);
+    }
+
+    public Response riskAssessmentApi(String organizationName) {
+        getAuthToken();
+        String finalEndPoint = endPoint + "/services/apexrest/productAutomationRiskAssessmentApi?recordName=" + organizationName;
+        Response response = I.amPerforming().restHttp().getCall(finalEndPoint, "Authorization", "Bearer " + tokenString);
+        response.prettyPrint();
+        assertStatusCode(response);
+        return response;
+    }
+
+    public void createAwardFromFDM(String announcementName, String... Type ) {
+        if(Type.length>0)
+            createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName,Type[0]));
+        else
+            createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName));
+    }
+
+    public void deleteRecordInHooks() {
+        List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
+                .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
+
+        for (String record : recordNameList) {
+            if (StringUtils.containsIgnoreCase(record, "focus area")) {
+                deleteFocusArea(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "funding source")) {
+                deleteFundingSource(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "kpi")) {
+                deleteKPI(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "program")) {
+                deleteProgram(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "strategic plan")) {
+                deleteStrategicPlan(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "site visit")) {
+                deleteSiteVisit(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+            }
+            if (StringUtils.containsIgnoreCase(record, "desk")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
+            }
+            if (StringUtils.containsIgnoreCase(record, "amendment")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Amendment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "payment")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "risk")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "ORGANIZATION RISKASSESSMENT");
+            }
+            if (StringUtils.containsIgnoreCase(record, "closeout")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Closeout");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Payment Request");
+            }
+            if (StringUtils.containsIgnoreCase(record, "contact")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Contact");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "DUNS");
+            }
+            if (StringUtils.containsIgnoreCase(record, "application")) {
+                try {
+                    deleteAttachmentsForRecord(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication__c");
+                } catch (AssertionError error) {
+                }
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
+            }
+            if (StringUtils.containsIgnoreCase(record, "Organization")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "USER REGISTRATION");
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("award"))) {
+            for (String record : recordNameList) {
+                if (StringUtils.containsIgnoreCase(record, "award")) {
+                    deleteAward(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+                }
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("announcement"))) {
+            for (String record : recordNameList) {
+                if (StringUtils.containsIgnoreCase(record, "announcement")) {
+                    deleteAnnouncement(I.amPerforming().propertiesFileOperationsTo().getValue(record));
+                }
+            }
+        }
+
+        if (recordNameList.stream().anyMatch(s -> s.toLowerCase().contains("fdm"))) {
+            deleteFDM(recordNameList);
+        }
+    }
+
+    private void deleteAward(String recordName) {
+        deletionApi(recordName, "Progress Report");
+        deletionApi(recordName, "Progress Report");
+        deletionApi(recordName, "Amendment Request");
+        deletionApi(recordName, "Payment Request");
+        deletionApi(recordName, "Award");
+        deletionApi(recordName, "Grant");
+    }
+
+    public static void deleteAttachmentsForRecord(String recordName, String objectAPIName) {
+        String recordId = getIdOf(objectAPIName, recordName);
+        JsonObject parent = new JsonObject();
+        JsonArray array = new JsonArray();
+        array.add(recordId);
+        parent.add("recordid", array);
+        String finalEndPoint = endPoint + "/services/apexrest/deleteFiles";
+        Response response = I.amPerforming().restHttp().postCall(parent, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+    }
+
+    private void deleteFDM(List<String> recordNames) {
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "desk review")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Desk Review");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "site visit")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Site Visit");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "application")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "APPLICATION REVIEWS");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "PreApplication");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Application");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "announcement")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Announcement");
+            }
+        }
+
+        for (String record : recordNames) {
+            if (StringUtils.containsIgnoreCase(record, "fdm")) {
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Progress Report");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "FDM");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "subaward");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Award");
+                deletionApi(I.amPerforming().propertiesFileOperationsTo().getValue(record), "Grant");
+            }
+        }
+    }
+
+    public void deleteAnnouncement(String recordName) {
+        deletionApi(recordName, "APPLICATION REVIEWS");
+        deletionApi(recordName, "Application");
+        deletionApi(recordName, "PreApplication");
+        deletionApi(recordName, "Announcement");
+    }
+
+    private void deleteFocusArea(String recordName) {
+        deletionApi(recordName, "Focus Area");
+    }
+
+    private void deleteFundingSource(String recordName) {
+        deletionApi(recordName, "Funding Source");
+    }
+
+    private void deleteKPI(String recordName) {
+        deletionApi(recordName, "KPI");
+    }
+
+    private void deleteProgram(String recordName) {
+        deletionApi(recordName, "Program");
+    }
+
+    private void deleteStrategicPlan(String recordName) {
+        deletionApi(recordName, "Strategic Plan");
+    }
+
+    private void deleteSiteVisit(String recordName) {
+        deletionApi(recordName, "Site Visit");
+    }
+
+    private void deleteOrganization(String recordName) {
+        deletionApi(recordName, "USER REGISTRATION");
     }
 
 
