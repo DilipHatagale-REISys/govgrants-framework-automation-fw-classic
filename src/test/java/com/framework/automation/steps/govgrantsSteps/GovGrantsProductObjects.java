@@ -231,6 +231,18 @@ public final class GovGrantsProductObjects {
         }
     }
 
+    public void assertPageBlockIsNotDisplayedOnModal(String usage, String titleName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isPageBlockTitleDisplayedOnModal(titleName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isPageBlockTitleDisplayedOnModal(titleName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockTitleDisplayedOnModal(titleName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockTitleDisplayedOnModal(titleName)).isFalse();
+        }
+    }
+
 
     /**
      * @param titleName
@@ -244,14 +256,26 @@ public final class GovGrantsProductObjects {
     private boolean isPageBlockTitleDisplayed(String titleName) {
         boolean flag = false;
         try {
-            if(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]"))))
-             {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "'] | //a[not(parent::li)]/span[" + I.amPerforming().sanityOfXpathTo().equals("text()", titleName) + "] | //a[text()='" + titleName + "'] | //h3[text()='" + titleName + "'] | //h2[(text()='" + titleName + "')] | //*[text()='" + titleName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
     }
+
+    private boolean isPageBlockTitleDisplayedOnModal(String titleName) {
+        boolean flag = false;
+        try {
+            if(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]"))))
+            {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 
 
     /**

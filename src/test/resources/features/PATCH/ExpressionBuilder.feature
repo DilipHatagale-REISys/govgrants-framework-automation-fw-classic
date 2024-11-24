@@ -46,7 +46,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42370    @hideExpressioJsonForRightOperandForProfileSystemAdministrator-gAnnouncement
+  @42370   @hideExpressioJsonForRightOperandForProfileSystemAdministrator-gAnnouncement
   Scenario: validate disabling of create button for profile system administrator from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1364,11 +1364,22 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @45311    @hide_expression_using_IN_operator_for_left_operand_profile_as_Admin
+  @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329
   Scenario: Page Tab - Verify Hide expression JSON for Left Operand= Profile as "Admin" and  operator = "IN"
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType|
+  |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType|
     Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -1379,177 +1390,127 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
+    #45316
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45317
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45319
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45320
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45322
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45323
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+   #45324
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45325
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45327
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
+    #45329
+    And I wait for "2" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName            | fieldNewValue                                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantor State Program | Name                      | TAB-2673                   |
+    And I refresh the page
+    Then I cannot see "Overview" sub tab at view detail page
 
-
-  @45313    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smokePATCH
+  @45313   @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smokePATCH
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndUserPM | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45316    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_Admin_PM
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45317    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=Internal
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smokePATCH
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45320    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_View
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45322    @hide_expression_Overview_Tab_using_NOTIN_operator_and_Left_Operand_AS_Context
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smokePATCH
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45324    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_Profile
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smokePATCH
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45327    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_And_UserType
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
-
-  @45329    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_UserType
-  Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType
-    Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantor State Program | Name                      | TAB-2673                   |
-    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -9109,7 +9070,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
-  @204621
+  @204621 @skiponjenkins
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should  see Page Blocks for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9129,7 +9090,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "15" seconds
     Then I see "Information" on page "1" of "govgrants" pdf file
 
-  @204622
+  @204622 @skiponjenkins
   Scenario Outline: Page Blocks--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
@@ -9152,7 +9113,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @204623
+  @204623 @skiponjenkins
   Scenario Outline: Page Blocks-Expression Builder-SPI-UI-To verify SPI user should see Page Blocks for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
@@ -9175,7 +9136,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @205075
+  @205075 @skiponjenkins
   Scenario: Page Blocks-Expression Builder-PM-UI-To verify PM user should  see Page Blocks for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9195,7 +9156,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "15" seconds
     Then I see "Information" on page "1" of "govgrants" pdf file
 
-  @205076
+  @205076 @skiponjenkins
   Scenario Outline: Page Blocks--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
@@ -9219,7 +9180,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @205086
+  @205086 @skiponjenkins
   Scenario Outline: Page Blocks-Expression Builder-SPI-UI-To verify SPI user should see Page Blocks for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
@@ -9420,7 +9381,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Setup" sub tab
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217139
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9432,7 +9393,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
 
   @217137 @217134 @217140
   Scenario: Hide Expression Builder- PM- UI- Verify if we configure multiple hide expressions separated by ‘AND’
@@ -9453,7 +9414,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Setup" sub tab
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217140
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9465,7 +9426,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
 
   @217138 @217135
   Scenario: Hide Expression Builder- Verify if we configure multiple hide expressions separated by ‘AND’,Hide Expression Builder- SPI- UI- Verify if we configure multiple hide expressions on same time
@@ -9531,7 +9492,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
     #216126 #217492
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217495
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9543,7 +9504,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217498 #216117
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9555,7 +9516,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217501
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9567,7 +9528,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217504 #216120
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9579,7 +9540,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217507
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9591,7 +9552,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217510 #216123
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9603,7 +9564,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217513
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9615,7 +9576,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
 
   @217493 @216127 @217496 @216118 @217499 @217502 @216121 @217505 @217508 @216124 @217511 @217514
   Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
@@ -9646,7 +9607,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
     #216127 #217493
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217496
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9658,7 +9619,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217499 #216118
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9670,7 +9631,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217502
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9682,7 +9643,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217505 #216121
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9694,7 +9655,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217508
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9706,7 +9667,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
     #217511 #216124
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9718,7 +9679,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217514
     And I wait for "3" seconds
     Given I have "default" configuration as below:
@@ -9730,7 +9691,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly see "Information" page block displayed
+    Then I softly see "Information" page block displayed on modal
 
   @217494
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Context’ and operator as ‘In’ that Page block (from Form) should not display on UI
@@ -10009,7 +9970,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
     #216114 #217522
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217522
     And I wait for "5" seconds
     Given I have "default" configuration as below:
@@ -10021,7 +9982,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217525
     And I wait for "5" seconds
     Given I have "default" configuration as below:
@@ -10033,7 +9994,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I see "Information" page block displayed
+    Then I see "Information" page block displayed on modal
     #217531
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10045,7 +10006,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217537
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10057,7 +10018,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217540
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10069,7 +10030,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217543
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10081,7 +10042,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
 
   @217523 @216115 @217529 @217526 @217532 @217538 @217541 @217544
   Scenario: Hide Expression Builder- PM- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
@@ -10108,7 +10069,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
     #216115 #217523
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217529
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10120,7 +10081,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I softly do not see "Information" page block displayed
+    Then I softly do not see "Information" page block displayed on modal
     #217526
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10132,7 +10093,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I see "Information" page block displayed
+    Then I see "Information" page block displayed on modal
     #217532
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10144,7 +10105,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217538
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10156,7 +10117,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217541
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10168,7 +10129,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
     #217544
     And I wait for "2" seconds
     Given I have "default" configuration as below:
@@ -10180,7 +10141,7 @@ Business Need: Expression Builder Component Scenarios
     And I refresh the page
     And I click on "Preview" icon for "Grantor Payment Request Forms" inside flex table with id "---program:-:ProgramBusinessFormTableId---"
     And I wait for "5" seconds
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed on modal
 
   @217524
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘Field’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
@@ -11465,7 +11426,7 @@ Business Need: Expression Builder Component Scenarios
     And I download the file
     Then I cannot see "Information" on page "1" of "govgrants" pdf file
 
-  @204645
+  @204645 @skiponjenkins
   Scenario: Page Blocks Details---Expression Builder-PM-UI-To verify PM user should not see Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11512,7 +11473,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Information" on page "1" of "govgrants" pdf file
 
-  @204648
+  @204648 @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks Details for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField        | filterId         |
@@ -11554,7 +11515,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "System Information" on page "3" of "govgrants" pdf file
 
-  @205104 @wip
+  @205104 @skiponjenkins
   Scenario: Page Blocks Details---Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11576,7 +11537,7 @@ Business Need: Expression Builder Component Scenarios
     And I download the file
     Then I cannot see "Title" on page "1" of "govgrants" pdf file
 
-  @205106
+  @205106 @skiponjenkins
   Scenario: Page Blocks Details---Expression Builder-PM-UI-To verify PM user should not see Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11622,7 +11583,7 @@ Business Need: Expression Builder Component Scenarios
     And I download the file
     Then I see "Title" on page "1" of "govgrants" pdf file
 
-  @205108
+  @205108 @skiponjenkins
   Scenario: Page Blocks Details--Expression Builder-SPI-UI-To verify SPI user should not see Page Blocks Details for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField        | filterId         |
@@ -11798,7 +11759,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204596 @204971 @Neeta
+  @204596 @204971 @Neeta @skiponjenkins
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality
   |Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality<user app>|
     Given I have "default" configuration as below:
@@ -11821,7 +11782,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
-  @204597
+  @204597 @skiponjenkins
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -11842,7 +11803,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204599
+  @204599 @skiponjenkins
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should  see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -11863,7 +11824,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Overview" on page "1" of "govgrants" pdf file
 
-  @204968 @wip @Neeta
+  @204968 @wip @Neeta @skiponjenkins
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -11907,7 +11868,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204974
+  @204974 @skiponjenkins
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -11928,7 +11889,7 @@ Business Need: Expression Builder Component Scenarios
     And I pause execution for "5" seconds
     Then I cannot see "Overview" on page "1" of "govgrants" pdf file
 
-  @204975
+  @204975 @skiponjenkins
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should  see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |

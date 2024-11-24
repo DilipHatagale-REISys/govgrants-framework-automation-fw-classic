@@ -119,6 +119,11 @@ public final class GovGrantsProductSteps {
         ggProductObjects.assertPageBlockIsNotDisplayed(usage, titleName);
     }
 
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" page block displayed on modal$")
+    public void asserPageBlockIsNotDisplayedOnModal(String usage, String titleName) {
+        ggProductObjects.assertPageBlockIsNotDisplayedOnModal(usage, titleName);
+    }
+
 
     /****** Product Generic Consolidated Steps ***********//*
 */
