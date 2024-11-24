@@ -5498,11 +5498,13 @@ Business Need: Expression Builder Component Scenarios
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                           | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5512,15 +5514,17 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Attachments" page block displayed
 
-  @51605    @hide_expression_Page_Block_Profile_IN_System_Administrator_For_Notes_And_Attachment
+  @51605
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_System_Administrator | Grantor State Program | Name                      | PB-6442                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active            | true                                                                     | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionPageBlockWithProfileINSystemAdministrator | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -5532,11 +5536,13 @@ Business Need: Expression Builder Component Scenarios
   @51606    @hide_expression_Page_Block_Profile_IN_PM_and_System_Administrator_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for Admin and PM
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM_and_System_Administrator | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                                                    | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_IN_PM_and_System_Administrator | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5549,11 +5555,13 @@ Business Need: Expression Builder Component Scenarios
   @51607    @hide_expression_Page_Block_Profile_NOTIN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field for NOTIN PM
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_NOTIN_PM | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                              | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_Profile_NOTIN_PM | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5566,11 +5574,13 @@ Business Need: Expression Builder Component Scenarios
   @51608    @hide_expression_Page_Block_UserType_IN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Internal
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Internal | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                                  | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Internal | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5583,11 +5593,13 @@ Business Need: Expression Builder Component Scenarios
   @51609    @hide_expression_Page_Block_UserType_NOTIN_Internal__For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field as UserType NOTIN Internal
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_NOTIN_Internal | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                                     | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_NOTIN_Internal | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5600,11 +5612,13 @@ Business Need: Expression Builder Component Scenarios
   @51610    @hide_expression_Page_Block_UserType_IN_Applicant_Internal_Reviewer__For_Notes_And_Attachment
   Scenario: Set up configuration to hide Notes and Attachment page block using expression json field as UserType IN Applicant Internal and Reviewer
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block:Page Block Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Applicant_Internal_Reviewer | Grantor State Program | Name                      | PB-6442                    |
+      | Page Block:Page Block Detail | Is Active            | true                                                                                     | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Hide_Expression_Page_Block_With_UserType_IN_Applicant_Internal_Reviewer | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7497,28 +7511,28 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:EnhancedGridChildTableHideExpressionJsonAtTopLevelActionUsingNOTIN | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:EnhancedGridChildTableHideExpressionJsonAtTopLevelActionUsingNOTIN | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "AD-GG PJ--01" is displayed inside flex table
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I see "Review Form" icon for "Pre-Screen" is displayed inside flex table
 
   @97484    @validateHideExpressionJsonForLookupRelationalFieldInCreateMode-gPlanning
   Scenario: validate hide expression json at lookup relational field in create program page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionForLookupRelationalFieldInCreateMode | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionForLookupRelationalFieldInCreateMode | Grantor State Program | Name                      | PBD-17100                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -11719,7 +11733,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11741,7 +11755,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11764,7 +11778,7 @@ Business Need: Expression Builder Component Scenarios
   |Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab  for export functionality<user app>|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11786,7 +11800,8 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2733                   |
@@ -11807,7 +11822,8 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should  see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2733                   |
@@ -11828,7 +11844,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11850,7 +11866,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should not see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11872,7 +11888,8 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2733                   |
@@ -11893,7 +11910,8 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should  see page tab for export functionality<user app>
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2733                   |
