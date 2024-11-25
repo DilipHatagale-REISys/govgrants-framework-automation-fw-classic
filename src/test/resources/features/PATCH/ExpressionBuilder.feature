@@ -1364,7 +1364,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329
+  @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329 @OverviewTab
   Scenario: Page Tab - Verify Hide expression JSON for Left Operand= Profile as "Admin" and  operator = "IN"
   |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning|
   |Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE|
@@ -6092,11 +6092,12 @@ Business Need: Expression Builder Component Scenarios
     #Then I do not see "Contacts" page block displayed
     Then I see "Submit For Approval" button is not displayed
 
-  @45314    @hide_expression_using_left_operand_profile_NOTIN
+  @45314 @OverviewTab   @hide_expression_using_left_operand_profile_NOTIN
   Scenario: Hide Overview sub tab with left operand profile NOTIN -gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -8102,7 +8103,7 @@ Business Need: Expression Builder Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login as "PM" user on "INTERNAL" portal
+    When I re-login as "EXE" user on "INTERNAL" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -9271,11 +9272,11 @@ Business Need: Expression Builder Component Scenarios
   @206793
   Scenario: Page Tab--Expression Builder--SPI--UI--To verify Expression Builder for page block using context
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Tabs Config      | Hide Expression JSON |                   | RecipientGrant     | ApiGeneratedId:0 |
+      | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grant              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | TAB-2698                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grant              | Name                      | TAB-2007                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -11729,7 +11730,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I see "Collab" subtab is present in page details
 
-  @204593 @needtocheckmanually @skiponjenkins @wip
+  @204593 @needtocheckmanually @skiponjenkins @wip @OverviewTab
   Scenario: Page Tab-Expression Builder-Admin-Config-To verify admin should configure expression Builder for Page Tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
