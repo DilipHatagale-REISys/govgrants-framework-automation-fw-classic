@@ -4585,7 +4585,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
-  @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smokePATCH
+  @48634   @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smokePATCH
   Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4623,7 +4623,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send back |
 
-  @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
+  @48637 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4660,7 +4660,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Forward" in the approval decision
 
-  @48638    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smokePATCH
+  @48638  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smokePATCH
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4697,7 +4697,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Forward" in the approval decision
 
-  @48639    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
+  @48639  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4735,7 +4735,7 @@ Business Need: Expression Builder Component Scenarios
     And I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send back |
 
-  @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  @48640 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4772,7 +4772,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Forward" in the approval decision
 
-  @48641    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  @48641 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4810,7 +4810,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Send back |
 
-  @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
+  @48646  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
   Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4847,7 +4847,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Reject" in the approval decision
 
-  @48647    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  @48647 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4885,7 +4885,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send back |
 
-  @48648    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
+  @48648 @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4923,7 +4923,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send back |
 
-  @48649    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
+  @48649 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4961,7 +4961,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send back |
 
-  @48650    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
+  @48650  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -4999,7 +4999,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Forward | Send back |
 
-  @48651    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
+  @48651 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5036,7 +5036,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Reject" in the approval decision
 
-  @48652    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  @48652 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5074,7 +5074,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48654    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  @48654 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5112,7 +5112,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48655    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
+  @48655 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5150,7 +5150,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48656    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
+  @48656  @OverviewTab  @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
   Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5187,7 +5187,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Send back" in the approval decision
 
-  @48657    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smokePATCH
+  @48657 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smokePATCH
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5225,7 +5225,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48658    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient @wip
+  @48658 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient @wip
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5265,7 +5265,7 @@ Business Need: Expression Builder Component Scenarios
       | Approve | Reject | Forward |
 
 
-  @48659    @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin @wip
+  @48659 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin @wip
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5303,7 +5303,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
+  @48662 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5341,7 +5341,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send back |
 
-  @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
+  @48663 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
   Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5378,7 +5378,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I can see the radio button "Approve" in the approval decision
 
-  @48666    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin @wip
+  @48666 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin @wip
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5417,7 +5417,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send back |
 
-  @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin @wip
+  @48667 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin @wip
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -5456,7 +5456,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Reject | Forward | Send back |
 
-  @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal @wip
+  @48670 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal @wip
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -8073,7 +8073,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "pdfxlsscenariofeaturefile.txt" is not displayed inside flex table
 
-  @48668    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal @expressionBuilder
+  @48668  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal @expressionBuilder
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -9281,8 +9281,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
 #############################Test suite: Hide Expression Builder (Suite ID: 214862)##################################

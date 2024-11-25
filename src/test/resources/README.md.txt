@@ -62,6 +62,6 @@ Given I setup test configuration as below:
 4.
 
 
-************************HideJasonExpression**********************************
-Program should in active state
-Grant should be in active state
+************************HideJa : sonExpression**********************************
+Program should in active state : ProgramRecordUsedForExpBuilder
+Grant should be in active state : GrantActiveHideJason
