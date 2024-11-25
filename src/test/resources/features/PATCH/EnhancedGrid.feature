@@ -6847,12 +6847,20 @@ Business Need: EnhancedGrid Component Scenarios
 
   @296597 @296598
   Scenario Outline: Admin_Child table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
+      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
@@ -6874,9 +6882,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I do not see help text icon is displayed for field "Step Order"
 
@@ -6896,9 +6906,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
-    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Pre-Screen Review"
     Then I do not see help text icon is displayed for field "Form Weight (%)"
