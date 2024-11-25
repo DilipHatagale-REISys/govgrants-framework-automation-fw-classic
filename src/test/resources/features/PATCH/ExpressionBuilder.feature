@@ -9097,8 +9097,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -9117,8 +9117,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -9140,8 +9140,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -9163,8 +9163,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -9183,8 +9183,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Overview" sub tab
     Then I can not see "Grant Information" page block displayed
     When I click on "Menu" in the page details
@@ -9207,8 +9207,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Grant Information" page block displayed
     When I click on "Menu" in the page details
@@ -9231,8 +9231,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "System Information" page block displayed
 
@@ -9248,8 +9248,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Collab" sub tab at view detail page
 
   @206792
@@ -9259,13 +9259,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | RecipientGrant     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | PB-7556                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | PB-7631                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Overview" sub tab
     Then I can not see "Grant Information" page block displayed
 
@@ -9273,10 +9273,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab--Expression Builder--SPI--UI--To verify Expression Builder for page block using context
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grant              | ApiGeneratedId:0 |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | RecipientGrant     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grant              | Name                      | TAB-2007                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | RecipientGrant     | Name                      | TAB-2908                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
