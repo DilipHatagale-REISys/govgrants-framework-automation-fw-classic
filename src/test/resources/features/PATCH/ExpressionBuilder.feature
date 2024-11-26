@@ -54,12 +54,8 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                              | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:FlexTableHideExpressionBuilderJsonForAdministratorProfile | ActiveFundingOpportunitiesAll | Name                      | New                        |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    Then I see "New" button inside "Draft Announcements" flex table not displayed
-    When I re-login to "As a Grantor" app as "ADMIN" user on "QA" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
@@ -132,7 +128,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "New" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table
 
   @42490    @hideExpressioJsonForRightOperandForUserType-Internal-gAnnouncement
   Scenario: validate disabling of create button for user type Internal from Announcement-Program
@@ -305,7 +301,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -560,7 +556,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -579,7 +575,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -615,7 +611,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -651,7 +647,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -701,7 +697,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
@@ -738,7 +734,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -754,7 +750,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
@@ -791,7 +787,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table not displayed
@@ -915,245 +911,1181 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table
 
-  @43890pp    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for Profile PM using hide expression Json -gPlanning
+  @48634   @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smokePATCH
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Grantor State Program | Name                      | Submit For Approval        |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send back |
 
-  @43891    @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning @smokePATCH
-  Scenario: Hide Submit for approval button for Profile PM (PM and System Admin)using hide expression Json -gPlanning
+  @48637 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
+  Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin | Grantor State Program | Name                      | Submit For Approval        |
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Forward" in the approval decision
 
-  @43892    @hideExpressioJsonForLeftOperandForProfileSystemAdminAndPMAtPageLayout-gPlanning
+  @48638  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smokePATCH
+  Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                       | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Forward" in the approval decision
+
+  @48639  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                          | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "3" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send back |
+
+  @48640 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
+  Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Forward" in the approval decision
+
+  @48641 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
+  Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0172          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Send back |
+
+  @48646  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
+  Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                     | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Reject" in the approval decision
+
+  @48647 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send back |
+
+  @48648 @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send back |
+
+  @48649 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send back |
+
+  @48650  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Forward | Send back |
+
+  @48651 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
+  Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                    | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor | ADAC-0157          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Reject" in the approval decision
+
+  @48652 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                            | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48654 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                           | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48655 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                 | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48656  @OverviewTab  @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
+  Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Send back" in the approval decision
+
+  @48657 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smokePATCH
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48658 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient @wip
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                       | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient | ADAC-0155                                                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48662 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | ADAC-0156          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send back |
+
+  @48659
+  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin | ADAC-0155          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Approve | Reject | Forward |
+
+  @48663 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
+  Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                        | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0156          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Approve" in the approval decision
+
+  @48667  @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin | ADAC-0156          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send back |
+
+  @48670
+  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0156          |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send back |
+
+  @48666
+  Scenario: Scenario 315 – Approval Decision action - Verify Hide Expression JSON field- Profile NOT IN System Administrator AND UserType IN Internal.
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
+      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin | ADAC-0156                                                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following radio buttons in the approval decision :
+      | Reject | Forward | Send back |
+
+   @48663
+   Scenario: Scenario 311 – Approval Decision action - Verify Hide Expression JSON field- UserType NOT IN Internal AND Profile NOT IN  Admin.
+     Given I have "default" configuration as below:
+       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
+     Given I setup test configuration as below:
+       | configurationCategory            | fieldName            | fieldNewValue                                                                                                        | coreComponentField |
+       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0156          |
+     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+     When I login to "As a Grantor" app as "PM" user
+     When I setup my app as "As a Grantor"
+     And I navigate to "Planning" tab
+     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+     And I click toggle button to select "Internal Programs - All"
+     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+     When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+     And I click on "Save and Continue" in the page details
+     And I pause execution for "8" seconds
+     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+     And I click on "Save" in the page details
+     When I navigate to "Overview" sub tab
+     And I save the field labeled "EGMS ID" as "PEGMSID"
+     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+     When I navigate to "Responsibilities" sub tab
+     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+     And I pause execution for "10" seconds
+     And I click on "Submit For Approval" in the page details
+     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+     And I navigate to "Home" tab
+     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+     Then I can see the radio button "Approve" in the approval decision
+
+  @43892 @44158 @44160 @44210 @hideExpressioJsonForLeftOperandForProfileSystemAdminAndPMAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for Profile PM (System Admin and PM)using hide expression Json -gPlanning
+  |Hide Submit for approval button for system admin using Profile PM with operator Not In -gPlanning|
+  |Hide Submit for approval button for internal user using user type internal and operator In -gPlanning|
+  |Validate submit for approval button is present for internal user using user type internal and operator NotIn -gPlanning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "2" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @43893    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInAtPageLayout-gPlanning
-  Scenario: Validate submit for approval button is present for Profile PM with operator Not In using hide expression Json -gPlanning
+    #44158
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is displayed
-
-  @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smokePATCH
-  Scenario: Hide Submit for approval button for system admin using Profile PM with operator Not In -gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44160    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorInAtPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for internal user using user type internal and operator In -gPlanning
+    #44160
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44210p    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
-  Scenario: Validate submit for approval button is present for internal user using user type internal and operator NotIn -gPlanning
+    #44210
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SubmitforapprovalAutomationPG}"
-    When I click on "View" icon for "{Framework_recordUsed:SubmitforapprovalAutomationPG}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is displayed
 
-  @44211    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
+  @44211 @44213 @44214 @43893 @43891 @43890 @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
   Scenario: Hide submit for approval button for different user like reviewer except internal user using user type internal and operator NotIn -gPlanning
+  |Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Reviewer-gPlanning|
+  |Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Applicant-gPlanning|
+  |Validate submit for approval button is present for Profile PM with operator Not In using hide expression Json -gPlanning|
+  |Hide Submit for approval button for Profile PM (PM and System Admin)using hide expression Json -gPlanning|
+  |Hide Submit for approval button for Profile PM using hide expression Json -gPlanning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalWithOperatorNotIn | Grantor State Program | Name                      | Submit For Approval        |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "2" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is displayed
+    #44213
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #44214
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #43893
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMWithNotInOperator | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is displayed
+    #43891
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePMAndSysAdmin | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #43890
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
 
-  @44212    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Internal-gPlanning
+  @44212 @44215 @44216 @44222 @44223 @44284 @44285 @44286 @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Internal-gPlanning
   Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Internal-gPlanning
+  |Hide submit for approval button for context view with operator IN-gPlanning|
+  |Validate submit for approval button is present for context view with operator Not IN-gPlanning|
+  |Hide submit for approval button for user type state as grantor with operator IN-gPlanning|
+  |Hide submit for approval button for user type state as grantee with operator IN-gOpportunities|
+  |Hide submit for approval button for field with operator Equals-gPlanning|
+  |Hide Submit for approval button for profile system administrator and user type internal with operator OR-gPlanning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "2" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44213    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Reviewer-gPlanning
-  Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Reviewer-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
-
-  @44214    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Applicant-gPlanning
-  Scenario: Hide submit for approval button for user like intenal and applicant and reviewer using user type internal Applicant and reviewer and operator In -Applicant-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
-
-  @44215    @hideExpressioJsonForLeftOperandForContextViewWithOperatorInAtPageLayout-gPlanning
-  Scenario: Hide submit for approval button for context view with operator IN-gPlanning
+    #44215
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44216    @hideExpressioJsonForLeftOperandForContextViewWithOperatorNotInAtPageLayout-gPlanning
-  Scenario: Validate submit for approval button is present for context view with operator Not IN-gPlanning
+    #44216
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForContextViewWithOperatorNotIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SubmitforapprovalAutomationPG}"
-    When I click on "View" icon for "{Framework_recordUsed:SubmitforapprovalAutomationPG}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is displayed
-
-  @44222    @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
-  Scenario: Hide submit for approval button for user type state as grantor with operator IN-gPlanning
+    #44222
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGrantorWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44223    @hideExpressioJsonForLeftOperandForUserTypeStateAsGranteeWithOperatorInAtPageLayout-gAnnouncement @wip
-  Scenario: Hide submit for approval button for user type state as grantee with operator IN-gOpportunities
+    #44223
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | AnnouncementGrantee | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeSAGranteeWithOperatorIn | AnnouncementGrantee | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantee"
-    And I navigate to "Opportunities" tab
-    When I navigate to "Lapsed" content inside "Activities" subheader on left panel
-    When I perform quick search for "ROSES 2018: Rapid Response and Novel Research in Earth Science"
-    When I click on "View" icon for "ROSES 2018: Rapid Response and Novel Research in Earth Science" inside table
-    When I navigate to "Overview" sub tab
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #44284
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForFieldWithOperatorEquals | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #44285
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorAND | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
+    Then I see "Submit For Approval" button is not displayed
+    #44286
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorOR | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
 
   @44282    @hideExpressioJsonForLeftOperandForUserAppStateAsAdministratorWithOperatorInAtPageLayout-gPlanning @smokePATCH @wip
@@ -1172,120 +2104,67 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Activate" button is not displayed
 
-  @44284    @hideExpressioJsonForLeftOperandForFieldWithOperatorEqualsAtPageLayout-gPlanning
-  Scenario: Hide submit for approval button for field with operator Equals-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForFieldWithOperatorEquals | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
-
-  @44285    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning @smokePATCH
-  Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator AND-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorAND | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
-
-  @44286    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorORAtPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for profile system administrator and user type internal with operator OR-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfileSysAdminAndUserTypeInternalWithOperatorOR | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Submit For Approval" button is not displayed
-
-  @44316    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorANDAtPageLayout-gPlanning
+  @44316 @44317 @44318 @45289 @45291 @45294 @45295 @45296 @45306 @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorANDAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for user type internal and context view with operator AND-gPlanning
+  |Hide Submit for approval button for user type internal and context view with operator OR-gPlanning|
+  |Hide Submit for approval button for user type internal and user app state as grantor with operator AND-gPlanning|
+  |Hide Submit for approval button for user type internal and user app state as grantor with operator OR -gPlanning|
+  |Hide Submit for approval button for user type internal and user app state as grantor with operator AND -gPlanning|
+  |Hide Submit for approval button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator -gPlanning|
+  |Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using OR operator for fields text,picklist,date,lookup,longtextarea -gPlanning|
+  |Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator for all fields using group expression -gPlanning|
+  |Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with group expression using OR Operator -gPlanning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorAND | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "2" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44317    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorORAtPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for user type internal and context view with operator OR-gPlanning
+    #44317
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalContextViewWithOperatorOR | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @44318    @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning @smokePATCH
-  Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND-gPlanning
+    #44318
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalUserAppSAGrantorWithOperatorAND | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45289    @HideExpressionLeftOperandUseOROperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator OR -gPlanning
+    #45289
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsUsingOROperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45291    @HideExpressionLeftOperandUseANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
-  Scenario: Hide Submit for approval button for user type internal and user app state as grantor with operator AND -gPlanning
+    #45291
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
@@ -1293,75 +2172,48 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForLeftOperandsUsingANDOperator | Grantor State Program | Name                      | Submit For Approval        |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45294    @HideExpressionLeftOperandUseAllDataTypesOfFieldUsingANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning @smokePATCH
-  Scenario: Hide Submit for approval button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator -gPlanning
+    #45294
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionLeftOperandOROperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside tableAnd I pause execution for "10" seconds
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smokePATCH
-  Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using OR operator for fields text,picklist,date,lookup,longtextarea -gPlanning
+    #45295
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionLeftOperandOROperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45296    @hide_expression_using_AND_operator_for_all_fields_using_group_expression
-  Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with Use All Data Types Of Field Using AND operator for all fields using group expression -gPlanning
+    #45296
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionForAllFiledsWithANDOperatorUsingGroupExpression | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
-
-  @45306    @hide_expression_using_OR_operator_using_group_expression
-  Scenario: Hide SUBMIT FOR APPROVAL button for user type internal and user app state as grantor with group expression using OR Operator -gPlanning
+    #45306
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON |                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutActionHideExpressionForGroupExpressionWithOROperator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I refresh the page
+    And I pause execution for "2" seconds
     Then I see "Submit For Approval" button is not displayed
 
   @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329 @OverviewTab
@@ -4496,7 +5348,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
@@ -4585,915 +5437,6 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
-  @48634   @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smokePATCH
-  Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send back |
-
-  @48637 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
-  Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Forward" in the approval decision
-
-  @48638  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator @smokePATCH
-  Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                       | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Forward" in the approval decision
-
-  @48639  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator
-  Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                          | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program |
-      | Automation EXE | Step 1  |
-    And I pause execution for "3" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send back |
-
-  @48640 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
-  Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Forward" in the approval decision
-
-  @48641 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
-  Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0172          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send back |
-
-  @48646  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH
-  Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                     | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Reject" in the approval decision
-
-  @48647 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_OR_Profile_NOTIN_SystemAdministrator
-  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send back |
-
-  @48648 @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
-  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send back |
-
-  @48649 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
-  Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send back |
-
-  @48650  @OverviewTab  @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
-  Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send back |
-
-  @48651 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
-  Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor | ADAC-0157          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Reject" in the approval decision
-
-  @48652 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                            | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-  @48654 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                           | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-  @48655 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserType_IN_Applicant_Internal_Reviewer
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                 | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-  @48656  @OverviewTab  @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantee
-  Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Send back" in the approval decision
-
-  @48657 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Admin @smokePATCH
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-  @48658 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_NOTIN_Recipient @wip
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient | ADAC-0155                                                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-
-  @48659 @OverviewTab   @hide_Expression_ApprovalDecisionAction_SendBack_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin @wip
-  Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin | ADAC-0155          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Forward |
-
-  @48662 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
-  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | ADAC-0156          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send back |
-
-  @48663 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
-  Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                        | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0156          |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I can see the radio button "Approve" in the approval decision
-
-  @48666 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin @wip
-  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin | ADAC-0156                                                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send back |
-
-  @48667 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin @wip
-  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                    | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin | ADAC-0156                                                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send back |
-
-  @48670 @OverviewTab   @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal @wip
-  Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
-      | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0156                                                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send back |
 
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field
@@ -7541,7 +7484,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -8088,7 +8031,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation1_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
