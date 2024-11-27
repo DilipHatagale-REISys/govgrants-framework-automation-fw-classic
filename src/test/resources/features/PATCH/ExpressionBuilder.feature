@@ -5571,8 +5571,22 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
-  @52909    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal
+  @52909  @52911 @52914 @52915 @52917 @52916 @52918 @52919 @52927 @52928 @52929 @52930 @52931 @52932 @52933 @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal
   Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
@@ -5586,237 +5600,150 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52911    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52911
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52914    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52914
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52915    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52915
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52917    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52917
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52916    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52916
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52918    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52918
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52919    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_Profile_IN_PM
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52919
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_IN_Internal_OR_Profile_IN_PM | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52927    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52927
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52928    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52928
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52929    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52929
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52930    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52930
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                             | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see "New" button inside "Review Steps" enhanced grid
-
-  @52931    @Hide_Expression_EnhancedGrid_TvopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52931
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52932    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52932
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @52933    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+    And I refresh the page
+    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    #52933
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer | ProgramReviewStepTemplates | Name                      | New                        |
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+
+  @53008 @53009 @53010 @53011 @53012 @53013 @53014 @53015 @53017 @53020 @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal @egrid
+  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+  |validate enabling of top level action button from planning-Program child enhance flex grid|
+  |validate disabling of top level action button from planning-Program child enhance flex grid|
+  |validate disabling of top level action button from planning-Program child enhance flex grid|
+  |validate disabling of top level action button from planning-Program child enhance flex grid|
+  |validate disabling of top level action button from planning-Program child enhance flex grid|
+  |validate disabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+  |validate enabling of top level action button from planning-Program enhance flex grid|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5824,199 +5751,98 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup" sub tab
-    Then I see no "New" button inside "Review Steps" enhanced grid
-
-  @53008    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal @egrid
-  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53009    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal @egrid
-  Scenario: validate enabling of top level action button from planning-Program child enhance flex grid
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53009
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    #And I click toggle button to select "Budget Categories"
-    Then I see "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53010    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator @egrid
-  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_NOTIN_Internal | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53010
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53011    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator @egrid
-  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53011
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    #And I click toggle button to select "Budget Categories"
-    Then I see "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53012    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal @egrid
-  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53012
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53013    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal @egrid
-  Scenario: validate disabling of top level action button from planning-Program child enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53013
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53014    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor @egrid
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53014
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53015    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor @egrid
-  Scenario: validate enabling of top level action button from planning-Program enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53015
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53017    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor @egrid
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53017
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
-
-  @53020    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer @egrid
-  Scenario: validate disabling of top level action button from planning-Program enhance flex grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
+    #53020
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit All                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Edit All" button inside "Budget Categories" enhanced grid
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Applicant_Internal_Reviewer | ProgramReviewStepPanelTemplates | Name                      | Test New                   |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
 
   @45305    @hideExpressioJsonForGroupExpressionWithANDOperatorAtPageLayout-gPlanning
   Scenario: Hide Program contacts from Overview Tab using User App Not IN operator
@@ -6052,41 +5878,33 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-  @82039    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
+  @82039 @82057  @debug @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide expression JSON for multiple AND groups at row level action - enhanced grid
+  |Verify Hide expression JSON for multiple OR groups at row level action - enhanced grid|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_group_at_row_level_action | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_group_at_row_level_action | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
-
-  @82057    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
-  Scenario: Verify Hide expression JSON for multiple OR groups at row level action - enhanced grid
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #82057
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                       | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_OR_group_at_row_level_action | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_OR_group_at_row_level_action | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
 
   @82059    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON by using OR and AND operator in multiple groups at row level action - enhanced grid
