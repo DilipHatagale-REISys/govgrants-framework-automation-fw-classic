@@ -1978,7 +1978,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Pre-Screen Review"
     Then I see "New" button inside "Review Forms" enhanced grid
 
-  @45300    @locationFieldAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
+  @45300 @smokePATCH @6thpagererun
   Scenario: row from config anf validating it inside enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1996,7 +1996,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "View" icon for "---program:-:flexGridEnhancedReviewStepID---" is at position "1" inside flex table
+    Then I see "View" icon for "---program:-:flexGridEnhancedReviewStepID---" is at position "0" inside flex table
 
   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smokePATCH
   Scenario:  Verify Location field = row at child flex table action
@@ -2018,7 +2018,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Test New" icon for "---program:-:flexGridEnhancedReviewStepID---" is at position "3" inside flex table
 
-  @45308    @sequenceFieldAtChildflexTableActionForEnhancedGrid-gPlanning @smokePATCH
+  @45308 @smokePATCH @6thpagererun
   Scenario: Verify  Sequence field at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2038,7 +2038,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Pre-Screen Review"
-    Then I see "Edit" icon for "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" is at position "1" inside flex table
+    Then I see "Edit" icon for "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" is at position "0" inside flex table
 
   @45309    @buttonHelpTextFieldAtChildFlexTableActionForEnhancedGrid-gPlanning
   Scenario: Verify  Button Help Text field at child flex table action
@@ -5845,8 +5845,8 @@ Business Need: EnhancedGrid Component Scenarios
 
   @379194 @379196 @379201 @SanityPATCH @SanityPATCHEGrid @sprint1
   Scenario: To verify that all row level actions are displayed for each record of child table, which have been configured
-    |To verify that user is able to edit existing child record by clicking on Edit action|
-    |To verify that user is able to search for the child records by entering keyword in quick search input field|
+  |To verify that user is able to edit existing child record by clicking on Edit action|
+  |To verify that user is able to search for the child records by entering keyword in quick search input field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Row               | ProgramReviewStepTemplates | Name                      | Edit                       |
@@ -5913,7 +5913,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see cell subtotal as expected as given formula at "FeeFundRequested__c" field
 
-  @49355    @enableSubTotalFieldAtChildFlexTableForEnhancedGrid-gPlanning @enhancedGrid
+  @49355 @enhancedGrid @6thpagererun
   Scenario: Verifying Enable Sub  Total (Child Flex Table )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -5921,8 +5921,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11521                  |
-      | Flex Table List       | Enable Sub Total    | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11521                  |
+      | Flex Table List       | Enable Row Grouping | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11876	                  |
+      | Flex Table List       | Enable Sub Total    | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11876	                  |
     Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
     When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
     And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
@@ -5934,7 +5934,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "BP01"
-    Then I see field "Cash Match" inside page block
+    Then I see "Cash Match : " inside rows of table id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   ############# Table - Test suite: Table (Suite ID: 218427) ###########################
 
@@ -5956,8 +5956,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Related Log" sub tab
-    Then I do not see "Announcements" page block displayed
+    When I navigate to "Overview" sub tab
+    Then I see "Contacts" page block displayed
 
     Examples:
       | User |
@@ -5987,7 +5987,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218437 @218438
+  @218437 @218438 @6thpagererun
   Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -6041,15 +6041,17 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
   Admin-Parent table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
-      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:1 |
-      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size          | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Default Page Size | 5             | ProgramReviewStepTemplates | Name                      |                            |
-      | Flex Table:General    | Enable Page Size  | true          | ProgramReviewStepTemplates | Name                      |                            |
-      | Flex Table:General    | Enable Pagination | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size          | 5             | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | ProgramReviewStepTemplates | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -6058,8 +6060,20 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    #Then I softly see "Review Steps" page block displayed
-      # 379190
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name    | Description  |
+      | 5          | Test Review1 | Description1 |
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name    | Description  |
+      | 6          | Test Review2 | Description2 |
+    When I navigate to "Setup" sub tab
+    And I pause execution for "5" seconds
+           # 379190
     Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -6119,14 +6133,14 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218430 @218435
+  @218430 @218435 @6thpagererun
   Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-8091                    |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-7706                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6134,16 +6148,16 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
+    Then I softly see "Budget Summary" page block displayed
 
-  @218436
+  @218436 @6thpagererun
   Scenario: Is active- SPI- UI- Verify flex table should not be displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-8091                    |
+      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-7706                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6151,9 +6165,9 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    Then I softly do not see "Grant Budget" page block displayed
+    Then I softly do not see "Budget Summary" page block displayed
 
-  @218445 @218442
+  @218445 @218442 @6thpagererun
   Scenario Outline: Display Field Names - SPI- UI- Verify if all fields from 'Display field names' are getting displayed on flex Table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6162,7 +6176,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecGrantBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "Vrush Application"
@@ -6172,19 +6186,23 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Budget Period Title" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
     Then I softly see "Start Date" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
     Then I softly see "End Date" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
-
+    Then I softly see "Fee Fund Requested" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
     Examples:
       | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
       | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
 
-  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid
+  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid @6thpagererun
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
+  |Page Size- PM- UI- Verify dropdown appears on UI to select page size manually|
+  |To verify that user is able to see Page size at bottom of the parent table, when Page size config is enabled|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Grid             | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | true          | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | ProgramReviewStepTemplates |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -6193,16 +6211,28 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I softly see "Review Steps" page block displayed
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description |
+      | 4          | Test Review | Description |
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name    | Description  |
+      | 5          | Test Review1 | Description1 |
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name    | Description  |
+      | 6          | Test Review2 | Description2 |
+    When I navigate to "Setup" sub tab
+    And I pause execution for "5" seconds
     #379188
-    Then I see "Show" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see "Entries" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
       | User |
       #| ADMIN |
       | PM   |
 
-  @218448 @352285
+  @218448 @352285 @6thpagererun
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6217,7 +6247,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
@@ -6246,15 +6276,15 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218451 @352431
+  @218451 @352431 @6thpagererun
   Scenario: Page Size- SPI- UI- Verify dropdown to select page size manually should not appear on UI
   SPI-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | false         | RecGrantBudgetCategoryFlexTable |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6262,17 +6292,19 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218452 @218453
+  @218452 @218453 @6thpagererun
   Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size          | 5                 | ApiGeneratedId:0 |
+      | Flex Grid:General     | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Default Page Size | 5             | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size          | 5             | ProgramReviewStepTemplates |                           |                            |
+      | Flex Grid:General     | Enable Total Records Count | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -6282,7 +6314,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
-    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see table contains "Showing 1 to 3" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
       | User |
@@ -6348,7 +6380,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218454
+  @218454 @6thpagererun
   Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6363,10 +6395,10 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218466 @352422
+  @218466 @352422 @6thpagererun
   Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6381,17 +6413,17 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218463 @352269
+  @218463 @352269 @6thpagererun
   Scenario:Pagination - SPI- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Pagination | true          | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6399,7 +6431,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @206017 @206018
@@ -6444,7 +6476,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Grant Budget" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:GrantBudgetOnGrantsBudgetTableId---" modal
 
-  @206014 @206015 @206013
+  @206014 @206015 @206013 @6thpagererun
   Scenario Outline: Menu- Admin- Config- Verify Menu option appears on UI
   Menu- Admin- Config- Verify admin can configure menu option on the parent or child flex grids
     Given I have "default" configuration as below:
@@ -6506,24 +6538,6 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @206016
-  Scenario: Menu- SPI- UI- Verify Menu option appears on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Disable Menu | false         | RecGrantBudgetPeriods |                           |                            |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    Then I see "Menu" action is displayed at the "---program:-:GrantBudgetOnGrantsBudgetTableId---" modal
-
   @206020 @206021
   Scenario Outline: PageMessageTimeOut- Admin- Config- Verify the message will be automatically closed after the set interval of time out
     When I login to "As a Grantor" app as "<User>" user
@@ -6545,8 +6559,9 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @206022
+  @206022 @206016 @6thpagererun
   Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
+  |Menu- SPI- UI- Verify Menu option appears on UI|
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -6554,7 +6569,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
-    And I click on menu inside "---program:-:GrantBudgetOnGrantsBudgetTableId---"
+    Then I see "Menu" action is displayed at the "---program:-:GrantBudgetOnGrantsBudgetTableId---" modal
+    When I click on parallel lines menu bar with data target value "#RecGrantBudgetPeriodsFlexToggle"
     And I select "Reset Table" from parallel lines dropdown of "Grant Budget"
     And I pause execution for "15" seconds
     Then I cannot see the following messages in the page details contains:
@@ -7038,7 +7054,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @296617 @296623
+  @296617 @296623 @6thpagererun
   Scenario Outline: Admin_Parent table_Verified that user is able to add all characters, Sp. Characters and digits in help text
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                                            | filterId         |
@@ -7059,11 +7075,11 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "<newHelpText>" shown as help text
 
     Examples:
-      | User | newHelpText            |
+      | User | newHelpText |
       #| ADMIN |
-      | PM   | @#$%^&*()!<>1234567890 |
+      | PM   | @#$%^&*()!  |
 
-  @296627 @296628
+  @296627 @296628 @6thpagererun
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
@@ -7085,9 +7101,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "<newHelpText>" shown as help text
 
     Examples:
-      | User | newHelpText            |
+      | User | newHelpText |
       #| ADMIN |
-      | PM   | @#$%^&*()!<>1234567890 |
+      | PM   | @#$%^&*()!  |
 
   @296637 @296641
   Scenario Outline:Admin_Parent table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
@@ -7324,7 +7340,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @296767 @296768
+  @296767 @296768 @6thpagererun
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -7345,7 +7361,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I do not see over all total for "Weight__c" at enhanced grid
+    Then I see over all total for "Weight__c" at enhanced grid
 
     Examples:
       | User |
@@ -7833,13 +7849,14 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I do not see select check box enabled in flex table
 
-  @218475 @218478
+  @218475 @218478 @6thpagererun
   Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI    Given I have "default" configuration as below:
-  | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-  | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Record Selection | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | true          | RecGrantBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
