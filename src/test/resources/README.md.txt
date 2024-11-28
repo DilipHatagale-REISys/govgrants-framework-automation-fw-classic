@@ -64,4 +64,4 @@ Given I setup test configuration as below:
 
 ************************HideJa : sonExpression**********************************
 Program should in active state : ProgramRecordUsedForExpBuilder
-Grant should be in active state : GrantActiveHideJason
+Grant should be in active state with notes added in files tab with tile Notes one : GrantActiveHideJason
