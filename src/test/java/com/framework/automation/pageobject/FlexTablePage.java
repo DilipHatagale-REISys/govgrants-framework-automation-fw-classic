@@ -1150,7 +1150,7 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
-                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "']"));
+                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "'] | //a[@title='" + iconId + "']/ancestor::span/a/span[@class='fa fa-info helpIcon']"));
     }
 
 
