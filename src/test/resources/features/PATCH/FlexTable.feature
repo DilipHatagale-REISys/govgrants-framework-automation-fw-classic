@@ -15880,10 +15880,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Flex table-Filter-SPI-To verify that when applied filter not matched with any of the record details, then "No results found" message displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
