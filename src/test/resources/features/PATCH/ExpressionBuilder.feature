@@ -582,7 +582,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldAndProfileSystemAdministratorWithOperatorAND | DataTableEnhanceProgramContacts | Name                      | Associate                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -724,7 +724,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingLookupWithOperatorEqualsTo | DataTableEnhanceProgramContacts | Name                      | Associate                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5617,7 +5617,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
     And I refresh the page
-    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
     #52932
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -5626,7 +5626,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue                                                                                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | New                        |
     And I refresh the page
-    Then I softly can see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
     #52933
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -7834,8 +7834,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - Active"
-    When I perform quick search for "Automation Application"
-    When I click on "View" icon for "Automation Application" inside table
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Edit" action with title "Notes one" in table id "---program:-:FlexTableEnhancedNotesId---"
     Examples:
@@ -8185,7 +8185,7 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - Active"F
     When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
     When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Files" sub tab
@@ -9831,675 +9831,220 @@ Business Need: Expression Builder Component Scenarios
   @217545
   Scenario: Hide Expression Builder- SPI- UI- Config- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Contains’ that action should not display on UI for values in right operand
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                       | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideActionOnProgramApplicationform | Program Specific Application form | Name                      | Validate                   |
+      | configurationCategory     | fieldName            | fieldNewValue                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideActionOnProgramApplicationform | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Validate" button is displayed
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
-   #######################Test suite: Expression Builder (Suite ID: 338443)##########################
-
-
-  @339522
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘$ User’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | filterId         |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUser | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Overview" sub tab
-    Then I do not see "View" icon inside table id "---program:-:contactsTableId---"
+   #######################Test suite: Expression Builder for Actions (Suite ID: 338443)##########################
 
   @339504 @339501 @339497
   Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Field’
   |Hide Expression Builder- Admin- Config- Verify Admin can configure hide expression for actions under Flex table|
   |Hide Expression Builder- Admin- Config- Verify Action column should not display when there were no actions available under Flex table|
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | filterId         |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | Programs           | Name                      | ApiGeneratedId:0 |
-      | Flex Table Action         | Hide Expression JSON |                   | Programs           | Name                      | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | Programs           | Name                      | View                       |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | Programs           | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    Then I softly do not see "Actions" in flex table header "---program:-:programTableDivId---"
-
-  @339505
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Field’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:0 |
-      | Flex Table Action     | Hide Expression JSON |                   | DataTableEnhanceProgramContacts | Name                      | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsActivePgm | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    Then I softly do not see "Actions" in flex table header "---program:-:programTableDivId---"
-
-  @339506
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Field’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsSpi | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339507
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User type’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeIn | AppReviewList      | Name                      | View                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"When I login to "As a Grantor" app as "PM" user
-    When I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
-    And I click toggle button to select "Approved Funding Decision Memos (FDM)"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "---subAwardFromFDM:-:fdmTableId---" panel
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339509 @339608
-  Scenario:Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User type’
-  Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User type’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339510 @339609
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User type’
-  Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User type’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeIn | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339511 @339611
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘Profile’,
-  Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘Profile’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339513
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘Profile’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339514
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘Profile’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileIn | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339515
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User App’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339516
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User App’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339517
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User App’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppIn | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339518
-  Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Context’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I do not see "Edit" icon inside table id "---program:-:contactsTableId---"
-
-  @339520
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Context’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotIn | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339521
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Context’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotIn | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339523
-  Scenario: Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘$ User’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | AppReviewList      | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDollarEquals | AppReviewList      | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
-
-  @339525
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘$ User’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDollarEquals | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-
-  @339526
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI
-    Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339527
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339528
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339529
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | CommunicationHistory | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | ActiveGrants | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
+    And I refresh the page
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @339530p
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI
+  @339536 @339507 @339532 @339529 @339518 @339526 @339522 @339591 @wip
+  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
+  |Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User type’|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI|
+  |Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Context’|
+  |Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘$ User’|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand|
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | ActiveGrants | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339532
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339529
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339531
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339526 #339518
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339522 #339591
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @339538 @339509 @339608 @339533 @339520 @339530 @339527 @339589 @339523 @339592 @339596
+  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User type’|
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User type’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘In’ that action should not display on UI for user selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Context’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI|
+  | Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘In’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘$ User’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Equals’ that action should not display on UI for values in right operand|
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | ActiveGrants | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339533 #339509 #339608
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339530 #339520
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339527
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339589 #339523
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339592
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339596
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @339541 @339510 @339609 @339535 @339531 @339521 @339528
+  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User type’|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User type’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘In’ that action should not display on UI for user selected in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Context’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘In’ that action should not display on UI|
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | GrantsList | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339535 #339510 #339609
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339531 #339521
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTableEdit | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339532
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘In’ that action should not display on UI for user selected in right operand
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTableEdit | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339528
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
+      | configurationCategory     | fieldName            | fieldNewValue                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextIN | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @339533
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘In’ that action should not display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339535
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘In’ that action should not display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeINMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339536
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339538
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339541
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User type’ and operator as ‘Not In’ that action should display on UI for user selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339542
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI for profiles selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339543
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI if PM selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339548
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI if SPI selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339549
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI for profiles selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339550
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI if PM selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339552
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI if SPI selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339553
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339554
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339555
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339556
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘Not In’ that action should display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339557
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘Not In’ that action should display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339558
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘Not In’ that action should display on UI for app selected in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339560 @339604
+  @339560 @339604 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘In’ that action should not display on UI for values in right operand,
   Hide Expression Builder- Admin- Config- Verify hide expression for actions can be used using Left operand as ‘Field’
     Given I have "default" configuration as below:
@@ -10533,25 +10078,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside record subject as "Subject"
 
-  @339562 @339606
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘In’ that action should not display on UI for values in right operand
-  Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Field’
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldInMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339563
+  @339563 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not In’ that action should display on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -10583,172 +10110,120 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
-  @339565
+  @339565 @339562 @339606
   Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not In’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotInMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339566
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside record subject as "Subject"
-
-  @339567
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside record subject as "Subject"
-
-  @339568
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
-
-  @339569
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside record subject as "Subject"
-
-  @339570p
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside record subject as "Subject"
-
-  @339571
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | CommunicationHistory | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Collab" sub tab
-    Then I see "View" icon inside record subject as "Subject"
-
-  @339572
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339574
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339575
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘In’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Field’|
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | GrantsList         | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotInMessagesTable | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339562 #339606
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldInMessagesTable | GrantsList         | Name                      | View                       |
+    And I refresh the page
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @339576
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than equals’ should not display on UI for values lesser than value in right operand
+  @339566 @339572 @339576 @339556 @339515 @339553 @339511 @339611 @339549 @339542 @wip
+  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than equals’ should not display on UI for values lesser than value in right operand|
+  |Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘User App’|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand|
+  | Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘Profile’,|
+  |Hide Expression Builder- Admin- Config- Verify hide expression for actions can be configured depending on ‘Profile’|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI for profiles selected in right operand|
+  |Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI for profiles selected in right operand|
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | ActiveGrants | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339572
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339576
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldGreaterThanEqualsGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Grants" tab
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339556 #339515
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339553
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339549 #339511 #339611
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339542
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
     Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @339577
+  @339577 @339505 @339570 @339574 @339567 @339516 @339557 @339554 @339513 @339550 @339543
   Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than equals’ should not display on UI for values lesser than value in right operand
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be used using Left operand as ‘Field’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘User App’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘Not In’ that action should display on UI for app selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify hide expression for actions can be configured depending on ‘Profile’|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI if PM selected in right operand|
+  |Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI if PM selected in right operand|
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
@@ -10757,10 +10232,97 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldGreaterThanEqualsGrants | ActiveGrants       | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+     #339570 #339505
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotEqualsMessagesTable | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly can see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339574
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339567
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | ActiveGrants       | Name                      | View                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339557 #339516
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly can see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339554
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339550 #339513
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly can see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    #339543
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileInMessagesTable | ActiveGrants | Name                      | View                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @339578
+  @339578 @339525 @339590 @339594 @339598 @339506 @339575 @339571 @339568 @339517 @339558 @339555 @339514 @339552 @339548
   Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than equals’ should not display on UI for values lesser than value in right operand
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘$ User’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘In’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Equals’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Field’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Equals’ that action should not display on UI for values in right operand|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘User App’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘Not In’ that action should display on UI for app selected in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘User app’ and operator as ‘In’ that action should not display on UI for app selected in right operand|
+  |Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘Profile’|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘Not In’ that action should display on UI if SPI selected in right operand|
+  |Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘Profile’ and operator as ‘In’ that action should not display on UI if SPI selected in right operand|
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
@@ -10770,8 +10332,99 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
     Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
+    #339590 #339525
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339594
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339598
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339575 #339506
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldLessThanEqualsGrants | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339571
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldNotEqualsMessagesTable | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339568
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigFieldEqualsMessagesTable | GrantsList         | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339558
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppNotInMessagesTable | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339555 #339517
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserAppInMessagesTable | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339552 #339514
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigProfileNotInMessagesTable | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    #339548
+    Given I have "default" configuration as below:
+      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory     | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigUserTypeNotINMessagesTable | GrantsList | Name                      | View                       |
+    And I refresh the page
+    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
   @339579
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than’ should not display on UI for values greater than equals to the value in right operand
@@ -10783,69 +10436,9 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | ActiveGrants       | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
     Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339589
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘In’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339590
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘In’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserInGrants | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
-
-  @339591
-  Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
-    And I navigate to "Grants" tab
-    Then I see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339592
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    Then I see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339594
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Not In’ that action should display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserNotInGrants | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
 
   @339595 @339601 @339602
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Equals’ that action should not display on UI for values in right operand,
@@ -10859,32 +10452,10 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | ActiveGrants       | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339596
-  Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Equals’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ActiveGrants       | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | ActiveGrants       | Name                      | View                       |
-    When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-
-  @339598
-  Scenario: Hide Expression Builder- SPI- UI- Verify if we configure hide expression for any action using Left operand as ‘$ User’ and operator as ‘Equals’ that action should not display on UI for values in right operand
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | GrantsList         | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigDUserEqualGrants | GrantsList         | Name                      | View                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    Then I softly do not see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    Then I softly cannot see row level action button "View" against "{Framework_recordUsed:GrantActiveHideJason}" in flex table with id "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
+#    Then I softly do not see "Actions" in flex table header "---program:-:{Framework_recordUsed:GrantActiveHideJason}---"
 
 ###############ii.Test suite:  Page Block Details(Expression Builder) (Suite ID: 201099)#########
 
