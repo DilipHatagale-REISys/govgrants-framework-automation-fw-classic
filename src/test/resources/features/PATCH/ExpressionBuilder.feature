@@ -6179,23 +6179,24 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "View" icon for "Personnel" is not displayed inside flex table
 
+  ###############################Hide expression for cell and column for flex grid####################################
+
   @83692    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfSingleField-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell on the basis of single field - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForMonitoringTable | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName      | fieldNewValue                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForRevStepFlexGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-   # When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "BP01"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @83693    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfGroup-EGrid @enhancedGrid @SanityPATCH @egrid
   Scenario: Verify Hide cell JSON By hiding cell on the basis of group - enhanced grid
@@ -6203,17 +6204,16 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForGroupCriteriaAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForGroupCriteriaAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "BP01"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @83694    @verifyHideColumnJSONAtEnhancedGridByHidingColumnValueOnTheBasisOfSingleField-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide column JSON By hiding column on the basis of single field - enhanced grid
@@ -6221,16 +6221,16 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForSingleFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName        | fieldNewValue                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForSingleFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Number of Awards" not displayed in enhanced grid table column title
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly do not see "Step Weight (%)" in flex table header "---program:-:flexGridEnhancedReviewStepID---"
 
   @83699    @verifyReadOnlyCellJSONFieldAtEnhancedGridOnTheBasisOfSingleField-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON on the basis of single field - enhanced grid
@@ -6238,18 +6238,17 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                                 | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForSingleFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName           | fieldNewValue                                                 | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForSingleFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @83695    @verifyHideColumnJSONAtEnhancedGridByHidingColumnValueOnTheBasisOfGroupCriteria-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide column JSON By hiding column on the basis of group criteria - enhanced grid
@@ -6257,16 +6256,16 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                 | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForGroupCriteriaAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName        | fieldNewValue                                                 | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForGroupCriteriaAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Number of Awards" not displayed in enhanced grid table column title
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly do not see "Step Weight (%)" in flex table header "---program:-:flexGridEnhancedReviewStepID---"
 
   @83707    @verifyReadOnlyCellJSONFieldAtEnhancedGridOnTheBasisOfGroupCriteria-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON on the basis of group criteria - enhanced grid
@@ -6275,17 +6274,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForGroupCriteriaAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonForGroupCriteriaAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @83916    @verifyReadOnlyColumnJSONFieldAtEnhancedGridOnTheBasisOfSingleField-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the basis of single field - enhanced grid
@@ -6294,17 +6292,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForSingleFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForSingleFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @83941    @verifyReadOnlyColumnJSONFieldAtEnhancedGridOnTheBasisOfGroupCriteria-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the basis of group criteria - enhanced grid
@@ -6313,17 +6310,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForGroupCriteriaAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForGroupCriteriaAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @86595    @verifyHideCellJSONAtEnhancedGridByHidingCellValueWithTheCombinationOfMultipleGroupsAndNotInOperators-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell on the basis of multiple groups and NotIn operators - enhanced grid
@@ -6332,16 +6328,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForMultipleGroupsWithAndOperatordAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForMultipleGroupsWithAndOperatordAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "BP01"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @86633    @verifyHideCellJSONAtEnhancedGridByHidingCellValueWithTheCombinationOfDifferentLeftOperandsAsFieldsUserTypeProfileAndContext-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell with the combination of diff left operands as Fields,UserType,Profile And Context - enhanced grid parent table
@@ -6350,16 +6345,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForDifferentLeftOperandsAsFieldsUserTypeProfileAndContextAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForDifferentLeftOperandsAsFieldsUserTypeProfileAndContextAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @86652    @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingOROperator-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell value using OR operator - at enhanced grid parent table
@@ -6368,16 +6362,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                            | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @86580  @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingAndOperatorAndINOperator-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell value using AND operator and IN operator- at enhanced grid parent table
@@ -6386,16 +6379,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                       | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForAndGroupAndINOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForAndGroupAndINOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @86657  @verifyHideCellJSONAtEnhancedGridByHidingCellValueUsingOROperatorWitMultipleGroups-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide cell JSON By hiding cell value using OR operator with multiple groups - at enhanced grid parent table
@@ -6404,16 +6396,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                                 | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAndWithMultipleGroupsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForOROperatorAndWithMultipleGroupsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see value "*****" for title "Step Weight (%)" against the value "Pre-Screen Review" inside table "---program:-:flexGridEnhancedReviewStepID---"
 
   @86811    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingAndOperatorOnTheBasisOfSingleField-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using AND operator on the basis of single field - enhanced grid
@@ -6422,17 +6413,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                                 | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForSingleFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForSingleFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications  - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @86812    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingAndOperatorOnTheBasisOfMultipleOperands-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using AND operator on the basis of multiple operands - enhanced grid
@@ -6441,17 +6431,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForMultipleOperandsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingANDOperatorForMultipleOperandsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "Budget Periods" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @86835    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingOROperatorOnTheBasisOfSingleField-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using OR operator on the basis of singlefield  - enhanced grid
@@ -6460,17 +6449,17 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForSingleFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForSingleFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
+
 
   @86837    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingOROperatorOnTheBasisOfMultipleOperandsndGroups-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using OR operator on the basis of multiple operands and groups  - enhanced grid
@@ -6479,17 +6468,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                                     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForMultipleOperandsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingOrOperatorForMultipleOperandsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87007    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingROperandAsField-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using right operands as field  - enhanced grid
@@ -6502,13 +6490,12 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87008    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingNOTOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using NOT operator - enhanced grid
@@ -6517,17 +6504,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingNOTOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingNOTOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87013    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingNOT-INOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using NOT IN operator - enhanced grid
@@ -6536,17 +6522,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingNOTINOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingNOTINOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87016    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingGreaterThanOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using Greater than operator - enhanced grid
@@ -6555,17 +6540,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingGreaterThanOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingGreaterThanOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-   # When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87023    @verifyReadOnlyCellJSONFieldAtEnhancedGridUsingGreaterThanEqualsOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only cell JSON using Greater than equals operator - enhanced grid
@@ -6574,17 +6558,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                                 | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingGreaterThanEqualsOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingGreaterThanEqualsOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87281    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingAndOperatorAndOperandsAsUserProfileUserAppContext-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using AND operator and operands as user ,profile ,user app ,context - enhanced grid
@@ -6593,17 +6576,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingANDOperatorForMultipleOperandsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingANDOperatorForMultipleOperandsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87282    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingAndOperatorAndUsingMultipleGroup-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using AND operator with using multiple groups - enhanced grid
@@ -6612,17 +6594,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingANDOperatorForMultipleGroupsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingANDOperatorForMultipleGroupsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87284    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingOROperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using OR operator - enhanced grid
@@ -6631,17 +6612,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingOROperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingOROperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87297    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingNotInOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using NOT IN operator - enhanced grid
@@ -6650,17 +6630,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                       | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-   # When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87290    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingOROperatorAndMultipleGroups-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using OR operator and multiple groups- enhanced grid
@@ -6669,17 +6648,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingOROperatorAndMultipleGroupsAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingOROperatorAndMultipleGroupsAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87293    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingINOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using IN operator - enhanced grid
@@ -6688,17 +6666,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingINOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingINOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87502    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingLessThanEqualsOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using less than equals operator - enhanced grid
@@ -6707,17 +6684,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingLessThanEqualsOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingLessThanEqualsOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87497    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingGreaterThanEqualsOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using greater than equals operator - enhanced grid
@@ -6726,17 +6702,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingGreaterThanEqualsOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingGreaterThanEqualsOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87495    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingNotEqualsToOperator-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using not equals to operator - enhanced grid
@@ -6745,17 +6720,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                             | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNotEqualsToOperatorAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNotEqualsToOperatorAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87491    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingNotInOperatorWithANDGroup-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using not IN operator with AND group - enhanced grid
@@ -6764,17 +6738,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorInAllOperandsWithANDGroupAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorInAllOperandsWithANDGroupAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @87487    @verifyReadOnlyColumnJSONFieldAtEnhancedGridUsingNotInOperatorWithORGroup-gPlanning @enhancedGrid @egrid
   Scenario:  Verify Read only column JSON on the using not IN operator with OR group - enhanced grid
@@ -6783,17 +6756,16 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue                                                                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorInAllOperandsWithORGroupAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonUsingNOTINOperatorInAllOperandsWithORGroupAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "BP01" inside table
-    Then I see input box is not displayed for budget period end date
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Pre-Screen Review" inside flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see fields "Weight__c" is in edit mode
 
   @88805    @verifyCumulativeAwardedAmountColumnIsHiddenUsingHideColumnJsonUsingAndOperatorAtEnhancedGridParentTableDetails-gPlanning @enhancedGrid @egrid @wip
   Scenario Outline: Hiding specific column from config using AND operator and validating it inside enhanced grid of programs-planning
@@ -7077,22 +7049,21 @@ Business Need: Expression Builder Component Scenarios
       | Name,GrantAwardName__c,Status__c,BudgetPeriodStartDates__c,Account__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @94980   @hide_Expression_Enhancedgrid_EditActionWithInOperator @egrid
-  Scenario: Set up configuration to hide edit action of parent enhanced grid using IN operator and validating it inside enhanced table
+  Scenario: Scenario 1: E-Grid: To verify the IN operator is working as expected on the actions
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridEditActionWithINOperator | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridEditActionWithINOperator | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
 
   @94981  @hideExpressionEnhancedgridEditActionWithNotInOperator @egrid
   Scenario: Set up configuration to hide edit action of parent enhanced grid using NOT IN operator and validating it inside enhanced table
@@ -7104,13 +7075,12 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionJSONEnhancedgridEditActionWithNOTINOperator | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
 
   @94983   @hideExpressionJSONAtEnhancedGridChildTableEditActionWithInOperator @egrid @wip
   Scenario Outline: Set up configuration to hide edit action of child enhanced grid using IN operator and validating it inside enhanced table
@@ -8237,8 +8207,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8257,21 +8227,27 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217433 @217434
   Scenario Outline: Hide Expression Builder- Admin- Config- Verify if we configure hide expression for any Hide Cell JSON using Left operand as ‘Field’ and operator as ‘Equals’ that value displayed other displaye value *****
     Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14086                  |
@@ -8281,7 +8257,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "*****" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
 #      | Admin |
@@ -8290,8 +8266,14 @@ Business Need: Expression Builder Component Scenarios
   @217436 @217437
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand
     Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14086                  |
@@ -8301,7 +8283,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "*****" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
 #      | Admin |
@@ -8310,8 +8292,14 @@ Business Need: Expression Builder Component Scenarios
   @217439 @217440
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than equals’ should not display on UI for values greater than value in right operand
     Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
@@ -8321,7 +8309,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "*****" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
 #      | Admin |
@@ -8330,8 +8318,14 @@ Business Need: Expression Builder Component Scenarios
   @217442 @217443
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than equals’ should not display on UI for values lesser than value in right operand
     Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
@@ -8341,7 +8335,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "*****" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
 #      | Admin |
@@ -8350,8 +8344,14 @@ Business Need: Expression Builder Component Scenarios
   @217445 @217446
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Less than’ should not display on UI for values greater than equals to the value in right operand
     Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+    Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
@@ -8361,30 +8361,37 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "*****" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
 #      | Admin |
       | PM    |
 
-  @217448 @217449
+  @217448 @217449 @217885
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression using Left operand as ‘Field’ and operator as ‘Greater than’ should not display on UI for values lesser than equals to the value in right operand
+  |Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions on same time|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
+      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "500" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see value "$0.00" for title "BaseSalary" against the value "SYSTEM" inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
 
@@ -8570,28 +8577,6 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
-
-  @217885
-  Scenario Outline: Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions on same time
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
-    When I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
-    When I navigate to "Overview" sub tab
-    Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8847,7 +8832,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
-#############################Test suite: Hide Expression Builder (Suite ID: 214862)##################################
+#############################Test suite: Hide Expression Builder for cell and column of flex table(Suite ID: 214862)##################################
 
   @216116
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be used using Left operand as ‘Field’
@@ -8856,88 +8841,62 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideHideCellJSONForEncumburanceLoperandFieldAndOperatorIn | AwardFundingAccounts-SD1 | Name                      | FTC-13597                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideHideCellJSONForEncumburanceLoperandFieldAndOperatorIn | RecipientsRelatedAwards1 | Name                      | FTC-13982                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I see "*****" with record name "FA-ST-01" in table id "---program:-:AwardFundingAccountsOldForms---"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
+    When I navigate to "Subawards" sub tab
+    Then I softly see value "*****" for title "Cumulative Obligation" against the value "BP01" inside table "---program:-:flexGridRecipientRelatedSubAwardId---"
 
-  @216119
+  @216119 @216122 @216125 @216128
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘User type’
+  |Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘Profile’|
+  |Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘User App’|
+  |Hide Expression Builder- SPI- UI- Verify hide expression can be used using Left operand as ‘Context’|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | RecipientsRelatedAwards1 | Name                      | FTC-13982                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216122
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘Profile’
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
+    When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
+    When I navigate to "Subawards" sub tab
+    Then I softly do not see "Cumulative Obligation" in flex table header "---program:-:flexGridRecipientRelatedSubAwardId---"
+    #216122
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                      | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216125
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be configured depending on ‘User App’
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserType | RecipientsRelatedAwards1 | Name                      | FTC-13982                  |
+    And I refresh the page
+    Then I softly do not see "Cumulative Obligation" in flex table header "---program:-:flexGridRecipientRelatedSubAwardId---"
+    #216125
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
-
-  @216128
-  Scenario: Hide Expression Builder- SPI- UI- Verify hide expression can be used using Left operand as ‘Context’
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | RecipientsRelatedAwards1 | Name                      | FTC-13982                  |
+    And I refresh the page
+    Then I softly do not see "Cumulative Obligation" in flex table header "---program:-:flexGridRecipientRelatedSubAwardId---"
+    #216128
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | AwardFundingAccounts-SD1 | Name                      | FTC-13598                  |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
-    Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideHideColumnJSONForEncumburanceLoperandUserApp | RecipientsRelatedAwards1 | Name                      | FTC-13982                  |
+    And I refresh the page
+    Then I softly do not see "Cumulative Obligation" in flex table header "---program:-:flexGridRecipientRelatedSubAwardId---"
 
   @217136 @217133 @217139 @wip
   Scenario: Hide Expression Builder- Admin- Config- Verify if we configure multiple hide expressions separated by ‘AND’,
