@@ -920,7 +920,7 @@ public class ProjectWebServices {
             createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName));
     }
 
-    public static void deleteRecordInHooks() {
+    public void deleteRecordInHooks() {
         List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
                 .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
 
