@@ -56,7 +56,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
                     " //div[@id='" + tableId + "']//div//span[@class='pull-right table-pager ng-scope']/span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
                     " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo' and contains(text(),'" + textContains + "')] |" +
                     " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo']//*[contains(text(),'" + textContains + "')] |" +
-                    " //div[@id='" + tableId + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[contains(text(),'" + textContains + "')]"))) {
+                    " //div[@id='" + tableId + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[contains(text(),'" + textContains + "')] |" +
+                    "//div[@id='" + tableId + "']//div[@class='row ng-scope']//span[@class='spacing bold-padded ng-binding' and contains(text(),'" + textContains + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

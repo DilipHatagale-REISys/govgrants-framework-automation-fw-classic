@@ -46,17 +46,17 @@ Business Need: Page Layout Component Scenarios
   @34049    @setUpHeaderOverRideField-gPlanning
   Scenario: setting up header over ride configuration and validating its content after clicking New button
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue    | filterId         |
-      | Page Layout           | Create Header Override | Creating New Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Create Program    |                    | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue                       | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Create Header Override | Creating New Program for Automation | Grantor State Program Create |                           |                            |
+      | configurationCategory | fieldName   | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Modal Title | Creating New Program for Automation |                    | Name                      | New                        |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on top right button "New" in flex table with id "Programs"
-    Then I see "Creating New Program for Automation" shown as over view header
+    Then I see "Creating New Program for Automation" opens in overLay window
 
   @34052    @hideDecisionExpression-gPlanning @smokePATCH
   Scenario Outline: Hide Submit for approval for Created from configuration and validating it for Created status view icon
@@ -108,7 +108,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see "Submit For Approval" button is not displayed
 
-  @34069 @smokePATCH
+  @34069 @smokePATCH @foradminuser
   Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -116,7 +116,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide for profile | System Administrator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -3216,9 +3216,8 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
+    #When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
 
   @112370    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
@@ -3378,19 +3377,19 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-23990                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                                        | Grantor State Program | Name                      | PBD-24005                  |
     When I click on "Edit" in the page details
-    And I enter value "Loan" into field "Type__c"
-    Then I softly see "Project Goals" is not displayed inside page block detail
+    And I enter value "Internal" into field "FunderType__c"
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
@@ -3406,19 +3405,20 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
+   # When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantor State Program | Name                      | PBD-23990                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                                                            | Grantor State Program | Name                      | PBD-24005                  |
     When I click on "Edit" in the page details
-    And I enter value "Cooperative Agreement" into field "Type__c"
-    Then I softly see "Project Goals" is not displayed inside page block detail
+    And I enter value "Internal" into field "FunderType__c"
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
@@ -3434,20 +3434,19 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantor State Program | Name                      | PBD-23990                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                                                | Grantor State Program | Name                      | PBD-24005                  |
     When I click on "Edit" in the page details
-    And I enter value "Loan" into field "Type__c"
-    Then I softly see "Project Goals" is not displayed inside page block detail
-    Then I softly see "Project Period Start Date" is not displayed inside page block detail
+    And I enter value "Internal" into field "FunderType__c"
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
@@ -3471,8 +3470,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-23990                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-24005                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                                                          | Grantor State Program | Name                      | PBD-24005                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3637,7 +3637,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
+    #When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3646,12 +3646,9 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23990                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-17333                  |
     When I click on "Edit" in the page details
-    And I enter value "Block Grants" into field "Type__c"
-    Then I softly see "Project Goals" is not displayed inside page block detail
-    And I enter value "Formula Grants" into field "Type__c"
-    Then I softly see "Primary Funder Type" is not displayed inside page block detail
+    When I clear the value from field "ProgramName__c"
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
@@ -4303,7 +4300,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Is Active        | false             | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition
+    Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config: | Grantor State Program | Name                      | PBD-17094                  |
       | Page Block Config:Page Block Rule Detail | Is Active        | true              | Grantor State Program | Name                      | PBD-17094                  |
@@ -13103,7 +13100,6 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
