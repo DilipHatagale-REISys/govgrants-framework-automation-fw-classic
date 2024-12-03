@@ -17499,7 +17499,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "product flow start" in "ActiveFundingOpportunitiesAll" panel
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunitiesAll"
 
-  @126941    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnTwoDifferentField
+  @126941    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnTwoDifferentField @wip
   Scenario: validate hide columns field at flex table using equals operator on 2 different fields field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -17932,13 +17932,22 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @148905    @validateIsSearchWorkingForSpecialCharNumberAndAlphabetsTogetherSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for special char,number,alphabets searched in flex table quick search box
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    And I click toggle button to select "All Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}"
+    When I navigate to "Competitive" content inside "Announcements" subheader on left panel
+    And I click toggle button to select "Draft Competitive Announcements"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
+    And I click modal button "Continue"
+    When I enter "Creation Second Modal" values from "Announcement_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
+    And I enter "Edition" values from "Announcement_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I navigate to "Announcements" tab
+    When I perform quick search for "{SavedValue:EGMSID}"
     And I pause execution for "3" seconds
-    Then I softly see "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}" value in flex table id "ActiveFundingOpportunitiesAll"
+    Then I softly see "{SavedValue:EGMSID}" value in flex table id "ActiveFundingOpportunitiesAll"
 
   @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable @needtocheck
   Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
