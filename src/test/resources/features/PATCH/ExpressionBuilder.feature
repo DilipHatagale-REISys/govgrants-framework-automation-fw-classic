@@ -2314,7 +2314,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I softly do not see "Information" page block displayed
 
-  @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329 @OverviewTab
+  @45311 @45316 @45317 @45319 @45320 @45322 @45323 @45324 @45325 @45327 @45329 @OverviewTab @skiponjenkins
   Scenario: Page Tab - Verify Hide expression JSON for Left Operand= Profile as "Admin" and  operator = "IN"
   |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning|
   |Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE|
@@ -2328,8 +2328,7 @@ Business Need: Expression Builder Component Scenarios
   |Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -2344,8 +2343,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantor State Program | Name                      | TAB-2673                   |
@@ -2355,8 +2353,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2673                   |
@@ -2366,8 +2363,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantor State Program | Name                      | TAB-2673                   |
@@ -2377,8 +2373,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -2388,8 +2383,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -2399,8 +2393,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
@@ -2410,8 +2403,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
@@ -2421,8 +2413,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
@@ -2432,8 +2423,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
@@ -2443,8 +2433,7 @@ Business Need: Expression Builder Component Scenarios
     And I wait for "2" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantor State Program | Name                      | TAB-2673                   |
@@ -2589,12 +2578,12 @@ Business Need: Expression Builder Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active            |                                                                                                                     | Grantor State Program | Name                      | PBD-17107                  |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                                                                | Grantor State Program | Name                      | PBD-17107                  |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetail_hide_expression_Program_Code_with_UserType_Internal_profile_Admin_With_Operator_OR | Grantor State Program | Name                      | PBD-17107                  |
     And I refresh the page
     Then I softly see "Program Code" is not displayed inside page block detail
 
-  @45313   @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smokePATCH
+  @45313   @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand=Profile_As_PM @smokePATCH @skiponjenkins
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3587,197 +3576,130 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
-  @46375    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
+  @46375 @46376 @46377 @46378 @46379 @46380 @46386 @46383 @46384 @46388 @46389 @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
   Scenario: Set up configuration for hide Website address from Overview page block details using Field (StartDate__c <= 11/30/2020) at program view page
+  |Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page|
+  |Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page|
+  |Set up configuration for display Website address from Overview page block details using Field (CFDA_Data__c != true) at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field (Number__c <= 5678) at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field (Account__r.Name = Department of Community Health) at program view page|
+  |Set up configuration for display Website address from Overview page block details using Field (Account__r.Name != Department of Community Health) at program view page|
+  |Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page|
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_lessequalto_11_30_2020 | Grantor State Program | Name                      | PBD-17748                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_StartDate_c_lessequalto_11_30_2020 | Grantor State Program | Name                      | PBD-17398                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smokePATCH
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c > 5678) at program view page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46376
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterthan_5678 | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see field "Website Address" inside page block
-
-  @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (Number__c < 5678) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterthan_5678 | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see field "Website Address" inside page block
+    #46377
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessthan_5678 | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see field "Website Address" inside page block
-
-  @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field (CFDA_Data__c = true) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessthan_5678 | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see field "Website Address" inside page block
+    #46378
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_equalto_true | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46379    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_notequalto_true
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (CFDA_Data__c != true) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_equalto_true | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see field "Website Address" inside page block
+    #46379
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_notequalto_true | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see field "Website Address" inside page block
-
-  @46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c >= 5678) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CFDA_Data_c_notequalto_true | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46380
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterequalto_5678 | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smokePATCH
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field CONTAINS OR Number at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_greaterequalto_5678 | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46386
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CONTAINS_OR_Number | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46381    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessequalto_5678
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Number__c <= 5678) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_CONTAINS_OR_Number | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46381
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessequalto_5678 | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46383    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field (Account__r.Name = Department of Community Health) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Number_c_lessequalto_5678 | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46383
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_equalto_DepartmentOfCommunityHealth | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46384    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_notequalto_DepartmentOfCommunityHealth
-  Scenario: Set up configuration for display Website address from Overview page block details using Field (Account__r.Name != Department of Community Health) at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_equalto_DepartmentOfCommunityHealth | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46384
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_notequalto_DepartmentOfCommunityHealth | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see field "Website Address" inside page block
-
-  @46388    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding AND FunderType CONTAINS at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_Account_r_Name_notequalto_DepartmentOfCommunityHealth | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see field "Website Address" inside page block
+    #46388
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_AND_FunderType_CONTAINS | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
-
-  @46389    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_OR_FunderType_CONTAINS
-  Scenario: Set up configuration for hide Website address from Overview page block details using Field ExpectedFunding OR FunderType CONTAINS at program view page
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_AND_FunderType_CONTAINS | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
+    #46389
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_OR_FunderType_CONTAINS | Grantor State Program | Name                      | PBD-17748                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Website Address" is not displayed inside page block detail
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageBlockDetailsHideExpressionWithLeftOperand_ExpectedFunding_OR_FunderType_CONTAINS | Grantor State Program | Name                      | PBD-17398                  |
+    And I refresh the page
+    Then I softly see "Website Address" is not displayed inside page block detail
 
   @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smokePATCH @wip
   Scenario: Set up configuration for display Manage funding source from side bar using (UserType IN(Internal) -gPlanning
@@ -4217,560 +4139,348 @@ Business Need: Expression Builder Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown not displayed
 
-  @47302    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
+  @47302 @47304 @47305 @47306 @47307 @47308 @47309 @47310 @47312 @47313 @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
+  |Set up configuration to display view action of parent enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of parent enhanced grid using Profile NOTIN System Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator AND UserType IN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator OR UserType IN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of parent enhanced grid using UserType IN Internal OR Profile IN PM and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of parent enhanced grid using UserType IN Internal AND Profile IN PM and validating it inside enhanced of program-planning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is not displayed inside flex table
-
-  @47304    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal @egrid
-  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47304
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is displayed inside flex table
-
-  @47305    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smokePATCH @egrid
-  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47305
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is not displayed inside flex table
-
-  @47306    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator @egrid
-  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile NOTIN System Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                          |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47306
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is displayed inside flex table
-
-  @47307    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal @egrid
-  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator AND UserType IN Internal and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                          |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47307
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is not displayed inside flex table
-
-  @47308    @hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal @egrid
-  Scenario: Set up configuration to hide view action of parent enhanced grid using Profile IN System Administrator OR UserType IN Internal and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                          |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47308
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is not displayed inside flex table
-
-  @47309    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH @egrid
-  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                          |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47309
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is displayed inside flex table
-
-  @47310    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @egrid
-  Scenario: Set up configuration to display view action of parent enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                          |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+   #47310
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is displayed inside flex table
-
-  @47312    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM @egrid
-  Scenario: Set up configuration to hide view action of parent enhanced grid using UserType IN Internal OR Profile IN PM and validating it inside enhanced of program-planning
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47312
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is not displayed inside flex table
-
-  @47313    @hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM @egrid
-  Scenario: Set up configuration to display view action of parent enhanced grid using UserType IN Internal AND Profile IN PM and validating it inside enhanced of program-planning
+      | configurationCategory | fieldName            | fieldNewValue                                                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47313
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "BP01" is displayed inside flex table
+      | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
-  @47315    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
+  @47315 @47316 @47318 @47319 @47320 @hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserApp IN State As grantor and validating it inside enhanced of program-planning
+  |Set up configuration to display edit action of parent enhanced grid using UserApp NOTIN State As grantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide edit action of parent enhanced grid using UserType IN Applicant Internal Reviewer and validating it inside enhanced of program-planning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
-
-  @47316    @hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor @egrid
-  Scenario: Set up configuration to display edit action of parent enhanced grid using UserApp NOTIN State As grantor and validating it inside enhanced of program-planning
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47316
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is displayed inside flex table
-
-  @47318    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @smokePATCH @egrid
-  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47318
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
-
-  @47319    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor @egrid
-  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47319
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
-
-  @47320    @hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer @egrid
-  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Applicant Internal Reviewer and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #47320
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
-  @47322    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
+  @47322 @47323 @47324 @47326 @47329 @47330 @47331 @47332 @47333 @47334 @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal @smokePATCH @egrid
   Scenario: Set up configuration to hide view action of child enhanced grid using UserType IN Internal and validating it inside enhanced of program-planning
+  |Set up configuration to display view action of child enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of child enhanced grid using profile NOTIN system Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to hide view action of child enhanced grid using profile IN system Administrator OR User type IN Internal and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning|
+  | Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning|
+  |Set up configuration to display view action of child enhanced grid using user type IN internal AND profile IN PM and validating it inside enhanced of program-planning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is not displayed inside flex table
-
-  @47323    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal @egrid
-  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOTIN Internal and validating it inside enhanced of program-planning
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47323
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is displayed inside flex table
-
-  @47324    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator @smokePATCH @egrid
-  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47324
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is not displayed inside flex table
-
-  @47326    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator @egrid
-  Scenario: Set up configuration to display view action of child enhanced grid using profile NOTIN system Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47326
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is displayed inside flex table
-
-  @47329    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal @egrid
-  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator AND User type IN Internal and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47329
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    ##When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is not displayed inside flex table
-
-  @47330    @hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal @egrid
-  Scenario: Set up configuration to hide view action of child enhanced grid using profile IN system Administrator OR User type IN Internal and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47330
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is not displayed inside flex table
-
-  @47331    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smokePATCH @egrid
-  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47331
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                                    | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is displayed inside flex table
-
-  @47332    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @egrid
-  Scenario: Set up configuration to display view action of child enhanced grid using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47332
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Overview" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is displayed inside flex table
-
-  @47333    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM @egrid
-  Scenario: Set up configuration to hide view action of child enhanced grid using user type IN internal OR profile IN PM and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47333
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is not displayed inside flex table
-
-  @47334    @hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM @egrid
-  Scenario: Set up configuration to display view action of child enhanced grid using user type IN internal AND profile IN PM and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47334
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "View" icon for "Personnel" is displayed inside flex table
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
 
-  @47335    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
+  @47335 @47337 @47338 @47339 @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
+  |Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
+  |Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is not displayed inside flex table
-
-  @47336    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor @egrid
-  Scenario: Set up configuration to display Edit action of child enhanced grid using userApp NOTIN State As Grantor and validating it inside enhanced of program-planning
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47336
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is displayed inside flex table
-
-  @47337    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor @egrid
-  Scenario: Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47337
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is not displayed inside flex table
-
-  @47338    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor @egrid
-  Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47338
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is not displayed inside flex table
-
-  @47339    @hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer @egrid
-  Scenario: Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #47339
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is not displayed inside flex table
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
 
   @48480    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using UserType IN Internal and validating it inside flex table of program-planning
@@ -5823,12 +5533,11 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
 
-  @45314 @OverviewTab   @hide_expression_using_left_operand_profile_NOTIN
+  @45314 @OverviewTab   @hide_expression_using_left_operand_profile_NOTIN @skiponjenkins
   Scenario: Hide Overview sub tab with left operand profile NOTIN -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Tabs Config      | Is Active            | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
@@ -5838,7 +5547,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I cannot see "Overview" sub tab at view detail page
+    Then I softly cannot see "Overview" sub tab at view detail page
 
   @82039 @82057  @debug @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide expression JSON for multiple AND groups at row level action - enhanced grid
@@ -10707,15 +10416,16 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-3330                   |
+      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Annoucement External Profile-FOA | Name                      | TAB-3087                     |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    Then I do not see "Collab" subtab is present in page details
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I perform quick search for "AN-REI-012" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "AN-REI-012" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    Then I softly cannot see "Overview" sub tab at view detail page
 
   @201074
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should  see page tab
@@ -10804,8 +10514,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab for export functionality
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active            | true              | ApiGeneratedId:0 |
-      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2733                   |
