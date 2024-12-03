@@ -7883,7 +7883,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
+    When I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
