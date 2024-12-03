@@ -3024,6 +3024,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Step Order | Step Name   | Description            | X_End Date |
       | 4          | Test Review | Automation Description | 11/8/2028  |
     And I pause execution for "5" seconds
+    When I navigate to "Setup" sub tab
     Then I see "11/8/2028" shown inside enhanced grid table for specified record "Test Review"
     Examples:
       | newFieldsApi                                                          | defaultFieldsApi                                           |
