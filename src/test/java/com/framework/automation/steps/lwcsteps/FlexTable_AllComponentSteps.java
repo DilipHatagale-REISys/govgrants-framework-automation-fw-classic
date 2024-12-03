@@ -98,4 +98,9 @@ public class FlexTable_AllComponentSteps {
     public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String description, String button, String tableId) {
         flexTable_AllComponentPage.assertIfDescriptionButtonDisplayed(usage, description, button, tableId);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" button is enabled in flex table")
+    public void iSeeButtonIsEnabledInFlexTable(String usage, String icon) {
+        flexTable_AllComponentPage.assertButtonIsDisplayed(usage, icon);
+    }
 }
