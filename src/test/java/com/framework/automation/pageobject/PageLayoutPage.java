@@ -3901,4 +3901,27 @@ public class PageLayoutPage extends GovGrantsManager {
         govgrants.perform().flexTable().selectCheckBoxes(flexTableId, recordValue);
         govgrants.perform().phasePanel().clickAnyRightPannelButton(flexTableId, buttonName);
     }
+
+    public void assertIfFieldIsReadOnly(String usage, String fieldname) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isFieldIsReadOnlyOnPagelayout(fieldname));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isFieldIsReadOnlyOnPagelayout(fieldname));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isFieldIsReadOnlyOnPagelayout(fieldname)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFieldIsReadOnlyOnPagelayout(fieldname)).isFalse();
+        }
+    }
+
+    private boolean isFieldIsReadOnlyOnPagelayout(String fieldname) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@field-name='" + fieldname + "']//input"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

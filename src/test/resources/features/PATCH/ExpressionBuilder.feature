@@ -10397,8 +10397,8 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     When I click toggle button to select "Not Yet Qualified Opportunities - All"
-    And I perform quick search for "AN-REI-012" in "---applicationReview:-:reviewsTableId---" panel
-    When I click on "View" icon for "AN-REI-012" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    And I perform quick search for "AN-REI-012" in "---applicationReview:-:reviewsTableId1---" panel
+    When I click on "View" icon for "AN-REI-012" inside flex table with id "---applicationReview:-:reviewsTableId1---"
     Then I softly cannot see "Overview" sub tab at view detail page
 
   @201074

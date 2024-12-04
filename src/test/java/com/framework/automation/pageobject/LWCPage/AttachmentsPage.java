@@ -23,7 +23,7 @@ public class AttachmentsPage extends GovGrantsManager {
     }
 
     public void iSoftlyCanSeeRowLevelActionButtonTableName(String usage, String icon, String fileName, String tableName) {
-        if (usage.equalsIgnoreCase("can see")) {
+        if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isActionButtonDisplaed(icon, fileName, tableName));
         } else if (usage.equalsIgnoreCase("cannot see")) {
             Assert.assertFalse(isActionButtonDisplaed(icon, fileName, tableName));
@@ -58,7 +58,7 @@ public class AttachmentsPage extends GovGrantsManager {
     private boolean totalRecordDisplayedOrNot(String record, String tableName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')] | //div[@id='" + tableName + "']//span[contains(text(),'" + record + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public class AttachmentsPage extends GovGrantsManager {
     private boolean isActionButtonDisplaed(String icon, String fileName, String tableName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "'] |//*[text()='" + tableName + "']/ancestor::div/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@title='" + tableName + "']//ancestor::div[@class='panel-heading']//following-sibling::div//table//*[contains(text(),'" + fileName + "')]/ancestor::td//following-sibling::td//*[contains(@ng-if,'" + icon + "') or contains(@title,'" + icon + "')] | //a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "'] |//*[text()='" + tableName + "']/ancestor::div/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

@@ -711,7 +711,7 @@ public final class PageDetails {
      * @author komal.mukhekar
      */
     public void getHelpTextAtModalWindow(String modalFieldTitle) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@id,'modal')]//span[contains(text(),'" + modalFieldTitle + "')]/..//span[@class='fa fa-info helpIcon']/following-sibling::span | //label[contains(text(),'" + modalFieldTitle + "')]//span"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@id,'modal')]//span[contains(text(),'" + modalFieldTitle + "')]/..//span[@class='fa fa-info helpIcon']/following-sibling::span"));
     }
 
     /**
@@ -747,7 +747,8 @@ public final class PageDetails {
         I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')] |" +
                 "//div[@class='pull-right']//input[@value='" + blockTitle + "'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + blockTitle + "'] |" +
-                "//dd/*[text()='" + blockTitle + "']/ancestor::dl//*[@class='fa fa-info helpIcon']"));
+                "//dd/*[text()='" + blockTitle + "']/ancestor::dl//*[@class='fa fa-info helpIcon'] | " +
+                "//span[contains(text(),'" + blockTitle + "')]//ancestor::a//following-sibling::span//helpicon"));
     }
 
     /**

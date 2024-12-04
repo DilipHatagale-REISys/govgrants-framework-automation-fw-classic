@@ -70,6 +70,7 @@ public class ProjectWebServices {
         assertStatusCode(response);
         return response.jsonPath().getMap("$");
     }
+
     public static Response getRecordId(String recordName, String fieldName, String objectType, String outputFieldName) {
         String finalEndPoint = endPoint + "/services/apexrest/productAutomationGetFieldValue?objectType=" + objectType
                 + "&fieldValue=" + recordName + "&fieldName=" + fieldName + "&outputFieldName=" + outputFieldName;
@@ -1018,7 +1019,9 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
+
     private void deleteFDM(List<String> recordNames) {
+
 
         for (String record : recordNames) {
             if (StringUtils.containsIgnoreCase(record, "desk review")) {
@@ -1085,6 +1088,7 @@ public class ProjectWebServices {
     }
 
     private void deleteSiteVisit(String recordName) {
+
         deletionApi(recordName, "Site Visit");
     }
 

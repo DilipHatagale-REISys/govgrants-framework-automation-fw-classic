@@ -59,6 +59,11 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertEnhancedFlexGridRecordSelectionEnabled();
     }
 
+    @Then("^I do not see select check box enabled in enhanced flex grid$")
+    public void assertOptionEnabledInFlexTableOrNot() {
+        enhancedFlexGrid.assertEnhancedFlexGridRecordSelectionDisable();
+    }
+
     @Then("^I see no new tab is opened for action item in enhanced flex grid$")
     public void assertNoNewTabOpensOnEditClickForEnhancedGrid() {
         enhancedFlexGrid.assertEditOpenInSameTabForEnhancedGrid();
@@ -240,6 +245,10 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGrid(fieldApiName);
     }
 
+    @Then("^I do not see over all total for \"([^\"]*)\" at enhanced grid$")
+    public void assertOverAllTotalCellDisableValueAtTotalAdjustedAmountColumn(String fieldApiName) {
+        enhancedFlexGrid.assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGridDisable(fieldApiName);
+    }
     @Then("^I see upArrow for multiple field at enhanced grid")
     public void assertUpArrowForMultipleField() {
         enhancedFlexGrid.assertUpArrowWithSortingAtMultipleField();
@@ -248,6 +257,11 @@ public class EnhancedFlexGridSteps {
     @Then("^I see over all total sum is not displayed for \"([^\"]*)\" inside \"([^\"]*)\" table$")
     public void assertUpArrowForMultipleField(String fieldApiName, String tableId) {
         enhancedFlexGrid.assertOverAllTotalNotDisplayed(fieldApiName, tableId);
+    }
+
+    @Then("^I see over all total sum is displayed for \"([^\"]*)\" inside \"([^\"]*)\" table$")
+    public void assertOverAllTotalNotDisplayedInTable(String fieldApiName, String tableId) {
+        enhancedFlexGrid.assertOverAllTotalDisplayed(fieldApiName, tableId);
     }
 
     @Then("I (see|do not see) \"([^\"]*)\" field is editable inside enhanced grid$")
