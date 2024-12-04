@@ -158,11 +158,11 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42492    @hideExpressioJsonForRightOperandForUserType-Reviewer-gAnnouncement
+  @42492  @hideExpressioJsonForRightOperandForUserType-Reviewer-gAnnouncement
   Scenario: validate disabling of create button for user type Reviewer from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | Create                     |
+      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                          |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunitiesAll | Name                      | New                        |
@@ -4421,11 +4421,12 @@ Business Need: Expression Builder Component Scenarios
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
 
-  @47335 @47337 @47338 @47339 @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
+  @47335 @47337 @47338 @47339 @82263 @hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor @smokePATCH @egrid
   Scenario: Set up configuration to hide Edit action of child enhanced grid using userApp IN State As Grantor and validating it inside enhanced of program-planning
   |Set up configuration to hide Edit action of child enhanced grid using  UserType IN Internal AND UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
   |Set up configuration to hide Edit action of child enhanced grid using UserType IN Internal OR UserApp IN StateasGrantor and validating it inside enhanced of program-planning|
   |Set up configuration to hide Edit action of child enhanced grid using UserType IN Applicant, Internal, Reviewer and validating it inside enhanced of program-planning|
+  |Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at row level action - enhanced grid|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
@@ -4478,6 +4479,16 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
+    And I refresh the page
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
+    #82263
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_Multiple_AND_OR_group_at_row_level_action | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -5549,9 +5560,10 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I softly cannot see "Overview" sub tab at view detail page
 
-  @82039 @82057  @debug @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
+  @82039 @82057 @82059 @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide expression JSON for multiple AND groups at row level action - enhanced grid
   |Verify Hide expression JSON for multiple OR groups at row level action - enhanced grid|
+  |Verify Hide expression JSON by using OR and AND operator in multiple groups at row level action - enhanced grid|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
@@ -5575,29 +5587,20 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_OR_group_at_row_level_action | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
-
-
-  @82059    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
-  Scenario: Verify Hide expression JSON by using OR and AND operator in multiple groups at row level action - enhanced grid
+   #82059
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson1 | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "Edit" icon for "BP01" is not displayed inside flex table
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson1 | ProgramReviewStepTemplates | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
-  @82065  @82254  @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtTopLevelActions-EGrid @enhancedGrid @egrid
+  @82065  @82254  @82256 @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtTopLevelActions-EGrid @enhancedGrid @egrid
   Scenario: Verify Hide expression JSON for multiple AND groups at top level action - enhanced grid
   |Verify Hide expression JSON for multiple OR groups at top level action - enhanced grid|
+  |Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced grid|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
@@ -5621,42 +5624,15 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_OR_group_at_top_level_action | ProgramReviewStepTemplates | Name                      | New                        |
     And I refresh the page
     Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
-
-  @82256    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByORAndANDOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
-  Scenario: Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced grid
+    #82256
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_action | EnhanceAppGrantorBudgetPeriods | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    Then I see no "New" button inside "Budget Periods" enhanced grid
-
-  @82263    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
-  Scenario: Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at row level action - enhanced grid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_ChildTable_Multiple_AND_OR_group_at_row_level_action | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see "Edit" icon for "Personnel" is not displayed inside flex table
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_action | ProgramReviewStepTemplates | Name                      | New                        |
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
 
   @82268    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at top level action - enhanced grid
@@ -5664,18 +5640,17 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_action | EnhanceAppBudCatGrantorFlexGrid | Name                      | Test New                   |
+      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_actionForChild | ProgramReviewStepTemplates | Name                      | Test New                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "Edit" icon for "PG-REI-2183" inside table
-    When I navigate to "Budget" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I see no "Test New" button inside "Budget Categories" enhanced grid
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I navigate to "Setup" sub tab
+    When I expand nested table containing column value "Pre-Screen Review"
+    Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
 
   @82364    @verifyHideExpressionJSONAtDataTableEnhanceProgramContactsForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @flexTableEnhanced @smokePATCH
   Scenario: Verify Hide expression JSON at enhanced data table by using OR and AND operator in multiple groups at row level action - enhanced data table
@@ -6915,7 +6890,6 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Pre-Screen Review"
     Then I see "Review Form" icon for "Pre-Screen" is displayed inside flex table
 
