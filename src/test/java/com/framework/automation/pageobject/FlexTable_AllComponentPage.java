@@ -146,7 +146,9 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']/div//span/a[@title='" + button + "'] |" +
                     " //div[@id='" + tableId + "']//div[@class='" + button + "']|" +
                     " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div/div[@class='" + button + "']/div/input[@id='quickSearchAllText'] |" +
-                    "//div[@id='" + tableId + "']//div/div/div[@align='right']/div//span/a[@title='" + button + "']"))) {
+                    "//div[@id='" + tableId + "']//div/div/div[@align='right']/div//span/a[@title='" + button + "'] |" +
+                    "//div[@id='" + tableId + "']//div/div//*[contains(@aria-label,'" + button + "')] | " +
+                    "//div[@id='" + tableId + "']//preceding-sibling::div//*[@title='" + button + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

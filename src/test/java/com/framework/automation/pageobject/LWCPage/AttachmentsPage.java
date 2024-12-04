@@ -58,7 +58,7 @@ public class AttachmentsPage extends GovGrantsManager {
     private boolean totalRecordDisplayedOrNot(String record, String tableName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')] | //div[@id='" + tableName + "']//span[contains(text(),'" + record + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
