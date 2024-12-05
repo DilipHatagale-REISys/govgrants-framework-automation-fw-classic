@@ -620,8 +620,7 @@ public final class FlexTable implements FlexTableComponent {
                     + I.amPerforming().sanityOfXpathTo().equals("text()", uniqueColumnValue) + "]"
                     + "/ancestor::tr[1]";
         }
-        desiredAction += "//td//*[" + I.amPerforming().sanityOfXpathTo().equals("@title", iconName) + "] | //td//following-sibling::td//action//*[@title='" + iconName + "'] |" +
-                "//div[@id='" + flexTableId + "']//div[@class='row ng-scope']//td//span[@title='" + uniqueColumnValues + "']/ancestor::div//td//div[@class='actionColIconWrap']//span//a[@title='" + iconName + "']";
+        desiredAction += "//td//*[" + I.amPerforming().sanityOfXpathTo().equals("@title", iconName) + "]";
         return By.xpath(desiredAction);
     }
 
