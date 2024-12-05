@@ -1012,7 +1012,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see select check box enabled in enhanced flex grid
 
-  @35441    @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smokePATCH
+  @35441 @editActionOpensInSameWindowForEnhancedGrid-gPlanning @smokePATCH @localrungrid
   Scenario Outline: validate enhanced flex grid action field Edit opens in same window planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1245,7 +1245,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Pre-Screen Review"
     Then I see "*****" shown inside enhanced grid table for specified record "Review Response Shared"
 
-  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
+  @41370    @readOnlyCellJSONFieldAtEnhancedGrid-gPlanning @smokePATCH @localrungrid
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1285,7 +1285,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I do not see "currencytest" in flex table header "ProgramReviewStepTemplatesFlexToggle"
 
-  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smokePATCH
+  @41376    @readOnlyColumnJSONFieldAtEnhancedGrid-gPlanning @smokePATCH @localrungrid
   Scenario: Changing specific cell value to read only of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1304,7 +1304,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Pre-Screen Review" inside table
     Then I softly see field "Weight__c" is not editable
 
-  @41465    @iconCssFieldAtEnhancedGridActionItem-gPlanning
+  @41465    @iconCssFieldAtEnhancedGridActionItem-gPlanning @localrungrid
   Scenario: Setup icon for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1981,7 +1981,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Pre-Screen Review"
     Then I see "New" button inside "Review Forms" enhanced grid
 
-  @45300 @smokePATCH @6thpagererun
+  @45300 @smokePATCH
   Scenario: row from config anf validating it inside enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2021,7 +2021,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Test New" icon for "---program:-:flexGridEnhancedReviewStepID---" is at position "3" inside flex table
 
-  @45308 @smokePATCH @6thpagererun
+  @45308 @smokePATCH
   Scenario: Verify  Sequence field at child flex table action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5844,7 +5844,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Pre-Screen Review"
-    Then I see "Edit" icon for "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" is at position "1" inside flex table
+    When I click on "Edit" icon for "Pre-Screen" inside table
+    Then I see field "PanelName__c" is editable field
 
   @wip @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid @doubted
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
@@ -5879,8 +5880,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-13587                  |
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhanceAppBudCateGrantorFlexTable | Name                      | {flexgrid:BudgetRequest__c} |
     Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
     When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
     And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
@@ -5891,9 +5892,10 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
     And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
     When I navigate to "Budget" sub tab
-    Then I see cell subtotal as expected as given formula at "FeeFundRequested__c" field
+    When I expand nested table containing column value "BP01"
+    Then I see cell subtotal as expected as given formula at "BudgetRequest__c" field
 
-  @49355 @enhancedGrid @6thpagererun
+  @49355 @enhancedGrid
   Scenario: Verifying Enable Sub  Total (Child Flex Table )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -5967,8 +5969,15 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218437 @218438 @6thpagererun
+  @218437 @218438
   Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon
+  |Header instruction- PM- UI- Verify if given header help text is getting displayed under 'i' icon|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue                                                                                                          | filterId         |
+      | Flex Grid             | Header Help Text | This section is used for setting up the review process that will be used when an Announcement is drafted for this Program. | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Header Help Text | This section is used for setting up the review process that will be used when an Announcement is drafted for this Program. | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -5979,7 +5988,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     When I hovering mouse on help text icon inside "Review Steps"
-    Then I see "The table below lists the application review steps associated with this announcement." shown as help text
+    Then I see "This section is used for setting up the review process that will be used when an Announcement is drafted for this Program." shown as help text
 
     Examples:
       | User |
@@ -6113,7 +6122,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218430 @218435 @6thpagererun
+  @218430 @218435
   Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6130,7 +6139,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly see "Budget Summary" page block displayed
 
-  @218436 @6thpagererun
+  @218436
   Scenario: Is active- SPI- UI- Verify flex table should not be displayed
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6147,7 +6156,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly do not see "Budget Summary" page block displayed
 
-  @218445 @218442 @6thpagererun
+  @218445 @218442
   Scenario Outline: Display Field Names - SPI- UI- Verify if all fields from 'Display field names' are getting displayed on flex Table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -6171,7 +6180,7 @@ Business Need: EnhancedGrid Component Scenarios
       | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
       | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
 
-  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid @6thpagererun
+  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
   |Page Size- PM- UI- Verify dropdown appears on UI to select page size manually|
   |To verify that user is able to see Page size at bottom of the parent table, when Page size config is enabled|
@@ -6212,7 +6221,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218448 @352285 @6thpagererun
+  @218448 @352285
   Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6228,7 +6237,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Then I see "Entries" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
   @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
@@ -6256,7 +6265,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218451 @352431 @6thpagererun
+  @218451 @352431
   Scenario: Page Size- SPI- UI- Verify dropdown to select page size manually should not appear on UI
   SPI-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
@@ -6275,26 +6284,28 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218452 @218453 @6thpagererun
+  @218452 @218453
   Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Grid:General     | Default Page Size          | 5                 | ApiGeneratedId:0 |
       | Flex Grid:General     | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Default Page Size          | 5             | ProgramReviewStepTemplates |                           |                            |
-      | Flex Grid:General     | Enable Total Records Count | true          | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size          | 5             | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Enable Total Records Count | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
     When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I navigate to "Setup" sub tab
-    Then I softly see "Review Steps" page block displayed
-    Then I see table contains "Showing 1 to 3" inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP01"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
     Examples:
       | User |
@@ -6360,7 +6371,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218454 @6thpagererun
+  @218454
   Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6378,7 +6389,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218466 @352422 @6thpagererun
+  @218466 @352422
   Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6396,7 +6407,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2024-2034)"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218463 @352269 @6thpagererun
+  @218463 @352269
   Scenario:Pagination - SPI- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6539,7 +6550,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @206022 @206016 @6thpagererun
+  @206022 @206016
   Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
   |Menu- SPI- UI- Verify Menu option appears on UI|
     Given I am on "SUBPORTAL" portal
@@ -6565,46 +6576,23 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Default Page Size | 5                 | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size  | false         | ProgramReviewStepPanelTemplates |                           |                            |
-      | Flex Grid:General     | Default Page Size | 5             | ProgramReviewStepPanelTemplates |                           |                            |
-      | Flex Table:General    | Enable Pagination | true          | ProgramReviewStepPanelTemplates |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Table:General    | Enable Pagination | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
     When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I navigate to "Setup" sub tab
-    When I expand nested table containing column value "Pre-Screen Review"
-    #379207
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing1  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing2  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing3  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing4  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing5  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
-    When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
-      | Form Name | Form Weight (%) |
-      | Testing6  | 0               |
-    When I expand nested table containing column value "Pre-Screen Review"
+    And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP01"
     #379209
-    Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+    Then I see pagination "Next" arrow displayed inside table id "---program:-:EnhanceAppBudCateGrantorTableId---"
 
     Examples:
       | User |
@@ -7034,7 +7022,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @296617 @296623 @6thpagererun
+  @296617 @296623
   Scenario Outline: Admin_Parent table_Verified that user is able to add all characters, Sp. Characters and digits in help text
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                                            | filterId         |
@@ -7059,7 +7047,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   | @#$%^&*()!  |
 
-  @296627 @296628 @6thpagererun
+  @296627 @296628
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
@@ -7294,11 +7282,13 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
       | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
       | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepTemplates      | Name                      | {flexgrid:stepWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7320,7 +7310,7 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @296767 @296768 @6thpagererun
+  @296767 @296768
   Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -7795,23 +7785,6 @@ Business Need: EnhancedGrid Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @218469
-  Scenario: Record Selection- SPI- UI- Verify ‘Record Selection Column’ displays on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection | true          | RecGrantBudgetPeriods | Name                      |                            |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see select check box enabled in flex table
-
   @218472
   Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
     Given I have "default" configuration as below:
@@ -7829,20 +7802,22 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I do not see select check box enabled in flex table
 
-  @218475 @218478 @6thpagererun
-  Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI    Given I have "default" configuration as below:
+  @218475 @218478 @218469
+  Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI
+  |Record Selection- SPI- UI- Verify Record Selection Column rendered on desired position on UI|
+  |Record Selection- SPI- UI- Verify ‘Record Selection Column’ displays on UI|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Record Selection | true          | RecGrantBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{flexgrid:AutomationPermanantApplication}"
+    When I click on "View" icon for "{flexgrid:AutomationPermanantApplication}" inside table
     When I navigate to "Budget" sub tab
     Then I see select check box enabled in enhanced flex grid
 
