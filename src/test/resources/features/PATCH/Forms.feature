@@ -58,13 +58,24 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @206307 @206310
   Scenario: All forms- SPI- UI- Verify forms displays under All forms page block
   All forms- SPI- UI- Verify Actions like Preview, view, edit are available
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon for "Created" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---" without waiting for record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
     Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
