@@ -60,3 +60,8 @@ Given I setup test configuration as below:
   | booleanValue | integerValue | id | description | name|
 
 4.
+
+
+************************HideJa : sonExpression**********************************
+Program should in active state : ProgramRecordUsedForExpBuilder
+Grant should be in active state with notes added in files tab with tile Notes one and subaward amount 1000 : GrantActiveHideJason

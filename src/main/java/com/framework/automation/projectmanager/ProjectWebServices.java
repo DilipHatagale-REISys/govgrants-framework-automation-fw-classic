@@ -121,7 +121,7 @@ public class ProjectWebServices {
         }
     }
 
-    private static String defaultEndPointGetToken() {
+    private String defaultEndPointGetToken() {
         String defaultEndPointGetToken = "";
         if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
@@ -341,7 +341,7 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
-    public static void deletionApi(String recordName, String objectType) {
+    public void deletionApi(String recordName, String objectType) {
         System.out.print("Making API call... ");
         getAuthToken();
         try {
@@ -558,7 +558,7 @@ public class ProjectWebServices {
     /**
      * get token for authentication of Delete request
      */
-    private static void getAuthToken() {
+    private void getAuthToken() {
         Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), "Authorization", "Bearer ", null);
         tokenString = response.body().jsonPath().getString("access_token");
     }
@@ -921,7 +921,7 @@ public class ProjectWebServices {
             createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName));
     }
 
-    public static void deleteRecordInHooks() {
+    public void deleteRecordInHooks() {
         List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
                 .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
 
@@ -999,7 +999,7 @@ public class ProjectWebServices {
         }
     }
 
-    private static void deleteAward(String recordName) {
+    private void deleteAward(String recordName) {
         deletionApi(recordName, "Progress Report");
         deletionApi(recordName, "Progress Report");
         deletionApi(recordName, "Amendment Request");
@@ -1019,7 +1019,9 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
-    private static void deleteFDM(List<String> recordNames) {
+
+    private void deleteFDM(List<String> recordNames) {
+
 
         for (String record : recordNames) {
             if (StringUtils.containsIgnoreCase(record, "desk review")) {
@@ -1058,34 +1060,35 @@ public class ProjectWebServices {
         }
     }
 
-    public static void deleteAnnouncement(String recordName) {
+    public void deleteAnnouncement(String recordName) {
         deletionApi(recordName, "APPLICATION REVIEWS");
         deletionApi(recordName, "Application");
         deletionApi(recordName, "PreApplication");
         deletionApi(recordName, "Announcement");
     }
 
-    private static void deleteFocusArea(String recordName) {
+    private void deleteFocusArea(String recordName) {
         deletionApi(recordName, "Focus Area");
     }
 
-    private static void deleteFundingSource(String recordName) {
+    private void deleteFundingSource(String recordName) {
         deletionApi(recordName, "Funding Source");
     }
 
-    private static void deleteKPI(String recordName) {
+    private void deleteKPI(String recordName) {
         deletionApi(recordName, "KPI");
     }
 
-    private static void deleteProgram(String recordName) {
+    private void deleteProgram(String recordName) {
         deletionApi(recordName, "Program");
     }
 
-    private static void deleteStrategicPlan(String recordName) {
+    private void deleteStrategicPlan(String recordName) {
         deletionApi(recordName, "Strategic Plan");
     }
 
-    private static void deleteSiteVisit(String recordName) {
+    private void deleteSiteVisit(String recordName) {
+
         deletionApi(recordName, "Site Visit");
     }
 
