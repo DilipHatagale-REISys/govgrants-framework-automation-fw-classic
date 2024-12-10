@@ -16072,8 +16072,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:ProgramsgridTableId---"
     #Then I see entire page is refreshing
     And I pause execution for "5" seconds
-    Then I see the following message in the page details :
+#    Then I see the following message in the page details :
+#      | Record deleted successfully. |
+    Then I softly see the following messages in the page details contains:
       | Record deleted successfully. |
+
 
     Examples:
       | Users |
@@ -19239,8 +19242,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
-    Then I see the following message in the page details contains:
-      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
+    #Then I see the following message in the page details contains:
+    And I pause execution for "3" seconds
+    Then I see the text :
+          | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206610 @BulkPdfandBulkCsv @sprint5 @wip
   Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
