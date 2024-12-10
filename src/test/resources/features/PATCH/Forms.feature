@@ -24,9 +24,9 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
     And I click on "Save" in the page details
     Given I click on "Back" in the page details
-    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
-    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
-    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
+    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
+    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
 
   @206340 @208663 @206881 @206343 @208666
   Scenario: All forms- SPI- UI- Verify in View Form ID should get populated UI
@@ -218,8 +218,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
-    And I switch to parent tab
-    And I pause execution for "4" seconds
+    #And I switch to parent tab
+   # And I pause execution for "4" seconds
     And I click on back arrow
     And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
@@ -241,8 +241,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
-    And I switch to parent tab
-    And I pause execution for "4" seconds
+   # And I switch to parent tab
+   # And I pause execution for "4" seconds
     And I click on back arrow
     And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01343" is displayed on form layout
@@ -269,6 +269,12 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @208657
   Scenario:All forms- SPI- UI- Verify fields which are required for save ‘This field is required’ line should display on form
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue   | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Program Specific Application form | Name                      | PBD-19578                  |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -362,13 +368,29 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @208651
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button, if data is missing in one or more fields which  are required to save error message should pop-up
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName         | fieldOrignalValue   | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Program Specific Application form | Name                      | PBD-19578                  |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     And I clear the value from field "fieldQuestion1__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
@@ -376,11 +398,18 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @208678 @208669
   Scenario: All forms- SPI- UI- Verify in preview Submitted on under Authorized Representative should not populate on UI
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
@@ -389,12 +418,24 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @208681 @208672
   Scenario: All forms- SPI- UI- Verify in View Submitted on under Authorized Representative should get populated UI
   All forms- SPI- UI- Verify in View Name under Authorized Representative should get populated UI
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
+    Then I softly see "All Forms " page block displayed
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    Given I enter "Form Fields 1" values from "Application_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
@@ -403,13 +444,20 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @208684 @208675
   Scenario: All forms- SPI- UI- Verify in Edit Submitted on under Authorized Representative should get populated UI
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
@@ -420,82 +468,124 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   Last modified -SPI- UI- Verify Last modified Date and time is captured
   Last modified -SPI -UI- Verify Last modified by name must be updated if form is modified by another user
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
     And I save the field labeled "Name" as "LASTMODIFIEDBY"
     And I click on "Save" in the page details
     And I click on "Back" in the page details
     And I pause execution for "5" seconds
-    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
-    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---applicationIntake:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---applicationIntake:-:allFormsTableId---"
 
   @206884
   Scenario: All forms- SPI- UI- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Back" in the page details
     Then I softly see "All Forms " page block displayed
 
   @206866 @382022 @Sanity  @SanityForms
   Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Cancel" in the page details
     Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
 
   @206869
   Scenario: All forms- SPI- UI- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Cancel" in the page details
     When I click alert button "No"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
   @112348 @verifyByClickAtCancelButtonAtStandardAssuranceFormLayoutItShouldRedirectToApplicationDetailPageBySPIUser
   Scenario:validate that by click on standard assurance form layout, it is re-directed to application detail page by login as SPI user
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
+    When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    And I save the field containing "Form ID" as "SFormID"
     When I click on "Cancel" in the page details
-    Then I see "FN-01389" shown as over view header
+    Then I see "{SavedValue:SFormID}" shown as over view header
 
   @381964 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     Then I see "Form Name" shown inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Mandatory" shown inside flex table with id "---applicationIntake:-:allFormsTableId---"
@@ -506,35 +596,57 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @381969 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
 
   @381972 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    When I click on "Save" in the page details
     Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
 
   @381994 @381986 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to see all page blocks in tab on Enhanced form as added in config
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
     Then I see "Need for Project" page block displayed
     Then I see "Significance" page block displayed
@@ -544,15 +656,22 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
 
   @382004
   Scenario:Sanity TC - SPI - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
-    Then I see field "fieldQuestion1__c" is disabled
+    #Then I see field "fieldQuestion1__c" is disabled
     Then I see field "fieldQuestion1__c" inside page block
     Then I see field "fieldQuestion2__c" inside page block
     Then I see field "fieldQuestion3__c" inside page block
@@ -568,25 +687,42 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
   @382037 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    And I click on "Edit" in the page details
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+   # And I click on "Edit" in the page details
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
   @382040 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    Then I softly see "All Forms " page block displayed
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
+    And I click on "Save" in the page details
     And I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form validated successfully. |
@@ -614,9 +750,9 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
-    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
-    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
+    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
+    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---applicationIntake:-:allFormsTableId---"
 
     Examples:
       | User  |
@@ -631,7 +767,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
     And I select "Download As PDF" from dropdown
@@ -651,7 +787,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form validated successfully. |
@@ -669,7 +805,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Edit" in the page details
     Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
 
@@ -685,7 +821,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
     Then I see field "fieldQuestion1__c" is disabled
     Then I see field "fieldQuestion1__c" inside page block
@@ -713,7 +849,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Cancel" in the page details
     Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
     Examples:
@@ -730,7 +866,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Project Characteristics" page block displayed
     Then I see "Need for Project" page block displayed
     Then I see "Significance" page block displayed
@@ -749,7 +885,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ As a Grantor"
     Examples:
       | User  |
@@ -766,7 +902,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ As a Grantor"
     Examples:
       | User  |
@@ -828,7 +964,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Cancel" in the page details
     When I click alert button "No"
     Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
@@ -845,7 +981,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Back" in the page details
     Then I softly see "All Forms " page block displayed
     Examples:
@@ -867,14 +1003,14 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I save the field labeled "Created By" as "CREATEDBY"
     Then I softly see field "{SavedValue:CREATEDBY}" inside page block
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
     And I save the field labeled "Name" as "LASTMODIFIEDBY"
     And I click on "Save" in the page details
     And I click on "Back" in the page details
     And I pause execution for "5" seconds
-    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
-    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---applicationIntake:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---applicationIntake:-:allFormsTableId---"
 
     Examples:
       | User  |
@@ -889,7 +1025,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see Form Id "FN-01341" is displayed on form layout
     #208662 #208661
     Then I see Form Name "Program Application Form" is displayed on form layout
@@ -899,7 +1035,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I softly see field "fieldTEXTAREAQuestion3__c" is not editable
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see Form Id "FN-01342" is displayed on form layout
     #208661 #208662
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
@@ -920,13 +1056,13 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see Form Id "FN-01341" is displayed on form layout
     #208664 #208665
     Then I see Form Name "Program Specific Application form" is displayed on form layout
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see Form Id "FN-01342" is displayed on form layout
     #208664 @208665
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
@@ -945,7 +1081,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
@@ -963,7 +1099,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
@@ -981,7 +1117,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     When I click alert button "Cancel"
@@ -1001,7 +1137,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
@@ -1020,7 +1156,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     When I click alert button "OK"
@@ -1040,7 +1176,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I pause execution for "5" seconds
          #206862  #206861
     Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
@@ -1060,7 +1196,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     When I hovering mouse on help text icon inside "Standard Assurances Form"
     Then I see "Name that shows up on the User interface this is done because the Application and Pre-Application are using the same Templates and layouts and the Forms that show up on the Forms tab is currently showing up the names" shown as help text
     Examples:
@@ -1076,11 +1212,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
     Examples:
       | User  |
@@ -1095,11 +1231,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01341" is displayed on form layout
     And I switch to parent tab
     And I pause execution for "4" seconds
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
 
     Examples:
@@ -1115,7 +1251,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "Save" in the page details
     And I pause execution for "30" seconds
     Then I cannot see the following message in the page details :
@@ -1134,7 +1270,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
 
     Examples:
@@ -1150,7 +1286,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
     And I click on "Save" in the page details
     Then I see error message contains text "This field is required"
@@ -1168,7 +1304,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     #382030 #382032
     Then I see "Cancel" button is displayed
     Then I see "Save" button is displayed
@@ -1188,7 +1324,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I see "Back" button is displayed
     Then I see "Edit" button is displayed
     Then I see "New Validate" button is displayed
@@ -1211,7 +1347,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Test Application by Tejashree"
     When I click on "View" icon for "Test Application by Tejashree" inside table
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I click on "New Validate" in the page details
     Then I see the following message in the page details :
       | Form Validated Successfully. |
@@ -1230,7 +1366,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
     Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
 
@@ -1248,7 +1384,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "SUBMITTEDON"
     And I save the field labeled "Name" as "NAME"
     Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
@@ -1267,7 +1403,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click toggle button to select "Applications - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details :

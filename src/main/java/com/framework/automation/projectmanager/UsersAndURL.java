@@ -180,7 +180,7 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();
-        username.put("ADMIN", "govgrantsautomation@yopmail.com.fwautomat");
+        username.put("ADMIN", "govgrantsautomation5@yopmail.com.fwautomat");
         username.put("ADMIN1", "admin1@yopmail.com.fwautomat");
         username.put("PM", "donald_pm@ggp.test8.atm.fwautomat");
         username.put("PM1", "pm1.automation@yopmail.com.fwautomat");
@@ -202,7 +202,7 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Test8@05dec");
+        password.put("ADMIN", "Test8@10dec");
         password.put("ADMIN1", "Test8@05dec");
         password.put("PM", "Test8@05dec");
         password.put("PM1", "Test8@05dec");
