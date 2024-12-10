@@ -824,6 +824,6 @@ public final class FlexTable implements FlexTableComponent {
      * @author monu.kumar
      */
     public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
-        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//span[contains(@class,'fa-info')]")));
+        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//*[contains(@class,'fa-info')]")));
     }
 }

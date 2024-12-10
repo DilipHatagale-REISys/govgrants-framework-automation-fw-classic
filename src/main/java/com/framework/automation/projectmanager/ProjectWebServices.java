@@ -121,16 +121,16 @@ public class ProjectWebServices {
         }
     }
 
-    private static String defaultEndPointGetToken() {
+    private String defaultEndPointGetToken() {
         String defaultEndPointGetToken = "";
         if (EnvironmentFactory.getEnvironmentName().contains("TEST5")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
-        }
-        else if (EnvironmentFactory.getEnvironmentName().contains("FWPATCH")) {
+        } else if (EnvironmentFactory.getEnvironmentName().contains("FWPATCH")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FED687A3A0BBA7AF7E537EB8D3EBE92281D7609031F0751FFCB10DD3E52DDF64&client_id=3MVG98im9TK34CUW45zaL1fTHaLLiykIdoQeUHbf1cm3OspjgGVFjNgpZvV5hcdc2ccKT1TS4snyshQJb9Nmy&username=automationadminpatch@yopmail.com.atm.frwpatch&password=Patch@02oct";
-        }
-        else if (EnvironmentFactory.getEnvironmentName().contains("FWLWC-GRANTOR")) {
+        } else if (EnvironmentFactory.getEnvironmentName().contains("FWLWC-GRANTOR")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=9891CA2421B3307CEDFA0F2AB3113A94EB329125539A0B5C5F4FF8206C733369&client_id=3MVG9RHx1QGZ7Osjc_dBcgjE7QBmm0KFfeoguDyiCQ1onGF6O0ZH6vkmgaOlCmfE9TKiL6.l9OxRenPEaEN5o&username=govgrantsautomation@yopmail.com.frwklwcaut&password=FwLwc@02oct";
+        } else if (EnvironmentFactory.getEnvironmentName().contains("FWCLASSIC")) {
+            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FEB116B3A657A8896DA8E68DA49D219409D69692B80F775E6E2D1E4C1A04E4F2&client_id=3MVG9igNVW5mZVnXrVx_V11V80UE0UFG0WoQU3iuEur3te_8ukuxKKxhdFHQL3SRYQ6bjiS8c90Z0gr_WzqIk&username=govgrantsautomation@yopmail.com.fwautomat&password=Test8@05dec";
         }
         return defaultEndPointGetToken;
     }
@@ -341,7 +341,7 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
-    public static void deletionApi(String recordName, String objectType) {
+    public void deletionApi(String recordName, String objectType) {
         System.out.print("Making API call... ");
         getAuthToken();
         try {
@@ -558,7 +558,7 @@ public class ProjectWebServices {
     /**
      * get token for authentication of Delete request
      */
-    private static void getAuthToken() {
+    private void getAuthToken() {
         Response response = I.amPerforming().restHttp().postCall(null, null, endPoint + defaultEndPointGetToken(), "Authorization", "Bearer ", null);
         tokenString = response.body().jsonPath().getString("access_token");
     }
@@ -865,7 +865,7 @@ public class ProjectWebServices {
 
     public void activateSubaward(String grantName, String filter, String... Type) {
         getAuthToken();
-        if(Type.length>0)
+        if (Type.length > 0)
             activateSubawardGetCall(projectApis.payloadForCreateStandaloneAward(grantName, filter, Type[0]), grantName);
         else
             activateSubawardGetCall(projectApis.payloadForCreateStandaloneAward(grantName, filter), grantName);
@@ -914,14 +914,14 @@ public class ProjectWebServices {
         return response;
     }
 
-    public void createAwardFromFDM(String announcementName, String... Type ) {
-        if(Type.length>0)
-            createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName,Type[0]));
+    public void createAwardFromFDM(String announcementName, String... Type) {
+        if (Type.length > 0)
+            createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName, Type[0]));
         else
             createAwardFromFDMPostCall(projectApis.PayloadCreateAwardFromFDM(announcementName));
     }
 
-    public static void deleteRecordInHooks() {
+    public void deleteRecordInHooks() {
         List<String> recordNameList = I.amPerforming().propertiesFileOperationsTo().getAllSavedKeys().stream()
                 .filter(Keys -> Keys.startsWith("AUTOMATION RUNTIME")).collect(Collectors.toList());
 
@@ -999,7 +999,7 @@ public class ProjectWebServices {
         }
     }
 
-    private static void deleteAward(String recordName) {
+    private void deleteAward(String recordName) {
         deletionApi(recordName, "Progress Report");
         deletionApi(recordName, "Progress Report");
         deletionApi(recordName, "Amendment Request");
@@ -1019,7 +1019,9 @@ public class ProjectWebServices {
         assertStatusCode(response);
     }
 
-    private static void deleteFDM(List<String> recordNames) {
+
+    private void deleteFDM(List<String> recordNames) {
+
 
         for (String record : recordNames) {
             if (StringUtils.containsIgnoreCase(record, "desk review")) {
@@ -1058,34 +1060,35 @@ public class ProjectWebServices {
         }
     }
 
-    public static void deleteAnnouncement(String recordName) {
+    public void deleteAnnouncement(String recordName) {
         deletionApi(recordName, "APPLICATION REVIEWS");
         deletionApi(recordName, "Application");
         deletionApi(recordName, "PreApplication");
         deletionApi(recordName, "Announcement");
     }
 
-    private static void deleteFocusArea(String recordName) {
+    private void deleteFocusArea(String recordName) {
         deletionApi(recordName, "Focus Area");
     }
 
-    private static void deleteFundingSource(String recordName) {
+    private void deleteFundingSource(String recordName) {
         deletionApi(recordName, "Funding Source");
     }
 
-    private static void deleteKPI(String recordName) {
+    private void deleteKPI(String recordName) {
         deletionApi(recordName, "KPI");
     }
 
-    private static void deleteProgram(String recordName) {
+    private void deleteProgram(String recordName) {
         deletionApi(recordName, "Program");
     }
 
-    private static void deleteStrategicPlan(String recordName) {
+    private void deleteStrategicPlan(String recordName) {
         deletionApi(recordName, "Strategic Plan");
     }
 
-    private static void deleteSiteVisit(String recordName) {
+    private void deleteSiteVisit(String recordName) {
+
         deletionApi(recordName, "Site Visit");
     }
 

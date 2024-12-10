@@ -62,8 +62,8 @@ public class UsersAndURL implements UsersController {
             userName = getTEST5EnvironmentUser(userLevel);
         }
         else
-        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            userName = getQAEnvironmentUser(userLevel);
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("FWCLASSIC"))) {
+            userName = getQAEnvironmentUser(setUpUserLevel(userLevel));
         }else
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
             userName = getPATCHEnvironmentUser(userLevel);
@@ -80,8 +80,8 @@ public class UsersAndURL implements UsersController {
         String password = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             password = getTEST5EnvironmentPassword(userType);
-        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
-            password = getQAEnvironmentPassword(userType);
+        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("FWCLASSIC"))) {
+            password = getQAEnvironmentPassword(setUpUserLevel(userType));
         }else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
             password = getPATCHEnvironmentPassword(userType);
         }else {
@@ -180,13 +180,19 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();
-        username.put("ADMIN", "automationadmin@ggp.test8.atm.fwautomat");
-        username.put("EXE", "automationexe@ggp.test8.fwautomat");
-        username.put("PM", "automationpm@ggp.test8.atm.fwautomat");
-        username.put("FO", "automationfo@ggp.test8.atm.fwautomat");
-        username.put("SPI", "automationspi@yopmail.com.fwautomat");
-        username.put("PM1", "frameworkpm1@ggp.test8.atm.fwautomat");
-
+        username.put("ADMIN", "govgrantsautomation@yopmail.com.fwautomat");
+        username.put("ADMIN1", "admin1@yopmail.com.fwautomat");
+        username.put("PM", "donald_pm@ggp.test8.atm.fwautomat");
+        username.put("PM1", "pm1.automation@yopmail.com.fwautomat");
+        username.put("PO", "test8.automationpo@yopmail.com.fwautomat");
+        username.put("PO1", "automationpo1@yopmail.com.fwautomat");
+        username.put("FD", "test8.automationfd@yopmail.com.fwautomat");
+        username.put("FD1", "automationfd1@yopmail.com.fwautomat");
+        username.put("EXE", "test@gmaildemo.com.atm.fwautomat");
+        username.put("EXE1", "test8.exe1.automation@yopmail.com");
+        username.put("FO", "auto.fm@auto.com.atm.fwautomat");
+        username.put("FO1", "fo1.automation@yopmail.com.fwautomat");
+        username.put("SPI3", "rreispi3@grants.gov");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());
         } else {
@@ -196,12 +202,19 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Admin@April24");
-        password.put("EXE", "Framework@16April");
-        password.put("PM", "Framework@apr04");
-        password.put("FO", "FrameworkFo@16April");
-        password.put("SPI", "FrameworkSpi@24April");
-        password.put("PM1", "PM1@16April");
+        password.put("ADMIN", "Test8@05dec");
+        password.put("ADMIN1", "Test8@05dec");
+        password.put("PM", "Test8@05dec");
+        password.put("PM1", "Test8@05dec");
+        password.put("PO", "Test8@05dec");
+        password.put("PO1", "Test8@05dec");
+        password.put("FD", "Test8@05dec");
+        password.put("FD1", "Test8@05dec");
+        password.put("EXE", "exe@05dec");
+        password.put("EXE1", "Test8@05dec");
+        password.put("FO", "Test8@05dec");
+        password.put("FO1", "Test8@05dec");
+        password.put("SPI3", "Test8@05dec");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {
