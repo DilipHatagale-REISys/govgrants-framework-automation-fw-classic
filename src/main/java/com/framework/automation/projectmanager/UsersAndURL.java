@@ -27,7 +27,7 @@ public class UsersAndURL implements UsersController {
         I.amPerforming().propertiesFileOperationsTo().saveValue("FD1 Username", "Automation FD1");
         I.amPerforming().propertiesFileOperationsTo().saveValue("AUDITOR Username", "Automation AUDITOR");
         I.amPerforming().propertiesFileOperationsTo().saveValue("SPI Username", "Automation SPI");
-        I.amPerforming().propertiesFileOperationsTo().saveValue("SPI3 Username", "James Hank");
+        I.amPerforming().propertiesFileOperationsTo().saveValue("SPI3 Username", "Automation SPI3");
         I.amPerforming().propertiesFileOperationsTo().saveValue("SPA Username", "Automation SPA");
         I.amPerforming().propertiesFileOperationsTo().saveValue("SPI4 Username", "Automation SPI4");
         I.amPerforming().propertiesFileOperationsTo().saveValue("IND Username", "Automation IND");

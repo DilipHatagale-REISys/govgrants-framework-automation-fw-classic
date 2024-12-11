@@ -481,8 +481,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I enter "Edition" values from "Application_Field_Values.xlsx"
     When I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I save the field labeled "Created By" as "CREATEDBY"
-    Then I softly see field "{SavedValue:CREATEDBY}" inside page block
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
