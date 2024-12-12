@@ -451,7 +451,7 @@ public final class PageDetails {
         if (fieldLabel.contains("'"))
             element = "//span[text()=\"" + fieldLabel + "\"]";
         else
-            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "'] |" +
+            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "'] | //div[@id='" + fieldLabel + "']" +
                     "//td[@class='groupTitle']//field[@field-name='Name']//span[@title='" + fieldLabel + "'] | //label[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]";
 
         try {

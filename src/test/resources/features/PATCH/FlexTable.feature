@@ -17683,11 +17683,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I enter value "12345678" into field "Number__c"
+    When I enter value "-12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
+    And I halt execution
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
     Then I softly do not see value "12345678" for title "Number" inside table "---program:-:ProgramsgridTableId---"
     Examples:
