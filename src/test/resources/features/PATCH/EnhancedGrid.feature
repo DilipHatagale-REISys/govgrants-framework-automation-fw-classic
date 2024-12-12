@@ -5,7 +5,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode.  @Sprint-19
   Scenario Outline: To verify ,  When Internal User click on 'New' action button to create a new record in Enhanced Grid, a new record should show up in the grid in edit mode.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -50,7 +49,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257558 @257557 @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -74,7 +72,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly.  @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -92,7 +89,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -109,7 +105,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -300,7 +295,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @wip @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
   Scenario:To verify, User should be able to Delete the newly added  record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -508,7 +502,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257516 @ToVerifyInternalUserShouldNotSeeAnyChildTableAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should  not see any child table attached to the newly created record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -525,7 +518,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257526 @ToVerifyInternalUserShouldBeAbleToAddNewChildRecordInChildTableThatAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add new child record in child table that attached to the newly created record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -546,7 +538,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257518 @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add details to the newly displayed record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -568,7 +559,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257535 @Sprint-19 @US-255921 @skipOnJenkins
   Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed  for internal user
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -707,7 +697,6 @@ Business Need: EnhancedGrid Component Scenarios
   @wip @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
   @InternalUserShouldBeSeeConfirmationBoxWhenClickOnDeleteActionOnTheNewlyAddedRecord
   Scenario: To verify, Internal User should be see confirmation box when click on Delete action on  the newly added  record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -741,7 +730,6 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Filter | false         | ProgramReviewStepTemplates |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4310,7 +4298,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @166743   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualNotToOprator
   Scenario:  E-grid-o verify in advanced filter when user select the picklist data type field then correct result display with not equal to operator
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4415,7 +4402,6 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4438,7 +4424,6 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
