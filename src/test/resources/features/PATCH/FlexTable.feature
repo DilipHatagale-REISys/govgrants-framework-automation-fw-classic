@@ -5225,7 +5225,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on page navigation arrow "First" for table id "toggleFlexTableGrantsList"
     Then I do not see user on "Previous" pagination page "toggleFlexTableGrantsList" table
 
-
   @338550 @wip
   Scenario: Page description- Admin- Config- Verify we can directly jump on last page using this arrow
     Given I have "default" configuration as below:
@@ -5260,7 +5259,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
-    Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
+    #Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
+    Then I do not see user on "Last" pagination page "toggleFlexTablePrograms" table
 
   @338553
   Scenario: Page description - SPI- UI- Verify we can directly jump on last page using this arrow
@@ -5276,7 +5276,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
-    Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
+   # Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
+    Then I do not see user on "Last" pagination page "toggleFlexTableGrantsList" table
 
   @338555 @wip
   Scenario: Page description- Admin- Config- Verify we can directly jump on First page using this arrow
@@ -8932,7 +8933,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8954,7 +8955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -8977,7 +8978,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see page title "Service Not Available"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                          |
@@ -8998,7 +8999,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -9019,7 +9020,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcements ~ As a Grantor"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue |
@@ -9041,7 +9042,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue |
@@ -9064,7 +9065,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9086,7 +9087,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -9109,7 +9110,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -9132,7 +9133,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9155,7 +9156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9203,7 +9204,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -9233,7 +9234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
@@ -9287,7 +9288,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9317,7 +9318,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9371,7 +9372,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
@@ -9401,7 +9402,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9454,7 +9455,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9477,7 +9478,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see "Announcement View" in new tab
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9530,7 +9531,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9553,7 +9554,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see "Announcement View" opens in overLay window
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9600,7 +9601,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9623,7 +9624,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9670,7 +9671,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -9693,7 +9694,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
@@ -10363,7 +10364,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10392,7 +10393,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
     Then I see "View" row action Button at position "1"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -10418,7 +10419,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -12278,7 +12279,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12347,10 +12348,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
+    And I pause execution for "5" seconds
     And I click toggle button to select "Grants - All"
     Then I see "View" row action Button at position "0"
     When I perform quick search for "{StaticRecords:FlexTableSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableSPIRecord}" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see page title "Grant View"
     Examples:
       | actionUrlOldValue                 | actionUrlNewValue                 |
@@ -13002,7 +13004,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
 
@@ -13042,7 +13044,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13082,7 +13084,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13123,7 +13125,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
 
@@ -13169,7 +13171,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "AlphanumericTest1234" shown as help text
@@ -13213,7 +13215,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "12345678980" shown as help text
@@ -13257,7 +13259,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
     Then I see "Test!@#$%^%^&*()" shown as help text
@@ -15427,7 +15429,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
     Examples:
       | User | actionUrlOldValue                               | actionUrlNewValue                                       |
@@ -16380,7 +16382,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see new tab is opened
 
   @34038    @editActionOpensInSameWindow-gPlanning
@@ -16396,7 +16398,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see no new tab is opened
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
@@ -16412,7 +16414,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Edit" opens in overLay window
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning @wip @refreshbehavior
@@ -16428,7 +16430,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
@@ -16689,7 +16691,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -16837,7 +16839,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Automation Title" opens in overLay window
 
   @wip @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning  @skiponjenkins @plscheckagain
@@ -17154,7 +17156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -17174,7 +17176,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{StaticRecords:AnnouncementRecord}"
-    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:AnnouncementRecord}" inside flex table with id "---program:-:allAnnouncementTableId---"
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -17194,7 +17196,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilitiesInternalProgram" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilitiesInternalProgram" with wait for record
@@ -17209,7 +17211,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Program" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
@@ -17414,7 +17416,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values inside id "---program:-:ProgramsgridTableId---"
+    When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than | 09/06/2023 |
     Then I softly see value "06/12/2024" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
@@ -17425,7 +17427,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values inside id "---program:-:ProgramsgridTableId---"
+    When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than | 06/12/2024 |
     Then I softly see value "03/22/2024" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
@@ -17436,7 +17438,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values inside id "---program:-:ProgramsgridTableId---"
+    When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than or Equal to | 06/12/2024 |
     Then I softly see value "06/12/2024" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
@@ -17594,24 +17596,24 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @130537    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageViewMode
   Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     And I pause execution for "15" seconds
     When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
 
   @130538    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageEditMode
   Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
 
@@ -17622,7 +17624,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     When I hover mouse on lookup link "Automation PM" at table
@@ -17743,7 +17745,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -17837,7 +17839,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1235" into field "Number__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -17973,7 +17975,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -18018,11 +18020,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click modal button "Continue"
     When I enter "Creation Second Modal" values from "Announcement_Field_Values.xlsx"
     And I click modal button "Save and Continue"
-    And I enter "Edition" values from "Announcement_Field_Values.xlsx"
+    #And I enter "Edition" values from "Announcement_Field_Values.xlsx"
     And I click on "Save" in the page details
     #And I get the "EGMS ID"
     And I save the field labeled "EGMS ID" as "EGMSID"
     And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:EGMSID}"
     And I pause execution for "3" seconds
     Then I softly see "{SavedValue:EGMSID}" value in flex table id "ActiveFundingOpportunitiesAll"
@@ -18064,7 +18067,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     When I pause execution for "6" seconds
@@ -18092,7 +18095,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -18231,7 +18234,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     And I click on "Save" in the page details
@@ -18290,7 +18293,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -18313,7 +18316,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -18357,7 +18360,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18897,7 +18900,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -18922,7 +18925,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    And I navigate to "Planning" tab
 #    And I click toggle button to select "Internal Programs - Active"
 #    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-#    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+#        When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
 #    When I navigate to "Overview" sub tab
 #    Then I see field "Description Field" inside page block
 
@@ -18972,7 +18975,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Setup" sub tab
     Then I see field "Applicant Organization" inside page block
 
@@ -19175,7 +19178,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -19187,7 +19190,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:programContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:programContactsTableId---"
@@ -19246,7 +19249,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     #Then I see the following message in the page details contains:
     And I pause execution for "3" seconds
     Then I see the text :
-          | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206610 @BulkPdfandBulkCsv @sprint5 @wip
   Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
@@ -19842,7 +19845,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
@@ -19866,7 +19869,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I navigate to "Budget" sub tab
     And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
     And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
@@ -19898,7 +19901,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "{StaticRecords:FlexTableApplicationSPIRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside table
+    When I click on "View" icon for "{StaticRecords:FlexTableApplicationSPIRecord}" inside flex table with id "---program:-:ApplicationSPITableID---"
     Then I see title of current page is "Application View"
 
   @382496 @SanityPATCH  @SanityPATCHFlexTable
