@@ -1,4 +1,4 @@
-@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module
+@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module @wip
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.
@@ -850,10 +850,15 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
-    When I click on "Save" in the page details
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    When I navigate to "Overview" sub tab
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
@@ -872,8 +877,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
@@ -977,8 +982,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smokePATCH
@@ -1106,8 +1111,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smokePATCH
@@ -1122,8 +1127,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smokePATCH
@@ -1226,8 +1231,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smokePATCH
@@ -1242,8 +1247,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
@@ -1279,8 +1284,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click search icon for lookup "Internal Organization"
     Then I see modal box with body "Organization Automation" is displayed
 
@@ -1296,8 +1301,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
@@ -1315,8 +1320,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     When I perform quick search for "Automation test organization" in "---program:-:AccountTableId---" panel
     Then I see "Created" status in lookup modal table
@@ -1608,8 +1613,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @53094
@@ -2726,8 +2731,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -3462,7 +3467,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I clear the value from field "fieldProjectGoals__c"
+    #When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -8466,8 +8471,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "Formula Grants" into field "Type__c"
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
@@ -8825,8 +8830,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I clear the value from field "Phone_Field__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -8846,8 +8851,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I clear the value from field "phonetest__c"
@@ -8896,8 +8901,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" inside table
     When I clear the value from field "phonetest__c"
@@ -8912,8 +8917,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8926,8 +8931,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "123" into field "ProgramName__c"
     And I refresh the page
     And I pause execution for "3" seconds
@@ -8940,8 +8945,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
@@ -8953,8 +8958,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8965,8 +8970,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Number__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8979,8 +8984,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8992,8 +8997,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9004,8 +9009,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "fieldFundedAmount__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9018,8 +9023,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "fieldFundedAmount__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9031,8 +9036,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "fieldFundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9043,8 +9048,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Percent__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9057,8 +9062,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Percent__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9070,8 +9075,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1" into field "Percent__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9082,8 +9087,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "www.google.com" into field "URL__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9096,8 +9101,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "www.google.com" into field "URL__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9109,8 +9114,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "www.google.com" into field "URL__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9121,8 +9126,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9135,8 +9140,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "fieldProjectGoals__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9148,8 +9153,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "fieldProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9160,8 +9165,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "Authorization__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9174,8 +9179,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "Authorization__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9187,8 +9192,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test" into field "Authorization__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9245,8 +9250,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9265,8 +9270,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9284,8 +9289,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9302,8 +9307,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9322,8 +9327,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "9987" into field "Phone_Field__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -9341,8 +9346,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9359,8 +9364,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "9987" into field "Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -9378,8 +9383,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "9987" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9389,8 +9394,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -9403,8 +9408,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click dropdown field "fieldIsProjectServiceAreaneeded__c"
     Then I see only the following ordered options in dropdown field "fieldIsProjectServiceAreaneeded__c" :
       | --None-- |
@@ -9423,8 +9428,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I click on "Save" in the page details
     And I pause execution for "4" seconds
     Then I see "programview" in current url
@@ -9435,8 +9440,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Shantanu GGP.TEST5"
@@ -9560,8 +9565,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I clear the value from field "cke_1_contents"
     And I enter value "Test data" into field "cke_1_contents"
@@ -9947,8 +9952,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "EGMSID"
     When I navigate to "Overview" sub tab
@@ -10009,8 +10014,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -10032,8 +10037,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -10069,8 +10074,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -10088,8 +10093,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I do not see below checkbox options for field "TypesOfAssistance__c"
       | Select All |
@@ -10106,8 +10111,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -10126,8 +10131,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I enter value "User" into field "UserType__c"
@@ -10164,8 +10169,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly see that "TypesOfAssistance__c" rendered in view mode only
 
@@ -10199,8 +10204,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I see checkbox is displayed for field "fieldCFDA_Data__c"
 
@@ -10258,8 +10263,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
 
   @170112 @tejal @wip
@@ -10274,8 +10279,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -10313,8 +10318,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -10355,8 +10360,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -10394,8 +10399,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I pause execution for "60" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
@@ -10618,8 +10623,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10638,8 +10643,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10658,8 +10663,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10678,8 +10683,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10698,8 +10703,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10718,8 +10723,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10738,8 +10743,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I pause execution for "4" seconds
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -10759,8 +10764,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -10773,8 +10778,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
@@ -11010,8 +11015,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -11088,8 +11093,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -11127,8 +11132,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select all" inside page block
 
@@ -11212,8 +11217,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -11229,8 +11234,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -11285,8 +11290,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
     When I enter value "888888888888888888888888888888888888" into field "fieldFundedAmount__c"
@@ -11311,8 +11316,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11331,8 +11336,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "123456783456789456789045678945678" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11351,8 +11356,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1234567834567834567834567834567834567" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11371,8 +11376,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "13456789034567894567890234567" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11391,8 +11396,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11411,8 +11416,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11431,8 +11436,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "145678967890673456784567894567896788" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11451,8 +11456,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11471,8 +11476,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -11484,8 +11489,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -11516,8 +11521,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -11530,8 +11535,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -11568,8 +11573,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "Title" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11589,8 +11594,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "Internal Organization" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11610,8 +11615,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "fieldNumber__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11631,8 +11636,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "fieldDateandTime__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11652,8 +11657,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "fieldFundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11673,8 +11678,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     And I select "Project Grants" from dropdown
     Then I see "fieldPercent__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -11793,8 +11798,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -11878,8 +11883,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -11893,8 +11898,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "--None--" into field "fieldType__c"
     When I enter value "100" into field "fieldNumber__c"
@@ -11907,8 +11912,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I enter value "12345" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -11921,8 +11926,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
@@ -11933,8 +11938,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     Then I softly see field "Address__c" is not editable
@@ -12212,8 +12217,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Cancel" button is displayed on top right of pagelayout
     Then I see "Save" button is displayed on top right of pagelayout
 
@@ -12236,8 +12241,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Test Approver Table"
-    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Cancel" button is not displayed
     Then I see "Save" button is not displayed
 
