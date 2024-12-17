@@ -30,7 +30,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         completeTableRowOfEnhancedGrid = By
                 .xpath("//div[@class='panel ng-scope']/div[@class='panel-body collapse in']//table/tbody/tr");
         selectRecordCheckBoxForEnhancedGrid = By
-                .xpath("//div[@id='ProgramReviewStepTemplatesFlexToggle']//input[@aria-label='Select Record'] | //div[@id='Enhanced1grid' or @id='RecGrantBudgetPeriodsFlexToggle']//input[@aria-label='Select Record']");
+                .xpath("//div[@id='ProgramReviewStepTemplatesFlexToggle']//input[@aria-label='Select Record'] | //div[@id='Enhanced1grid' or @id='RecGrantBudgetPeriodsFlexToggle' or @id='EnhanceAppGrantorBudgetPeriodsFlexToggle']//input[@aria-label='Select Record']");
         currentBudgetPeriodEndDate = By.xpath("//field[@field-name='BudgetPeriodEndDate__c']//input[@type='text']");
         scrollToActionColumn = By.xpath("//div[@id='ProgramReviewStepTemplatesFlexToggle']//th[contains(text(),'Actions')] | //div[@id='Enhanced1grid']//th[contains(text(),'Actions')]");
         idColumnForChildFlexTable = By.xpath("//field[@field-name='Name']//input[@type='text']");
