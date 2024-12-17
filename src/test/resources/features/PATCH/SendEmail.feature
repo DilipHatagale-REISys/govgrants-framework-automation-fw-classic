@@ -760,10 +760,10 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "Test automation" into field "Body Content" on send email modal
     When I enter value "Test SendEmailAttachment External" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -1036,8 +1036,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-phone" with user "Automation SPI" is displayed on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-phone" with user "Automation SPI3" is displayed on send email modal
     Examples:
       | Users |
 #      | Admin |
@@ -2016,8 +2016,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "test the email for external user" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -2025,7 +2025,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I perform quick search for "test the email for external user" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "test the email for external user" inside table
-    Then I softly see "Automation SPI" on html page
+    Then I softly see "Automation SPI3" on html page
 
   @116243 @validateNameIsDisplayedForSelectedUserInToFieldAtReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field at reply email then name of user is displayed in view modal
@@ -2119,8 +2119,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM1" into field "{testData:CcField}" on send email modal
     When I select value "Automation PM1" with iconName "fa fa-user" into field on send email modal
@@ -3106,11 +3106,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "Test" into field "Subject" on send email modal
     When I enter value "test for external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -3596,8 +3596,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Automation PM1" into field "{testData:ToField}" on send email modal
@@ -4062,8 +4062,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "test1@reisystem.in;test2@reisystem.in;test3@reisystem.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4102,8 +4102,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "test1@reisystem.in;test2@reisystem.in;test3@reisystem.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4142,11 +4142,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4275,11 +4275,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4287,7 +4287,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Dilip" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
@@ -4310,11 +4310,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4587,11 +4587,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4664,11 +4664,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4718,11 +4718,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4753,11 +4753,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4810,11 +4810,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -4913,18 +4913,18 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160159 @jyoti
@@ -5165,11 +5165,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -5220,8 +5220,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "reply for to &cc external" into field "Subject" on send email modal
     When I enter value "reply for to &cc external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -5363,11 +5363,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:ToField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
+    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I enter value "test" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
