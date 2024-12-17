@@ -162,7 +162,7 @@ Business Need: Expression Builder Component Scenarios
   Scenario: validate disabling of create button for user type Reviewer from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                          |
+      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunitiesAll | Name                      | New                        |
@@ -4169,7 +4169,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -4178,8 +4178,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                          |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     #47306
@@ -4188,7 +4188,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                          |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
     And I refresh the page
     Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     #47307
@@ -4196,8 +4196,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                          |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     #47308
@@ -4206,7 +4206,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                          |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     #47309
@@ -4215,7 +4215,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                          |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
    #47310
@@ -4257,7 +4257,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4272,7 +4272,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly can see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -4290,7 +4290,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -4299,7 +4299,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_EditAction_With_UserType_IN_Applicant_Internal_Reviewer | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -4336,7 +4336,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4346,7 +4346,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4356,7 +4356,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4366,7 +4366,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4396,7 +4396,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4406,7 +4406,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4416,7 +4416,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4432,7 +4432,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4448,7 +4448,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserApp_NOTIN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly can see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4458,7 +4458,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -4468,7 +4468,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_ChildEnhancedgrid_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ProgramReviewStepPanelTemplates | Name                      | Review Form                |
     And I refresh the page
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see row level action button "Review Form" against "Pre-Screen" in flex table with id "---program:-:reviewFormPanelId---"
@@ -5592,7 +5592,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:NewUpdatedTCForDemoTitleHideJson1 | ProgramReviewStepTemplates | Name                      | Edit                       |
     And I refresh the page
     Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5629,18 +5629,20 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_action | ProgramReviewStepTemplates | Name                      | New                        |
     And I refresh the page
     Then I softly cannot see top right button "New" in flex table with id "{program:ProgramReviewStepTemplatesgridTableId}"
 
-  @82268    @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
+  @82268 @82364 @82629  @verifyHideExpressionJSONAtEnhancedGridChildTableForMultipleGroupsByUsingOrAndOperatorAtTopLevelActions-EGrid @enhancedGrid @smokePATCH @egrid
   Scenario: Verify Hide expression JSON for child flex table by using OR and AND operator in multiple groups at top level action - enhanced grid
+  |Verify Hide expression JSON at enhanced data table by using OR and AND operator in multiple groups at row level action - enhanced data table|
+  |Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced data table|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_actionForChild | ProgramReviewStepTemplates | Name                      | Test New                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -5651,41 +5653,24 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Pre-Screen Review"
     Then I softly cannot see top right button "Test New" in flex table with id "{program:reviewFormPanelId}"
-
-  @82364    @verifyHideExpressionJSONAtDataTableEnhanceProgramContactsForMultipleGroupsByUsingOrAndOperatorAtRowLevelActions-EGrid @flexTableEnhanced @smokePATCH
-  Scenario: Verify Hide expression JSON at enhanced data table by using OR and AND operator in multiple groups at row level action - enhanced data table
+    #82364
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                                              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_DataTableEnhanceProgramContacts_Multiple_AND_OR_group_at_row_level_action | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Overview" sub tab
-    #When I perform quick search for "Test Announcement 24-04-2018" in "---program:-:flexGridDataTableEnhanceProgramContactsId---" panel
-    Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
-
-  @82629   @verifyHideExpressionJSONForDataTableEnhanceProgramContactsForMultipleGroupsByORAndANDOperatorAtTopLevelActions @flexTableEnhanced @smokePATCH
-  Scenario: Verify Hide expression JSON for multiple OR and AND groups at top level action - enhanced data table
+      | configurationCategory | fieldName            | fieldNewValue                                                                                              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_DataTableEnhanceProgramContacts_Multiple_AND_OR_group_at_row_level_action | ProgramReviewStepTemplates                   | Name                      | Edit                       |
+    And I refresh the page
+    Then I softly cannot see row level action button "Edit" against "Pre-Screen Review" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    #82629
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group | DataTableEnhanceProgramContacts | Name                      | New                        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Overview" sub tab
-    Then I see no "New" button inside "Contacts" enhanced grid
+      | configurationCategory | fieldName            | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group | ProgramReviewStepTemplates              | Name                      | New                        |
+    And I refresh the page
+    Then I softly cannot see top right button "New" in flex table with id "{program:reviewFormPanelId}"
 
   @82633    @verifyFormulaFieldIsHiddenUsingHodeColumnJsonFieldForInternalUserAtEnhancedGrid-gPlanning @enhancedGrid @egrid @wip
   Scenario Outline: Hiding specific column of type formula for internal user from config and validating it inside enhanced grid of programs-planning
@@ -5813,8 +5798,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
+    When I perform quick search for "AP-REI-039"
+    When I click on "View" icon for "AP-REI-039" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Budget Periods" is not displayed inside flex table
@@ -6222,7 +6207,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Read Only Cell JSON | govgrants_config:ReadOnlyCellJsonUsingROperandAsFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11093                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10391,7 +10376,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Annoucement External Profile-FOA | Name                      | TAB-3087                     |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Annoucement External Profile-FOA | Name                      | TAB-3087                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
