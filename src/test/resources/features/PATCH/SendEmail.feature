@@ -1078,8 +1078,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test Automation Email" into field "Subject" on send email modal
     When I enter value "Test Automation Email" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario:Verify if Internal+External user checkbox is checked and search user in CC email then both Internal+External users is displayed in suggestion
@@ -1187,8 +1186,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     When I click on "Reply" icon for "checkbox is checked at CC" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "DILIP" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-user" with user "DILIP Hatagale" is displayed on send email modal
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
@@ -2187,8 +2186,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I select value "group pm" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @121365p @validateThatMultipleFilesUploadedFromSelectFileSectionIsDisplayedUnderSendEmailModalInEditMode
   Scenario: validate that multiple files uploaded from select files section in send email modal in view mode
@@ -2340,7 +2338,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
 #      | PM    |
 
-  @382373 @SanityPATCH  @SanityPATCHSendEmail
+  @382373p @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -2351,7 +2349,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button send email modal
-    Then I softly see "FilesLink" page block displayed
+    Then I softly see "Select File(s)" page block displayed
 
   @382375 @382376 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
@@ -2370,8 +2368,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automationadminpm@yopmail.com" into field "{testData:CcField}" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
     And I pause execution for "120" seconds
     Then I refresh the page
@@ -2935,8 +2932,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "snehal.mulange@reisystems.in;ashutosh.thakur@reisystems.in" into field "{testData:ToField}" on send email modal
     When I enter value "Testing Email" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    Then I see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+
 
   @161872 @ValidateUserRplyToAnEmailFromCollabTabSendEmailSubjectLineStartWithRe
   Scenario: Validate User Rply To An Email From Collab Tab Send Email Subject Line Start With Re
@@ -3008,8 +3005,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @164064  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySemicolon    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by Semicolon for TO and cc
@@ -3034,8 +3030,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test Automation Email1" into field "Subject" on send email modal
     When I enter value "Test Automation Email1" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @164262 @ValidateUserSendEmailWithMultipleEmailAddressAreSeparatedByCommaTo&CcField @vaibhavC
   Scenario: Validate User Send Email With Multiple Email Address Are Separated By Comma To & Cc Field
@@ -3823,16 +3818,16 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "DILIP" into field "{testData:ToField}" on send email modal
-    When I select value "DILIP Hatagale" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM1" with iconName "fa fa-user" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "DILIP" into field "{testData:CcField}" on send email modal
-    When I select value "DILIP Hatagale" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
     When I select value "Automation PM1" with iconName "fa fa-user" into field on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Subject" on send email modal
@@ -4286,7 +4281,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Dilip" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation SPI3" into field "{testData:ToField}" on send email modal
     When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Automation" into field "{testData:CcField}" on send email modal
@@ -4321,10 +4316,10 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "DILIP" into field "{testData:ToField}" on send email modal
-    When I select value "DILIP Hatagale" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "DILIP" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160261p @jyoti
@@ -4845,7 +4840,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "dilip" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160226 @jyoti
@@ -6835,6 +6830,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @382774 @SanityPATCH  @SanityPATCHSendEmail
   Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselvesGiven I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgramFortest}"
@@ -8011,7 +8007,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @332355 @332356
+  @332355p @332356
   Scenario: Send Email -Select File - To verify , When Internal user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal.
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -8021,20 +8017,16 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    And I click on dropdown inside "Cc" field and Select "Groups" value
-    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "automationpm@yopmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "Attachment" into field "Subject" on send email modal
+    When I enter value "Attachment" into field "Body Content" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I upload attachment "blank.txt" in Send Email Modal
     When I click on "Send" button in send email modal
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
-    And I click on "Reply" icon for "Testing" inside flex table with id "---program:-:communicationHistoryTableId---"
-    And I click on dropdown inside "Cc" field and Select "Groups" value
-    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
-    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
-    And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @332346 @332350
@@ -8412,7 +8404,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @332349 @332350
@@ -8455,38 +8446,28 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "File with this name already exist." error massage in attachment section
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @332353p @332354
   Scenario Outline: To verify, Internal user can Download file by clicking on download action button in the Attachments table in front of the attached file on send email Reply  modal
-    When I login to "As a Grantor" app as "<User>" user
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
-    And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "automationpm@yopmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "Test automation mail subject" into field "Subject" on send email modal
+    When I enter value "Test automation" into field "Body Content" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    And I click on "Send" button in Email LWC Modal
-    And I pause execution for "25" seconds
-    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
-    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
-    When I close modal by clicking the top right x button
-    And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
-    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadminpatch@yopmail.com,automationfo@yopmail.com" Subject "Subject" in send email LWC
-    And I pause execution for "5" seconds
-    And I click on "Send" button in Email LWC Modal
-    And I pause execution for "25" seconds
+    When I click on "Send" button in send email modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @332355 @332356 @332357 @332358
@@ -8940,7 +8921,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
     Examples:
       | User |
-#      | ADMIN |
       | PM   |
 
   @332835
@@ -9244,8 +9224,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automationadminpm@yopmail.com" into field "{testData:CcField}" on send email modal
     When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
     And I pause execution for "180" seconds
     Then I refresh the page

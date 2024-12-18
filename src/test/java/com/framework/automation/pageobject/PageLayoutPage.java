@@ -2961,7 +2961,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isSuggestionBoxDisplayedAtSendEmailModal() {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[contains(@class,'list-group-item')]/ancestor::div[@class='listDropdownTo']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[contains(@class,'list-group-item')]/ancestor::div[@class='listDropdownTo' or @class='listDropdownToScroll']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -22,7 +22,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see fields "Description__c" is in edit mode
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @2576141 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
@@ -44,7 +43,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257558 @257557 @print-19 @US-255921
@@ -67,7 +65,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly.  @Sprint-19 @US-255921
@@ -84,7 +81,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Forms" page block displayed
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
@@ -215,10 +211,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "percenttest" in downloaded xls or csv file "govgrants"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
-  @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
+  @206106 @206110 @US-196926 @Sprint-5 @wip @pdf
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                              | coreComponentField | filterId         |
@@ -243,7 +238,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "percenttest" on page "1" of "govgrants" pdf file
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
@@ -821,7 +815,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Pre-Screen Review"
     Then I see "Score" not displayed in enhanced grid table column title
 
-  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
+  @45287 @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                     | filterId         |
@@ -1309,12 +1303,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see external link icon as "Pre-Screen Review" for "Edit" inside enhanced grid table action
 
-  @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning @localrungrid
+  @41466 @localrungrid @pdf
   Scenario: Setup confirmation message for enhanced grid table edit action from configuration and validating it inside enhanced grid of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepTemplates | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepTemplates | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  | Automation        | ProgramReviewStepTemplates | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepTemplates | Name                      | Edit                       |
@@ -1349,7 +1343,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
-  @41385    @formulaFieldAtEnhancedGrid-gPlanning
+  @41385
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1442,7 +1436,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Field Label Override |                                                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names  | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn},Score__c | ProgramReviewStepPanelTemplates |                           |                            |
+      | Flex Table:General    | Display Field Names  | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn},Score__c | ProgramReviewStepPanelTemplates | Name                      |                            |
       | Flex Table List       | Field Label Override | Test Automation                                                | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:Score__c}        |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5840,7 +5834,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218432 @218434
@@ -5863,7 +5856,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218437 @218438
@@ -5889,7 +5881,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218440 @218441 @218443 @218444
@@ -5920,7 +5911,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218461 @218462 @352192 @352197 @379190 @SanityPATCH @SanityPATCHEGrid
@@ -5964,7 +5954,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
@@ -5993,7 +5982,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218455 @218456
@@ -6016,7 +6004,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see Total Records count "Total Records:" in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218430 @218435
@@ -6115,7 +6102,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218448 @352285
@@ -6159,7 +6145,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218451 @352431
@@ -6206,7 +6191,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218457
@@ -6265,7 +6249,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see Total Records count "Total Records:" in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218454
@@ -6343,7 +6326,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206019
@@ -6386,7 +6368,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @205918 @205919 @205912 @205913
@@ -6423,7 +6404,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206020 @206021
@@ -6444,7 +6424,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206022 @206016
@@ -6500,7 +6479,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352274 @352275
@@ -6539,7 +6517,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352351 @352415
@@ -6578,7 +6555,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
@@ -6630,7 +6606,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352429p @352430 @379208 @SanityPATCH @SanityPATCHEGrid
@@ -6680,7 +6655,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
@@ -6730,7 +6704,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   ################### Test suite: Detail config (Suite ID: 296508) ###################
@@ -6754,7 +6727,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296549 @296550
@@ -6778,7 +6750,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296559 @296560
@@ -6801,7 +6772,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
@@ -6825,7 +6795,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296594 @296595
@@ -6848,7 +6817,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296597 @296598
@@ -6874,7 +6842,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296610 @296611
@@ -6898,7 +6865,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296613 @296614
@@ -6923,7 +6889,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296617 @296623
@@ -6998,7 +6963,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296644 @296645
@@ -7023,7 +6987,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296658 @296659
@@ -7050,7 +7013,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296661 @296662
@@ -7086,7 +7048,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296688 @296689
@@ -7115,7 +7076,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296692 @296693
@@ -7147,7 +7107,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296695 @296698
@@ -7176,7 +7135,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296701 @296702
@@ -7211,7 +7169,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total sum is not displayed for "Weight__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296767 @296768
@@ -7239,7 +7196,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296948 @296950
@@ -7273,7 +7229,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296953 @296957
@@ -7301,7 +7256,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296968 @296974
@@ -7335,7 +7289,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297044 @297047
@@ -7360,7 +7313,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Step Order" not displayed in enhanced grid table column title
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297067 @297069
@@ -7386,7 +7338,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297580 @297581
@@ -7411,7 +7362,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Step Order" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297583 @297584
@@ -7439,7 +7389,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297589 @297592
@@ -7473,7 +7422,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297595 @297597
@@ -7506,7 +7454,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297601 @297602
@@ -7536,7 +7483,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297605 @297606
@@ -7567,7 +7513,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206030
@@ -7593,7 +7538,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206036 @206037
@@ -7618,7 +7562,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218467 @218468
@@ -7640,7 +7583,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see select check box enabled in enhanced flex grid
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218470 @218471
@@ -7662,7 +7604,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see select check box enabled in enhanced flex grid
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218473 @218476 @218477 @218474
@@ -7686,7 +7627,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218472
