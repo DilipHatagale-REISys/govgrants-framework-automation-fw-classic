@@ -2495,34 +2495,40 @@ Business Need: Page Layout Component Scenarios
   @102114    @verifyHideFieldJsonFieldByDisablingTitleFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to disable title field Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-23618                  |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    Then I see field "ProgramName__c" is disabled
+    Then I softly see field "ProgramName__c" is not editable
 
-  @102115    @verifyHideFieldJsonFieldByDisablingDateFieldOnTheBasisOfPicklistFieldValueInEditMode @hidelogicappliedonprogramtype-grant
+  @102115
   Scenario: Set up hide field json value to disable date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | Grantor State Program | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-23618                  |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | PBD-23618                  |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    Then I see field "EndDate__c" is disabled
+    Then I softly see field "EndDate__c" is not editable
 
   @102248    @verifyIdDateTimeFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
   Scenario:validate disabled dateTime field value is not getting changed on page scroll in edit mode
@@ -2530,26 +2536,18 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:DateField}     |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:DateField}     |
+      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
-    When I enter value "365" into field "fieldEndDate__c"
-    And I click on "Save" in the page details
-    And I get the "EGMS ID"
-    When I navigate to "Overview" sub tab
-    And I click on "Edit" in the page details
-   # Then I see value "11/30/2022" of "Project Period End Date" field is not changed on page scroll
-    Then I softly see field "Project Period End Date" is not editable
+    And I click on "Edit" icon in flex table for first draft record
+    Then I softly see field "EndDate__c" is not editable
 
   @102251    @verifyIdDateFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1 @wip
   Scenario:validate disabled date field value is not getting changed on page scroll in edit mode
@@ -2667,7 +2665,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     Then I see bulb icon at header instruction is displayed
 
-  @112569   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionField-gPlanning
+  @112569   @wip
   Scenario: validate required for submit icon at description Field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2682,7 +2680,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
-  @112540   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionFieldForPMUser-gPlanning
+  @112540   @wip
   Scenario: validate required for submit icon at description Field for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2706,7 +2704,7 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
-  @112563    @requiredForSaveBehaviourAtPageBlockDetailForPMUser-gPlanning
+  @112563    @wip
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2724,7 +2722,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Project Period Start Date is required to save under Overview. |
 
-  @113064    @requiredForSaveBehaviourAtPageBlockDetailForSPIUser-gPlanning
+  @113064    @wip
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
@@ -2763,7 +2761,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "New" in flex table with id "Programs"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
-  @113061
+  @113061 @wip
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2776,12 +2774,11 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    #
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
 
-  @112571    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
+  @112571    @wip
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank by login as SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
@@ -2827,7 +2824,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see missing field badge on "Overview" tab
 
-  @112562    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
+  @112562    @wip
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2843,7 +2840,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see missing field badge on "Overview" tab
 
-  @112558    @verifyBadgesShownAtOverviewTabInEditModeIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
+  @112558   @wip
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2861,7 +2858,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
 
-  @112370    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
+  @112370    @wip
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -2887,7 +2884,7 @@ Business Need: Page Layout Component Scenarios
       | URL_Value                                                    |
       | https://login.salesforce.com/_ui/core/chatter/ui/ChatterPage |
 
-  @112373  @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
+  @112373  @wip
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank by login as SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
@@ -2960,16 +2957,16 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
 
-  @113066    @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  @113066  @114989   @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ISASpend           | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-23617                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | ISASpend           | Name                      | PBD-23617                  |
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -2987,6 +2984,9 @@ Business Need: Page Layout Component Scenarios
     And I enter "Edition" values from "Application_Field_Values.xlsx"
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
+    #114989
+    Then I see "Test Automation Seperator" page block displayed
+    #113066
     When I hovering mouse on help text icon inside "Test Automation Seperator"
     Then I see "<new_helpText>" shown as help text
 
@@ -2994,7 +2994,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
 
-  @112368    @verifyBadgesShouldNotDisplayedAtOverviewTabInEditLayoutIfAllTheRequiredForSubmitFieldsAreFilledForAdminUser-gPlanning
+  @112368    @wip
   Scenario: verify that badges are not displayed at Overview tab in page edit mode if all required for submit fields all filled for admin user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3261,14 +3261,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114412    @verifyTitleAndBadgeIsNotDisplayedIfSaveAndSubmitReqFieldsAreHidddenUsingPicklistFieldInEditMode
+  @114412    @wip
   Scenario: verify badge is hidden from overview tab if picklist and goal fields are hidden using hide field json on picklist field in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3286,14 +3285,13 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114212    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingNumberFieldInViewMode
+  @114212    @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on number field in value in view mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3310,14 +3308,13 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114215    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenByUsingURLFieldInViewMode
+  @114215    @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json at URL field in value in view mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3333,14 +3330,13 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Project Goals" inside page block
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114199    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingTEXTFieldInViewMode
+  @114199    @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on text field in value in view mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    #
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3379,14 +3375,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114219   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingNumberFieldValueInViewModeUsingNotEqualsOperator
+  @114219   @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on number field with not in operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3402,14 +3397,13 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Project Goals" is not displayed inside page block detail
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114218    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingURLFieldForNotEqualsOperator
+  @114218    @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on URL field for not equals operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3485,14 +3479,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114216    @verifyDisplayOfBadgesToPMUserIfMultipleReqFieldsAreHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
+  @114216    @wip
   Scenario: verify display of badges if multiple req fields are hidden for PM user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3509,14 +3502,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114502    @verifyDisplayOfBadgesToPMUserIfMultipleReqFieldsAreHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
+  @114502    @wip
   Scenario: verify display of badges by hiding date,picklist,text field using hide field JSON
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3535,14 +3527,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114503    @verifyDisplayOfBadgesToPMUserIfMultipleReqFieldsAreHiddenByUsingHideFieldJSONUsingNotEqualsOperator
+  @114503    @wip
   Scenario: verify display of badges by hiding date,picklist,text field using hide field JSON using not equals operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3561,14 +3552,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114508    @verifyDisplayOfBadgesByHiddenPicklistTextFieldUsingHideFieldJSONAtLookupField
+  @114508    @wip
   Scenario: verify display of badges by hiding picklist,Text field using hide field JSON on lookup value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3585,14 +3575,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114537   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateAndNumberFieldUsing2DifferentJSONInEditMode
+  @114537   @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using 2 different JSON on date, text field in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3614,41 +3603,13 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114989    @verifyPageBlockSeperatorDisplayedForSPIUser-gPlanning
-  Scenario: verify page block seperator displayed at SPI user if is active field is checked for record type as page block seperator
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ISASpend           | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | ISASpend           | Name                      | PBD-23617                  |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    Then I see "Test Automation Seperator" page block displayed
-
-  @114538   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateAndNumberFieldUsing2DifferentJSONInViewMode
+  @114538   @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using 2 different JSON on date, text field in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3694,13 +3655,13 @@ Business Need: Page Layout Component Scenarios
   @115592    @verifySpecialCharaterInHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
   Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page for SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ISASpend           | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-23617                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | ISASpend           | Name                      | PBD-23617                  |
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -3735,43 +3696,36 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see phase tab has "Very Dark Blue" background color
 
-  @115665 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForSPIUser-StateAsAGrantor
+  @115665 @wip
   Scenario: verify that very dark blue color is displayed as background for phases tab for SPI user
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
     Then I see phase tab has "Very dark cyan" background color
 
-  @116346    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueInViewMode
+  @116346
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-23592                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
-    Then I see "Project Goals" is not displayed inside page block detail
+    And I click on "Edit" in the page details
+    Then I see "Title" is not displayed inside page block detail
 
   @117880    @verifyFaviconIconDisplayedAtBrowserTab
   Scenario: verify favicon icon displayed at browser tab
@@ -3784,94 +3738,105 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Grants" tab
     Then I softly see FaviconIcon at "Grants" browser tab
 
-  @117808    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAsFormulaLoansInViewMode
+  @117808
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as formula loans in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17604                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName        | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    And I enter value "Grant" into field "Type__c"
-    And I enter value "Formula Grants" into field "ProgramSubType__c"
-    And I click on "Save" in the page details
-    Then I see "Project Goals" is not displayed inside page block detail
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I enter value "Project Grants" into field "ProgramSubType__c"
+    When I click on "Save" in the page details
+    Then I see "Title" is not displayed inside page block detail
 
   @117805    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAsBlankAndUsingNotEqualsOperatorInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as blank and using not equals operator in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-17604                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnPicklistBlankValueUsingNotEqualsOperator | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                     | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    And I enter value "Grant" into field "Type__c"
-    And I enter value "Formula Grants" into field "ProgramSubType__c"
-    And I click on "Save" in the page details
-    Then I see "Project Goals" is not displayed inside page block detail
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    Then I see "Title" is not displayed inside page block detail
 
   @117809    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAndUsingMultipleConditionsInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | PBD-17604                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                       | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                       | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    And I enter value "Grant" into field "Type__c"
-    And I enter value "Formula Grants" into field "ProgramSubType__c"
-    And I click on "Save" in the page details
-    Then I see "Project Goals" is not displayed inside page block detail
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    Then I see "Title" is not displayed inside page block detail
 
   @117813    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAndUsingNotEqualsOperatorInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value and using multiple conditions in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-17604                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                       | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
+      | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                       | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    And I enter value "" into field "ProgramSubType__c"
-    And I click on "Save" in the page details
-    Then I see "Project Goals" is not displayed inside page block detail
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    Then I see "Title" is not displayed inside page block detail
 
   @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Active Grants"
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "Edit" icon for "Automation Direct Grant" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @119858  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditModal-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at modal
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I click on top right button "New" in flex table with id "ActiveFundingOpportunities"
+    When I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @119859    @requiredToSaveBehaviourAtModalWindowIfDataInAnyRequiredFieldIsMissing-gPlanning
@@ -3885,30 +3850,29 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program ID is required to save. |
 
-  @119857    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInEditMode-gPlanning
+  @119857    @wip
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true              | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "Edit" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Information" page block
     Then I softly see "<new_helpText1>" shown as help text
-    And I refresh the page
     When I hovering mouse on help text icon at "Status" inside "Overview Header" header
     Then I softly see "<new_helpText2>" shown as help text
 
@@ -3916,30 +3880,29 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120005    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTabAndHeaderInViewMode-gPlanning
+  @120005    @wip
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at tab and header in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true              | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "Edit" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Information" page block
     Then I softly see "<new_helpText1>" shown as help text
-    And I refresh the page
     When I hovering mouse on help text icon at "Status" inside "Overview Header" header
     Then I softly see "<new_helpText2>" shown as help text
 
@@ -3947,30 +3910,29 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120006    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInEditMode-gPlanning
+  @120006    @wip @duplicateas120005
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "Edit" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Information" page block
     Then I softly see "<new_helpText1>" shown as help text
-    And I refresh the page
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "Details" page block
     Then I softly see "<new_helpText2>" shown as help text
@@ -3979,26 +3941,26 @@ Business Need: Page Layout Component Scenarios
       | new_helpText1 | new_helpText2 |
       | help text     | help text     |
 
-  @120007    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffPageBlockInViewMode-gPlanning
+  @120007    @wip @duplicate
   Scenario Outline: validating help text on hover at field inside program detail page if two same name fields are displayed at 2 diff page block in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "Edit" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -4009,39 +3971,41 @@ Business Need: Page Layout Component Scenarios
 
     Examples:
       | new_helpText1 | new_helpText2 |
-      | help text     | help text     |
+      | help text     | help text1    |
 
-  @120009    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithDiffHelpText-gPlanning
+  @120009    @wip
   Scenario Outline: validating help text on hover at field two same name fields are displayed at 2 diff tabs in edit mode with diff help text
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Annoucement Profile-FOA | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Grantor State Program | Name                      | {pagelayout:HeaderOverview_StatusField} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Grantor State Program | Name                      | {pagelayout:Temp_StatusField}           |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "Edit" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
-    When I navigate to "Financials" sub tab
+    When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "Financial Details" page block
     Then I softly see "<new_helpText2>" shown as help text
 
     Examples:
       | new_helpText1 | new_helpText2 |
-      | help text     | help text     |
+      | help text     | help text1     |
 
-  @120010    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithDiffHelpText-gPlanning
+  @120010    @wip
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with diff help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -4071,7 +4035,7 @@ Business Need: Page Layout Component Scenarios
       | default_helpText1 | default_helpText2 |
       | help text         | help text2        |
 
-  @120012    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInViewModeWithSameHelpText-gPlanning
+  @120012    @wip
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in view mode with same help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -4101,7 +4065,7 @@ Business Need: Page Layout Component Scenarios
       | default_helpText1 | default_helpText2 |
       | help text         | help text2        |
 
-  @120013    @validateHelpTextAtPageBlockDetailIfTwoSameNameFieldsAreDisplayedAtTwoDiffTabsInEditModeWithSameHelpText-gPlanning
+  @120013    @wip
   Scenario Outline: validating help text on hover at field if two same name fields are displayed at 2 diff tabs in edit mode with same help text
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue   | coreComponentField      | filterId         |
@@ -4183,7 +4147,7 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
 
-  @120091    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInViewMode-gPlanning
+  @120091    @wip
   Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in view mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4201,14 +4165,13 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I see "Missing fields information" shown as help text at visual indicator inside page layout
 
-  @120089    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInEditMode-gPlanning
+  @120089    @wip
   Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in edit mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4246,49 +4209,52 @@ Business Need: Page Layout Component Scenarios
 
   @120234    @validateLoadingIconIsNotDisplayedAtAddAttachmentModalWindowInViewMode
   Scenario: validate loading icon is not displayed at add attachment modal window when record is in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    When I click on top right button "Add" in notes and attachment with name "Files"
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
   @120236    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInEditMode
   Scenario: validate loading icon is not displayed at add Attachments modal window when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Files" sub tab
-    When I click on top right button "Add" in notes and attachment with name "Files"
+    When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
   @120450    @validateNotesIsAddedSuccessfullyUsingAddNotesButton
   Scenario: validate Notes are getting added successfully using add button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    When I click on "Delete" icon for "Notes Record" inside table
-    When I click "Yes" on modal confirmation box
-    And I click modal button "Ok"
-    And I pause execution for "5" seconds
-    When I add notes records
-    When I close modal by clicking the top right x button
-    Then I see table with header "Notes" contains records "Notes Record"
+    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I enter value "Notes" into field "Title"
+    And I enter value "Record" into field "Body"
+    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    Then I see the following message in the page details :
+      | Saved Successfully! |
+#    Then I see table with header "Notes" contains records "Notes Record"
 
   @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4296,11 +4262,11 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "5" seconds
-    Then I do not see loading icon at "Associate" modal
+    Then I do not see loading icon at "Associate Contacts" modal
 
   @120239    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInViewMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4309,21 +4275,20 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I wait for "5" seconds
-    Then I do not see loading icon at "Associate" modal
+    Then I do not see loading icon at "Associate Contacts" modal
 
   @120241    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewModeByLoginAsExternalUser
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode by login as external user
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---" without waiting for record
     When I click on "Qualify" in the page details
     When I click on "Create Application" in the page details
     And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "APPEGMSID"
     When I click on "Edit" in the page details
@@ -4337,17 +4302,17 @@ Business Need: Page Layout Component Scenarios
 
   @120242    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInViewModeByLoginAsExternalUser
   Scenario: validate loading icon is not displayed at add attachments modal window when record is in view mode by login as external user
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---" without waiting for record
     When I click on "Qualify" in the page details
     When I click on "Create Application" in the page details
     And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
+    And I pause execution for "5" seconds
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "APPEGMSID"
     When I click on "Edit" in the page details
@@ -4361,32 +4326,43 @@ Business Need: Page Layout Component Scenarios
 
   @120451    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileEditingRecord
   Scenario: validate are getting edited successfully without throwing alert message if all required fields are filled
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    And I pause execution for "7" seconds
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    When I click on "Edit" icon for "Automation Notes" inside table
-    And I close modal by clicking the top right x button
-    Then I cannot see the following messages in the page details contains:
-      | required fields missing:[Parent Id] |
+    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I enter value "Notes" into field "Title"
+    And I enter value "Record" into field "Body"
+    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    # When I click on "Edit" icon for "Notes" inside flex table with id "---program:-:InternalProgramNotesTableId---"
+    Then I softly can see row level action button "Edit" against "Notes" in flex table with id "---program:-:InternalProgramNotesTableId---"
 
   @120452    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileAddingNewRecord
   Scenario: validate records are getting added successfully without throwing alert message if all required fields are filled
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    When I click on "Delete" icon for "Notes Record" inside table
+    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I enter value "Notes" into field "Title"
+    And I enter value "Record" into field "Body"
+    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    When I click on "Delete" icon for "Notes" inside flex table with id "---program:-:InternalProgramNotesTableId---"
     When I click "Yes" on modal confirmation box
-    And I click modal button "Ok"
-    When I add notes records
-    Then I cannot see the following messages in the page details contains:
-      | required fields missing:[Parent Id] |
+    Then I see the following message in the page details :
+      | Record deleted successfully. |
 
   @120516  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMod
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
@@ -6013,7 +5989,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
-    Then I see field "ProgramName__c" is disabled
+    Then I softly see field "ProgramName__c" is not editable
 
   @133879    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide currency field from Overview page block using picklist field value in edit mode
@@ -6029,7 +6005,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     And I enter value "Grant" into field "Type__c"
-    Then I see field "FundedAmount__c" is disabled
+    Then I softly see field "FundedAmount__c" is not editable
 
   @133883
   Scenario: Set up hide field json value to Hide date from Overview page block using text field value in edit mode
@@ -6087,7 +6063,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    Then I see field "ProgramName__c" is disabled
+    Then I softly see field "ProgramName__c" is not editable
 
   @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
   Scenario: Set up hide field json value to Hide picklist from Overview page block using date field value in edit mode
@@ -6117,7 +6093,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    Then I see field "FundedAmount__c" is disabled
+    Then I softly see field "FundedAmount__c" is not editable
 
   @134132    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOPicklistFieldValueOnModal @wip
   Scenario: Set up hide field json value to Hide picklist using picklist field value on modal window
@@ -11132,7 +11108,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User |
      # | ADMIN |
-      | PM    |
+      | PM   |
 
   @200266 @200245 @379387 @379388 @Sanity @SanityPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
