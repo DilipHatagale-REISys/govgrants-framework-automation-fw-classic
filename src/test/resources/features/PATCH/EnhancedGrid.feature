@@ -2849,26 +2849,27 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
-  @80502 @wip @needconfirmationfromshambhavi
+  @80502 @needconfirmationfromshambhavi
   Scenario: Verify a 'Show Link as Text' field at parent flex table by setting checkbox to true
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid             | Show Link as Text | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue                                          | filterId         |
+      | Flex Grid             | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
+      | Flex Grid             | Show Link as Text   | false                                                      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Show Link as Text | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Program__c | ProgramReviewStepTemplates |                           |                            |
+      | Flex Grid:General     | Show Link as Text   | true                                                                  | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I get the "EGMS ID"
+    And I save the field labeled "Program" as "ProgramName"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Setup" sub tab
+    Then I see hyperlink at column value "Automation PM" inside "ProgramReviewStepTemplatesFlexToggle" table
 
   @80506 @wip @needconfirmationfromshambhavi
   Scenario: validate hyperlink is present at column value after unchecking the Show Link as Text Field from config at e-grid - gplanning
