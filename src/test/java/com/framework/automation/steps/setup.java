@@ -27,6 +27,7 @@ public class setup {
 
     public setup(TestSetupController userController, ProjectWebServices projectWebServices) {
         this.userController = userController;
+        this.projectWebServices = projectWebServices;
         if(report == null) {
             this.report = new CSS();
             EnvironmentFactory.setProjectName("GovGrants Framework Test Automation");
@@ -54,10 +55,11 @@ public class setup {
     @After(order = 2)
     public void deleteMe() {
         if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
-            ProjectWebServices.deleteRecordInHooks();
-        else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
-            ProjectWebServices.deleteRecordInHooks();
-//        It will deactivate the activated users.
+            projectWebServices.deleteRecordInHooks();
+//       else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
+//           projectWebServices.deleteRecordInHooks();
 //        ProjectWebServices.changeUserActivationStatus("automationinternal", false);
     }
+
+
 }
