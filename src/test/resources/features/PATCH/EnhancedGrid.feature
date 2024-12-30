@@ -2158,31 +2158,32 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
 
-  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning @wip
+  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute     | <styleAttributeValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1500                   |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute     | <styleAttributeValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | ProgramChecklists  |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
+    Then I see "(2,555)" inside enhanced grid table id "---program:-:checklistTableId---" in "Red" colour
 
     Examples:
-      | styleAttributeValue | newFieldsApi                                                                                                                                                                                                               | defaultFieldsApi                                      |
-      | color: 'red'        | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | styleAttributeValue | newFieldsApi                                                                 | defaultFieldsApi                                                             |
+      | color: 'red'        | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c |
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
@@ -2190,18 +2191,19 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | StyleClass | <styleClassValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
     Then I see "Road Construction Annoumsment" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
 
     Examples:
@@ -2276,28 +2278,30 @@ Business Need: EnhancedGrid Component Scenarios
   @49359    @styleAttributeFieldAtChildFlexTableForEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute | <styleAttributeValue> | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1494                   |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute     | <styleAttributeValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | ProgramChecklists  |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "GT-12132-001"
-    Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
+    Then I see "(2,555)" inside enhanced grid table id "---program:-:checklistTableId---" in "Red" colour
 
     Examples:
-      | styleAttributeValue |
-      | color: 'red'        |
+      | styleAttributeValue | newFieldsApi                                                                 | defaultFieldsApi                                                             |
+      | color: 'red'        | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c |
+
 
   @49240
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning

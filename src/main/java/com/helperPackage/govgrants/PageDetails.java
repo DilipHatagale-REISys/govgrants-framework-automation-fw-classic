@@ -744,7 +744,8 @@ public final class PageDetails {
      * @author ashwini.mahore
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
-        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')] |" +
+        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//span[contains(text(),'" + blockTitle + "')]//ancestor::h3//*[@class='fa fa-info helpIcon'] |" +
+                " //h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')] |" +
                 "//div[@class='pull-right']//input[@value='" + blockTitle + "'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + blockTitle + "'] |" +
                 "//dd/*[text()='" + blockTitle + "']/ancestor::dl//*[@class='fa fa-info helpIcon'] | " +
