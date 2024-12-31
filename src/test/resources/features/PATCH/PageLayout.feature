@@ -6789,7 +6789,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click on top right button "Create" in flex table with id "---program:-:AnnouncementTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:AnnouncementTableId---"
     When I enter value "PG-343-0034" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
     And I click modal button "Continue"
