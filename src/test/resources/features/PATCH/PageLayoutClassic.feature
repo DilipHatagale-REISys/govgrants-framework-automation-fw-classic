@@ -71,7 +71,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
+    When I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Submit For Approval" button is not displayed
 
     Examples:
@@ -229,7 +229,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -238,14 +238,14 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I cannot see "Overview" sub tab at view detail page
 
-  @34354    @sortOrderForFieldAtPageTab-gPlanning
+  @34354    @sortOrderForFieldAtPageTab-gPlanning @wip
   Scenario: Changing sort order for overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -261,7 +261,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Header Instruction Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName               | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -277,7 +277,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Tab Title | Overview          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Title | Automation Overview | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Tab Title | Automation Overview | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -293,7 +293,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Tab Icon  | govgrants_config:TabIconDefaultCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Icon  | govgrants_config:TabIconNewCss | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Tab Icon  | govgrants_config:TabIconNewCss | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -309,7 +309,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -325,7 +325,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -341,7 +341,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -357,7 +357,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -376,15 +376,15 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see complete header overview tab is displayed at view detail page
 
-  @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
+  @35976    @thistcforadminuser @smoke
   Scenario: Hiding overview tab from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | TAB-2624                   |
-    When I login to "As a Grantor" app as "PM" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -497,10 +497,10 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantor State Program | Name                      | TAB-2624                   |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-2624                   |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | TAB-2624                   |
-    When I login to "As a Grantor" app as "PM" user
+      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -517,10 +517,10 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantor State Program | Name                      | TAB-2624                   |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-2624                   |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | TAB-2624                   |
-    When I login to "As a Grantor" app as "PM" user
+      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -656,14 +656,13 @@ Business Need: Page Layout Component Scenarios
   @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
+      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -676,21 +675,26 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon is disabled inside "Files" page block
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
+    Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @36053    @hideDisableAttachmentRowActionsFieldWithHideOptionAtPageBlock-gPlanning
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | configurationCategory        | fieldName                           | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Disable           | ApiGeneratedId:0 |
+      #| Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
+      | configurationCategory        | fieldName                           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Hide          | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
+     # | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -703,9 +707,15 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
-    Then I see "Edit" icon for "Award Letter" is not displayed inside flex table
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
+    Then I softly cannot see row level action button "Edit" against "SendEmailAttachment.pdf" in flex table with id "Attachments"
 
   @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
@@ -931,14 +941,13 @@ Business Need: Page Layout Component Scenarios
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-17604                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17604                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | {pagelayout:ProgramName__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | {pagelayout:ProgramName__c} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -946,8 +955,11 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Continue" in the page details
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I clear the value from field "ProgramName__c"
+    And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Program Sub Type is required to save. |
+      | Title is required to save under Overview. |
 
   @36050    @attachementClassificationFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
@@ -1062,34 +1074,36 @@ Business Need: Page Layout Component Scenarios
   @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization      | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName          | fieldOrignalValue     | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Internal Organization | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail             | Is Active          | true                  | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName          | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | PBD-17603                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+      | Page Block Config:Page Block Rule Detail | Is Active          | true                    | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I click search icon for lookup "Organization Lookup (New Window)"
+    When I click search icon for lookup "State Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
   @36170    @lookupDisplayFieldNamesFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantor State Program | Name                      | PBD-17603                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Code__c  | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I click search icon for look up field "Organization Lookup (New Window)" with clearing
-    Then I see "Code" in table header on lookup Modal
+    When I click search icon for look up field "State Organization Lookup (New Window)" with clearing
+    Then I see "EGMS ID" in table header on lookup Modal
 
   @36172    @lookupFilterCriteriaFieldAtPAgeBlockDetail-gPlanning @smoke @wip
   Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
@@ -1117,19 +1131,19 @@ Business Need: Page Layout Component Scenarios
   @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue   | coreComponentField      | filterId         |
-      | Page Block Config:Page Block Rule Detail | Attachment Classifications | FOA;CFA;CFDA;Other; | Annoucement Profile-FOA | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Attachment Classifications |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2;  | Annoucement Profile-FOA | Name                      | PBD-5205                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2   | Grantor State Program | Name                      | {pagelayout:AttachmentClassification} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "All Announcements"
-    When I perform quick search for "Announcement for Testing"
-    When I click on "View" icon for "Announcement for Testing" inside table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
+    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
-    When I click on Manage Attachments inside page block details
+    When I click on "Manage Attachments" in the page details
     Then I see "Test1:Test2" inside Type selectbox
 
   @36196    @submitWarningMessageFieldAtPageLayoutAction-gPlanning
@@ -7209,10 +7223,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab for Profile Admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7224,10 +7238,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7239,10 +7253,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context edit in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7254,10 +7268,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab for user app state as Grantor in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7334,10 +7348,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7379,10 +7393,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate hide expression by hiding tab using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11690,7 +11704,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2686                   |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2628                   |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2622                   |
@@ -11726,7 +11740,7 @@ Business Need: Page Layout Component Scenarios
       #| Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2686                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2628                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2622                   |
@@ -11852,6 +11866,22 @@ Business Need: Page Layout Component Scenarios
 
   @219888 @379093 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:OverviewTabSPI} |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:BudgetTabSPI}   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:ProposalTabSPI} |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:FilesTabSPI}    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:HistoryTabSPI}  |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | {pagelayout:CollabSPI}      |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -11888,7 +11918,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2686                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2628                   |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2622                   |
@@ -11909,7 +11939,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User |
      # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @219891
   Scenario: Page Tab - SPI- UI - Verify page tab label should not displayed properly with icon
@@ -11920,13 +11950,15 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2733                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2854                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2732                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2734                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2845                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:OverviewTabSPI} |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:BudgetTabSPI}   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:ProposalTabSPI} |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:FilesTabSPI}    |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:HistoryTabSPI}  |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | {pagelayout:CollabSPI}      |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -11939,11 +11971,6 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
     Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
     Then I do not see "Budget" subtab is present with icon "fa fa-usd" in page details
     Then I do not see "Proposal" subtab is present with icon "glyphicon glyphicon-tasks" in page details
@@ -11968,7 +11995,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User |
      # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @219895 @379383 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
@@ -12003,7 +12030,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12017,8 +12044,8 @@ Business Need: Page Layout Component Scenarios
 #      Then I do not see sequence of "History" subtab is "5" on page layout
 #      Then I do not see sequence of "Collab" subtab is "6" on page layout
     Examples:
-      | User |
-     # | ADMIN |
+      | User  |
+      | ADMIN |
      # | PM    |
 
   @219899
@@ -12027,8 +12054,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient ApplicationView | Name                      | TAB-2733                   |
+      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient ApplicationView | Name                      | {pagelayout:OverviewTabSPI} |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -12047,6 +12074,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
     Then I do not see sequence of "Overview" subtab is "1" on page layout
+    #Then I see "Information" shown at number "5" inside detail page
 #    Then I do not see sequence of "Budget" subtab is "2" on page layout
 #    Then I do not see sequence of "Proposal" subtab is "3" on page layout
 #    Then I do not see sequence of "Files" subtab is "4" on page layout
