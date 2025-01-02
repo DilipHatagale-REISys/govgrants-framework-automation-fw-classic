@@ -3841,3 +3841,34 @@ The EGMS Team
     When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
     And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---" without waiting for record
     Then I see status in Progress-bar is "Created" and is "Green"
+
+    @passwordcheck
+    Scenario: password check
+      When I login to "As a Grantor" app as "PM" user
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "PM1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "EXE1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "ADMIN" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "ADMIN1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "PO" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "PO1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "FD" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "FD1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "FO1" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "SPI3" user on "INTERNAL" portal
+      And I navigate to "Applications" tab
+      When I re-login to "As a Grantor" app as "SPA" user on "INTERNAL" portal
+      And I navigate to "Applications" tab

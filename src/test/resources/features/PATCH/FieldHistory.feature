@@ -11,12 +11,24 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I navigate to "Planning" tab
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "fa fa-eye" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "5" seconds
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
     And I pause execution for "5" seconds
@@ -117,40 +129,27 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Disapprove" in the approval decision
+    When I "Reject" in the approval decision
     When I navigate to "History" sub tab
-    Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Rejected"
+    Then I softly see "Rejected" shown inside "New Value" column in history table
 
   @69944    @VerifyExpectedStatusIsDisplayedInApprovalHistoryAfterRecordReassign
   Scenario: Validating status as REASSIGNED inside Approval history table after approval of record
@@ -367,7 +366,7 @@ Business Need: history Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
@@ -377,8 +376,7 @@ Business Need: history Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramForLocalTestingAtHistory}" inside table
     When I navigate to "History" sub tab
-    Then I softly see "05/30/2023" shown inside "New Value" column in history table
-    Then I softly see "05/22/2023" shown inside "Old Value" column in history table
+    Then I softly see "01/02/2025 12:09 AM" shown inside "Changed On" column in history table
 
   @84568p  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderHistoryTable
   Scenario: validate the date and time field format under field history table with respective to EDT Local
@@ -435,31 +433,43 @@ Business Need: history Component Scenarios
   History Field : Admin User -To verify, User change the currency field from backend then it should display changed and previous value in the new and old value column
   Field History -PM user - To verify, User change the currency field value from backend then it should display only one time in the field history table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config                         | Is Active | true              |                       | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action      | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17329                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17070                  |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    And I enter value "0" into field "fieldFundedAmount__c"
-    And I enter value "0" into field "fieldStartDate__c"
-    And I enter value "730" into field "fieldEndDate__c"
+    And I enter value "0" into field "FundedAmount__c"
+    And I enter value "0" into field "StartDate__c"
+    And I enter value "730" into field "EndDate__c"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-    And I enter value "400000" into field "fieldFundedAmount__c"
+    And I enter value "400000" into field "FundedAmount__c"
     And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I see "$400,000" shown inside "New Value" column in history table
 
     Examples:
       | User |
-     # | ADMIN |
       | PM   |
 
   @114729p  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
@@ -469,7 +479,7 @@ Business Need: history Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-4982                   | PBD-24009                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-6823                   | PBD-17091                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -496,6 +506,7 @@ Business Need: history Component Scenarios
 
   @120103p  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
+    |Scenario 1:Flex Table-To verify,  Advanced  Search working on 'Field history ' table for admin user|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
@@ -503,11 +514,23 @@ Business Need: history Component Scenarios
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Admin Program for Advance filter"
-    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -517,47 +540,45 @@ Business Need: history Component Scenarios
   @120539p    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageViewMode
   Scenario: validate approval history table is displayed at history tab when page is in view mode
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
   @121042    @verifyThatApprovalHistoryTableIsDisplayedAtHistoryTabInPageEditMode
   Scenario: validate approval history table is displayed at history tab when page is in edit mode
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
   @121152p  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedAtNewlyRecordCreated
   Scenario: validate that approval history table , field history table and snapshot history is displayed a newly created record
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I pause execution for "10" seconds
-    And I click on "Edit" in the page details
-    And I enter value "3000" into field "fieldFundedAmount__c"
-    And I click on "Save" in the page details
-    And I pause execution for "5" seconds
-    And I refresh the page
     When I navigate to "History" sub tab
-    And I pause execution for "10" seconds
+    And I pause execution for "2" seconds
     Then I softly see expected table with id "---program:-:ApprovalTableId---"
     Then I softly see expected table with id "---program:-:historyTableId---"
     Then I softly see expected table with id "---program:-:snapshotHistoryTableId---"
@@ -565,28 +586,50 @@ Business Need: history Component Scenarios
   @120545  @verifyFieldHistoryApprovalHistorySnapshotHistoryIsDisplayedInRecordEditMode
   Scenario: validate that approval history table and snapshot history is displayed in record edit mode
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     When I navigate to "History" sub tab
+    Then I softly see expected table with id "---program:-:ApprovalTableId---"
     Then I softly see expected table with id "---program:-:snapshotHistoryTableId---"
-    Then I softly see the text containing :
-      | Snapshot History |
 
   @91687  @verifyAdvanceFilterAtFieldHistoryTableInRecordViewMode
   Scenario: validate advance filter at field history table in record view mode
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Changed Field | Equals to | Primary Applicant Name |
-    Then I see value "Primary Applicant Name" for title "Changed Field" inside table "---program:-:historyTableId---"
+      | Changed Field | Equals to | Status |
+    Then I see value "Status" for title "Changed Field" inside table "---program:-:historyTableId---"
 
   @132112    @verifyHistoryTableIsDisplayedAtAccountStandardObject
   Scenario: verify history table is present on account standard object
@@ -1014,7 +1057,7 @@ Business Need: history Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @205477 @205478
+  @205477 @2054781
   Scenario Outline: Field History : PM User -To verify, User change the negative value number field as a from backend then it should display in the new value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
