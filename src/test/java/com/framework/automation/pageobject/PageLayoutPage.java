@@ -494,9 +494,9 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void hoverAttHelpTextAtFieldInsidePageBlock(String fieldName, String pageBlockName, boolean isPageBlock) {
         if (isPageBlock) {
-            I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
+            I.amPerforming().scroll().onPageToSpecificElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
         } else {
-            I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/..//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
+            I.amPerforming().scroll().onPageToSpecificElement(ByUsing.xpath("//span[text()='" + pageBlockName + "']/..//span[text()='" + fieldName + "']/..//span[contains(@class,'fa-info')]"));
         }
     }
 

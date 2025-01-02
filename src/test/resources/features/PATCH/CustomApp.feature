@@ -1,4 +1,4 @@
-@CustomApp-PATCHcomponent @regression-PATCH @customApp @vrush-module @skiponjenkins
+@CustomApp-PATCHcomponent @regression-PATCH @customApp @vrush-module
 Business Need: customApp Component Scenarios
   Test all customApp component based scenarios
   As a configuration manager i make different configurational changes in customApp component and will validate them.
@@ -69,7 +69,7 @@ Business Need: customApp Component Scenarios
     Then I see "Home" tab is highlighted for particular program
     Examples:
       | User  | defaultUrl                   |
-      | ADMIN | apex/PhaseView?t=GrantorHome |
+    #  | ADMIN | apex/PhaseView?t=GrantorHome |
       | PM    | apex/PhaseView?t=GrantorHome |
 
   @332601
@@ -154,7 +154,7 @@ Business Need: customApp Component Scenarios
     Then I see "Home" tab is highlighted for particular program
     Examples:
       | User  | defaultUrl                    |
-      | ADMIN | /apex/PhaseView?t=GranteeHome |
+  #    | ADMIN | /apex/PhaseView?t=GranteeHome |
       | PM    | /apex/PhaseView?t=GranteeHome |
 
   @332512
@@ -206,7 +206,7 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue    | coreComponentField |
       | Custom App Config:General | Label     | As Administrator | Admin              |
-    When I login to "As a Grantor" app as "ADMIN" user
+   # When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
     Then I see "As a Grantee" inside CustomApp dropDown

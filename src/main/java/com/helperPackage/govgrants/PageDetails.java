@@ -38,7 +38,7 @@ public final class PageDetails {
                 + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName) + " or "
                 + I.amPerforming().sanityOfXpathTo().equals("@value", buttonName) + ")] |" +
                 "//*[contains(@class,'overview-header') or contains(@class,'panel-footer')]//*[(local-name()='a' or local-name()='button' or local-name()='input') and not(contains(@class,'hidden'))]//span[(text()='" + buttonName + "') and not(contains(@class,'hidden'))] |" +
-                "//*[contains(@class,'panel-heading')]//*[local-name()='a' and contains(@class,'menuLinks') and @title='" + buttonName + "']|//*[@value='" + buttonName + "' and @class='customBtn']");
+                "//*[contains(@class,'panel-heading')]//*[local-name()='a' and contains(@class,'menuLinks') and @title='" + buttonName + "']|//*[@value='" + buttonName + "' and @class='customBtn'] | //div//a[contains(text(),'" + buttonName + "')]");
     }
 
     /**
@@ -451,7 +451,7 @@ public final class PageDetails {
         if (fieldLabel.contains("'"))
             element = "//span[text()=\"" + fieldLabel + "\"]";
         else
-            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "'] |" +
+            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "'] | //div[@id='" + fieldLabel + "']" +
                     "//td[@class='groupTitle']//field[@field-name='Name']//span[@title='" + fieldLabel + "'] | //label[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]";
 
         try {
