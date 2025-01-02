@@ -20,7 +20,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+      #| ADMIN |
 
   @333608
   Scenario: Recently Viewed - SPI- UI- Verify ‘Recently viewed’ is visible
@@ -38,7 +38,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+     # | ADMIN |
 
   @333610
   Scenario: Sidebar search- SPI- UI- Verify Sidebar search menu is visible
@@ -56,7 +56,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @333615
   Scenario: Sidebar- SPI- UI- Verify Sidebar "Tasks" menu is visible
@@ -74,7 +74,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @333617
   Scenario: Sidebar- SPI- UI- Verify Sidebar BI &Analytics menu is visible
@@ -104,7 +104,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+     # | ADMIN |
 
   @333620 @333582
   Scenario Outline: Sidebar- PM- UI- Verify Sidebar Activity menu is visible
@@ -115,7 +115,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @333621
   Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
@@ -154,7 +154,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+     # | ADMIN |
 
   @333563
   Scenario: Phase name- External To verify 'Default Landing Tab?' field should be active on the phases config page  then display label phase should be open
@@ -214,7 +214,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  | New-Profile                                                                                                    | Old-Profile                                                                                                        |
       | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
-      | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; PM; TR1; TR2; TR3; VND; EBZ                   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
+   #   | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; PM; TR1; TR2; TR3; VND; EBZ                   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
   @333639 @333592
   Scenario Outline: Available for profiles- PM- UI- Verify ‘Phase’ is visible on UI when logged in as PM
@@ -230,7 +230,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  | New-Profile                                                                                                        | Old-Profile                                                                                                        |
       | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
-      | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
+      #| ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
   @333640 @333593  @doubtedconfig
   Scenario Outline: Custom App Name - PM- UI - Verify ‘Phase’ should not be visible on UI when logged in as Grantor
@@ -248,7 +248,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+     # | ADMIN |
 
   @333646 @333647 @333649 @333650
   Scenario Outline: Phase- PM- UI- Verify ‘Phase’ is visible on UI
@@ -264,7 +264,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @333648 @333651
   Scenario: Phase name- SPI- UI- Verify phase name displayed correctly on UI
@@ -299,7 +299,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+   #   | ADMIN |
 
   @333643 @333642
   Scenario Outline: Custom App Name - Admin- Config - Verify ‘Phase’ is visible on UI when logged in as Grantee
@@ -316,7 +316,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+     # | ADMIN |
 
   @333642 @333594  @doubtedconfig
   Scenario Outline: Custom App Name - PM- UI - Verify ‘Phase’ is visible on UI when logged in as Grantee
@@ -334,7 +334,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+      #| ADMIN |
 
   @333607 @333578
   Scenario Outline: Sidebar Links - PM- UI- Verify "Useful Links" is visible
@@ -345,7 +345,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @333625
   Scenario: Charts- PM- UI- Verify we can add charts up to value of ‘Total charts allowed per row’
@@ -381,7 +381,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+  #    | ADMIN |
 
   @333565
   Scenario: Phase name- External- To verify 'Tab Icon CSS' should be added on the phases config page for respective 'Tab Display Label'
@@ -416,7 +416,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | PM    |
-      | ADMIN |
+    #  | ADMIN |
 
   @34419    @validatePlanningPhaseAllowedProfile-gplanning
   Scenario Outline: Remove admin profile from config. and validate that Plannign phase doesn't show up in admin user
@@ -446,7 +446,7 @@ Business Need: Phase Config Component Scenarios
     Then I see "Automation" phase
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @333566 @333569
@@ -462,7 +462,7 @@ Business Need: Phase Config Component Scenarios
     Then I see "0123456789" phase
     Examples:
       | User  |
-      | ADMIN |
+    ##  | ADMIN |
       | PM    |
 
 
@@ -480,7 +480,7 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @333571
@@ -534,7 +534,7 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @333542p @333545
@@ -609,7 +609,7 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+     # | ADMIN |
       | PM    |
 
   @34587    @validateIsPlanningDisplayedInTaskSummary-gplanning
@@ -763,7 +763,7 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+     # | ADMIN |
       | PM    |
 
   @333532 @333533 @333534

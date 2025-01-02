@@ -496,7 +496,7 @@ public final class GovGrantsAssertionObjects {
                 + " | //div[contains(@class,'alert-danger')]" // get the alert danger message...
                 + " | //div//span[contains(@class,'dynamic-msg-box-margin')]"
                 + "| //div//p[contains(@class,'requiredError Type__c')] |" +
-                "//div//span[contains(normalize-space(text()),'" + unsanitizedDesiredMessages + "')]"
+                "//div//span[contains(normalize-space(text()),'" + unsanitizedDesiredMessages + "')] | //div[@id='success-alert']//span[@class='ng-binding']"
         );
 
         List<String> desiredMessages = unsanitizedDesiredMessages

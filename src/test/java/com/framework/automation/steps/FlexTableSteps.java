@@ -326,7 +326,8 @@ public class FlexTableSteps {
                 "| //span[@id='theErrorPage:theError' and contains(text(),'" + errorMessage + "')] " +
                 "| //div[@class='slds-text-longform']//h3[text()='" + errorMessage + "'] " +
                 "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'" + errorMessage + "')] |" +
-                "//div//p[@class='requiredError Question1__c' and contains(text(),'" + errorMessage + "')]"));
+                "//div//p[@class='requiredError Question1__c' and contains(text(),'" + errorMessage + "')] |" +
+                "//div//dl//p[@class='requiredError' and contains(text(),'" + errorMessage + "')]"));
         Assert.assertTrue(errorMessageDisplayed);
     }
 
@@ -653,6 +654,6 @@ public class FlexTableSteps {
 
     @And("^I click on \"([^\"]*)\" button for \"([^\"]*)\" inside table id \"([^\"]*)\"$")
     public void iClickOnButtonForInsideTableId(String buttonName, String columnName, String tableId) {
-        I.amPerforming().click().on(ByUsing.xpath("//div[@id='"+tableId+"']//table//tr//*[@title='"+columnName+"']//ancestor::td//following-sibling::td//action//*[@title='"+buttonName+"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//table//tr//*[@title='" + columnName + "']//ancestor::td//following-sibling::td//action//*[@title='" + buttonName + "']"));
     }
 }

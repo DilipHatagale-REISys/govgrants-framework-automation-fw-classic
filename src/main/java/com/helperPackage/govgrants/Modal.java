@@ -58,7 +58,7 @@ public final class Modal {
      * Modifier - saranjit.modak Added Xpath - 17/05/2023
      */
     public void closeModalByClickingTopRightCloseButton(String titleName) {
-        By closeButton = By.xpath("//iframe[contains(@ng-src, '/') or contains(@src,'/')]//ancestor::div[contains(@class,'modal-content')][1]//div[contains(@class, 'modal-header')]/p[text()='" + titleName + "']//parent::div//button[contains(@class, 'close')] | //*[@id='customLookupModalTitle' and contains(text(),'"+titleName+"')]/../..//button[contains(text(),'×')]");
+        By closeButton = By.xpath("//iframe[contains(@ng-src, '/') or contains(@src,'/')]//ancestor::div[contains(@class,'modal-content')][1]//div[contains(@class, 'modal-header')]/p[text()='" + titleName + "']//parent::div//button[contains(@class, 'close')] | //*[@id='customLookupModalTitle' and contains(text(),'" + titleName + "')]/../..//button[contains(text(),'×')]");
         I.amPerforming().click().on(closeButton);
     }
 
@@ -124,9 +124,9 @@ public final class Modal {
      */
     public void clickLookupModalQuickSearch(String lookupFieldName, boolean wantsToClear) {
         if (wantsToClear) {
-            I.amPerforming().textInput().toClear(I.amPerforming().getElementReference().of(By.xpath("//img[@title='" + lookupFieldName + "']/../../input[@type='text']")));
+            I.amPerforming().textInput().toClear(I.amPerforming().getElementReference().of(By.xpath("//img[@title='" + lookupFieldName + "']/../../input[@type='text'] | //a//img[@title='" + lookupFieldName + "']")));
         }
-        I.amPerforming().click().on(By.xpath("//img[@title='" + lookupFieldName + "']"));
+        I.amPerforming().click().on(By.xpath("//img[@title='" + lookupFieldName + "'] | //a//img[@title='" + lookupFieldName + "']"));
     }
 
     /**
@@ -142,7 +142,7 @@ public final class Modal {
             } else {
                 I.amPerforming().switchTo().rejectAlert();
             }
-        }catch (org.openqa.selenium.NoAlertPresentException noAlertPresentException) {
+        } catch (org.openqa.selenium.NoAlertPresentException noAlertPresentException) {
             I.amPerforming().waitFor().makeThreadSleep(2000);
             if (buttonName.contains("OK")) {
                 I.amPerforming().switchTo().acceptAlert();
