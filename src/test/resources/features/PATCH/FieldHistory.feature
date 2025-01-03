@@ -42,7 +42,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -86,7 +85,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -159,7 +157,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -203,7 +200,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -246,7 +242,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -316,7 +311,7 @@ Business Need: history Component Scenarios
     When I click on "View" icon for "Test Program specific for History" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
-    When I navigate to "History" sub tab
+    And I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Todays Date"
 
   @69959   @VerifyActualApproverIsDisplayedInApprovalHistoryAfterRecordReassignToUser
@@ -327,7 +322,6 @@ Business Need: history Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -839,7 +833,6 @@ Business Need: history Component Scenarios
 
   @205603p
   Scenario:  History Field : PM User -To verify, User change the negative currency field value from backend then it should display in the new value column
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -861,7 +854,6 @@ Business Need: history Component Scenarios
 
   @205606p @205607
   Scenario Outline: Field History - ADMIN user - To verify, User change the date field from edit layout then it should display changed and previous value in the new and old value column.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -891,7 +883,6 @@ Business Need: history Component Scenarios
 
   @205783 @205784
   Scenario Outline: Field History : PM user - To verify, User change the text area field value from edit layout then it should display changed and previous value in the new and old value column.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -920,7 +911,6 @@ Business Need: history Component Scenarios
 
   @205776 @205777
   Scenario Outline: Field History : PM user - To verify, User change the lookup field value from backend then it should display changed and previous value in the new and old value column.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -949,7 +939,6 @@ Business Need: history Component Scenarios
 
   @205766 @205767
   Scenario Outline:Field History : PM user - To verify, User change the phone field value from backend then it should display changed and previous value in the new and old value column.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -977,7 +966,6 @@ Business Need: history Component Scenarios
 
   @205770p @205771
   Scenario Outline: Field History : PM user - To verify, User change the checkbox field value from edit layout then it should display changed and previous value in the new and old value column.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
