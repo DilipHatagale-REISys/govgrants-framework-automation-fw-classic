@@ -1904,8 +1904,11 @@ Business Need: Approval Process Component Scenarios
 #       | ADMIN |
       | PM   |
 
-  @202421 @202419
+  @202421 @202419 @381955 @381956
   Scenario Outline:Approval Decision Action-Admin-Config-To verify confirmation message should not display on Disapproved
+  |Approval Decision Action-Admin-Config-To verify confirmation message should not display on Disapproved|
+  |Sanity TC_Admin_To verify that user is able to reject respective record, by clicking on Reject action|
+  |Sanity TC_PM_To verify that user is able to reject respective record, by clicking on Reject action|
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
@@ -2325,9 +2328,9 @@ Business Need: Approval Process Component Scenarios
     Then I do not see alert popup box
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @202939 @202941 @381958 @381959 @SanityPATCH @SanityPATCHApprovalProcess @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reassign
@@ -2380,9 +2383,9 @@ Business Need: Approval Process Component Scenarios
     Then I see confirmation box with body "Do you want to reassign this program?" is displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @202940 @203067
   Scenario Outline:Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Reassign
@@ -2427,9 +2430,9 @@ Business Need: Approval Process Component Scenarios
     Then I do not see alert popup box
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @202933 @202935
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reject
@@ -2479,9 +2482,9 @@ Business Need: Approval Process Component Scenarios
     Then I see confirmation box with body "Do you want to Reject this program?" is displayed
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @202934 @202936
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Reject
@@ -2523,9 +2526,9 @@ Business Need: Approval Process Component Scenarios
     Then I do not see alert popup box
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @202802 @202803 @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Approve
@@ -2653,9 +2656,9 @@ Business Need: Approval Process Component Scenarios
     Then I do not see alert popup box
 
     Examples:
-      | User  |
+      | User |
 #      | ADMIN |
-      | PM    |
+      | PM   |
 
   @203288
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should received on approved record
@@ -3082,7 +3085,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203406 @381955 @381956 @SanityPATCH @SanityPATCHApprovalProcess
+  @203406 @SanityPATCH @SanityPATCHApprovalProcess @wip @captchawip
   Scenario:Approver process Step Cache-PM-Config-To verify email notification should received on reassign record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -3167,7 +3170,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203680 @381963 @SanityPATCH @SanityPATCHApprovalProcess
+  @203680 @SanityPATCH @SanityPATCHApprovalProcess @wip @captchawip
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should received on Send To Owner record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -3258,7 +3261,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203569
+  @203569 @wip @captchawip
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should received on Send To Owner record
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -3778,8 +3781,9 @@ The EGMS Team
     Then I see status in Progress-bar is "Active" and is "Green"
 
 
-  @sendbackprogramtoowner
+  @sendbackprogramtoowner @381963
   Scenario: Validate the user able to Send back approval decision after click Send back
+  |Sanity TC_EXE_To verify that user is able to Send back respective record to owner, by clicking on Send back action|
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -3842,33 +3846,33 @@ The EGMS Team
     And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---" without waiting for record
     Then I see status in Progress-bar is "Created" and is "Green"
 
-    @passwordcheck
-    Scenario: password check
-      When I login to "As a Grantor" app as "PM" user
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "PM1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "EXE1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "ADMIN" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "ADMIN1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "PO" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "PO1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "FD" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "FD1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "FO1" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "SPI3" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
-      When I re-login to "As a Grantor" app as "SPA" user on "INTERNAL" portal
-      And I navigate to "Applications" tab
+  @passwordcheck
+  Scenario: password check
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "PM1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "EXE1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "ADMIN" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "ADMIN1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "PO" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "PO1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "FD" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "FD1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "FO1" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "SPI3" user on "INTERNAL" portal
+    And I navigate to "Applications" tab
+    When I re-login to "As a Grantor" app as "SPA" user on "INTERNAL" portal
+    And I navigate to "Applications" tab

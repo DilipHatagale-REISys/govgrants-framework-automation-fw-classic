@@ -43,7 +43,6 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
