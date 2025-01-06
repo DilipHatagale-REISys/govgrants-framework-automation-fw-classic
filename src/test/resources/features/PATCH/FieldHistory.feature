@@ -372,7 +372,7 @@ Business Need: history Component Scenarios
     And I pause execution for "5" seconds
     And I click on "Edit" in the page details
     And I enter value "05/30/2023" into field "fieldStartDate__c"
-    And I click on "Save" in the page details
+    When I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
