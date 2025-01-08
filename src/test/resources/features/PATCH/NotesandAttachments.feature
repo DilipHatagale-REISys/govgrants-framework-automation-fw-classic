@@ -397,7 +397,6 @@ Business Need: NotesandAttachments Component Scenarios
 
   @383767 @383766 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify that user able to see Download action on Attachments table at row level
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds

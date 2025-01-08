@@ -38,7 +38,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public PageLayoutPage() {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
-        headerInstructionText = By.cssSelector("span.pbNormalText");
+        headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
         headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
@@ -2456,7 +2456,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isLikesCountOrLabelPresentAtUserDetailPage(String likesCountOrlabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[contains(text(),'" + likesCountOrlabel + "')] | //div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
