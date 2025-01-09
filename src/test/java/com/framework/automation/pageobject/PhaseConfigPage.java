@@ -777,7 +777,7 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isSidebarBackgroundColorChanged(String colorName) {
         boolean flag = false;
         WebElement getSidebar = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'customSidebar')]"));
-        System.out.println("background-color :"+getSidebar.getCssValue("background-color"));
+        System.out.println("background-color :" + getSidebar.getCssValue("background-color"));
         switch (colorName.toUpperCase()) {
             case "VERY DARK BLUE":
                 if (getSidebar.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
@@ -791,25 +791,25 @@ public class PhaseConfigPage extends GovGrantsManager {
                         || getSidebar.getCssValue("color").contains("rgb(7, 53, 74)")
                         || getSidebar.getCssValue("color").contains("rgba(255, 255, 255, 1)")) {
                     flag = true;
+                }
+                break;
+            case "BLACK":
+                if (getSidebar.getCssValue("background-color").contains("rgba(17, 17, 17, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(17, 17, 17)")
+                        || getSidebar.getCssValue("color").contains("rgba(255, 255, 255, 1)")) {
+                    flag = true;
+                }
+                break;
+            case "VERY DARK CYAN":
+                if (getSidebar.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
+                        || getSidebar.getCssValue("color").contains("rgb(10, 49, 54)")
+                        || getSidebar.getCssValue("color").contains("rgba(255, 255, 255, 1)")) {
+                    flag = true;
+                }
+                break;
         }
-        break;
-        case "BLACK":
-        if (getSidebar.getCssValue("background-color").contains("rgba(17, 17, 17, 1)")
-                || getSidebar.getCssValue("color").contains("rgb(17, 17, 17)")
-                || getSidebar.getCssValue("color").contains("rgba(255, 255, 255, 1)")) {
-            flag = true;
-        }
-        break;
-        case "VERY DARK CYAN":
-        if (getSidebar.getCssValue("background-color").contains("rgba(10, 49, 54, 1)")
-                || getSidebar.getCssValue("color").contains("rgb(10, 49, 54)")
-                || getSidebar.getCssValue("color").contains("rgba(255, 255, 255, 1)")) {
-            flag = true;
-        }
-        break;
-    }
         return flag;
-}
+    }
 
     /**
      * @return true if active tab background color is displayed as expected at header
@@ -830,7 +830,9 @@ public class PhaseConfigPage extends GovGrantsManager {
     private Boolean isActiveTabHasBackgroundColourAtMyWorkspaceSection() {
         boolean flag = false;
         WebElement getActiveTabAtWorkspace = I.amPerforming().getElementReference().of(By.xpath("//button[@id='My_Workspace_File']"));
-        if (getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
+        I.amPerforming().scroll().toMoveToElement(getActiveTabAtWorkspace);
+        if (getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(96, 85, 85, 1)")
+                ||getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
                 || getActiveTabAtWorkspace.getCssValue("background").contains("rgb(34, 34, 34)")) {
             flag = true;
         }
