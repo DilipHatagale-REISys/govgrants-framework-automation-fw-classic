@@ -6756,7 +6756,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false                                                   | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false                                                  | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
