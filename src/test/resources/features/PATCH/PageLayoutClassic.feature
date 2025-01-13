@@ -7553,7 +7553,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146397    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingProfileOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "profile "
@@ -7570,7 +7570,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146398    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingContext!=ViewOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as  "Context "
@@ -7587,7 +7587,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146400    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserAppOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "User App "
@@ -7604,7 +7604,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146401    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingFieldValueOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "Field "
@@ -7621,7 +7621,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146402    @verifyHideExpressioJsonByHidingAddActionAtNotesUsing$UserOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "$user"
@@ -7638,7 +7638,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146404    @verifyHideExpressioJsonByHidingAddActionAtBothNotesAndAttachmentUsingProfileOperator
   Scenario: validate hide the ADD action on both Notes and Attachment page block by using SObject hide logic as "profile"
@@ -7657,7 +7657,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
     Then I see "Add" button inside "Files" flex table not displayed
 
   @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPicklistFieldDataAtPageLayout
@@ -7706,7 +7706,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147921    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingAndOrOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple And, Or operators
@@ -7723,7 +7723,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147923    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingMultipleOperator
   Scenario: validate hide the ADD action on Attachment page block by using SObject hide logic using multiple operators
@@ -7777,7 +7777,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147926    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingMultipleOperator
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using multiple operators
@@ -7797,7 +7797,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147930    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsUsingOROperator
   Scenario: validate hide the ADD action on Attachments page block by using SObject hide logic using Or operators
@@ -7831,7 +7831,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147932    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingOROperator
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using OR operators
@@ -7851,7 +7851,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146837    @validateNotesViewActionWorkingOrNot
   Scenario: validate Notes View action working correctly at programs-planning
@@ -8173,22 +8173,32 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    When I enter value "1" into field "FundedAmount__c"
     And I click on back arrow
     And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148397    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedCurrencyFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I enter value "234321" into field "FundedAmount__c"
     And I refresh the page
-    And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148399  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInCurrencyFieldAtPageLayout
@@ -8198,7 +8208,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    When I enter value "1" into field "FundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @148400    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPercentFieldDataAtPageLayout
@@ -8727,7 +8737,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Edit" in the page details
-    When I enter value "900000" into field "fieldFundedAmount__c"
+    When I enter value "900000" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see field "Funded Amount" as "$900,000"
 
@@ -9204,15 +9214,23 @@ Business Need: Page Layout Component Scenarios
 
   @158907 @verifyMultiPicklistFieldIsRenderedAsChekboxThenWeAreAddingSelectAllOption
   Scenario: To validate that if there is multi picklist field is rendred as checkbox then add extra checkbox as Select All Option
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
-      | Display 2 |
+    Then I select below checkbox options for field "TypesOfAssistance__c"
       | Display 1 |
+      | Display 2 |
+      | Display 3 |
+      | Display 4 |
 
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
@@ -9330,7 +9348,13 @@ Business Need: Page Layout Component Scenarios
 
   @153789 @ValidateSingleCheckboxIsDisplayedForCheckboxField
   Scenario: Validate Single Checkbox Is Displayed For Checkbox Field
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CheckBoxField_CFDA} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9561,7 +9585,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9617,7 +9641,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9659,7 +9683,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9693,7 +9717,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
@@ -9712,7 +9736,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
@@ -9731,7 +9755,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
@@ -10313,7 +10337,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
-    When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
+    When I enter value "3333333333333333333333333333333333333333333333333" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Funded Amount : Number is too large. |
@@ -10412,7 +10436,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
+    When I enter value "1234567345673456734567345673456" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
@@ -10488,7 +10512,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
+    When I enter value "123456789012345676785678567867897890" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
@@ -10501,7 +10525,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1234" into field "fieldFundedAmount__c"
+    When I enter value "1234" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10514,7 +10538,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1111" into field "fieldFundedAmount__c"
+    When I enter value "1111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10527,7 +10551,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1234" into field "fieldFundedAmount__c"
+    When I enter value "1234" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10652,7 +10676,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
-    Then I see "fieldFundedAmount__c" is not displayed inside page block detail
+    Then I see "FundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I cannot see the following message in the page details :

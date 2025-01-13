@@ -3556,7 +3556,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isCheckboxIsDisplayedForField(String fieldAPIName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked] | //div[@id='" + fieldAPIName + "']//input[@type='checkbox']"))) {
                 flag = true;
             }
         } catch (Exception e) {
