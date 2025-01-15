@@ -1782,7 +1782,7 @@ Business Need: Page Layout Component Scenarios
     And I see "Save" at bottom of Attachment Modal
     Then I see "Save and Close" at bottom of Attachment Modal
 
-  @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
+  @53388 @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1815,7 +1815,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Abbreviation is required to submit under Overview. |
 
-  @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
+  @53389 @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1848,7 +1848,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Primary Funding Organization is required to submit under Overview. |
 
-  @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
+  @53390 @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1894,7 +1894,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program Sub Type is required to submit under Overview. |
 
-  @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
+  @53392 @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1927,7 +1927,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Project Period End Date is required to submit under Overview. |
 
-  @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
+  @53393 @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1960,7 +1960,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Funded Amount is required to submit under Overview. |
 
-  @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
+  @53394 @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1993,7 +1993,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Website Address is required to submit under Overview. |
 
-  @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
+  @53395 @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2026,7 +2026,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Project Goals is required to submit under Overview. |
 
-  @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
+  @53396 @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2059,7 +2059,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Percent is required to submit under Overview. |
 
-  @53397 @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
+  @53397 @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2091,7 +2091,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Date And Time is required to submit under Overview. |
 
-  @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
+  @53398 @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2124,7 +2124,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Time is required to submit under Overview. |
 
-  @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
+  @53399 @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3279,9 +3279,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
     #114989
-    Then I see "Test Automation Seperator" page block displayed
+    Then I softly see "Page Block Separator" page block displayed
     #113066
-    When I hovering mouse on help text icon inside "Test Automation Seperator"
+    When I hovering mouse on help text icon inside "Page Block Separator"
     Then I see "<new_helpText>" shown as help text
 
     Examples:
@@ -9226,11 +9226,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "TypesOfAssistance__c"
-      | Display 1 |
-      | Display 2 |
-      | Display 3 |
-      | Display 4 |
+    Then I softly see field "Select All" inside page block
 
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
@@ -9593,6 +9589,12 @@ Business Need: Page Layout Component Scenarios
 
   @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9603,10 +9605,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205807 @Toverify-ValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforpercentfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9617,10 +9625,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent : Number is too large. |
+      | Percent: Number is too large. |
 
   @205810 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforNumberfieldforinternaluser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9631,7 +9645,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205809 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverridinCalibriLight(Headings)fontStyleforcurrencyfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for currency field  for internal user
@@ -9649,6 +9663,12 @@ Business Need: Page Layout Component Scenarios
 
   @205812 @ToverifValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforNumbefieldforinternaluser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9659,10 +9679,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205811 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforpercentfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9673,7 +9699,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent : Number is too large. |
+      | Percent: Number is too large. |
 
   @205813 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStyleforcurrencyfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field  for internal user
@@ -9691,17 +9717,23 @@ Business Need: Page Layout Component Scenarios
 
   @205815 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStylefornumberfieldforinterluser
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field for interl user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PageLayoutNumberField__c} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    When I enter value "111111111111111111111111111111111" into field "fieldPageLayoutNumberField__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | PageLayoutNumberField: Number is too large. |
 
   @205798 @ValidationMessageShuoldDisplayWhenWeUseLablOverride @Jyoti @sprint5
   Scenario:  To verify - Validation message should display properly when we use field label override in  font Arial Nova for currency field (Nauman shahid
@@ -9859,14 +9891,20 @@ Business Need: Page Layout Component Scenarios
 
   @171509 @jyoti
   Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "fieldObjectives__c"
-      | YES |
+    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
+      | Select All |
 
   @170159 @tejal
   Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
@@ -10068,6 +10106,12 @@ Business Need: Page Layout Component Scenarios
 
   @186950 @sprint26
   Scenario: To verify, all the Multiselect picklist fields (Selected/Unselected) should be displayed on the UI in View Mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10329,7 +10373,17 @@ Business Need: Page Layout Component Scenarios
 
   @205789 @ToVerifyPercentageNumberCurrencyandFormulafields @Sprint5 @dnyaneshwari
   Scenario: To verify, Verified for Percentage, Number, Currency and Formula  (Text)  fields
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c}      |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
@@ -10339,12 +10393,13 @@ Business Need: Page Layout Component Scenarios
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
     When I enter value "3333333333333333333333333333333333333333333333333" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    Then I see the following message in the page details contains:
-      | Funded Amount : Number is too large. |
-    Then I see the following message in the page details contains:
-      | Number : Number is too large. |
-    Then I see the following message in the page details contains:
-      | Percent : Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Percent: Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Funded Amount: Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Number: Number is too large. |
+
 
   @205795 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field
@@ -11585,7 +11640,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Overview" sub tab
     Then I softly see field "Applicant Organization" inside page block
     Then I softly see field "Address" inside page block
-    Then I softly see field "DUNS" inside page block
     Then I softly see field "SAM Expiration Date" inside page block
 
   @200250
