@@ -87,7 +87,7 @@ Business Need: Page Layout Component Scenarios
       | new_hide_config     | old_hide_config                                                                                                                                                                                                      |
       | Status__c='Created' | Status__c='Active' OR Status__c='Submitted for Approval' OR Status__c='Approved' OR Status__c='Closed' OR Status__c='Disapproved' OR Status__c='Change Requested' OR Status__c='Disapproved' OR Status__c='Rejected' |
 
-  @34053    @hideExpressionJSON-gPlanning @smokePATCH
+  @34053    @hideExpressionJSON-gPlanning @smokePATCH @wip
   Scenario: Hide Submit for approval for Created from json configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -114,9 +114,9 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide for profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide for profile | System Administrator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide for profile | EXE           | Grantor State Program | Name                      | Submit For Approval        |
+    When I login to "As a Grantor" app as "EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

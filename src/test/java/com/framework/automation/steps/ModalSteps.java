@@ -40,7 +40,7 @@ public class ModalSteps {
 
     @When("I hovering mouse on i icon for field \"([^\"]*)\" inside modal$")
     public void iHoveringMouseOnIIconForFieldInsideModal(String fieldName) {
-        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon']"));
+        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//div[@id='" + fieldName + "']//span[@class='fa fa-info helpIcon'] | //*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon']"));
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" value column Number Of Personnel inside table id \"([^\"]*)\"$")
@@ -50,6 +50,6 @@ public class ModalSteps {
 
     @Then("^I (see|do not see) \"([^\"]*)\" action with title \"([^\"]*)\" in table id \"([^\"]*)\"$")
     public void iSeeActionWithTitleInTableId(String usage, String action, String titlename, String tableid) {
-        modalPage.actionDisplayedOrNotInGivenTableWithTitle(usage,action,titlename,tableid);
+        modalPage.actionDisplayedOrNotInGivenTableWithTitle(usage, action, titlename, tableid);
     }
 }

@@ -193,6 +193,7 @@ public class UsersAndURL implements UsersController {
         username.put("FO", "auto.fm@auto.com.atm.fwautomat");
         username.put("FO1", "fo1.automation@yopmail.com.fwautomat");
         username.put("SPI3", "rreispi3@grants.gov");
+        username.put("SPA", "tepippiddapro-4055@yopmail.com");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());
         } else {
@@ -215,6 +216,7 @@ public class UsersAndURL implements UsersController {
         password.put("FO", "Test8@05dec");
         password.put("FO1", "Test8@05dec");
         password.put("SPI3", "Test8@05dec");
+        password.put("SPA", "Test8@05dec");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
         } else {

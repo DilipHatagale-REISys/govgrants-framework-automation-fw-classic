@@ -325,9 +325,7 @@ public class AttachmentSteps {
 
     @And("I click on {string} button on {string} modal")
     public void iClickOnButtonOn(String button, String modal) {
-        if (modal.equals("Add Attachments")) {
-            I.amPerforming().click().on(ByUsing.xpath("//div/lightning-button/button[@title='Attach']"));
-        }
+            I.amPerforming().click().on(ByUsing.xpath("//p[@title='" + modal + "']//preceding-sibling::button[contains(@class,'" + button + "')]"));
     }
 
     @Then("I see only one file should get attached")

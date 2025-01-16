@@ -35,7 +35,7 @@ Business Need: Modal Component Scenarios
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior |                   | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title     |                   | GrantsList         | Name                      | View                       |
-      | Flex Table Action     | Modal Width     |                   | Programs           | Name                      | View                       |
+      | Flex Table Action     | Modal Width     |                   | GrantsList         | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in overlay  | GrantsList         | Name                      | View                       |
@@ -144,8 +144,7 @@ Business Need: Modal Component Scenarios
 
   @207420p @207421p
   Scenario Outline: Modal- Admin- Config- Verify lookup works properly for look up fields,
-  Modal- PM- UI- Verify lookup works properly for look up fields
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+  |Modal- PM- UI- Verify lookup works properly for look up fields|
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -157,7 +156,7 @@ Business Need: Modal Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see "Primary Funding Organization" field contains "GMS Administrator" value
+    Then I see "Primary Funding Organization" field contains "Test Automation Organization" value
     Examples:
       | Users |
       | PM    |
@@ -184,7 +183,7 @@ Business Need: Modal Component Scenarios
 
   @207429p @207430
   Scenario Outline: Modal- Admin- Config- Verify we can enter numbers in text fields
-    Given I delete the record "Automation Program 1234" from the object "Program__c" with field "ProgramName__c"
+  |Modal- PM- Config- Verify we can enter numbers in text fields|
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -204,49 +203,26 @@ Business Need: Modal Component Scenarios
   @207432p
   Scenario Outline: Modal- Admin- Config- Verify we can enter currency in fields
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal             | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | EditRecord        | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title                |                   | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Width                | 1000              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Row               | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal          | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | EditRecord     | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title                | Create Program | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Width                | 1000           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Row            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button         | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue                                                                                        | filterId         |
-      | Flex Grid             | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName       | coreComponentSubFieldValue           |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program Create | {flexgrid:InformationPageBlock} | {flexgrid:ModalFundedAmount__c}      |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program        | {flexgrid:InformationPageBlock} | {flexgrid:PagelayoutFundedAmount__c} |
     When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "Demo Testing Program For Field History" into field "Abbreviation__c"
+    And I enter value "5000" into field "FundedAmount__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Automation PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "Edit" icon for "Automation PM" inside table
-    And I enter value "5000" into field "BaseSalary__c"
-    And I click modal button "Save"
-    When I perform quick search for "Automation PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see "$5,000.00" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "Funded Amount" field contains "$5,000" value
+
     Examples:
       | Users |
       | PM    |
@@ -296,7 +272,6 @@ Business Need: Modal Component Scenarios
     Then I see "fieldType__c" is displayed at position "3" inside table table name "Information" in modal
     Then I see "fieldAccount__c" is displayed at position "4" inside table table name "Information" in modal
     Then I see "fieldPrimaryFundingOrganization__c" is displayed at position "5" inside table table name "Information" in modal
-    Then I see "fieldWebsiteAddress__c" is displayed at position "6" inside table table name "Information" in modal
     Examples:
       | Users |
       | PM    |
@@ -352,7 +327,14 @@ Business Need: Modal Component Scenarios
       | PM    |
 
   @207461p @207462 @382263 @382266 @382287 @382288  @382285 @382284 @SanityPATCH  @SanityPATCHModal
-  Scenario Outline: Modal- Admin/PM- Config- Verify when we hover on (i) icon on modal Help text should be displayed
+  Scenario Outline: Modal- Admin- Config- Verify when we hover on (i) icon on modal Help text should be displayed
+  |Modal- PM - Config- Verify when we hover on (i) icon on modal Help text should be displayed|
+  |Sanity Testing- Modal- Page Block- Admin- To verify Page Block Title displays the same on UI which is updated in config.|
+  |Sanity Testing- Modal- Page Block- PM- To verify Page Block Title displays the same on UI which is updated in config.|
+  |Sanity Testing- Modal- Page Block Detail- Admin- To verify 'Help Text Long' displays after field label in the page block detail if provided in config.|
+  |Sanity Testing- Modal- Page Block Detail- PM- To verify 'Help Text Long' displays after field label in the page block detail if provided in config.|
+  |Sanity Testing- Modal- Page Block Detail- PM- To verify help text displays after field label in the page block detail if provided in config.|
+  |Sanity Testing- Modal- Page Block Detail- Admin- To verify help text displays after field label in the page block detail if provided in config.|
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
@@ -366,12 +348,11 @@ Business Need: Modal Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I hovering mouse on i icon for field "Abbreviation" inside modal
+    When I hovering mouse on i icon for field "fieldAbbreviation__c" inside modal
     Then I see "<helpTextInModal>" shown as help text
 
     Examples:
       | Users | helpTextInModal                                                           |
-#      | Admin | This is a program abbreviation as determined by the internal organization |
       | PM    | This is a program abbreviation as determined by the internal organization |
 
   @207464p @207465
@@ -450,17 +431,19 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Approver Table"
-    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I enter value "Automation Program 1234" into field "ProgramName__c"
+    And I click on "Save and Continue" in the page details
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
     Examples:
       | Users |
-     # | Admin |
       | PM    |
 
   @382276 @382277 @SanityPATCH  @SanityPATCHModal
   Scenario Outline:Sanity Testing- Modal- Page Block- Admin- To verify help text displays after field label in the page block if provided in config.
+  |Sanity Testing- Modal- Page Block- PM- To verify help text displays after field label in the page block if provided in config.|
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField           | filterId         |
       | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantor State Program Create | ApiGeneratedId:0 |
@@ -475,8 +458,7 @@ Business Need: Modal Component Scenarios
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
-      | Users | new_helpText                                                       | old_helpText                                                       |
-#      | ADMIN | Help Text for Automation |              |
+      | Users | new_helpText             | old_helpText |
       | PM    | Help Text for Automation |              |
 
   @382229p @382231 @SanityPATCH  @SanityPATCHModal @testmodal
@@ -531,7 +513,6 @@ Business Need: Modal Component Scenarios
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           |
-#      | ADMIN | Automation Header Text |
       | PM    | Automation Header Text |
 
   @382271 @382273 @SanityPATCH  @SanityPATCHModal
@@ -550,7 +531,6 @@ Business Need: Modal Component Scenarios
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           |
-#      | ADMIN | Automation Header Text |
       | PM    | Automation Header Text |
 
   @382244p @SanityPATCH  @SanityPATCHModal
@@ -715,9 +695,9 @@ Business Need: Modal Component Scenarios
       | Page Tabs Config      | Tab Title | Automation Tab testing | Grantor State Program Create | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true                        | Grantor State Program Create | Name                      | TAB-3331                   |
-      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3331                   |
-    When I login to "As a Grantor" app as "Admin" user
+      | Page Tabs Config:Page Layout Action | Is Active | true                        | Grantor State Program Create | Name                      | TAB-3330                   |
+      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3330                   |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
@@ -730,7 +710,7 @@ Business Need: Modal Component Scenarios
       | Page Tabs Config      | Tab Title | Automation Tab testing | Grantor State Program Create | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3331                   |
+      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3330                   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

@@ -467,6 +467,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     public void assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGridDisable(String fieldApiName) {
         Assert.assertFalse(isExpectedOverAllTotalSumValueForTotalAdjustedAmountAtEnhancedGridTableDisplayed(fieldApiName));
     }
+
     /**
      * return true if arrow is displayed in ascending order for multiple field
      */
@@ -484,6 +485,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     public void assertOverAllTotalDisplayed(String fieldApiNAme, String tableId) {
         Assert.assertFalse(isOverAllTotalIsDisplayed(fieldApiNAme, tableId));
     }
+
     /**
      * return if lookup field is ediatble/not editable at enhanced grid
      */
@@ -1077,12 +1079,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     private Boolean isSpecificCellValueColourOfEnhancedFlexGrid(String cellValue, String tableId, String colorName) {
         boolean flag = false;
         WebElement cellContent = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']//span[@title='" + cellValue + "' or text()='"
-                + cellValue + "']/ancestor::td[contains(@class,'ng-scope')]"));
+                + cellValue + "']/ancestor::td//field[contains(@class,'scope')]//span"));
         switch (colorName.toUpperCase()) {
             case "RED":
                 if (cellContent.getCssValue("color").contains("rgba(255, 0, 0, 1)")
                         || cellContent.getCssValue("color").contains("rgb(255, 0, 0)")
-                        || cellContent.getAttribute("style").contains("rgb(255, 0, 0)")) {
+                        || cellContent.getAttribute("style").contains("rgb(255, 0, 0)")
+                        || cellContent.getAttribute("style attribute").contains("rgb(255, 0, 0)")) {
                     flag = true;
                 }
                 break;
@@ -1620,7 +1623,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(isexpectedTextDisplayedOrNot(text, tableId)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(isexpectedTextDisplayedOrNot(text,tableId)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(isexpectedTextDisplayedOrNot(text, tableId)).isFalse();
         }
     }
 
@@ -1643,5 +1646,6 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
 
         } catch (Exception e) {
         }
-        return flag;    }
+        return flag;
+    }
 }

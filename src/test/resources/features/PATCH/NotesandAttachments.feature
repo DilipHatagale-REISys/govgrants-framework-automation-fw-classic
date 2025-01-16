@@ -244,7 +244,8 @@ Business Need: NotesandAttachments Component Scenarios
     And I pause execution for "3" seconds
     And I click modal button "Save"
     And I pause execution for "2" seconds
-    And I click modal button "Close"
+    And I click on "close" button on "Add Attachments" modal
+    And I click on the "Close" button on the "Notes and Attachment" section
     Then I see row level action button "Edit" against "AttachmentTesting.pdf" in table name "Attachments"
     Then I see row level action button "Delete" against "AttachmentTesting.pdf" in table name "Attachments"
     Then I see row level action button "Download" against "AttachmentTesting.pdf" in table name "Attachments"
@@ -262,6 +263,13 @@ Business Need: NotesandAttachments Component Scenarios
     When I perform quick search for "Application For Announcement Testing"
     When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
+    And I enter value "Test Automation" into "Description"
+    And I pause execution for "3" seconds
+    And I click modal button "Save"
+    And I pause execution for "2" seconds
+    And I click on "close" button on "Add Attachments" modal
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Edit" against "Notes testing" in table name "Notes"
 
@@ -291,7 +299,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I click on top right button "Add" in notes and attachment with name "Notes"
     And I enter value "Test Automation" into "Title"
     And I enter value "Test Automation" into "Description"
-    And I click modal button "Close"
+    And I click on "close" button on "Add Notes" modal
     Then I see row level action button "Delete" against "Test Automation" in table name "Notes"
     Examples:
       | Users |
@@ -307,6 +315,13 @@ Business Need: NotesandAttachments Component Scenarios
     When I perform quick search for "Application For Announcement Testing"
     When I click on "View" icon for "Application For Announcement Testing" inside table
     When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
+    And I enter value "Test Automation" into "Description"
+    And I pause execution for "3" seconds
+    And I click modal button "Save"
+    And I pause execution for "2" seconds
+    And I click on "close" button on "Add Attachments" modal
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "Delete" against "Notes testing" in table name "Notes"
 
@@ -318,6 +333,17 @@ Business Need: NotesandAttachments Component Scenarios
     And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
+    And I enter value "Test Automation" into "Description"
+    And I pause execution for "3" seconds
+    And I click modal button "Save"
+    And I pause execution for "2" seconds
+    And I click on "close" button on "Add Attachments" modal
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click on "close" button on "Add Notes" modal
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "View" against "Notes testing" in table name "Notes"
 
@@ -325,11 +351,25 @@ Business Need: NotesandAttachments Component Scenarios
   Scenario: Sanity TC - PM - To verify that user able to see View action on Notes table at row level
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
-    When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
+    And I enter value "Test Automation" into "Description"
+    And I pause execution for "3" seconds
+    And I click modal button "Save"
+    And I pause execution for "2" seconds
+    And I click on "close" button on "Add Attachments" modal
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I click on "close" button on "Add Notes" modal
+    Then I see row level action button "Download" against "AttachmentTesting.png" in table name "Attachments"
     Then I see row level action button "View" against "Notes testing" in table name "Notes"
 
   @383452 @SanityPATCH @SanityPATCHNotes
@@ -357,7 +397,6 @@ Business Need: NotesandAttachments Component Scenarios
 
   @383767 @383766 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify that user able to see Download action on Attachments table at row level
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds

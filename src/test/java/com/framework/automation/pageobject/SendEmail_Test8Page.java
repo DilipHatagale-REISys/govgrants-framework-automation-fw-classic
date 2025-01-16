@@ -36,7 +36,8 @@ public class SendEmail_Test8Page extends GovGrantsManager {
                     " //div[@class='form-group ng-scope']/label[contains(text(),'" + field + "')]/span[contains(@title,'" + helpText + "')] |" +
                     " //div[@class='form-group']/label[contains(text(),'" + field + "')]/span[contains(@title,'" + helpText + "')] |" +
                     " //div[@class='form-group required']/label[contains(text(),'" + field + "')]/span[contains(@title,'" + helpText + "')] |" +
-                    " //div[@class='form-group ng-scope']/button[contains(text(),'" + field + "') and contains(@title,'" + helpText + "')]"))) {
+                    " //div[@class='form-group ng-scope']/button[contains(text(),'" + field + "') and contains(@title,'" + helpText + "')] |" +
+                    " //div[contains(@id,'modal')]//label[contains(text(),'" + field + "') and contains(@class, 'control-label') and ancestor::div[contains(@class, 'required')]]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -618,7 +618,7 @@ public class FlexGridPage extends GovGrantsManager {
     private Boolean isTableLoadedProperlyWithTableId(String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class ='panel-body collapse in' and @id='" + tableId + "'] | //*[@id='" + tableId + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class ='panel-body collapse in' and @id='" + tableId + "'] | //*[@id='" + tableId + "'] | //div[@class ='panel-body collapse in' and (contains(@id,'" + tableId + "'))]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
