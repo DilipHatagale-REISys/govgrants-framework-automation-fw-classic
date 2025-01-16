@@ -2527,8 +2527,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2551,8 +2550,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2728,8 +2726,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6658,8 +6655,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
       | Program                      | Status    | Created                           | Test Automation Program for error message dnd |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -7855,46 +7851,63 @@ Business Need: Page Layout Component Scenarios
 
   @146837    @validateNotesViewActionWorkingOrNot
   Scenario: validate Notes View action working correctly at programs-planning
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    When I add notes records
-    When I close modal by clicking the top right x button
-    When I click on "View" icon for "Notes Record" inside table
-    Then I see the text :
-      | Notes Record |
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I click on "close" button on "Add Notes" modal
+    When I click on "View" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
+    Then I see "View Notes" opens in overLay window
 
   @146931    @validateEditNotesModalOpensByClickAtEditActionAtNotes
   Scenario: validate Notes edit modal opens by click at Edit action at programs-planning
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    When I add notes records
-    When I close modal by clicking the top right x button
-    When I click on "Edit" icon for "Notes Record" inside table
-    Then I see "Edit Notes" modal window is displayed
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I click on "close" button on "Add Notes" modal
+    When I click on "Edit" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
+    Then I see "Edit Notes" opens in overLay window
 
   @148171    @verifyHideFieldJSONWorkingForLongTextAreaFieldInEditMode
   Scenario: verify hide field json working for long text area fields in edit mode
@@ -8079,7 +8092,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | phonetest is required to save |
 
-  @149695    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextFieldDataAtPageLayout
+  @149695 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8092,7 +8105,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @149678    @verifyAnAlertMessageIsDisplayedForUnsavedTextFieldDataIfPageRefreshedAtPageLayout
+  @149678 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser refresh
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8129,20 +8142,32 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148393    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedNumberFieldDataAtPageLayout
+  @148393 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c}      |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "Number__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I enter value "4045" into field "Number__c"
     And I click on back arrow
-    And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148394    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedNumberFieldDataAtPageLayout
+  @148394 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8165,7 +8190,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148398    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedCurrencyFieldDataAtPageLayout
+  @148398 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8283,7 +8308,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "www.google.com" into field "URL__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148469    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedLongTextAreaFieldDataAtPageLayout
+  @148469 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8296,7 +8321,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
+  @148470 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8604,8 +8629,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17697                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8682,8 +8706,7 @@ Business Need: Page Layout Component Scenarios
 
   @148734 @verifyThatEditNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that edit notes modal window is displayed properly
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8723,8 +8746,7 @@ Business Need: Page Layout Component Scenarios
 
   @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate currency field value accepts the numbers inside page block detail in view mode
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8743,8 +8765,7 @@ Business Need: Page Layout Component Scenarios
 
   @155304    @validatePercentFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate percent field value accepts the numbers inside page block detail in view mode
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8830,8 +8851,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8861,8 +8881,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8917,8 +8936,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
      # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8950,8 +8968,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                        | Programs              | Name                      | Edit1                      |
     #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8983,8 +9000,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
     #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9016,8 +9032,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
      # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9045,8 +9060,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9067,8 +9081,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9137,8 +9150,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeDisableQueuedLookupUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9158,8 +9170,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9554,8 +9565,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23604                  |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23592                  |
       | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantor State Program | Name                      | PBD-23592                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9575,12 +9585,25 @@ Business Need: Page Layout Component Scenarios
 
   @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c}      |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -9923,8 +9946,7 @@ Business Need: Page Layout Component Scenarios
 
   @172151 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the GovGrants side.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9949,8 +9971,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9975,8 +9996,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9995,8 +10015,7 @@ Business Need: Page Layout Component Scenarios
 
   @172212 @jyoti
   Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10021,8 +10040,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10048,8 +10066,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10075,8 +10092,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -12609,7 +12625,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "PrimaryFundingOrganization__c" inside page block
     Then I softly see field "Objectives__c" inside page block
     Then I softly see field "KPIsRequired__c" inside page block
-
+    Examples:
       | User |
      # | ADMIN |
       | PM   |
