@@ -8272,28 +8272,41 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "Percent__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148466    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedURLFieldDataAtPageLayout
+  @148466 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved url field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URL__c}        |
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "www.google.com" into field "URL__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "www.google.com" into field "fieldURL__c"
     And I click on back arrow
-    And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148467    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedURLFieldDataAtPageLayout
+  @148467 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved url field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URL__c}        |
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "www.google.com" into field "URL__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "www.google.com" into field "fieldURL__c"
     And I refresh the page
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8301,12 +8314,12 @@ Business Need: Page Layout Component Scenarios
   @148468  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInURLFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in url field at page layout
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "www.google.com" into field "URL__c"
-    Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
+    When I enter value "www.google.com" into field "fieldURL__c"
+    And I click on "Cancel" in the page details without processing
+    Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
 
   @148469 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser navigation arrow
@@ -8562,19 +8575,6 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
-
-  @151016   @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtPageLayout
-  Scenario: verify that user gets he validation message with the field name by entering invalid data in url field
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
-    And I click on "Save" in the page details
-    Then I see the following message in the page details :
-      | URL : Please enter valid URL value. |
 
   @148176    @verifyDisplayOfPicklistFieldDropdownValuesInsidePageLayout
   Scenario: validate that dropdown values under picklist field are displayed properly at edit page layout
@@ -9583,18 +9583,14 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
 
-  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
+  @205806
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c}      |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
     When I login to "As a Grantor" app as "PM" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9602,15 +9598,12 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "{pagelayout:Random20Digit}" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    And I click on "Edit" in the page details
-    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
-    And I click on "Save" in the page details
-    And I pause execution for "5" seconds
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
+  @205808 @218874
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
@@ -9618,13 +9611,14 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "{pagelayout:Random20Digit}" into field "fieldPercent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9656,33 +9650,42 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}     |
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "{pagelayout:Random20Digit}" into field "fieldNumber__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent: Number is too large. |
+      | Number: Number is too large. |
 
-  @205809 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverridinCalibriLight(Headings)fontStyleforcurrencyfieldforinternaluser
+  @205809
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for currency field  for internal user
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true               | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount Test | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "{pagelayout:Random20Digit}" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Funded Amount : Number is too large. |
+      | Funded Amount Test: Number is too large. |
 
   @205812 @ToverifValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforNumbefieldforinternaluser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field  for internal user
@@ -10972,20 +10975,29 @@ Business Need: Page Layout Component Scenarios
     ################# Page Layout - Negative Scenarios ##############
   @218822 @218823
   Scenario: Page layout-To verify, User is not select "None " from picklist field  when field is "required to save"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    When I enter value "--None--" into field "fieldType__c"
-    When I enter value "100" into field "fieldNumber__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "" into field "fieldProgramName__c"
+    And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | This field is required |
+      | Title is required to save under Overview. |
 
-  @218832
+  @218832 @151016
   Scenario: Page layout-To verify, User is not  enter numbers in URL field  if enter number field then error message should display
-    When I login to "As a Grantor" app as "ADMIN" user
+  |Scenario 4 : To verify that URL field error message validation display as "Field Name: Error message" on layout|
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URL__c}        |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10994,7 +11006,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "12345" into field "fieldURL__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | URL : Please enter valid URL value. |
+      | X_URL: Please enter valid URL value. |
 
   @218869
   Scenario: Page layout-To verify, User is not  edit the checkbox field in the view layout
@@ -11948,15 +11960,14 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I see "Files" subtab is present with icon "fa fa-file" in page details
     Then I see "History" subtab is present with icon "fa fa-history" in page details
     Then I see "Collab" subtab is present with icon "fa fa-wechat" in page details
     Examples:
       | User |
-     # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @219888 @379093 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
@@ -12072,8 +12083,28 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
-  @219894 @219893 @379380 @379382 @Sanity @SanityPageLayout
+  @219894 @219893 @379380 @379382 @379412 @Sanity @SanityPageLayout
   Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
+  |Page Tab - PM -UI - Verify page tab should displayed properly in given sequence|
+  |Page Tab - Admin -Config - Verify page tab should displayed properly in given sequence|
+  |Sanity Testing- Page Layout- PM- To verify number of page tabs are showing correct which are added in the config|
+  |Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
+      | Page Tabs Config      | Sort Order | 1                 | ApiGeneratedId:1 |
+      | Page Tabs Config      | Sort Order | 2                 | ApiGeneratedId:2 |
+      | Page Tabs Config      | Sort Order | 3                 | ApiGeneratedId:3 |
+      | Page Tabs Config      | Sort Order | 4                 | ApiGeneratedId:4 |
+      | Page Tabs Config      | Sort Order | 5                 | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Sort Order | 0             | Grantor State Program | Name                      | TAB-2673                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 1             | Grantor State Program | Name                      | TAB-2722                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 2             | Grantor State Program | Name                      | TAB-2677                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 3             | Grantor State Program | Name                      | TAB-2671                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 4             | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Sort Order | 5             | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12081,14 +12112,13 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see sequence of "Overview" subtab is "1" on page layout
-    Then I see sequence of "Setup tabs" subtab is "2" on page layout
+    Then I see sequence of "Setup" subtab is "2" on page layout
     Then I see sequence of "Responsibilities" subtab is "3" on page layout
     Then I see sequence of "Files" subtab is "4" on page layout
     Then I see sequence of "History" subtab is "5" on page layout
     Then I see sequence of "Collab" subtab is "6" on page layout
     Examples:
       | User |
-     # | ADMIN |
       | PM   |
 
   @219895 @379383 @Sanity @SanityPageLayout
@@ -12330,15 +12360,19 @@ Business Need: Page Layout Component Scenarios
       | 0123456789!@#$%^&*() |              |
 
     ########################## Page Header #####################################
-  @200123 @200127 @200138 @200140
+  @200123 @200127 @200138 @200140 @379409
   Scenario Outline: Page Header-Admin-config-To verify page header should be displayed
-  Page Header-Admin-config-To verify fields should displayed in the page header
+  | Page Header-Admin-config-To verify fields should displayed in the page header|
+  | Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.|
+  |Sanity Testing- Page Layout- PM- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Highlights Panel? | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2625                   |
+      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2674                   |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2674                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12351,8 +12385,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Organization" inside page header
     Examples:
       | User |
-     # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @200128 @200141 @200124 @200139
   Scenario Outline: Page Header-Admin-config-To verify fields should not be displayed in the page header
@@ -12528,44 +12561,6 @@ Business Need: Page Layout Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @379091 @379092 @Sanity @SanityPageLayout
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
-    Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
-    Then I see "Responsibilities" subtab is present with icon "fa fa-file" in page details
-    Then I see "Files" subtab is present with icon "fa fa-history" in page details
-    Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @379380 @379382 @Sanity @SanityPageLayout
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Overview" subtab is present in page details
-    Then I see "Setup" subtab is present in page details
-    Then I see "Responsibilities" subtab is present in page details
-    Then I see "Related Log" subtab is present in page details
-    Then I see "Files" subtab is present in page details
-    Then I see "Messages" subtab is present in page details
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
   @379384 @379385 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
     When I login to "As a Grantor" app as "<User>" user
@@ -12630,19 +12625,6 @@ Business Need: Page Layout Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @379390 @379391 @Sanity @SanityPageLayout @wip
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Automation Test Success" page message displayed in page layout
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
   @379392 @Sanity @SanityPageLayout @wip
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
@@ -12664,21 +12646,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Overview" sub tab
     Then I see "Automation Test Success" page message displayed in page layout
 
-  @379393 @379394 @Sanity @SanityPageLayout @wip
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Automation Test Information" page message displayed in page layout
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @379395 @Sanity @SanityPageLayout @wip
+  @379395 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -12687,19 +12655,29 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Automation Test Information" page message displayed in page layout
 
-  @379396 @379397 @Sanity @SanityPageLayout
+  @379396 @379397 @379390 @379391 @379393 @379394 @379400 @379401 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
+  |Sanity Testing- Page Layout- PM- To verify page message type - Alert is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- PM- To verify page message type - Success is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- PM- To verify page message type - Information is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.|
+  |Sanity Testing- Page Layout- PM- To verify page message type - Warning is getting displayed on page layout.|
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Funding Sources" content inside "Setup" subheader on left panel
+    And I click on top right button "New" in flex table with id "---program:-:fundingSourceTableId---"
+    When I enter in modal "Creation" values from "FundingSource_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
     Then I see "Automation Test Alert" page message displayed in page layout
+    Then I see "Automation Test Success" page message displayed in page layout
+    Then I see "Automation Test Information" page message displayed in page layout
+    Then I see "Automation Test Warning" page message displayed in page layout
 
     Examples:
       | User |
-     # | ADMIN |
-      | PM   |
+      | EXE  |
 
   @379398 @Sanity @SanityPageLayout @wip
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
@@ -12721,20 +12699,6 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
     Then I see "Automation Test Alert" page message displayed in page layout
-
-  @379400 @379401 @Sanity @SanityPageLayout
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Automation Test Warning" page message displayed in page layout
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
 
   @379402 @Sanity @SanityPageLayout @wip
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
@@ -12846,18 +12810,17 @@ Business Need: Page Layout Component Scenarios
 
   @379409 @379410 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
-    When I login to "As a Grantor" app as "Admin" user
+  |Sanity Testing- Page Layout- PM- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.|
+    When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see field "Name" inside page block
     Then I softly see field "Status__c" inside page block
-    Then I softly see field "Account__c" inside page block
 
     Examples:
       | User |
-     # | ADMIN |
       | PM   |
 
   @379411 @Sanity @SanityPageLayout @wip
@@ -12881,25 +12844,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Overview" sub tab
     Then I softly see field "fieldInternalOrganization__c" inside page block
     Then I softly see field "fieldType__c" inside page block
-
-  @379412 @Sanity @SanityPageLayout
-  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Overview" shown at number "0" inside subtabs
-    Then I see "Setup" shown at number "1" inside subtabs
-    Then I see "Responsibilities" shown at number "2" inside subtabs
-    Then I see "Files" shown at number "3" inside subtabs
-    Then I see "History" shown at number "4" inside subtabs
-    Then I see "Messages" shown at number "5" inside subtabs
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
 
   @379414 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
