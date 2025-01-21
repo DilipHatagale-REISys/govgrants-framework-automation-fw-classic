@@ -796,7 +796,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "captureModalFields.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail @wip
+  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
