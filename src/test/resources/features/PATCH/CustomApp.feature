@@ -282,7 +282,7 @@ Business Need: customApp Component Scenarios
   @332501
   Scenario: Custom App- To verify, when Default Theme Name is  "ColorContrast_Admin" should be saved on the  Custom App: Admin
     When I login to "As Administrator" app as "ADMIN" user
-  #  When I setup my app as "As Administrator"
+    When I setup my app as "As Administrator"
     And I pause execution for "5" seconds
     Then I see "ColorContrast_Admin" on complete page for custom App as a Grantor
 

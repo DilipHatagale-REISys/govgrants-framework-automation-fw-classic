@@ -272,7 +272,6 @@ Business Need: Side bar Component Scenarios
     #Then I see "10" records inside enhanced grid id "---program:-:enhancedGridTableId---"
     Then I see "10" with page size dropdown at "---program:-:enhancedGridTableId---"
 
-
   @77620    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrderAtSidebar-gHome
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
     Given I have "default" configuration as below:

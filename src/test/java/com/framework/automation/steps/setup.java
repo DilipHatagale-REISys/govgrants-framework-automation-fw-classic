@@ -27,7 +27,7 @@ public class setup {
 
     public setup(TestSetupController userController, ProjectWebServices projectWebServices) {
         this.userController = userController;
-        if(report == null) {
+        if (report == null) {
             this.report = new CSS();
             EnvironmentFactory.setProjectName("GovGrants Framework Test Automation");
             EnvironmentFactory.setOrgName("REI Systems [Saas Business Unit]");
