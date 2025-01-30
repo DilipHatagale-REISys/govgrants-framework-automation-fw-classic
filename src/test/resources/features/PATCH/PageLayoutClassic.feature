@@ -2236,23 +2236,23 @@ Business Need: Page Layout Component Scenarios
     Then I softly see likesCount / label as "0" is present at user detail page
     Then I softly see likesCount / label as "Posts & Comments" is present at user detail page
 
-  @83330   @verifyRequiredForSaveBehaviourAtPageBlockDetailInModalWindowForURLField @wip
+  @83330   @verifyRequiredForSaveBehaviourAtPageBlockDetailInModalWindowForURLField
   Scenario: Changing value for required for save behaviour field for URL from config and checking error message at modal
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | Name                      | PBD-23616                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | Name                      | PBD-17257                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-343-0034" into field "Program__c"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    When I enter value "" into field "Program__c"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
-      | Funding Opportunity Web Address is required to save |
+      | Program ID is required to save. |
 
   @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
   Scenario: validate alert message for enetering incorrect data at url field on modal
@@ -6923,28 +6923,25 @@ Business Need: Page Layout Component Scenarios
   @137799    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save lookup field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-23607                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-23607                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | configurationCategory                    | fieldName            | fieldNewValue                                                | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON     | govgrants_config:FlexTableHideExpressionBuilderJsonForPMUser | Announcement Create - Grantor | Name                      | {pagelayout:ProgramApprover__c} |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | Required for Save                                            | Announcement Create - Grantor | Name                      | {pagelayout:ProgramApprover__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                         | Announcement Create - Grantor | Name                      | {pagelayout:ProgramApprover__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137799 verify that lookup field is hidden on the basis of announcement type field value
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     Then I softly cannot see field "Program Approver" inside page block
     And I click modal button "Continue"
- # @137799 verify that req field message is not displayed for hidden lookup field
     Then I cannot see the following message in the page details contains:
-      | Program Approver is required to save under Overview. |
+      | Program Approver is required to save. |
 
   @137803    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save currency field is hidden using hide field json
@@ -8007,15 +8004,15 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-23597                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I clear the value from field "Phone_Field__c"
+    When I clear the value from field "Phone_Number__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Phone Field is required to save under Overview. |
@@ -8049,9 +8046,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-23597                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8491,15 +8488,15 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "9987" into field "Phone_Field__c"
+    When I enter value "9987" into field "Phone_Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8510,15 +8507,15 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "9987" into field "Phone_Field__c"
+    When I enter value "9987" into field "Phone_Number__c"
     And I click on back arrow
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8529,14 +8526,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "9987" into field "Phone_Field__c"
+    When I enter value "9987" into field "Phone_Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @146707    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPicklistFieldDataAtPageLayout
@@ -8545,15 +8542,15 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "9987" into field "Phone_Field__c"
+    When I enter value "9987" into field "Phone_Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
     Then I see alert popup box
@@ -8564,14 +8561,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23597                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "9987" into field "Phone_Field__c"
+    When I enter value "9987" into field "Phone_Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @148176    @verifyDisplayOfPicklistFieldDropdownValuesInsidePageLayout
@@ -8638,14 +8635,20 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Description is required to save under Overview. |
 
-  @151008    @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtModal @wip
+  @151008 @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtModal
   Scenario: verify that user gets he validation message with the field name by entering invalid data in url field at modal
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Announcement Create - Grantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Announcement Create - Grantor | Name                      | {pagelayout:FundingOpportunityURL__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-343-0034" into field "Program__c"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     When I enter value "dummytextummytextdummytextdummytext" into field "FundingOpportunityURL__c"
     And I click modal button "Continue"
     Then I see the following message in the page details contains:
