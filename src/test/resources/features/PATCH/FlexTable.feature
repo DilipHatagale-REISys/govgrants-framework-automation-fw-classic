@@ -15,7 +15,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
