@@ -21,7 +21,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346745p
@@ -54,7 +53,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346750
@@ -87,7 +85,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346753
@@ -120,7 +117,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346757
@@ -210,7 +206,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346766p
@@ -247,7 +242,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346769p
@@ -281,7 +275,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346773p
@@ -310,7 +303,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346776
@@ -337,7 +329,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346780
@@ -369,7 +360,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346783p
@@ -404,7 +394,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346787 @346788
@@ -418,7 +407,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346789
@@ -444,7 +432,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346792
@@ -471,7 +458,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346795
@@ -503,7 +489,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346891
@@ -543,7 +528,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346985
@@ -582,7 +566,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346960
@@ -619,7 +602,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346963
@@ -650,7 +632,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346953
@@ -695,7 +676,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346948 @346956
@@ -738,7 +718,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Status" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346938
@@ -780,7 +759,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346941
@@ -867,7 +845,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
 #################### Test suite: Export_Page Layout (Suite ID: 346077)  ###############################################################
@@ -892,7 +869,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346971 @346973 @347009 @347010 @347099 @347104 @347211 @347216
@@ -915,7 +891,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346977 @346978 @347018 @347019  @343117 @343118 @347230 @347231
@@ -938,7 +913,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346979 @346980 @347021 @347024 @347119 @347122 @347235 @347240
@@ -962,7 +936,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346982 @346983 @347027 @347030 @347126 @347130 @347245 @347250
@@ -985,7 +958,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346984 @346986 @347034 @347046 @347137 @347148 @347253 @347256
@@ -1009,7 +981,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346987 @346988 @347039 @347041 @347142 @347144 @347260 @347266
@@ -1032,7 +1003,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346992 @346994 @347056 @347060 @347163 @347167 @347276 @347277
@@ -1055,7 +1025,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346995 @346996 @347064 @347068 @347168 @347169 @347278 @347279
@@ -1078,7 +1047,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346997 @346998 @347069 @347073 @347170 @347171 @347280 @347281
@@ -1101,7 +1069,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346999 @347000 @347078 @347083 @347173 @347177 @347283 @347284
@@ -1124,7 +1091,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347001 @347003 @347088 @347091 @347182 @347188 @347285 @347286
@@ -1147,7 +1113,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347003 @347005 @347092 @347093 @347192 @347195 @347287 @347288
@@ -1170,7 +1135,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347325 @347326 @347402 @347403
@@ -1298,7 +1262,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347336 @347338 @347415 @347416
@@ -1329,7 +1292,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347339 @347340 @347419 @347421
@@ -1362,7 +1324,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347341 @347342 @347422 @347423
@@ -1393,7 +1354,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347346 @347347 @347428 @347429
@@ -1425,7 +1385,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347348 @347349 @347431 @347432
@@ -1457,7 +1416,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347350 @347351 @347434 @347436
@@ -1489,7 +1447,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347352 @343353 @347437 @347438
@@ -1521,7 +1478,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347354 @347355 @347439 @347441
@@ -1554,7 +1510,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347357 @347358 @347443 @347445
@@ -1586,7 +1541,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347364 @347365 @347451 @347453
@@ -1668,7 +1622,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347374 @347376 @347461 @347462
@@ -1696,7 +1649,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347378 @347379 @347463 @347464
@@ -1723,7 +1675,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347380 @347381 @347466 @347467
@@ -1750,7 +1701,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347384 @347386 @347473 @347474
@@ -1777,7 +1727,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347388 @347389 @347475 @347477
@@ -1804,7 +1753,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347390 @347392 @347478 @347479
@@ -1831,7 +1779,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347393 @347393 @347482 @347484
@@ -1858,7 +1805,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347395 @347396 @347487 @347489
@@ -1885,7 +1831,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347397 @347399 @347491 @347492
@@ -1912,7 +1857,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347400 @347401 @347447 @347450
@@ -2316,7 +2260,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347643 @347644 @347680 @347681
@@ -2343,7 +2286,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347648 @347649 @347684 @347685
@@ -2370,7 +2312,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347651 @347652 @347686 @347687
@@ -2398,7 +2339,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347653 @347654 @347688 @347689
@@ -2425,7 +2365,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347655 @347657 @347690 @347691
@@ -2452,7 +2391,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347658 @347659 @347692 @347693
@@ -2479,7 +2417,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347663 @347664 @347696 @347698
@@ -2506,7 +2443,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347666 @347667 @347699 @347700
@@ -2533,7 +2469,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347669 @347670 @347701 @347702
@@ -2560,7 +2495,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347672 @347673 @347703 @347705
@@ -2587,7 +2521,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347674 @347675 @347706 @347707
@@ -2614,7 +2547,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347676 @347677 @347708 @347709
@@ -2641,7 +2573,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Take Snapshot" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347710 @347724 @347817
@@ -3962,7 +3893,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347329 @347330
@@ -3984,7 +3914,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347367 @347368
@@ -4002,7 +3931,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see new tab is opened
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347406 @347407
@@ -4109,7 +4037,6 @@ Business Need: All pdf and xls related scenario including component and complete
 
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @347716 @347728 @347741
@@ -4266,7 +4193,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as PDF" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346340
@@ -4347,7 +4273,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Download as PDF" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346350
@@ -4427,7 +4352,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Download as XLS" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346357
@@ -4508,7 +4432,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Download as XLS" options is displayed
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346364
@@ -4605,7 +4528,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346413 @346438 @346467 @346480 @346535 @346614
@@ -4681,7 +4603,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346416 @346444 @346470 @346484 @346541 @346550 @346617
@@ -4754,7 +4675,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346419 @346430 @346473 @346487 @346599
@@ -4827,7 +4747,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346424 @346433 @346476 @346491 @346603
@@ -4887,7 +4806,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Grant Budget" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346347
@@ -4938,7 +4856,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Budget Category" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346453
@@ -4988,7 +4905,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Grant Budget" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346457
@@ -5039,7 +4955,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I cannot see "Budget Category" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346460
@@ -5139,7 +5054,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see new tab is opened
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346606
@@ -5186,7 +5100,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see new tab is opened
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346611
@@ -5287,7 +5200,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346573
@@ -5334,7 +5246,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346577
@@ -5408,7 +5319,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "$1,000.00" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346551 @346552
@@ -5435,7 +5345,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "3" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346556 @346557
@@ -5462,7 +5371,6 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "$1,000.00" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
-      | ADMIN |
       | PM    |
 
   @346618 @346620
