@@ -253,8 +253,6 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableTableId---"
     And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
     And I download the file
-    And I pause execution for "7" seconds
-    And I pause execution for "7" seconds
     And I pause execution for "10" seconds
     Then I see "Application Title" on page "1" of "govgrants" pdf file
     Then I cannot see "Show" on page "1" of "govgrants" pdf file

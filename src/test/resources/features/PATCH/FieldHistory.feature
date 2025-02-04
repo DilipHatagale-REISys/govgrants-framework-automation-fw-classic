@@ -866,9 +866,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Testing OK" into field "fieldAuthorization__c"
@@ -894,9 +899,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Automation Admin" into field "fieldAuthorizedSignatory__c"
@@ -922,9 +932,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "8456321479" into field "Phone_Number__c"
@@ -949,9 +964,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Checked" into field "CFDA_Data__c"
@@ -976,9 +996,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "State" into field "InternalOrganization__c"
@@ -1003,9 +1028,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "09/27/2023 07:37 PM" into field "Date_and_Time__c"
@@ -1030,9 +1060,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-20" into field "Number__c"
@@ -1057,9 +1092,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "www.google.com" into field "URL__c"
@@ -1084,9 +1124,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-78" into field "Percent__c"
@@ -1111,9 +1156,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "74" into field "Percent__c"
@@ -1138,9 +1188,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Project Grants" into field "Type__c"
@@ -1193,9 +1248,14 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-12" into field "fieldNumber__c"

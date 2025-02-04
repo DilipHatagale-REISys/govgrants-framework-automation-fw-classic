@@ -12584,7 +12584,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false              | ApiGeneratedId:3 |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName         | coreComponentSubFieldValue                 |
