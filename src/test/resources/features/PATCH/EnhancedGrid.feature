@@ -3584,30 +3584,30 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on top right button "New" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Then I see loading icon at "EnhanceAppGrantorBudgetPeriods" modal
 
-  @148349    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
+  @148349 @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-    ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see value "12,345.0000" for title "NumberDecimal" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description            | NumberDecimal |
+      | 4          | Test Review | Automation Description | 12345         |
+    Then I see value "12,345.0000" for title "NumberDecimal" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                             | defaultFieldsApi                                      |
-      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | newFieldsApi                                                                | defaultFieldsApi                                           |
+      | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},NumberDecimal__c | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
 
   @148362    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
@@ -6345,8 +6345,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:GrantBudgetOnGrantsBudgetTableId---" modal

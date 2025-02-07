@@ -97,34 +97,35 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size  | false             | ApiGeneratedId:0 |
-      | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:1 |
+      | Flex Grid             | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size  | true          | DataTableEnhanceProgramContacts |                           |                            |
       | Flex Grid:General     | Default Page Size | 5             | DataTableEnhanceProgramContacts |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:programContactsTableId---"
     Examples:
       | User |
-    # | ADMIN |
       | PM   |
 
   @77113  @379018 @SanityPATCH @SanityPATCHEnhancedTable  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
@@ -953,16 +954,25 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | false          | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I do not see "Total Records:" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
 
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-   #   | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205013 @205014 @379022 @SanityPATCH @SanityPATCHEnhancedTable
@@ -973,20 +983,37 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I do not see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205026 @205027
@@ -1004,15 +1031,22 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I do not see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205023 @205024
@@ -1023,7 +1057,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:4 |
+      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
@@ -1031,28 +1065,30 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205046 @205047
@@ -1070,15 +1106,24 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | false          | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I do not see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205029 @205030 @205049 @205050
@@ -1098,15 +1143,24 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Pagination       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Record Selection | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205052 @205053
@@ -1123,15 +1177,30 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Record Selection          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index                | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | none           | Programs                        | Name                      | Record Selection           |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207562 @207563 @207584 @207585
@@ -1154,34 +1223,32 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
 
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207565 @207566
@@ -1932,15 +1999,30 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Filter              | false          | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I do not see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-   #   | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205077 @205079 @379014 @SanityPATCH @SanityPATCHEnhancedTable
@@ -1956,15 +2038,30 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205082
@@ -2020,10 +2117,19 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     When I navigate to "Overview" sub tab
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I click on "Column Name" after click advance filter
@@ -2034,7 +2140,6 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see dropdown value "Other" under field name "Value" inside flex table
     Examples:
       | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-   #   | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205085
@@ -2579,16 +2684,23 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi>        | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table Action     | Button Help Text    | Test Button Help Text | DataTableEnhanceProgramContacts | Name                      | View                       |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     And I hovering mouse on action "View" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
     Examples:
       | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205399
@@ -2628,25 +2740,22 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Location            | Row            | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Krishna S" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-  #    | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205404 @205405 @205433 @205439
@@ -2688,25 +2797,22 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Location                   | Row                     | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Action URL Long            | <actionUrlLongNewValue> | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Header Action Display Type | Button                  | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Manage code" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | actionUrlLongOldValue                             | actionUrlLongNewValue                             |
-  #    | Admin | /apex/ContactView?id={!KeyContacts__c.Contact__c} | /apex/ContactView?id={!KeyContacts__c.Contact__c} |
       | PM    | /apex/ContactView?id={!KeyContacts__c.Contact__c} | /apex/ContactView?id={!KeyContacts__c.Contact__c} |
 
   @205436
@@ -2744,24 +2850,31 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Sequence            | 1              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Manage code" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
     Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" row action Button at position "2" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-   #   | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205440 @205441
@@ -2769,28 +2882,30 @@ Business Need: DataTableEnhanced Component Scenarios
   Action- PM- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | OpenURL           | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
       | Flex Table Action     | Where To Open ? | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "Lisa Mitchell" inside table
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
+    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
+    When I perform quick search for "{SavedValue:PM Username}" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "{SavedValue:PM Username}" inside table
     Then I see no new tab is opened
     Examples:
       | Users |
-   #   | Admin |
       | PM    |
 
   @205442
@@ -3144,12 +3259,14 @@ Business Need: DataTableEnhanced Component Scenarios
   @207612 @207613
   Scenario Outline: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                            |
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "program for grand total enhance table"
@@ -3161,9 +3278,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "10" seconds
     Then I see "$2,000.00" on page "1" of "govgrants" pdf file
     Examples:
-      | Users |
-      #| Admin |
-      | PM    |
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207614
   Scenario: Total - SPI- UI- Verify the Total of values under the column can be displayed in PDF file when we download as PDF

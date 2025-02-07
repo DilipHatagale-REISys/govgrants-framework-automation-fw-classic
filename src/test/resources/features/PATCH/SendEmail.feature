@@ -796,7 +796,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "captureModalFields.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail @wip
+  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -1754,6 +1754,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1764,7 +1769,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
-    When I close "Select File(s)" modal by clicking on x top right button
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     When I click on "View" icon for "Test" inside table
@@ -1778,6 +1782,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1788,7 +1797,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
-    When I close "Select File(s)" modal by clicking on x top right button
     When I click on cross icon at "SendEmailAttachment.pdf" attachment inside send email modal
     And I pause execution for "3" seconds
     Then I see attached file "SendEmailAttachment.pdf" is deleted successfully inside send email modal
@@ -1807,15 +1815,20 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Demo Email select files" into field "Subject" on send email modal
     And I click modal button "Select Files"
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I close modal by clicking the top right x button
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
@@ -1907,6 +1920,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1943,6 +1961,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2202,6 +2225,16 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "TestFileSharing.docx" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2213,7 +2246,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I check "TestFileSharing.docx" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "15" seconds
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I close "Select File(s)" modal by clicking on x top right button
     When I click on "Send" button in send email modal
     When I close "Send Email" modal by clicking on x top right button
     And I click on "View" icon for "Test multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
@@ -3703,6 +3735,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -4090,34 +4127,46 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "test1@reisystem.in;test2@reisystem.in;test3@reisystem.in" into field "{testData:ToField}" on send email modal
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation SPI3" into field "{testData:CcField}" on send email modal
-    When I select value "Automation SPI3" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "reply for to &cc external" into field "Subject" on send email modal
-    When I enter value "reply for to &cc external" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "test reply" into field "Subject" on send email modal
+    When I enter value "test reply" into field "Body Content" on send email modal
     And I click modal button "Select Files"
+    And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
-    When I close "Reply" modal by clicking on x top right button
-    And I click on "View" icon for "RE: reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "3" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
+    When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see "From:" as "Body Content" on send email modal
+    Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
-    Then I see "To:" as "Body Content" on send email modal
-    Then I see "automationpm@yopmail.com" as "Body Content" on send email modal
-    Then I see "test1@reisystem.in;test2@reisystem.in;test3@reisystem.in" as "Body Content" on send email modal
+    Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
+    Then I see "Subject: test reply" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
   @169844 @jyoti
   Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -4524,44 +4573,45 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "dilip.hatagale@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Johntest@yopmail.com" into field "{testData:CcField}" on send email modal
     When I enter value "test reply" into field "Subject" on send email modal
     When I enter value "test reply" into field "Body Content" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
     And I click modal button "Select Files"
-    And I pause execution for "5" seconds
+    And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    And I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "Reply" icon for "test reply" inside table
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
-    When I upload attachment "actionsAtEgrid.png" in send email modal
     And I click modal button "Select Files"
-    And I pause execution for "5" seconds
+    And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "View" icon for "RE: test reply" inside table
-    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
-    Then I see "To: dilip.hatagale@reisystems.in" as "Body Content" on send email modal
-    Then I see "Name" as "Attachments" on send email modal
-    Then I see "Action" as "Attachments" on send email modal
-    Then I see "SendEmailAttachment.pdf" as "Attachments" on send email modal
-    Then I see the text containing :
-      | Attachments |
+    Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
+    Then I see "Subject: test reply" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
 
   @160556 @jyoti
@@ -4969,15 +5019,27 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "test reply 2" into field "Subject" on send email modal
-    When I enter value "test reply 2" into field "Body Content" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I enter value "test reply" into field "Subject" on send email modal
+    When I enter value "test reply" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "3" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "5" seconds
+    When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
     And I click modal button "Select Files"
     And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
@@ -4986,25 +5048,23 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "Reply" icon for "test reply 2" inside table
-    When I enter value "reply the mail" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    And I pause execution for "2" seconds
-    When I click on "View" icon for "RE: test reply 2" inside table
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
-    Then I see "To:" as "Body Content" on send email modal
-    Then I see "Subject: test reply 2" as "Body Content" on send email modal
-    Then I see "Links to Additional Attachments" as "Body Content" on send email modal
-    Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
+    Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
+    Then I see "Subject: test reply" as "Body Content" on send email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
-    Then I see "reply the mail" as "Body Content" on send email modal
-    Then I see the text containing :
-      | Attachments |
 
   @169825
   Scenario: Verify user reply the email with files&attachment  from TO&CC  field as 'internal' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {StaticRecords:collabtab}  |
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -5012,36 +5072,44 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply TO& CC internal" into field "Subject" on send email modal
-    When I enter value "reply TO& CC internal" into field "Body Content" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I enter value "mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "test reply" into field "Subject" on send email modal
+    When I enter value "test reply" into field "Body Content" on send email modal
     And I click modal button "Select Files"
+    And I pause execution for "3" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
+    When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "reply the mail" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "Reply" icon for "reply TO& CC internal" inside table
-    When I enter value "reply the mail" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    And I pause execution for "2" seconds
-    When I click on "View" icon for "RE: reply TO& CC internal" inside table
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
     Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
-    Then I see "Subject:" as "Body Content" on send email modal
-    Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
-    Then I see text as "Links to Additional Attachments" on reply email modal
+    Then I see "Subject: test reply" as "Body Content" on send email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
   @169832
@@ -5059,32 +5127,45 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "id"
-    And I pause execution for "3" seconds
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply for to &cc external 2" into field "Subject" on send email modal
-    When I enter value "reply for to &cc external 2" into field "Body Content" on send email modal
+    When I enter value "mulange@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "test reply" into field "Subject" on send email modal
+    When I enter value "test reply" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "3" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
-    And I pause execution for "2" seconds
-    When I click on "Reply" icon for "reply for to &cc external 2" inside table
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "3" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
-    And I pause execution for "2" seconds
-    When I close "Reply" modal by clicking on x top right button
-    When I click on "View" icon for "RE: reply for to &cc external 2" inside table
-    Then I see "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" as "Body Content" on send email modal
+    And I pause execution for "5" seconds
+    And I refresh the page
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see "From:" as "Body Content" on send email modal
+    Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
-    Then I see "To:" as "Body Content" on send email modal
-    Then I see "automationpm@yopmail.com" as "Body Content" on send email modal
-    Then I see "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" as "Body Content" on send email modal
-    Then I see text as "reply for to &cc external 2" in reply email modal
+    Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
+    Then I see "Subject: test reply" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
   @169813
   Scenario: Verify user reply email with attachment& files from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -5100,6 +5181,21 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "DuplicateFile.txt" of type "Program Artifacts" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "actionsAtEgrid.png" of type "Program Artifacts" from computer
     And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -5120,24 +5216,23 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
     And I refresh the page
-    When I click on "Reply" icon for "reply group with attachment & files" inside table
+    When I click on "Reply" icon for "reply group with attachment & files" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
-    When I upload attachment "captureModalFields.png" in send email modal
-    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I upload attachment "DuplicateFile.txt" in send email modal
     When I upload attachment "actionsAtEgrid.png" in send email modal
     And I click modal button "Select Files"
     And I pause execution for "5" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I check "DuplicateFile.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I check "actionsAtEgrid.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
     When I close "Reply" modal by clicking on x top right button
-    When I click on "View" icon for "RE: reply group with attachment & files" inside table
+    When I click on "View" icon for "RE: reply group with attachment & files" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "DuplicateFile.txt" as "Body Content" on send email modal
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
@@ -5317,6 +5412,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -6750,6 +6850,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "id"
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "SendEmailAttachment.pdf" of type "Program Artifacts" from computer
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6760,11 +6865,11 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I pause execution for "3" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    And I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "Reply" icon for "test reply" inside table
+    When I click on "Reply" icon for "test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     And I click modal button "Select Files"
     And I pause execution for "3" seconds
@@ -6774,14 +6879,13 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "View" icon for "RE: test reply" inside table
+    When I click on "View" icon for "RE: test reply" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From: automationpm@yopmail.com" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
     Then I see "To: snehal.mulange@reisystems.in" as "Body Content" on send email modal
     Then I see "Subject: test reply" as "Body Content" on send email modal
-    Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
   @332845 @332847 @332849 @332850 @332852 @332853 @332855 @332856 @333064 @333062
@@ -6846,7 +6950,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
     Examples:
       | Users |
-#      | Admin |
       | PM    |
 
   @332880 @332881
