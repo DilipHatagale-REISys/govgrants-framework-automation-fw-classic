@@ -476,6 +476,7 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
+    When I navigate to "History" sub tab
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
