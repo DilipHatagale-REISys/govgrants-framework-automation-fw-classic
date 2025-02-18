@@ -485,7 +485,8 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "3" seconds
     And I softly see status in Progress-bar is "Active" and is "Green"
     When I navigate to "History" sub tab
-    Then I do not see "Activated.pdf" inside flex table with id "---program:-:SnapShotTableId---"
+    Then I see "Snapshot Post Activation.pdf" inside flex table with id "---program:-:SnapShotTableId---"
+    Then I see "Internal Program - submit for approval.pdf" inside flex table with id "---program:-:SnapShotTableId---"
 
   @201421 @201419
   Scenario Outline: Auto Snapshot-PM-UI-To verify Auto Snapshot functionality when is Active is checked
