@@ -220,6 +220,9 @@ Business Need: history Component Scenarios
     And I click on "Submit For Approval" in the page details
     When I "Send back" in the approval decision
     When I navigate to "History" sub tab
+    And I pause execution for "120" seconds
+    And I refresh the page
+    When I navigate to "History" sub tab
     Then I softly see column "Status" inside row "1" at position "2" and column at position "5" contains text "Sent Back"
 
   @69958   @VerifyExpectedOverAllStatusIsDisplayedInApprovalHistoryAfterRecordSubmission
