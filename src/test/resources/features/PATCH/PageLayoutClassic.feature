@@ -116,7 +116,7 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
+    When I click on "Save" in the page details
     Then I see "Submit For Approval" button is not displayed
 
   @34043 @200538 @200546 @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
