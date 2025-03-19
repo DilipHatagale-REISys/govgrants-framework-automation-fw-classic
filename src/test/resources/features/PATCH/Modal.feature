@@ -598,7 +598,7 @@ Business Need: Modal Component Scenarios
 
     Examples:
       | User | new_helpText             | old_helpText |
-      | SPI  | Help Text for Automation |              |
+      | SPI3 | Help Text for Automation |              |
 
   @382279 @SanityPATCH  @SanityPATCHModal
   Scenario Outline: Sanity Testing- Modal- Page Block- SPI- To verify help text displays after field label in the page block if provided in config.
@@ -618,7 +618,7 @@ Business Need: Modal Component Scenarios
 
     Examples:
       | User | new_helpText             | old_helpText             |
-      | SPI  | Help Text for Automation | Help Text for Automation |
+      | SPI3 | Help Text for Automation | Help Text for Automation |
 
   @382274 @SanityPATCH  @SanityPATCHModal
   Scenario Outline:Sanity Testing- Modal- Page Block- SPI- To verify Header Instruction Text displays in the modal if provided in the config.
@@ -637,7 +637,7 @@ Business Need: Modal Component Scenarios
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
-      | SPI  | Automation Header Text |              |
+      | SPI3 | Automation Header Text |              |
 
   @382233 @SanityPATCH  @SanityPATCHModal
   Scenario Outline: Sanity Testing- Modal- SPI- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
@@ -656,7 +656,7 @@ Business Need: Modal Component Scenarios
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
-      | SPI  | Automation Header Text |              |
+      | SPI3 | Automation Header Text |              |
 
   @382297 @SanityPATCH  @SanityPATCHModal
   Scenario Outline: Sanity Testing- Modal- Page Block Detail- SPI- To verify 'Field Label Override' displays on UI.
@@ -675,7 +675,7 @@ Business Need: Modal Component Scenarios
     Then I softly see "<New Label>" shown as page instruction text
     Examples:
       | User | New Label     | Old Label      |
-      | SPI  | Schedule Name | Schedule Title |
+      | SPI3 | Schedule Name | Schedule Title |
 
   @382286 @SanityPATCH  @SanityPATCHModal
   Scenario: Sanity Testing- Modal- Page Block Detail- SPI- To verify help text displays after field label in the page block detail if provided in config.

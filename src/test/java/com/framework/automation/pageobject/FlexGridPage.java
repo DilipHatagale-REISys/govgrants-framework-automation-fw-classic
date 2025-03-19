@@ -843,4 +843,8 @@ public class FlexGridPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void getHelpTextAtChildTable(String tableId) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[@id='" + tableId + "']//span[contains(@class,'fa-info')]"));
+    }
 }
