@@ -24,7 +24,7 @@ public class CommonSteps {
     @Then("^I see page title \"([^\"]*)\"$")
     public void asserPageTitle(String pageTitle) {
         String title = I.amPerforming().browserOperationsTo().getPageTitle();
-        System.out.println("page title getting:" +title);
+        System.out.println("page title getting:--------" +title);
         govGrantsManager.assertPageTitle(pageTitle);
     }
 }
