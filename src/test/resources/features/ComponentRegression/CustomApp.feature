@@ -277,7 +277,9 @@ Business Need: UI (Suite ID: 306389)
       | Custom App Config:General | Sequence  | 2             | StateasGrantor     |
     When I login to "As a Grantor" app as "PM" user
     When I click CustomApp select dropdown
+    #306052
     Then I see "As a Grantor" inside CustomApp dropDown
+   #306053 #306056
     Then I see position "As a Grantor" option of custom app is at "2"
 
   @306058 @330874 @330875 @SanityPATCH
