@@ -258,7 +258,9 @@ Business Need: UI (Suite ID: 306389)
       | Custom App Config:General | Default Theme Name | ColorContrast_Grantee | StateasGrantee     |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantee"
+    #330867
     Then I see govgrants logo "Current App logo" is displayed with name "As a Grantee"
+    #306050
     Then I see "ColorContrast_Grantee" on complete page for custom App as a Grantor
 
 #####Test suite: As a Grantor (Suite ID: 305834)######
