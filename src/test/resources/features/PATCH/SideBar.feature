@@ -83,10 +83,10 @@ Business Need: Side bar Component Scenarios
   Scenario: Changing label of accordion Header
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header      | Name      | My Tasks          | GrantorHome        | Phase Name                | Automation                 |
+      | Accordion Header      | Name      | My Tasks          | GrantorHome        | Phase Name                | Automation                 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header      | Name      | Automation    | GrantorHome        | Phase Name                | My Tasks                   |
+      | Accordion Header      | Name      | Automation    | GrantorHome        | Phase Name                | My Tasks                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side accordion header menu

@@ -5,7 +5,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode.  @Sprint-19
   Scenario Outline: To verify ,  When Internal User click on 'New' action button to create a new record in Enhanced Grid, a new record should show up in the grid in edit mode.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -23,7 +22,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see fields "Description__c" is in edit mode
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @2576141 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
@@ -45,12 +43,10 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257558 @257557 @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -69,12 +65,10 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly.  @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -87,12 +81,10 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Review Forms" page block displayed
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -109,7 +101,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -220,10 +211,9 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "percenttest" in downloaded xls or csv file "govgrants"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
-  @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
+  @206106 @206110 @US-196926 @Sprint-5 @wip @pdf
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                              | coreComponentField | filterId         |
@@ -248,7 +238,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "percenttest" on page "1" of "govgrants" pdf file
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
@@ -300,7 +289,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @wip @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
   Scenario:To verify, User should be able to Delete the newly added  record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -508,7 +496,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257516 @ToVerifyInternalUserShouldNotSeeAnyChildTableAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should  not see any child table attached to the newly created record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -525,7 +512,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257526 @ToVerifyInternalUserShouldBeAbleToAddNewChildRecordInChildTableThatAttachedToTheNewlyCreatedRecord @dilip @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add new child record in child table that attached to the newly created record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -546,7 +532,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257518 @Sprint-19 @US-255921
   Scenario: To verify, Internal User should be able to add details to the newly displayed record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -568,7 +553,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257535 @Sprint-19 @US-255921 @skipOnJenkins
   Scenario: To verify, In page block download CSV for newly added record in the table  should be displayed  for internal user
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -707,7 +691,6 @@ Business Need: EnhancedGrid Component Scenarios
   @wip @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
   @InternalUserShouldBeSeeConfirmationBoxWhenClickOnDeleteActionOnTheNewlyAddedRecord
   Scenario: To verify, Internal User should be see confirmation box when click on Delete action on  the newly added  record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -741,7 +724,6 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Filter | false         | ProgramReviewStepTemplates |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -833,7 +815,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Pre-Screen Review"
     Then I see "Score" not displayed in enhanced grid table column title
 
-  @45287    @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
+  @45287 @readOnlyColumnJSONFieldForChildFlexTableAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Changing specific cell value to read only for child flex table of enhanced grid from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue                                     | filterId         |
@@ -1321,12 +1303,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see external link icon as "Pre-Screen Review" for "Edit" inside enhanced grid table action
 
-  @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning @localrungrid
+  @41466 @localrungrid @pdf
   Scenario: Setup confirmation message for enhanced grid table edit action from configuration and validating it inside enhanced grid of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | false             | ProgramReviewStepTemplates | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                   | ProgramReviewStepTemplates | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  | Automation        | ProgramReviewStepTemplates | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | ProgramReviewStepTemplates | Name                      | Edit                       |
@@ -1361,7 +1343,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
-  @41385    @formulaFieldAtEnhancedGrid-gPlanning
+  @41385
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config validating it inside enhanced of program-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1454,7 +1436,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Field Label Override |                                                       | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names  | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn},Score__c | ProgramReviewStepPanelTemplates |                           |                            |
+      | Flex Table:General    | Display Field Names  | {flexgrid:ProgramReviewStepPanelTemplates.defaultdfn},Score__c | ProgramReviewStepPanelTemplates | Name                      |                            |
       | Flex Table List       | Field Label Override | Test Automation                                                | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:Score__c}        |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2176,31 +2158,32 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Setup" sub tab
     Then I see "Atleast one list view should be marked as a Master List View" error is not displayed at enhanced grid
 
-  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning @wip
+  @49270    @styleAttributeFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute     | <styleAttributeValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1500                   |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute     | <styleAttributeValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | ProgramChecklists  |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
+    Then I see "(2,555)" inside enhanced grid table id "---program:-:checklistTableId---" in "Red" colour
 
     Examples:
-      | styleAttributeValue | newFieldsApi                                                                                                                                                                                                               | defaultFieldsApi                                      |
-      | color: 'red'        | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | Id,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c |
+      | styleAttributeValue | newFieldsApi                                                                 | defaultFieldsApi                                                             |
+      | color: 'red'        | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c |
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
@@ -2208,18 +2191,19 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                  |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName  | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | StyleClass | <styleClassValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
     Then I see "Road Construction Annoumsment" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
 
     Examples:
@@ -2294,28 +2278,30 @@ Business Need: EnhancedGrid Component Scenarios
   @49359    @styleAttributeFieldAtChildFlexTableForEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: validate color change of total adjusted amount cloumn content after making changes at style attribute from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Style Attribute     |                    | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute | <styleAttributeValue> | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1494                   |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute     | <styleAttributeValue> | ProgramChecklists  | Name                      | {flexgrid:Numbertest__c}   |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>        | ProgramChecklists  |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-    When I perform quick search for "GT-12132-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    When I expand nested table containing column value "GT-12132-001"
-    Then I see "($1.00)" inside enhanced grid table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in "Red" colour
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status | Numbertest |
+      | Automation test description | Optional | Application | Active | -2555      |
+    And I refresh the page
+    Then I see "(2,555)" inside enhanced grid table id "---program:-:checklistTableId---" in "Red" colour
 
     Examples:
-      | styleAttributeValue |
-      | color: 'red'        |
+      | styleAttributeValue | newFieldsApi                                                                 | defaultFieldsApi                                                             |
+      | color: 'red'        | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},Numbertest__c |
+
 
   @49240
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning
@@ -2867,26 +2853,27 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "Demo_Title" inside table
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
-  @80502 @wip @needconfirmationfromshambhavi
+  @80502 @needconfirmationfromshambhavi
   Scenario: Verify a 'Show Link as Text' field at parent flex table by setting checkbox to true
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid             | Show Link as Text | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue                                          | filterId         |
+      | Flex Grid             | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
+      | Flex Grid             | Show Link as Text   | false                                                      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Show Link as Text | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
-    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
-    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+      | configurationCategory | fieldName           | fieldNewValue                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Program__c | ProgramReviewStepTemplates |                           |                            |
+      | Flex Grid:General     | Show Link as Text   | true                                                                  | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "PM" user
-    And I navigate to "Applications" tab
-    When I navigate to "Applications" content inside "Applications" subheader on left panel
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
-    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
-    When I navigate to "Budget" sub tab
-   # #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I get the "EGMS ID"
+    And I save the field labeled "Program" as "ProgramName"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Setup" sub tab
+    Then I see hyperlink at column value "Automation PM" inside "ProgramReviewStepTemplatesFlexToggle" table
 
   @80506 @wip @needconfirmationfromshambhavi
   Scenario: validate hyperlink is present at column value after unchecking the Show Link as Text Field from config at e-grid - gplanning
@@ -4310,7 +4297,6 @@ Business Need: EnhancedGrid Component Scenarios
 
   @166743   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualNotToOprator
   Scenario:  E-grid-o verify in advanced filter when user select the picklist data type field then correct result display with not equal to operator
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4415,7 +4401,6 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4438,7 +4423,6 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -5855,7 +5839,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218432 @218434
@@ -5878,7 +5861,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218437 @218438
@@ -5904,7 +5886,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218440 @218441 @218443 @218444
@@ -5935,7 +5916,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218461 @218462 @352192 @352197 @379190 @SanityPATCH @SanityPATCHEGrid
@@ -5979,7 +5959,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
@@ -6008,7 +5987,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218455 @218456
@@ -6031,7 +6009,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see Total Records count "Total Records:" in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218430 @218435
@@ -6130,7 +6107,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218448 @352285
@@ -6174,7 +6150,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218451 @352431
@@ -6221,7 +6196,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218457
@@ -6280,7 +6254,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see Total Records count "Total Records:" in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218454
@@ -6358,7 +6331,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206019
@@ -6401,7 +6373,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @205918 @205919 @205912 @205913
@@ -6438,7 +6409,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206020 @206021
@@ -6459,7 +6429,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206022 @206016
@@ -6515,7 +6484,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352274 @352275
@@ -6554,7 +6522,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352351 @352415
@@ -6593,7 +6560,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
@@ -6645,7 +6611,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352429p @352430 @379208 @SanityPATCH @SanityPATCHEGrid
@@ -6695,7 +6660,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
@@ -6745,7 +6709,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   ################### Test suite: Detail config (Suite ID: 296508) ###################
@@ -6769,7 +6732,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296549 @296550
@@ -6793,7 +6755,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296559 @296560
@@ -6816,7 +6777,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
@@ -6840,7 +6800,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296594 @296595
@@ -6863,7 +6822,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296597 @296598
@@ -6889,7 +6847,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296610 @296611
@@ -6913,7 +6870,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296613 @296614
@@ -6938,7 +6894,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296617 @296623
@@ -7013,7 +6968,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296644 @296645
@@ -7038,7 +6992,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296658 @296659
@@ -7065,7 +7018,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296661 @296662
@@ -7101,7 +7053,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296688 @296689
@@ -7130,7 +7081,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296692 @296693
@@ -7162,7 +7112,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296695 @296698
@@ -7191,7 +7140,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296701 @296702
@@ -7226,7 +7174,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see over all total sum is not displayed for "Weight__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296767 @296768
@@ -7254,7 +7201,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296948 @296950
@@ -7288,7 +7234,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296953 @296957
@@ -7316,7 +7261,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @296968 @296974
@@ -7350,7 +7294,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297044 @297047
@@ -7375,7 +7318,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Step Order" not displayed in enhanced grid table column title
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297067 @297069
@@ -7401,7 +7343,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297580 @297581
@@ -7426,7 +7367,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Step Order" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297583 @297584
@@ -7454,7 +7394,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297589 @297592
@@ -7488,7 +7427,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297595 @297597
@@ -7521,7 +7459,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297601 @297602
@@ -7551,7 +7488,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @297605 @297606
@@ -7582,7 +7518,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206030
@@ -7608,7 +7543,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @206036 @206037
@@ -7633,7 +7567,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218467 @218468
@@ -7655,7 +7588,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see select check box enabled in enhanced flex grid
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218470 @218471
@@ -7677,7 +7609,6 @@ Business Need: EnhancedGrid Component Scenarios
     Then I do not see select check box enabled in enhanced flex grid
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218473 @218476 @218477 @218474
@@ -7701,7 +7632,6 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | User |
-      #| ADMIN |
       | PM   |
 
   @218472

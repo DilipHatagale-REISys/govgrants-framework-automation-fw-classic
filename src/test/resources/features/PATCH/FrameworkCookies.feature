@@ -43,7 +43,6 @@ Business Need: FrameworkCookies Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
-  #      | Flex Table:General    | Sort Direction      | ASC           | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size   | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Pagination   | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Page Size    | true          | Programs           | Name                      |                            |
@@ -55,9 +54,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267859p @US-265865
   Scenario: To verify when user changes the page size (Show entries) to 10, click on the another phase and again click on the same phase where page size was changed to 10 then table should get open on the page size (Show entries) to 10. (SPI)
@@ -111,9 +109,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267811p @267613 @267603 @Sprint-21 @Vrushali
   Scenario Outline: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10.
@@ -139,9 +136,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267799 @Sprint-21 @Vrushali
   Scenario:To verify when user changes the page size (Show entries) to All and refreshes the page then table should get open on the page size (Show entries) to All. (SPI)
@@ -244,9 +240,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267646 @267645
   Scenario Outline: To verify when user changes the page size (Show entries) to All, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to All
@@ -272,9 +267,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267614 @Vrushali @Sprint-21
   Scenario:To verify when user changes the page size (Show entries) to 10, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 10.
@@ -327,9 +321,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267641 @267643
   Scenario Outline: To verify when user changes the page size (Show entries) to 100, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 100. (Admin)
@@ -357,9 +350,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267604p @267631
   Scenario Outline: To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (Admin)
@@ -385,9 +377,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "20" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267634
   Scenario Outline: To verify when user changes the page size (Show entries) to 50, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 50. (Admin)
@@ -415,9 +406,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-        #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267647
   Scenario:To verify when user changes the page size (Show entries) to All, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to All. (SPI)
@@ -469,9 +460,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267693 @267695
   Scenario Outline: To verify when user changes the page size (Show entries) to 50, click on row level 'Edit' action and click on page back arrow then table should get open on the page size (Show entries) to 50. (Admin)
@@ -499,9 +489,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267698 @267700
   Scenario Outline:To verify when user changes the page size (Show entries) to 100, click on row level 'Edit' action and click on page back arrow then table should get open on the page size (Show entries) to 100. (Admin)
@@ -529,9 +518,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267706 @267709
   Scenario Outline:To verify when user changes the page size (Show entries) to All, click on row level 'Edit' action and click on page back arrow then table should get open on the page size (Show entries) to All. (Admin)
@@ -559,9 +547,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267713
   Scenario: To verify when user changes the page size (Show entries) to All, click on row level 'Edit' action and click on page back arrow then table should get open on the page size (Show entries) to All. (SPI)
@@ -612,9 +599,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267767 @267770
   Scenario Outline:To verify when user changes the page size (Show entries) to 50 and refreshes the page then table should get open on the page size (Show entries) to 50. (Admin)
@@ -641,9 +627,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267778 @267783
   Scenario Outline: To verify when user changes the page size (Show entries) to 100 and refreshes the page then table should get open on the page size (Show entries) to 100. (Admin)
@@ -670,9 +655,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267793
   Scenario Outline:To verify when user changes the page size (Show entries) to All and refreshes the page then table should get open on the page size (Show entries) to All. (PM)
@@ -699,9 +683,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-     # | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267809
   Scenario Outline: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10. (Admin)
@@ -727,9 +711,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267812p
   Scenario: To verify when user changes the page size (Show entries) to 10 and click on the same phase then table should get open on the page size (Show entries) to 10. (SPI)
@@ -778,9 +761,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267817p
   Scenario:To verify when user changes the page size (Show entries) to 20 and click on the same phase then table should get open on the page size (Show entries) to 20. (SPI)
@@ -831,9 +813,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-        #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267826
   Scenario: To verify when user changes the page size (Show entries) to 50 and click on the same phase then table should get open on the page size (Show entries) to 50. (SPI)
@@ -885,9 +867,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267847
   Scenario: To verify when user changes the page size (Show entries) to 100 and click on the same phase then table should get open on the page size (Show entries) to 100. (SPI)
@@ -937,9 +919,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267853
   Scenario:  To verify when user changes the page size (Show entries) to All and click on the same phase then table should get open on the page size (Show entries) to All. (SPI)
@@ -991,9 +973,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267876 @267877
   Scenario Outline: To verify when user changes the page size (Show entries) to 20, click on the another phase and again click on the same phase where page size was changed to 20 then table should get open on the page size (Show entries) to 20.(Admin)
@@ -1019,9 +1000,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "20" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267879 @267880
   Scenario Outline: To verify when user changes the page size (Show entries) to 50, click on the another phase and again click on the same phase where page size was changed to 50 then table should get open on the page size (Show entries) to 50.(Admin)
@@ -1049,9 +1029,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "50" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @267882 @267883
   Scenario Outline:To verify when user changes the page size (Show entries) to 100, click on the another phase and again click on the same phase where page size was changed to 100 then table should get open on the page size (Show entries) to 100.(Admin)
@@ -1079,9 +1058,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "100" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-        #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267888 @267889
   Scenario Outline: To verify when user changes the page size (Show entries) to All, click on the another phase and again click on the same phase where page size was changed to All then table should get open on the page size (Show entries) to All.(Admin)
@@ -1107,9 +1086,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "All" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @267890
   Scenario: To verify when user changes the page size (Show entries) to All, click on the another phase and again click on the same phase where page size was changed to All then table should get open on the page size (Show entries) to All.(SPI)
@@ -1162,9 +1141,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268032
   Scenario: To verify when user changes pagination to next and click on the same phase then table should get open on the page where pagination was set to next (SPI)
@@ -1214,9 +1192,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @268035
   Scenario: To verify when user changes pagination to Last and click on the same phase then table should get open on the page where pagination was set to Last.(SPI)
@@ -1269,9 +1247,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @268038
   Scenario: To verify when user changes pagination to Previous and click on the same phase then table should get open on the page where pagination was set to Previous (SPI)
@@ -1324,9 +1302,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I softly see the text containing :
       | Showing 1 to |
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @268044
   Scenario: To verify when user changes pagination to First and click on the same phase then table should get open on the page where pagination was set to First (SPI)
@@ -1378,9 +1356,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-    #  | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @268053
   Scenario: To verify when user changes pagination to next and refreshes the page then table should get open on the page where pagination was set to next (SPI)
@@ -1430,9 +1408,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268056
   Scenario: To verify when user changes pagination to Last and refreshes the page then table should get open on the page where pagination was set to Last.(SPI)
@@ -1485,9 +1462,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268087
   Scenario: To verify when user changes pagination to Previous and refreshes the page then table should get open on the page where pagination was set to Previous (SPI)
@@ -1540,9 +1516,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I softly see the text containing :
       | Showing 1 to |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    | `
+      | User |
+      | PM   | `
 
   @268090
   Scenario: o verify when user changes pagination to First and refreshes the page then table should get open on the page where pagination was set to First (SPI)
@@ -1599,9 +1574,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268098
   Scenario: To verify when user changes pagination to next, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1658,9 +1632,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268104
   Scenario: To verify when user changes pagination to Last, click on row level Edit action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1717,9 +1690,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268107
   Scenario: To verify when user changes pagination to Previous, click on row level Edit action and click on page back arrow then table should get open on the page where pagina
@@ -1779,9 +1751,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268113 @268114
   Scenario Outline:  To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(Admin)
@@ -1811,9 +1782,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268115
   Scenario: To verify when user changes pagination to next, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to next.(SPI)
@@ -1870,9 +1840,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268119
   Scenario: To verify when user changes pagination to Last, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Last.(SPI)
@@ -1929,9 +1898,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268122
   Scenario: To verify when user changes pagination to Previous, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to Previous.(SPI)
@@ -1991,9 +1959,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  | Record             |
-      | ADMIN | Automation Program |
-      | PM    | Automation Program |
+      | User | Record             |
+    #  | ADMIN | Automation Program |
+      | PM   | Automation Program |
 
   @268136
   Scenario: To verify when user changes pagination to First, click on row level view action and click on page back arrow then table should get open on the page where pagination was set to First.(SPI)
@@ -2046,9 +2014,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268146
   Scenario: To verify when user changes pagination to next, click on the another phase and again click on the same phase where pagination was set to next then table should get open on that page (SPI)
@@ -2101,9 +2068,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I can see last page displayed in pagination inside "Programs"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268156
   Scenario: To verify when user changes pagination to Last, click on the another phase and again click on the same phase where pagination was set to Last then table should get open on that page(SPI)
@@ -2158,9 +2124,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-     #   | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @268174
   Scenario: To verify when user changes pagination to Previous, click on the another phase and again click on the same phase where pagination was set to Previous then table should get open on that page(SPI)
@@ -2217,9 +2183,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I softly see the text containing :
       | Showing 1 to |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268193
   Scenario: To verify when user changes pagination to First, click on the another phase and again click on the same phase where pagination was set to First then table should get open on that page(SPI)
@@ -2272,9 +2237,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268237
   Scenario: To verify when user searches any value in quick search field, click on row level view action and click on page back arrow then table should show the records of Quick search results (SPI)
@@ -2324,9 +2288,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268280
   Scenario: To verify when user searches any value in quick search field, click on row level Edit action and click on page back arrow then table should show the records of Quick search results (SPI)
@@ -2376,9 +2339,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268293
   Scenario: To verify when user searches any value in quick search field and refreshes the page then table should show the records of Quick search results (SPI)
@@ -2427,9 +2389,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268299
   Scenario: To verify when user searches any value in quick search field and clicks on the same phase then table should show the records of Quick search results (SPI)
@@ -2478,9 +2439,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @268306
   Scenario: o verify when user searches any value in quick search field, click on the another phase and again click on the same phase where table was showing quick search results then table should show the records of Quick search results (SPI)
@@ -2536,9 +2496,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268461 @268462
   Scenario Outline: To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
@@ -2561,9 +2521,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268464 @268466
   Scenario Outline:To verify when sort direction of data type-standard field(EGMS_ID) is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (Admin)
@@ -2582,9 +2542,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268469p @268471
   Scenario Outline:To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (Admin)
@@ -2603,9 +2563,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268476 @268478
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2625,9 +2585,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Custom Data Type - Picklist *********
   @268482 @268560
@@ -2649,9 +2609,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268563 @268564
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Picklist (Admin)
@@ -2674,9 +2634,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268565 @268569
   Scenario Outline: To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (Admin)
@@ -2695,9 +2655,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268572 @268574
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (Admin)
@@ -2716,9 +2676,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268581 @268582
   Scenario Outline:To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
@@ -2738,9 +2698,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Type" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 ##### Custom Data Type- Text #####
   @268588 @268589
@@ -2762,9 +2722,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268592 @268593
   Scenario Outline:  To verify when sort direction of data type-Text is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
@@ -2787,9 +2747,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268595 @268596
   Scenario Outline: To verify when sort direction of data type-Text is set in ascending order and click on same phase then records should be in ascending order for data type-Text(Admin)
@@ -2808,9 +2768,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268602 @268603
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order and refreshes the page then records should be in ascending order for data type-Text(Admin)
@@ -2829,9 +2789,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268607 @268609
   Scenario Outline:To verify when sort direction of data type-Text is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2851,9 +2811,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Abbreviation" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ###### Custom Data Type - Lookup *********
   @268615 @268617
@@ -2875,9 +2835,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268619 @268620
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Lookup (Admin)
@@ -2900,9 +2860,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268623 @268624
   Scenario Outline:To verify when sort direction of data type-Lookup is set in ascending order and click on same phase then records should be in ascending order for data type-Lookup (Admin)
@@ -2921,9 +2881,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268628 @268631
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (Admin)
@@ -2942,9 +2902,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268633 @268634
   Scenario Outline: To verify when sort direction of data type-Lookup is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -2964,9 +2924,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Internal Organization" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Data Type - Number ********
   @268637 @268638
@@ -2988,9 +2948,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268640p @268641
   Scenario Outline:To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (Admin)
@@ -3012,9 +2972,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-#      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268644 @268646
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (Admin)
@@ -3033,9 +2993,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268652 @268660
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (Admin)
@@ -3054,9 +3014,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268667 @268668
   Scenario Outline: To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3076,9 +3036,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
-      | User  | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,NumberOfApprovalSteps__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 #### Data type - Date ***************
   @268673 @268674
@@ -3100,9 +3060,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268677 @268678
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
@@ -3125,9 +3085,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268680 @268682
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (Admin)
@@ -3146,9 +3106,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268684 @268685
   Scenario Outline:To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
@@ -3167,9 +3127,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268687 @268688
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3189,9 +3149,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Start Date" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,StartDate__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
 #### Data Type - Date and Time ***********
   @268699 @268700
@@ -3213,9 +3173,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268707 @268708
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(Admin)
@@ -3238,9 +3198,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268713 @268715
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(Admin)
@@ -3259,9 +3219,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268721 @268723
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(Admin)
@@ -3280,9 +3240,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268734p @268735
   Scenario Outline: To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3302,9 +3262,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Date and Time" field
     Examples:
-      | User  | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                      | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Date_and_Time__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   #### Data Type - Percentage **************
   @268791 @268792
@@ -3326,9 +3286,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268794 @268796
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(Admin)
@@ -3351,9 +3311,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268799 @268802
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(Admin)
@@ -3372,9 +3332,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268807 @268810
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
@@ -3393,9 +3353,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268819 @268820
   Scenario Outline: To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3415,9 +3375,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Percentage" field
     Examples:
-      | User  | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                   | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Percentage__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ##### Data Type - Formula****
   @268822 @268823
@@ -3439,9 +3399,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268827 @268828
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
@@ -3464,9 +3424,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268830 @268831
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (Admin)
@@ -3485,9 +3445,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268833 @268834
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
@@ -3506,9 +3466,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268836 @268837
   Scenario Outline:To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3528,9 +3488,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Address" field
     Examples:
-      | User  | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Address__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
     ##### Data Type - Checkbox****
   @268839 @268840
@@ -3552,9 +3512,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268842 @268843
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
@@ -3577,9 +3537,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268845 @268846
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(Admin)
@@ -3598,9 +3558,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268850 @268856
   Scenario Outline:To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(Admin)
@@ -3619,9 +3579,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268863 @268864
   Scenario Outline: To verify when sort direction of data type-Checkboxis set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3641,9 +3601,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "CFDA Data" field
     Examples:
-      | User  | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                  | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,CFDA_Data__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
    ##### Data Type - Email ****
   @268948p @268949
@@ -3665,9 +3625,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-#      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268951 @268952
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (Admin)
@@ -3690,9 +3650,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268954 @268956
   Scenario Outline:  To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (Admin)
@@ -3711,9 +3671,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268958 @268959
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (Admin)
@@ -3732,9 +3692,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268961 @268962
   Scenario Outline: To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3754,9 +3714,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "DND_Email" field
     Examples:
-      | User  | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                              | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c,Email__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ######## Data Type - Currency *******
   @268965 @268966
@@ -3778,9 +3738,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268968 @268969
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (Admin)
@@ -3803,9 +3763,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268971 @268972
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (Admin)
@@ -3824,9 +3784,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268975 @268976
   Scenario Outline:To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (Admin)
@@ -3845,9 +3805,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268978 @268979
   Scenario Outline: To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3867,9 +3827,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                     | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ########## Data Type - URL **************
   @268981 @268983
@@ -3891,9 +3851,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268985 @268986
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (Admin)
@@ -3916,9 +3876,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268990 @268991
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (Admin)
@@ -3937,9 +3897,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268993 @268994
   Scenario Outline:  To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (Admin)
@@ -3958,9 +3918,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   @268996 @268997
   Scenario Outline: To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -3980,9 +3940,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
-      | User  | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
-      | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
-      | PM    | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | User | newFieldsApi                                                            | defaultFieldsApi                                                                                                                         |
+    #  | ADMIN | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
+      | PM   | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,URL__c | Name,ProgramName__c,Account__c,Type__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Abbreviation__c |
 
   ############## Quick search  ##############
   @269088 @269089
@@ -4010,9 +3970,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Program Name" field
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269091 @269092
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and sorting (Admin)
@@ -4042,9 +4001,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Edit Mode Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Program Name" field
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269094 @269095
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and click on same phase then table should restore search results and sorting (Admin)
@@ -4074,9 +4032,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "up" arrow is Displayed inside "Program Name" field
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269097 @269098
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search and refreshes the page then table should restore search results and sorting (Admin)
@@ -4103,9 +4060,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Funded Amount" field
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269100p @269101
   Scenario Outline: To verify when sort direction-ascending order and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and sorting (Admin)
@@ -4135,9 +4091,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I see "down" arrow is Displayed inside "Program Name" field
     Examples:
-      | User  |
-      | ADMIN |
-#      | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   ########### Quick search,sorting, pagination #############
 
@@ -4170,7 +4126,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
       | User |
-#      | ADMIN |
+#    #  | ADMIN |
       | PM   |
 
   @269108 @269111
@@ -4202,9 +4158,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Edit Mode Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269113 @269114
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search and click on same phase then table should restore search results and page size (Admin)
@@ -4232,9 +4187,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269116 @269117
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search and  refreshes the page then table should restore search results and page size (Admin)
@@ -4263,9 +4217,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269119 @269120
   Scenario Outline: To verify when page size is 10 and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and page size (Admin)
@@ -4294,9 +4247,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   ########### Quick search and pagination next ########
   @269126 @269127
@@ -4326,9 +4279,9 @@ Business Need: FrameworkCookies Component Scenarios
       | Page 2 |
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269130 @269131
   Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search, user clicks on row level Edit action and click on page back arrow then table should restore search results and Pagination ‘next’ (Admin)
@@ -4359,9 +4312,9 @@ Business Need: FrameworkCookies Component Scenarios
       | Page 2 |
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269135 @269137
   Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search and click on same phase then table should restore search results and Pagination ‘next’ (Admin)
@@ -4390,9 +4343,9 @@ Business Need: FrameworkCookies Component Scenarios
       | Page 2 |
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269140 @269142
   Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search and  refreshes the page then table should restore search results and Pagination ‘next’ (Admin)
@@ -4421,9 +4374,9 @@ Business Need: FrameworkCookies Component Scenarios
       | Page 2 |
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269145 @269146
   Scenario Outline: To verify when Pagination is changed to next and searched any value in Quick search ,click on the another phase and again click on the previous phase then table should restore search results and Pagination ‘next’ (Admin)
@@ -4454,9 +4407,8 @@ Business Need: FrameworkCookies Component Scenarios
       | Page 1 |
     Then I see value "Automation Program" for title "Program Name" inside table "---program:-:programsTableId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   ###################### Page size and sorting #####################
   @269148 @269149
@@ -4487,9 +4439,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Program Name" field
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269151 @269152
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and sorting (Admin)
@@ -4521,9 +4472,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Program Name" field
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269154 @269155
   Scenario Outline:  To verify when Sort direction-ascending order and page size is 10 and click on same phase then table should restore page size and sorting (Admin)
@@ -4552,9 +4502,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Program Name" field
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269157 @269158
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10 and  refreshes the page then table should restore page size and sorting (Admin)
@@ -4583,9 +4532,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Program Name" field
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269160 @269161
   Scenario Outline: To verify when Sort direction-ascending order and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and sorting (Admin)
@@ -4615,9 +4563,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Program Name" field
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   ######### Pagination and Page size ####################
   @269240 @269241
@@ -4650,9 +4597,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269245 @269246
   Scenario Outline:  To verify when Pagination is changed to next and page size is 10, user clicks on row level Edit action and click on page back arrow then table should restore page size and Pagination(Admin)
@@ -4686,9 +4632,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269250p @269251
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and click on same phase then table should restore page size and Pagination(Admin)
@@ -4717,9 +4662,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-#      | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269253 @269255
   Scenario Outline: To verify when Pagination is changed to next and page size is 10 and  refreshes the page then table should restore page size and Pagination(Admin)
@@ -4748,9 +4693,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269257 @269258
   Scenario Outline: o verify when Pagination is changed to next and page size is 10 ,click on the another phase and again click on the previous phase then table should restore page size and Pagination(Admin)
@@ -4779,9 +4723,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   ########## Sorting and Pagination ###############
 
@@ -4814,9 +4757,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269264 @269265
   Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order, user clicks on row level Edit action and click on page back arrow then table should restore Pagination and sorting (Admin)
@@ -4849,9 +4791,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269267p @269268
   Scenario Outline:To verify when Pagination is changed to next and Sort direction-ascending order and click on same phase then table should restore Pagination and sorting (Admin)
@@ -4883,9 +4824,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-#      | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269270 @269271
   Scenario Outline: To verify when Pagination is changed to next and Sort direction-ascending order and  refreshes the page then table should restore Pagination and sorting (Admin)
@@ -4915,9 +4856,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269273 @269275
   Scenario Outline:  To verify when Pagination is changed to next and Sort direction-ascending order ,click on the another phase and again click on the previous phase then table should restore Pagination and sorting (Admin)
@@ -4948,9 +4888,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
     #**** SPI USER Framework cookies **********
 
@@ -7432,9 +7371,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 2 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269324 @269331
   Scenario Outline: Record level-To verify when user changes Sort direction to Ascending and refreshes the page then records should be restored in ascending  (Admin)
@@ -7463,9 +7401,9 @@ Business Need: FrameworkCookies Component Scenarios
     And I refresh the page
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     Examples:
-      | User  |
-      | ADMIN |
-      #| PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269325 @269337
   Scenario Outline:Record level-To verify when user changes pagination to Next, click on row level View action and click on page back arrow then table should get open on the page where pagination was set to Next (PM)
@@ -7496,9 +7434,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
 
     Examples:
-      | User  |
-      | ADMIN |
-     # | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269338
   Scenario Outline: Record level-To verify when user changes Sort direction to Ascending, click on row level View action and click on page back arrow then records should be restored in ascending  (PM)
@@ -7529,9 +7467,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
 
     Examples:
-      | User  |
-      | ADMIN |
-     # | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269342 @269343
   Scenario Outline: Record level-To verify when user searches any value in Quick search, click on row level View action and click on page back arrow then records should be restored to quick search results (Admin)
@@ -7561,9 +7499,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269348 @269349
   Scenario Outline:Record level-To verify when user searches any value in Quick search and refreshes the page then records should be restored to quick search results (Admin)
@@ -7592,9 +7529,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269360 @269361
   Scenario Outline: Record level-To verify when user changes page size to 10 and refreshes the page then records should be resorted to page size to 10 (Admin)
@@ -7624,9 +7560,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @269363 @269364
   Scenario Outline: Record level-To verify when user changes page size to 10, click on row level View action and click on page back arrow then records should be restored to page size to 10 (Admin)
@@ -7657,9 +7592,9 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
 
     Examples:
-      | User  |
-      | ADMIN |
-     # | PM    |
+      | User |
+    #  | ADMIN |
+      | PM   |
 
   @269309
   Scenario: Record level-To verify when user changes pagination to Next and refreshes the page then table should get open on the page where pagination was set to Next (SPI)
@@ -7866,9 +7801,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on back arrow
     Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282224
   Scenario Outline: To verify when user changes page size and clicks on clear session then page size should set back to default value (Admin/PM)
@@ -7887,9 +7821,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
     Then I see "5" with page size dropdown at "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282226
   Scenario Outline:o verify when user changes pagination and clicks on clear session then pagination should set back to default value (Admin/PM)
@@ -7904,9 +7837,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see the text containing :
       | Page 1 |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282235
   Scenario Outline: To verify when user changes sort direction and clicks on clear session then sort direction should set back to default value (Admin/PM)
@@ -7921,9 +7853,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on "EGMS ID" column inside Internal Programs
     Then I see "up" arrow is Displayed inside "EGMS ID" field
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282238
   Scenario Outline: To verify when user searches something in quick search and clicks on clear session then table records should set back to default value (Admin/PM)
@@ -7936,9 +7867,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Active"
     Then I do not see value "Program For Application" for title "Program Name" inside table "---program:-:programTableDivId---"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282242
   Scenario Outline: To verify when user changes the list view and clicks on clear session button then list view should set back to the default. (Admin/PM)
@@ -7951,9 +7881,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I select "Reset Table" from parallel lines dropdown of "Internal Programs - Draft"
     Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282244
   Scenario Outline: To verify when user changes page size then 'Click ‘Reset Table’ under the menu icon to refresh the table’s default values' message should display (Admin/PM)
@@ -7972,9 +7901,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282247
   Scenario Outline: To verify when user changes pagination then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -7987,9 +7915,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282261
   Scenario Outline: To verify when user changes sort direction then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -8004,9 +7931,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282271
   Scenario Outline: To verify when user searches something in quick search then 'Click Clear Session to refresh back to the default values' message should display (Admin/PM)
@@ -8019,9 +7945,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282275
   Scenario Outline: To verify when user changes page size and clicks on clear session then 'Table has been reset' message should display (Admin/PM)
@@ -8041,9 +7966,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Table has been reset. |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282354
   Scenario Outline: To verify when user changes pagination and clicks on clear session then 'Cleared session storage successfully' message should display (Admin/PM)
@@ -8057,9 +7981,8 @@ Business Need: FrameworkCookies Component Scenarios
     Then I can see the following message in table :
       | Table has been reset. |
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282363
   Scenario Outline: To verify when user changes the list view from active to draft, changes the page size, click on active and again on draft then page size should be restored. (Admin/PM)
@@ -8081,9 +8004,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Active"
     Then I do not see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282367
   Scenario Outline: To verify when user changes the list view from active to draft, searches something in quick search, click on active and again on draft then quick search results should be restored. (Admin/PM)
@@ -8098,9 +8020,8 @@ Business Need: FrameworkCookies Component Scenarios
     And I click toggle button to select "Internal Programs - Active"
     Then I do not see Click ‘Reset Table’ under the menu icon to refresh the table’s default values message in table
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282369
   Scenario Outline: To verify when user changes the list view from active to draft, changes the pagination, click on active and again on draft then pagination should be restored. (Admin/PM)
@@ -8122,9 +8043,8 @@ Business Need: FrameworkCookies Component Scenarios
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282371 @Vrushali
   Scenario Outline: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (Admin/PM)
@@ -8146,9 +8066,8 @@ Business Need: FrameworkCookies Component Scenarios
       | Click ‘Reset Table’ under the menu icon to refresh the table’s default values |
 
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User |
+      | PM   |
 
   @282372 @282357
   Scenario: To verify when user changes the list view from active to draft, changes the sort direction click on active and again on draft then sort direction should be restored. (SPI)

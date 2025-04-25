@@ -115,12 +115,12 @@ public class SendEmailSteps extends GovGrantsManager {
 
     @Then("I can see download button in front of {string} file on send email reply modal")
     public void iCanSeeADownloadActionButtonInFrontOfFileOnSendEmailReplyModal(String FileName) {
-        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(text(),'" + FileName + "')]/parent::td/following-sibling::td")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(text(),'" + FileName + "')]//following-sibling::td//*[contains(@class,'download')] | //div[contains(text(),'" + FileName + "')]/parent::td/following-sibling::td")));
     }
 
     @Then("I can see download button in front of {string} file on send email reply modal is Enabled")
     public void iCanSeeDownloadButtonInFrontOfFileOnSendEmailReplyModalIsEnabled(String FileName) {
-        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[contains(text(),'" + FileName + "')]/parent::td/following-sibling::td")));
+        Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//td[contains(text(),'" + FileName + "')]//following-sibling::td//*[contains(@class,'download')] | //div[contains(text(),'" + FileName + "')]/parent::td/following-sibling::td")));
     }
 
     @When("I click on {string} button in send email modal in Send email LWC modal")
@@ -325,7 +325,6 @@ public class SendEmailSteps extends GovGrantsManager {
             Assert.assertEquals(textColor, "rgba(234, 0, 30, 1)");
         }
     }
-
 
 
     @Then("I can not see {string} file Send Email modal")

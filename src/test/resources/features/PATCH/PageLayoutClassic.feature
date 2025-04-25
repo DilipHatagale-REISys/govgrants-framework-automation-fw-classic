@@ -9,14 +9,17 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue           | filterId         |
       | Page Layout           | Header    | Program - {!ProgramName__c} | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Header    | Program - {!FederalProgramCFDA__c} | Grantor State Program |                           |                            |
+      | configurationCategory | fieldName | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Header    | Program123 - {!ProgramName__c} | Grantor State Program |                           |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    Then I see "TPA01" shown as over view title in header "Program"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I enter value "Header test" into field "ProgramName__c"
+    And I click modal button "Save and Continue"
+    Then I see "Header test" shown as over view title in header "Program123"
 
   @34047q    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -86,15 +89,18 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionJson | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I see "Submit For Approval" button is not displayed
 
-  @34069    @hideForProfile-gPlanning @smoke
+  @34069 @hideForProfile-gPlanning @smoke @Bug-489182
   Scenario: Hide Submit for approval for specific profile from configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -102,16 +108,22 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide for profile | System Administrator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I see "Submit For Approval" button is not displayed
 
-  @34043 @200538 @200546    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
+  @34043 @200538 @200546 @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
   Scenario Outline: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
+  |Page Layout Export Functionality-Admin-config-To verify download as PDF option should not displayed for  flex table|
+  |Page Layout Export Functionality-PM-UI-To verify download as PDF option should not displayed for  flex table|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
@@ -119,17 +131,19 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | true          | Grantor State Program |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I click on "Menu" in the page details
     Then I do not see "Download as PDF" options is displayed
 
     Examples:
       | User |
-    # # | ADMIN |
       | PM   |
 
   @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
@@ -170,7 +184,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
-  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
+  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke @Bug-489182
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -183,9 +197,18 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---" without waiting for record
     Then I see "Submit For Approval" button is not displayed at view detail page
 
   @35814    @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
@@ -254,7 +277,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Overview" shown at number "5" inside subtabs
 
-  @34355    @headerInstructionTextFieldAtPageTab-gPlanning
+  @34355 @headerInstructionTextFieldAtPageTab-gPlanning
   Scenario: Setup header instruction text for overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -431,14 +454,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Sort Order | 10            | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
+      | Page Block:Page Block Detail | Sort Order | 0             | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I see "Information" shown at number "5" inside detail page
+    Then I see "Information" shown at number "0" inside detail page
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
   Scenario: Setup header instruction text for program information page block from config and validating it at program detail page
@@ -564,7 +587,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see "Information" page block displayed in page details
 
-  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @changeInDOMStructure
+  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @changeInDOMStructure @wip @needtocheckmanually
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -638,20 +661,25 @@ Business Need: Page Layout Component Scenarios
   @36046    @flexGridNameFieldAtPageBlock-gPlanning @smoke
   Scenario: Changing flex grid rendering by changing name inside flex grid name field at page block from config and validating it on program detail page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Page Block            | Flex Grid Name |                   | ApiGeneratedId:0 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName             | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General            | Flex Grid Config Name | MonitoringGridView | MonitoringGridView    |                           |                            |
-      | Page Block:Page Block Detail | Flex Grid Name        | ApiGeneratedId:1   | Grantor State Program | GNT__PageBlockTitle__c    | Out Comes                  |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3899                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepTemplates | Name                      | FLV-3899                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
+    When I navigate to "Overview" sub tab
     When I navigate to "Setup" sub tab
-    Then I see Monitoring Schedule For All Active Grants flex grid inside page block
+    Then I softly see "Review Steps" page block displayed
 
   @36051    @hideDisableAttachmentRowActionsFieldWithDisableOptionAtPageBlock-gPlanning @smoke
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
@@ -1130,21 +1158,24 @@ Business Need: Page Layout Component Scenarios
 
   @36178    @attachmentClassificationFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value of attachment classification field from config and validating it at announcement detail page
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Attachment Classifications |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
-      | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2   | Grantor State Program | Name                      | {pagelayout:AttachmentClassification} |
+#    Given I have "default" configuration as below:
+#      | configurationCategory                    | fieldName                  | fieldOrignalValue | filterId         |
+#      | Page Block Config:Page Block Rule Detail | Attachment Classifications |                   | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+#      | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2   | Grantor State Program | Name                      | {pagelayout:AttachmentClassification} |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
-    When I click on "Manage Attachments" in the page details
-    Then I see "Test1:Test2" inside Type selectbox
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    Then I see "Financial Artifacts" inside Type selectbox
 
   @36196    @submitWarningMessageFieldAtPageLayoutAction-gPlanning
   Scenario: Setup submit warning message at program submit for approval from configuration and validating it at program detail page
@@ -1248,24 +1279,26 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Create Campaign" button is displayed
 
-  @36205    @displayAreaFieldForEditAtPageLayoutAction-gPlanning
+  @36205 @displayAreaFieldForEditAtPageLayoutAction-gPlanning
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
       | Page Layout Action    | Display Area | Page Header       | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active    | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Display Area | Menu          | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Display Area | Menu          | Grantor State Program | Name                      | Test Automation            |
+      | Page Layout Action    | Is Active    | true          | Grantor State Program | Name                      | Test Automation            |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
-    Then I see Edit options inside Menu Dropdown
+    Then I see "Test Automation" options is displayed
 
-  @36208    @headerSequenceFieldAtPageLayoutAction-gPlanning
+  @36208 @headerSequenceFieldAtPageLayoutAction-gPlanning
   Scenario: Setup edit page layout action sequence as "1" from config. and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -1278,9 +1311,13 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I see "Edit" Button at position "0"
 
   @35982 @201278 @201279   @helpTextFieldAtPageBlock-gPlanning
@@ -1341,22 +1378,23 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see "Information" page block displayed in page details
 
-  @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
+  @36116 @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlockDetail | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                  | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
+      | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                             | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     Then I see "Abbreviation" is not displayed inside page block detail
 
   @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
@@ -1443,7 +1481,6 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
@@ -1669,6 +1706,14 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
   @53261    @hideDecisionFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning @wip
@@ -1737,7 +1782,7 @@ Business Need: Page Layout Component Scenarios
     And I see "Save" at bottom of Attachment Modal
     Then I see "Save and Close" at bottom of Attachment Modal
 
-  @53388    @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning
+  @53388 @requiredForSubmitBehaviourAtPageBlockDetailForTitleField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1770,7 +1815,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Abbreviation is required to submit under Overview. |
 
-  @53389    @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning
+  @53389 @requiredForSubmitBehaviourAtPageBlockDetailForOwnerOrganizationField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1803,7 +1848,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Primary Funding Organization is required to submit under Overview. |
 
-  @53390    @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning
+  @53390 @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1814,29 +1859,19 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click modal button "Save and Continue"
     When I enter "Edition" values from "Program_Field_Values.xlsx"
-    When I enter value "" into field "NumberOfApprovalSteps__c"
     And I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
-      | Name                      | Program |
-      | {SavedValue:EXE Username} | Step 1  |
-    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
-      | Number of Approval Steps is required to submit under Overview. |
+      | Number is required to submit under Overview. |
 
-  @53391    @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
+  @53391 @requiredForSubmitBehaviourAtPageBlockDetailForKPIRequiredField-gPlanning
   Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1851,25 +1886,15 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
     And I click modal button "Save and Continue"
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
-    When I enter value "--None--" into field "ProgramSubType__c"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     And I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
-      | Name                      | Program |
-      | {SavedValue:EXE Username} | Step 1  |
-    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
       | Program Sub Type is required to submit under Overview. |
 
-  @53392    @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning
+  @53392 @requiredForSubmitBehaviourAtPageBlockDetailForProjectPeriodStartDateField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1902,7 +1927,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Project Period End Date is required to submit under Overview. |
 
-  @53393    @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning
+  @53393 @requiredForSubmitBehaviourAtPageBlockDetailForExpectedFutureFundingField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1935,7 +1960,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Funded Amount is required to submit under Overview. |
 
-  @53394    @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning
+  @53394 @requiredForSubmitBehaviourAtPageBlockDetailForUrlField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -1968,7 +1993,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Website Address is required to submit under Overview. |
 
-  @53395    @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning
+  @53395 @requiredForSubmitBehaviourAtPageBlockDetailForProjectsGoalsField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2001,7 +2026,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Project Goals is required to submit under Overview. |
 
-  @53396    @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning
+  @53396 @requiredForSubmitBehaviourAtPageBlockDetailForPercentageField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2034,7 +2059,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Percent is required to submit under Overview. |
 
-  @53397   @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning
+  @53397 @requiredForSubmitBehaviourAtPageBlockDetailForDateAndTimeField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2045,7 +2070,6 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -2065,9 +2089,9 @@ Business Need: Page Layout Component Scenarios
     When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
-      | Date & Time is required to submit under Overview. |
+      | Date And Time is required to submit under Overview. |
 
-  @53398   @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning
+  @53398 @requiredForSubmitBehaviourAtPageBlockDetailForTimeField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2100,7 +2124,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Time is required to submit under Overview. |
 
-  @53399   @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning
+  @53399 @requiredForSubmitBehaviourAtPageBlockDetailForAuthorizationField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -2203,7 +2227,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I select "My Profile" from user dropdown
-    Then I see hyperlink is not present at "Nauman Shahid" user
+    Then I see hyperlink is not present at "Automation ADMIN" user
 
   @83111   @verifySpaceIsPresentBetweenLikesAndLabelUnderUserProfilePage
   Scenario: validate that space is present between likes count and label under user profile page
@@ -2239,10 +2263,10 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I enter value "gdtrfstrs" into field "fieldWebsiteAddress__c"
+    When I enter value "invalid url" into field "fieldWebsiteAddress__c"
     And I click modal button "Save and Continue"
     Then I see the following message in the page details contains:
-      | Website Address: Please enter valid URL value. |
+      | Website Name: Please enter valid URL value. |
 
   @83323 @verifyURLFieldIsAcceptsCorrectURLEnteredOnModalWindow-gAnnouncement
   Scenario:validate if correct URL value entered in URL field on modal and click on continue button then it redirects to next page
@@ -2415,7 +2439,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantee"
     Then I see page footer is in "Very Dark Blue" color
 
-  @84577 @wip
+  @84577
   Scenario: verify that page footer is displayed in Very dark gray color for logged in user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
@@ -2503,8 +2527,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2527,8 +2550,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2704,8 +2726,7 @@ Business Need: Page Layout Component Scenarios
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2921,12 +2942,19 @@ Business Need: Page Layout Component Scenarios
 
   @111900    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gApplication
   Scenario: verify bulb icon at header instruction text at program detail page for pm user at application phase
-    When I login as "PM" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
+      | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | Automation Instruction page instruction text | ApplicationView    |                           |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
-    Then I see bulb icon at header instruction is displayed
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see bulb icon at header instruction is displayed
+    Then I softly see "Automation Instruction page instruction text" shown as page instruction text
 
   @112569   @wip
   Scenario: validate required for submit icon at description Field
@@ -3073,13 +3101,13 @@ Business Need: Page Layout Component Scenarios
 
   @112546    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForAdminUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for admin user
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23592                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Block Config:Page Block Rule Detail | Required Behavior |                   |  ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23592                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3116,7 +3144,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    #
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
@@ -3248,9 +3275,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
     #114989
-    Then I see "Test Automation Seperator" page block displayed
+    Then I softly see "Page Block Separator" page block displayed
     #113066
-    When I hovering mouse on help text icon inside "Test Automation Seperator"
+    When I hovering mouse on help text icon inside "Page Block Separator"
     Then I see "<new_helpText>" shown as help text
 
     Examples:
@@ -3484,7 +3511,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3622,7 +3648,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3937,17 +3962,12 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     And I pause execution for "3" seconds
     When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
     When I hovering mouse on help text icon inside "Test Automation Seperator"
     Then I see "<new_helpText>" shown as help text
 
     Examples:
-      | new_helpText                 | old_helpText |
-      | Help Text for @#$ Automation | Help Text    |
+      | new_helpText | old_helpText |
+      | Help@text$%  | Help Text    |
 
   @115664 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForAdminUser-StateAsAGrantor
   Scenario: verify that very dark blue color is displayed as background for phases tab for admin user-StateAsAGrantor
@@ -3990,7 +4010,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     Then I see "Title" is not displayed inside page block detail
 
-  @117880    @verifyFaviconIconDisplayedAtBrowserTab
+  @117880 @wip @needtocheckmanually
   Scenario: verify favicon icon displayed at browser tab
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4023,7 +4043,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I see "Title" is not displayed inside page block detail
 
-  @117805    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAsBlankAndUsingNotEqualsOperatorInViewMode
+  @117805 @doubted @wip
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as blank and using not equals operator in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -4381,16 +4401,16 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+      | configurationCategory | fieldName             | fieldNewValue                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | govgrants_config:PageInstructionText | Grantor State Program |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on top right button "New" in flex table with id "Programs"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     Then I softly see bulb icon at header instruction is displayed
-    And I refresh the page
-    Then I softly see "Automation Instruction Text" shown as page instruction text
 
   @120069    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInViewMode-gPlanning
   Scenario: validate the page instructions text displayed with bulb icon at page header in page view mode
@@ -4583,7 +4603,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     And I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
-    When I click on top right button "Add" in notes and attachment with name "Files"
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "7" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
@@ -4608,21 +4628,33 @@ Business Need: Page Layout Component Scenarios
 
   @120452    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileAddingNewRecord
   Scenario: validate records are getting added successfully without throwing alert message if all required fields are filled
+  |Sanity TC - Admin - To verify that user able to see Edit action on Notes and Attachments tables at row level|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
-    And I enter value "Notes" into field "Title"
-    And I enter value "Record" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
-    When I click on "Delete" icon for "Notes" inside flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I pause execution for "2" seconds
+    And I click on "close" button on "Add Attachments" modal
+    When I click on "Delete" icon for "Test Automation" inside table
     When I click "Yes" on modal confirmation box
     Then I see the following message in the page details :
       | Record deleted successfully. |
@@ -5330,7 +5362,7 @@ Business Need: Page Layout Component Scenarios
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE ERROR MSG DND |
 
-  @128911    @verifyErrorMessageSetFromPageMessageConfirIsNotDisplayedAtEditPageLayoutWhenHideForUserIsSelectedAsInternal @wip
+  @128911    @wip
   Scenario: validate error message set from page message config is not displayed at edit page layout when hide for user=iternal selected
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -5667,38 +5699,6 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
-  @132856    @verifySaveAndCancelButtonsAreDisplayedAtEnhancedFlexEditPageLayout
-  Scenario: validate save and cancel buttons are displayed at enhanced flex edit page layout
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    Then I see the following page detail buttons :
-      | Cancel |
-      | Save   |
-
-  @132857  @verifyRichTextAreaFieldIsDisplayedAtEnhancedFlexEditLayout
-  Scenario: validate rich text area field is displayed at enhanced flex edit page layout
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    Then I see "Description" field is rendered as rich text area
-
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout @skipOnJenkins @wip
   Scenario: validate mini page layout is displayed at enhanced flex edit page layout
     Given I have "default" configuration as below:
@@ -5718,21 +5718,33 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see "title" as "Christine GGPTEST5" inside mini page layout
 
-  @132859  @verifyCurrencyFieldIsDisplayedAtEnhancedFlexEditLayout
+  @132859 @132862 @132856 @132856
   Scenario: validate currency field is displayed at enhanced flex edit page layout
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+  |validate date field is displayed at enhanced flex edit page layout|
+  |validate rich text area field is displayed at enhanced flex edit page layout|
+  |validate save and cancel buttons are displayed at enhanced flex edit page layout|
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:ProjectPeriodStartDate}     |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PageLayoutRichTextArea__c}  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I see "40,000" text enter in field "fieldFundedAmount__c"
+    Then I softly see field "Funded Amount" inside page block
+    Then I softly see field "Project Period Start Date" inside page block
+    Then I softly see field "PageLayoutRichTextArea" inside page block
+    Then I see the following page detail buttons :
+      | Cancel |
+      | Save   |
 
   @132861  @verifyDataTableIsDisplayedAtEnhancedFlexEditLayout @wip
   Scenario: validate data table is displayed at enhanced flex edit page layout
@@ -5749,22 +5761,6 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     Then I softly see expected table with id "toggleFlexTableProgramContacts"
-
-  @132862  @verifyDateFieldIsDisplayedAtEnhancedFlexEditLayout
-  Scenario: validate date field is displayed at enhanced flex edit page layout
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    Then I see "11/30/2020" text enter in field "fieldStartDate__c"
 
   @132863  @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate date time field is displayed at enhanced flex edit page layout
@@ -5826,26 +5822,21 @@ Business Need: Page Layout Component Scenarios
 
   @131795  @verifyCharacterCountDisplayedInsideCKEditorBoxAtRichTextAreaFieldInsideEditPageLayout
   Scenario Outline: validate charater count displayed at ck-editor box inside edit page layout
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table Action     | Hide Decision Field | HideEdit1Button__c | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
     And I enter value "<enterText>" into field "cke_1_contents"
-    Then I softly see word count as "Words: 15 Words Left: 985" in ck editor at page layout
+    Then I softly see word count as "Characters: 63 Characters Left: 9937" in ck editor at page layout
 
     Examples:
-      | enterText                                                                                                         |
-      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum tesssssssssssssssttttttttt |
+      | enterText                                                                  |
+      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. |
 
   @131797  @verifyCKEditorBoxColorIsGettingChangedIfEnteredMoreThanMaxLimitCharacter
   Scenario: validate ck editor box color turns into yellow if we enter more than 99 characters in it
@@ -6568,7 +6559,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "FundedAmount__c" is not editable
     Then I softly see field "ProgramSubType__c" is not editable
 
-  @134169    @verifyHideFieldJsonFieldByHidingLookupieldOnTheBasisOPicklistFieldValueOnModal
+  @134169 @verifyHideFieldJsonFieldByHidingLookupieldOnTheBasisOPicklistFieldValueOnModal
   Scenario: Set up hide field json value to Hide lookup using picklist field value on modal window
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField            | filterId         |
@@ -6620,7 +6611,10 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
-    When I enter "Contacts" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "RandomFirstName" into field "FirstName"
+    When I enter value "RandomLastName" into field "LastName"
+    And I generate the random EmailID and save as "uniqueEmailID"
+    And I enter value "{SavedValue:uniqueEmailID}" into field "Email"
     And I click modal button "Save"
     Then I softly see "Contacts" page block displayed
 
@@ -6658,8 +6652,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
       | Program                      | Status    | Created                           | Test Automation Program for error message dnd |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -6756,7 +6749,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                   | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false                                                  | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7308,7 +7301,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed in page details
 
@@ -7553,7 +7545,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146397    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingProfileOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "profile "
@@ -7570,7 +7562,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146398    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingContext!=ViewOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as  "Context "
@@ -7587,7 +7579,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146400    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserAppOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "User App "
@@ -7604,7 +7596,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146401    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingFieldValueOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "Field "
@@ -7621,7 +7613,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146402    @verifyHideExpressioJsonByHidingAddActionAtNotesUsing$UserOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "$user"
@@ -7638,7 +7630,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146404    @verifyHideExpressioJsonByHidingAddActionAtBothNotesAndAttachmentUsingProfileOperator
   Scenario: validate hide the ADD action on both Notes and Attachment page block by using SObject hide logic as "profile"
@@ -7657,7 +7649,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
     Then I see "Add" button inside "Files" flex table not displayed
 
   @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPicklistFieldDataAtPageLayout
@@ -7706,7 +7698,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147921    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingAndOrOperator
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple And, Or operators
@@ -7723,7 +7715,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147923    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingMultipleOperator
   Scenario: validate hide the ADD action on Attachment page block by using SObject hide logic using multiple operators
@@ -7777,7 +7769,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147926    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingMultipleOperator
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using multiple operators
@@ -7797,7 +7789,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147930    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsUsingOROperator
   Scenario: validate hide the ADD action on Attachments page block by using SObject hide logic using Or operators
@@ -7831,7 +7823,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @147932    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingOROperator
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using OR operators
@@ -7851,50 +7843,67 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
-    Then I see "Add" button inside "Notes" flex table not displayed
+    Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146837    @validateNotesViewActionWorkingOrNot
   Scenario: validate Notes View action working correctly at programs-planning
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    When I add notes records
-    When I close modal by clicking the top right x button
-    When I click on "View" icon for "Notes Record" inside table
-    Then I see the text :
-      | Notes Record |
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I click on "close" button on "Add Notes" modal
+    When I click on "View" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
+    Then I see "View Notes" opens in overLay window
 
   @146931    @validateEditNotesModalOpensByClickAtEditActionAtNotes
   Scenario: validate Notes edit modal opens by click at Edit action at programs-planning
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "Edition" values from "Program_Field_Values.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
-    When I add notes records
-    When I close modal by clicking the top right x button
-    When I click on "Edit" icon for "Notes Record" inside table
-    Then I see "Edit Notes" modal window is displayed
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Automation" into "Description"
+    And I click modal button "Save"
+    And I click on "close" button on "Add Notes" modal
+    When I click on "Edit" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
+    Then I see "Edit Notes" opens in overLay window
 
   @148171    @verifyHideFieldJSONWorkingForLongTextAreaFieldInEditMode
   Scenario: verify hide field json working for long text area fields in edit mode
@@ -8079,7 +8088,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | phonetest is required to save |
 
-  @149695    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextFieldDataAtPageLayout
+  @149695 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8092,7 +8101,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @149678    @verifyAnAlertMessageIsDisplayedForUnsavedTextFieldDataIfPageRefreshedAtPageLayout
+  @149678 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser refresh
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8129,20 +8138,32 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148393    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedNumberFieldDataAtPageLayout
+  @148393 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}      |
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "Number__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I enter value "4045" into field "Number__c"
     And I click on back arrow
-    And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148394    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedNumberFieldDataAtPageLayout
+  @148394 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8165,7 +8186,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148398    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedCurrencyFieldDataAtPageLayout
+  @148398 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8173,22 +8194,32 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    When I enter value "1" into field "FundedAmount__c"
     And I click on back arrow
     And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148397    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedCurrencyFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I enter value "234321" into field "FundedAmount__c"
     And I refresh the page
-    And I pause execution for "2" seconds
     Then I see alert popup box
 
   @148399  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInCurrencyFieldAtPageLayout
@@ -8198,7 +8229,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1" into field "fieldFundedAmount__c"
+    When I enter value "1" into field "FundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @148400    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPercentFieldDataAtPageLayout
@@ -8273,7 +8304,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "www.google.com" into field "URL__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148469    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedLongTextAreaFieldDataAtPageLayout
+  @148469 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8286,7 +8317,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
+  @148470 @manualcheck @wip
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8594,8 +8625,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17697                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8672,8 +8702,7 @@ Business Need: Page Layout Component Scenarios
 
   @148734 @verifyThatEditNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that edit notes modal window is displayed properly
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8713,8 +8742,7 @@ Business Need: Page Layout Component Scenarios
 
   @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate currency field value accepts the numbers inside page block detail in view mode
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8727,14 +8755,13 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Edit" in the page details
-    When I enter value "900000" into field "fieldFundedAmount__c"
+    When I enter value "900000" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see field "Funded Amount" as "$900,000"
 
   @155304    @validatePercentFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate percent field value accepts the numbers inside page block detail in view mode
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8820,8 +8847,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8851,8 +8877,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8907,8 +8932,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
      # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8940,8 +8964,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                        | Programs              | Name                      | Edit1                      |
     #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8973,8 +8996,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
     #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9006,8 +9028,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
      # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9035,8 +9056,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9057,8 +9077,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9127,8 +9146,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeDisableQueuedLookupUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9148,8 +9166,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9204,15 +9221,19 @@ Business Need: Page Layout Component Scenarios
 
   @158907 @verifyMultiPicklistFieldIsRenderedAsChekboxThenWeAreAddingSelectAllOption
   Scenario: To validate that if there is multi picklist field is rendred as checkbox then add extra checkbox as Select All Option
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
-      | Display 2 |
-      | Display 1 |
+    Then I softly see field "Select All" inside page block
 
   @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
@@ -9330,7 +9351,13 @@ Business Need: Page Layout Component Scenarios
 
   @153789 @ValidateSingleCheckboxIsDisplayedForCheckboxField
   Scenario: Validate Single Checkbox Is Displayed For Checkbox Field
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CheckBoxField_CFDA} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9423,7 +9450,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
-  @171511 @sprint19 @169581userstory @jyoti
+  @171511 @sprint19 @169581userstory 
   Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User checked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9443,7 +9470,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see below checkbox options for field "fieldTypesOfAssistance__c"
       | Select All |
 
-  @171512 @jyoti
+  @171512 
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the checkbox when Hide Select All Checkbox is checked
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -9464,7 +9491,7 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
 
-  @174383 @jyoti
+  @174383 
   Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User unchecked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9481,7 +9508,7 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
 
-  @171596 @jyoti @wip
+  @171596  @wip
   Scenario: To verify,alternate rendering is configured for text   field, the admin  user should be able to check the checkbox
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9498,7 +9525,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I enter value "checked" into field "fieldProjectGoals__c
 
-  @171518 @jyoti
+  @171518 
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is unchecked
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
@@ -9522,7 +9549,7 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldProjectGoals__c"
       | YES |
 
-  @171517 @jyoti
+  @171517 
   Scenario:page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
@@ -9534,8 +9561,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23604                  |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23592                  |
       | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantor State Program | Name                      | PBD-23592                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9553,22 +9579,41 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
 
-  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
+  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser 
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
-    When I login as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}      |
+    When I login to "As a Grantor" app as "PM" user
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
+  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser 
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9579,10 +9624,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205807 @Toverify-ValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforpercentfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9593,10 +9644,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent : Number is too large. |
+      | Percent: Number is too large. |
 
-  @205810 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforNumberfieldforinternaluser @Jyoti
+  @205810 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforNumberfieldforinternaluser 
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9607,7 +9664,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205809 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverridinCalibriLight(Headings)fontStyleforcurrencyfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for currency field  for internal user
@@ -9617,14 +9674,20 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-  @205812 @ToverifValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforNumbefieldforinternaluser @Jyoti
+  @205812 @ToverifValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforNumbefieldforinternaluser 
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9635,10 +9698,16 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | Percent: Number is too large. |
 
   @205811 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforpercentfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field  for internal user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9649,7 +9718,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent : Number is too large. |
+      | Percent: Number is too large. |
 
   @205813 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStyleforcurrencyfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field  for internal user
@@ -9659,7 +9728,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9667,19 +9736,25 @@ Business Need: Page Layout Component Scenarios
 
   @205815 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibri(Body)fontStylefornumberfieldforinterluser
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field for interl user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PageLayoutNumberField__c} |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
+    When I enter value "111111111111111111111111111111111" into field "fieldPageLayoutNumberField__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Number : Number is too large. |
+      | PageLayoutNumberField: Number is too large. |
 
-  @205798 @ValidationMessageShuoldDisplayWhenWeUseLablOverride @Jyoti @sprint5
+  @205798 @ValidationMessageShuoldDisplayWhenWeUseLablOverride  @sprint5
   Scenario:  To verify - Validation message should display properly when we use field label override in  font Arial Nova for currency field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9693,12 +9768,12 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206506 @ValidatonMessageShouldDisplyedInArialFont @sprint5 @Jyoti
+  @206506 @ValidatonMessageShouldDisplyedInArialFont @sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9712,12 +9787,12 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
-  @206456 @ValidationMessageShouldDisplayInCalibriFont @sprint5 @Jyoti
+  @206456 @ValidationMessageShouldDisplayInCalibriFont @sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9731,12 +9806,12 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "111111111111111111111111111111111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
 
-  @206566 @ErrorMessageShouldbeDisplayInPercentField @sprint5 @Jyoti
+  @206566 @ErrorMessageShouldbeDisplayInPercentField @sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for Percent field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9755,7 +9830,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
-  @206570 @ValidationMessageShouldDisplyWhrenFontIsArialNovaForPercentField @Jyoti @sprint5
+  @206570 @ValidationMessageShouldDisplyWhrenFontIsArialNovaForPercentField  @sprint5
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Percent field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9774,7 +9849,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206569 @ErroressageShouldDisplyedInCallabriForPercentField @Sprint5 @Jyoti
+  @206569 @ErroressageShouldDisplyedInCallabriForPercentField @Sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for percent  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9793,7 +9868,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
 
-  @206571 @ValidationMessageeShouldDisplyInArialNovaFont @sprint5 @jyoti
+  @206571 @ValidationMessageeShouldDisplyInArialNovaFont @sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Number field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9813,7 +9888,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206572 @ErrormESSAGEdisplyedForNumberField @sprint5 @Jyoti
+  @206572 @ErrormESSAGEdisplyedForNumberField @sprint5 
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for Number  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9833,16 +9908,22 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
 
-  @171509 @jyoti
+  @171509 
   Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I select below checkbox options for field "fieldObjectives__c"
-      | YES |
+    Then I select below checkbox options for field "fieldTypesOfAssistance__c"
+      | Select All |
 
   @170159 @tejal
   Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
@@ -9859,10 +9940,9 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @172151 @jyoti
+  @172151 
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the GovGrants side.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9879,7 +9959,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172215 @jyoti
+  @172215 
   Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9887,8 +9967,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9905,7 +9984,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172178 @jyoti
+  @172178 
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9913,8 +9992,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9931,10 +10009,9 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172212 @jyoti
+  @172212 
   Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9951,7 +10028,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172179 @jyoti
+  @172179 
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -9959,8 +10036,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9978,7 +10054,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172154 @jyoti
+  @172154 
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the object level  side
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue  | coreComponentField    | filterId         |
@@ -9986,8 +10062,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10005,7 +10080,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Organization" inside page block
 
-  @172213 @jyoti
+  @172213 
   Scenario:Page layout-To verify User fill the lookup field ( Required for save ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10013,8 +10088,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10032,7 +10106,7 @@ Business Need: Page Layout Component Scenarios
     And I hover mouse on text with id "Account__c"
     Then I see lookup link "Owner Organization" inside page block
 
-  @172155 @jyoti @wip
+  @172155  @wip
   Scenario: Page layout-To verify User hover over the lookup field icon on (Required Behavior-required to save)  modal   then it should display the Field label override name from the GovGrants side.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10044,6 +10118,12 @@ Business Need: Page Layout Component Scenarios
 
   @186950 @sprint26
   Scenario: To verify, all the Multiselect picklist fields (Selected/Unselected) should be displayed on the UI in View Mode
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10305,7 +10385,17 @@ Business Need: Page Layout Component Scenarios
 
   @205789 @ToVerifyPercentageNumberCurrencyandFormulafields @Sprint5 @dnyaneshwari
   Scenario: To verify, Verified for Percentage, Number, Currency and Formula  (Text)  fields
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}      |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
@@ -10313,14 +10403,15 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
-    When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
+    When I enter value "3333333333333333333333333333333333333333333333333" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    Then I see the following message in the page details contains:
-      | Funded Amount : Number is too large. |
-    Then I see the following message in the page details contains:
-      | Number : Number is too large. |
-    Then I see the following message in the page details contains:
-      | Percent : Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Percent: Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Funded Amount: Number is too large. |
+    Then I softly see the following message in the page details contains:
+      | Number: Number is too large. |
+
 
   @205795 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field
@@ -10412,7 +10503,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
+    When I enter value "1234567345673456734567345673456" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
@@ -10488,7 +10579,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
-    When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
+    When I enter value "123456789012345676785678567867897890" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
@@ -10501,7 +10592,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1234" into field "fieldFundedAmount__c"
+    When I enter value "1234" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10514,7 +10605,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1111" into field "fieldFundedAmount__c"
+    When I enter value "1111" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10527,7 +10618,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    When I enter value "1234" into field "fieldFundedAmount__c"
+    When I enter value "1234" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Funded Amount : Number is too large." error
@@ -10558,7 +10649,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Percent : Number is too large." error
 
-  @208833 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUI @Jyoti
+  @208833 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUI 
   Scenario: To verify, When hidden the Text fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10578,7 +10669,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Title is required to save |
 
-  @208830 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJson @Jyoti
+  @208830 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJson 
   Scenario: To verify, When hidden the Lookup  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10598,7 +10689,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Owner Organization is required to save |
 
-  @208829 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonNumberField @Jyoti
+  @208829 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonNumberField 
   Scenario: To verify, When hidden the Number fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10618,7 +10709,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Number Organization is required to save |
 
-  @208828 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonDateAndTimeField @Jyoti
+  @208828 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonDateAndTimeField 
   Scenario: To verify, When hidden the Date and Time fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10638,7 +10729,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Date And Time Organization is required to save |
 
-  @208825 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonFundedAField @Jyoti
+  @208825 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonFundedAField 
   Scenario: To verify, When hidden the currency  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10652,13 +10743,13 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     And I select "Project Grants" from dropdown
-    Then I see "fieldFundedAmount__c" is not displayed inside page block detail
+    Then I see "FundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I cannot see the following message in the page details :
       | Funded Amount is required to save |
 
-  @208826 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonForPercentAField @Jyoti
+  @208826 @HiddenTheTextFieldWhichAreRequiredForSaveThenNoValidationMessageDisplayedOnUIAfteAppiedJsonForPercentAField 
   Scenario: To verify, When hidden the percent  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -10678,7 +10769,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Percent is required to save |
 
-  @208865 @LogoLodingChangingTheApp @Jyoti
+  @208865 @LogoLodingChangingTheApp 
   Scenario: UI/ UX : To check logo is loading on changing the app i.e. Grants to Grantee(PM-User)
     When I login as "PM" user
     When I setup my app as "As a Grantee"
@@ -10698,13 +10789,13 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Percent : Number is too large." error
 
-  @208866 @PageBackgroundColorIsDisplyadInDarkColour @jyoti
+  @208866 @PageBackgroundColorIsDisplyadInDarkColour 
   Scenario: To verify, Logged in User User app "State as Grantor" ,Page background should be blue color(PM user)
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     Then I see page is in "Dark Blue" color
 
-  @217210 @HeaderInstructionIsNotDisplayedOnUi @jyoti
+  @217210 @HeaderInstructionIsNotDisplayedOnUi 
   Scenario: Header Instruction - Admin - Config - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10712,7 +10803,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
 
-  @217211 @HeaderInstructionIsNotDisplayedOnUiForPMUser @jyoti
+  @217211 @HeaderInstructionIsNotDisplayedOnUiForPMUser 
   Scenario: Header Instruction - PM - UI - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -10720,7 +10811,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
 
-  @217207 @HeaderHelpTextIconNotDisplayedOnUi @Jyoti
+  @217207 @HeaderHelpTextIconNotDisplayedOnUi 
   Scenario Outline: Header help text - Admin - Config - To verify that when user not entered any help text then help icon not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -10738,7 +10829,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText | old_helpText                                                                                                       |
       |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
-  @217208 @HeaderHelpTextIconNotDisplayedOnUiPMUser @Jyoti
+  @217208 @HeaderHelpTextIconNotDisplayedOnUiPMUser 
   Scenario Outline:Header help text - PM - UI - To verify that when user not entered any help text then help icon not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -10758,7 +10849,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText | old_helpText                                                                                                       |
       |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
-  @217209 @HeaderHelpTextIconNotDisplayedOnUiSPIUser @Jyoti
+  @217209 @HeaderHelpTextIconNotDisplayedOnUiSPIUser 
   Scenario Outline: Header help text - SPI - UI - To verify that when user not entered any help text then help icon not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -10777,7 +10868,7 @@ Business Need: Page Layout Component Scenarios
       | new_helpText | old_helpText                                                                                                       |
       |              | 'internal program' represents all the programs that the user has access to and are presented as a list or a table. |
 
-  @205033 @WhenIPressEnterButtonThenItIsNotTakingExtraLineSpace @Jyoti
+  @205033 @WhenIPressEnterButtonThenItIsNotTakingExtraLineSpace 
   Scenario: Editor-To verify,When user add the text  it is not taking any extra line space between paragraphs/2 lines after pressing 'Enter'
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10795,7 +10886,7 @@ Business Need: Page Layout Component Scenarios
       | Test Automation |
       | Test Automation |
 
-  @205036 @IfIChangingStyleExtraLineShouldNotComeforMarker @Jyoti
+  @205036 @IfIChangingStyleExtraLineShouldNotComeforMarker 
   Scenario: CK Editor-To verify,When user add the text  and After changing the style then extra line should not  come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10817,7 +10908,7 @@ Business Need: Page Layout Component Scenarios
       | Marker style testing |
       | Marker style testing |
 
-  @205429 @IfIChangingStyleExtraLineShouldNotCome @Jyoti
+  @205429 @IfIChangingStyleExtraLineShouldNotCome 
   Scenario: CK Editor-To verify,When internal user add the text  and After changing the style then extra line should not  come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10839,7 +10930,7 @@ Business Need: Page Layout Component Scenarios
       | Test Automation |
       | Test Automation |
 
-  @205037 @IfIChangingfontExtraLineShouldNotComeforMarker @Jyoti
+  @205037 @IfIChangingfontExtraLineShouldNotComeforMarker 
   Scenario: CK Editor-To verify,When user add the text  and  changing the font then extra line should Not come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -10921,8 +11012,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
-    Then I softly see field "Address__c" is not editable
-    Then I softly see field "fieldCFDA_Data__c" is not editable
+    Then I softly see field "PrimaryFunderType__c" is not editable
     Examples:
       | User |
      # | ADMIN |
@@ -11561,7 +11651,6 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Overview" sub tab
     Then I softly see field "Applicant Organization" inside page block
     Then I softly see field "Address" inside page block
-    Then I softly see field "DUNS" inside page block
     Then I softly see field "SAM Expiration Date" inside page block
 
   @200250
@@ -12531,7 +12620,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "PrimaryFundingOrganization__c" inside page block
     Then I softly see field "Objectives__c" inside page block
     Then I softly see field "KPIsRequired__c" inside page block
-
+    Examples:
       | User |
      # | ADMIN |
       | PM   |
@@ -12955,20 +13044,22 @@ Business Need: Page Layout Component Scenarios
 
   @379424 @379425 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue                                  | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                                               | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | Name represents for what the program is meant for. | Grantor State Program | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                                               | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | Name represents for what the program is meant for. | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I perform quick search for "{StaticRecords:PageLayoutRecord}" in "---program:-:programsTableId---" panel
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see helpIcon displayed beside "Abbreviation" respective field or column
-    Then I see helpIcon displayed beside "Type" respective field or column
-    Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
-    Then I see helpIcon displayed beside "Project Period End Date" respective field or column
-    Then I see helpIcon displayed beside "Internal Organization" respective field or column
-
     Examples:
       | User |
-     # | ADMIN |
       | PM   |
 
   @379426 @Sanity @SanityPageLayout

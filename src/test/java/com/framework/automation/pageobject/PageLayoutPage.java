@@ -38,7 +38,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public PageLayoutPage() {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
-        headerInstructionText = By.cssSelector("span.pbNormalText");
+        headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
         headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
@@ -2456,7 +2456,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isLikesCountOrLabelPresentAtUserDetailPage(String likesCountOrlabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='postInfo']//span[contains(text(),'" + likesCountOrlabel + "')] | //div[@class='postInfo']//span[text()='" + likesCountOrlabel + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -2961,7 +2961,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isSuggestionBoxDisplayedAtSendEmailModal() {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[contains(@class,'list-group-item')]/ancestor::div[@class='listDropdownTo']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li[contains(@class,'list-group-item')]/ancestor::div[@class='listDropdownTo' or @class='listDropdownToScroll']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -3556,7 +3556,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isCheckboxIsDisplayedForField(String fieldAPIName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + fieldAPIName + "']//input[@checked] | //div[@id='" + fieldAPIName + "']//input[@type='checkbox']"))) {
                 flag = true;
             }
         } catch (Exception e) {

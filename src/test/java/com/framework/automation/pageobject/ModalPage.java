@@ -24,7 +24,7 @@ public class ModalPage extends GovGrantsManager {
     private boolean assertIfFieldValueDisplayed(String fieldName, String value) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::dt/following-sibling::dd//span[text()='" + value + "'] | //*[text()='" + fieldName + "']//ancestor::dt/following-sibling::dd//*[normalize-space(contains(text(),'" + value + "'))] | //span[text()='" + fieldName + "']/parent::dt//following-sibling::dd//span[contains(text(),'" + value + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + fieldName + "']/ancestor::dt/following-sibling::dd//span[text()='" + value + "'] | //*[text()='" + fieldName + "']//ancestor::dt/following-sibling::dd//*[normalize-space(contains(text(),'" + value + "'))] | //span[text()='" + fieldName + "']/parent::dt//following-sibling::dd//span[contains(text(),'" + value + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
