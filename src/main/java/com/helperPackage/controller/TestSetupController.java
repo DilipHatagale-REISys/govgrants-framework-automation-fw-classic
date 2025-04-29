@@ -68,14 +68,14 @@ public final class TestSetupController {
         ScenarioController.setScenario(scenario);
 
         if ("true".equalsIgnoreCase(System.getProperty("recordVideo"))) {
-            ScreenCapture.startRecordVideo();
+//            ScreenCapture.startRecordVideo();
         }
         if ("true".equalsIgnoreCase(System.getProperty("docker"))) {
             DockerController.startDocker();
         }
         if ("android".equalsIgnoreCase(EnvironmentFactory.getDevice()) || "ios".equalsIgnoreCase(EnvironmentFactory.getDevice())) {
             AppiumController.startServer();
-            if (System.getProperty("appName") == null) {
+            if (System.getProperty("appName")==null) {
                 runBrowser();
             } else {
                 runMobileApp();
