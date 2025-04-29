@@ -1174,7 +1174,10 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
     And I pause execution for "5" seconds
-    Then I see "Financial Artifacts" inside Type selectbox
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    And I pause execution for "5" seconds
+    Then I softly see value "Program Artifacts" for title "Classification" inside table "---program:-:GrantorInternalProgramFilesTableId---"
 
   @36196    @submitWarningMessageFieldAtPageLayoutAction-gPlanning
   Scenario: Setup submit warning message at program submit for approval from configuration and validating it at program detail page
@@ -1850,13 +1853,15 @@ Business Need: Page Layout Component Scenarios
   @53390 @requiredForSubmitBehaviourAtPageBlockDetailForNumberField-gPlanning @bug-490119
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
+      | configurationCategory                    | fieldName            | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Submit | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                     | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -1866,6 +1871,13 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
     And I click on "Submit For Approval" in the page details
     Then I see the following message in the page details contains:
       | Number is required to submit under Overview. |
@@ -8367,6 +8379,12 @@ Business Need: Page Layout Component Scenarios
 
   @148474    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedTextAreaFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved text area field data by click on browser refresh button
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TextAreaField_Authorization} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8380,6 +8398,12 @@ Business Need: Page Layout Component Scenarios
 
   @148475  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextAreaFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text area field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TextAreaField_Authorization} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
