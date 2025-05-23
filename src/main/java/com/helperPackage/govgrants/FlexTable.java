@@ -280,7 +280,7 @@ public final class FlexTable implements FlexTableComponent {
             desiredAction += "//td//*["
                     + I.amPerforming().sanityOfXpathTo().equals("@title", uniqueColumnValue) + " or "
                     + I.amPerforming().sanityOfXpathTo().equals("text()", uniqueColumnValue) + "]"
-                    + "/ancestor::tr[2]";
+                    + "/ancestor::tr";
 
         }
         desiredAction += "//td//a[" + I.amPerforming().sanityOfXpathTo().equals("@title", iconName)

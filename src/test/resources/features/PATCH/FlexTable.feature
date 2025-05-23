@@ -15,7 +15,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
@@ -17690,7 +17690,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
-    And I halt execution
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
     Then I softly do not see value "12345678" for title "Number" inside table "---program:-:ProgramsgridTableId---"
     Examples:
@@ -19883,7 +19882,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    #And I halt execution
     And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
     When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
     When I click on "Qualify" in the page details

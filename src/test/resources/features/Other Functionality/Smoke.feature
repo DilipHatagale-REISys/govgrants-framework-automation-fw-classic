@@ -533,3 +533,4 @@ Scenario: Sanity TC - Admin - To verify that Notes and Attachments tables should
   When I navigate to "Files" sub tab
   Then I see "Attachments" page block displayed
   Then I see "Notes" page block displayed
+  Then I see changed label as "Automation" inside "Tasks" in side bar sub menu

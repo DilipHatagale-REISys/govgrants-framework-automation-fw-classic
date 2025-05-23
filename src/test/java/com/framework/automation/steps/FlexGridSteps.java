@@ -181,4 +181,9 @@ public class FlexGridSteps {
     public void iSeeLookupFieldIsRenderedAsSelectPicklist(String uiType) {
         flexGridPage.assertLookupFieldRenderedAsPicklistInsideTable(uiType.equalsIgnoreCase("picklist"));
     }
+
+    @When("^I hovering mouse on help text icon inside \"([^\"]*)\" for table$")
+    public void getHelpTextIconsAtQuickSearch(String tableId) {
+        flexGridPage.getHelpTextAtChildTable(tableId);
+    }
 }

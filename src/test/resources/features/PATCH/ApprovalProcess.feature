@@ -3842,8 +3842,9 @@ The EGMS Team
     And I wait for "5" seconds
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Record Id" in "---program:-:programsTableId---" panel
-    And I click on "View" icon for "Record Id" inside flex table with id "---program:-:programsTableId---" without waiting for record
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     Then I see status in Progress-bar is "Created" and is "Green"
 
   @passwordcheck
