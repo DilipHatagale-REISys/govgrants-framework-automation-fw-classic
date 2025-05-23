@@ -243,7 +243,11 @@
             <version>1.4.5</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>3.0.9</version>
+        </dependency>
     </dependencies>
 
     <!--    <repositories>-->
