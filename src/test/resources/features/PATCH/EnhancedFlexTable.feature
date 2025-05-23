@@ -1161,10 +1161,6 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-<<<<<<< HEAD
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-=======
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205052 @205053

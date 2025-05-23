@@ -3100,16 +3100,6 @@ Business Need: Page Layout Component Scenarios
 
   @112546    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForAdminUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for admin user
-<<<<<<< HEAD
-#    Given I have "default" configuration as below:
-#      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-#      | Page Block Config:Page Block Rule Detail | Required Behavior |                   |  ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-23592                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-=======
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
@@ -3117,7 +3107,6 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "Admin" user
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -3158,15 +3147,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-<<<<<<< HEAD
-    And I click on "Edit" icon in flex table for first draft record
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-=======
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
     Then I see missing field badge on "Overview" tab
 
   @112370
@@ -9596,25 +9579,16 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
 
-<<<<<<< HEAD
-  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser 
-=======
   @205806
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-<<<<<<< HEAD
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}            |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}      |
-=======
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
     When I login to "As a Grantor" app as "PM" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -9627,11 +9601,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-<<<<<<< HEAD
-  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser 
-=======
   @205808 @218874
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |

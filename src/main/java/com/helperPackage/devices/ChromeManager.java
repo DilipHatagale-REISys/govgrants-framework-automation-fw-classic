@@ -46,11 +46,7 @@ public final class ChromeManager implements qrYoTsOWwA {
 
     @Override
     public void setupController() {
-<<<<<<< HEAD
-        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion135.exe");
-=======
-        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion123.exe");
->>>>>>> 5c7c2d45d5591f45874796a05b1f681578d0924d
+        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion136.exe");
         if ("true".equalsIgnoreCase(System.getProperty("chromedebuglogs"))) {
             System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir") + "/target/chromedriver.log");
             System.setProperty("webdriver.chrome.verboseLogging", "true");
