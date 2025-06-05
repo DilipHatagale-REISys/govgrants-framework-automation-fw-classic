@@ -3812,25 +3812,25 @@ The EGMS Team
       | Name                      | Program |
       | {SavedValue:EXE Username} | Step 1  |
     When I get the "EGMS ID"
-#    When I navigate to "Setup" sub tab
-#    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
-#      | Description                 | Required | Applies To  | Status |
-#      | Automation test description | Optional | Application | Active |
-#    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
-#    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
-#    And I navigate to "Files" sub tab
-#    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
-#    And I pause execution for "5" seconds
-#    And I switch to iframe with id "---program:-:addFilesIframeId---"
-#    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
+    When I navigate to "Setup" sub tab
+    When I enter the following values into flex table with id "---program:-:checklistTableId---" by clicking "Add" :
+      | Description                 | Required | Applies To  | Status |
+      | Automation test description | Optional | Application | Active |
+    When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
+    And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
+    And I navigate to "Files" sub tab
+    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
+    And I pause execution for "5" seconds
+    And I switch to iframe with id "---program:-:addFilesIframeId---"
+    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
     And I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "green"
-#    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
-#    And I navigate to "Planning" tab
-#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-#    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-#    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
-#    When I "Approve" in the approval decision
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
