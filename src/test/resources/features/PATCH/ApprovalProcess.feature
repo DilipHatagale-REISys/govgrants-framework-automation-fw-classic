@@ -3477,9 +3477,6 @@ The EGMS Team
 
   @203296 @381957 @SanityPATCH @SanityPATCHApprovalProcess
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reject record
-#    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-#    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3519,9 +3516,6 @@ The EGMS Team
 
   @203348
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reject record
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3560,9 +3554,6 @@ The EGMS Team
 
   @203407
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reassign record
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3599,9 +3590,6 @@ The EGMS Team
 
   @203405
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reassign record
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3638,9 +3626,6 @@ The EGMS Team
 
   @203571
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on Send To Owner record
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
