@@ -310,8 +310,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    Then I see approval with subject as "{SavedValue:PEGMSID}" is not displayed
+    When I perform quick search for "Record Id"
+    Then I see approval with subject as "Record Id" is not displayed
 
   @34313    @successEmailSentToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
@@ -352,16 +352,16 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     When I re-login to "As Administrator" app as "PM" user on "INTERNAL" portal
     And I navigate to "Operate" tab
@@ -837,8 +837,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     When I re-login to "As Administrator" app as "ADMIN" user on "default" portal
     And I navigate to "Operate" tab
@@ -885,8 +885,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     And I "Reject" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I re-login to "As Administrator" app as "PM" user on "INTERNAL" portal
@@ -932,8 +932,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Forward" to user "Automation PM" in the approval decision
     When I re-login to "As Administrator" app as "PM" user on "default" portal
     And I navigate to "Operate" tab
@@ -997,8 +997,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "Record Id"
+    When I click on "Start" icon for "Record Id" inside table
     And I "Send to Owner" in the approval decision
     When I re-login to "As an Administrator" app as "Automation" user on "default" portal
     And I navigate to "Operate" tab
@@ -1111,8 +1111,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     Then I cannot see the radio button "Approve" in the approval decision
 
   @41064    @hideDisapproveOptionFromHideExpressionJSONField-Programs
@@ -1408,8 +1408,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "PM" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "Record Id"
+    When I click on "Start" icon for "Record Id" inside table
 
   @103166    @verifyApprovalDecisionActionComponentIsDisplayedAtTopOfPageLayout-Programs @wip @needChangeInDom
   Scenario: verify that approval decision component is displayed at the top if custom setting boolean value is unchecked
@@ -1456,8 +1456,8 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "PM" user on "default" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "Record Id"
+    When I click on "Start" icon for "Record Id" inside table
 
   @148991    @verifySingleTaskIsGettingCreatedForUserInsideAssignedToMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned to me' table after record submission for approval
@@ -2727,13 +2727,13 @@ Business Need: Approval Process Component Scenarios
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:Notification: Program #{SavedValue:PEGMSID} has been Approved
+  Sandbox:Notification: Program #Record Id has been Approved
   """
     Then I see the mail text is as follows :
   """
    Hello Automation,
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been reviewed and approved.
+This email is to notify you that Program #Record Id has been reviewed and approved.
 
 Log in to EGMS and click here to activate the program.
 
@@ -2813,13 +2813,13 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:Notification: Program #{SavedValue:PEGMSID} has been Approved
+  Sandbox:Notification: Program #Record Id has been Approved
   """
     Then I see the mail text is as follows :
   """
   Hello Automation,
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been reviewed and approved.
+This email is to notify you that Program #Record Id has been reviewed and approved.
 
 Log in to EGMS and click here to activate the program.
 
@@ -2899,13 +2899,13 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been Rejected
+  Sandbox: Notification: Program #Record Id has been Rejected
   """
     Then I see the mail text is as follows :
   """
 Hello Automation Admin
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been rejected.
+This email is to notify you that Program #Record Id has been rejected.
 
 Log in to EGMS and click here to see details.
 
@@ -2984,13 +2984,13 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been Rejected
+  Sandbox: Notification: Program #Record Id has been Rejected
   """
     Then I see the mail text is as follows :
   """
 Hello Automation PM
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been rejected.
+This email is to notify you that Program #Record Id has been rejected.
 
 Log in to EGMS and click here to see details.
 
@@ -3067,7 +3067,7 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been forwarded.
+  Sandbox: Notification: Program #Record Id has been forwarded.
   """
     Then I see the mail text is as follows :
   """
@@ -3075,7 +3075,7 @@ The EGMS Team
 
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been forwarded.
+This email is to notify you that Program #Record Id has been forwarded.
 
 Log in to EGMS, click here for more details, and resubmit the Program after making the required changes.
 
@@ -3152,7 +3152,7 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
    """
-  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been forwarded.
+  Sandbox: Notification: Program #Record Id has been forwarded.
   """
     Then I see the mail text is as follows :
   """
@@ -3160,7 +3160,7 @@ The EGMS Team
 
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program #{SavedValue:PEGMSID} has been forwarded.
+This email is to notify you that Program #Record Id has been forwarded.
 
 Log in to EGMS, click here for more details, and resubmit the Program after making the required changes.
 
@@ -3240,16 +3240,16 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:  Notification: Program #{SavedValue:PEGMSID} has been sent back
+  Sandbox:  Notification: Program #Record Id has been sent back
   """
     Then I see the mail text is as follows :
   """
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program # {SavedValue:PEGMSID} has been sent back for revision.
+This email is to notify you that Program # Record Id has been sent back for revision.
 
 Program Details:
-  Program ID: {SavedValue:PEGMSID}
+  Program ID: Record Id
   Program Name: {SavedValue:PROGRAMNAME}
 
 Log in to EGMS and click here to resubmit the Program after making the required changes.
@@ -3324,16 +3324,16 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:  Notification: Program #{SavedValue:PEGMSID} has been sent back
+  Sandbox:  Notification: Program #Record Id has been sent back
   """
     Then I see the mail text is as follows :
   """
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program # {SavedValue:PEGMSID} has been sent back for revision.
+This email is to notify you that Program # Record Id has been sent back for revision.
 
 Program Details:
-  Program ID: {SavedValue:PEGMSID}
+  Program ID: Record Id
   Program Name: {SavedValue:PROGRAMNAME}
 
 Log in to EGMS and click here to resubmit the Program after making the required changes.
@@ -3405,8 +3405,7 @@ The EGMS Team
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     Then I see only the following ordered radio buttons in the approval decision :
       | Approve | Reject | Forward | Send back |
     When I "Approve" in the approval decision
@@ -3467,8 +3466,7 @@ The EGMS Team
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     Then I see only the following ordered radio buttons in the approval decision :
       | Approve | Reject | Forward | Send back |
     When I "Approve" in the approval decision
@@ -3478,33 +3476,37 @@ The EGMS Team
   @203296 @381957 @SanityPATCH @SanityPATCHApprovalProcess
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reject record
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Title" as "PROGRAMNAME"
-    And I save the field labeled "Created By" as "OWNER"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program |
-      | Automation EXE | Step 1  |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
+    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
     #381957
@@ -3517,33 +3519,37 @@ The EGMS Team
   @203348
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reject record
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Title" as "PROGRAMNAME"
-    And I save the field labeled "Created By" as "OWNER"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
+    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
@@ -3554,34 +3560,38 @@ The EGMS Team
 
   @203407
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reassign record
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Title" as "PROGRAMNAME"
-    And I save the field labeled "Created By" as "OWNER"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
+    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     And I "Forward" to user "Automation PM" in the approval decision
     And I checkout to yopmail with mailid "automation.exe@yopmail.com"
     And I pause execution for "10" seconds
@@ -3590,34 +3600,38 @@ The EGMS Team
 
   @203405
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reassign record
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     And I click on "Save" in the page details
+    And I get the "EGMS ID"
     When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Title" as "PROGRAMNAME"
-    And I save the field labeled "Created By" as "OWNER"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
     When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
+    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     And I "Forward" to user "Automation PM" in the approval decision
     And I checkout to yopmail with mailid "automation.exe@yopmail.com"
     And I pause execution for "10" seconds
@@ -3652,8 +3666,8 @@ The EGMS Team
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
@@ -3690,8 +3704,8 @@ The EGMS Team
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Send back" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
