@@ -12348,7 +12348,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Title" inside page block detail
     Then I softly see "Type" inside page block detail
     Then I softly see "Primary Funding Organization" inside page block detail
-
+And I softly do not see asterisk mark on "FieldName"
     Examples:
       | User  |
       | ADMIN |
