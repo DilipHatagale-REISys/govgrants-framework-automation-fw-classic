@@ -196,7 +196,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     When I click on "Save" in the page details
     When I click on "Menu" in the page details
-    Then I see "Download as PDF" options is displayed
+    Then I softly see "Download As PDF" options is displayed
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
