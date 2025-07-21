@@ -9270,7 +9270,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-24003                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9728,7 +9728,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
-      | Percent: Number is too large. |
+      | Number: Number is too large. |
 
   @205811 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinCalibriLight(Headings)fontStyleforpercentfieldforinternaluser
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field  for internal user
