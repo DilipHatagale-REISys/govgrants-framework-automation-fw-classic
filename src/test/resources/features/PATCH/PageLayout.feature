@@ -103,7 +103,7 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I pause execution for 3" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     Then I see "Submit For Approval" button is not displayed
