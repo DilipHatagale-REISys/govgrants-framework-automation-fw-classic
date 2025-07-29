@@ -54,8 +54,8 @@ public class setup {
 
     @After(order = 2)
     public void deleteMe() {
-        if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
-            projectWebServices.deleteRecordInHooks();
+//        if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
+//            projectWebServices.deleteRecordInHooks();
 //       else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
 //           projectWebServices.deleteRecordInHooks();
 //        ProjectWebServices.changeUserActivationStatus("automationinternal", false);

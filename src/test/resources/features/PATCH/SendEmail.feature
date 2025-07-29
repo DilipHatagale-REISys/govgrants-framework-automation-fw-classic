@@ -380,8 +380,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "Group" into field "{testData:CcField}" on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "Group" into field "{testData:ToField}" on send email modal
     When I select value "group pm" with iconName "fa fa-users" into field on send email modal
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
     When I enter value "Test automation mail subject 1" into field "Body Content" on send email modal

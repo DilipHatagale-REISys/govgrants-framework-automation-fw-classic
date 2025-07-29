@@ -68,14 +68,14 @@ public final class TestSetupController {
         ScenarioController.setScenario(scenario);
 
         if ("true".equalsIgnoreCase(System.getProperty("recordVideo"))) {
-            ScreenCapture.startRecordVideo();
+//            ScreenCapture.startRecordVideo();
         }
         if ("true".equalsIgnoreCase(System.getProperty("docker"))) {
             DockerController.startDocker();
         }
         if ("android".equalsIgnoreCase(EnvironmentFactory.getDevice()) || "ios".equalsIgnoreCase(EnvironmentFactory.getDevice())) {
             AppiumController.startServer();
-            if (System.getProperty("appName") == null) {
+            if (System.getProperty("appName")==null) {
                 runBrowser();
             } else {
                 runMobileApp();
@@ -189,7 +189,7 @@ public final class TestSetupController {
         device.getDriver().manage().deleteAllCookies();
         device.getDriver().quit();
         Runtime rt = Runtime.getRuntime();
-        Process pr = rt.exec("taskkill /F /IM chromedriver_for_browserVersion123.exe /T");
+        Process pr = rt.exec("taskkill /F /IM chromedriver_for_browserVersion138.exe /T");
         System.out.println("Command Executed:+ " + pr);
         Process pr1 = rt.exec("taskkill /F /IM “chrome.exe” /T");
         System.out.println("Command Executed:+ " + pr1);
