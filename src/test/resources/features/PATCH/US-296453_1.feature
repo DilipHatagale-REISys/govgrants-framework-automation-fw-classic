@@ -21027,7 +21027,6 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     And I click toggle button to select "Not Yet Qualified Opportunities - All"
-    And I halt execution
     And I click on column name "Estimated Number of Awards" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
     Then I see column "Estimated Number of Awards" value with "up" arrow
     And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
