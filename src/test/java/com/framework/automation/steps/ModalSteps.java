@@ -52,4 +52,20 @@ public class ModalSteps {
     public void iSeeActionWithTitleInTableId(String usage, String action, String titlename, String tableid) {
         modalPage.actionDisplayedOrNotInGivenTableWithTitle(usage, action, titlename, tableid);
     }
+
+    @And("^I click on column name \"([^\"]*)\" for sorting of table \"([^\"]*)\"$")
+    public void iClickOnColumnNameForSortingOfTable(String columnName, String tableId) {
+        modalPage.clickOncolumnHeader(columnName, tableId);
+
+    }
+
+    @Then("^I (softly see|see|do not see|softly do not see) column \"([^\"]*)\" value with \"([^\"]*)\" arrow$")
+    public void iSeeColumnValueWithArrow(String usage, String columnname, String arrow) {
+        modalPage.assertUpArrowOrDownArrowIsDisplayed(usage, columnname, arrow);
+    }
+
+    @Then("^I (softly see|see|do not see|softly do not see) column \"([^\"]*)\" is clickable in table \"([^\"]*)\"$")
+    public void iSoftlyVerifyColumnIsClickableInTable(String usage, String columnname, String tableName) {
+        modalPage.assertColumnNameIsClickable(usage, columnname, tableName);
+    }
 }

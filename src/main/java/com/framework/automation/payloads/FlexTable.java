@@ -237,6 +237,13 @@ public class FlexTable {
                                 apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__ShowLinkAsText__c), Boolean.parseBoolean(value));
                 break;
+
+            case "DISABLE SORT ORDER":
+                finalPayload = String.format(
+                        payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__DisableSortOrder__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
