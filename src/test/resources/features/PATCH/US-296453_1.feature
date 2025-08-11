@@ -21017,28 +21017,102 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
       | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                           |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                      |
-      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:Spi3EstimatedNumberOfAwards__c} |
-      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}                |
-      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c}    |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                   |
+      | Flex Table List       | Disable sort order  | true           | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:spi3AnnouncementNumber__c}   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}             |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c} |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Opportunities" tab
     When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
     And I click toggle button to select "Not Yet Qualified Opportunities - All"
-    And I click on column name "Estimated Number of Awards" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
-    Then I see column "Estimated Number of Awards" value with "up" arrow
+    Then I softly do not see column "B_Announcement Number" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "Award Ceiling" value with "up" arrow
+    And I click on column name "FundingAgencyRestriction" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "FundingAgencyRestriction" value with "up" arrow
+    And I refresh the page
+    Then I softly do not see column "Award Ceiling" value with "up" arrow
+    Then I softly do not see column "FundingAgencyRestriction" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                    |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | AnnouncementNumber__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @504156
+  Scenario Outline: 2.0- Data Table- SPI- To verify that, for Text data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:spi3AnnouncementNumber__c}   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}             |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c} |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I click toggle button to select "Not Yet Qualified Opportunities - All"
+    Then I softly see column "B_Announcement Number" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    And I click on column name "B_Announcement Number" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "B_Announcement Number" value with "up" arrow
     And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
     Then I see column "Award Ceiling" value with "up" arrow
     And I click on column name "FundingAgencyRestriction" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
     Then I see column "FundingAgencyRestriction" value with "up" arrow
     When I click on parallel lines menu bar with data target value "#toggleFlexTablenyqae"
     And I select "Reset Table" from parallel lines dropdown of "Not Yet Qualified Opportunities - All"
-    Then I softly do not see column "Estimated Number of Awards" value with "up" arrow
     Then I softly do not see column "Award Ceiling" value with "up" arrow
     Then I softly do not see column "FundingAgencyRestriction" value with "up" arrow
 
     Examples:
-      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                         |
-      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | EstimatedNumberOfAwards__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                    |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | AnnouncementNumber__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @504158
+  Scenario Outline: 2.0- FlexGrid Enhanced- Admin/PM- To verify that, for Text,TextArea,Long/RichTextArea data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                                         |
+      | Flex Table:General    | Sort Direction      | ASC            | ProgramReviewStepTemplates |                           |                                         |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:GrantCode__c}      |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:ReviewTextArea__c} |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:Justification__c}  |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:Description__c}    |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Setup" sub tab
+    Then I softly see column "Grant Abbreviation" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "ReviewTextArea" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Justification" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Description" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    And I click on column name "Grant Abbreviation" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Grant Abbreviation" value with "down" arrow
+    And I click on column name "ReviewTextArea" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "ReviewTextArea" value with "down" arrow
+    And I click on column name "Justification" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Justification" value with "down" arrow
+    And I click on column name "Description" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Description" value with "down" arrow
+    Examples:
+      | Users | defaultFieldsApi                                           | newFieldsApi                                                                                               |
+      | PM    | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | GrantCode__c,ReviewTextArea__c,Justification__c,{flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
