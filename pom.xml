@@ -69,6 +69,13 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -170,11 +177,11 @@
             <artifactId>maven-invoker</artifactId>
             <version>3.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.pojosontheweb</groupId>
-            <artifactId>monte-repack</artifactId>
-            <version>1.0.1</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.pojosontheweb</groupId>-->
+        <!--            <artifactId>monte-repack</artifactId>-->
+        <!--            <version>1.0.1</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>com.paulhammant</groupId>
             <artifactId>ngwebdriver</artifactId>
@@ -230,23 +237,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.testing-blaze</groupId>
-            <artifactId>blaze-core</artifactId>
-            <version>1.4.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.testing-blaze</groupId>
-            <artifactId>blaze-core</artifactId>
-            <version>1.4.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>3.0.9</version>
         </dependency>
     </dependencies>
 
