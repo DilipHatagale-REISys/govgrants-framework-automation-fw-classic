@@ -22090,3 +22090,271 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     Examples:
       | Users | defaultFieldsApi                                            | newFieldsApi                                                                                          |
       | SPI3  | {RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} | Status__c,spi3gridURL__c,spi3gridEmail__c,{RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} |
+
+  @504191
+  Scenario Outline: 2.0- FlexGrid Enhanced- SPI- To verify that, for Date, Date & Time, Time, Phone data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                                            |
+      | Flex Table:General    | Sort Direction      | ASC            | EnhanceAppGrantorBudgetPeriods |                           |                                            |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3BudgetEndDate__c} |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3griddatetime__c}  |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3gridphone__c}     |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I navigate to "Budget" sub tab
+    Then I softly do not see column "End Date" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "spi3griddatetime" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "spi3gridphone" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "TestPercentage" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Examples:
+      | Users | defaultFieldsApi                                            | newFieldsApi                                                                                     |
+      | SPI3  | {RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} | spi3griddatetime__c,spi3gridphone__c,{RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} |
+
+  @504193
+  Scenario Outline: 2.0- FlexGrid Enhanced- SPI- To verify that, for Picklist, Multi-select Picklist, URL, Email, Checkbox data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                                           |
+      | Flex Table:General    | Sort Direction      | ASC            | EnhanceAppGrantorBudgetPeriods |                           |                                           |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3gridStatus__c}   |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3gridURL__c}      |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3gridEmail__c}    |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:spi3gridModified__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I navigate to "Budget" sub tab
+    Then I softly do not see column "Status" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "spi3gridURL" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "spi3gridEmail" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "Modified" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+
+    Examples:
+      | Users | defaultFieldsApi                                            | newFieldsApi                                                                                                      |
+      | SPI3  | {RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} | Status__c,spi3gridURL__c,spi3gridEmail__c,Modified__c,{RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} |
+
+  @504501
+  Scenario Outline: 2.0- Data Table Enhanced- Admin/PM- To verify that, for Standard,Lookup,Reference,Formula data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | DataTableEnhanceProgramContacts |                           |                                                  |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:pmcontactName}              |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:Program__c}                 |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:contactPhone__c}            |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:Contact__r.Organization__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter in modal value "Automation Runtime Focus Area" into field "Title__c"
+    When I navigate to "Overview" sub tab
+    Then I softly do not see column "Key Contacts Name" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "Program" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "Phone" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "Organization" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                     |
+      | PM    | {RecordTypeDataTable:ContactTableDFN} | Name,Program__c,Phone__c,Contact__r.Organization__c,{RecordTypeDataTable:ContactTableLimitedDFN} |
+
+  @504504
+  Scenario Outline: 2.0- Data Table Enhanced- SPI- To verify that, for Standard,Lookup,Reference,Formula data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppContact         |                           |                                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | AppContact         |                           |                                                  |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:spi3contactName}            |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:sip3contactBudgetPeriod__c} |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:Contact__r.Email}           |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:City__c}                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Overview" sub tab
+    Then I softly do not see column "Key Contacts Name" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "Budget Period" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "Email" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "City" is clickable in table "---program:-:ContactAppliRecTableid---"
+
+    Examples:
+      | Users | defaultFieldsApi                                       | newFieldsApi                                                                        |
+      | SPI3  | {RecordTypeDataTable:spi3ContactTableOnApplicationDFN} | Name,BudgetPeriod__c,City__c,{RecordTypeDataTable:spi3ContactTableOnApplicationDFN} |
+
+  @504505 @504506
+  Scenario Outline: 2.0- Data Table Enhanced-Admin/PM-To verify that, for Standard,Lookup,Reference,Formul datatype fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | DataTableEnhanceProgramContacts |                           |                                                  |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:pmcontactName}              |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:Program__c}                 |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:contactPhone__c}            |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:Contact__r.Organization__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    Then I softly see column "Key Contacts Name" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Program" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Phone" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Organization" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                     |
+      | PM    | {RecordTypeDataTable:ContactTableDFN} | Name,Program__c,Phone__c,Contact__r.Organization__c,{RecordTypeDataTable:ContactTableLimitedDFN} |
+
+  @504507
+  Scenario Outline: 2.0- Data Table- Admin/PM- To verify that, for Standard,Lookup,Reference,Formula data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+  |2.0- Data Table- Admin/PM- To verify that, for Text data type field, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table|
+  |2.0- Data Table- Admin/PM- To verify that, for Text data type field, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                                       |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | {RecordTypeDataTable:IsOwner__c} |
+      | Flex Table List       | Disable sort order  | true          | Programs           | Name                      | {RecordTypeDataTable:Abbreviation__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    Then I softly do not see column "B_Is Owner" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly do not see column "EGMS ID" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                   |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Abbreviation__c,InternalOrganization__c,IsOwner__c |
+
+  @504508 @504511
+  Scenario Outline: 2.0- Data Table- Admin/PM- To verify that, for Standard,Lookup,Reference,Formula data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+|2.0- FlexGrid Enhanced- Admin/PM- To verify that, for Standard,Lookup,Reference,Formula data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                                       |
+      | Flex Table List       | Disable sort order  | false           | Programs           | Name                      | {RecordTypeDataTable:IsOwner__c} |
+      | Flex Table List       | Disable sort order  | false          | Programs           | Name                      | {RecordTypeDataTable:Abbreviation__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    Then I softly see column "B_Is Owner" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly see column "EGMS ID" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                   |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Abbreviation__c,InternalOrganization__c,IsOwner__c |
+
+    @504514
+    Scenario Outline: 2.0-FlexGrid Enhanced-Admin/PM-To verify that, for Standard,Lookup,Reference,Formula datatype fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+        | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+        | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+        | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+        | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+        | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+        | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                                  |
+        | Flex Table:General    | Sort Direction      | ASC            | ProgramReviewStepTemplates |                           |                                  |
+        | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}         |
+        | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+        | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}         |
+      When I login to "As a Grantor" app as "<Users>" user
+      And I navigate to "Planning" tab
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+      When I enter "Creation" values from "Program_Field_Values.xlsx"
+      And I click on "Save and Continue" in the page details
+      When I navigate to "Setup" sub tab
+      And I click on column name "ReviewStepCurrency" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+      Then I softly see column "ReviewStepCurrency" value with "down" arrow
+      And I click on column name "X_Number of Approval Steps" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+      Then I softly see column "X_Number of Approval Steps" value with "down" arrow
+      And I click on column name "Step Weight (%)" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+      Then I softly see column "Step Weight (%)" value with "down" arrow
+      When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+      And I select "Reset Table" from parallel lines dropdown of "Review Steps"
+      Then I softly do not see column "ReviewStepCurrency" value with "down" arrow
+      Then I softly do not see column "X_Number of Approval Steps" value with "down" arrow
+      Then I softly do not see column "Step Weight (%)" value with "down" arrow
+      Then I softly do not see column "ReviewStepCurrency" value with "up" arrow
+      Then I softly do not see column "X_Number of Approval Steps" value with "up" arrow
+      Then I softly do not see column "Step Weight (%)" value with "up" arrow
+      Examples:
+        | Users | defaultFieldsApi                                           | newFieldsApi                                                                                              |
+        | PM    | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ReviewStepCurrency__c,NumberOfApprovalSteps__c,{flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
