@@ -6928,6 +6928,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Draft Announcements"
     And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
     And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
+    And I halt execution
     And I click modal button "Continue"
     Then I cannot see the following message in the page details contains:
       | Ann Group Code is required to save under Overview. |
