@@ -21862,7 +21862,6 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Setup" sub tab
-    And I halt execution
     Then I softly see column "Grant Abbreviation" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly see column "ReviewTextArea" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly see column "Justification" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
@@ -21906,7 +21905,6 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Setup" sub tab
-    And I halt execution
     Then I softly do not see column "Status" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly do not see column "Email" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly do not see column "pmgridURL" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
@@ -21942,7 +21940,6 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Setup" sub tab
-    And I halt execution
     Then I softly see column "X_End Date" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly see column "pmgriddatetime" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
     Then I softly see column "pmgridphone" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
