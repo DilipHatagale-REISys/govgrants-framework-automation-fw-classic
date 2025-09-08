@@ -203,7 +203,7 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Test8@10Jun");
+        password.put("ADMIN", "Test8@08Sep");
         password.put("PO", "Test8@10July");
         password.put("FD", "Test8@10July");
         password.put("FD1","Test8@10July");
@@ -216,7 +216,7 @@ public class UsersAndURL implements UsersController {
         password.put("FO", "Test8@10July");
         password.put("FO1","Test8@10July");
         password.put("SPI3", "Test8@04aug");
-        password.put("SPA", "Test8@10July");
+        password.put("SPA", "Test8@04aug");
         password.put("PM1", "Test8@10July");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());
