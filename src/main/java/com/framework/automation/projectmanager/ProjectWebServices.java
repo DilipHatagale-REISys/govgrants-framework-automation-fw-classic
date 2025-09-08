@@ -130,7 +130,7 @@ public class ProjectWebServices {
         } else if (EnvironmentFactory.getEnvironmentName().contains("FWLWC-GRANTOR")) {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=9891CA2421B3307CEDFA0F2AB3113A94EB329125539A0B5C5F4FF8206C733369&client_id=3MVG9RHx1QGZ7Osjc_dBcgjE7QBmm0KFfeoguDyiCQ1onGF6O0ZH6vkmgaOlCmfE9TKiL6.l9OxRenPEaEN5o&username=govgrantsautomation@yopmail.com.frwklwcaut&password=FwLwc@02oct";
         } else if (EnvironmentFactory.getEnvironmentName().contains("FWCLASSIC")) {
-            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FEB116B3A657A8896DA8E68DA49D219409D69692B80F775E6E2D1E4C1A04E4F2&client_id=3MVG9igNVW5mZVnXrVx_V11V80UE0UFG0WoQU3iuEur3te_8ukuxKKxhdFHQL3SRYQ6bjiS8c90Z0gr_WzqIk&username=govgrantsautomation5@yopmail.com.fwautomat&password=Test8@10Jun";
+            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=FEB116B3A657A8896DA8E68DA49D219409D69692B80F775E6E2D1E4C1A04E4F2&client_id=3MVG9igNVW5mZVnXrVx_V11V80UE0UFG0WoQU3iuEur3te_8ukuxKKxhdFHQL3SRYQ6bjiS8c90Z0gr_WzqIk&username=govgrantsautomation5@yopmail.com.fwautomat&password=Test8@08Sep";
         }
         return defaultEndPointGetToken;
     }
