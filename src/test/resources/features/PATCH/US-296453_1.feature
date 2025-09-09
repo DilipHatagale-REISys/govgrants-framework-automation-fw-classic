@@ -3,7 +3,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
   Text Field of Data Table Enhanced, few script has to handle.
   Need to handle same scenario in PDF for CKEditor, Data Table and Data Table Enhanced. (Suite ID: 304363)
 
-  @300082 
+  @300082
   Scenario Outline: XSS- Data table-(Admin) To verify when user enters script in the long text area field then alert should not display.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -35,7 +35,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303055p 
+  @303055p
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -76,7 +76,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303057 
+  @303057
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -103,7 +103,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303069 
+  @303069
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -130,7 +130,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303071 
+  @303071
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -157,7 +157,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303074 
+  @303074
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -184,7 +184,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303077 
+  @303077
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -211,7 +211,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303083 
+  @303083
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -238,7 +238,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303085 
+  @303085
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -265,7 +265,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303086 
+  @303086
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -292,7 +292,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303089 
+  @303089
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -319,7 +319,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303090 
+  @303090
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -346,7 +346,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303091 
+  @303091
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -373,7 +373,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303093 
+  @303093
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -400,7 +400,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303096 
+  @303096
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -427,7 +427,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303098 
+  @303098
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -454,7 +454,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303099 
+  @303099
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -481,7 +481,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303101 
+  @303101
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -508,7 +508,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303103 
+  @303103
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -535,7 +535,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303104 
+  @303104
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -562,7 +562,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303106 
+  @303106
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -589,7 +589,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303108 
+  @303108
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -616,7 +616,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303109 
+  @303109
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -643,7 +643,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303110 
+  @303110
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -670,7 +670,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303111 
+  @303111
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -697,7 +697,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303112 
+  @303112
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -724,7 +724,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303113 
+  @303113
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -751,7 +751,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303115 
+  @303115
   Scenario Outline:XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -778,7 +778,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303116 
+  @303116
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -805,7 +805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303118 
+  @303118
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -832,7 +832,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303120 
+  @303120
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -859,7 +859,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303940 
+  @303940
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -886,7 +886,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303942 
+  @303942
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -913,7 +913,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303943 
+  @303943
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -940,7 +940,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303944 
+  @303944
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -967,7 +967,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303946 
+  @303946
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -994,7 +994,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303948 
+  @303948
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1021,7 +1021,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303949 
+  @303949
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1048,7 +1048,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303951 
+  @303951
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1075,7 +1075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303959 
+  @303959
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1102,7 +1102,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303960 
+  @303960
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1129,7 +1129,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303964 
+  @303964
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1156,7 +1156,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303966 
+  @303966
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1183,7 +1183,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303973 
+  @303973
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1210,7 +1210,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303974 
+  @303974
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1237,7 +1237,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303979 
+  @303979
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1264,7 +1264,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304175 
+  @304175
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1291,7 +1291,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304178 
+  @304178
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1318,7 +1318,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304180 
+  @304180
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1345,7 +1345,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304182 
+  @304182
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1372,7 +1372,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304183 
+  @304183
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1399,7 +1399,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304186 
+  @304186
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1426,7 +1426,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304188 
+  @304188
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1452,7 +1452,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304193 
+  @304193
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1479,7 +1479,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304194 
+  @304194
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1506,7 +1506,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304195 
+  @304195
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1533,7 +1533,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304197 
+  @304197
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1560,7 +1560,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304202 
+  @304202
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1587,7 +1587,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304204 
+  @304204
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1614,7 +1614,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304205 
+  @304205
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1641,7 +1641,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304206 
+  @304206
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1667,7 +1667,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304209 
+  @304209
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1693,7 +1693,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304212 
+  @304212
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1719,7 +1719,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304213 
+  @304213
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1745,7 +1745,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304214 
+  @304214
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1771,7 +1771,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304220 
+  @304220
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1797,7 +1797,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304221 
+  @304221
   Scenario Outline:XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1823,7 +1823,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304224 
+  @304224
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1849,7 +1849,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304225 
+  @304225
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1875,7 +1875,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304226 
+  @304226
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1901,7 +1901,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304227 
+  @304227
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1927,7 +1927,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304228 
+  @304228
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1954,7 +1954,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
 
-  @304229 
+  @304229
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -1980,7 +1980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304231 
+  @304231
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2006,7 +2006,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304232 
+  @304232
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2032,7 +2032,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304233 
+  @304233
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2058,7 +2058,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304235 
+  @304235
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2084,7 +2084,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304236 
+  @304236
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2110,7 +2110,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304238 
+  @304238
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2136,7 +2136,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304239 
+  @304239
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2162,7 +2162,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304241 
+  @304241
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2188,7 +2188,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304243 
+  @304243
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2214,7 +2214,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304244 
+  @304244
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2240,7 +2240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304245 
+  @304245
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2266,7 +2266,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304246 
+  @304246
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2292,7 +2292,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304247 
+  @304247
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2318,7 +2318,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304248 
+  @304248
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2344,7 +2344,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304249 
+  @304249
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2370,7 +2370,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304251 
+  @304251
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2396,7 +2396,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304253 
+  @304253
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2422,7 +2422,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304255 
+  @304255
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2448,7 +2448,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304257 
+  @304257
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2474,7 +2474,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304261 
+  @304261
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2500,7 +2500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304318 
+  @304318
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2526,7 +2526,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304322 
+  @304322
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2552,7 +2552,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304323 
+  @304323
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2578,7 +2578,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304327 
+  @304327
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2604,7 +2604,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304329 
+  @304329
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -2630,7 +2630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @304356 
+  @304356
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
@@ -10111,7 +10111,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I perform quick search for "Automation Internal Program for Testing"
     And I click on "fa fa-pencil" icon in flex table for first draft record
     When I enter values into fields
-      | Value | Field                          |
+      | Value                                                                                                                       | Field                          |
       | ';this[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
     When I click on "Save" in the page details
     Then I do not see alert popup box
@@ -10137,7 +10137,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I perform quick search for "Automation Internal Program for Testing"
     And I click on "fa fa-pencil" icon in flex table for first draft record
     When I enter values into fields
-      | Value | Field                          |
+      | Value                                                                                                                      | Field                          |
       | ';top[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
     When I click on "Save" in the page details
     Then I do not see alert popup box
@@ -10163,7 +10163,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I perform quick search for "Automation Internal Program for Testing"
     And I click on "fa fa-pencil" icon in flex table for first draft record
     When I enter values into fields
-      | Value | Field                          |
+      | Value                                                                                                                         | Field                          |
       | ';parent[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
     When I click on "Save" in the page details
     Then I do not see alert popup box
@@ -10189,8 +10189,8 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I perform quick search for "Automation Internal Program for Testing"
     And I click on "fa fa-pencil" icon in flex table for first draft record
     When I enter values into fields
-      | Value | Field                          |
-      |  ';frames[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
+      | Value                                                                                                                         | Field                          |
+      | ';frames[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
     When I click on "Save" in the page details
     Then I do not see alert popup box
     Examples:
@@ -10215,7 +10215,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I perform quick search for "Automation Internal Program for Testing"
     And I click on "fa fa-pencil" icon in flex table for first draft record
     When I enter values into fields
-      | Value | Field                          |
+      | Value                                                                                                                             | Field                          |
       | ';globalThis[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]((+{}+[])[+!![]]);// | fieldBeneficiaryEligibility__c |
     When I click on "Save" in the page details
     Then I do not see alert popup box
@@ -20390,3 +20390,729 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     Examples:
       | User  | newFieldsApi                                                                                                                             | defaultFieldsApi                                                                 |
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
+
+  @503620 @US-488353
+  Scenario Outline: 2.0- Data Table- Admin/PM- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table List       | Disable sort order  | false          | Programs           | Name                      | FTC-14092                  |
+      | Flex Table List       | Disable sort order  | false          | Programs           | Name                      | FTC-9348                   |
+      | Flex Table List       | Disable sort order  | false          | Programs           | Name                      | FTC-14091                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    And I click on column name "Program Number" for sorting of table "---program:-:ProgramsFlexTableToggleId---"
+    Then I see column "Program Number" value with "up" arrow
+    And I click on column name "Funded Amount" for sorting of table "---program:-:ProgramsFlexTableToggleId---"
+    Then I see column "Funded Amount" value with "up" arrow
+    And I click on column name "Percent" for sorting of table "---program:-:ProgramsFlexTableToggleId---"
+    Then I see column "Percent" value with "up" arrow
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Reset Table" from parallel lines dropdown of "Internal Programs - All"
+    Then I softly do not see column "Program Number" value with "up" arrow
+    Then I softly do not see column "Funded Amount" value with "up" arrow
+    Then I softly do not see column "Percent" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                      |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Account__c,FundedAmount__c,Percent__c |
+
+  @503648 @US-488353
+  Scenario Outline: 2.0- Data Table Enhanced-Admin/PM-To verify that, for Numeric(Number,Currency,Percent) datatype fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                                            |
+      | Flex Table:General    | Sort Direction      | ASC            | DataTableEnhanceProgramContacts |                           |                                            |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:NumberOfPersonnel__c} |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:BaseSalary__c}        |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:Percentage__c}        |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on column name "Number Of Personnel" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Number Of Personnel" value with "down" arrow
+    And I click on column name "BaseSalary" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "BaseSalary" value with "down" arrow
+    And I click on column name "Percentage" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Percentage" value with "down" arrow
+    When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
+    Then I softly do not see column "Number Of Personnel" value with "down" arrow
+    Then I softly do not see column "BaseSalary" value with "down" arrow
+    Then I softly do not see column "Percentage" value with "down" arrow
+    Then I softly do not see column "Number Of Personnel" value with "up" arrow
+    Then I softly do not see column "BaseSalary" value with "up" arrow
+    Then I softly do not see column "Percentage" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                  |
+      | PM    | {RecordTypeDataTable:ContactTableDFN} | NumberOfPersonnel__c,BaseSalary__c,Percentage__c,{RecordTypeDataTable:ContactTableLimitedDFN} |
+
+  @503655 @US-488353
+  Scenario Outline: 2.0-FlexGrid Enhanced-Admin/PM-To verify that, for Numeric (Number, Currency, Percent) datatype fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | ProgramReviewStepTemplates |                           |                                  |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}         |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}         |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Setup" sub tab
+    And I click on column name "ReviewStepCurrency" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "ReviewStepCurrency" value with "down" arrow
+    And I click on column name "X_Number of Approval Steps" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "X_Number of Approval Steps" value with "down" arrow
+    And I click on column name "Step Weight (%)" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Step Weight (%)" value with "down" arrow
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Reset Table" from parallel lines dropdown of "Review Steps"
+    Then I softly do not see column "ReviewStepCurrency" value with "down" arrow
+    Then I softly do not see column "X_Number of Approval Steps" value with "down" arrow
+    Then I softly do not see column "Step Weight (%)" value with "down" arrow
+    Then I softly do not see column "ReviewStepCurrency" value with "up" arrow
+    Then I softly do not see column "X_Number of Approval Steps" value with "up" arrow
+    Then I softly do not see column "Step Weight (%)" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                                           | newFieldsApi                                                                                              |
+      | PM    | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ReviewStepCurrency__c,NumberOfApprovalSteps__c,{flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
+
+  @503661 @US-488353
+  Scenario Outline: 2.0- Data Table Enhanced-SPI- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppContact         |                           |                                          |
+      | Flex Table:General    | Sort Direction      | ASC            | AppContact         |                           |                                          |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:FundsRequested__c}  |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:RequestedSalary__c} |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:Spi3Percentage__c}  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Overview" sub tab
+    And I click on column name "Funds Requested ($)" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "Funds Requested ($)" value with "down" arrow
+    And I click on column name "Requested Salary ($)" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "Requested Salary ($)" value with "down" arrow
+    And I click on column name "Percentage" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "Percentage" value with "down" arrow
+    When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
+    Then I softly do not see column "Funds Requested ($)" value with "down" arrow
+    Then I softly do not see column "Requested Salary ($)" value with "down" arrow
+    Then I softly do not see column "Percentage" value with "down" arrow
+    Then I softly do not see column "Funds Requested ($)" value with "up" arrow
+    Then I softly do not see column "Requested Salary ($)" value with "up" arrow
+    Then I softly do not see column "Percentage" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                                       | newFieldsApi                                                                                              |
+      | SPI3  | {RecordTypeDataTable:spi3ContactTableOnApplicationDFN} | FundsRequested__c,RequestedSalary__c,Percentage__c,{RecordTypeDataTable:spi3ContactTableOnApplicationDFN} |
+
+  @503889 @US-488353
+  Scenario Outline: 2.0- Data Table- SPI- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                           |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                      |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:Spi3EstimatedNumberOfAwards__c} |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}                |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c}    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I click on column name "Estimated Number of Awards" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "Estimated Number of Awards" value with "up" arrow
+    And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "Award Ceiling" value with "up" arrow
+    And I click on column name "FundingAgencyRestriction" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "FundingAgencyRestriction" value with "up" arrow
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablenyqae"
+    And I select "Reset Table" from parallel lines dropdown of "Not Yet Qualified Opportunities - All"
+    Then I softly do not see column "Estimated Number of Awards" value with "up" arrow
+    Then I softly do not see column "Award Ceiling" value with "up" arrow
+    Then I softly do not see column "FundingAgencyRestriction" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                         |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | EstimatedNumberOfAwards__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @503975 @US-488353
+  Scenario Outline: 2.0- FlexGrid Enhanced- SPI - To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue                      |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                                                 |
+      | Flex Table:General    | Sort Direction      | ASC            | EnhanceAppGrantorBudgetPeriods |                           |                                                 |
+      | Flex Table List       | Disable sort order  | false          | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:SequenceNumber__c}         |
+      | Flex Table List       | Disable sort order  | false          | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:TotalFundsRequestedSKP__c} |
+      | Flex Table List       | Disable sort order  | false          | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:TestPercentage__c}         |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I navigate to "Budget" sub tab
+    And I click on column name "Sequence Number" for sorting of table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly see column "Sequence Number" value with "down" arrow
+    And I click on column name "Total Funds Requested" for sorting of table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly see column "Total Funds Requested" value with "down" arrow
+    And I click on column name "TestPercentage" for sorting of table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly see column "TestPercentage" value with "down" arrow
+    When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
+    And I select "Reset Table" from parallel lines dropdown of "Budget Periods"
+    Then I softly do not see column "Sequence Number" value with "down" arrow
+    Then I softly do not see column "Total Funds Requested" value with "down" arrow
+    Then I softly do not see column "TestPercentage" value with "down" arrow
+    Then I softly do not see column "Sequence Number" value with "up" arrow
+    Then I softly do not see column "Total Funds Requested" value with "up" arrow
+    Then I softly do not see column "TestPercentage" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                                            | newFieldsApi                                                                                                              |
+      | SPI3  | {RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} | SequenceNumber__c,TotalFundsRequestedSKP__c,TestPercentage__c,{RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} |
+
+  @504091 @US-488353
+  Scenario Outline: 2.0- Data Table Enhanced- Admin/PM- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-14092                  |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-9348                   |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-14091                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    Then I softly do not see column "Program Number" is clickable in table "ProgramsFlexTableToggleId"
+    Then I softly do not see column "Funded Amount" is clickable in table "ProgramsFlexTableToggleId"
+    Then I softly do not see column "Percent" is clickable in table "ProgramsFlexTableToggleId"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                      |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Account__c,FundedAmount__c,Percent__c |
+
+  @504096
+  Scenario Outline: 2.0- Data Table Enhanced- SPI- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppContact         |                           |                                          |
+      | Flex Table:General    | Sort Direction      | ASC            | AppContact         |                           |                                          |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:FundsRequested__c}  |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:RequestedSalary__c} |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:Spi3Percentage__c}  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Overview" sub tab
+    Then I softly do not see column "Funds Requested ($)" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "Requested Salary ($)" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "Percentage" is clickable in table "---program:-:ContactAppliRecTableid---"
+
+    Examples:
+      | Users | defaultFieldsApi                                       | newFieldsApi                                                                                              |
+      | SPI3  | {RecordTypeDataTable:spi3ContactTableOnApplicationDFN} | FundsRequested__c,RequestedSalary__c,Percentage__c,{RecordTypeDataTable:spi3ContactTableOnApplicationDFN} |
+
+  @504098
+  Scenario Outline: 2.0- Data Table- SPI- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                           |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                      |
+      | Flex Table List       | Disable sort order  | true           | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:Spi3EstimatedNumberOfAwards__c} |
+      | Flex Table List       | Disable sort order  | true           | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}                |
+      | Flex Table List       | Disable sort order  | true           | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c}    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I click toggle button to select "Not Yet Qualified Opportunities - All"
+    Then I softly do not see column "Estimated Number of Awards" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I softly do not see column "Award Ceiling" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I softly do not see column "FundingAgencyRestriction" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+
+    Examples:
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                         |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | EstimatedNumberOfAwards__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @504099
+  Scenario Outline: 2.0- Data Table- Admin/PM- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-14092                  |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-9348                   |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | FTC-14091                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    Then I softly do not see column "Program Number" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly do not see column "Percent" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly do not see column "Funded Amount" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly do not see column "Program Number" value with "down" arrow
+    Then I softly do not see column "Percent" value with "down" arrow
+    Then I softly do not see column "Funded Amount" value with "down" arrow
+    Then I softly do not see column "Program Number" value with "up" arrow
+    Then I softly do not see column "Percent" value with "up" arrow
+    Then I softly do not see column "Funded Amount" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                      |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Account__c,FundedAmount__c,Percent__c |
+
+  @504100
+  Scenario Outline: 2.0- FlexGrid Enhanced- Admin/PM- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | ProgramReviewStepTemplates |                           |                                  |
+      | Flex Table List       | Disable sort order  | true           | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}         |
+      | Flex Table List       | Disable sort order  | true           | ProgramReviewStepTemplates | Name                      | {flexgrid:ReviewStepCurrency__c} |
+      | Flex Table List       | Disable sort order  | true           | ProgramReviewStepTemplates | Name                      | {flexgrid:stepWeight__c}         |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Setup" sub tab
+    Then I softly do not see column "ReviewStepCurrency" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly do not see column "X_Number of Approval Steps" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly do not see column "Step Weight (%)" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly do not see column "ReviewStepCurrency" value with "down" arrow
+    Then I softly do not see column "X_Number of Approval Steps" value with "down" arrow
+    Then I softly do not see column "Step Weight (%)" value with "down" arrow
+    Then I softly do not see column "ReviewStepCurrency" value with "up" arrow
+    Then I softly do not see column "X_Number of Approval Steps" value with "up" arrow
+    Then I softly do not see column "Step Weight (%)" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                                           | newFieldsApi                                                                                              |
+      | PM    | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ReviewStepCurrency__c,NumberOfApprovalSteps__c,{flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |
+
+  @504102
+  Scenario Outline: 2.0- FlexGrid Enhanced- SPI- To verify that, for Numeric (Number, Currency, Percent) data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue                      |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                                                 |
+      | Flex Table:General    | Sort Direction      | ASC            | EnhanceAppGrantorBudgetPeriods |                           |                                                 |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:SequenceNumber__c}         |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:TotalFundsRequestedSKP__c} |
+      | Flex Table List       | Disable sort order  | true           | EnhanceAppGrantorBudgetPeriods | Name                      | {RecordTypeDataTable:TestPercentage__c}         |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    When I navigate to "Budget" sub tab
+    Then I softly do not see column "Sequence Number" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "Total Funds Requested" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "TestPercentage" is clickable in table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
+    Then I softly do not see column "Sequence Number" value with "down" arrow
+    Then I softly do not see column "Total Funds Requested" value with "down" arrow
+    Then I softly do not see column "TestPercentage" value with "down" arrow
+    Then I softly do not see column "Sequence Number" value with "up" arrow
+    Then I softly do not see column "Total Funds Requested" value with "up" arrow
+    Then I softly do not see column "TestPercentage" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                                            | newFieldsApi                                                                                                              |
+      | SPI3  | {RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} | SequenceNumber__c,TotalFundsRequestedSKP__c,TestPercentage__c,{RecordTypeDataTable:Spi3EnhanceAppGrantorBudgetPeriodsDFN} |
+
+  @504123
+  Scenario Outline:2.0- Data Table Enhanced- Admin/PM- To verify that, for Text, Text Area, Long Text Area, Rich Text Area data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                   |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                                              |
+      | Flex Table:General    | Sort Direction      | ASC            | DataTableEnhanceProgramContacts |                           |                                              |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:AgencyLogin__c}         |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactTextArea__c}     |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactLongTextArea__c} |
+      | Flex Table List       | Disable sort order  | true           | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactRichTextArea__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    Then I softly do not see column "Agency Login" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "ContactTextArea" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "ContactLongTextArea" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "ContactRichTextArea" is clickable in table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly do not see column "Agency Login" value with "down" arrow
+    Then I softly do not see column "ContactTextArea" value with "down" arrow
+    Then I softly do not see column "ContactLongTextArea" value with "down" arrow
+    Then I softly do not see column "ContactRichTextArea" value with "down" arrow
+    Then I softly do not see column "ContactTextArea" value with "up" arrow
+    Then I softly do not see column "BaseSalary" value with "up" arrow
+    Then I softly do not see column "ContactLongTextArea" value with "up" arrow
+    Then I softly do not see column "ContactRichTextArea" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                                                 |
+      | PM    | {RecordTypeDataTable:ContactTableDFN} | AgencyLogin__c,ContactTextArea__c,ContactLongTextArea__c,ContactRichTextArea__c,{RecordTypeDataTable:ContactTableLimitedDFN} |
+
+  @504124
+  Scenario Outline: 2.0- Data Table Enhanced-Admin/PM-To verify that, for Text, Text Area, Long Text Area data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                   |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                                              |
+      | Flex Table:General    | Sort Direction      | ASC            | DataTableEnhanceProgramContacts |                           |                                              |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:AgencyLogin__c}         |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactTextArea__c}     |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactLongTextArea__c} |
+      | Flex Table List       | Disable sort order  | false          | DataTableEnhanceProgramContacts | Name                      | {RecordTypeDataTable:ContactRichTextArea__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I click on column name "Agency Login" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "Agency Login" value with "down" arrow
+    And I click on column name "ContactTextArea" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "ContactTextArea" value with "down" arrow
+    And I click on column name "ContactLongTextArea" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "ContactLongTextArea" value with "down" arrow
+    And I click on column name "ContactRichTextArea" for sorting of table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I softly see column "ContactRichTextArea" value with "down" arrow
+    When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
+    Then I softly do not see column "Agency Login" value with "down" arrow
+    Then I softly do not see column "ContactTextArea" value with "down" arrow
+    Then I softly do not see column "ContactLongTextArea" value with "down" arrow
+    Then I softly do not see column "ContactRichTextArea" value with "down" arrow
+    Then I softly do not see column "ContactTextArea" value with "up" arrow
+    Then I softly do not see column "BaseSalary" value with "up" arrow
+    Then I softly do not see column "ContactLongTextArea" value with "up" arrow
+    Then I softly do not see column "ContactRichTextArea" value with "up" arrow
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                                                                 |
+      | PM    | {RecordTypeDataTable:ContactTableDFN} | AgencyLogin__c,ContactTextArea__c,ContactLongTextArea__c,ContactRichTextArea__c,{RecordTypeDataTable:ContactTableLimitedDFN} |
+
+  @504125
+  Scenario Outline: 2.0- Data Table Enhanced- SPI - To verify that, for Text,TextArea,Long/RichTextArea data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppContact         |                           |                                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | AppContact         |                           |                                                  |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:spi3AgencyLogin__c}         |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactTextArea__c}     |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactLongTextArea__c} |
+      | Flex Table List       | Disable sort order  | false          | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactRichTextArea__c} |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Overview" sub tab
+    Then I softly see column "Agency Login" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactLongTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactRichTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+    And I click on column name "Agency Login" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "Agency Login" value with "down" arrow
+    And I click on column name "ContactTextArea" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactTextArea" value with "down" arrow
+    And I click on column name "ContactLongTextArea" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactLongTextArea" value with "down" arrow
+    And I click on column name "ContactRichTextArea" for sorting of table "---program:-:ContactAppliRecTableid---"
+    Then I softly see column "ContactRichTextArea" value with "down" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                                       | newFieldsApi                                                                                                                           |
+      | SPI3  | {RecordTypeDataTable:spi3ContactTableOnApplicationDFN} | AgencyLogin__c,ContactTextArea__c,ContactLongTextArea__c,ContactRichTextArea__c,{RecordTypeDataTable:spi3ContactTableOnApplicationDFN} |
+
+  @504126
+  Scenario Outline: 2.0- Data Table Enhanced- SPI- To verify that, for Text,TextArea,Long/RichTextArea data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppContact         |                           |                                                  |
+      | Flex Table:General    | Sort Direction      | ASC            | AppContact         |                           |                                                  |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:spi3AgencyLogin__c}         |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactTextArea__c}     |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactLongTextArea__c} |
+      | Flex Table List       | Disable sort order  | true           | AppContact         | Name                      | {RecordTypeDataTable:spi3ContactRichTextArea__c} |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Overview" sub tab
+    Then I softly do not see column "Agency Login" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "ContactTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "ContactLongTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+    Then I softly do not see column "ContactRichTextArea" is clickable in table "---program:-:ContactAppliRecTableid---"
+
+    Examples:
+      | Users | defaultFieldsApi                                       | newFieldsApi                                                                                                                           |
+      | SPI3  | {RecordTypeDataTable:spi3ContactTableOnApplicationDFN} | AgencyLogin__c,ContactTextArea__c,ContactLongTextArea__c,ContactRichTextArea__c,{RecordTypeDataTable:spi3ContactTableOnApplicationDFN} |
+
+  @504153 @504154
+  Scenario Outline:2.0- Data Table- Admin/PM- To verify that, for Text data type field, when "Disable sort Order" config is checked, then the table column header should not be clickable
+  |2.0- Data Table- Admin/PM- To verify that, for Text data type field, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                                       |
+      | Flex Table List       | Disable sort order  | true           | Programs           | Name                      | {RecordTypeDataTable:Abbreviation__c} |
+      | Flex Table List       | Disable sort order  | false          | Programs           | Name                      | {RecordTypeDataTable:Abbreviation__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - All"
+    Then I softly do not see column "Abbreviation" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+    Then I softly see column "Internal Organization" is clickable in table "---program:-:ProgramsFlexTableToggleId---"
+
+    Examples:
+      | Users | defaultFieldsApi                      | newFieldsApi                                                                        |
+      | PM    | {RecordTypeDataTable:ProgramTableDFN} | Name,ProgramName__c,ProgramNumberFormula__c,Abbreviation__c,InternalOrganization__c |
+
+  @504155
+  Scenario Outline: 2.0- Data Table- SPI- To verify that, for Text data type field, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                   |
+      | Flex Table List       | Disable sort order  | true           | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:spi3AnnouncementNumber__c}   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}             |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c} |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I click toggle button to select "Not Yet Qualified Opportunities - All"
+    Then I softly do not see column "B_Announcement Number" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "Award Ceiling" value with "up" arrow
+    And I click on column name "FundingAgencyRestriction" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "FundingAgencyRestriction" value with "up" arrow
+    And I refresh the page
+    Then I softly do not see column "Award Ceiling" value with "up" arrow
+    Then I softly do not see column "FundingAgencyRestriction" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                    |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | AnnouncementNumber__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @504156
+  Scenario Outline: 2.0- Data Table- SPI- To verify that, for Text data type fields, when "Disable sort Order" config is unchecked, then after clicking on the table column header, arrow should get displayed on the column header of table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                   | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | NotYetQualifiedAnnouncementsExternal |                           |                                                   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:spi3AnnouncementNumber__c}   |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:AwardCeiling__c}             |
+      | Flex Table List       | Disable sort order  | false          | NotYetQualifiedAnnouncementsExternal | Name                      | {RecordTypeDataTable:FundingAgencyRestriction__c} |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I click toggle button to select "Not Yet Qualified Opportunities - All"
+    Then I softly see column "B_Announcement Number" is clickable in table "---program:-:toggleFlexTablenyqaeTableId---"
+    And I click on column name "B_Announcement Number" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "B_Announcement Number" value with "up" arrow
+    And I click on column name "Award Ceiling" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "Award Ceiling" value with "up" arrow
+    And I click on column name "FundingAgencyRestriction" for sorting of table "---program:-:toggleFlexTablenyqaeTableId---"
+    Then I see column "FundingAgencyRestriction" value with "up" arrow
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablenyqae"
+    And I select "Reset Table" from parallel lines dropdown of "Not Yet Qualified Opportunities - All"
+    Then I softly do not see column "Award Ceiling" value with "up" arrow
+    Then I softly do not see column "FundingAgencyRestriction" value with "up" arrow
+
+    Examples:
+      | Users | defaultFieldsApi                                              | newFieldsApi                                                                                                                    |
+      | SPI3  | {RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} | AnnouncementNumber__c,AwardCeiling__c,FundingAgencyRestriction__c,{RecordTypeDataTable:NotYetQualifiedAnnouncementsExternalDFN} |
+
+  @504158
+  Scenario Outline: 2.0- FlexGrid Enhanced- Admin/PM- To verify that, for Text,TextArea,Long/RichTextArea data type fields, when "Disable sort Order" config is checked, then the table column header should not be clickable
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:2 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:3 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:4 |
+      | Flex Table List       | Disable sort order  | false              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                                         |
+      | Flex Table:General    | Sort Direction      | ASC            | ProgramReviewStepTemplates |                           |                                         |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:GrantCode__c}      |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:ReviewTextArea__c} |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:Justification__c}  |
+      | Flex Table List       | Disable sort order  | false          | ProgramReviewStepTemplates | Name                      | {RecordTypeDataTable:Description__c}    |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Setup" sub tab
+    Then I softly see column "Grant Abbreviation" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "ReviewTextArea" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Justification" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Description" is clickable in table "---program:-:flexGridEnhancedReviewStepID---"
+    And I click on column name "Grant Abbreviation" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Grant Abbreviation" value with "down" arrow
+    And I click on column name "ReviewTextArea" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "ReviewTextArea" value with "down" arrow
+    And I click on column name "Justification" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Justification" value with "down" arrow
+    And I click on column name "Description" for sorting of table "---program:-:flexGridEnhancedReviewStepID---"
+    Then I softly see column "Description" value with "down" arrow
+    Examples:
+      | Users | defaultFieldsApi                                           | newFieldsApi                                                                                               |
+      | PM    | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | GrantCode__c,ReviewTextArea__c,Justification__c,{flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} |

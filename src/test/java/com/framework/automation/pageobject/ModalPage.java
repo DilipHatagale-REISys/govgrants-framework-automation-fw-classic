@@ -108,4 +108,54 @@ public class ModalPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void clickOncolumnHeader(String columnName, String tableId) {
+        I.amPerforming().click().withJavaScript(By.xpath("//div[@id='" + tableId + "']//span[@ng-click and .//span[@class='ng-binding' and @title='" + columnName + "']]"));
+    }
+
+    public void assertUpArrowOrDownArrowIsDisplayed(String usage, String columnname, String arrow) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(afterClickColumnUpArrowOrDownArrowIsDisplayed(columnname, arrow));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(afterClickColumnUpArrowOrDownArrowIsDisplayed(columnname, arrow));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(afterClickColumnUpArrowOrDownArrowIsDisplayed(columnname, arrow)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(afterClickColumnUpArrowOrDownArrowIsDisplayed(columnname, arrow)).isFalse();
+        }
+    }
+
+    private boolean afterClickColumnUpArrowOrDownArrowIsDisplayed(String columnname, String arrow) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//th[.//span[text()='" + columnname + "']]//span[contains(@class, '" + arrow + "')] | //th[.//span[text()='" + columnname + "']]//i[contains(@class,'" + arrow + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertColumnNameIsClickable(String usage, String columnname, String tableName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(clickableColumnIsDisplayed(columnname, tableName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(clickableColumnIsDisplayed(columnname, tableName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(clickableColumnIsDisplayed(columnname, tableName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(clickableColumnIsDisplayed(columnname, tableName)).isFalse();
+        }
+    }
+
+    private boolean clickableColumnIsDisplayed(String columnname, String tableName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableName + "']//span[@ng-click and .//span[@class='ng-binding' and @title='" + columnname + "']]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

@@ -1,6 +1,5 @@
 @Forms-PATCHComponent @regression-PATCH @Forms @vrush-module
 Business Need: Forms Scenarios flextable UI,Forms Interface
-  Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in Forms component and will validate them.
 
   @206307 @206310
