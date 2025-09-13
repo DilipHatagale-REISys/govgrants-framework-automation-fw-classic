@@ -827,12 +827,20 @@ Business Need: history Component Scenarios
 
   @205601
   Scenario: History Field : ADMIN User -To verify, User change the negative currency field value from backend then it should display in the new value column
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6823                   | PBD-17265                  |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program For Field History"
-    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     And I enter value "10" into field "fieldFundedAmount__c"
     And I enter value "0" into field "fieldStartDate__c"
