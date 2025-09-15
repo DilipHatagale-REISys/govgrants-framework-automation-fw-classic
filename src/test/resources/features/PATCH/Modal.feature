@@ -709,7 +709,7 @@ Business Need: Modal Component Scenarios
       | Page Tabs Config      | Tab Title | Automation Tab testing | Grantor State Program Create | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3330                   |
+      | Page Tabs Config:Page Layout Action | Tab Title | test Automation Tab testing | Grantor State Program Create | Name                      | TAB-3331                   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
