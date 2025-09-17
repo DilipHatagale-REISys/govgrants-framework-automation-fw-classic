@@ -4947,7 +4947,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Owner" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268467 @268627
   Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (SPI)
@@ -4975,7 +4975,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Owner" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268473 @268632
   Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (SPI)
@@ -5003,7 +5003,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Owner" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268479 @268636
   Scenario Outline:Phase Level- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5032,7 +5032,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Owner" field
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ##### Data Type - Picklist - Status for SPI User  ####
   @268561
@@ -5062,7 +5062,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Status" field
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268570
   Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order and click on same phase then records should be in ascending order for data type-Picklist (SPI)
@@ -5090,7 +5090,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Status" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268576
   Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order and refreshes the page then records should be in ascending order for data type-Picklist (SPI)
@@ -5118,7 +5118,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Status" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268583
   Scenario Outline: Phase Level- To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5147,7 +5147,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Status" field
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ##### Data Type - Text - EGMS_ID for SPI User  ####
   @268591
@@ -5203,7 +5203,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268597
   Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and click on same phase then records should be in ascending order for data type-standard field (SPI)
@@ -5231,7 +5231,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268604
   Scenario Outline: Phase Level- To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (SPI)
@@ -5259,7 +5259,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User | newFieldsApi                                                                                                                                            | defaultFieldsApi                                                                                                                                        |
-      | SPI  | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268610
   Scenario Outline:Phase Level- To verify when sort direction of data type-standard field is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5288,7 +5288,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "EGMS ID" field
     Examples:
       | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 ############# Data Type - Number - Number of Approvals  ******************
   @268639
@@ -5319,7 +5319,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268642
   Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Number (SPI)
@@ -5349,7 +5349,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268648
   Scenario Outline:Phase Level- To verify when sort direction of data type-Number is set in ascending order and click on same phase then records should be in ascending order for data type-Number (SPI)
@@ -5377,7 +5377,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268665
   Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (SPI)
@@ -5405,7 +5405,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268669
   Scenario Outline: Phase Level- To verify when sort direction of data type-Number is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5434,7 +5434,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "X_Number of Approval Steps" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,NumberOfApprovalSteps__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ################## Data Type - Date - Application Due Date - For SPI user #####
   @268675
@@ -5465,7 +5465,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Application Due Date" field
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268679
   Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
@@ -5495,7 +5495,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Application Due Date" field
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268683
   Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order and click on same phase then records should be in ascending order for data type-Date (SPI)
@@ -5523,7 +5523,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Application Due Date" field
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268686
   Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
@@ -5551,7 +5551,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Application Due Date" field
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268689
   Scenario Outline: Phase Level- To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5580,7 +5580,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Application Due Date" field
     Examples:
       | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ###################### Data Type - Negotiation Submitted On - Date/Time - For SPI User ##########
   @268704
@@ -5611,7 +5611,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268709
   Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
@@ -5641,7 +5641,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268718
   Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order and click on same phase then records should be in ascending order for data type-date & time(SPI)
@@ -5669,7 +5669,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268726
   Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(SPI)
@@ -5697,7 +5697,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268738
   Scenario Outline: Phase Level- To verify when sort direction of data type-date & time is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5726,7 +5726,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Negotiation Submitted On" field
     Examples:
       | User | newFieldsApi                                                                                                                                                                 | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,NegotiationSubmittedOn__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 ################### Data Type - Percentage - For SPI User - Required Match #######
 
@@ -5758,7 +5758,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268798
   Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Percentage(SPI)
@@ -5788,7 +5788,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268805
   Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order and click on same phase then records should be in ascending order for data type-Percentage(SPI)
@@ -5816,7 +5816,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268807
   Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(Admin)
@@ -5844,7 +5844,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268821
   Scenario Outline: Phase Level- To verify when sort direction of data type-Percentage is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -5873,7 +5873,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Required Match Percentage." field
     Examples:
       | User | newFieldsApi                                                                                                                                                        | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,RequiredMatch__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 ############## Data Type - Formula - Announcement Name ###############
   @268824
@@ -5904,7 +5904,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Announcement Name" field
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268829
   Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
@@ -5934,7 +5934,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Announcement Name" field
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268832
   Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order and click on same phase then records should be in ascending order for data type-Formula (SPI)
@@ -5962,7 +5962,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Announcement Name" field
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268835
   Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (SPI)
@@ -5990,7 +5990,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Announcement Name" field
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268838
   Scenario Outline: Phase Level- To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -6019,7 +6019,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Announcement Name" field
     Examples:
       | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AnnouncementName__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 ############# Data Type - Checkbox - Review Initiated ##################
   @268841
@@ -6050,7 +6050,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Review Initiated" field
     Examples:
       | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268844
   Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Checkbox(SPI)
@@ -6080,7 +6080,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Review Initiated" field
     Examples:
       | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268847
   Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order and click on same phase then records should be in ascending order for data type-Checkbox(SPI)
@@ -6108,7 +6108,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Review Initiated" field
     Examples:
       | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268858
   Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(SPI)
@@ -6136,7 +6136,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Review Initiated" field
     Examples:
       | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268866
   Scenario Outline: Phase Level- To verify when sort direction of data type-Checkbox is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -6165,7 +6165,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Review Initiated" field
     Examples:
       | User | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,ReviewInitiated__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ########## Data Type - Email - Email Address  ###########
   @268950
@@ -6196,7 +6196,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Email Address" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268953
   Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
@@ -6226,7 +6226,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Email Address" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268957
   Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order and click on same phase then records should be in ascending order for data type-Email (SPI)
@@ -6254,7 +6254,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Email Address" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268960
   Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (SPI)
@@ -6282,7 +6282,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Email Address" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268963
   Scenario Outline: Phase Level- To verify when sort direction of data type-Email is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -6311,7 +6311,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Email Address" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,EmailAddress__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
     ############## Data Type - Currency - Award Ceiling #############
   @268967
@@ -6342,7 +6342,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268970
   Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
@@ -6372,7 +6372,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268974
   Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order and click on same phase then records should be in ascending order for data type-Currency (SPI)
@@ -6400,7 +6400,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268977
   Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (SPI)
@@ -6428,7 +6428,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268980
   Scenario Outline: Phase Level- To verify when sort direction of data type-Currency is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
@@ -6457,7 +6457,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "Award Ceiling" field
     Examples:
       | User | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,AwardCeiling__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   ################### Data Type - URL - URL #############
   @268984
@@ -6488,7 +6488,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268988
   Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order, user clicks on row level Edit action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
@@ -6518,7 +6518,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268992
   Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order and click on same phase then records should be in ascending order for data type-URL (SPI)
@@ -6546,7 +6546,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268995
   Scenario Outline:Phase Level- To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (SPI)
@@ -6574,7 +6574,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
   @268997
   Scenario Outline: Phase Level- To verify when sort direction of data type-URL is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
@@ -6603,7 +6603,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see "down" arrow is Displayed inside "URL" field
     Examples:
       | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                                           |
-      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+      | SPI3 | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,Status__c,URL__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 ##### Sorting - Quick Search ###############
   @269090

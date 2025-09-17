@@ -486,7 +486,7 @@ Business Need: Approval Process Component Scenarios
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    Then I see approval with subject as "Program Sent To Owner" is not displayed
+    Then I see approval with subject as "Send back Program" is not displayed
 
   @37348 @37506 @202418 @202420 @201939 @201941  @rejectConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
