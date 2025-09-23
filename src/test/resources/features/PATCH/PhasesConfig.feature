@@ -797,4 +797,5 @@ Business Need: Phase Config Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab
+    And I pause execution for "1" seconds
     Then I see option "Search" on left panel
