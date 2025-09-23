@@ -3906,7 +3906,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName              | fieldNewValue                                                                                   | coreComponentField |
       | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_IN_Internal | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I click CustomApp select dropdown
+    #When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
   @46404    @render_expression_CustomApp_With_UserType_NOTIN_Internal
