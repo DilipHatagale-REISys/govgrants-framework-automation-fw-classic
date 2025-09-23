@@ -245,7 +245,6 @@ Business Need: NotesandAttachments Component Scenarios
     And I click modal button "Save"
     And I pause execution for "2" seconds
     And I click on "close" button on "Add Attachments" modal
-    And I click on the "Close" button on the "Notes and Attachment" section
     Then I see row level action button "Edit" against "AttachmentTesting.pdf" in table name "Attachments"
     Then I see row level action button "Delete" against "AttachmentTesting.pdf" in table name "Attachments"
     Then I see row level action button "Download" against "AttachmentTesting.pdf" in table name "Attachments"
