@@ -9,8 +9,8 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Calender Config       | Active    | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory   | fieldName | fieldNewValue | coreComponentField   |
-      | Calender Config:General | Active    | false         | Grantor_Home_Program |
+      | configurationCategory   | fieldName | fieldNewValue | coreComponentField |
+      | Calender Config:General | Active    | false         | Program__c         |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
@@ -104,7 +104,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "My_Workspace_Calendar"
     And I click on "Month" Button at calendar
     And I pause execution for "5" seconds
-    And I click on "more" button in current date
+#    And I click on "more" button in current date
     And I click on lookup link contains "{SavedValue:PEGMSID}"
     And I wait for "5" seconds
     Then I softly see field "EGMS ID" as "{SavedValue:PEGMSID}"

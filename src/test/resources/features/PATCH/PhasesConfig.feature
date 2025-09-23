@@ -18,8 +18,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Technical Support" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
       #| ADMIN |
 
   @333608
@@ -36,8 +36,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Recent Items" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333610
@@ -47,16 +47,16 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Search" on left panel
 
-  @333612 @333579
+  @333612 @333579 @208351
   Scenario Outline: Sidebar search- PM- UI- Verify Sidebar search menu is visible
+  |Sidebar search- PM- UI- Verify Sidebar search menu is visible|
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     Then I see option "Search" on left panel
     Examples:
-      | User  |
-      | PM    |
-    #  | ADMIN |
+      | User |
+      | PM   |
 
   @333615
   Scenario: Sidebar- SPI- UI- Verify Sidebar "Tasks" menu is visible
@@ -72,8 +72,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Tasks" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
     #  | ADMIN |
 
   @333617
@@ -102,8 +102,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "BI & Analytics" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333620 @333582
@@ -113,8 +113,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Activities" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
     #  | ADMIN |
 
   @333621
@@ -152,8 +152,8 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Home" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333563
@@ -212,8 +212,8 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I do not see "Planning" phase
     Examples:
-      | User  | New-Profile                                                                                                    | Old-Profile                                                                                                        |
-      | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
+      | User | New-Profile                                                                                                    | Old-Profile                                                                                                        |
+      | PM   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
    #   | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; PM; TR1; TR2; TR3; VND; EBZ                   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
   @333639 @333592
@@ -228,8 +228,8 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Planning" phase
     Examples:
-      | User  | New-Profile                                                                                                        | Old-Profile                                                                                                        |
-      | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
+      | User | New-Profile                                                                                                        | Old-Profile                                                                                                        |
+      | PM   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
       #| ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
   @333640 @333593  @doubtedconfig
@@ -246,8 +246,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I do not see "Planning" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333646 @333647 @333649 @333650
@@ -262,8 +262,8 @@ Business Need: Phase Config Component Scenarios
     Then I see "Monitoring" phase
     Then I see "Closeout" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
     #  | ADMIN |
 
   @333648 @333651
@@ -297,8 +297,8 @@ Business Need: Phase Config Component Scenarios
     Then I see "Monitoring" phase
     Then I see "Closeout" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
    #   | ADMIN |
 
   @333643 @333642
@@ -314,8 +314,8 @@ Business Need: Phase Config Component Scenarios
     Then I see "Monitoring" phase
     Then I see "Closeout" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333642 @333594  @doubtedconfig
@@ -332,8 +332,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I do not see "Planning" phase
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
       #| ADMIN |
 
   @333607 @333578
@@ -343,8 +343,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Useful Links" on left panel
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
     #  | ADMIN |
 
   @333625
@@ -379,8 +379,8 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see book icon as "Home" tab
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
   #    | ADMIN |
 
   @333565
@@ -414,8 +414,8 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Planning" tab is highlighted for particular program
     Examples:
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
     #  | ADMIN |
 
   @34419    @validatePlanningPhaseAllowedProfile-gplanning
@@ -445,9 +445,9 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Automation" phase
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @333566 @333569
   Scenario Outline:Phase name- Admin-UI- To verify user enters numbers in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.
@@ -461,9 +461,9 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "0123456789" phase
     Examples:
-      | User  |
+      | User |
     ##  | ADMIN |
-      | PM    |
+      | PM   |
 
 
   @333568 @333567
@@ -479,9 +479,9 @@ Business Need: Phase Config Component Scenarios
     Then I see "AutomationTestingPhase" phase
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @333571
   Scenario: Phase name- External- UI- To verify user enter long text in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.
@@ -533,9 +533,9 @@ Business Need: Phase Config Component Scenarios
     Then I charts are displayed at "Bottom"
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @333542p @333545
   Scenario Outline: Phase name- admin- To verify 'Body Top Page URL' should be added on the phases config page
@@ -608,9 +608,9 @@ Business Need: Phase Config Component Scenarios
     Then I see "New" button inside "Internal Programs - Active" flex table not displayed
 
     Examples:
-      | User  |
+      | User |
      # | ADMIN |
-      | PM    |
+      | PM   |
 
   @34587    @validateIsPlanningDisplayedInTaskSummary-gplanning
   Scenario: Uncheck is Phase for planning in config. and validate Planning is not displayed in Task Summary on home page
@@ -762,9 +762,9 @@ Business Need: Phase Config Component Scenarios
     Then I see "3" charts are displayed
 
     Examples:
-      | User  |
+      | User |
      # | ADMIN |
-      | PM    |
+      | PM   |
 
   @333532 @333533 @333534
   Scenario: Phase name- External- To verify 'Total Charts Allowed Per Row' should be added on the phases config page
@@ -778,3 +778,23 @@ Business Need: Phase Config Component Scenarios
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Opportunities" tab
     Then I see "1" charts are displayed
+
+  @208354 @suiteid-199158
+  Scenario: Recently Viewed - PM- UI- Verify ‘Recently viewed items’ is visible
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "Title" as "PrgTitle"
+    Then I see "{SavedValue:PrgTitle}" records are present in Recently Viewed link in Sidebar
+
+  @208352 @suiteid-199158
+  Scenario: Sidebar search- SPI- UI- Verify Sidebar search menu is visible
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I see option "Search" on left panel
