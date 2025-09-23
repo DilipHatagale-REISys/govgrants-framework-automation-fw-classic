@@ -47,7 +47,7 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Search" on left panel
 
-  @333612 @333579 @208351
+  @333612 @333579 @208351  @suiteid-199158
   Scenario Outline: Sidebar search- PM- UI- Verify Sidebar search menu is visible
   |Sidebar search- PM- UI- Verify Sidebar search menu is visible|
     When I login to "As a Grantor" app as "<User>" user
@@ -789,6 +789,8 @@ Business Need: Phase Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     And I save the field labeled "Title" as "PrgTitle"
     Then I see "{SavedValue:PrgTitle}" records are present in Recently Viewed link in Sidebar
 
@@ -799,3 +801,54 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     And I pause execution for "1" seconds
     Then I see option "Search" on left panel
+
+  @208348 @208345 @208342 @208341 @208339 @208347 @suiteid-199158
+  Scenario: Sidebar- PM- UI- Verify Sidebar Collab menu is visible
+  |Sidebar- PM- UI- Verify Sidebar Task menu is visible|
+  |Sidebar- PM- UI- Verify Sidebar BI &Analytics menu is visible|
+  |Sidebar- Admin- Config- Verify admin can configure Sidebar BI &Analytics menu|
+  |Sidebar- PM- UI- Verify Sidebar Activity menu is visible|
+  |Sidebar- Admin- Config- Verify admin can configure Sidebar Collab menu|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "PM" user
+    Then I see changed label as "Collab" inside "Technical Support" in side bar sub menu
+    Then I see changed label as "Pending Tasks" inside "My Tasks" in side bar sub menu
+    Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
+    Then I see option "Activities" on left panel
+
+  @208349 @208346 @208343 @suiteid-199158
+  Scenario: Sidebar- SPI- UI- Verify Sidebar Collab menu is visible
+  |Sidebar- SPI- UI- Verify Sidebar Task menu is visible|
+  |Sidebar- SPI- UI- Verify Sidebar BI &Analytics menu is visible|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                                      | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | GrantorHome        | Phase Name                |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I see changed label as "Collab" inside "Technical Support" in side bar sub menu
+    Then I see changed label as "Pending Tasks" inside "My Tasks" in side bar sub menu
+    Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
+
+  @208340 @208325 @suiteid-199158
+  Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
+  |Default Landing Tab- SPI- UI- Verify if we should not land phase which is default|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                                      | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | GrantorHome        | Phase Name                |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I see option "Activities" on left panel
+    Then I do not see "Planning" phase
