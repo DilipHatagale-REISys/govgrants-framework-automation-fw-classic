@@ -44,9 +44,8 @@ public final class ChromeManager implements qrYoTsOWwA {
     private ChromeDriverService service;
     private static Boolean disableDriverEnforcedDownloadActivity = true;
 
-    @Override
     public void setupController() {
-        System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion140.exe");
+    System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion140.exe");
         if ("true".equalsIgnoreCase(System.getProperty("chromedebuglogs"))) {
             System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir") + "/target/chromedriver.log");
             System.setProperty("webdriver.chrome.verboseLogging", "true");
@@ -55,26 +54,23 @@ public final class ChromeManager implements qrYoTsOWwA {
 
         if(!"default".equalsIgnoreCase(EnvironmentFactory.getBrowserVersion())
                 && !"default".equalsIgnoreCase(EnvironmentFactory.getDriverVersion())) {
-//            driver = new ChromeDriver();
             driver = new ChromeDriver(CapabilitiesManager.getChromeCapabilities());
 //            WebDriverManager.chromedriver()
 //                    .browserVersion(EnvironmentFactory.getBrowserVersion())
 //                    .driverVersion(EnvironmentFactory.getDriverVersion())
 //                    .setup();
         } else if (!"default".equalsIgnoreCase(EnvironmentFactory.getBrowserVersion())) {
-//            driver = new ChromeDriver();
             driver = new ChromeDriver(CapabilitiesManager.getChromeCapabilities());
 //            WebDriverManager.chromedriver()
 //                    .browserVersion(EnvironmentFactory.getBrowserVersion())
 //                    .setup();
         } else if (!"default".equalsIgnoreCase(EnvironmentFactory.getDriverVersion())) {
-//            driver = new ChromeDriver();
             driver = new ChromeDriver(CapabilitiesManager.getChromeCapabilities());
+
 //            WebDriverManager.chromedriver().useBetaVersions()
 //                    .driverVersion(EnvironmentFactory.getDriverVersion())
 //                    .setup();
         } else {
-//            driver = new ChromeDriver();
             driver = new ChromeDriver(CapabilitiesManager.getChromeCapabilities());
 //            driver.get("https://www.gmail.com");
 //            WebDriverManager.chromedriver().useBetaVersions().setup();

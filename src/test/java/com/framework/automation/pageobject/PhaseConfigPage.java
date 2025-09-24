@@ -77,8 +77,16 @@ public class PhaseConfigPage extends GovGrantsManager {
      *
      * @param phaseName
      */
-    public void assertSpecificPhaseDisplayed(String phaseName) {
-        Assert.assertTrue(isPhaseDisplayed(phaseName));
+    public void assertSpecificPhaseDisplayed(String usage, String phaseName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isPhaseDisplayed(phaseName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isPhaseDisplayed(phaseName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPhaseDisplayed(phaseName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isPhaseDisplayed(phaseName)).isFalse();
+        }
     }
 
     /**
@@ -367,6 +375,7 @@ public class PhaseConfigPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+            flag = false;
         }
         return flag;
     }

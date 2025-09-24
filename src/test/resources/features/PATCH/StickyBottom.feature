@@ -3,7 +3,7 @@ Business Need: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
 
-  @69394p @validateEnableGovGrantSetupAndEnablePlatformSetupOptionsAreNotShownInStickyBottomForUser
+  @69394 @validateEnableGovGrantSetupAndEnablePlatformSetupOptionsAreNotShownInStickyBottomForUser
   Scenario: Disabling Enable Admin setup custom setting and validating display of Enable GovGrant Setup And Enable Platform Setup Options in sticky bottom
     Given I have "global" configuration as below:
       | id              | ownerId         | booleanValue                  | customSettingApiName |

@@ -17,7 +17,7 @@ public class PhaseConfig {
 	 * @param            filterClause: filter clause to get the specific id
 	 * @return: payload
 	 */
-	public String setPhaseFieldConfig(String fieldLabel, String value, String filterClause) {
+	public String setPhaseFieldConfig(String fieldLabel, String value, String 	filterClause) {
 		String finalPayload = null;
 		switch (fieldLabel.toUpperCase()) {
 		case "AVAILABLE FOR PROFILES":

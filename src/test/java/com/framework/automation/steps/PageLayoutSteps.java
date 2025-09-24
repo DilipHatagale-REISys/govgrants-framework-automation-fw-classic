@@ -574,9 +574,9 @@ public class PageLayoutSteps {
         pageLayoutPage.assertSymbolAtRequiredForSubmitField(symbol, fieldName);
     }
 
-    @Then("I see field message with text as {string} and {string}")
-    public void iSeeFieldMessageWithTextAsAnd(String message1, String message2) {
-        pageLayoutPage.assertRequiredFieldMessageAtHeader(message1, message2);
+    @Then("^I (see|do not see|softly see|softly do not see) field message with text as \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void iSeeFieldMessageWithTextAsAnd(String usage, String message1, String message2) {
+        pageLayoutPage.assertRequiredFieldMessageAtHeader(usage, message1, message2);
     }
 
     @Then("^I (see|do not see|softly do not see) missing field badge on \"([^\"]*)\" tab$")
