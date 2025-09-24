@@ -513,8 +513,9 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Applications" tab
     Then I charts are displayed at "Bottom"
 
-  @333549
+  @333549 @306426
   Scenario: Phase name- External-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases
+    |Phase name- External-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Phase Config          | Body Flex Table | GrantsList        | ApiGeneratedId:0 |
@@ -526,8 +527,9 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Grants" tab
     Then I see "New" button inside "Grants - Active" flex table not displayed
 
-  @333543 @333546
+  @333543 @333546 @306423
   Scenario Outline: Phase name- admin-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases
+    |Phase name- Internal-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Phase Config          | Body Flex Table | Programs          | ApiGeneratedId:0 |
@@ -610,27 +612,6 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" charts are displayed
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @44735
-  Scenario Outline: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Phase Config Sobject  | Highlight Phase? | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0746                   |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "All Announcements"
-    When I perform quick search for "Announcement testing"
-    And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
-    When I click on "View" icon for "Announcement testing" inside table
-    Then I see "Planning" tab is highlighted for particular program
     Examples:
       | User |
      # | ADMIN |
@@ -863,4 +844,25 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User |
     #  | ADMIN |
+      | PM   |
+
+  @44735 @wip
+  Scenario Outline: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Highlight Phase? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0746                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement testing"
+    And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
+    When I click on "View" icon for "Announcement testing" inside table
+    Then I see "Planning" tab is highlighted for particular program
+    Examples:
+      | User |
+     # | ADMIN |
       | PM   |
