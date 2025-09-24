@@ -4054,7 +4054,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "View Native Page" options is displayed
 
   @347783
-  Scenario Outline: Flex Layout_UI_SPI_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of Amendment Request  record.
+  Scenario: Flex Layout_UI_SPI_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of Amendment Request  record.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab

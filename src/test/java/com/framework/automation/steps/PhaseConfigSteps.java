@@ -30,14 +30,14 @@ public class PhaseConfigSteps {
         phaseConfigPage.clickOnGlobalSearchTextBox();
     }
 
-    @Then("^I do not see \"([^\"]*)\" phase$")
-    public void assertPhaseNotDisplayed(String phaseName) {
-        phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
-    }
+//    @Then("^I do not see \"([^\"]*)\" phase$")
+//    public void assertPhaseNotDisplayed(String phaseName) {
+//       phaseConfigPage.assertSpecificPhaseNotDisplayed(phaseName);
+//    }
 
-    @Then("^I see \"([^\"]*)\" phase$")
-    public void asserPhaseDisplayed(String phaseName) {
-        phaseConfigPage.assertSpecificPhaseDisplayed(phaseName);
+    @Then("^I (softly see|see|do not see|softly do not see) \"([^\"]*)\" phase$")
+    public void asserPhaseDisplayed(String usage,String phaseName) {
+        phaseConfigPage.assertSpecificPhaseDisplayed(usage, phaseName);
     }
 
     @Then("^I see \"([^\"]*)\" phase at position \"([^\"]*)\"$")

@@ -1,14 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>rei.saas.automation</groupId>
     <artifactId>framework-project</artifactId>
     <packaging>jar</packaging>
     <name>REI SAAS Automation - Framework Project</name>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -16,8 +12,7 @@
         <threads/>
         <env/>
         <numberOfTimesRunTag/>
-
-        <!-- Versions -->
+        <!--  Versions  -->
         <java.version>11</java.version>
         <selenium.version>3.141.59</selenium.version>
         <selenium.server.version>4.0.0-alpha-2</selenium.server.version>
@@ -41,7 +36,6 @@
         <cucumber.report.json.location>${project.build.directory}/cucumber-report</cucumber.report.json.location>
         <generated.report.location>${project.build.directory}/Automation-Report</generated.report.location>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -68,8 +62,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -86,7 +78,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -112,19 +103,16 @@
             <artifactId>slf4j-nop</artifactId>
             <version>1.7.25</version>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
             <version>${selenium.server.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-model</artifactId>
@@ -170,11 +158,11 @@
             <artifactId>maven-invoker</artifactId>
             <version>3.0.1</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.pojosontheweb</groupId>-->
-        <!--            <artifactId>monte-repack</artifactId>-->
-        <!--            <version>1.0.1</version>-->
-        <!--        </dependency>-->
+        <!--         <dependency> -->
+        <!--             <groupId>com.pojosontheweb</groupId> -->
+        <!--             <artifactId>monte-repack</artifactId> -->
+        <!--             <version>1.0.1</version> -->
+        <!--         </dependency> -->
         <dependency>
             <groupId>com.paulhammant</groupId>
             <artifactId>ngwebdriver</artifactId>
@@ -237,14 +225,12 @@
             <version>3.0.9</version>
         </dependency>
     </dependencies>
-
-    <!--    <repositories>-->
-    <!--        <repository>-->
-    <!--            <id>saasbusinesslayer.automation</id>-->
-    <!--            <url>http://nexus.reisys.com:8081/nexus/content/repositories/saasbusinesslayer.automation</url>-->
-    <!--        </repository>-->
-    <!--    </repositories>-->
-
+    <!--     <repositories> -->
+    <!--         <repository> -->
+    <!--             <id>saasbusinesslayer.automation</id> -->
+    <!--             <url>http://nexus.reisys.com:8081/nexus/content/repositories/saasbusinesslayer.automation</url> -->
+    <!--         </repository> -->
+    <!--     </repositories> -->
     <build>
         <plugins>
             <plugin>
@@ -301,8 +287,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceRunnerTemplateFile>src/test/resources/configuration/CustomCreator.java
-                    </sourceRunnerTemplateFile>
+                    <sourceRunnerTemplateFile>src/test/resources/configuration/CustomCreator.java </sourceRunnerTemplateFile>
                     <sourceFeatures>src/test/resources/features</sourceFeatures>
                     <generatedFeatureDirectory>${generated.feature.directory}</generatedFeatureDirectory>
                     <generatedRunnerDirectory>${generated.runner.directory}</generatedRunnerDirectory>
@@ -351,12 +336,10 @@
                     <failScenariosOnPendingOrUndefinedSteps>true</failScenariosOnPendingOrUndefinedSteps>
                     <expandBeforeAfterHooks>true</expandBeforeAfterHooks>
                     <customCss>target/Automation-Report/test_blaze_config/custom.css</customCss>
-                    <customParametersFile>target/Automation-Report/test_blaze_config/custom.properties
-                    </customParametersFile>
+                    <customParametersFile>target/Automation-Report/test_blaze_config/custom.properties </customParametersFile>
                     <logLevel>off</logLevel>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -371,8 +354,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -384,27 +365,23 @@
                     <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-            <!--                <version>${jacadoc.version}</version>-->
-            <!--                <configuration>-->
-            <!--                    <doclint>none</doclint>-->
-            <!--                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>-->
-            <!--                </configuration>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>attach-javadocs</id>-->
-            <!--                        <goals>-->
-            <!--                            <goal>jar</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
-
+            <!--             <plugin> -->
+            <!--                 <groupId>org.apache.maven.plugins</groupId> -->
+            <!--                 <artifactId>maven-javadoc-plugin</artifactId> -->
+            <!--                 <version>${jacadoc.version}</version> -->
+            <!--                 <configuration> -->
+            <!--                     <doclint>none</doclint> -->
+            <!--                     <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable> -->
+            <!--                 </configuration> -->
+            <!--                 <executions> -->
+            <!--                     <execution> -->
+            <!--                         <id>attach-javadocs</id> -->
+            <!--                         <goals> -->
+            <!--                             <goal>jar</goal> -->
+            <!--                         </goals> -->
+            <!--                     </execution> -->
+            <!--                 </executions> -->
+            <!--             </plugin> -->
         </plugins>
     </build>
-
-
 </project>

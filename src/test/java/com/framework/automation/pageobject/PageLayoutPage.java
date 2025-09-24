@@ -1245,8 +1245,16 @@ public class PageLayoutPage extends GovGrantsManager {
      * @param message2
      * @author ashwini.mahore
      */
-    public void assertRequiredFieldMessageAtHeader(String message1, String message2) {
-        Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+    public void assertRequiredFieldMessageAtHeader(String usage, String message1, String message2) {
+        if (usage.equalsIgnoreCase("see")) {
+           Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+            } else if (usage.equalsIgnoreCase("softly see")) {
+                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isTrue();
+            } else if (usage.equalsIgnoreCase("do not see")) {
+                Assert.assertFalse(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+            } else if (usage.equalsIgnoreCase("softly do not see")) {
+                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isFalse();
+            }
     }
 
 

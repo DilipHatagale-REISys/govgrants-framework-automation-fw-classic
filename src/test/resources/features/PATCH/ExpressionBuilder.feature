@@ -3906,7 +3906,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName              | fieldNewValue                                                                                   | coreComponentField |
       | Custom App Config:General | Render Expression JSON | govgrants_config:Custom_App_StateAsGrantor_RenderExpressionWith_Custom_App_UserType_IN_Internal | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I click CustomApp select dropdown
+    #When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
   @46404    @render_expression_CustomApp_With_UserType_NOTIN_Internal
@@ -7811,7 +7811,7 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"F
+    And I click toggle button to select "Grants - Active"
     When I perform quick search for "{Framework_recordUsed:GrantActiveHideJason}"
     When I click on "View" icon for "{Framework_recordUsed:GrantActiveHideJason}" inside table
     When I navigate to "Files" sub tab
