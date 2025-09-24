@@ -860,7 +860,7 @@ Business Need: Phase Config Component Scenarios
     And I click toggle button to select "All Announcements"
     When I perform quick search for "Announcement testing"
     And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
-    When I click on "View" icon for "Announcement testing" inside table
+    And I click on "View" icon for "Announcement testing" inside table
     Then I see "Planning" tab is highlighted for particular program
     Examples:
       | User |
