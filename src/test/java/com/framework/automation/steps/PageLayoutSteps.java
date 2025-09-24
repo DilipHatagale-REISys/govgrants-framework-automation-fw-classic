@@ -974,4 +974,9 @@ public class PageLayoutSteps {
     public void iSeeFieldIseditableForTheUser(String usage, String fieldname) {
         pageLayoutPage.assertIfFieldIsReadOnly(usage, fieldname);
     }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" phase is active$")
+    public void iSeePhaseIsActive(String usage, String phaseName) {
+        pageLayoutPage.assertIfPhaseIsActive(usage, phaseName);
+    }
 }

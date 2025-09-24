@@ -3932,4 +3932,27 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfPhaseIsActive(String usage, String phaseName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isActivePhaseOnUI(phaseName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isActivePhaseOnUI(phaseName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isActivePhaseOnUI(phaseName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isActivePhaseOnUI(phaseName)).isFalse();
+        }
+    }
+
+    private boolean isActivePhaseOnUI(String phaseName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div/ul[@class='nav navbar-nav']/li[@class='ng-scope active']/a[@title='" + phaseName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

@@ -105,6 +105,22 @@ public class SideBar {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__SidebarComponentSequence__c), value);
                 break;
+            case "AVAILABLE FOR PROFILES":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                filterClause),
+                        String.valueOf(SObjectAPIs.GNT__AvailableForProfiles__c), value);
+                break;
+            case "CUSTOM APP NAME":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__CustomAppName__c), value);
+                break;
+            case "CONFIG: CUSTOM APP":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__CustomAppConfig__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
