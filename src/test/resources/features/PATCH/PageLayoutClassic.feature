@@ -6961,19 +6961,16 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-23608                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-23608                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue                     |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedTotalAwardAmount__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedTotalAwardAmount__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedTotalAwardAmount__c} |
+    When I login to "As a Grantor" app as "EXE" user
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137803 verify that currency field is hidden on the basis of announcement type field value
-    Then I softly cannot see field "Expected Total Award Amount" inside page block
+    When I navigate to "Competitive" content inside "Announcements" subheader on left panel
+    And I click toggle button to select "Draft Competitive Announcements"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     And I click modal button "Continue"
  # @137803 verify that req field message is not displayed for hidden currency field
     Then I cannot see the following message in the page details contains:
@@ -6987,19 +6984,16 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-23609                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-23609                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedNumberofAwards__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedNumberofAwards__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | {CommonConfigFile:ExpectedNumberofAwards__c} |
+    When I login to "As a Grantor" app as "EXE" user
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137807 verify that number field is hidden on the basis of announcement type field value
-    Then I softly cannot see field "Expected Number of Awards" inside page block
+    When I navigate to "Competitive" content inside "Announcements" subheader on left panel
+    And I click toggle button to select "Draft Competitive Announcements"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     And I click modal button "Continue"
  # @137807 verify that req field message is not displayed for hidden number field
     Then I cannot see the following message in the page details contains:
@@ -7013,19 +7007,16 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                            | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                        | Announcement Create - Grantor | Name                      | PBD-23610                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                     | Announcement Create - Grantor | Name                      | PBD-23610                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+      | configurationCategory                    | fieldName         | fieldNewValue                                            | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | {CommonConfigFile:FundingOppURL__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                        | Announcement Create - Grantor | Name                      | {CommonConfigFile:FundingOppURL__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                     | Announcement Create - Grantor | Name                      | {CommonConfigFile:FundingOppURL__c} |
+    When I login to "As a Grantor" app as "EXE" user
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137815 verify that URL field is hidden on the basis of announcement type field value
-    Then I softly cannot see field "External Announcement URL" inside page block
+    When I navigate to "Competitive" content inside "Announcements" subheader on left panel
+    And I click toggle button to select "Draft Competitive Announcements"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     And I click modal button "Continue"
  # @137815 verify that req field message is not displayed for hidden URL field
     Then I cannot see the following message in the page details contains:
@@ -7039,23 +7030,20 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | PBD-23611                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | PBD-23611                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+      | configurationCategory                    | fieldName         | fieldNewValue                                             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | {CommonConfigFile:FOAPublicationDate__c} |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | {CommonConfigFile:FOAPublicationDate__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | {CommonConfigFile:FOAPublicationDate__c} |
+    When I login to "As a Grantor" app as "EXE" user
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137818 verify that URL field is hidden on the basis of announcement type field value
-    Then I softly cannot see field "FOA Publication Date" inside page block
+    When I navigate to "Competitive" content inside "Announcements" subheader on left panel
+    And I click toggle button to select "Draft Competitive Announcements"
+    And I click on top right button "New" in flex table with id "---announcement:-:competitiveAnnouncementTableId---"
+    And I enter "CompetitiveAnnouncement" values from "Announcement_Field_Values.xlsx"
     And I click modal button "Continue"
  # @137818 verify that req field message is not displayed for hidden URL field
     Then I cannot see the following message in the page details contains:
-      | FOA Publication Date is required to save under Overview. |
+      | FOA Release Date is required to save. |
 
   @137821    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
@@ -7462,7 +7450,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7512,15 +7500,16 @@ Business Need: Page Layout Component Scenarios
       | Notes And Attachment Action Sobject Config | Attachment Add Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Programn__c        |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+      | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Application__c     |                           |                            |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Files" sub tab
-    Then I see "Add" button inside "Files" flex table not displayed
+    And I navigate to "Applications" tab
+    And I navigate to "Applications" content inside "Applications" subheader on left panel
+    When I click toggle button to select "Applications - All"
+    When I perform quick search for "Converted to Award"
+    When I click on "View" icon for "Converted to Award" inside flex table with id "---program:-:ApplicationsApplicationsTableid---"
+    When I navigate to "Forms and Files" sub tab
+    Then I see "Add" button inside "Attachments" flex table not displayed
 
   @146395    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsing$UserOperator
   Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "$user"
@@ -7564,7 +7553,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7615,13 +7604,14 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Files" sub tab
+    And I navigate to "Applications" tab
+    And I navigate to "Applications" content inside "Applications" subheader on left panel
+    When I click toggle button to select "Applications - All"
+    When I perform quick search for "Converted to Award"
+    When I click on "View" icon for "Converted to Award" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Forms and Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
   @146402    @verifyHideExpressioJsonByHidingAddActionAtNotesUsing$UserOperator
@@ -7700,7 +7690,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7717,7 +7707,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7734,7 +7724,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7770,7 +7760,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Program__c         |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -7790,7 +7780,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Program__c         |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Program__c         |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"

@@ -108,6 +108,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
     When I pause execution for "5" seconds
+    And I click on "Comment" action at "Test Automation PM collab phase Comment" comment inside my feed
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the comment
     And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
     And I pause execution for "5" seconds
@@ -273,7 +274,7 @@ Business Need: collab Component Scenarios
     And I click modal button "Ok"
     Then I do not see "Test Automation record admin to check post delete access" inside flex table with id "---program:-:myFeedTableId---"
 
-  @112491    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
+  @112491t    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from record level collab tab
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -284,6 +285,7 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
     Then I softly see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I refresh the page
     And I click on "Delete" action at "Test Automation record comment" comment inside my feed
     And I click modal button "Ok"
     Then I softly do not see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
@@ -569,7 +571,9 @@ Business Need: collab Component Scenarios
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
-    Then I see user logo at comment "Test Automation Admin Comment" is small in size inside my feed home
+    And I enter value "Test logo" in my feed section and share the comment
+    And I refresh the page
+    Then I see user logo at comment "Test logo" is small in size inside my feed home
 
   @121192    @verifyThatUploadFileFromComputerAndLibraryTabsDisplayedAtAttachFileModalAtRecordLevelCollabTab @doubt
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab

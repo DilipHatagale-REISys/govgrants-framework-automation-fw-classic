@@ -3080,7 +3080,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public Boolean isCommentSectionLogoDisplayedSmallInSizeAtMyFeedSection(String comment, Boolean isHome) {
         boolean flag = false;
         TestingBlazeGlobal.setVariable("highlightElements", "off");
-        WebElement getCommentLogoSizeAtCollab = I.amPerforming().getElementReference().of(By.xpath("//div[text()='" + comment + "']/parent::div/preceding-sibling::div[@class='usrImgLeft' or @class='collabCommentUserImage']/img"));
+        WebElement getCommentLogoSizeAtCollab = I.amPerforming().getElementReference().of(By.xpath("//span[text()='" + comment + "']/ancestor::div/preceding-sibling::div//img | //div[text()='" + comment + "']/parent::div/preceding-sibling::div[@class='usrImgLeft' or @class='collabCommentUserImage']/img"));
         if (isHome) {
             if (getCommentLogoSizeAtCollab.getCssValue("width").equals("25px")
                     && getCommentLogoSizeAtCollab.getCssValue("height").equals("25px")) {
