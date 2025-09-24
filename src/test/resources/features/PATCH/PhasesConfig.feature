@@ -190,7 +190,7 @@ Business Need: Phase Config Component Scenarios
     Then I see "Home1" phase
 
     Examples:
-<<<<<<< HEAD
+    <<<<<<< HEAD
       | User  |
       | PM    |
       | ADMIN |
@@ -435,8 +435,8 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
 
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @333565 @306406
@@ -466,8 +466,8 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
 
-      | User  |
-      | PM    |
+      | User |
+      | PM   |
      # | ADMIN |
 
   @34419    @validatePlanningPhaseAllowedProfile-gplanning
@@ -509,7 +509,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Tab Display Label | 0123456789    | GrantorPlanning    |
+      | Phase Config:General  | Tab Display Label | 0123456789    | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "0123456789" phase
@@ -558,8 +558,8 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Phase Config          | Tab Display Label | Opportunities     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField     |
-      | Phase Config:General  | Tab Display Label | 01234567891   | RecipientAnnouncements |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Tab Display Label | 01234567891   | RecipientCloseout  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     Then I see "01234567891" phase
