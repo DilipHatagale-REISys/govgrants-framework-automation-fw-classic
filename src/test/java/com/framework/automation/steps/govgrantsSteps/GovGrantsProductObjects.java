@@ -117,7 +117,7 @@ public final class GovGrantsProductObjects {
             return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "] | //div[@id='" + tableId + "']//*[contains(text(),'" + text + "')] | //div[@id='" + tableId + "']//*[contains(translate(., \n" +
                     "                                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ'," +
                     "                                      'abcdefghijklmnopqrstuvwxyz')," +
-                    "                   '" + text + "')]"));
+                    "                   '" + text + "')] | //a[@title='" + tableId + "']/ancestor::div[@class='panel panel-default ng-scope']//div[contains(text(),'" + text + "')]"));
         } catch (Exception e) {
         }
         return false;
@@ -267,15 +267,13 @@ public final class GovGrantsProductObjects {
     private boolean isPageBlockTitleDisplayedOnModal(String titleName) {
         boolean flag = false;
         try {
-            if(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]"))))
-            {
+            if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]")))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
     }
-
 
 
     /**

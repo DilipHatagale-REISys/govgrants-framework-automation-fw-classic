@@ -1,9 +1,9 @@
-@FieldHistory-PATCHcomponent @regression-PATCH @history
+@FieldHistory
 Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
 
-  @69537p   @VerifyDisplayOfRecordsInHistoryTableAsPerSelectedObjectFromDropDown
+  @69537
   Scenario: Validate all program records are shown in Field History table if Program object is selected in dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -34,7 +34,7 @@ Business Need: history Component Scenarios
     And I pause execution for "5" seconds
     Then I softly see "{SavedValue:PEGMSID}" value in flex table id "---program:-:historyTableId---"
 
-  @69578p    @VerifyActualApproverAndAssignedToNameIsDisplayedInApprovalHistoryAfterRecordReassignToUser
+  @69578
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
