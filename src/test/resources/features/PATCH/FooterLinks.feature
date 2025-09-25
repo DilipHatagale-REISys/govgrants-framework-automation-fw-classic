@@ -3,7 +3,7 @@ Business Need: Footer Links Component Scenarios
   Test all Footer configuration based scenarios
   As a configuration manager i make different changes related to footer links and will validate them in history component.
 
-      @544847_1
+  @544847_1
     Scenario Outline: All footer link should open in New tab
       When I login to "As a Grantor" app as "<User>" user
       When I navigate to "Home" tab
