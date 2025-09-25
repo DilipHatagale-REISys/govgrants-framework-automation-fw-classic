@@ -1,11 +1,14 @@
-@NotesandAttachments-PATCHcomponent @regression-PATCH @NotesAttachments
+@NotesandAttachments @NotesAttachments
 Business Need: NotesandAttachments Component Scenarios
   Test all NotesandAttachments component based scenarios
   As a configuration manager i make different configurational changes in NotesandAttachments component and will validate them.
 
-  @382876 @382875 @SanityPATCH @SanityPATCHNotes
+  @382876 @382875 @202286 @202287 @202288
   Scenario Outline: Sanity TC - PM - To verify that Notes and Attachments tables should be render on page layout
   |Sanity TC - Admin - To verify that Notes and Attachments tables should be render on page layout|
+    |Attachments- Admin- Config- Verify admin can configure to add ‘Attachments And Notes’ in page block|
+    |Attachments- Admin- Config- Verify Attachments table is getting displayed on UI|
+    |Attachments- PM- UI- Verify Attachments table is getting displayed on UI|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
@@ -40,12 +43,19 @@ Business Need: NotesandAttachments Component Scenarios
 
   @382881 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - SPI - To verify that Notes and Attachments tables should be render on page layout
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "Application For Announcement Testing"
-    When I click on "View" icon for "Application For Announcement Testing" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
+    And I enter "Edition" values from "Application_Field_Values.xlsx"
+    When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed

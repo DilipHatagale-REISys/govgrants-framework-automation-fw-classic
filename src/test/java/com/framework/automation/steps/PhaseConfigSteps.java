@@ -199,4 +199,9 @@ public class PhaseConfigSteps {
     public void iSeeSingleRowContainsTwoChartsWithWidthOr(String usage, String width1, String width2) {
         phaseConfigPage.assertChartCountAvailableOnSingleRow(usage, width1, width2);
     }
+
+    @And("^I click on \"([^\"]*)\" footer link$")
+    public void iClickOnFooterLink(String linkName) {
+        phaseConfigPage.clickOnFooterLink(linkName);
+    }
 }
