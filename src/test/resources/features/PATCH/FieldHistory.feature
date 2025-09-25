@@ -3,11 +3,13 @@ Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
 
-  @69537 @204898 @204899
+  @69537 @204898 @204899 @205057 @205058 @205061 @205063
   Scenario Outline: Validate all program records are shown in Field History table if Program object is selected in dropdown
   |Field History-Admin User- To verify, user should be able to see field history for selected filter as program.|
-    |Field History- Admin user-To verify, user should be able to see field history by applying filter for review steps.|
-    |Field History - PM user- User should be able to see the header help text on mouse pointer of help icon besides quick search.|
+  |Field History- Admin user-To verify, user should be able to see field history by applying filter for review steps.|
+  |Field History - PM user- User should be able to see the header help text on mouse pointer of help icon besides quick search.|
+  |Field History - PM user - User should be able search the field history by quick search|
+  |Field History - PM user- User should be able to search by entering text in quick search filter.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
@@ -50,7 +52,41 @@ Business Need: history Component Scenarios
     Examples:
       | User |
      #| ADMIN |
-      | PM    |
+      | PM   |
+
+  @205064 @205067 @205068 @205070 @205090 @205092 @205095 @205097 @205213 @205214
+  Scenario Outline: Field History - PM user - User should be able to see the 'New Value' for selected record.
+  Field History - PM user - User should be able to see the 'Old Value' for selected record.
+  Field History - PM user - User should be able to see the 'Changed Field'  for selected record.
+  Field History -PM user- User should be able to see the 'Changed By' value for selected record.
+  Field History -PM user- User should be able to see the 'EGMS ID' value for selected record.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                     | Program |
+      | {SavedValue:PM Username} | Step 1  |
+    And I click on "Submit For Approval" in the page details
+    When I navigate to "History" sub tab
+    Then I see value "Submitted For Approval" for title "New Value" inside table "---program:-:historyTableId---"
+    Then I see value "Created" for title "Old Value" inside table "---program:-:historyTableId---"
+    Then I see value "Status" for title "Changed Field" inside table "---program:-:historyTableId---"
+
+    Examples:
+      | User |
+     # | ADMIN |
+      | PM   |
 
   @69578
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
@@ -663,24 +699,6 @@ Business Need: history Component Scenarios
     Then I see "{SavedValue:NewNumber}" shown inside "New Value" column in history table
     Then I see "{SavedValue:OldNumber}" shown inside "Old Value" column in history table
 
-  @205057 @205058 @205061 @205063
-  Scenario Outline: Field History - PM user - User should be able search the field history by quick search
-  Field History - PM user- User should be able to search by entering text in quick search filter.
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    And I save the field labeled "Created By" as "Changed By"
-    When I navigate to "History" sub tab
-    When I perform quick search for "{SavedValue:Changed By}" in "---program:-:historyTableId---" panel
-    Then I see value "{SavedValue:Changed By}" for title "Changed By" inside table "---program:-:historyTableId---"
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
   @205059p @205060
   Scenario Outline: Field History - PM user - User should be able search field history by applying advance filter.
     When I login to "As a Grantor" app as "<User>" user
@@ -700,33 +718,7 @@ Business Need: history Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @205064 @205067 @205068 @205070 @205090 @205092 @205095 @205097 @205213 @205214
-  Scenario Outline: Field History - PM user - User should be able to see the 'New Value' for selected record.
-  Field History - PM user - User should be able to see the 'Old Value' for selected record.
-  Field History - PM user - User should be able to see the 'Changed Field'  for selected record.
-  Field History -PM user- User should be able to see the 'Changed By' value for selected record.
-  Field History -PM user- User should be able to see the 'EGMS ID' value for selected record.
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Created By" as "Changed By"
-    When I navigate to "History" sub tab
-    Then I see value "Active" for title "New Value" inside table "---program:-:historyTableId---"
-    Then I see value "Approved" for title "Old Value" inside table "---program:-:historyTableId---"
-    Then I see value "Status" for title "Changed Field" inside table "---program:-:historyTableId---"
-    Then I see value "{SavedValue:Changed By}" for title "Changed By" inside table "---program:-:historyTableId---"
-    Then I see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:historyTableId---"
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @205098p @205099 @skiponjenkins
+  @205098 @205099
   Scenario Outline:Field History- PM user - User should be able to perform export functionality 'Download as PDF' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as PDF' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -735,10 +727,9 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Internal Programs - Active"
     And I click on "View" icon in flex table for first draft record
     When I navigate to "History" sub tab
-    #When I select "Program" from dropdown inside page block
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
-    #And I download the file
+    And I download the file
     Then I see "EGMS ID" on page "1" of "govgrants" pdf file
 
     Examples:

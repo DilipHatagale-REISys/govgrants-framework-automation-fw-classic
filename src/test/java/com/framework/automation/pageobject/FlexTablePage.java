@@ -1875,7 +1875,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean isOptionDisplayed(String option) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(""))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//select//option[@selected='selected' and contains(text(),'" + option + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

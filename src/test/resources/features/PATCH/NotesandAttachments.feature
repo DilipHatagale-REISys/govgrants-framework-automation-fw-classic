@@ -289,7 +289,7 @@ Business Need: NotesandAttachments Component Scenarios
   Scenario Outline: Sanity TC - Admin - To verify that user able to see View action on Notes table at row level
   |Sanity TC - PM - To verify that user able to see Delete action on Notes and Attachments tables at row level|
   |Sanity TC - Admin - To verify that user able to see Delete action on Notes and Attachments tables at row level|
-    When I login to "As a Grantor" app as "<Users>" user
+    When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
