@@ -17,10 +17,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -82,10 +82,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -113,10 +113,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -144,10 +144,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -196,10 +196,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -210,7 +210,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
     And I pause execution for "5" seconds
-    And I upload attachment without random number "AttachmentTesting.pdf" of type "General Assurances" from computer
+    And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
     And I enter value "Test Automation" into "Description"
     And I pause execution for "3" seconds
     And I click modal button "Save"
@@ -289,11 +289,13 @@ Business Need: NotesandAttachments Component Scenarios
   Scenario Outline: Sanity TC - Admin - To verify that user able to see View action on Notes table at row level
   |Sanity TC - PM - To verify that user able to see Delete action on Notes and Attachments tables at row level|
   |Sanity TC - Admin - To verify that user able to see Delete action on Notes and Attachments tables at row level|
-    When I login to "As a Grantor" app as "<User>" user
+    When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
-    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
     And I upload attachment without random number "AttachmentTesting.pdf" of type "Program Artifacts" from computer
@@ -439,10 +441,10 @@ Business Need: NotesandAttachments Component Scenarios
       | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {NotesandAttachments:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
+      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | {CommonConfig:NoteAndAttachmetBlock} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

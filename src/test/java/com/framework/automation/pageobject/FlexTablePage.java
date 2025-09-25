@@ -1859,4 +1859,27 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void asserTochecOptionDisplayed(String usage, String option) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isOptionDisplayed(option));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isOptionDisplayed(option));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayed(option)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayed(option)).isFalse();
+        }
+    }
+
+    private boolean isOptionDisplayed(String option) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(""))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

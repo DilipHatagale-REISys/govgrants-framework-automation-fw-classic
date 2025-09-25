@@ -3,15 +3,18 @@ Business Need: history Component Scenarios
   Test all history Component based scenarios
   As a configuration manager i make different changes related to flow and will validate them in history component.
 
-  @69537
-  Scenario: Validate all program records are shown in Field History table if Program object is selected in dropdown
+  @69537 @204898 @204899
+  Scenario Outline: Validate all program records are shown in Field History table if Program object is selected in dropdown
+  |Field History-Admin User- To verify, user should be able to see field history for selected filter as program.|
+    |Field History- Admin user-To verify, user should be able to see field history by applying filter for review steps.|
+    |Field History - PM user- User should be able to see the header help text on mouse pointer of help icon besides quick search.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
-    When I login to "As a Grantor" app as "PM" user
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
+    When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
@@ -33,6 +36,21 @@ Business Need: history Component Scenarios
     When I select "Program" from dropdown inside page block
     And I pause execution for "5" seconds
     Then I softly see "{SavedValue:PEGMSID}" value in flex table id "---program:-:historyTableId---"
+    #204899
+    When I select "Review Step" from dropdown inside page block
+    And I pause execution for "5" seconds
+    Then I softly see "Review Step" option is selected for fieldHistory table
+    #205040
+    When I hovering mouse on help text icon inside "---program:-:historyTableId---" for table
+    Then I softly see "Quick Search is not supported for following columns : New Value,Old Value" shown as help text
+    #205057
+    When I perform quick search for "{SavedValue:Changed By}" in "---program:-:historyTableId---" panel
+    Then I softly see value "{SavedValue:Changed By}" for title "Changed By" inside table "---program:-:historyTableId---"
+
+    Examples:
+      | User |
+     #| ADMIN |
+      | PM    |
 
   @69578
   Scenario: Validate Actual Approver name and Assigned To Name inside Approval history table after Reassigning of record to user
@@ -41,7 +59,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -84,7 +102,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -126,7 +144,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -156,7 +174,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -199,7 +217,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -232,7 +250,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -262,7 +280,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -283,7 +301,7 @@ Business Need: history Component Scenarios
       | en_US  | America/New_York |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
@@ -304,7 +322,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -417,7 +435,7 @@ Business Need: history Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action      | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action      | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17329                  |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17330                  |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17070                  |
@@ -483,13 +501,13 @@ Business Need: history Component Scenarios
 
   @120103p  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column
-    |Scenario 1:Flex Table-To verify,  Advanced  Search working on 'Field history ' table for admin user|
+  |Scenario 1:Flex Table-To verify,  Advanced  Search working on 'Field history ' table for admin user|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -583,7 +601,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2672                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -644,37 +662,6 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     Then I see "{SavedValue:NewNumber}" shown inside "New Value" column in history table
     Then I see "{SavedValue:OldNumber}" shown inside "Old Value" column in history table
-
-  @205040 @205041
-  Scenario Outline: Field History - PM user- User should be able to see the header help text on mouse pointer of help icon besides quick search.
-    When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program |
-      | Automation PM | Step 1  |
-    And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I select radio button "Reject" in the approval decision
-    When I hovering mouse on help text icon inside "---program:-:historyTableId---" for table
-    Then I softly see "Quick Search is not supported for following columns : New Value,Old Value" shown as help text
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
 
   @205057 @205058 @205061 @205063
   Scenario Outline: Field History - PM user - User should be able search the field history by quick search
@@ -793,46 +780,14 @@ Business Need: history Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @204898
-  Scenario Outline: Field History-Admin User- To verify, user should be able to see field history for selected filter as program.
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "History" sub tab
-    When I select "Program" from dropdown inside page block
-    Then I see "Program" option is getting displayed inside page block
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @204899
-  Scenario Outline: Field History- Admin user-To verify, user should be able to see field history by applying filter for review steps.
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
-    When I navigate to "History" sub tab
-    When I select "Review Step" from dropdown inside page block
-    Then I see "Review Step" option is getting displayed inside page block
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
   @205601
   Scenario: History Field : ADMIN User -To verify, User change the negative currency field value from backend then it should display in the new value column
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6823                   | PBD-17265                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | PB-6823                   | PBD-17265                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

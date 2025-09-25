@@ -656,4 +656,9 @@ public class FlexTableSteps {
     public void iClickOnButtonForInsideTableId(String buttonName, String columnName, String tableId) {
         I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//table//tr//*[@title='" + columnName + "']//ancestor::td//following-sibling::td//action//*[@title='" + buttonName + "']"));
     }
+
+    @Then("^I (softly see|softly do not see|see|do not see) \"([^\"]*)\" option is selected for fieldHistory table$")
+    public void iSoftlySeeOptionIsSelectedInDropdown(String usage, String option) {
+        flexTablePage.asserTochecOptionDisplayed(usage, option);
+    }
 }
