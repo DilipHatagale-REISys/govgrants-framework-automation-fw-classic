@@ -1404,7 +1404,7 @@ Business Need: Side bar Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
-    And I pause execution for "5" seconds
+    And I pause execution for "4" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
