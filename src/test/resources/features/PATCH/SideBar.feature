@@ -1475,3 +1475,335 @@ Business Need: Side bar Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
 
+
+  @203026 @203023 @suiteid-199158
+  Scenario Outline: Available for profiles- PM- UI- Verify ‘Phase’ should not visible on UI when logged in as PM
+  |Available for profiles- PM- UI- Verify ‘Phase’ is visible on UI when logged in as PM|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                                                                                                           | filterId         |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:0 |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName              | fieldNewValue                                                                                                               | coreComponentField |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ     | Closeout           |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | Monitoring         |
+    When I login to "As a Grantor" app as "<User>" user
+    Then I do not see "Closeout" phase
+    Then I see "Monitoring" phase
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203434 @203435 @203440 @203441 @suiteid-199158
+  Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar Activity menu
+  |Sidebar- PM- UI- Verify Sidebar Activity menu is visible|
+  |Sidebar- Admin- Config- Verify admin can configure Sidebar Task menu|
+  |Sidebar- PM- UI- Verify Sidebar Task menu is visible|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue                                                                                                           | filterId         |
+      | Side Bar Header       | Available For Profiles       | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:0 |
+      | Side Bar Header       | Enable Sidebar Activity Menu | True                                                                                                                        | ApiGeneratedId:1 |
+      | Side Bar Header       | Sidebar Activity Menu Label  | Activities                                                                                                                  | ApiGeneratedId:2 |
+      | Side Bar Header       | Enable Sidebar Task Menu     | True                                                                                                                        | ApiGeneratedId:3 |
+      | Side Bar Header       | Sidebar Task Menu Label      | Tasks                                                                                                                       | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                   | fieldNewValue                                                                                                               | coreComponentField |
+      | Side Bar Header:General | Available For Profiles      | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | Closeout           |
+      | Side Bar Header:General | Enable Sidebar Task Menu    | true                                                                                                                        | Closeout           |
+      | Side Bar Header:General | Sidebar Activity Menu Label | Activities                                                                                                                  | Closeout           |
+      | Side Bar Header:General | Enable Sidebar Task Menu    | true                                                                                                                        | Closeout           |
+      | Side Bar Header:General | Sidebar Task Menu Label     | Automation Tasks                                                                                                            | Closeout           |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Closeout" tab
+    Then I softly see "Automation Tasks" at sidebar
+    Then I softly see "Activities" at sidebar
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203437 @203438 @suiteid-199158
+  Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar BI &Analytics menu
+  |Sidebar- PM- UI- Verify Sidebar BI &Analytics menu is visible|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
+    Then I see option "Activities" on left panel
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203436 @203439 @203445 @suiteid-199158
+  Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
+  |Sidebar- SPI- UI- Verify Sidebar Collab menu is visible|
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I see option "Activities" on left panel
+    Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
+    Then I see changed label as "Collab" inside "Technical Support" in side bar sub menu
+
+  @203443 @203444 @203717 @203718 @suiteid-199158
+  Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar Collab menu
+  |Sidebar- PM- UI- Verify Sidebar Collab menu is visible|
+  |Sidebar search- Admin- Config- Verify admin can configure Sidebar search|
+  |Sidebar search- PM- UI- Verify Sidebar search menu is visible|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    #203443 #203444
+    Then I see changed label as "Collab" inside "Technical Support" in side bar sub menu
+   #203718 #203717
+    Then I see option "Search" on left panel
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203720 @203721 @suiteid-199158
+  Scenario Outline: Recently Viewed - PM- UI- Verify ‘Recently viewed items’ is visible
+  |Recently Viewed - Admin- Config- Verify admin can configure ‘Recently viewed items’ in sidebar|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Title" as "PrgTitle"
+    #203720
+    Then I see "{SavedValue:PrgTitle}" records are present in Recently Viewed link in Sidebar
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203723 @203724 @203726 @203727 @suiteid-199158
+  Scenario Outline: Sidebar Links- Admin- Config- Verify admin can configure ‘Sidebar external links’ in sidebar
+  |Sidebar Links - PM- UI- Verify ‘Sidebar external links’ is visible|
+  |Technical support- Admin- Config- Verify admin can configure ‘Technical support’ in sidebar|
+  |Technical support - PM- UI- Verify ‘Technical support’ is visible|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
+      | Side Bar Header       | Sidebar External Links Label | Useful Links      | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                    | fieldNewValue | coreComponentField |
+      | Side Bar Header:General | Sidebar External Links Label | Useful Links  | GrantorHome        |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    Then I see changed label as "EIN Registration" inside "Useful Links" in side bar sub menu
+    Then I see changed label as "Contact Us" inside "Technical Support" in side bar sub menu
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203728 @203725 @203442 @suiteid-199158
+  Scenario: Technical support - SPI- UI- Verify ‘Technical support’ is visible
+  |Sidebar Links - SPI- UI- Verify ‘Sidebar external links’ is visible|
+  |Sidebar- SPI- UI- Verify Sidebar Task menu is visible|
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I see changed label as "Contact Us" inside "Technical Support" in side bar sub menu
+    Then I see changed label as "EIN Registration" inside "Useful Links" in side bar sub menu
+    Then I see changed label as "UEI Registration" inside "Useful Links" in side bar sub menu
+    Then I softly see "Tasks" at sidebar
+
+
+  @207269 @207270 @207278 @207279 @suiteid-199158
+  Scenario Outline: Mini-layout- Admin- Config- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI
+  |Mini-layout- PM- UI- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI |
+  |Sidebar- Admin- Config- Verify just by clicking on name under recently viewed items we could be able to open that item (Eg. Program)|
+  |Sidebar- PM- UI- Verify just by clicking on name under recently viewed items we could be able to open that item (Eg. Program) |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I save the field labeled "Title" as "PrgTitle"
+    Then I see "{SavedValue:PrgTitle}" records are present in Recently Viewed link in Sidebar
+    And I hover mouse on link "{SavedValue:PrgTitle}" at table
+    And I pause execution for "2" seconds
+    Then I see "Title" as "{SavedValue:PrgTitle}" value inside mini page layout
+    And I navigate to "Planning" tab
+    When I navigate to "{SavedValue:PrgTitle}" content inside "Recently Viewed" subheader on left panel
+    Then I see "Title" field contains "{SavedValue:PrgTitle}" value
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @207280 @203722 @suiteid-199158
+  Scenario: Sidebar- SPI- UI- Verify just by clicking on name under recently viewed items we could be able to open that item (Eg. Program)
+  |Recently Viewed - SPI- UI- Verify ‘Recently viewed items’ is visible|
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Applications" tab
+    And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "Opportunity Title" as "OpportunityTitle"
+    Then I see "{SavedValue:OpportunityTitle}" records are present in Recently Viewed link in Sidebar
+    And I hover mouse on link "{SavedValue:OpportunityTitle}" at table
+    And I pause execution for "2" seconds
+    Then I see "Opportunity Title" as "{SavedValue:OpportunityTitle}" value inside mini page layout
+    And I navigate to "Applications" tab
+    When I navigate to "{SavedValue:OpportunityTitle}" content inside "Recently Viewed" subheader on left panel
+    Then I see "Opportunity Title" field contains "{SavedValue:OpportunityTitle}" value
+
+  @207271 @suiteid-199158
+  Scenario:Mini-layout- SPI- UI- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Applications" tab
+    And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "Opportunity Title" as "OpportunityTitle"
+    Then I see "{SavedValue:OpportunityTitle}" records are present in Recently Viewed link in Sidebar
+    And I hover mouse on link "{SavedValue:OpportunityTitle}" at table
+    And I pause execution for "2" seconds
+    Then I see "Opportunity Title" as "{SavedValue:OpportunityTitle}" value inside mini page layout
+
+  @207272 @207273 @suiteid-199158
+  Scenario Outline: Sidebar- Admin- Config- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI
+  |Sidebar- PM- UI- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI|
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    Then I softly see minus icon is displayed at "Task" menu inside sidebar
+    Then I see changed label as "Pending Tasks" inside "My Tasks" in side bar sub menu
+    Then I see changed label as "Completed Tasks" inside "My Tasks" in side bar sub menu
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @207275 @207276 @suiteid-199158
+  Scenario Outline: Sidebar- Admin- Config- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI
+  |Sidebar- PM- UI- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI|
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    Then I softly see minus icon is displayed at "Task" menu inside sidebar
+    Then I softly see "Task" inside "My Tasks" menu at sidebar
+    And I click on minus icon at "Tasks" menu inside sidebar
+    Then I see changed label as "Pending Tasks" inside "My Tasks" in side bar sub menu
+    Then I do not see "Task" inside "My Tasks" menu at sidebar
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @207274 @suiteid-199158
+  Scenario:Sidebar- SPI- UI- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
+    Then I softly see "Tasks" inside "My Tasks" menu at sidebar
+
+  @207277 @suiteid-199158
+  Scenario:Sidebar- SPI- UI- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
+    Then I softly see "Tasks" inside "My Tasks" menu at sidebar
+    And I click on minus icon at "Tasks" menu inside sidebar
+    Then I do not see "Task" inside "My Tasks" menu at sidebar
+
+  @207281 @207282 @suiteid-199158
+  Scenario Outline: Search- Admin- Config- If we select ‘All’ in dropdown and search for any program record should display on UI
+  |Search- PM- UI- If we select ‘All’ in dropdown and search for any program record should display on UI|
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "Automation Permanent Internal Program"
+    Then I softly see value "Automation Permanent Internal Program" for title "Program Name" inside table "---program:-:GlobleSeachToggleTableId---"
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @207283 @suiteid-199158
+  Scenario: Search- SPI- UI- If we select ‘All’ in dropdown and search for any program record should display on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Applications" tab
+    And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "Opportunity Title" as "OpportunityTitle"
+    When I click on global search and select "All"
+    When I perform quick search inside global search "{SavedValue:OpportunityTitle}"
+    Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
+
+
+  @207284 @207285 @207287 @207288 @suiteid-199158
+  Scenario Outline: Search- Admin- Config- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI
+  |Search- PM- UI- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI|
+  |Search- Admin- Config- If we select any record type from dropdown and search for any other type record it should not display on UI|
+  |Search- PM- UI- If we select any record type from dropdown and search for any other type record it should not display on UI|
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    And I pause execution for "3" seconds
+    When I click on global search and select "Announcements"
+    When I perform quick search inside global search "Automation Permanent Internal Program"
+    Then I softly do not see value "Automation Permanent Internal Program" for title "Program Name" inside table "---program:-:GlobleSeachToggleTableId---"
+    And I navigate to "Home" tab
+    When I click on global search and select "Amendment Requests"
+    When I perform quick search inside global search "Automation Permanent Focus Area"
+    Then I softly do not see value "Automation Permanent Focus Area" for title "Title" inside table "toggleFlexTableServiceArea__c"
+
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @207286 @203719 @suiteid-199158
+  Scenario:Search- SPI- UI- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI
+  |Sidebar search- SPI- UI- Verify Sidebar search menu is visible|
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    Then I see option "Search" on left panel
+    And I navigate to "Applications" tab
+    And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "Opportunity Title" as "OpportunityTitle"
+    When I click on global search and select "Applications / Negotiations"
+    When I perform quick search inside global search "{SavedValue:OpportunityTitle}"
+    Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
+
+  @207289 @suiteid-199158
+  Scenario: Search- SPI- UI- If we select any record type from dropdown and search for any other type record it should not display on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Applications" tab
+    And I click on "View" icon in flex table for first draft record
+    And I save the field labeled "Opportunity Title" as "OpportunityTitle"
+    When I click on global search and select "Grants"
+    When I perform quick search inside global search "{SavedValue:OpportunityTitle}"
+    Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
