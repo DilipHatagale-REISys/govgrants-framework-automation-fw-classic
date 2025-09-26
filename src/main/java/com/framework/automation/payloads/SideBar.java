@@ -121,6 +121,48 @@ public class SideBar {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__CustomAppConfig__c), value);
                 break;
+            case "ENABLE SIDEBAR ACTIVITY MENU":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableMenu__c), value);
+                break;
+            case "SIDEBAR ACTIVITY MENU LABEL":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SidebarTaskMenuLabel__c), value);
+                break;
+            case "ENABLE SIDEBAR TASK MENU":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableSidebarTaskMenu__c), value);
+                break;
+            case "SIDEBAR TASK MENU LABEL":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SidebarTaskMenuLabel__c), value);
+                break;
+            case "ENABLE EXTERNAL LINKS":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableExternalLinks__c), value);
+                break;
+            case "SIDEBAR EXTERNAL LINKS LABEL":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SidebarExternalLinksLabel__c), value);
+                break;
+            case "ENABLE TECHNICAL SUPPORT":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Enable_Technical_Support__c), value);
+                break;
+            case "SIDEBAR TECHNICAL SUPPORT LABEL":
+                finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SidebarTechnicalSupportLabel__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;

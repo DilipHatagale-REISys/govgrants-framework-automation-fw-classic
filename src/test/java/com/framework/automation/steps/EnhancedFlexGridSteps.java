@@ -249,6 +249,7 @@ public class EnhancedFlexGridSteps {
     public void assertOverAllTotalCellDisableValueAtTotalAdjustedAmountColumn(String fieldApiName) {
         enhancedFlexGrid.assertOverAllTotalCellValueForTotalAdjustedAmountAtEnhancedGridDisable(fieldApiName);
     }
+
     @Then("^I see upArrow for multiple field at enhanced grid")
     public void assertUpArrowForMultipleField() {
         enhancedFlexGrid.assertUpArrowWithSortingAtMultipleField();
@@ -322,7 +323,7 @@ public class EnhancedFlexGridSteps {
     @And("I hover mouse on link {string} at table")
     public void iHoverMouseOnLinkAtTable(String field) {
         I.amPerforming().waitFor().makeThreadSleep(3000);
-        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
+        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//a[contains(normalize-space(.),'" + field + "')] | //div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" as \"([^\"]*)\" value inside mini page layout$")
