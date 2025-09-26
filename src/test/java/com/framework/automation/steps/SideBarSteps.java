@@ -5,6 +5,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+
 public class SideBarSteps {
     SideBarPage sidebarPage;
 
@@ -75,5 +77,10 @@ public class SideBarSteps {
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" inside \"([^\"]*)\" menu at sidebar$")
     public void iDoNotSeeInsideMenuAtSidebar(String usage, String mainMenu, String subMenu) {
         sidebarPage.assertIfSubMenuDisplayedOnSide(usage,mainMenu,subMenu);
+    }
+
+    @Then("^I (see|do not see) below label on global search dropdown$")
+    public void iSeeBelowLabelOnGlobalSearchDropdown(String usage, List<String> Label) {
+        sidebarPage.assertLableDisplayedOnGlobalSearchDropDown(usage,Label);
     }
 }

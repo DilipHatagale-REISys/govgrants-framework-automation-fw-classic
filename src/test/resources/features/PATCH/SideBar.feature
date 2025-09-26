@@ -1476,7 +1476,7 @@ Business Need: Side bar Component Scenarios
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
 
 
-  @203026 @203023 @suiteid-199158
+  @203026 @203023 @suiteid-199158 @199158Sidebar
   Scenario Outline: Available for profiles- PM- UI- Verify ‘Phase’ should not visible on UI when logged in as PM
   |Available for profiles- PM- UI- Verify ‘Phase’ is visible on UI when logged in as PM|
     Given I have "default" configuration as below:
@@ -1495,7 +1495,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203434 @203435 @203440 @203441 @suiteid-199158
+  @203434 @203435 @203440 @203441 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar Activity menu
   |Sidebar- PM- UI- Verify Sidebar Activity menu is visible|
   |Sidebar- Admin- Config- Verify admin can configure Sidebar Task menu|
@@ -1523,7 +1523,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203437 @203438 @suiteid-199158
+  @203437 @203438 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar BI &Analytics menu
   |Sidebar- PM- UI- Verify Sidebar BI &Analytics menu is visible|
     Given I have "default" configuration as below:
@@ -1541,7 +1541,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203436 @203439 @203445 @suiteid-199158
+  @203436 @203439 @203445 @suiteid-199158 @199158Sidebar
   Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
   |Sidebar- SPI- UI- Verify Sidebar Collab menu is visible|
     Given I am on "SUBPORTAL" portal
@@ -1551,7 +1551,7 @@ Business Need: Side bar Component Scenarios
     Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
     Then I see changed label as "Collab" inside "Technical Support" in side bar sub menu
 
-  @203443 @203444 @203717 @203718 @suiteid-199158
+  @203443 @203444 @203717 @203718 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar- Admin- Config- Verify admin can configure Sidebar Collab menu
   |Sidebar- PM- UI- Verify Sidebar Collab menu is visible|
   |Sidebar search- Admin- Config- Verify admin can configure Sidebar search|
@@ -1572,7 +1572,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203720 @203721 @suiteid-199158
+  @203720 @203721 @suiteid-199158 @199158Sidebar
   Scenario Outline: Recently Viewed - PM- UI- Verify ‘Recently viewed items’ is visible
   |Recently Viewed - Admin- Config- Verify admin can configure ‘Recently viewed items’ in sidebar|
     Given I have "default" configuration as below:
@@ -1598,7 +1598,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203723 @203724 @203726 @203727 @suiteid-199158
+  @203723 @203724 @203726 @203727 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar Links- Admin- Config- Verify admin can configure ‘Sidebar external links’ in sidebar
   |Sidebar Links - PM- UI- Verify ‘Sidebar external links’ is visible|
   |Technical support- Admin- Config- Verify admin can configure ‘Technical support’ in sidebar|
@@ -1618,7 +1618,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @203728 @203725 @203442 @suiteid-199158
+  @203728 @203725 @203442 @suiteid-199158 @199158Sidebar
   Scenario: Technical support - SPI- UI- Verify ‘Technical support’ is visible
   |Sidebar Links - SPI- UI- Verify ‘Sidebar external links’ is visible|
   |Sidebar- SPI- UI- Verify Sidebar Task menu is visible|
@@ -1631,7 +1631,7 @@ Business Need: Side bar Component Scenarios
     Then I softly see "Tasks" at sidebar
 
 
-  @207269 @207270 @207278 @207279 @suiteid-199158
+  @207269 @207270 @207278 @207279 @suiteid-199158 @199158Sidebar
   Scenario Outline: Mini-layout- Admin- Config- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI
   |Mini-layout- PM- UI- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI |
   |Sidebar- Admin- Config- Verify just by clicking on name under recently viewed items we could be able to open that item (Eg. Program)|
@@ -1664,7 +1664,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @207280 @203722 @suiteid-199158
+  @207280 @203722 @suiteid-199158 @199158Sidebar
   Scenario: Sidebar- SPI- UI- Verify just by clicking on name under recently viewed items we could be able to open that item (Eg. Program)
   |Recently Viewed - SPI- UI- Verify ‘Recently viewed items’ is visible|
     Given I am on "SUBPORTAL" portal
@@ -1680,7 +1680,7 @@ Business Need: Side bar Component Scenarios
     When I navigate to "{SavedValue:OpportunityTitle}" content inside "Recently Viewed" subheader on left panel
     Then I see "Opportunity Title" field contains "{SavedValue:OpportunityTitle}" value
 
-  @207271 @suiteid-199158
+  @207271 @suiteid-199158 @199158Sidebar
   Scenario:Mini-layout- SPI- UI- When we hover on any record under ‘Recently Viewed Items’ Mini layout (having detailed info) will be displayed on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1692,7 +1692,7 @@ Business Need: Side bar Component Scenarios
     And I pause execution for "2" seconds
     Then I see "Opportunity Title" as "{SavedValue:OpportunityTitle}" value inside mini page layout
 
-  @207272 @207273 @suiteid-199158
+  @207272 @207273 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar- Admin- Config- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI
   |Sidebar- PM- UI- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI|
     When I login to "As a Grantor" app as "<User>" user
@@ -1705,7 +1705,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @207275 @207276 @suiteid-199158
+  @207275 @207276 @suiteid-199158 @199158Sidebar
   Scenario Outline: Sidebar- Admin- Config- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI
   |Sidebar- PM- UI- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI|
     When I login to "As a Grantor" app as "<User>" user
@@ -1720,7 +1720,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @207274 @suiteid-199158
+  @207274 @suiteid-199158 @199158Sidebar
   Scenario:Sidebar- SPI- UI- Verify when we click on (+) button sidebar menu should expand and submenu should display on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1728,7 +1728,7 @@ Business Need: Side bar Component Scenarios
     Then I softly see minus icon is displayed at "Tasks" menu inside sidebar
     Then I softly see "Tasks" inside "My Tasks" menu at sidebar
 
-  @207277 @suiteid-199158
+  @207277 @suiteid-199158 @199158Sidebar
   Scenario:Sidebar- SPI- UI- Verify when we click on (-) button sidebar menu should minimize and submenu should not display on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1738,7 +1738,7 @@ Business Need: Side bar Component Scenarios
     And I click on minus icon at "Tasks" menu inside sidebar
     Then I do not see "Task" inside "My Tasks" menu at sidebar
 
-  @207281 @207282 @suiteid-199158
+  @207281 @207282 @suiteid-199158 @199158Sidebar
   Scenario Outline: Search- Admin- Config- If we select ‘All’ in dropdown and search for any program record should display on UI
   |Search- PM- UI- If we select ‘All’ in dropdown and search for any program record should display on UI|
     When I login to "As a Grantor" app as "<User>" user
@@ -1751,7 +1751,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @207283 @suiteid-199158
+  @207283 @suiteid-199158 @199158Sidebar
   Scenario: Search- SPI- UI- If we select ‘All’ in dropdown and search for any program record should display on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1763,7 +1763,7 @@ Business Need: Side bar Component Scenarios
     Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
 
 
-  @207284 @207285 @207287 @207288 @suiteid-199158
+  @207284 @207285 @207287 @207288 @suiteid-199158 @199158Sidebar
   Scenario Outline: Search- Admin- Config- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI
   |Search- PM- UI- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI|
   |Search- Admin- Config- If we select any record type from dropdown and search for any other type record it should not display on UI|
@@ -1784,7 +1784,7 @@ Business Need: Side bar Component Scenarios
 #      | ADMIN |
       | PM   |
 
-  @207286 @203719 @suiteid-199158
+  @207286 @203719 @suiteid-199158 @199158Sidebar
   Scenario:Search- SPI- UI- If we select ‘Application/ Negotiations’ in dropdown and search for any program record should not display on UI
   |Sidebar search- SPI- UI- Verify Sidebar search menu is visible|
     Given I am on "SUBPORTAL" portal
@@ -1797,7 +1797,7 @@ Business Need: Side bar Component Scenarios
     When I perform quick search inside global search "{SavedValue:OpportunityTitle}"
     Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
 
-  @207289 @suiteid-199158
+  @207289 @suiteid-199158 @199158Sidebar
   Scenario: Search- SPI- UI- If we select any record type from dropdown and search for any other type record it should not display on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1807,3 +1807,143 @@ Business Need: Side bar Component Scenarios
     When I click on global search and select "Grants"
     When I perform quick search inside global search "{SavedValue:OpportunityTitle}"
     Then I softly do not see value "{SavedValue:OpportunityTitle}" for title "Application Title" inside table "toggleFlexTableApplication__c"
+
+  @203736 @203735 @203733 @203732 @204167 @suiteid-199158 @199158Sidebar
+  Scenario Outline:SObject phase- PM- UI- Verify label should not be displayed in global search dropdown if SObject not configured
+  |SObject phase- Admin- Config- Verify label should not be displayed in global search dropdown if SObject not configured|
+  |SObject phase- PM- UI- Verify label will be displayed in global search dropdown|
+  |SObject phase- Admin- Config- Verify label will be displayed in global search dropdown|
+  |Global Search- Admin- Config- Verify admin can configure global search|
+ #204167
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Global Search? | false         | GrantorHome        | Name                      | SPC-0967                   |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+   #203733 #203732
+    Then I see below label on global search dropdown
+      | All                               |
+      | Amendment Requests                |
+      | Announcements                     |
+      | Applications                      |
+      | Closeouts                         |
+      | External Registrations            |
+      | Focus Areas                       |
+      | Funding Decision Memos (FDM)s     |
+      | Grants                            |
+      | Key Performance Indicators (KPI)s |
+      | Organizations                     |
+      | Payment Requests                  |
+      | Pre-Applications                  |
+      | Programs                          |
+      | Progress Reports                  |
+      | Reviews                           |
+      | Risk Assessments                  |
+      | Site Visits / Desk Reviews        |
+      | Strategic Plans                   |
+      | Subawards                         |
+      | Subrecipient Contacts             |
+      | Terms and Condition               |
+    #203735
+    Then I do not see below label on global search dropdown
+      | Funding Sources |
+
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @543577 @suiteid-199158 @199158Sidebar
+  Scenario Outline: Global Search - Admin - Verify Global search config and UI should work as per the config Setup
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    And I pause execution for "3" seconds
+    When I click on global search and select "Announcements"
+    When I perform quick search inside global search "Automation Permanent Internal Program"
+    Then I softly do not see value "Automation Permanent Internal Program" for title "Program Name" inside table "---program:-:GlobleSeachToggleTableId---"
+    And I navigate to "Home" tab
+    When I click on global search and select "Amendment Requests"
+    When I perform quick search inside global search "Automation Permanent Focus Area"
+    Then I softly do not see value "Automation Permanent Focus Area" for title "Title" inside table "toggleFlexTableServiceArea__c"
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @543579 @suiteid-199158 @199158Sidebar
+  Scenario Outline: Global Search - all objects should display under dropdown
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    When I click on global search and select "All"
+    Then I see below label on global search dropdown
+      | All                               |
+      | Amendment Requests                |
+      | Announcements                     |
+      | Applications                      |
+      | Closeouts                         |
+      | External Registrations            |
+      | Focus Areas                       |
+      | Funding Decision Memos (FDM)s     |
+      | Grants                            |
+      | Key Performance Indicators (KPI)s |
+      | Organizations                     |
+      | Payment Requests                  |
+      | Pre-Applications                  |
+      | Programs                          |
+      | Progress Reports                  |
+      | Reviews                           |
+      | Risk Assessments                  |
+      | Site Visits / Desk Reviews        |
+      | Strategic Plans                   |
+      | Subawards                         |
+      | Subrecipient Contacts             |
+      | Terms and Condition               |
+
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @543583 @suiteid-199158 @199158Sidebar
+  Scenario Outline: Global Search - Functionality should work  and show searched data
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Home" tab
+    When I click on global search and select "All"
+    When I perform quick search inside global search "Automation Permanent Internal Program"
+    Then I softly see value "Automation Permanent Internal Program" for title "Program Name" inside table "---program:-:GlobleSeachToggleTableId---"
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
+
+  @203737 @203734 @suiteid-199158 @199158Sidebar
+  Scenario: SObject phase- SPI- UI- Verify label should not be displayed in global search dropdown if SObject not configured
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Global Search? | false         | RecipientHome      | Name                      | SPC-0827                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Home" tab
+    Then I do not see below label on global search dropdown
+      | Closeouts |
+    Then I see below label on global search dropdown
+      | All                         |
+      | Amendment Requests          |
+      | Applications / Negotiations |
+      | Grants                      |
+      | Opportunities               |
+      | Organization                |
+      | Payment Requests            |
+      | Pre-Applications            |
+      | Progress Reports            |
+      | Qualified Opportunities     |
+      | Reviews                     |
+      | Risk Assessments            |
+      | Site Visits / Desk Reviews  |
+      | Subawards                   |
