@@ -238,8 +238,8 @@ Business Need: history Component Scenarios
   |Field History -PM user - To verify, User change the currency field value from backend then it should display only one time in the field history table
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}            |
