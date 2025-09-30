@@ -3673,8 +3673,7 @@ Business Need: Logged Issues Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Accordian Header      | Icon CSS  | govgrants_config:accordionHeaderIconCSSValue | GrantorPlanning    | Name                      | My Tasks                   |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     Then I see "fa fa-home" icon displayed at "My Tasks" accordion header
 
