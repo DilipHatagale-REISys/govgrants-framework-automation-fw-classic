@@ -86,8 +86,8 @@ Business Need: ApprovalHistoryTable Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
-#      | PM    |
+    #  | ADMIN |
+      | PM    |
 
   @205000 @205002 @205003 @205004 @205016 @205017 @205019 @205020 @205021 @205022
   Scenario Outline: Approval History - PM User - User should be able to see the 'Assigned To' users for selected record.
