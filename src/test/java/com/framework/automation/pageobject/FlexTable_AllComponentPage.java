@@ -133,10 +133,14 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     }
 
     public void assertActionButtonIsDisplayed(String usage, String button, String tableId) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isButtonDisplayedOnTable(button, tableId));
-        } else if (usage.equalsIgnoreCase("do not see")) {
+         if (usage.equalsIgnoreCase("see")) {
             Assert.assertFalse(isButtonDisplayedOnTable(button, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(isButtonDisplayedOnTable(button, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnTable(button, tableId)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnTable(button, tableId)).isTrue();
         }
     }
 
@@ -148,7 +152,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                     " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div/div[@class='" + button + "']/div/input[@id='quickSearchAllText'] |" +
                     "//div[@id='" + tableId + "']//div/div/div[@align='right']/div//span/a[@title='" + button + "'] |" +
                     "//div[@id='" + tableId + "']//div/div//*[contains(@aria-label,'" + button + "')] | " +
-                    "//div[@id='" + tableId + "']//preceding-sibling::div//*[@title='" + button + "']"))) {
+                    "//div[@id='" + tableId + "']//preceding-sibling::div//*[@title='" + button + "']  |" +
+                    "//div[@id='" + tableId + "']//span//a[@title='" + button + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

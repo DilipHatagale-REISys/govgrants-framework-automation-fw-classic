@@ -40,7 +40,7 @@ public class PageLayoutPage extends GovGrantsManager {
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
-        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
+        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | ");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
         monitoringFlexGridTitle = By.xpath(
@@ -1247,14 +1247,14 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertRequiredFieldMessageAtHeader(String usage, String message1, String message2) {
         if (usage.equalsIgnoreCase("see")) {
-           Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
-            } else if (usage.equalsIgnoreCase("softly see")) {
-                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isTrue();
-            } else if (usage.equalsIgnoreCase("do not see")) {
-                Assert.assertFalse(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
-            } else if (usage.equalsIgnoreCase("softly do not see")) {
-                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isFalse();
-            }
+            Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isFalse();
+        }
     }
 
 
@@ -1807,14 +1807,14 @@ public class PageLayoutPage extends GovGrantsManager {
      * @modifier - ashwini.mahore
      */
     private boolean isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(String options) {
-        boolean flag = false;
+        boolean flag = true;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] | " +
-                    "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')]"))) {
-                flag = true;
+                    "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')] | //ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')]"))) {
+                flag = false;
             }
         } catch (Exception e) {
         }

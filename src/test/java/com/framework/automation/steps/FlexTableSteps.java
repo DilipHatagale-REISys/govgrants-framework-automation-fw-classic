@@ -423,7 +423,7 @@ public class FlexTableSteps {
         flexTablePage.assertFieldRelatedPageRecordsAvailable(id, key);
     }
 
-    @Then("^I (see|do not see) Advance Filter box is displayed inside table id \"([^\"]*)\" in flex table$")
+    @Then("^I (see|do not see|softly see|softly do not see) Advance Filter box is displayed inside table id \"([^\"]*)\" in flex table$")
     public void iSeeAdvanceFilterBoxIsDisplayedInsideTableId(String usage, String value) {
         flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
     }
@@ -660,5 +660,29 @@ public class FlexTableSteps {
     @Then("^I (softly see|softly do not see|see|do not see) \"([^\"]*)\" option is selected for fieldHistory table$")
     public void iSoftlySeeOptionIsSelectedInDropdown(String usage, String option) {
         flexTablePage.asserTochecOptionDisplayed(usage, option);
+    }
+
+    @When("^I click \"([^\"]*)\" after selection of all records in the table \"([^\"]*)\"")
+    public void iClickAfterSelectionOfAllRecordsInTheTable(String buttonName, String tableId) {
+        flexTablePage.clickOnCheckBox(buttonName, tableId);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) pagination is displayed with \"([^\"]*)\" inside table id \"([^\"]*)\"$")
+    public void iSeePaginationIsDisplayedWithInsideTableId(String usage, String text, String tableId) {
+        flexTablePage.assertPaginationText(usage, text, tableId);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" shown as header instruction text for tableId \"([^\"]*)\"$")
+    public void iSeeShownAsHeaderInstructionTextForTableId(String usage, String text, String tableid) {
+        flexTablePage.assertHeaderText(usage, text, tableid);
+    }
+
+    @Then("^I (softly see|see) snapshot with name containing \"([^\"]*)\" as name$")
+    public void iSeeSnapshotWithNameContainingAsName(String usage, String snapshotName) {
+        if (usage.contains("softly")) {
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]")).isDisplayed()).isTrue();
+        } else {
+            Assert.assertTrue(I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]")).isDisplayed());
+        }
     }
 }

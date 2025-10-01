@@ -415,7 +415,7 @@ public class AttachmentSteps {
 
     }
 
-    @Then("I (see|do not see) Total Records count \"([^\"]*)\" in table name \"([^\"]*)\"$")
+    @Then("I (see|do not see|softly see|softly do not see) Total Records count \"([^\"]*)\" in table name \"([^\"]*)\"$")
     public void iSeeTotalRecordsCountInTableName(String usage, String record, String tableName) {
         attachmentsPage.isRecordDisplayedOrNot(usage, record, tableName);
     }
