@@ -49,6 +49,14 @@ Business Need: Snapshot Config Component Scenarios
   |Snapshot History-Admin-Snapshot History-Admin-Config-To verify snapshot history when program is activated state|
   |Snapshot History-PM-UI-To verify snapshot history when program is activated state|
   |Snapshot History-Admin-To verify snapshot history not generated when program is activated state|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
+      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Activate                   |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -324,7 +332,7 @@ Business Need: Snapshot Config Component Scenarios
    # And I save the field labeled "Created Date" as "DateTaken"
     When I click on "Menu" in the page details
     #217467 #217468
-    Then I see "Take Snapshot" options is displayed
+    Then I softly see "Take Snashot" options displayed
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
     When I navigate to "History" sub tab
@@ -396,7 +404,7 @@ Business Need: Snapshot Config Component Scenarios
     When I click on "Menu" in the page details
     And I pause execution for "5" seconds
     #217480 #217481
-    Then I do not see "Take Snapshot" options is displayed
+    Then I softly do not see "Take Snashot" options displayed
 
     Examples:
       | User |
@@ -477,7 +485,7 @@ Business Need: Snapshot Config Component Scenarios
     And I save the field labeled "Created By" as "OWNER"
     When I click on "Menu" in the page details
     And I pause execution for "5" seconds
-    Then I softly do not see "Take Snapshot" options is displayed
+    Then I softly do not see "Take Snashot" options displayed
 
   @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
@@ -497,7 +505,7 @@ Business Need: Snapshot Config Component Scenarios
     And I save the field labeled "Created By" as "OWNER"
     When I click on "Menu" in the page details
     #217469
-    Then I softly see "Take Snapshot" options is displayed
+    Then I softly see "Take Snashot" options displayed
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
     When I navigate to "History" sub tab

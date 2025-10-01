@@ -685,4 +685,9 @@ public class FlexTableSteps {
             Assert.assertTrue(I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]")).isDisplayed());
         }
     }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" options displayed$")
+    public void iSoftlyDoNotSeeOptionsDisplayed(String usage, String option) {
+        flexTablePage.assertOptionDisplayed(usage, option);
+    }
 }
