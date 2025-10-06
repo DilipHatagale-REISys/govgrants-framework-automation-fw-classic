@@ -122,7 +122,7 @@ Business Need: collab Component Scenarios
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
-    And I pause execution for "5" seconds
+    And I pause execution for "4" seconds
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete this comment" action at "Test Automation Admin Comment" comment inside my feed
