@@ -77,7 +77,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action from dropdown at "Test Automation Admin collab phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
-  @104688    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
+  @104688collab    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by PM user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -120,7 +120,6 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
-    And I halt execution
     And I navigate to "Home" tab
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I pause execution for "5" seconds
