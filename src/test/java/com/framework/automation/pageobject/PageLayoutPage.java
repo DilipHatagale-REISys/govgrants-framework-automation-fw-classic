@@ -914,8 +914,13 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on refresh button at collab my feed section inside page block detail
      */
     public void clickRefreshButtonAtCollabPhase() {
-        WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
-        I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        try {
+            WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
+            I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        } catch (Exception e) {
+            WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.xpath("//a[@title='Refresh']"));
+            I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        }
     }
 
     /**
@@ -1247,14 +1252,14 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertRequiredFieldMessageAtHeader(String usage, String message1, String message2) {
         if (usage.equalsIgnoreCase("see")) {
-           Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
-            } else if (usage.equalsIgnoreCase("softly see")) {
-                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isTrue();
-            } else if (usage.equalsIgnoreCase("do not see")) {
-                Assert.assertFalse(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
-            } else if (usage.equalsIgnoreCase("softly do not see")) {
-                I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isFalse();
-            }
+            Assert.assertTrue(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isExpectedRequiredFieldMessageDisplayedAtHeader(message1, message2)).isFalse();
+        }
     }
 
 
