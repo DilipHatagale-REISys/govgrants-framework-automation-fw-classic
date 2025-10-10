@@ -102,7 +102,6 @@ public final class FlexTable implements FlexTableComponent {
         return By.xpath("//td//span[@title='" + columnValueName + "' or text()='"
                 + columnValueName + "']|//td//span//a[@title='" + columnValueName + "' or text()='" + columnValueName + "']");
     }
-
     /**
      * return specific table row cell value element
      *
@@ -825,5 +824,14 @@ public final class FlexTable implements FlexTableComponent {
      */
     public void getHelpTextAtEnhancedGridTableSpecificColumn(String columnTitle) {
         I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle + "']/../..//helpicon//*[contains(@class,'fa-info')]")));
+    }
+
+    public void clickTableActionIconName(String flexTableId, String iconName, String... anyUniqueColumnValues) {
+        try {
+            I.amPerforming().scroll().withMouseToElement(getTableActionIcon(flexTableId, iconName, anyUniqueColumnValues));
+            I.amPerforming().click().on(getTableActionIcon(flexTableId, iconName, anyUniqueColumnValues));
+        } catch (Exception e) {
+            I.amPerforming().click().withJavaScript(getTableActionIcon(flexTableId, iconName, anyUniqueColumnValues));
+        }
     }
 }

@@ -17,7 +17,7 @@ public class PhaseConfig {
 	 * @param            filterClause: filter clause to get the specific id
 	 * @return: payload
 	 */
-	public String setPhaseFieldConfig(String fieldLabel, String value, String 	filterClause) {
+	public String setPhaseFieldConfig(String fieldLabel, String value, String filterClause) {
 		String finalPayload = null;
 		switch (fieldLabel.toUpperCase()) {
 		case "AVAILABLE FOR PROFILES":
@@ -45,15 +45,15 @@ public class PhaseConfig {
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__BodyBottomPageURL__c), value);
 			break;
-		case "Body Top Page URL":
+		case "BODY TOP PAGE URL":
 				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
 						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
-						String.valueOf(SObjectAPIs.GNT__BodyTopPageURL__c), value);
+						String.valueOf(SObjectAPIs.GNT__BodyPageIncludeURL__c), value);
 				break;
-		case "Body Flex Table":
+		case "BODY FLEX TABLE":
 				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
 						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
-						String.valueOf(SObjectAPIs.GNT__BodyFlexTable__c), value);
+						String.valueOf(SObjectAPIs.GNT__BodyTable__c), value);
 				break;
 		case "IS PHASE":
 			finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
@@ -70,6 +70,11 @@ public class PhaseConfig {
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__TabIconCSS__c), value);
 			break;
+			case "ACTIVE":
+				finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__Active__c), value);
+				break;
 		}
 		System.out.println("method for finalpayload " + finalPayload);
 		return finalPayload;

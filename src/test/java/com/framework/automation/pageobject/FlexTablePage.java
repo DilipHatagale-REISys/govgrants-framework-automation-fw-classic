@@ -206,7 +206,8 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
                 + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')] |" +
-                "//*[@ng-bind='fieldLabel' and text()='" + columnTitle + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon']"));
+                "//*[@ng-bind='fieldLabel' and text()='" + columnTitle + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon'] |" +
+                "//span[@title='" + columnTitle + "']/ancestor::span//a[@class='fa fa-info helpIcon']"));
     }
 
     /**
@@ -1147,10 +1148,12 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "'] |" +
+                "//span[text()='" + iconId + "']/ancestor::div//span//helpicon//a[@class='fa fa-info helpIcon tooltipstered']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
-                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "'] | //a[@title='" + iconId + "']/ancestor::span/a/span[@class='fa fa-info helpIcon']"));
+                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "'] | //a[@id='" + iconId + "'] | //span[@id='" + iconId + "'] | //a[@title='" + iconId + "']/ancestor::span/a/span[@class='fa fa-info helpIcon'] |" +
+                "//span[text()='" + iconId + "']/ancestor::div//span//helpicon//a[@class='fa fa-info helpIcon tooltipstered']"));
     }
 
 
@@ -1164,9 +1167,13 @@ public class FlexTablePage extends GovGrantsManager {
 
     public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
         if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
+            Assert.assertFalse(assertAdvanceFilterDisplayed(value));
         } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(assertAdvanceFilterDisplayed(value));
+        } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
         }
     }
 
@@ -1856,6 +1863,156 @@ public class FlexTablePage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void asserTochecOptionDisplayed(String usage, String option) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isOptionDisplayed(option));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isOptionDisplayed(option));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayed(option)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayed(option)).isFalse();
+        }
+    }
+
+    private boolean isOptionDisplayed(String option) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//select//option[@selected='selected' and contains(text(),'" + option + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void clickOnCheckBox(String buttonName, String tableId) {
+        By checkAllSelector = By.xpath("//div[@id='" + tableId + "']//div[@class='tableColumnHeader']//input[@type='checkbox']");
+        I.amPerforming().click().withJavaScript(checkAllSelector);
+        I.amPerforming().waitFor().makeThreadSleep(500);
+        By button = By.xpath("//div[@id='" + tableId + "']//div[@class='header-buttons ng-scope']//span//button[@title='" + buttonName + "']");
+        I.amPerforming().click().on(button);
+        I.amPerforming().waitFor().makeThreadSleep(700);
+    }
+
+    public void assertPaginationText(String usage, String text, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertFalse(isPaginationTextDisplayed(text, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(isPaginationTextDisplayed(text, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPaginationTextDisplayed(text, tableId)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isPaginationTextDisplayed(text, tableId)).isTrue();
+        }
+    }
+
+    private boolean isPaginationTextDisplayed(String text, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//span[@class='pull-right table-pager spanTablePager ng-scope']//span[contains(text(),'" + text + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertHeaderText(String usage, String text, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertFalse(isHeaderTextDisplayed(text, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(isHeaderTextDisplayed(text, tableid));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isHeaderTextDisplayed(text, tableid)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isHeaderTextDisplayed(text, tableid)).isTrue();
+        }
+    }
+
+    private boolean isHeaderTextDisplayed(String text, String tableid) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableid + "']//div[@class='panel ng-scope']//div//span[contains(text(),'" + text + "')]"))) {
+                flag = false;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertOptionDisplayed(String usage, String option) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayedInMenu(option)).isTrue();
+        } else if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isOptionDisplayedInMenu(option));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isOptionDisplayedInMenu(option));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isOptionDisplayedInMenu(option)).isFalse();
+        }
+    }
+
+    private boolean isOptionDisplayedInMenu(String option) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + option + "')]")))
+                ;
+            {
+                flag = true;
+            }
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public void assertColumnHeader(String usage, String columnHeader, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isColumnHeaderDisplayed(columnHeader, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isColumnHeaderDisplayed(columnHeader, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isColumnHeaderDisplayed(columnHeader, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isColumnHeaderDisplayed(columnHeader, tableId)).isFalse();
+        }
+    }
+
+    private boolean isColumnHeaderDisplayed(String columnHeader, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//table//th//span[@title='" + columnHeader + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertButtonIsDisplayed(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isButtonDisplayedOnConfirmationBox(buttonName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isButtonDisplayedOnConfirmationBox(buttonName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnConfirmationBox(buttonName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnConfirmationBox(buttonName)).isFalse();
+        }
+    }
+
+    private boolean isButtonDisplayedOnConfirmationBox(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class, 'modal-content')]//button[text()='" + buttonName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

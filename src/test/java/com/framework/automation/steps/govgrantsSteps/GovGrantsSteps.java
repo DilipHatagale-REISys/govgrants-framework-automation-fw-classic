@@ -1074,4 +1074,15 @@ public final class GovGrantsSteps {
     }
 
 
+    @Description("Clicks on action delete icon inside a table")
+    @When("^I click on \"([^\"]*)\" icon for \"([^\"]*)\"( with excluding regx)? inside flex table with id \"([^\"]*)\" without accept popup$")
+    public void iClickOnIconForInsideFlexTableWithIdWithoutAcceptPopup(String actionName, String columnName, String isExcludeRegx, String tableId) {
+        if (columnName.equalsIgnoreCase("Record Id")) {
+            govgrants.perform().flexTable().clickTableActionIconName(tableId, actionName, govgrants.perform().pageDetails().idOfRecord);
+        } else if (null != isExcludeRegx && isExcludeRegx.contains("with excluding regx")) {
+            govgrants.perform().flexTable().clickTableActionIconName(tableId, actionName, columnName);
+        } else {
+            govgrants.perform().flexTable().clickTableActionIconName(tableId, actionName, columnName.split(","));
+        }
+    }
 }

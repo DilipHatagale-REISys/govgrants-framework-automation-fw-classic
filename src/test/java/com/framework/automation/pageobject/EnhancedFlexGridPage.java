@@ -132,9 +132,13 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      */
     public void assertEnhancedFlexGridHeaderColumnName(String usage, String tableId, String headerColumnName) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
-        } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridColumnHeaderName(tableId, headerColumnName)).isTrue();
         }
     }
 

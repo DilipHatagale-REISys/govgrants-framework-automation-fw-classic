@@ -1,4 +1,4 @@
-@Forms-PATCHComponent @regression-PATCH @Forms @vrush-module
+@Forms
 Business Need: Forms Scenarios flextable UI,Forms Interface
   As a configuration manager I make different configurational changes in Forms component and will validate them.
 
@@ -20,7 +20,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
     And I click on "Save" in the page details
     Given I click on "Back" in the page details
@@ -46,7 +45,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
     And I save the field containing "Form ID" as "PFormID"
      #206343
@@ -72,7 +70,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Save" in the page details
     Given I click on "Back" in the page details
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     And I save the field containing "Form ID" as "SFormID"
     Then I see Form Id "{SavedValue:SFormID}" is displayed on form layout
     #208663
@@ -98,7 +95,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     When I click on "Save" in the page details
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
@@ -120,7 +116,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
@@ -142,7 +137,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
     When I select "Standard Assurances Form" from dropdown at forms
     When I click alert button "Cancel"
@@ -171,7 +165,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Given I enter "Form Fields 1" values from "Application_Field_Values.xlsx"
     And I click on "Save" in the page details
     Then I see the following message in the page details :
@@ -200,7 +193,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     When I click on "Save" in the page details
     When I click on "Menu" in the page details
     Then I softly see "Download As PDF" options is displayed
@@ -224,7 +216,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
     #And I switch to parent tab
    # And I pause execution for "4" seconds
@@ -248,7 +239,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I do not see Form Id "FN-01342" is displayed on form layout
    # And I switch to parent tab
    # And I pause execution for "4" seconds
@@ -272,7 +262,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     #When I click on "Save" in the page details
     #Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldQuestion1__c" field
@@ -299,7 +288,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
@@ -323,7 +311,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I see "Cancel" button is displayed
     Then I see "Save" button is displayed
     And I click on "Cancel" in the page details
@@ -346,7 +333,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     And I click on "Save" in the page details
     #382028
     Then I see "Back" button is displayed
@@ -373,7 +359,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Given I enter "Form Fields 2" values from "Application_Field_Values.xlsx"
     And I click on "Save" in the page details
     And I click on "Validate" in the page details

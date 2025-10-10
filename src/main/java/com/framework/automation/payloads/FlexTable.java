@@ -101,7 +101,7 @@ public class FlexTable {
                 break;
             case "SUB TOTAL LABEL":
                 finalPayload = String
-                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
                                 apiUtilities.getComponentCoreFieldId(
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__SubTotalLabel__c), value);
@@ -581,6 +581,13 @@ public class FlexTable {
                         payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__ModalWidth__c), value);
+                break;
+
+            case "STANDARD ACTION":
+                finalPayload = String.format(
+                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableAction__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableAction__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__StandardAction__c), value);
                 break;
         }
         System.out.println(finalPayload);

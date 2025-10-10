@@ -232,11 +232,11 @@ Business Need: Phase Config Component Scenarios
       | Phase Config          | Active    | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Active    | false         | GrantorPlanning    |
+      | Phase Config:General  | Active    | false         | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    Then I do not see "Planning" phase
+    Then I do not see "Closeout" phase
     Examples:
       | User |
       | PM   |
@@ -377,10 +377,10 @@ Business Need: Phase Config Component Scenarios
   Scenario Outline: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automation
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Tab Display Label | Automation    | GrantorPlanning    |
+      | Phase Config:General  | Tab Display Label | Automation    | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "Automation" phase
@@ -394,7 +394,7 @@ Business Need: Phase Config Component Scenarios
   |Phase name- Internal- To verify user enters numbers in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
       | Phase Config:General  | Tab Display Label | 0123456789    | Closeout           |
@@ -413,10 +413,10 @@ Business Need: Phase Config Component Scenarios
   |Phase name- Internal- UI- To verify user enter long text in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue          | coreComponentField |
-      | Phase Config:General  | Tab Display Label | AutomationTestingPhase | GrantorPlanning    |
+      | Phase Config:General  | Tab Display Label | AutomationTestingPhase | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "AutomationTestingPhase" phase
@@ -431,7 +431,7 @@ Business Need: Phase Config Component Scenarios
   |Phase name- External- UI- To verify user enter long text in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Opportunities     | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue          | coreComponentField     |
       | Phase Config:General  | Tab Display Label | AutomationTestingPhase | RecipientAnnouncements |
@@ -444,7 +444,7 @@ Business Need: Phase Config Component Scenarios
   |Phase name- External -UI- To verify user enters numbers in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Opportunities     | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
       | Phase Config:General  | Tab Display Label | 01234567891   | RecipientCloseout  |
@@ -469,14 +469,14 @@ Business Need: Phase Config Component Scenarios
       | ADMIN |
       | PM    |
 
-    @333542p @333545
+  @333542 @333545
   Scenario Outline: Phase name- admin- To verify 'Body Top Page URL' should be added on the phases config page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue                | filterId         |
       | Phase Config          | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config:General  | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    | Name                      | SPC-0746                   |
+      | Phase Config:General  | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -515,7 +515,7 @@ Business Need: Phase Config Component Scenarios
 
   @333549 @306426
   Scenario: Phase name- External-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases
-    |Phase name- External-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
+  |Phase name- External-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Phase Config          | Body Flex Table | GrantsList        | ApiGeneratedId:0 |
@@ -527,15 +527,15 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Grants" tab
     Then I see "New" button inside "Grants - Active" flex table not displayed
 
-  @333543 @333546 @306423
+  @333543 @333546 @306423 @wip
   Scenario Outline: Phase name- admin-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases
-    |Phase name- Internal-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
+  |Phase name- Internal-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Phase Config          | Body Flex Table | Programs          | ApiGeneratedId:0 |
+      | Phase Config          | Body Flex Table | AllCloseouts          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Body Flex Table |               | GrantorPlanning    |
+      | Phase Config:General  | Body Flex Table | AllCloseouts      | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -642,9 +642,8 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
+      | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0746                   |
     When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on global search and select "All"
     Then I see "Program" is not displayed in global search All dropdown
@@ -660,7 +659,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Recently Viewed? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
+      | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0746                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -677,7 +676,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0827                   |
+      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0746                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -768,6 +767,8 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Activities" on left panel
     Then I do not see "Planning" phase
+<<<<<<< HEAD:src/test/resources/features/COMPONENTS/PhasesConfig.feature
+=======
 
   @208325 @208322 @suiteid-199158
   Scenario: Default Landing Tab- SPI- UI- Verify if we should not land phase which is default
@@ -903,3 +904,4 @@ Business Need: Phase Config Component Scenarios
     Then I see "Announcements" phase
     Then I see "Applications" phase
     Then I see "Grants" phase
+>>>>>>> 38cda559bde4cc4b3f3d5072c16a5eb554dee217:src/test/resources/features/PATCH/PhasesConfig.feature
