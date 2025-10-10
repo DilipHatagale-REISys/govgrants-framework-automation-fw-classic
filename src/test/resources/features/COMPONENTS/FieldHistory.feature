@@ -15,7 +15,7 @@ Business Need: history Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfigFileTest:HistoryTab}  |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
