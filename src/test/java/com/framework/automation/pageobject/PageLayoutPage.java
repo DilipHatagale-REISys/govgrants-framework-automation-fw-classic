@@ -96,12 +96,12 @@ public class PageLayoutPage extends GovGrantsManager {
      * @modifier: ashwini.mahore
      */
     public void assertTopRightParallelLinesBarOptionsAtPageLayout(String usage, String options) {
-        if (usage.equalsIgnoreCase("see")) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options)).isTrue();
+        } else if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
         } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options));
-        } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options)).isTrue();
         } else if (usage.equalsIgnoreCase("softly do not see")) {
             I.amPerforming().assertionsTo().assertThat(isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(options)).isFalse();
         }
@@ -3925,11 +3925,20 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isFieldIsReadOnlyOnPagelayout(String fieldname) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@field-name='" + fieldname + "']//input"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[@field-name='" + fieldname + "']//input | //*[@field-name='" + fieldname + "']//select"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
+    }
+
+    public void asserTableRefreshOnRefreshOptionClick() {
+        String stateOfRegresh = isTableRefreshOnRefreshOptionClick();
+        Assert.assertTrue(stateOfRegresh.equalsIgnoreCase("Complete"));
+    }
+
+    private String isTableRefreshOnRefreshOptionClick() {
+        return I.amPerforming().browserOperationsTo().getPageLoadStatus();
     }
 }

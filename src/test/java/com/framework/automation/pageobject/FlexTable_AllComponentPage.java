@@ -133,14 +133,14 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     }
 
     public void assertActionButtonIsDisplayed(String usage, String button, String tableId) {
-         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertFalse(isButtonDisplayedOnTable(button, tableId));
-        } else if (usage.equalsIgnoreCase("do not see")) {
+        if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isButtonDisplayedOnTable(button, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isButtonDisplayedOnTable(button, tableId));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnTable(button, tableId)).isFalse();
-        } else if (usage.equalsIgnoreCase("softly do not see")) {
             I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnTable(button, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnTable(button, tableId)).isFalse();
         }
     }
 
@@ -156,7 +156,7 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                     "//div[@id='" + tableId + "']//span//a[@title='" + button + "']"))) {
                 flag = true;
             }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
+        } catch (Exception e) {
         }
         return flag;
     }

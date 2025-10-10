@@ -256,7 +256,8 @@ public final class GovGrantsProductObjects {
     private boolean isPageBlockTitleDisplayed(String titleName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "'] | //a[not(parent::li)]/span[" + I.amPerforming().sanityOfXpathTo().equals("text()", titleName) + "] | //a[text()='" + titleName + "'] | //h3[text()='" + titleName + "'] | //h2[(text()='" + titleName + "')] | //*[text()='" + titleName + "'] | //div[@class='panel ng-scope']//a//span[contains(text(),'" + titleName + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "'] | //a[not(parent::li)]/span[" + I.amPerforming().sanityOfXpathTo().equals("text()", titleName) + "] | //a[text()='" + titleName + "'] | //h3[text()='" + titleName + "'] | //h2[(text()='" + titleName + "')] | //*[text()='" + titleName + "'] | //div[@class='panel ng-scope']//a//span[contains(text(),'" + titleName + "')] |" +
+                    "//div[@class='col-xs-6 col-md-7 header-title ']//a//span[text()='" + titleName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

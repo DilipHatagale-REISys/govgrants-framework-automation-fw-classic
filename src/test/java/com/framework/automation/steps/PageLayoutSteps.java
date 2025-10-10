@@ -974,4 +974,9 @@ public class PageLayoutSteps {
     public void iSeeFieldIseditableForTheUser(String usage, String fieldname) {
         pageLayoutPage.assertIfFieldIsReadOnly(usage, fieldname);
     }
+
+    @Then("^I see table is refreshing$")
+    public void assertInternalOrganizationTableRefresh() {
+        pageLayoutPage.asserTableRefreshOnRefreshOptionClick();
+    }
 }

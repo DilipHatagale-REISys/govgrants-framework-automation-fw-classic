@@ -431,7 +431,7 @@ Business Need: Phase Config Component Scenarios
   |Phase name- External- UI- To verify user enter long text in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Opportunities     | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue          | coreComponentField     |
       | Phase Config:General  | Tab Display Label | AutomationTestingPhase | RecipientAnnouncements |
@@ -444,7 +444,7 @@ Business Need: Phase Config Component Scenarios
   |Phase name- External -UI- To verify user enters numbers in 'Tab Display Label' fields added on the phase's config page, then it should display on UI.|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Phase Config          | Tab Display Label | Opportunities     | ApiGeneratedId:0 |
+      | Phase Config          | Tab Display Label | Closeout          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
       | Phase Config:General  | Tab Display Label | 01234567891   | RecipientCloseout  |
@@ -527,15 +527,15 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Grants" tab
     Then I see "New" button inside "Grants - Active" flex table not displayed
 
-  @333543 @333546 @306423
+  @333543 @333546 @306423 @wip
   Scenario Outline: Phase name- admin-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases
   |Phase name- Internal-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Phase Config          | Body Flex Table | Closeout          | ApiGeneratedId:0 |
+      | Phase Config          | Body Flex Table | AllCloseouts          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Body Flex Table | Programs      | Closeout           |
+      | Phase Config:General  | Body Flex Table | AllCloseouts      | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

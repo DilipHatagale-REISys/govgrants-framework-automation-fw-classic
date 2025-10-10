@@ -690,4 +690,20 @@ public class FlexTableSteps {
     public void iSoftlyDoNotSeeOptionsDisplayed(String usage, String option) {
         flexTablePage.assertOptionDisplayed(usage, option);
     }
+
+    @Then("^I (see|do not see|softly see|softly do not see) column header \"([^\"]*)\" displayed in tableId \"([^\"]*)\"$")
+    public void iSeeColumnHeaderDisplayedInTableId(String usage, String columnHeader, String tableId) {
+        flexTablePage.assertColumnHeader(usage, columnHeader, tableId);
+    }
+
+    @Then("^I (softly see|see|do not see|softly do not see) \"([^\"]*)\" button is displayed on confirmation box$")
+    public void iSeeButtonIsDisplayedOnConfirmationBox(String usage, String buttonName) {
+        flexTablePage.assertButtonIsDisplayed(usage, buttonName);
+    }
+
+    @And("I clear all the filter from the table id {string}")
+    public void iClearAllTheFilterFromTheTableId(String filterTableId) {
+        By clearAll = By.xpath("//*[@id='" + filterTableId + "']//*[@title='Clear All']//i");
+        I.amPerforming().click().on(clearAll);
+    }
 }

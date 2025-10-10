@@ -1,102 +1,7 @@
-@EnhancedFlexTable-PATCHcomponent @regression-PATCH @DataTableEnhanced
+@EnhancedFlexTable @DataTableEnhanced
 Business Need: DataTableEnhanced Component Scenarios
   Test all DataTableEnhanced component based scenarios
   As a configuration manager i make different configurational changes in DataTableEnhanced component and will validate them.
-
-     ##########  Depricated Test Cases From Test 5 Org ####################
-
-  @76929 @76945
-  Scenario Outline: validate disabling of PDF download from menu option in enhanced flex table planning
-  |validate disabling of XLS download from menu option in enhanced flex table planning|
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Export (PDF)       | true              | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (PDF)       | false         | DataTableEnhanceProgramContacts |                           |                            |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | false         | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
-    Then I see "Download as PDF" options inside "Contacts" disabled
-    Then I see "Download as XLS" options inside "Contacts" disabled
-
-    Examples:
-      | User |
-     #| ADMIN |
-      | PM    |
-
-  @76931
-  Scenario Outline: validate disabling of advance filter from enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Filter | false         | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
-
-    Examples:
-      | User |
-     #| ADMIN |
-      | PM    |
-
-  @76932 @379012
-  Scenario Outline: validate disabling of quick search from enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Quick Search | false         | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    Then I see quick search option disabled from enhanced grid
-
-    Examples:
-      | User |
-     #| ADMIN |
-      | PM    |
-
-  @76934
-  Scenario Outline: validate auto index for details inside enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Auto Index | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Auto Index | true          | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    Then I see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
-
-    Examples:
-      | User |
-     #| ADMIN |
-      | PM    |
 
   @77110 @77112  @379019
   Scenario Outline: enabling of page size dropdown at bottom inside enhanced enhanced flex table planning
@@ -123,26 +28,6 @@ Business Need: DataTableEnhanced Component Scenarios
       | User |
       | PM   |
 
-  @77113  @379018
-  Scenario Outline: validate disabling of total row count in enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Total Records Count | false         | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
-    Examples:
-      | User  |
-    #  | ADMIN |
-      | PM    |
 
   @77183
   Scenario Outline: validate disabling of burger menu icon in enhanced flex table planning
@@ -161,31 +46,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
-  @77215    @enableRecordSelectionForEnhancedDataTable-gPlanning @wip
-  Scenario Outline: validate enabling of record selection check boxes in in enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Record Selection | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Record Selection | true          | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    Then I see Menu icon is disabled from planning flex table "Contacts"
-
-    Examples:
-      | User  |
-    #  | ADMIN |
-      | PM    |
 
   @77220
   Scenario Outline: Changing specific column value in ascending order with order by and sort by field from config and validating it inside  enhanced flex table planning
@@ -207,9 +71,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @77221
   Scenario Outline: Changing specific column value in Descending order with order by and sort by field from config and validating it inside  enhanced flex table planning
@@ -231,9 +95,9 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see column "ProjectRole__c" value is in "Descending" order
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @77284
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
@@ -253,11 +117,11 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see over all total for "BaseSalary__c" field at enhanced grid
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
-  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
+  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH @wip
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -265,14 +129,14 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
     Then I softly do not see "X_External Organization" in flex table header "Subawards - Active"
 
-  @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
+  @77286 @wip
   Scenario: Hiding specific column value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -280,84 +144,16 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForEnhancedGrid | DataTableEnhanceProgramContacts | Name                      | FTC-12667                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Organization" not displayed in enhanced grid table column title
 
-  @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
-  Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "Edit" icon for "{StaticRecords:ContactRecord}" inside table
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "Applicationg test88888" in "---program:-:programContactsTableId---" panel
-    Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
-
-  @77353    @enableGroupingFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
-  Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside  enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-13095                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I see "Budget" inside rows of enhanced grid id "---program:-:SubawardTableIdForAdminPM---"
-
-  @77413    @enableSubTotalFieldAtFlexTableEnhanced-gPlanning
-  Scenario: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
-      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-      | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I see "Version Number" in flex table header "GrantorRelatedAwards2FlexToggle"
-
-  @77401    @hideExpressionJsonFieldAtTopLevelActionFlexTableForEnhanced-gPlanning
-  Scenario: Set up configuration to hide New action and validating it inside enhanced data table -planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedDataTable__TopAction_For_Specific_Program | DataTableEnhanceProgramContacts | Name                      | New                        |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    And I pause execution for "5" seconds
-    Then I see no "New" button inside "Contacts" enhanced grid
-
-  @77329    @enableHideGroupingColumnFieldAtFlexTableEnhanced-gPlanning
+  @77329
   Scenario: validate display of number of project areas column after checking checkbox true of Hide Grouping Column field from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -374,56 +170,34 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     Then I see "Version Number" not displayed in enhanced grid table column title
 
-  @104862  @VerifySortingLabelInsideEnhancedDataTable
+  @104862
   Scenario: verify that sorting label displayed inside enhanced data table
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
-    And I pause execution for "10" seconds
+    And I pause execution for "5" seconds
     Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
 
-  @104409    @validatePicklistFieldValueAsNoneAtEnhancedDataTableInInlineMode-gPlanning
+  @104409
   Scenario: validate picklist field value as none inside enhanced data table in inline edit mode
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     When I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:programContactsTableId---"
     Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
-  @106413 @379016 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:SubawardTableIdForAdminPM---"
-    When I enter advance filter values in table id "---program:-:SubawardTableIdForAdminPM---"
-      | Budget Period End Date | equals to | 05/01/2023 |
-    Then I see label containing value as "05/01/2023" inside advance filter
-
-    Examples:
-      | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                               |
-      | Name,GrantAwardName__c,BudgetPeriodStartDate__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c | Name,GrantAwardName__c,BudgetPeriodStartDate__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c |
-
-  @106417  @validateAdvanceFilterValueForDateFieldWithOperatorStartWithAtFlexTableEnhanced
+  @106417 @wip
   Scenario Outline: validate Advance filter search for date field with equals to with operator At Flex Table Enhanced
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -445,24 +219,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                               |
       | Name,GrantAwardName__c,BudgetPeriodStartDate__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c | Name,GrantAwardName__c,BudgetPeriodStartDate__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c |
 
-  @111920  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedDataTable @skipOnJenkins
-  Scenario Outline: validate tool tip displayed at hover on column value inside Enhanced data table
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
-    When I hovering mouse on table id "---program:-:programContactsTableId---" with table row level icon "<new_helpText>" for column value "Automation FO"
-    Then I see "<new_helpText>" shown at mouse hover inside "---program:-:programContactsTableId---" table
 
-    Examples:
-      | new_helpText |
-      | Contact      |
-
-  @132268    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
+  @132268
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -477,275 +235,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I hover mouse on lookup link "Lisa Mitchell" at table
     And I pause execution for "4" seconds
     Then I see "Name" as "Lisa Mitchell" in mini page layout
-
-  @145488  @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTableEnhanced
-  Scenario: validate Advance filter  with does not contain operator At Flex Table Enhanced
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:SubawardTableIdForAdminPM---"
-    When I enter advance filter values in table id "---program:-:SubawardTableIdForAdminPM---"
-      | EGMS ID | does not contain | test1 |
-    Then I do not see value "test1" for title "EGMS ID" inside table "---program:-:GridGrantorRelatedAwards2TableId---"
-
-  @151054 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedDataTable @wip @itsworkingasexpected
-  Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced data table
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    When I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
-    When I enter value "KAMAL" into field "fieldFirstName"
-    When I enter value "SANAS" into field "fieldLastName"
-    When I enter value "kamal234@gmail.com" into field "fieldEmail"
-    And I click on "Save" in the page details
-    When I perform quick search for "kamal234@gmail.com" in "---program:-:programContactsTableId---" panel
-    Then I see value "kamal234@gmail.com" for the title "Email" inside table "---program:-:programContactsTableId---"
-
-  @194928 @sprint1
-  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "X_External Organization" in flex table header "Subawards - Active"
-
-  @194451 @sprint1
-  Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON |               | DataTableEnhanceProgramContacts | Name                      | FTC-12667                  |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    And I navigate to "Overview" sub tab
-    Then I softly do not see "Organization" in flex table header "Contacts"
-
-  @194456 @sprint1
-  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Version Number" in flex table header "Subawards - Active"
-
-  @194457 @sprint1
-  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with currency   field(Total Award Obligated Amount)
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13095                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Total Approved Budget:" in flex table header "Subawards - Active"
-
-  @194459 @sprint1
-  Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with status
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-14087                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Status" in flex table header "Subawards - Active"
-
-  @194929 @sprint1 @wip
-  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13605                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Status" in flex table header "Subawards - Active"
-
-  @194931 @sprint1
-  Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field  with equal to operator
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable3 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Version Number" in flex table header "Subawards  - Active"
-
-  @194932 @sprint1
-  Scenario:Data Table Enhanced -To verify, Hide  expression builder is working  for $user with number  field  with  not equal to operator
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable4 | GrantorRelatedAwards2 | Name                      | FTC-13092                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Grants" tab
-    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Version Number" in flex table header "Subawards  - Active"
-
-  @208595 @208597   @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable @wip
-  Scenario Outline:To verify , Mini layout UI at ME-Grid  table looks as   object name to the top, field title under it, then line separator for Internal user
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-    And I hover mouse on link "Automation PM" at table
-    And I pause execution for "2" seconds
-    Then I see "Contact" as "Automation PM" value inside mini page layout
-    Then I see "Organization" as "SYSTSEM" value inside mini page layout
-
-    Examples:
-      | User |
-    #|ADMIN|
-      | PM   |
-
-  @204740 @204742
-  Scenario Outline: Is active- Admin- Config- Verify flex table should not be displayed,Is active- PM- UI- Verify flex table should not be displayed
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-6895                    |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    Then I do not see Header field "Contacts" displayed as a Header on flex table
-    Examples:
-      | User  |
-      | Admin |
-      | PM    |
-
-  @204739 @204741
-  Scenario Outline: Is active- Admin- Config- Verify flex table should be displayed, Is active- PM- UI- Verify flex table should be displayed
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-6895                    |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts" displayed as a Header on flex table
-    Examples:
-      | User  |
-      | Admin |
-      | PM    |
-
-  @204736
-  Scenario: Name- Admin- Config- Verify Flex table name displayed correctly on UI,
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table            | Header    | Contacts          | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts      | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts" displayed as a Header on flex table
-
-  @204737
-  Scenario: Name- PM- UI- Verify Flex table name displayed correctly on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table            | Header    | Contacts          | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts      | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts" displayed as a Header on flex table
-
-  @204738
-  Scenario: Name- SPI- UI- Verify Flex table name displayed correctly on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table            | Header    | Contacts          | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts      | AppContact         | Name                      |                            |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    When I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
-    When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts" displayed as a Header on flex table
 
   @204744
   Scenario: Is active- SPI- UI- Verify flex table should not be displayed
@@ -909,10 +398,10 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+   #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @204994 @204995 @204997 @205005 @205010 @205011 @379021 @SanityPATCH @SanityPATCHEnhancedTable
+  @204994 @204995 @204997 @205005 @205010 @205011 @379021
   Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’,
   Default Page Size - PM- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’,
   Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI,
@@ -932,10 +421,12 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -995,7 +486,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205013 @205014 @379022 @SanityPATCH @SanityPATCHEnhancedTable
+  @205013 @205014 @379022
   Scenario Outline: Pagination - Admin- Config- Verify Pagination should not display on UI,
   Pagination - PM- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
@@ -2006,83 +1497,6 @@ Business Need: DataTableEnhanced Component Scenarios
 
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
-  @20507p8 @205080 @379015 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option should not available on UI,
-  Advanced Filter- PM- UI- Verify Advanced Filter option should not available on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | false          | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    Then I do not see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
-    Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-
-  @205077 @205079 @379014 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option available on UI,
-  Advanced Filter- PM- UI- Verify Advanced Filter option available on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
-    Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205082
   Scenario: Advanced Filter- SPI- UI- Verify Advanced Filter option should not available on UI
@@ -2183,58 +1597,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "Title" under field name "Column Name" inside flex table
 
-  @207577 @207578
-  Scenario Outline: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
-  Advance filter - PM- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:programContactsTableId---"
-    And I enter value "Ebiz POC" into field "ProjectRole__c"
-    When I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
-    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
-      | Project Role | equals to | Ebiz POC |
-    Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I refresh the page
-    Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207579
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
@@ -2264,48 +1626,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ##########################Test suite: Quick Search (Suite ID: 207520)#########################
 
-  @207522 @207523
-  Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering numbers in quick search box
-  Quick Search- PM- UI- Verify we can search records by entering numbers in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:programContactsTableId---"
-    And I enter value "2" into field "NumberOfPersonnel__c"
-    When I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
-    When I perform quick search for "2" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                                             | defaultFieldsApi                                                                    |
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c,NumberOfPersonnel__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-
-  @207524
+   @207524
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering numbers in quick search box
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2332,40 +1653,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "11000" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207525 @207526
-  Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering text in quick search box
-  Quick Search- PM- UI- Verify we can search records by entering text in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    #And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I perform quick search for "Automation PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207527
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering text in quick search box
@@ -2394,38 +1681,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Chakram" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207528
-  Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering partial text in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "PM" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Showing 1 to " inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207530
   Scenario: Quick Search- SPI- SPI- Verify we can search records by entering partial text in quick search box
@@ -2454,43 +1709,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "sds" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207531 @207532
-  Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering special characters in quick search box
-  Quick Search- PM- UI- Verify we can search records by entering special characters in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "krishnashuklacr7best9471@yo" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207533
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering special characters in quick search box
@@ -2519,41 +1737,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207534 @207535 @alreadyraisedbug
-  Scenario Outline: Quick Search- Admin- Config- Verify we can search records by entering apostrophe in quick search box
-  Quick Search- PM- UI- Verify we can search records by entering apostrophe in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:4 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "'apostrophe 'apostrophe" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "'apostrophe 'apostrophe" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-    #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207536
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering apostrophe in quick search box
@@ -2575,42 +1758,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
 
-  @207572 @207573
-  Scenario Outline: Quick search - Admin- Config- Verify when we get any quick search results and refresh the page quick search should cleared and all records should be displayed on UI
-  Quick search - PM- UI- Config- Verify when we get any quick search results and refresh the page quick search should cleared and all records should be displayed on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size          | 5                  | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Krishna S" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "'apostrophe test''''" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    Then I see table contains "Krishna S" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    When I click on "Reset Table" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-     # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @207574
   Scenario: Quick search - SPI- UI- Config- Verify when we get any quick search results and refresh the page quick search should cleared and all records should be displayed on UI
@@ -2638,41 +1785,6 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ######################Test suite: Action Config (Suite ID: 205379)########################
 
-  @205382 @205384 @205388 @379006 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: Action- Admin- config- Verify action is rendered on UI,
-  Action- PM- UI- Verify action is rendered on UI
-  Action- Admin- config- Verify action name is displaying correctly,
-  Action- PM- UI- Verify action name is displaying correctlya
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see action name "View" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see action name "Edit" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-      #| Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205386 @205390
   Scenario: Action- SPI- UI- Verify action is rendered on UI,
@@ -2694,34 +1806,6 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see action name "Edit" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
     Then I see action name "Delete" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
 
-  @205397
-  Scenario Outline: Action- Admin- config- Verify Button help text is displaying correctly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi>        | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table Action     | Button Help Text    | Test Button Help Text | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    And I hovering mouse on action "View" inside flex table
-    Then I see action name "Test Button Help Text" itself get displayed on UI
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205399
   Scenario: Action- SPI- UI- Verify Button help text is displaying correctly
@@ -2741,42 +1825,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I hovering mouse on action "Edit" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
 
-  @205400 @205401 @255402 @255403 @205431 @205432
-  Scenario Outline: Action- Admin- Config- Verify Actions icons are rendered at expected positions,
-  Action- PM- UI- Verify Actions icons are rendered at expected positions,
-  Action- Admin- Config- Verify Actions should be rendered as action name,
-  Action- PM- UI- Verify Actions should be rendered as action name
-  Action- Admin- Config- Verify Actions are rendered at expected location
-  Action- PM- UI- Verify Actions are rendered at expected location
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table Action     | Sequence            | 0                  | ApiGeneratedId:1 |
-      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:2 |
-      | Flex Table            | Location            |                    | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Location            | Row            | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
   @205404 @205405 @205433 @205439
   Scenario: Action- SPI- UI- Verify Actions icons are rendered at expected positions,
@@ -2803,37 +1851,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
 
-  @205434 @205435
-  Scenario Outline: Action- Admin- Config- Verify action rendered as per expected ‘Header Action Display Type’,
-  Action- PM- UI- Verify action rendered as per expected ‘Header Action Display Type’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row                     | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Action URL Long            | <actionUrlLongOldValue> | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Action Behavior            | Open in same window     | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type |                         | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row                     | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Action URL Long            | <actionUrlLongNewValue> | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type | Button                  | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | actionUrlLongOldValue                             | actionUrlLongNewValue                             |
-      | PM    | /apex/ContactView?id={!KeyContacts__c.Contact__c} | /apex/ContactView?id={!KeyContacts__c.Contact__c} |
 
   @205436
   Scenario: Action- SPI- UI- Verify action rendered as per expected ‘Header Action Display Type’
@@ -2857,77 +1874,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
 
-  @205437 @205438
-  Scenario Outline: Action- Admin- Config- Verify if actions displayed on UI are following given sequence,
-  Action- PM- UI- Verify if actions displayed on UI are following given sequence
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table Action     | Sequence            | 0                  | ApiGeneratedId:1 |
-      | Flex Table Action     | Sequence            | 1                  | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Sequence            | 1              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PO Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PO Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:FD1 Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:FD1 Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Then I see "Edit" row action Button at position "2" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    Examples:
-      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-
-  @205440 @205441
-  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
-  Action- PM- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | OpenURL           | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I perform quick search for "{SavedValue:EXE Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:EXE Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I perform quick search for "{SavedValue:PM Username}" in "---program:-:associateContactsTableId---" panel
-    And I check "{SavedValue:PM Username}" boxes in flex table with id "---program:-:associateContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "{SavedValue:PM Username}" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "{SavedValue:PM Username}" inside table
-    Then I see no new tab is opened
-    Examples:
-      | Users |
-      | PM    |
-
   @205442
   Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
     Given I have "default" configuration as below:
@@ -2947,35 +1893,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "Lisa Mitchell" inside table
     Then I see no new tab is opened
 
-  @205456 @205457
-  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in new window’ action should be performed in new window
-  Action- PM- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | NewWindow     | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "Lisa Mitchell" inside table
-    Then I see new tab is opened
-    Examples:
-      | Users |
-    #  | Admin |
-      | PM    |
-
   @205458
   Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window
     Given I have "default" configuration as below:
@@ -2994,72 +1911,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Lisa Mitchell" inside table
     Then I see no new tab is opened
-
-  @205459 @205492 @205493
-  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in overlay’ action should be performed in new small modal window appended in same page,
-  Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,Action- PM- UI - Verify ‘Modal title’ is displaying correctly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Where To Open ? |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Modal Title     |                   | ApiGeneratedId:1 |
-      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal           | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "Lisa Mitchell" inside table
-    Then I see "View" opens in overLay window
-    Examples:
-      | Users |
-     # | Admin |
-      | PM    |
-
-  @205462 @205463 @205489 @205490
-  Scenario Outline: Action- Admin- Config- Verify Confirmation window is getting displayed,
-  Action- PM- UI-  Verify Confirmation window is getting displayed,
-  Action- Admin- Config- Verify correct Confirmation message is getting displayed,
-  Action- PM- UI- Verify correct Confirmation message is getting displayed
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table            | Show Confirmation Box | false             | ApiGeneratedId:0 |
-      | Flex Table            | Confirmation Message  |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "Lisa Mitchell" inside table
-    Then I see confirmation box with body "Automation" is displayed
-    Examples:
-      | Users |
-     # | Admin |
-      | PM    |
 
   @205464 @205491
   Scenario: Action- SPI- UI - Verify Confirmation window is getting displayed
@@ -3105,70 +1956,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "Lisa Mitchell" inside table
     Then I see "Automation Title" opens in overLay window
 
-  @205495 @205496
-  Scenario Outline: Action- Admin- Config- Verify modal window size is as per Modal width
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Modal Title     |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Where To Open ? | Modal           | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
-      | Flex Table Action     | Modal Width     | 50              | DataTableEnhanceProgramContacts | Name                      | View                       |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
-    When I click on "View" icon for "Lisa Mitchell" inside table
-    And I pause execution for "5" seconds
-    Then I see modal window is open in same tab with style "50"
-    Examples:
-      | Users |
-   #  | Admin |
-      | PM    |
-
-  @205497
-  Scenario: Action- SPI- UI- Verify modal window size is as per Modal width
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title     |                   | RecipientGrantNotes | Name                      | Edit                       |
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Where To Open ? | Modal           | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title     | View            | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Modal Width     | 50              | RecipientGrantNotes | Name                      | Edit                       |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
-    And I navigate to "Files" sub tab
-    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Edit" icon for "Lisa Mitchell" inside table
-    And I pause execution for "5" seconds
-    Then I see modal window is open in same tab with style "50"
-
-    #####################Test suite: Export functionality (Suite ID: 207538)#########################
+   #####################Test suite: Export functionality (Suite ID: 207538)#########################
 
   @207543 @207544 @207546 @207547
   Scenario Outline:Download as PDF- Admin- Config- Verify when we get any quick search results and click on download as PDF, we should see all records in PDF,
@@ -3276,200 +2064,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I download the file
     Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
 
-  @207612 @207613
-  Scenario Outline: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (PDF) | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts |                           |                            |
-    Given I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
-    When I navigate to "Overview" sub tab
-    When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
-    And I download the file
-    And I pause execution for "10" seconds
-    Then I see "$2,000.00" on page "1" of "govgrants" pdf file
-    Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
-      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
-
-  @207614
-  Scenario: Total - SPI- UI- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (PDF) | true          | RecipientGrantNotes | Name                      |                            |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:AppProForAnnouncementTesting}" inside table
-    And I navigate to "Files" sub tab
-    When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
-    When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
-    And I download the file
-    Then I see "4000" on page "1" of "govgrants" pdf file
-
-  @379017 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: To verify that user is able to see Total Records count at bottom of the table, when Total Records count config is enabled
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    Then I see "Total Records" page size inside table "---program:-:programContactsTableId---"
-    Examples:
-      | User |
-      #| ADMIN |
-      | PM   |
-
-  @379005 @SanityPATCH @SanityPATCHEnhancedTable
-  Scenario Outline: To verify that all top level actions are displayed on top of the table, which have been configured
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts" flex table
-    Examples:
-      | User |
-    #  | ADMIN |
-      | PM   |
-
-  @wip @379007 @alreadycoveredscenario
-  Scenario Outline: To verify that user is able to create new record by clicking on New action
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
-    When I enter "Contacts" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save"
-
-
-    Examples:
-      | User |
-    # | ADMIN |
-      | PM   |
-
-  @379011p @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable @wip
-  Scenario: validate disabling of quick search from enhanced flex table planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Quick Search | true          | DataTableEnhanceProgramContacts |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Manage code" in the table "---program:-:associateProgramContactsTableId---"
-    When I performed quick search "Manage code" inside table id "---program:-:programContactsTableId---" on page block
-    Then I softly see value "Manage code" for title "Name" inside table "---program:-:programContactsTableId---"
-    When I click on "View" icon for "Manage code" inside table
-    #379009
-    Then I see new tab is opened
-
-  @379010 @SanityPATCH @SanityPATCHEnhancedTable @wip
-  Scenario:To verify that user is able to delete record by clicking on Delete action
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I click on "Remove" icon for "Automation PM" inside table
-    Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
-
-  @379008p @SanityPATCH @SanityPATCHEnhancedTable @wip
-  Scenario: To verify that user is able to edit existing record by clicking on Edit action
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    #When I click on "Edit" icon for "12 21" inside table without accept popup
-    When I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:programContactsTableId---"
-    And I enter value "Program Manager" into field "ProjectRole__c"
-    And I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
-    Then I see the following message in the page details :
-      | Saved Successfully! |
-
-
-
-    #######################################################################################
+  #######################################################################################
 
   @499346
   Scenario Outline: 2.0- Data Table Enhanced- PM- User Interface Behavior Config
@@ -3529,8 +2124,8 @@ Business Need: DataTableEnhanced Component Scenarios
       #| ADMIN |
       | PM   |
 
-  @499349 @checkmanualyforhelptext
-  Scenario Outline: 3.0- Data Table Enhanced- PM- Information, SOQL config
+  @499349
+  Scenario Outline: 2.0- Data Table Enhanced- PM- Information, SOQL config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue                                               | filterId         |
       | Flex Table            | Header             | Contacts                                                        | ApiGeneratedId:0 |
@@ -3590,19 +2185,19 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
     And I pause execution for "5" seconds
-    Then I softly see "Contacts" page block displayed
-    Then I softly see record selection is displayed for tableId "---program:-:contactsTableId---"
+    #Then I softly see "Contacts" page block displayed
+    Then I see "Select All Check Box" displayed inside table id "---program:-:contactsTableId---"
     Then I see "Menu" action is displayed at the "---program:-:contactsTableId---" modal
     And I click on "Menu" button inside table id "---program:-:contactsTableId---"
     Then I softly see "Download as PDF" button is displayed
-    Then I softly see "Download as CSV" button is displayed
+    Then I softly see "Download as XLS" button is displayed
 
     Examples:
       | User |
       #| ADMIN |
       | PM   |
 
-  @499355 @checkhelptextmanuallyforbasesalryfield
+  @499355
   Scenario Outline: 3.0- Data Table Enhanced- PM- Numeric Data Type Fields- Flex Table Detail Config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                      | filterId         |
@@ -3618,7 +2213,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Field Label Override  |                                        | ApiGeneratedId:9 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName             | fieldNewValue                                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
-      | Page Block:Page Block Detail | Is Active             | true                                                                                | Grantor State Program           | Name                      | PB-11436                             |
+      | Page Block:Page Block Detail | Is Active             | true                                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}  |
       | Flex Table:General           | Display Field Names   | ProjectRole__c,Contact__c,Contact__r.Email,BaseSalary__c,Contact__r.Organization__c | DataTableEnhanceProgramContacts |                           |                                      |
       | Flex Table List              | Enable Row Grouping   | true                                                                                | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table List              | Enable Sub Total      | true                                                                                | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
@@ -3639,12 +2234,10 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "5" seconds
-    Then I softly see row grouping for field "BaseSalary__c" with group header "BaseSalary : -" and total value "$0.00"
     Then I softly see "Sub Base Salary-BaseSalary : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Base Salary"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Data" shown as help text
-
+    When I hovering mouse on help text icon inside page block detail "Base Salary"
+    And I pause execution for "2" seconds
+    Then I softly see "Help Data" shown as help text
     Examples:
       | User |
       #| ADMIN |
@@ -3666,7 +2259,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Field Label Override |                                        | ApiGeneratedId:10 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
-      | Page Block:Page Block Detail | Is Active            | true                                   | Grantor State Program           | Name                      | PB-11436                              |
+      | Page Block:Page Block Detail | Is Active            | true                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}   |
       | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                                       |
       | Flex Table List              | Enable Row Grouping  | false                                  | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Contact__c}     |
       | Flex Table List              | Hide Grouping Column | false                                  | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Contact__c}     |
@@ -3690,24 +2283,25 @@ Business Need: DataTableEnhanced Component Scenarios
     #LookupFiled
     #Then I softly see row grouping for field "Contact__c" with group header "Base Salary : $0" and total value "$0.00"
     Then I see column header "Name" displayed in tableId "---program:-:contactsTableId---"
-#    And I hovering mouse on help text icon inside "Name" for flex table column
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Name" shown as help text
+    And I hovering mouse on help text icon inside "Name" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Name" shown as help text
     #PicklistField
     Then I softly see "Project Role :" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "Project Role" displayed in tableId "---program:-:contactsTableId---"
-#    And I hovering mouse on help text icon inside "Project Role" for flex table column
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Project Role" shown as help text
- #   And I hovering mouse on help text icon inside "Name" for flex table column
-#    And I pause execution for "2" seconds
- #   Then I softly see "Help Name" shown as help text
+    And I hovering mouse on help text icon inside "Project Role" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Project Role" shown as help text
+    And I hovering mouse on help text icon inside "Name" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Name" shown as help text
     #PicklistField
     Then I softly see "Project Role :" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "Project Role" displayed in tableId "---program:-:contactsTableId---"
- #   And I hovering mouse on help text icon inside "Project Role" for flex table column
-#    And I pause execution for "2" seconds
-   # Then I softly see "Help Project Role" shown as help text
+    And I hovering mouse on help text icon inside "Project Role" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Project Role" shown as help text
+
     Examples:
       | User |
       | PM   |
@@ -3733,7 +2327,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Field Label Override |                                        | ApiGeneratedId:14 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue             |
-      | Page Block:Page Block Detail | Is Active            | true                                                                          | Grantor State Program           | Name                      | PB-11436                               |
+      | Page Block:Page Block Detail | Is Active            | true                                                                          | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}    |
       | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},URL__c,IsKeyContact__c,ContactEmail__c | DataTableEnhanceProgramContacts |                           |                                        |
       | Flex Table List              | Enable Row Grouping  | true                                                                          | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:IsKeyContact__c} |
       | Flex Table List              | Hide Grouping Column | true                                                                          | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:IsKeyContact__c} |
@@ -3763,17 +2357,17 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I softly see "Is Key Contact :" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I softly do not see column header "Is Key Contact" displayed in tableId "---program:-:contactsTableId---"
       #EmailField
-    Then I softly see "Email Test : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
-    Then I see column header "Email Test" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Email"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Email" shown as help text
+    Then I softly see "Email : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
+    Then I softly see column header "Email" displayed in tableId "---program:-:contactsTableId---"
+    And I hovering mouse on help text icon inside "Email" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Email" shown as help text
       #URLFiled
     Then I softly see "URL : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "URL" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "URL"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help URL" shown as help text
+    And I hovering mouse on help text icon inside "URL" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help URL" shown as help text
 
     Examples:
       | User |
@@ -3790,13 +2384,13 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Help Text            |                                        | ApiGeneratedId:5 |
       | Flex Table List       | Field Label Override |                                        | ApiGeneratedId:6 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
-      | Page Block:Page Block Detail | Is Active            | true                                        | Grantor State Program           | Name                      | PB-11436                    |
-      | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},Name | DataTableEnhanceProgramContacts |                           |                             |
-      | Flex Table List              | Enable Row Grouping  | true                                        | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name} |
-      | Flex Table List              | Hide Grouping Column | false                                       | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name} |
-      | Flex Table List              | Help Text            | Help Key Contacts Name                      | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name} |
-      | Flex Table List              | Field Label Override | Key Contacts Name                           | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name} |
+      | configurationCategory        | fieldName            | fieldNewValue                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active            | true                                        | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},Name | DataTableEnhanceProgramContacts |                           |                                     |
+      | Flex Table List              | Enable Row Grouping  | true                                        | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name}         |
+      | Flex Table List              | Hide Grouping Column | false                                       | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name}         |
+      | Flex Table List              | Help Text            | Help Key Contacts Name                      | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name}         |
+      | Flex Table List              | Field Label Override | Key Contacts Name                           | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Name}         |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -3811,9 +2405,9 @@ Business Need: DataTableEnhanced Component Scenarios
      #Standard/TextDataTypeField
     Then I softly see "Key Contacts Name :" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "Key Contacts Name" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Key Contacts Name"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Key Contacts Name" shown as help text
+    And I hovering mouse on help text icon inside "Key Contacts Name" for flex table column
+    And I pause execution for "2" seconds
+    Then I softly see "Help Key Contacts Name" shown as help text
 
     Examples:
       | User |
@@ -3837,7 +2431,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names  | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:10 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Page Block:Page Block Detail | Is Active            | true                                                            | Grantor State Program           | Name                      | PB-11436                                |
+      | Page Block:Page Block Detail | Is Active            | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}     |
       | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},Date__c,Date_And_Time__c | DataTableEnhanceProgramContacts |                           |                                         |
       | Flex Table List              | Enable Row Grouping  | true                                                            | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Date__c}          |
       | Flex Table List              | Hide Grouping Column | false                                                           | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Date__c}          |
@@ -3862,9 +2456,9 @@ Business Need: DataTableEnhanced Component Scenarios
      #DateField
     Then I softly see "Date : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "Date" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Date"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Date" shown as help text
+    When I hovering mouse on help text icon inside page block detail "Date"
+    And I pause execution for "2" seconds
+    Then I softly see "Help Date" shown as help text
       #Date/TimeField
     Then I softly see "Date/Time : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I softly do not see column header "Date/Time" displayed in tableId "---program:-:contactsTableId---"
@@ -3886,7 +2480,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table List       | Field Label Override |                                        | ApiGeneratedId:6 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue             |
-      | Page Block:Page Block Detail | Is Active            | true                                                   | Grantor State Program           | Name                      | PB-11436                               |
+      | Page Block:Page Block Detail | Is Active            | true                                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}    |
       | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},Phone_Number__c | DataTableEnhanceProgramContacts |                           |                                        |
       | Flex Table List              | Enable Row Grouping  | true                                                   | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Phone_Number__c} |
       | Flex Table List              | Hide Grouping Column | false                                                  | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:Phone_Number__c} |
@@ -3906,9 +2500,9 @@ Business Need: DataTableEnhanced Component Scenarios
      #PhonenumberField
     Then I softly see "Phone Number : -" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "Phone Number" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Phone Number"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Phone Number" shown as help text
+    When I hovering mouse on help text icon inside page block detail "Phone Number"
+    And I pause execution for "2" seconds
+    Then I softly see "Help Phone Number" shown as help text
 
     Examples:
       | User |
@@ -3931,7 +2525,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names  | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:10 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                   |
-      | Page Block:Page Block Detail | Is Active            | true                                                                 | Grantor State Program           | Name                      | PB-11436                                     |
+      | Page Block:Page Block Detail | Is Active            | true                                                                 | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}          |
       | Flex Table:General           | Display Field Names  | {CommonConfigFileTest:ContactTableDFN},City__c,Test_Multipicklist__c | DataTableEnhanceProgramContacts |                           |                                              |
       | Flex Table List              | Enable Row Grouping  | true                                                                 | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:City__c}               |
       | Flex Table List              | Hide Grouping Column | false                                                                | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:City__c}               |
@@ -3956,14 +2550,14 @@ Business Need: DataTableEnhanced Component Scenarios
      #FormulaField
     Then I softly see "City :" inside rows of enhanced grid id "---program:-:contactsTableId---"
     Then I see column header "City" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "City"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help City" shown as help text
+    When I hovering mouse on help text icon inside page block detail "City"
+    And I pause execution for "2" seconds
+    Then I softly see "Help City" shown as help text
       #MultipicklistField-rowgrouping is NA for this
     Then I softly see column header "Multipicklist" displayed in tableId "---program:-:contactsTableId---"
-#    When I hovering mouse on help text icon inside page block detail "Multipicklist"
-#    And I pause execution for "2" seconds
-#    Then I softly see "Help Multipicklist" shown as help text
+    When I hovering mouse on help text icon inside page block detail "Multipicklist"
+    And I pause execution for "2" seconds
+    Then I softly see "Help Multipicklist" shown as help text
 
     Examples:
       | User |
@@ -3978,10 +2572,10 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Flex Table            | Enable Quick Search | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active           | true                                   | Grantor State Program           | Name                      | PB-11436                   |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                            |
-      | Flex Table:General           | Enable Quick Search | true                                   | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory        | fieldName           | fieldNewValue                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active           | true                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                                     |
+      | Flex Table:General           | Enable Quick Search | true                                   | DataTableEnhanceProgramContacts |                           |                                     |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4004,32 +2598,38 @@ Business Need: DataTableEnhanced Component Scenarios
     #Search Exact Match
     And I perform quick search for "34500.56" in "---program:-:contactsTableId---" panel
     Then I softly see value "$34,500.56" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search Partial Match
     And I perform quick search for "500" in "---program:-:contactsTableId---" panel
     Then I softly see value "$34,500.56" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search Decimal Value
     And I perform quick search for ".5" in "---program:-:contactsTableId---" panel
     Then I softly see value "$34,500.56" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search with Incorrect Data
     And I perform quick search for "089" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search with Extra Spaces
     And I perform quick search for "   1 23" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search with Special Characters
     And I perform quick search for "!#%" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #Search with alphanumeric value
     And I perform quick search for "123ahkl" in "---program:-:contactsTableId---" panel
@@ -4048,10 +2648,10 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Flex Table            | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active           | true                                   | Grantor State Program           | Name                      | PB-11436                   |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                            |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory        | fieldName           | fieldNewValue                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active           | true                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                                     |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                                     |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4064,7 +2664,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I select value inside table "---program:-:associateContactsTableId---" is "All"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
     And I pause execution for "4" seconds
-    And I pause execution for "5" seconds
     And I perform quick search for "Automation PM1" in "---program:-:contactsTableId---" panel
     And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
       | Name           | Project Role         |
@@ -4073,57 +2672,68 @@ Business Need: DataTableEnhanced Component Scenarios
    #LookupFiled-Search Exact Match
     And I perform quick search for "Automation PM1" in "---program:-:contactsTableId---" panel
     Then I softly see value "Automation PM1" for title "Name" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
        #LookupFiled-Search Partial Match
     And I perform quick search for "Automation" in "---program:-:contactsTableId---" panel
     Then I softly see value "Automation PM1" for title "Name" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #LookupFiled-Search with Incorrect Data
     And I perform quick search for "SARAn" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #LookupFiled-Search with Extra Spaces
     And I perform quick search for "   Davi d" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #LookupFiled-Search with Special Characters
     And I perform quick search for "!#%" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #LookupFiled-Search with alphanumeric value
     And I perform quick search for "123Sarah" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
       #PicklistField-Search Exact Match
     And I perform quick search for "Authorized Signatory" in "---program:-:contactsTableId---" panel
     Then I softly see value "Authorized Signatory" for title "Project Role" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
 #   #PicklistField-Search Partial Match #Not Supported
-#    And I perform quick search for "Signatory" in "---program:-:contactsTableId---" panel
-#    Then I softly see value "Authorized Signatory" for title "Project Role" inside table "---program:-:contactsTableId---"
-#    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
-#    And I pause execution for "5" seconds
+    And I perform quick search for "Signatory" in "---program:-:contactsTableId---" panel
+    Then I softly see value "Authorized Signatory" for title "Project Role" inside table "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
+    And I pause execution for "5" seconds
      #PicklistField-Search with Incorrect Data
     And I perform quick search for "Signatury" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #PicklistField-Search with Extra Spaces
     And I perform quick search for "   Sign n" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #PicklistField-Search with Special Characters
     And I perform quick search for "!#%@" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #PicklistField-Search with alphanumeric value
     And I perform quick search for "123Auth" in "---program:-:contactsTableId---" panel
@@ -4141,9 +2751,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active           | true                                   | ApiGeneratedId:0 |
       | Flex Table:General    | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue                                                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active           | true                                                          | Grantor State Program           | Name                      | PB-11436                   |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},URL__c,IsKeyContact__c | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory        | fieldName           | fieldNewValue                                                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active           | true                                                          | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},URL__c,IsKeyContact__c | DataTableEnhanceProgramContacts |                           |                                     |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4160,32 +2770,38 @@ Business Need: DataTableEnhanced Component Scenarios
     #Email-Search Exact Match
     And I perform quick search for "sarahdavid345@gmail.com" in "---program:-:contactsTableId---" panel
     Then I softly see value "sarahdavid345@gmail.com" for title "Email" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
        #EmailFiled-Search Partial Match
     And I perform quick search for "sarah" in "---program:-:contactsTableId---" panel
     Then I softly see value "sarahdavid345@gmail.com" for title "Email" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #EmailFiled-Search with Incorrect Data
     And I perform quick search for "SARAn" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #EmailFiled-Search with Extra Spaces
     And I perform quick search for "   David 34" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #EmailFiled-Search with Special Characters
     And I perform quick search for "5@gma" in "---program:-:contactsTableId---" panel
     Then I softly see value "sarahdavid345@gmail.com" for title "Email" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #EmailField-Search with alphanumeric value
     And I perform quick search for "vid345" in "---program:-:contactsTableId---" panel
     Then I softly see value "sarahdavid345@gmail.com" for title "Email" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
       #URL-Search Exact Match
     And I perform quick search for "Automation PM1" in "---program:-:contactsTableId---" panel
@@ -4195,33 +2811,39 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "5" seconds
     And I perform quick search for "www.microsoft.com" in "---program:-:contactsTableId---" panel
     Then I softly see value "www.microsoft.com" for title "URL" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
    #URL-Search Partial Match
     And I perform quick search for "microsoft" in "---program:-:contactsTableId---" panel
     Then I softly see value "www.microsoft.com" for title "URL" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #URL-Search with Incorrect Data
     And I perform quick search for "wwww." in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #URLField-Search with Extra Spaces
     And I perform quick search for "   micro n" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #URLField-Search with Special Characters
     And I perform quick search for "!#%@" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #URLField-Search with alphanumeric value
     And I perform quick search for "123micro" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
     #ChekboxField Search Exact Match
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I perform quick search for "Automation PM1" in "---program:-:contactsTableId---" panel
     And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
       | Name           | Is Key Contact |
@@ -4229,17 +2851,20 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "5" seconds
     And I perform quick search for "True" in "---program:-:contactsTableId---" panel
     Then I softly see value "True" for title "Is Key Contact" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
    #Checkbox-Search Partial Match
     And I perform quick search for "fal" in "---program:-:contactsTableId---" panel
     Then I softly see value "false" for title "Is Key Contact" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #Checkbox-Search with Incorrect Data
     And I perform quick search for "truee" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #CheckboxField-Search with Extra Spaces
     And I perform quick search for "   false n" in "---program:-:contactsTableId---" panel
@@ -4257,9 +2882,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active           | true                                   | ApiGeneratedId:0 |
       | Flex Table            | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active           | true                                                      | Grantor State Program           | Name                      | PB-11436                   |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},CreatedBy,NSFID__c | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory        | fieldName           | fieldNewValue                                             | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active           | true                                                      | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},CreatedBy,NSFID__c | DataTableEnhanceProgramContacts |                           |                                     |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4275,27 +2900,32 @@ Business Need: DataTableEnhanced Component Scenarios
      #StandardField-Search Exact Match
     And I perform quick search for "Automation PM" in "---program:-:contactsTableId---" panel
     Then I softly see value "Automation PM" for title "Created By ID" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
    #StandardField-Search Partial Match
     And I perform quick search for "mation PM" in "---program:-:contactsTableId---" panel
     Then I softly see value "Automation PM" for title "Created By ID" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #StandardField-Search with Incorrect Data
     And I perform quick search for "automatied" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #StandardField-Search with Extra Spaces
     And I perform quick search for "   matio n" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #StandardField-Search with Special Characters
     And I perform quick search for "!#%@" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #StandardField-Search with alphanumeric value
     And I perform quick search for "123auto" in "---program:-:contactsTableId---" panel
@@ -4308,27 +2938,32 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "5" seconds
     And I perform quick search for "Test Data" in "---program:-:contactsTableId---" panel
     Then I softly see value "Test Data" for title "NSF ID" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
    #TextField-Search Partial Match
     And I perform quick search for "st Data" in "---program:-:contactsTableId---" panel
     Then I softly see value "Test Data" for title "NSF ID" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #TextField-Search with Incorrect Data
     And I perform quick search for "tested" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #TextField-Search with Extra Spaces
     And I perform quick search for "   test n" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #TextField-Search with Special Characters
     And I perform quick search for "!#%@" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
     #TextField-Search with alphanumeric value
     And I perform quick search for "123data" in "---program:-:contactsTableId---" panel
@@ -4346,9 +2981,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block            | Is Active           | true                                   | ApiGeneratedId:0 |
       | Flex Table            | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active           | true                                                            | Grantor State Program           | Name                      | PB-11436                   |
-      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},Date__c,Date_And_Time__c | DataTableEnhanceProgramContacts |                           |                            |
+      | configurationCategory        | fieldName           | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block:Page Block Detail | Is Active           | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock} |
+      | Flex Table:General           | Display Field Names | {CommonConfigFileTest:ContactTableDFN},Date__c,Date_And_Time__c | DataTableEnhanceProgramContacts |                           |                                     |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4368,22 +3003,26 @@ Business Need: DataTableEnhanced Component Scenarios
      #DateField-Search Exact Match
     And I perform quick search for "3/28/2025" in "---program:-:contactsTableId---" panel
     Then I softly see value "3/28/2025" for title "Date" inside table "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
    #DateField-Search Partial Match
     And I perform quick search for "3/" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #DateField-Search with Incorrect Data
     And I perform quick search for "3/30/2029" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #DateNTimeField-Search Partial Match
     And I perform quick search for "3/28/2026" in "---program:-:contactsTableId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:contactsTableId---"
-    When I click on button "resetIcon" in flex table with id "---program:-:contactsTableId---"
+    When I click on "Menu" button inside table id "---program:-:contactsTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Contacts"
     And I pause execution for "5" seconds
      #DateNTimeField-Search with Incorrect Data
     And I perform quick search for "05:43 PM" in "---program:-:contactsTableId---" panel
@@ -4433,13 +3072,13 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "4" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     Then I softly can see row level action button "View" against "Automation PM" in flex table with id "---program:-:contactsTableId---"
     Then I softly can see row level action button "Edit" against "Automation PM" in flex table with id "---program:-:contactsTableId---"
     Then I softly can see row level action button "Remove" against "Automation PM" in flex table with id "---program:-:contactsTableId---"
     And I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I see field "ProjectRole__c" is editable
-    Then I see field "BaseSalary__c" is editable
+    Then I see field "ProjectRole__c" is editable field
+    Then I see field "BaseSalary__c" is editable field
 
     Examples:
       | User |
@@ -4523,7 +3162,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     #Where to Open- New Window
     And I click on "View" icon for "Automation PM" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see new window is opened
+    Then I softly see new tab is opened
     Then I softly see "Contact Information" page block displayed
 
     Examples:
@@ -4556,15 +3195,19 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "8" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FD" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
     And I pause execution for "5" seconds
     Then I softly can see row level action button "Remove" against "Automation PM" in flex table with id "---program:-:contactsTableId---"
+    And I perform quick search for "Automation PM" in "---program:-:contactsTableId---" panel
     When I click on "Remove" icon for "Automation PM" inside flex table with id "---program:-:contactsTableId---" without accept popup
-    Then I see "OK" button is displayed on confirmation box
+    Then I see "Yes" button is displayed on confirmation box
     Then I softly see confirmation box with body "This action will remove the record, Are you sure you want to remove?" is displayed
-    And I click "OK" on modal confirmation box
+    And I click "Yes" on modal confirmation box
     Then I softly see the following message in the page details :
       | Record removed successfully. |
     Then I see table is refreshing
@@ -4580,8 +3223,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                            |
     And I refresh the page
     And I pause execution for "4" seconds
+    And I perform quick search for "Automation EXE" in "---program:-:contactsTableId---" panel
     And I click on "Remove" icon for "Automation EXE" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    And I click "OK" on modal confirmation box
+    And I click "Yes" on modal confirmation box
     Then I see entire page is refreshing
     And I pause execution for "5" seconds
     #Refresh all flextables
@@ -4595,8 +3239,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | DataTableEnhanceProgramContacts |                           |                            |
     And I refresh the page
     And I pause execution for "4" seconds
+    And I perform quick search for "Automation FD" in "---program:-:contactsTableId---" panel
     And I click on "Remove" icon for "Automation FD" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    And I click "OK" on modal confirmation box
+    And I click "Yes" on modal confirmation box
     Then I see table is refreshing
 
     Examples:
@@ -4649,88 +3294,103 @@ Business Need: DataTableEnhanced Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{DataTableEnhanced:ContactTable}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{DataTableEnhanced:ContactTable}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "{program:programsTableId}"
+    When I enter in modal "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation FD" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
+    And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
+      | Name          | BaseSalary | Number Of Personnel | Percentage |
+      | Automation PM | 1500       | 5                   | 45         |
+      | Automation EXE | 100        | 23                  | 90         |
+      | Automation FD | 345        | 9                   | 12         |
+      | Automation FO | 1200       | 4                   | 67         |
     #Number Field
     And I pause execution for "5" seconds
-    And I click on advance filter of table id "---program:-:contactsTableId---" for LWC
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Number Of Personnel | equals to | 5 |
     Then I softly see value "5" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Number Of Personnel | greater than | 5 |
     Then I softly see value "9" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "2" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Number Of Personnel | less than | 5 |
     Then I softly see value "4" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Number Of Personnel | greater than or equal to | 9 |
     Then I softly see value "9" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
     Then I softly see value "23" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Number Of Personnel | less than or equal to | 9 |
     Then I softly see value "9" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
     Then I softly see value "5" for title "Number Of Personnel" inside table "---program:-:contactsTableId---"
     #Currency Field - Base Salary
     And I pause execution for "5" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | BaseSalary | equals to | 345 |
     Then I softly see value "$345.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | BaseSalary | greater than | 345 |
     Then I softly see value "$1,500.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "2" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | BaseSalary | less than | 345 |
     Then I softly see value "$100.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | BaseSalary | greater than or equal to | 1200 |
     Then I softly see value "$1,200.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
     Then I softly see value "$1,500.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | BaseSalary | less than or equal to | 345 |
     Then I softly see value "$345.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
     Then I softly see value "$100.00" for title "BaseSalary" inside table "---program:-:contactsTableId---"
     #Percentage Field - Percentage
     And I pause execution for "5" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Percentage | equals to | 45 |
     Then I softly see value "45%" for title "Percentage" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Percentage | greater than | 45 |
     Then I softly see value "90%" for title "Percentage" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "2" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Percentage | less than | 45 |
     Then I softly see value "12%" for title "Percentage" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Percentage | greater than or equal to | 67 |
     Then I softly see value "67%" for title "Percentage" inside table "---program:-:contactsTableId---"
     Then I softly see value "90%" for title "Percentage" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Percentage | less than or equal to | 67 |
     Then I softly see value "67%" for title "Percentage" inside table "---program:-:contactsTableId---"
     Then I softly see value "34%" for title "Percentage" inside table "---program:-:contactsTableId---"
@@ -4748,11 +3408,11 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ProgramTableDFN} | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                                    | Grantor State Program | Name                      | {CommonConfigFileTest:TextAreaField_Authorization} |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                                    | Grantor State Program | Name                      | {CommonConfigFileTest:LongTextArea_ProjectGoals}   |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                                    | Grantor State Program | Name                      | {CommonConfigFileTest:TextField_Abbreviation}      |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ProgramTableDFN},ProjectGoals__c,Authorization__c,Abbreviation__c | Programs              |                           |                                          |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ProgramTableDFN},ProjectGoals__c,Authorization__c,Abbreviation__c | Programs              |                           |                                                    |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -4760,65 +3420,65 @@ Business Need: DataTableEnhanced Component Scenarios
     #Text Field
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
-    And I click on advance filter of table id "---program:-:programsTableId---" for LWC
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Abbreviation | contains | kd |
     Then I softly see value "as kd" for title "Abbreviation" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Abbreviation | does not contains | tk |
     Then I softly do not see value "tk" for title "Abbreviation" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Abbreviation | starts with | as |
     Then I softly see value "as kd" for title "Abbreviation" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Abbreviation | ends with | kd |
     Then I softly see value "as kd" for title "Abbreviation" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
     #Text Area Field
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Authorization | contains | Focus |
     Then I softly see value "Authorization Runtime Focus Area" for title "Authorization" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Authorization | does not contains | tk |
     Then I softly do not see value "tk" for title "Authorization" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Authorization | starts with | Authorization |
     Then I softly see value "Authorization Runtime Focus Area" for title "Authorization" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Authorization | ends with | Focus Area |
     Then I softly see value "Authorization Runtime Focus Area" for title "Authorization" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
     #Long Text Area Field
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Goals | contains | Vrushali |
     Then I softly see value "Vrushali Table Enhanced Check Goals" for title "Project Goals" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Goals | does not contains | tk |
     Then I softly do not see value "tk" for title "Project Goals" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Goals | starts with | Vrushali |
     Then I softly see value "Vrushali Table Enhanced Check Goals" for title "Project Goals" inside table "---program:-:programsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:programsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:programsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Goals | ends with | Goals |
     Then I softly see value "Vrushali Table Enhanced Check Goals" for title "Project Goals" inside table "---program:-:programsTableId---"
 
@@ -4846,10 +3506,12 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "5" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FD" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
-    When I click modal button "Close"
     And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
       | Name           | Contact Email    | URL                           |
       | Automation PM  | vrush@gmail.com  | www.google.com                |
@@ -4857,50 +3519,50 @@ Business Need: DataTableEnhanced Component Scenarios
       | Automation FD  | fd@reisystems.in | https://app.keka.com/         |
       | Automation FO  | fd@reisystems.in | https://jenkins.reisys.com/   |
     And I pause execution for "4" seconds
-    And I click on advance filter of table id "---program:-:contactsTableId---" for LWC
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Contact Email | contains | com |
     Then I softly see value "vrush@gmail.com" for title "Contact Email" inside table "---program:-:contactsTableId---"
     Then I softly see value "exe@yopmail.com" for title "Contact Email" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Contact Email | does not contains | com |
     Then I softly see value "fd@reisystems.in" for title "Contact Email" inside table "---program:-:contactsTableId---"
     Then I softly see value "fo@outlook.co.in" for title "Contact Email" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Contact Email | starts with | vru |
     Then I softly do not see value "fd@reisystems.in" for title "Contact Email" inside table "---program:-:contactsTableId---"
     Then I softly see value "vrush@gmail.com" for title "Contact Email" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Contact Email | ends with | in |
     Then I softly see value "fd@reisystems.in" for title "Contact Email" inside table "---program:-:contactsTableId---"
     Then I softly do not see value "vrush@gmail.com" for title "Contact Email" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
     #URL field
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | URL | contains | .com |
     Then I softly see value "www.google.com" for title "URL" inside table "---program:-:contactsTableId---"
     Then I softly see value "https://app.keka.com/" for title "URL" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | URL | does not contains | com |
     Then I softly see value "frwklwcaut.sandbox.lightning." for title "URL" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | URL | starts with | https |
     Then I softly do not see value "frwklwcaut.sandbox.lightning." for title "URL" inside table "---program:-:contactsTableId---"
     Then I softly see value "https://jenkins.reisys.com/" for title "URL" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | URL | ends with | .lightning. |
     Then I softly see value "frwklwcaut.sandbox.lightning." for title "URL" inside table "---program:-:contactsTableId---"
     Then I softly do not see value "https://jenkins.reisys.com/" for title "URL" inside table "---program:-:contactsTableId---"
@@ -4929,10 +3591,12 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "5" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FD" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
-    When I click modal button "Close"
     And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
       | Name           | Project Role         | Is Key Contact |
       | Automation PM  | Authorized Signatory | Checked        |
@@ -4941,33 +3605,33 @@ Business Need: DataTableEnhanced Component Scenarios
       | Automation FO  | Program Manager      |                |
     And I pause execution for "4" seconds
 #    And I click on advance filter of table id "---program:-:contactsTableId---" for LWC
-#    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+#     When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
 #      | Is Key Contact | equals to | Checked |
 #    Then I softly see value "True" for title "Is Key Contact" inside table "---program:-:contactsTableId---"
-#    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+#        And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
 #    And I pause execution for "3" seconds
-#    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+#     When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
 #      | Is Key Contact | not equals to |  |
 #    Then I softly see value "False" for title "Key Contacts Name" inside table "---program:-:contactsTableId---"
-    And I click on advance filter of table id "---program:-:contactsTableId---" for LWC
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
     #Picklist Field
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Role | equals to | Authorized Signatory |
     Then I softly see value "Authorized Signatory" for title "Project Role" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Project Role | not equals to | Other |
     Then I softly do not see value "Other" for title "Project Role" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
     #lookup field
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Created By ID | equals to | Automation PM |
     Then I softly see value "Automation PM" for title "Created By ID" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Created By ID | not equals to | Automation ADMIN |
     Then I softly do not see value "Automation ADMIN" for title "Created By ID" inside table "---program:-:contactsTableId---"
 
@@ -5361,7 +4025,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldStatusCreatedEqualsPM | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                              | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}                  |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}        |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -5384,7 +4048,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldStatusCreatedNotEqualsPM | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                                 | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}                  |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}        |
     And I refresh the page
     And I pause execution for "4" seconds
     And I click on "Edit" in the page details
@@ -5399,9 +4063,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                                | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                                | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                  | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I wait for "4" seconds
@@ -5417,9 +4081,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                                   | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                                   | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                                     | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     Then I softly do not see column header "BaseSalary" displayed in tableId "---program:-:contactsTableId---"
@@ -5430,9 +4094,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I click on "Edit" in the page details
@@ -5447,9 +4111,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                             | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                             | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                                               | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I click on "Edit" in the page details
@@ -5467,7 +4131,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFocusAreaReqNo | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                       | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                         | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                         | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}  |
     And I refresh the page
     And I click on "Edit" in the page details
     And I pause execution for "4" seconds
@@ -5484,7 +4148,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldFocusAreaReqNoYes | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}            |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}  |
     And I refresh the page
     And I click on "Edit" in the page details
     And I pause execution for "4" seconds
@@ -5498,10 +4162,10 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active           | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName           | fieldNewValue                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
-      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldTypeEmergencyGrants | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
-      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                            | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                              | Grantor State Program           | Name                      | {CommonConfigFileTest:PicklistTypeField}       |
+      | configurationCategory                    | fieldName           | fieldNewValue                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Flex Table List                          | Hide Column JSON    | govgrants_config:HideColumnJsonBaseSalaryFieldTypeEmergencyGrants | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}     |
+      | Flex Table:General                       | Display Field Names | {CommonConfigFileTest:ContactTableDFN}                            | DataTableEnhanceProgramContacts |                           |                                          |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true                                                              | Grantor State Program           | Name                      | {CommonConfigFileTest:PicklistTypeField} |
     And I refresh the page
     And I click on "Edit" in the page details
     And I pause execution for "4" seconds
@@ -5801,7 +4465,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "ProjectRole__c" not in edit mode
+    #Then I softly see field inside table "ProjectRole__c" not in edit mode
+    Then I do not see field "ProjectRole__c" is editable field
     #User App - Recipient
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -5822,7 +4487,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "ProjectRole__c" not in edit mode
+    #Then I softly see field inside table "ProjectRole__c" not in edit mode
+    Then I do not see field "ProjectRole__c" is editable field
 
     Examples:
       | User |
@@ -5879,7 +4545,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldStatusCreatedEqualsPM | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                              | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}                  |
+      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}        |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
@@ -5896,7 +4562,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click modal button "Close"
     And I refresh the page
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+   # Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I do not see field "BaseSalary__c" is editable field
     #Equals-Status-Created
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -5907,7 +4574,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldStatusCreatedNotEqualsPM | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                                 | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}                  |
+      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                   | Grantor State Program           | Name                      | {CommonConfigFileTest:Status}        |
     And I refresh the page
     And I click on "Edit" in the page details
     And I wait for "3" seconds
@@ -5917,7 +4584,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+   # Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I do not see field "BaseSalary__c" is editable field
     #LessThanEquals-FundedAmount-4000
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -5925,9 +4593,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                                | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName             | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                                | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                  | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I click on "Edit" in the page details
@@ -5936,7 +4604,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "4" seconds
     And I refresh the page
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+    #Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I softly do not see field "BaseSalary__c" is editable field
     #GreaterThanEquals-FundedAmount-4000
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -5944,14 +4613,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                                   | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName             | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                                   | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                                                     | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I pause execution for "5" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+    #Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I softly do not see field "BaseSalary__c" is editable field
     #LessThan-FundedAmount-4000
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -5959,9 +4629,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName             | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtLessThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I click on "Edit" in the page details
@@ -5978,9 +4648,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}    |
-      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                             | DataTableEnhanceProgramContacts |                           |                                         |
+      | configurationCategory                    | fieldName             | fieldNewValue                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue                        |
+      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFundedAmtGreaterThan | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}              |
+      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                             | DataTableEnhanceProgramContacts |                           |                                                   |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                                               | Grantor State Program           | Name                      | {CommonConfigFileTest:CurrencyField_FundedAmount} |
     And I refresh the page
     And I click on "Edit" in the page details
@@ -6000,7 +4670,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue                                                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFocusAreaReqNo | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                       | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                         | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}            |
+      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                         | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}  |
     And I refresh the page
     And I click on "Edit" in the page details
     And I enter value "No" into field "FocusAreaRequired__c"
@@ -6019,7 +4689,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldFocusAreaReqNoYes | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
       | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                          | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}            |
+      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                            | Grantor State Program           | Name                      | {CommonConfigFileTest:FocusAreaReq}  |
     And I refresh the page
     And I click on "Edit" in the page details
     And I enter value "Yes" into field "FocusAreaRequired__c"
@@ -6036,10 +4706,10 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table                               | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName             | fieldNewValue                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
-      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldTypeEmergencyGrants | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c} |
-      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                            | DataTableEnhanceProgramContacts |                           |                                      |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                              | Grantor State Program           | Name                      | {CommonConfigFileTest:PicklistTypeField}       |
+      | configurationCategory                    | fieldName             | fieldNewValue                                                     | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Flex Table List                          | Read Only Column Json | govgrants_config:HideColumnJsonBaseSalaryFieldTypeEmergencyGrants | DataTableEnhanceProgramContacts | Name                      | {CommonConfigFileTest:BaseSalary__c}     |
+      | Flex Table:General                       | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                            | DataTableEnhanceProgramContacts |                           |                                          |
+      | Page Block Config:Page Block Rule Detail | Is Active             | true                                                              | Grantor State Program           | Name                      | {CommonConfigFileTest:PicklistTypeField} |
     And I refresh the page
     And I click on "Edit" in the page details
     And I enter value "Emergency Grants" into field "Type__c"
@@ -6069,28 +4739,28 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "{DataTableEnhanced:ContactTable}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     #Date Field
-    And I click on advance filter of table id "---program:-:contactsTableId---" for LWC
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Date | equals to | May 19, 2025 |
     Then I softly see value "5/19/2025" for title "Date" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Date | greater than | May 19, 2025 |
     Then I softly see value "5/25/2027" for title "Date" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Date | less than | May 19, 2025 |
     Then I softly see value "4/15/2025" for title "Date" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Date | greater than or equal to | May 25, 2027 |
     Then I softly see value "5/25/2027" for title "Date" inside table "---program:-:contactsTableId---"
-    When I click on button "Clear" in flex table with id "---program:-:contactsTableId---"
+    And I clear all the filter from the table id "advfDataTableEnhanceProgramContacts"
     And I pause execution for "3" seconds
-    And I enter advance filter values inside id "---program:-:contactsTableId---" for LWC
+    When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"
       | Date | less than or equal to | Apr 15, 2025 |
     Then I softly see value "4/15/2025" for title "Date" inside table "---program:-:contactsTableId---"
 

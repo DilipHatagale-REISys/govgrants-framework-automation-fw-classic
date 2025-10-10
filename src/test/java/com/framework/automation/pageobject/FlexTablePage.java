@@ -206,7 +206,8 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
                 + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')] |" +
-                "//*[@ng-bind='fieldLabel' and text()='" + columnTitle + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon']"));
+                "//*[@ng-bind='fieldLabel' and text()='" + columnTitle + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon'] |" +
+                "//span[@title='" + columnTitle + "']/ancestor::span//a[@class='fa fa-info helpIcon']"));
     }
 
     /**
@@ -1966,6 +1967,52 @@ public class FlexTablePage extends GovGrantsManager {
             }
         } catch (Exception e) {
             flag = false;
+        }
+        return flag;
+    }
+
+    public void assertColumnHeader(String usage, String columnHeader, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isColumnHeaderDisplayed(columnHeader, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isColumnHeaderDisplayed(columnHeader, tableId));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isColumnHeaderDisplayed(columnHeader, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isColumnHeaderDisplayed(columnHeader, tableId)).isFalse();
+        }
+    }
+
+    private boolean isColumnHeaderDisplayed(String columnHeader, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//table//th//span[@title='" + columnHeader + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertButtonIsDisplayed(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isButtonDisplayedOnConfirmationBox(buttonName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isButtonDisplayedOnConfirmationBox(buttonName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnConfirmationBox(buttonName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedOnConfirmationBox(buttonName)).isFalse();
+        }
+    }
+
+    private boolean isButtonDisplayedOnConfirmationBox(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class, 'modal-content')]//button[text()='" + buttonName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

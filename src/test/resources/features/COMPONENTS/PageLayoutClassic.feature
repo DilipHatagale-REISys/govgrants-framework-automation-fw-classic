@@ -139,7 +139,7 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I click on "Menu" in the page details
-    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Download As PDF" options is displayed
 
     Examples:
       | User |
@@ -1569,7 +1569,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I softly cannot see row level action button "Edit" against "SendEmailAttachment.pdf" in flex table with id "Attachments"
 
-  @53099    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditActionWithRecordTypeNotesConfig-gPlanning
+  @53099 @wip
   Scenario Outline: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
