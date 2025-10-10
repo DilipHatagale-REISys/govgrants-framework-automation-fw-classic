@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.SideBarPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -64,5 +65,15 @@ public class SideBarSteps {
     @Then("I softly see record {string} is displayed inside autosuggestion dropdown at global search")
     public void iSeeRecordIsDisplayedInsideAutosuggestionDropdownAtGlobalSearch(String recordId) {
         sidebarPage.assertRecordInAutoSuggestedDropdownAtGlobalSearch(recordId);
+    }
+
+    @And("^I click on (plus|minus) icon at \"([^\"]*)\" menu inside sidebar$")
+    public void iClickOnMinusIconAtMenuInsideSidebar(String uiType, String button) {
+        sidebarPage.clickOnPlusMinusIcon(uiType, button);
+    }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" inside \"([^\"]*)\" menu at sidebar$")
+    public void iDoNotSeeInsideMenuAtSidebar(String usage, String mainMenu, String subMenu) {
+        sidebarPage.assertIfSubMenuDisplayedOnSide(usage,mainMenu,subMenu);
     }
 }

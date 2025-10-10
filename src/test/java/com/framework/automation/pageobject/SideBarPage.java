@@ -34,7 +34,7 @@ public class SideBarPage extends GovGrantsManager {
     public void assertRemovalOfSideBarHeader(String usage, String headerName) {
         if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(isTaskMenuDisabled(headerName));
-        } else if (usage.equalsIgnoreCase("softly see")){
+        } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(isTaskMenuDisabled(headerName)).isTrue();
         }
     }
@@ -95,7 +95,7 @@ public class SideBarPage extends GovGrantsManager {
      * @author - ashwini.mahore
      */
     public void assertIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
-        Assert.assertTrue(isIconDisplayedAtAccordionHeader(iconCssValue,accodionHeaderName ));
+        Assert.assertTrue(isIconDisplayedAtAccordionHeader(iconCssValue, accodionHeaderName));
     }
 
     /**
@@ -198,16 +198,15 @@ public class SideBarPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if icon is displayed at accordion header menu inside sidebar
-     *
      * @param iconCssValue
      * @param accodionHeaderName
+     * @return true if icon is displayed at accordion header menu inside sidebar
      * @author - ashwini.mahore
      */
     private boolean isIconDisplayedAtAccordionHeader(String iconCssValue, String accodionHeaderName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='"+accodionHeaderName+"']/preceding-sibling::span//i[@class='"+iconCssValue+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + accodionHeaderName + "']/preceding-sibling::span//i[@class='" + iconCssValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -216,9 +215,8 @@ public class SideBarPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if expected searched record id is displayed inside autosuggestion dropdown at global search
-     *
      * @param recordId
+     * @return true if expected searched record id is displayed inside autosuggestion dropdown at global search
      * @author - ashwini.mahore
      */
     private boolean isExpectedRecordIdDisplayedInAutoSuggestedDropdownAtGlobalSearch(String recordId) {
@@ -229,6 +227,34 @@ public class SideBarPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void clickOnPlusMinusIcon(String uiType, String button) {
+        if (uiType.equalsIgnoreCase("plus")) {
+            I.amPerforming().click().on(ByUsing.xpath("//li[not(contains(@class,'clicked'))]//span[text()='" + button + "']"));
+        } else {
+            I.amPerforming().click().on(ByUsing.xpath("//li[contains(@class,'clicked')]//span[text()='" + button + "']//ancestor::a"));
+        }
+    }
+
+    public void assertIfSubMenuDisplayedOnSide(String usage, String mainMenu, String subMenu) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSubMenuDisplayedOnSideBar(mainMenu, subMenu));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubMenuDisplayedOnSideBar(mainMenu, subMenu)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isSubMenuDisplayedOnSideBar(mainMenu, subMenu));
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubMenuDisplayedOnSideBar(mainMenu, subMenu)).isFalse();
+        }
+    }
+
+    private boolean isSubMenuDisplayedOnSideBar(String mainMenu, String subMenu) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + mainMenu + "']//ancestor::li[contains(@class,'componentTitle ng-scope clicked')]//span[@class='subMenu ng-binding']/following-sibling::span[text()='" + subMenu + "']"))) {
+            flag = true;
         }
         return flag;
     }

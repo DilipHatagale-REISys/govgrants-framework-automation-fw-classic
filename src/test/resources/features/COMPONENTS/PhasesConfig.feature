@@ -754,9 +754,8 @@ Business Need: Phase Config Component Scenarios
     Then I see changed label as "Pending Tasks" inside "My Tasks" in side bar sub menu
     Then I see changed label as "BI&Analytics" inside "Technical Support" in side bar sub menu
 
-  @208340 @208325 @suiteid-199158
+  @208340 @suiteid-199158
   Scenario: Sidebar- SPI- UI- Verify Sidebar Activity menu is visible
-  |Default Landing Tab- SPI- UI- Verify if we should not land phase which is default|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                                      | filterId         |
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | ApiGeneratedId:0 |
@@ -768,3 +767,141 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Activities" on left panel
     Then I do not see "Planning" phase
+<<<<<<< HEAD:src/test/resources/features/COMPONENTS/PhasesConfig.feature
+=======
+
+  @208325 @208322 @suiteid-199158
+  Scenario: Default Landing Tab- SPI- UI- Verify if we should not land phase which is default
+  |Default Landing Tab- SPI- UI- Verify if we land on selected default phase|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                                      | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | GrantorHome        | Phase Name                |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    Then I do not see "Applications" phase is active
+    Then I softly see "Home" phase is active
+    Then I do not see "Grants" phase is active
+
+  @208323 @208324 @208321 @suiteid-199158
+  Scenario: Default Landing Tab- Admin- Config- Verify if we should not land phase which is default
+  |Default Landing Tab- PM- UI- Verify if we should not land phase which is default |
+  |Default Landing Tab- PM- UI- Verify if we land on selected default phase|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "PM" user
+    Then I do not see "Applications" phase is active
+    Then I softly see "Home" phase is active
+    Then I do not see "Grants" phase is active
+
+  @203210 @203209 @203011 @203010 @suiteid-199158
+  Scenario: Tab Display Label - PM- UI- Verify phase name displayed correctly on UI
+  |Tab Display Label - Admin- Config- Verify phase name displayed correctly on UI|
+  |Phase name- PM- UI- Verify phase name displayed correctly on UI|
+  |Phase name- Admin- Config- Verify phase name displayed correctly on UI|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                               | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,BI&Analytics | RecipientHome      | Phase Name                |                            |
+    When I login to "As a Grantor" app as "PM" user
+    Then I see "Home" phase
+    Then I see "Planning" phase
+    Then I see "Announcements" phase
+    Then I see "Applications" phase
+    Then I see "Grants" phase
+    Then I see "Monitoring" phase
+    Then I see "Closeout" phase
+    Then I see "Monitoring" phase
+
+  @203211 @suiteid-199158
+  Scenario: Tab Display Label - SPI- UI- Verify phase name displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue                                                                      | filterId         |
+      | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName                  | fieldNewValue                                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links,Collab,BI&Analytics | GrantorHome        | Phase Name                |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    Then I softly see "Home" phase is active
+    Then I see "Opportunities" phase
+    Then I see "Applications" phase
+    Then I see "Grants" phase
+    Then I see "Monitoring" phase
+    Then I see "Closeout" phase
+
+  @203027 @203024 @203012 @203009 @suiteid-199158
+  Scenario:Available for profiles- SPI- UI- Verify ‘Phase’ should not visible on UI when logged in as SPI
+  |Phase name- SPI- UI- Verify phase name displayed correctly on UI|
+  |Phase- SPI- UI- Verify ‘Phase’ is visible on UI|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                                                                                                  | filterId         |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND | ApiGeneratedId:0 |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName              | fieldNewValue                                                                                                      | coreComponentField  |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; System Administrator; TR1; TR2; TR3; VND; EBZ; IND      | RecipientCloseout   |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND | RecipientMonitoring |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    Then I do not see "Closeout" phase
+    Then I see "Monitoring" phase
+
+  @203026 @203023 @suiteid-199158
+  Scenario: Available for profiles- PM- UI- Verify ‘Phase’ should not visible on UI when logged in as PM
+  |Available for profiles- PM- UI- Verify ‘Phase’ is visible on UI when logged in as PM|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                                                                                                           | filterId         |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:0 |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName              | fieldNewValue                                                                                                               | coreComponentField |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ     | Closeout           |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | Monitoring         |
+    When I login to "As a Grantor" app as "PM" user
+    Then I do not see "Closeout" phase
+    Then I see "Monitoring" phase
+
+  @203021 @suiteid-199158
+  Scenario: Custom App Name - PM- UI - Verify ‘Phase’ should not be visible on UI when logged in as Grantor
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue                                                                                                           | filterId         |
+      | Side Bar Header       | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | ApiGeneratedId:0 |
+      | Side Bar Header       | Custom App Name        | StateasGrantor                                                                                                              | ApiGeneratedId:1 |
+#      | Side Bar Header       | Config: Custom App     | StateasGrantor                                                                                                              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName              | fieldNewValue                                                                                                               | coreComponentField |
+      | Side Bar Header:General | Available For Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; Auditor; EBZ | Closeout           |
+      | Side Bar Header:General | Custom App Name        | StateasGrantee                                                                                                              | Closeout           |
+#      | Side Bar Header:General | Config: Custom App     | StateasGrantee                                                                                                              | Closeout           |
+    When I login to "As a Grantor" app as "PM" user
+    Then I do not see "Closeout" phase
+
+  @203019 @203017 @203016 @suiteid-199158
+  Scenario: Custom App Name - PM- UI- Verify ‘Phase’ should not be visible on UI when logged in as Grantee
+  |Custom App Name - PM- UI - Verify ‘Phase’ is visible on UI when logged in as Grantee|
+  |Custom App Name - Admin- Config - Verify ‘Phase’ is visible on UI when logged in as Grantee|
+    When I login to "As a Grantee" app as "PM" user
+    Then I do not see "Announcements" phase
+    Then I see "Planning" phase
+    Then I see "Opportunities" phase
+
+  @203015 @203014 @203008 @203007 @suiteid-199158
+  Scenario: Custom App Name - PM- UI- Verify ‘Phase’ is visible on UI when logged in as Grantor
+  |Custom App Name - Admin- Config- Verify ‘Phase’ is visible on UI when logged in as Grantor|
+  |Phase- PM- UI- Verify ‘Phase’ is visible on UI|
+  |Phase- Admin- Config- Verify ‘Phase’ is visible on UI|
+    When I login to "As a Grantor" app as "PM" user
+    Then I see "Planning" phase
+    Then I see "Announcements" phase
+    Then I see "Applications" phase
+    Then I see "Grants" phase
+>>>>>>> 38cda559bde4cc4b3f3d5072c16a5eb554dee217:src/test/resources/features/PATCH/PhasesConfig.feature
