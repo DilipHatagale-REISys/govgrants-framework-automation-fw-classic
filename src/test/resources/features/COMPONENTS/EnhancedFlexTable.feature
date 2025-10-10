@@ -183,7 +183,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
 
   @104409
-  Scenario: validate picklist field value as none inside enhanced data table in inline edit mode
+  Scenario Outline: validate picklist field value as none inside enhanced data table in inline edit mode
     Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -197,6 +197,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "Automation PM" inside flex table with id "---program:-:programContactsTableId---"
     Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
+    Examples:
+      | User |
+      | PM   |
+
   @106417 @wip
   Scenario Outline: validate Advance filter search for date field with equals to with operator At Flex Table Enhanced
     Given I have "default" configuration as below:
@@ -205,7 +209,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -221,13 +225,14 @@ Business Need: DataTableEnhanced Component Scenarios
 
 
   @132268
-  Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+  Scenario Outline:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
     When I perform quick search for "Lisa Mitchell" in "---program:-:programContactsTableId---" panel
@@ -235,6 +240,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I hover mouse on lookup link "Lisa Mitchell" at table
     And I pause execution for "4" seconds
     Then I see "Name" as "Lisa Mitchell" in mini page layout
+
+    Examples:
+      | User |
+      | PM   |
 
   @204744
   Scenario: Is active- SPI- UI- Verify flex table should not be displayed
@@ -278,12 +287,12 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | <newHelpText> | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text "---program:-:EDataTableForHelpTextIconTableId---" icon
     Then I see "Help text for Automation" shown as help text
@@ -325,22 +334,25 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header              | Contacts       | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Project Role" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Name" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Email" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Organization" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "BaseSalary" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+
     Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | User | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
      # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @204991 @204992 @379020 @SanityPATCH @SanityPATCHEnhancedTable
+  @204991 @204992 @379020
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI,
   Page Size- PM- UI- Verify dropdown to select page size manually should not appear on UI
     Given I have "default" configuration as below:
@@ -353,14 +365,16 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Page Size           | false          | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     Then I do not see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | User | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
     #  | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
@@ -378,10 +392,12 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{StaticRecords:ContactRecord}"
-    When I click on "View" icon for "{StaticRecords:ContactRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
@@ -444,7 +460,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
     Examples:
-      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | User | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
      # | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
@@ -793,7 +809,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "kmal Mark" in the table "---program:-:associateProgramContactsTableId---"
-    #And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -827,7 +842,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I enter advance filter values in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
       | Project Role | equals to | Fiscal Contact |
-    #When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
@@ -851,7 +865,6 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Grid:General     | Default Page Size          | 5              | DataTableEnhanceProgramContacts | Name                      |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -896,15 +909,18 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
       | Project Role | equals to | Other |
-  #  Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I softly see "No Records Found" inside flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
 
     Examples:
@@ -1626,7 +1642,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ##########################Test suite: Quick Search (Suite ID: 207520)#########################
 
-   @207524
+  @207524
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering numbers in quick search box
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3307,11 +3323,11 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
     And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
-      | Name          | BaseSalary | Number Of Personnel | Percentage |
-      | Automation PM | 1500       | 5                   | 45         |
+      | Name           | BaseSalary | Number Of Personnel | Percentage |
+      | Automation PM  | 1500       | 5                   | 45         |
       | Automation EXE | 100        | 23                  | 90         |
-      | Automation FD | 345        | 9                   | 12         |
-      | Automation FO | 1200       | 4                   | 67         |
+      | Automation FD  | 345        | 9                   | 12         |
+      | Automation FO  | 1200       | 4                   | 67         |
     #Number Field
     And I pause execution for "5" seconds
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"

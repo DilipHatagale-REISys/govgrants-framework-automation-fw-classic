@@ -343,6 +343,10 @@ Business Need: Snapshot Config Component Scenarios
     #217464 #217465
     Then I see "Snapshot History" page block displayed
     #217197 #217198
+    When I click on "Menu" in the page details
+    Then I softly see "Take Snashot" options displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
     #217455 #217456
     Then I see generated snapshot "{SavedValue:OWNER}" is displayed with "Taken By"
     #217471 #217472

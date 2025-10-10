@@ -466,7 +466,7 @@ Business Need: Phase Config Component Scenarios
 
     Examples:
       | User  |
-      | ADMIN |
+    #  | ADMIN |
       | PM    |
 
   @333542 @333545
@@ -767,8 +767,6 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Home" tab
     Then I see option "Activities" on left panel
     Then I do not see "Planning" phase
-<<<<<<< HEAD:src/test/resources/features/COMPONENTS/PhasesConfig.feature
-=======
 
   @208325 @208322 @suiteid-199158
   Scenario: Default Landing Tab- SPI- UI- Verify if we should not land phase which is default
@@ -904,4 +902,3 @@ Business Need: Phase Config Component Scenarios
     Then I see "Announcements" phase
     Then I see "Applications" phase
     Then I see "Grants" phase
->>>>>>> 38cda559bde4cc4b3f3d5072c16a5eb554dee217:src/test/resources/features/PATCH/PhasesConfig.feature
