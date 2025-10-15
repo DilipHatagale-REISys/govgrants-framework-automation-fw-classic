@@ -2,6 +2,8 @@ package com.framework.automation.steps;
 
 
 import com.framework.automation.projectmanager.GovGrantsManager;
+import com.helperPackage.controller.DeviceBucket;
+import com.helperPackage.objects.InstanceRecording;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -26,5 +28,11 @@ public class CommonSteps {
         String title = I.amPerforming().browserOperationsTo().getPageTitle();
         System.out.println("page title getting:--------" +title);
         govGrantsManager.assertPageTitle(pageTitle);
+    }
+
+    @And("I get current URL")
+    public void iGetCurrentURL() {
+        String currentURL = (InstanceRecording.getInstance(DeviceBucket.class)).getDriver().getCurrentUrl();
+        System.out.println("current URL : " + currentURL);
     }
 }

@@ -1121,10 +1121,11 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Planning" tab
     Then I do not see "Manage Review Steps" inside "Review Setup" is displayed
 
-  @204277 @204268 @204291 @suiteid-199158 @199158Sidebar
+  @204277 @204268 @204291 @204303 @suiteid-199158 @199158Sidebar
   Scenario: Accordion Header- SPI- UI- Verify the accordion section displays on given sequence numbered position
   |Accordion Header- SPI- UI- Verify Name Display as a header on UI of sidebar accordion section|
   |Accordion Sub Header- SPI- UI- Verify accordion sub section display on UI of sidebar |
+  |Accordion Sub Header- SPI- UI- Verify the sub accordion section displays on given sequence numbered position|
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Home" tab

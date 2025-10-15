@@ -121,6 +121,18 @@ public final class GovGrantsAssertionSteps {
         );
     }
 
+    @Then("^I (softly see|see) field (matches exactly )?\"([^\"]*)\" as \"([^\"]*)\" for multipicklist$")
+    public void iSoftlySeeFieldAsForMultipicklist(String usage, String matchExact, String fieldName, String fieldValue) {
+        govgrants.perform().mainPage().waitForNavigationLogoToDisappear();
+        I.amPerforming().browserOperationsTo().CheckPageLoadingStatus();
+        ggAssertionObjects.assertFieldValueForPicklist(
+                fieldName,
+                matchExact != null,
+                fieldValue,
+                usage.contains("softly")
+        );
+    }
+
     @Then("I see field {string} as {string} on modal")
     public void iSeeFieldAsOnModal(String field, String text) {
         ggAssertionObjects.verifyFieldAvailableOnModal(field, text);
