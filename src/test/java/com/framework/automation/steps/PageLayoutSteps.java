@@ -2,15 +2,16 @@ package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.PageLayoutPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.handlers.govgrants;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -978,5 +979,16 @@ public class PageLayoutSteps {
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" phase is active$")
     public void iSeePhaseIsActive(String usage, String phaseName) {
         pageLayoutPage.assertIfPhaseIsActive(usage, phaseName);
+    }
+
+    @Then("^I (see|do not see) multiple selected options in \"([^\"]*)\" cell:$")
+    public void iSeeMultipleSelectedOptionsInCell(String usage, String cellName, List<String> selectedList) {
+        pageLayoutPage.assertIfSelectedDropdownIsDisplayed(usage, cellName, selectedList);
+    }
+
+
+    @Then("^I (see|do not see|softly see|softly do not see) field label \"([^\"]*)\" inside page block$")
+    public void iCannotSeeFieldLabelInsidePageBlock(String usage, String fieldLabel) {
+        pageLayoutPage.isFieldLableDisplayedOnUI(usage, fieldLabel);
     }
 }

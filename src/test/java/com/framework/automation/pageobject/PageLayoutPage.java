@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.IOException;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -3960,4 +3961,59 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfSelectedDropdownIsDisplayed(String usage, String cellName, List<String> selectedList) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(selectedDropDownList(cellName, selectedList)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(selectedDropDownList(cellName, selectedList)).isFalse();
+        }
+    }
+
+    private boolean selectedDropDownList(String cellName, List<String> selectedList) {
+
+        boolean flag = false;
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//select[contains(@title,'" + cellName + "')]//option"));
+
+            for (Elements element : elements) {
+                System.out.println("list of all webelements" + element.getText());
+            }
+
+            List<String> buttonlist = new ArrayList<String>();
+            for (int i = 0; i < elements.size(); i++) {
+                buttonlist.add(elements.get(i).getText().trim());
+            }
+            if (buttonlist.containsAll(selectedList)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            //unhandled exception
+        }
+        return flag;
+    }
+
+    public void isFieldLableDisplayedOnUI(String usage, String fieldLabel) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(lableDisplayedOnNot(fieldLabel));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(lableDisplayedOnNot(fieldLabel));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(lableDisplayedOnNot(fieldLabel)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(lableDisplayedOnNot(fieldLabel)).isFalse();
+        }
+    }
+
+    private boolean lableDisplayedOnNot(String fieldLabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
 }
