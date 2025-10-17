@@ -204,7 +204,7 @@ public class UsersAndURL implements UsersController {
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "Test8@08Sep");
-        password.put("PO", "Test8@08Oct");
+        password.put("PO", "Test8@17oct");
         password.put("FD", "Test8@08Oct");
         password.put("FD1","Test8@10July");
         password.put("ADMIN1", "Test8@10July");
