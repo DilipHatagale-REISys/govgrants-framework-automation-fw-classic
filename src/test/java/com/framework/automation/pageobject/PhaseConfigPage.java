@@ -841,7 +841,7 @@ public class PhaseConfigPage extends GovGrantsManager {
         WebElement getActiveTabAtWorkspace = I.amPerforming().getElementReference().of(By.xpath("//button[@id='My_Workspace_File']"));
         I.amPerforming().scroll().toMoveToElement(getActiveTabAtWorkspace);
         if (getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(96, 85, 85, 1)")
-                ||getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
+                || getActiveTabAtWorkspace.getCssValue("background-color").contains("rgba(34, 34, 34, 1)")
                 || getActiveTabAtWorkspace.getCssValue("background").contains("rgb(34, 34, 34)")) {
             flag = true;
         }
@@ -889,5 +889,10 @@ public class PhaseConfigPage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
+    }
+
+    public void clickOnFooterLink(String linkName) {
+        By link = By.xpath("//span[@class='footer-links ']//span//a[text()='" + linkName + "']");
+        I.amPerforming().click().on(link);
     }
 }

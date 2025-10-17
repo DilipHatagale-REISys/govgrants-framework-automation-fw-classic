@@ -4569,7 +4569,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Filter              | true           | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Total Records Count | true           | Programs           | Name                      |                            |
       | Flex Grid:General     | Display Field Names        | <newFieldsApi> | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
@@ -16983,7 +16983,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultExpression                                      | defaultHideDecisionField |
       | Status__c <> 'Created' AND Status__c<> 'Being Amended' | HideEditDeleteBtn__c     |
 
-  @wip @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
+  @40119    @hideOperatorFieldUsingANDOperatorAtProgramFlexTAbleAction-gPlanning @configrisk @skiponjenkins
   Scenario Outline: Hide edit row level action using AND operator for program flex table from configuration and validating it at under programs flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -18055,12 +18055,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table                               | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:1 |
-      | Flex Table List                          | Enable Total        | true               | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23998                  |
-      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-14083                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

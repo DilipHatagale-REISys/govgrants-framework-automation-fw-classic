@@ -117,7 +117,7 @@ public final class GovGrantsProductObjects {
             return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "] | //div[@id='" + tableId + "']//*[contains(text(),'" + text + "')] | //div[@id='" + tableId + "']//*[contains(translate(., \n" +
                     "                                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ'," +
                     "                                      'abcdefghijklmnopqrstuvwxyz')," +
-                    "                   '" + text + "')]"));
+                    "                   '" + text + "')] | //a[@title='" + tableId + "']/ancestor::div[@class='panel panel-default ng-scope']//div[contains(text(),'" + text + "')]"));
         } catch (Exception e) {
         }
         return false;
@@ -256,7 +256,8 @@ public final class GovGrantsProductObjects {
     private boolean isPageBlockTitleDisplayed(String titleName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "'] | //a[not(parent::li)]/span[" + I.amPerforming().sanityOfXpathTo().equals("text()", titleName) + "] | //a[text()='" + titleName + "'] | //h3[text()='" + titleName + "'] | //h2[(text()='" + titleName + "')] | //*[text()='" + titleName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h3//a[contains(text(),'" + titleName + "')] | //a[@title='" + titleName + "'] | //a[not(parent::li)]/span[" + I.amPerforming().sanityOfXpathTo().equals("text()", titleName) + "] | //a[text()='" + titleName + "'] | //h3[text()='" + titleName + "'] | //h2[(text()='" + titleName + "')] | //*[text()='" + titleName + "'] | //div[@class='panel ng-scope']//a//span[contains(text(),'" + titleName + "')] |" +
+                    "//div[@class='col-xs-6 col-md-7 header-title ']//a//span[text()='" + titleName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -267,15 +268,13 @@ public final class GovGrantsProductObjects {
     private boolean isPageBlockTitleDisplayedOnModal(String titleName) {
         boolean flag = false;
         try {
-            if(I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]"))))
-            {
+            if (I.amPerforming().checkToSee().isDisplayed(I.amPerforming().getElementReference().of(By.xpath("//div[@id='modaltemp']//h3//a[contains(text(),'" + titleName + "')]")))) {
                 flag = true;
             }
         } catch (Exception e) {
         }
         return flag;
     }
-
 
 
     /**

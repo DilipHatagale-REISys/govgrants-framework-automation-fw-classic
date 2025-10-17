@@ -20,11 +20,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface - User Story 508753
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     And I pause execution for "3" seconds
+    When I switch to tab number "1"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
-    Then I see "Download as PDF" options is displayed
+    Then I see "Download As PDF" options is displayed
 
   @513786
   Scenario: Classic - SPI – Form – PDF generation for Form Preview - To verify that, when user clicks on Download as PDF under form layout then Form PDF should be downloaded/open in new window
@@ -52,7 +52,6 @@ Business Need: Forms Scenarios flextable UI,Forms Interface - User Story 508753
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
-    When I switch to tab number "1"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -148,6 +147,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface - User Story 508753
     When I navigate to "Forms and Files" sub tab
     Then I softly see "All Forms " page block displayed
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
+    When I switch to tab number "1"
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file

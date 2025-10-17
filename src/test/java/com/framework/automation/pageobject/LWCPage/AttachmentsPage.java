@@ -49,20 +49,24 @@ public class AttachmentsPage extends GovGrantsManager {
 
     public void isRecordDisplayedOrNot(String usage, String record, String tableName) {
         if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(totalRecordDisplayedOrNot(record, tableName)).isTrue();
+            Assert.assertFalse(totalRecordDisplayedOrNot(record, tableName));
         } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(totalRecordDisplayedOrNot(record, tableName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
             I.amPerforming().assertionsTo().assertThat(totalRecordDisplayedOrNot(record, tableName)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(totalRecordDisplayedOrNot(record, tableName)).isTrue();
         }
     }
 
     private boolean totalRecordDisplayedOrNot(String record, String tableName) {
-        boolean flag = false;
+        boolean flag = true;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')] | //div[@id='" + tableName + "']//span[contains(text(),'" + record + "')]"))) {
-                flag = true;
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//*[contains(text(),'" + record + "')] | //*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//*[contains(text(),'" + record + "')] | //div[@id='" + tableName + "']//span[contains(text(),'" + record + "')] | " +
+                    "//*[@title='" + tableName + "']/ancestor::div[@class='panel-heading']/following-sibling::div//div[contains(text(),'" + record + "')]"))) {
+                flag = false;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }

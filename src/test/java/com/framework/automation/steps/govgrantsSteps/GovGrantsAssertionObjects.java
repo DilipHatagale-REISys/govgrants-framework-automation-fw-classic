@@ -790,7 +790,6 @@ public final class GovGrantsAssertionObjects {
         }
 
     }
-
     /**
      * get sub tab inside detail each main detail page like overview etc.
      *

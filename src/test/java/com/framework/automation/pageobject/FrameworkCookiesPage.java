@@ -177,10 +177,14 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     }
 
     public static void pageSizeShowAfterPageSetting(String usage, String showingTextValue, String tableid) {
-        if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(assertPageSize(showingTextValue, tableid));
-        } else if (usage.equalsIgnoreCase("do not see")) {
+       if (usage.equalsIgnoreCase("see")) {
             Assert.assertFalse(assertPageSize(showingTextValue, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertTrue(assertPageSize(showingTextValue, tableid));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(assertPageSize(showingTextValue, tableid)).isFalse();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertPageSize(showingTextValue, tableid)).isTrue();
         }
     }
 
@@ -189,7 +193,7 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingTextValue + "')] |" +
                     " //div[contains(@id,'" + tableid + "')]/div[@class='row ng-scope']/div[contains(@class,'showEntries mobshowEntries')]/span[contains(text(),'" + showingTextValue + "')] |" +
-                    " //div[contains(@id,'" + tableid + "')]//div[text()='" + showingTextValue + "']"))) {
+                    " //div[contains(@id,'" + tableid + "')]//div[text()='" + showingTextValue + "'] | //div[@id='" + tableid + "']//span[contains(text(),'" + showingTextValue + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

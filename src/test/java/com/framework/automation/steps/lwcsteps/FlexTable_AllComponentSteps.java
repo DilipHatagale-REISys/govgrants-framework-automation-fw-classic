@@ -55,7 +55,7 @@ public class FlexTable_AllComponentSteps {
         flexTable_AllComponentPage.assertColumnPositionAlignedAtLeftOrRight(usage, text, allignment, tableId);
     }
 
-    @Then("^I (see|do not see) \"([^\"]*)\" action is displayed at the \"([^\"]*)\" modal$")
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" action is displayed at the \"([^\"]*)\" modal$")
     public void iSeeActionIsDisplayedAtTheModal(String usage, String menu, String tableId) {
         flexTable_AllComponentPage.assertActionButtonIsDisplayed(usage, menu, tableId);
     }
