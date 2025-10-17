@@ -2,6 +2,17 @@
 Feature: Component Sanity Testing AlternateRendering
   In this feature file, we use the following tags for component-wise execution:@AlternateRendering
 
+  @passwordcheck1
+  Scenario: test password
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    When I re-login to "As a Grantor" app as "FO" user on "INTERNAL" portal
+    When I re-login to "As a Grantor" app as "PM1" user on "INTERNAL" portal
+    When I re-login to "As a Grantor" app as "PO" user on "INTERNAL" portal
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    When I re-login to "As a Grantor" app as "ADMIN1" user on "INTERNAL" portal
+
   @55281 @AlternateRendering
   Scenario Outline:Modal- Alternate Rendering- Admin/PM- To Verify Checkbox Enable and Save Functionality, Display Values on UI
     Given I have "default" configuration as below:
