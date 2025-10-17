@@ -8069,7 +8069,7 @@ Business Need: Expression Builder Component Scenarios
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+     # | Admin |
       | PM    |
 
   @217861 @217862
