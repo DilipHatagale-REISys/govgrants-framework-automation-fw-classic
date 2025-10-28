@@ -654,31 +654,305 @@ Feature: Component Sanity Testing 1. MultiSelectPickList
       | Users |
       | PM    |
 
-    @545463
-      Scenario Outline: Page Layout- multi-select picklist- Admin/PM- To verify Take Snapshot after render in Config functioning correctly
-      Given I have "default" configuration as below:
-        | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-        | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
-        | Page Block Config:Page Block Rule Detail | Help Text Long       |                   | Grantor State Program | ApiGeneratedId:1 |
-        | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:2 |
-      Given I setup test configuration as below:
-        | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                                     |
-        | Page Block Config:Page Block Rule Detail | Is Active            | true          | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
-        | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation    | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
-        | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
-      When I login to "As a Grantor" app as "<Users>" user
-      And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "Creation" values from "Program_Field_Values.xlsx"
-      And I click modal button "Save and Continue"
-      When I hovering mouse on help text icon inside "Types Of Assistance"
-      And I pause execution for "2" seconds
-      Then I softly see "Automation" shown as help text
-      Examples:
-        | Users |
-        | PM    |
+  @545463
+  Scenario Outline: Page Layout- multi-select picklist- Admin/PM- To verify Take Snapshot after render in Config functioning correctly
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                                     |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation    | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click modal button "Save and Continue"
+    When I hovering mouse on help text icon inside "Types Of Assistance"
+    And I pause execution for "2" seconds
+    Then I softly see "Automation" shown as help text
+    Examples:
+      | Users |
+      | PM    |
 
     ###############Test suite: 3.0 Forms - Multi-select picklist (Suite ID: 506165)
 
+  @545356 @multiselectpicklist
+  Scenario: Forms- multi-select picklist- SPI- To verify that selecting Multiple option under Multi-Select Picklist
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I get current URL
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableIdspi---"
+    And I pause execution for "3" seconds
+    When I enter "Type of Applicant" values from "MultiSelectPicklist.xlsx"
+    And I pause execution for "5" seconds
+    Then I see multiple selected options in "Chosen" cell:
+      | A: State Government            |
+      | B: County Government           |
+      | C: City or Township Government |
+      | D: Special District Government |
+      | E: Regional Organization       |
+    And I click on "Save" in the page details
+    Then I see below selected multiselected "Type of Applicant" picklist:
+      | A: State Government            |
+      | B: County Government           |
+      | C: City or Township Government |
+      | D: Special District Government |
+      | E: Regional Organization       |
+
+  @545358 @multiselectpicklist
+  Scenario: Forms- multi-select picklist- SPI- To verify Field Label Override after render in Config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       |                   | Program Specific Application form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                            | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                                 | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation                      | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Field Label Override Automation | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
+    And I pause execution for "3" seconds
+    Then I see field "Field Label Override Automation" inside page block
+
+  @545357 @multiselectpicklist
+  Scenario: Forms- Multi-Select picklist- Admin/PM- To verify Help Text on Hovering Help Text Icon Functioning correctly
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       |                   | Program Specific Application form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation    | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableIdspi---"
+    And I pause execution for "3" seconds
+    When I hovering mouse on help text icon inside page block detail "Type of Applicant"
+    Then I softly see "Automation" shown as help text
+
+  @545359 @multiselectpicklist
+  Scenario: Forms- multi-select picklist- SPI- To verify Hide Logic is working after render on config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue                                     | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                              | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                                                   | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideFieldOnFormsTypeOfAssistance | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
+    And I pause execution for "3" seconds
+    Then I do not see field label "Type of Applicant" inside page block
+
+
+  @545360
+  Scenario: Forms- multi-select picklist- SPI- To verify that Field Label Override (Rich Text) is working after render on config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                        | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   |                   | Program Specific Application form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                   | Program Specific Application form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                        | fieldNewValue               | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                        | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                             | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   |                             | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) | Type of Applicant Rich Text | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
+    And I pause execution for "3" seconds
+    Then I see field label "Type of Applicant Rich Text" inside page block
+
+  @545361
+  Scenario: Forms- multi-select picklist- SPI- To verify Hide Label is working after render on Config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       |                   | Program Specific Application form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Hide Label           | false             | Program Specific Application form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Hide Label           | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
+    And I pause execution for "3" seconds
+    Then I see field label "Type of Applicant Rich Text" inside page block
+
+  @545362
+  Scenario: Forms- multi-select picklist- SPI- To verify that read only is working after render on config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Read Only            | false             | Program Specific Application form | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Read Only            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableIdspi---"
+    And I pause execution for "3" seconds
+    Then I do not see multiple selected options in "Type of Applicant" cell:
+      | A: State Government            |
+      | B: County Government           |
+      | C: City or Township Government |
+      | D: Special District Government |
+      | E: Regional Organization       |
+
+    @545363 @multiselectpicklist
+    Scenario: Forms- multi-select picklist- SPI- To verify Download as PDF after render in Config functioning correctly
+      Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue            |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true          | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Program Specific Application form | Name                      | {CommonConfigFile:TypeOfApplicant__c} |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Create Application" in the page details
+    And I wait for "5" seconds
+    And I click modal button "Save and Continue"
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
+    And I pause execution for "3" seconds
+    And I switch to tab number "1"
+    When I enter "Type of Applicant" values from "MultiSelectPicklist.xlsx"
+    And I pause execution for "5" seconds
+    Then I see multiple selected options in "Chosen" cell:
+      | A: State Government            |
+      | B: County Government           |
+      | C: City or Township Government |
+      | D: Special District Government |
+      | E: Regional Organization       |
+    And I click on "Save" in the page details
+    Then I softly see multiple selected options in "Type of Applicant":
+      | A: State Government            |
+      | B: County Government           |
+      | C: City or Township Government |
+      | D: Special District Government |
+      | E: Regional Organization       |
+    When I click on "Download as PDF" in the page details
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "A: State Government" on page "1" of "govgrants" pdf file

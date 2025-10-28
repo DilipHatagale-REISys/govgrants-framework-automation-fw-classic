@@ -1,4 +1,4 @@
-@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module
+@PageLayout-PATCHcomponent @regression-PATCH @PageLayout @vrush-module @wip
 Business Need: Page Layout Component Scenarios
   Test all page layout component based scenarios
   As a configuration manager i make different configurational changes in page layout component and will validate them.

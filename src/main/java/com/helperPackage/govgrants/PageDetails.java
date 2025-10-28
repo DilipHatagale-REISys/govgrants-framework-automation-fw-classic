@@ -579,7 +579,7 @@ public final class PageDetails {
      */
     public void verifyMultipleSelectedOption(String usage, String cellName, List<String> options) {
         List<String> selectedOptions = new ArrayList<>();
-        List<WebElement> ll = I.amPerforming().dropDownSelection().from(By.xpath("//td[@class='" + cellName + "']//following::td/select")).getOptions();
+        List<WebElement> ll = I.amPerforming().dropDownSelection().from(By.xpath("//td[@class='" + cellName + "']//following::td/select | //span[text()='" + cellName + "']//parent::dt//following-sibling::dd//li")).getOptions();
         for (WebElement e : ll) {
             selectedOptions.add(e.getText().trim());
         }

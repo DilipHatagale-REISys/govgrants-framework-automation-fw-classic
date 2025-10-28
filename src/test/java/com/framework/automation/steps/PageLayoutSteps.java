@@ -995,4 +995,11 @@ public class PageLayoutSteps {
     public void iCannotSeeFieldLabelInsidePageBlock(String usage, String fieldLabel) {
         pageLayoutPage.isFieldLableDisplayedOnUI(usage, fieldLabel);
     }
+
+    @Then("^I (see|do not see) below selected multiselected \"([^\"]*)\" picklist:$")
+    public void iSeeBelowSelectedMultiselectedPicklist(String usage, String fieldLabel, List<String> fieldName) {
+        pageLayoutPage.assertButtonsDisplayedOnViewLayout(usage, fieldLabel, fieldName);
+
+    }
+
 }

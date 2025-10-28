@@ -41,7 +41,7 @@ public class PageLayoutPage extends GovGrantsManager {
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
-        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | ");
+        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | //div//span[@class='pbNormalText']");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
         monitoringFlexGridTitle = By.xpath(
@@ -1813,14 +1813,14 @@ public class PageLayoutPage extends GovGrantsManager {
      * @modifier - ashwini.mahore
      */
     private boolean isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(String options) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] | " +
                     "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')] | //ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')]"))) {
-                flag = false;
+                flag = true;
             }
         } catch (Exception e) {
         }
@@ -4016,12 +4016,41 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean lableDisplayedOnNot(String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')] | //span[@class='customLabelstyle' and text()='" + fieldLabel + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
+
+    public void assertButtonsDisplayedOnViewLayout(String usage, String fieldLabel, List<String> fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(multiselectPicklistOptions(fieldLabel, fieldName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(multiselectPicklistOptions(fieldLabel, fieldName)).isFalse();
+        }
+    }
+
+    private boolean multiselectPicklistOptions(String fieldLabel, List<String> fieldName) {
+        boolean flag = false;
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//span[text()='" + fieldLabel + "']//parent::dt//following-sibling::dd//li"));
+            for (Elements element : elements) {
+                System.out.println("list of all webelements" + element.getText());
+            }
+            List<String> buttonlist = new ArrayList<String>();
+            for (int i = 0; i < elements.size(); i++) {
+                buttonlist.add(elements.get(i).getText().trim());
+            }
+            if (buttonlist.containsAll(fieldName)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            //unhandled exception
+        }
+        return flag;
+    }
+
 
 }
