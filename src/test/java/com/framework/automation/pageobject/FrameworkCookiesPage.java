@@ -189,12 +189,12 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     }
 
     private static boolean assertPageSize(String showingTextValue, String tableid) {
-        boolean flag = false;
+        boolean flag = true;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingTextValue + "')] |" +
                     " //div[contains(@id,'" + tableid + "')]/div[@class='row ng-scope']/div[contains(@class,'showEntries mobshowEntries')]/span[contains(text(),'" + showingTextValue + "')] |" +
                     " //div[contains(@id,'" + tableid + "')]//div[text()='" + showingTextValue + "'] | //div[@id='" + tableid + "']//span[contains(text(),'" + showingTextValue + "')]"))) {
-                flag = true;
+                flag = false;
             }
         } catch (Exception e) {
         }

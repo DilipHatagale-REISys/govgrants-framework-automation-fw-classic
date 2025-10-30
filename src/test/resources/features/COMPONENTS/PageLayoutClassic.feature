@@ -11281,25 +11281,9 @@ Business Need: Page Layout Component Scenarios
 
     ################# Page Layout Action ###############
 
-  @200428 @200434
+  @200428 @200434  @200431 @200435
   Scenario Outline: Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should displayed in view layout
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    #Then I see "Edit" button is not displayed
-    Then I see "Edit" button is displayed on top right of pagelayout
-    Then I see "Submit For Approval" button is displayed on top right of pagelayout
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @200431 @200435
-  Scenario Outline: Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should not displayed in view layout
+  |Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should not displayed in view layout|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
@@ -11314,13 +11298,26 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    #Then I see "Edit" button is not displayed
+    Then I see "Edit" button is displayed on top right of pagelayout
+    Then I see "Submit For Approval" button is displayed on top right of pagelayout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Submit For Approval        |
+    And I refresh the page
+    And I pause execution for "5" seconds
     Then I see "Edit" button is not displayed
     Then I see "Submit For Approval" button is not displayed
-
     Examples:
       | User |
      # | ADMIN |
       | PM   |
+
 
   @200439 @219883
   Scenario: Page Layout Action-SPI-UI-To verify page layout "Edit" and "Submit Application" actions should displayed on view layout

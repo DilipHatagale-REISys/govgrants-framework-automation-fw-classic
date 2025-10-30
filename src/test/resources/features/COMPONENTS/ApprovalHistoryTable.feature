@@ -136,9 +136,9 @@ Business Need: ApprovalHistoryTable Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "5" seconds
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"

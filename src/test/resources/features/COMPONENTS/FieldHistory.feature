@@ -14,8 +14,8 @@ Business Need: history Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfigFileTest:HistoryTab}  |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfigFileTest:HistoryTab} |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -178,8 +178,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent}          |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -218,8 +218,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent}         |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -294,12 +294,12 @@ Business Need: history Component Scenarios
 
   @205572 @205584 @205598
   Scenario Outline: Field History -PM user -To verify, User change the text field value from backend then it should display changed and previous value in the new and old value column.
-     Given I have "default" configuration as below:
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}            |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -338,7 +338,7 @@ Business Need: history Component Scenarios
   |Field History -PM user - To verify, User change the currency field value from backend then it should display only one time in the field history table
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
@@ -404,7 +404,7 @@ Business Need: history Component Scenarios
     Then I see "({SavedValue:OldFundedAmount})" shown inside "New Value" column in history table
     Then I see "({SavedValue:NewFundedAmount})" shown inside "New Value" column in history table
 
- Examples:
+    Examples:
       | User |
      # | ADMIN |
       | PM   |
@@ -415,8 +415,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:ProjectPeriodStartDate}     |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:ProjectPeriodStartDate} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -450,8 +450,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue             |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URL__c}                    |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URL__c}        |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -532,8 +532,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c}    |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -612,8 +612,8 @@ Business Need: history Component Scenarios
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:AuthorizedSignatory__c}      |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:AuthorizedSignatory__c} |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -627,12 +627,13 @@ Business Need: history Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I select value "Automation ADMIN" into field "fieldAuthorizedSignatory__c"
+    #And I select value "Automation ADMIN" into field "fieldAuthorizedSignatory__c"
+    And I enter value "Automation ADMIN" into lookup field "fieldAuthorizedSignatory__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Authorized Signatory" as "OldAuthorizedSignatory"
     And I click on "Edit" in the page details
-    And I select value "Automation PM" into field "fieldAuthorizedSignatory__c"
+    And I enter value "Automation PM" into lookup field "fieldAuthorizedSignatory__c"
     And I click on "Save" in the page details
     And I save the field labeled "Authorized Signatory" as "NewAuthorizedSignatory"
     And I refresh the page
@@ -759,11 +760,11 @@ Business Need: history Component Scenarios
     And I click on "Edit" in the page details
     And I enter value "$200,000.50" into field "fieldExpectedFunding__c"
     And I click on "Save" in the page details
-    And I save the field labeled "X_Expected Funding" as "OldExpectedFunding"
+    And I save the field labeled "Expected Future Funding" as "OldExpectedFunding"
     And I click on "Edit" in the page details
     And I enter value "$300,000.55" into field "fieldExpectedFunding__c"
     And I click on "Save" in the page details
-    And I save the field labeled "X_Expected Funding" as "NewExpectedFunding"
+    And I save the field labeled "Expected Future Funding" as "NewExpectedFunding"
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     And I refresh the page
