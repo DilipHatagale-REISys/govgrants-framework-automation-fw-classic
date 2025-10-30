@@ -3947,6 +3947,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private String isTableRefreshOnRefreshOptionClick() {
         return I.amPerforming().browserOperationsTo().getPageLoadStatus();
     }
+
     public void assertIfPhaseIsActive(String usage, String phaseName) {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isActivePhaseOnUI(phaseName));
@@ -4016,7 +4017,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean lableDisplayedOnNot(String fieldLabel) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')] | //span[@class='customLabelstyle' and text()='" + fieldLabel + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')] | //span[@class='customLabelstyle' and text()='" + fieldLabel + "'] | //span[normalize-space(text())='" + fieldLabel + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

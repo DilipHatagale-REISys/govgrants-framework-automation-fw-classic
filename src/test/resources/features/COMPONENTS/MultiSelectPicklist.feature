@@ -911,9 +911,9 @@ Feature: Component Sanity Testing 1. MultiSelectPickList
       | D: Special District Government |
       | E: Regional Organization       |
 
-    @545363 @multiselectpicklist
-    Scenario: Forms- multi-select picklist- SPI- To verify Download as PDF after render in Config functioning correctly
-      Given I have "default" configuration as below:
+  @545363 @multiselectpicklist
+  Scenario: Forms- multi-select picklist- SPI- To verify Download as PDF after render in Config functioning correctly
+    Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active            | false             | Program Specific Application form | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Program Specific Application form | ApiGeneratedId:1 |
@@ -936,7 +936,6 @@ Feature: Component Sanity Testing 1. MultiSelectPickList
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---applicationReview:-:allFormsTableId---"
     And I pause execution for "3" seconds
-    And I switch to tab number "1"
     When I enter "Type of Applicant" values from "MultiSelectPicklist.xlsx"
     And I pause execution for "5" seconds
     Then I see multiple selected options in "Chosen" cell:
@@ -956,3 +955,418 @@ Feature: Component Sanity Testing 1. MultiSelectPickList
     And I download the file
     And I pause execution for "5" seconds
     Then I cannot see "A: State Government" on page "1" of "govgrants" pdf file
+
+
+  @545343 @multiselectpicklist
+  Scenario:Forms- Multi-Select picklist- Admin/PM- To verify that selecting Multiple option under Multi-Select Picklist
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                    | fieldOrignalValue | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |                   | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |                   | General Review Form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | General Review Form | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |                   | General Review Form | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |                   | General Review Form | ApiGeneratedId:6 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox     | false             | General Review Form | ApiGeneratedId:7 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | true          | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | true          | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox     | false         | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    And I enter "Form Fields" values from "DeskReview_Field_Values.xlsx"
+    And I get current URL
+    Then I select below checkbox options for field "fieldCheckboxType__c"
+      | Display Value on UI 1 |
+      | Display Value on UI 2 |
+      | Display Value on UI 3 |
+      | Display Value on UI 3 |
+      | Display Value on UI 4 |
+      | Display Value on UI 5 |
+    Then I see multiple selected options in "Chosen" cell:
+      | Display Value on UI 1 |
+      | Display Value on UI 2 |
+      | Display Value on UI 3 |
+      | Display Value on UI 3 |
+      | Display Value on UI 4 |
+      | Display Value on UI 5 |
+
+  @545344 @multiselectpicklist
+  Scenario: Forms- Multi-Select picklist- Admin/PM- To verify Help Text on Hovering Help Text Icon Functioning correctly
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue       | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false                   | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                         | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation CheckboxType | General Review Form | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue           | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                    | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                         | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long       | Automation CheckboxType | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    When I hovering mouse on help text icon inside page block detail "CheckboxType"
+    Then I softly see "Automation CheckboxType" shown as help text
+
+  @545345 @545352 @multiselectpicklist
+  Scenario: Forms- Multi-Select picklist- Admin/PM-To verify Field Label Override after render in Config
+  |Forms- Multi-Select picklist- Admin/PM- To verify that Field Label Override (Rich Text) is working after render on config|
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                        | fieldOrignalValue       | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType | General Review Form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                         | General Review Form | ApiGeneratedId:5 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                         | General Review Form | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                        | fieldNewValue                             | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                                      | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             | Automation field label override           | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType                   | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                                      | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                                           | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) | Automation Field Label Override Rich Text | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    Then I see field label "Automation field label override" inside page block
+    Then I see field label "Automation Field Label Override Rich Text" inside page block
+
+
+  @545353
+  Scenario:Forms- Multi-Select picklist- Admin/PM-To verify Hide Label is working after render on Config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                        | fieldOrignalValue       | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType | General Review Form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                         | General Review Form | ApiGeneratedId:5 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                         | General Review Form | ApiGeneratedId:6 |
+      | Page Block Config:Page Block Rule Detail | Hide Label                       | false                   | General Review Form | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                        | fieldNewValue                   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                            | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             | Automation field label override | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType         | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                            | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                                 | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                                 | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Hide Label                       | true                            | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    Then I do not see field label "RadioType" inside page block
+
+  @545355
+  Scenario: Forms- Multi-Select picklist- Admin/PM- To verify that Read only logic is working after render on config
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                        | fieldOrignalValue       | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType | General Review Form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | false                   | General Review Form | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             |                         | General Review Form | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                         | General Review Form | ApiGeneratedId:5 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                         | General Review Form | ApiGeneratedId:6 |
+      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON        |                         | General Review Form | ApiGeneratedId:6 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                        | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                                        | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override             | Automation field label override             | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Help Text Long                   | Automation CheckboxType                     | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active                        | true                                        | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config     |                                             | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Field Label Override (Rich Text) |                                             | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON        | govgrants_config:HideFieldOnFormsRadioCheck | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    Then I softly see that "RadioType__c" rendered in view mode only
+
+  @545364
+  Scenario: Forms- multi-select picklist- Admin/PM- To verify Download as PDF after render in Config functioning correctly
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName                    | fieldOrignalValue | coreComponentField  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | General Review Form | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |                   | General Review Form | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |                   | General Review Form | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | General Review Form | ApiGeneratedId:3 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |                   | General Review Form | ApiGeneratedId:4 |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |                   | General Review Form | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName                    | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue                         |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | true          | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Field Label Override         |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormCheckboxType__c} |
+      | Page Block Config:Page Block Rule Detail | Is Active                    | true          | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |               | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox     | false         | General Review Form | Name                      | {CommonConfigFile:internalUserFormRadioType__c}    |
+    Given I activated standalone subaward "Automation Runtime Award Site Visit" with properties "default" of type "Competitive"
+    Given I activated standalone subaward "Automation Runtime Award Record" with properties "default" of type "Competitive"
+    When I login to "As a Grantor" app as "dynamicUser" user
+    And I navigate to "Grants" tab
+    When I navigate to "Grants" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Grants - Active"
+    And I perform quick search for "{SavedValue:Automation Runtime Award Site Visit}" in "GrantorActiveGrantsgrid" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "GrantorActiveGrantsgrid"
+    When I navigate to "Subawards" sub tab
+    And I click on "View" icon for "{SavedValue:Automation Runtime Award Site Visit}" inside flex table with id "---sitevisits:-:GrantsSubAwardsTableId---"
+    Given I navigate to "Management" sub tab
+    And I click on top right button "Initiate Site Visit" in flex table with id "---sitevisits:-:InitiateSiteVisitTableId---"
+    And I pause execution for "4" seconds
+    And I enter "Creation" values from "SiteVisit_Field_Values.xlsx"
+    When I click modal button "Save and Continue"
+    And I enter "Edition" values from "SiteVisit_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    And I wait for "5" seconds
+    And I get the "EGMS ID"
+    And I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---sitevisits:-:approverSiteVisitTableId---" by clicking "New" :
+      | Name                      | Site Visit |
+      | {SavedValue:EXE Username} | Step 1     |
+    When I get the "EGMS ID"
+    Given I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:participantsTableId---"
+    When I click "Associate" after selection of "Automation SPA" in the table "---sitevisits:-:siteVisitContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---sitevisits:-:associateAwardSiteVisitsTableId---"
+    When I click "Associate" after selection of "{SavedValue:Automation Runtime Award Record}" in the table "---sitevisits:-:awardSiteVisitsTableId---"
+    And I click on "Notify" in the page details
+    When I click on "Conduct" in the page details
+    When I re-login to "Grants Portal" app as "SPI3" user on "SUBPORTAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:monitoringTabPhasePendingTasks---" panel
+    When I click on "Start" icon for "Record Id" inside flex table with id "---sitevisits:-:monitoringTabPhasePendingTasks---"
+    When I re-login to "As a Grantor" app as "dynamicUser" user on "INTERNAL" portal
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "Record Id" in "---sitevisits:-:manageSiteVisitTableId---" panel
+    And I click on "View" icon for "Record Id" inside flex table with id "---sitevisits:-:manageSiteVisitTableId---"
+    And I navigate to "Reports and Outcomes" sub tab
+    When I click on "Edit" icon for "General Review Form" inside flex table with id "---sitevisits:-:reportsTableId---"
+    And I enter "Form Fields" values from "DeskReview_Field_Values.xlsx"
+    Then I select below checkbox options for field "fieldCheckboxType__c"
+      | Display Value on UI 1 |
+      | Display Value on UI 2 |
+      | Display Value on UI 3 |
+      | Display Value on UI 3 |
+      | Display Value on UI 4 |
+    And I enter value "Display 1" into field "RadioType__c"
+    And I click on "Save" in the page details
+    When I click on "Download As PDF" in the page details
+    And I pause execution for "5" seconds
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I softly see "Display 1" on page "1" of "govgrants" pdf file
+    Then I softly see "Display Value on UI 1" on page "1" of "govgrants" pdf file
+    Then I softly see "Display Value on UI 2" on page "1" of "govgrants" pdf file
