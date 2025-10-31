@@ -77,7 +77,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action from dropdown at "Test Automation Admin collab phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
-  @104688    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
+  @104688collab    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsPMUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by PM user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -118,14 +118,15 @@ Business Need: collab Component Scenarios
   Scenario: validate the delete action at comment section at my feed section by SPI user from home phase
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I navigate to "Home" tab
-    And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
-    And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
-    And I click on "Delete" action at "Test Automation SPI Comment delete" comment inside my feed
-    And I click modal button "Ok"
-    And I refresh the page
-    And I pause execution for "5" seconds
-    Then I do not see "Test Automation SPI Comment delete" comment inside "Test Post for automation-SPI DND" post at collab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I pause execution for "4" seconds
+    And I enter value "Test Automation Admin Comment" in my feed section and share the comment
+    Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete this comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104338    @verifyPostBoxAcceptAndWrapTextInProperFormatByLoggedInAsSPIUserAtApplicationPhase
   Scenario: validate text wrap and alignment at my feed section by SPI user at application phase
@@ -133,8 +134,7 @@ Business Need: collab Component Scenarios
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -214,7 +214,7 @@ Business Need: collab Component Scenarios
     And I click on refresh button at collab
     Then I see collab my feed page refreshed
 
-  @112487    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
+  @112487collab    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromHomePhase
   Scenario: validate the delete action at post present under home phase -  my feed section by admin user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -233,7 +233,7 @@ Business Need: collab Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
 
-  @112484    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
+  @112484collab    @verifyThatByClickOnDeleteActionAtPostThenRespectivePostIsGettingDeletedByAdminUserFromCollabPhase
   Scenario: validate the delete action at post present under collab phase-my feed section by admin user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -290,7 +290,7 @@ Business Need: collab Component Scenarios
     And I click modal button "Ok"
     Then I softly do not see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
 
-  @112492    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
+  @112492collab    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from home phase-my feed section
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab
@@ -370,8 +370,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
-    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    And I click on "View" icon in flex table for first draft record
     When I navigate to "Collab" sub tab
     And I click on "Refresh" button inside collab tab
     Then I see collab my feed page refreshed
@@ -2221,7 +2220,6 @@ Business Need: collab Component Scenarios
   @204453
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed

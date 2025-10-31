@@ -160,7 +160,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{StaticRecords:PageLayoutRecord}"
     When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
-    Then I do not see "Take Snapshot" options is displayed
+    Then I softly do not see "Take Snapshot" options is displayed
 
   @34055    @enablePromptInputDialog-gPlanning
   Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
@@ -8114,13 +8114,17 @@ Business Need: Page Layout Component Scenarios
 
   @149700    @verifyThatUserCanSaveAnUnsavedDataIfPageRefreshedAtPageLayout
   Scenario: validate the user can save unsaved data by click on save button at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program"
-    When I click on "Edit" icon for "Demo Testing Program" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details

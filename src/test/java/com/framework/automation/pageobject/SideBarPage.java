@@ -258,4 +258,35 @@ public class SideBarPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertLableDisplayedOnGlobalSearchDropDown(String usage, List<String> label) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(seeBelowLabelDisplayedOnDropDown(label)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(seeBelowLabelDisplayedOnDropDown(label)).isFalse();
+        }
+    }
+
+    private boolean seeBelowLabelDisplayedOnDropDown(List<String> label) {
+        boolean flag = false;
+        I.amPerforming().click().on(ByUsing.xpath("//select[@id='selectSearchId']"));
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//select[@id='selectSearchId']//option"));
+
+            for (Elements element : elements) {
+                System.out.println("list of all webelements " + element.getText());
+            }
+
+            List<String> buttonlist = new ArrayList<String>();
+            for (int i = 0; i < elements.size(); i++) {
+                buttonlist.add(elements.get(i).getText().trim());
+            }
+            if (buttonlist.containsAll(label)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            //unhandled exception
+        }
+        return flag;
+    }
 }

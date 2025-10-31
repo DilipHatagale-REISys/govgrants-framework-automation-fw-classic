@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebElement;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -423,6 +424,37 @@ public final class PageDetails {
         return fieldValue;
     }
 
+    public String getFieldValueForPicklist(String fieldLabel, boolean matchLabelExactly) {
+        By fieldLabelLocator = By.xpath(String.format(""
+                                // This option should work in all situations, if using the latest version of GovGrants
+                                + "//dd//div[contains(@class, 'multiselectCheckboxalignment') or contains(@class,'checkBoxandRadio') or contains(@id,'selectCheckBoxDiv')]//label[%s]",
+                        matchLabelExactly
+                                ? I.amPerforming().sanityOfXpathTo().equals(".", fieldLabel)
+                                : I.amPerforming().sanityOfXpathTo().contains(".", fieldLabel)
+                )
+        );
+
+        System.out.println("current fieldLabelLocator : " + fieldLabelLocator);
+        String fieldValue;
+        WebElement fieldData = I.amPerforming().getElementReference().of(fieldLabelLocator)
+                .findElement(By.xpath(".//parent::div"));
+        System.out.println("current fieldData : " + fieldData);
+
+        if (fieldData.findElements(By.xpath(".//input[@type='checkbox']|.//input[@type='radio']")).size() != 0) {
+            fieldValue = I.amPerforming().checkToSee().isSelected(I.amPerforming().getElementReference().ofNested(fieldData, By.xpath(".//input[@type='checkbox']|.//input[@type='radio']")))
+                    ? "Checked" : "Unchecked";
+        } else {
+            fieldValue = StringUtils.normalizeSpace(I.amPerforming().actionToGet().text(fieldData));
+        }
+
+        if (fieldLabel.equalsIgnoreCase("EGMS ID")) {
+            idOfRecord = fieldValue;
+        } else if (fieldLabel.equalsIgnoreCase("GovGrants ID")) {
+            idOfRecord = fieldValue;
+        }
+        return fieldValue;
+    }
+
     public String getFieldValue(String fieldLabel) {
         return getFieldValue(fieldLabel, false);
     }
@@ -547,7 +579,7 @@ public final class PageDetails {
      */
     public void verifyMultipleSelectedOption(String usage, String cellName, List<String> options) {
         List<String> selectedOptions = new ArrayList<>();
-        List<WebElement> ll = I.amPerforming().dropDownSelection().from(By.xpath("//td[@class='" + cellName + "']//following::td/select")).getOptions();
+        List<WebElement> ll = I.amPerforming().dropDownSelection().from(By.xpath("//td[@class='" + cellName + "']//following::td/select | //span[text()='" + cellName + "']//parent::dt//following-sibling::dd//li")).getOptions();
         for (WebElement e : ll) {
             selectedOptions.add(e.getText().trim());
         }
@@ -615,7 +647,7 @@ public final class PageDetails {
     public void clickOnActionsAtCommentSection(String actionName, Boolean chooseAction, String comment) {
         if (chooseAction == true) {
             I.amPerforming().click().on(By.xpath("//*[text()='" + comment + "']/ancestor::div[contains(@class,'singleComment')]//a[text()='" + actionName + "'] | " +
-                    "//*[text()='" + comment + "']/ancestor::div[contains(@class,'media-body')]//a[text()='" + actionName + "'] | //div[text()='Test Automation Admin Comment']/ancestor::div[contains(@class ,'singleComment')]//span//a[text()='" + actionName + "']"));
+                    "//*[text()='" + comment + "']/ancestor::div[contains(@class,'media-body')]//a[text()='" + actionName + "'] | //div[text()='Test Automation Admin Comment']/ancestor::div[contains(@class ,'singleComment')]//span//a[text()='" + actionName + "'] |  //span[text()='" + comment + "']/ancestor::div[contains(@class ,'singleComment')]//span//a[@title='" + actionName + "']"));
         } else {
             I.amPerforming().click().on(By.xpath("//span[text()='" + comment + "']/parent::div//a[text()='More Options'] | //div[text()='" + comment + "']//a[text()='More Options']"));
             I.amPerforming().click().on(By.xpath("//span[text()='" + comment + "']/parent::div//a[text()='" + actionName + "'] | //div[text()='" + comment + "']//a[text()='" + actionName + "']"));
@@ -655,7 +687,7 @@ public final class PageDetails {
         for (int i = 0; i < checkboxes.size(); i++) {
             I.amPerforming().click().on(By.xpath("//div[@id='" + fieldName + "']//*[contains(text(),'" + checkboxes + "')]//preceding-sibling::input | //div[@id='" + fieldName + "']//label[contains(text(),'" + checkboxes.get(i) + "')]//preceding-sibling::input | " +
                     "//span[text()='" + fieldName + "']/ancestor::dl//label[contains(text(),'" + checkboxes.get(i) + "')] |" +
-                    "//div [@id='" + fieldName + "']//option[contains(text(),'" + checkboxes.get(i) + "')]"));
+                    "//div [@id='" + fieldName + "']//option[contains(text(),'" + checkboxes.get(i) + "')] | //div[@id='" + fieldName + "']//label[normalize-space(text())='" + checkboxes.get(i) + "']//preceding-sibling::input"));
             if (I.amPerforming().checkToSee().IsElementPresentQuick(By.xpath("//div[@id='" + fieldName + "']//img[contains(@src,'/img/arrow2_picklist_right.gif')]"))) {
                 I.amPerforming().click().on(By.xpath("//div[@id='" + fieldName + "']//img[contains(@src,'/img/arrow2_picklist_right.gif')]"));
             }

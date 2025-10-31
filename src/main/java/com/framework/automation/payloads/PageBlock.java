@@ -246,6 +246,13 @@ public class PageBlock {
                                         String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__FieldLabelOverride__c), value);
                 break;
+            case "FIELD LABEL OVERRIDE (RICH TEXT)":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__FieldLabelOverrideRichText__c), value);
+                break;
             case "READ ONLY":
                 finalPayload = String
                         .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
@@ -385,6 +392,13 @@ public class PageBlock {
                                 apiUtilities.getComponentCoreFieldId(
                                         String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__HelpTextLong__c), value);
+                break;
+            case "ALTERNATIVE RENDERING CONFIG":
+                finalPayload = String
+                        .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__PageBlockDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__AltRenderingConfig__c), value);
                 break;
             case "HIDE EXPRESSION JSON":
                 finalPayload = String

@@ -64,6 +64,11 @@ public class SideBar {
                                 filterClause),
                         String.valueOf(SObjectAPIs.GNT__Link__c), value);
                 break;
+            case "ACTIVE":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__AccordionContent__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionContent__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Active__c), value);
+                break;
         }
         return finalPayload;
     }
@@ -163,6 +168,12 @@ public class SideBar {
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__SidebarTechnicalSupportLabel__c), value);
                 break;
+            case "ENABLE BI&ANALYTICS":
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+                                filterClause),
+                        String.valueOf(SObjectAPIs.GNT__EnableBIAnalytics__c), value);
+                break;
         }
         System.out.println("method for finalpayload " + finalPayload);
         return finalPayload;
@@ -189,9 +200,8 @@ public class SideBar {
                         String.valueOf(SObjectAPIs.Name), value);
                 break;
             case "ACTIVE":
-                finalPayload = String.format(
-                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), apiUtilities
-                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), filterClause),
+                finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__AccordionHeader__c),
+                        apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__Active__c), value);
                 break;
             case "ICON CSS":

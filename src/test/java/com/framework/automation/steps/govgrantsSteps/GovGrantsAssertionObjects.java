@@ -452,6 +452,29 @@ public final class GovGrantsAssertionObjects {
         }
     }
 
+    public void assertFieldValueForPicklist(String fieldLabel, boolean matchesExactly, String fieldValue, boolean isSoftly) {
+        String foundValue = null;
+        for (int i = 0; i < 2 && !fieldValue.equalsIgnoreCase(foundValue); i++) {
+            try {
+                foundValue = govgrants.perform().pageDetails().getFieldValueForPicklist(fieldLabel, matchesExactly);
+            } catch (Exception e) {
+                foundValue = null;
+            }
+
+            if (!fieldValue.equalsIgnoreCase(foundValue)) {
+                I.amPerforming().browserOperationsTo().refreshPage();
+            }
+        }
+
+        I.amPerforming().assertionsTo().assertThat(foundValue)
+                .as("Checking value of field with label '%s'", fieldLabel)
+                .isEqualToIgnoringCase(fieldValue);
+
+        if (!isSoftly && !I.amPerforming().assertionsTo().wasSuccess()) {
+            I.amPerforming().assertionsTo().assertAll();
+        }
+    }
+
     public void verifyFieldAvailableOnModal(String field, String text) {
         try {
             By fieldText = By.xpath("//div[@id='modaltemp']//div//span[contains(text(),'" + field + "')]//following::dd//span[contains(text(),'" + text + "')]");

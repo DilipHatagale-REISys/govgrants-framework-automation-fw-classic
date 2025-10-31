@@ -1423,8 +1423,6 @@ public class Announcements {
                 return createAwardWtithBuildUpFunctionalityYes(json);
             case "NO_PROGRAM_INCOME_ANTICIPATE":
                 return createAwardWtithNoProgramIncomeAnticipate(json);
-            case  "NO_BUDGETRedirectionThreshhold":
-                return createAwarForWithNoBudgetRedirectionThreshhold(json);
             case "AMENDMENT_REQUEST":
                 return createAwarForAmendmentRequest(json);
             case "AMENDMENT_REQUEST_BUILDUP_MATCH_YES":
@@ -1457,8 +1455,6 @@ public class Announcements {
                 return createAwarForIndUser(json);
             case "SUBRECIPIENT_ORG_SPI_USER":
                 return createAwarForSPIUser(json);
-            case "AWARD_NO_SUPPORTINGDOC_PROGRAM":
-                return awardWithNoSupportingDocProgram(json);
             case "SECOND_FOCUS_AREA":
                 if (Typeflag)
                     return createAwarForSecondFocusArea(json, Type[0]);
