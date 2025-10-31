@@ -1209,11 +1209,11 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:4 |
       | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General           | Enable Page Size           | true          | AppContact         | Name                      |                            |
-      | Flex Table:General           | Enable Total Records Count | true          | AppContact         | Name                      |                            |
-      | Flex Table:General           | Enable Pagination          | true          | AppContact         | Name                      |                            |
-      | Flex Table:General           | Default Page Size          | 5             | AppContact         | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size           | true          | AppContact         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | AppContact         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | AppContact         | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | AppContact         | Name                      |                            |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1240,8 +1240,9 @@ Business Need: DataTableEnhanced Component Scenarios
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
 
-  @205082
+  @205082 @205081
   Scenario: Advanced Filter- SPI- UI- Verify Advanced Filter option should not available on UI
+  |Advanced Filter- SPI- UI- Verify Advanced Filter option available on UI|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
@@ -1268,9 +1269,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
     Then I do not see Advance Filter box is displayed inside table id "---applicationReview:-:flexGridAppContactTableId---" in flex table
-
-  @205081
-  Scenario: Advanced Filter- SPI- UI- Verify Advanced Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
@@ -1279,23 +1277,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
       | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
+    And I refresh the page
+    And I pause execution for "5" seconds
     Then I see Advance Filter box is displayed inside table id "---program:-:FlexTableEnhancedNotesId---" in flex table
 
   @205083 @205084
@@ -1399,26 +1382,44 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
-
-    When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
-    When I enter advance filter values in table id "advfRecipientGrantNotes"
-      | Title | contains | Check |
-    Then I see table contains "Showing 1 to " inside table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on advance filter "#advfAppContact" of table id "---applicationReview:-:flexGridAppContactTableId---"
+    When I enter advance filter values in table id "advfAppContact"
+      | Project Role | equals to | Project Director/Manager |
+    Then I see table contains "Showing " inside table id "---applicationReview:-:flexGridAppContactTableId---"
     And I refresh the page
-    Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
+    Then I see "5" with page size dropdown at "---applicationReview:-:flexGridAppContactTableId---"
 
 ##########################Test suite: Quick Search (Suite ID: 207520)#########################
 
-  @207524
+  @207524 @207527 @207530 @207533 @207574  @205386 @205390 @205399 @205404 @205405 @205433 @205439 @205634
   Scenario: Quick Search- SPI- UI- Verify we can search records by entering numbers in quick search box
+  |Quick Search- SPI- UI- Verify we can search records by entering text in quick search box|
+  |Quick Search- SPI- SPI- Verify we can search records by entering partial text in quick search box|
+  |Quick Search- SPI- UI- Verify we can search records by entering special characters in quick search box|
+  |Quick search - SPI- UI- Config- Verify when we get any quick search results and refresh the page quick search should cleared and all records should be displayed on UI|
+  |Action- SPI- UI- Verify action is rendered on UI|
+  |Action- SPI- UI- Verify action name is displaying correctly|
+  |Action- SPI- UI- Verify Button help text is displaying correctly|
+  |Action- SPI- UI- Verify Actions icons are rendered at expected positions,
+  |  Action- SPI- UI- Verify if actions displayed on UI are following given sequence|
+  |Action- SPI- UI- Verify action rendered as per expected ‘Header Action Display Type’|
+    Given I have "default" configuration as below:
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
       | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
+      | Flex Grid             | Default Page Size   | 5                 | ApiGeneratedId:1 |
+      | Flex Table            | Button Help Text    | Edit              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence            | 0                 | ApiGeneratedId:1 |
+      | Flex Table            | Location            | Row               | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true                  | ExternalApplicationNotes | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true                  | ExternalApplicationNotes | Name                      |                            |
+      | Flex Grid:General     | Default Page Size   | 5                     | ExternalApplicationNotes |                           |                            |
+      | Flex Table Action     | Button Help Text    | Test Button Help Text | ExternalApplicationNotes | Name                      | Edit                       |
+      | Flex Table Action     | Sequence            | 0                     | ExternalApplicationNotes | Name                      | Edit                       |
+      | Flex Table Action     | Location            | Row                   | ExternalApplicationNotes | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1432,346 +1433,57 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "3" seconds
     And I enter "Edition" values from "Application_Field_Values.xlsx"
     When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "11000" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Delete" icon for "11000" inside table
-    When I click "Yes" on modal confirmation box
-    And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    And I enter value "Rest" into field "Title"
-    And I enter value "11000" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "11000" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @207527
-  Scenario: Quick Search- SPI- UI- Verify we can search records by entering text in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Delete" icon for "sds@dv.com" inside table
-    When I click "Yes" on modal confirmation box
-    And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    And I enter value "sds@dv.com" into field "Title"
-    And I enter value "Chakram" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "Chakram" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @207530
-  Scenario: Quick Search- SPI- SPI- Verify we can search records by entering partial text in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Delete" icon for "sds@dv.com" inside table
-    When I click "Yes" on modal confirmation box
-    And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    And I enter value "sds@dv.com" into field "Title"
-    And I enter value "Test" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "sds" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to" inside table id "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @207533
-  Scenario: Quick Search- SPI- UI- Verify we can search records by entering special characters in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Delete" icon for "sds@dv.com" inside table
-    When I click "Yes" on modal confirmation box
-    And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    And I enter value "sds@dv.com" into field "Title"
-    And I enter value "Test" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "sds@dv.com" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @207536
-  Scenario: Quick Search- SPI- UI- Verify we can search records by entering apostrophe in quick search box
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-    When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
-
-  @207574
-  Scenario: Quick search - SPI- UI- Config- Verify when we get any quick search results and refresh the page quick search should cleared and all records should be displayed on UI
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
-      | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | RecipientGrantNotes | Name                      |                            |
-      | Flex Table:General    | Enable Filter       | true          | RecipientGrantNotes | Name                      |                            |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "'apostrophe test''''" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:FlexTableEnhancedNotesId---"
+    And I navigate to "Files" sub tab
+    When I enter the following values into flex table with id "---applicationIntake:-:ApplicationNotesTableId---" by clicking "Add" :
+      | Title      | Description |
+      | Testing    | 11000       |
+      | Chaeck     | Data        |
+      | Automation | Search@#$   |
+      | Perform    | Table       |
+      | Click      | 45.00       |
+      | Modal      | Button      |
+    And I pause execution for "5" seconds
+    #Actions
+    Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
+    Then I see "Actions" in flex table header "---applicationIntake:-:ApplicationNotesTableId---"
+    Then I see action name "Edit" itself get displayed inside tableid "---applicationIntake:-:ApplicationNotesTableId---"
+    Then I see action name "Delete" itself get displayed inside tableid "---applicationIntake:-:ApplicationNotesTableId---"
+    #Number
+    When I perform quick search for "11000" in "---applicationIntake:-:ApplicationNotesTableId---" panel
+    Then I softly see value "11000" for title "Description" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
+    When I click on "Menu" button inside table id "---applicationIntake:-:ApplicationNotesTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Notes"
+    #Text
+    When I perform quick search for "Perform" in "---applicationIntake:-:ApplicationNotesTableId---" panel
+    Then I softly see value "Perform" for title "Title" inside table "---applicationIntake:-:ApplicationNotesTableId---"
+    When I click on "Menu" button inside table id "---applicationIntake:-:ApplicationNotesTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Notes"
+    #Partial Text
+    When I perform quick search for "Mod" in "---applicationIntake:-:ApplicationNotesTableId---" panel
+    Then I softly see value "Modal" for title "Title" inside table "---applicationIntake:-:ApplicationNotesTableId---"
+    When I click on "Menu" button inside table id "---applicationIntake:-:ApplicationNotesTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Notes"
+    #Special Characters
+    When I perform quick search for "@#$" in "---applicationIntake:-:ApplicationNotesTableId---" panel
+    Then I softly see value "Search@#$" for title "Description" inside table "---applicationIntake:-:ApplicationNotesTableId---"
+    #Refresh
     And I refresh the page
-    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
-    When I click on "Reset Table" button inside table id "---program:-:FlexTableEnhancedNotesId---"
-    Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
-
-######################Test suite: Action Config (Suite ID: 205379)########################
-
-
-  @205386 @205390
-  Scenario: Action- SPI- UI- Verify action is rendered on UI,
-  Action- SPI- UI- Verify action name is displaying correctly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table            | Button Help Text |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    Then I see "Actions" in flex table header "---program:-:FlexTableEnhancedNotesId---"
-    Then I see action name "Edit" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
-    Then I see action name "Delete" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @205399
-  Scenario: Action- SPI- UI- Verify Button help text is displaying correctly
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table            | Button Help Text | Edit              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Button Help Text | Test Button Help Text | RecipientGrantNotes | Name                      | Edit                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
+    Then I see "5" with page size dropdown at "---applicationIntake:-:ApplicationNotesTableId---"
+    #Help Text Icon
     And I hovering mouse on action "Edit" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
 
+######################Test suite: Action Config (Suite ID: 205379)########################
 
-  @205404 @205405 @205433 @205439
-  Scenario: Action- SPI- UI- Verify Actions icons are rendered at expected positions,
-  Action- SPI- UI- Verify Actions should be rendered as action name,
-  Action- SPI- UI- Verify Actions are rendered at expected location,
-  Action- SPI- UI- Verify if actions displayed on UI are following given sequence
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Sequence         | 0                 | ApiGeneratedId:1 |
-      | Flex Table            | Button Help Text |                   | ApiGeneratedId:2 |
-      | Flex Table            | Location         |                   | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Sequence         | 0             | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Location         | Row           | RecipientGrantNotes | Name                      | Edit                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-
-    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
-
-
-  @205436
-  Scenario: Action- SPI- UI- Verify action rendered as per expected ‘Header Action Display Type’
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | EditRecord        | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type |                   | RecipientGrantNotes | Name                      | Edit                       |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row           | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button        | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | EditRecord    | RecipientGrantNotes | Name                      | Edit                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-    When I perform quick search for "Automation PM" in "---program:-:FlexTableEnhancedNotesId---" panel
-    Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
-
-  @205442
+  @205442 @205458
   Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
+  |Action- SPI- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Where To Open ? |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | SameWindow    | RecipientGrantNotes | Name                      | Edit                       |
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | SameWindow    | AppContact         | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1789,38 +1501,18 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
-    When I perform quick search for "Automation SPI3" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I perform quick search for "Automation SPI3" in "---applicationReview:-:flexGridAppContactTableId---" panel
     When I click on "Edit" icon for "Automation SPI3" inside table
     Then I see no new tab is opened
-
-  @205458
-  Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Where To Open ? |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | NewWindow     | RecipientGrantNotes | Name                      | Edit                       |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---program:-:NotYetQualifiedTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---program:-:NotYetQualifiedTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-    When I perform quick search for "Automation SPI3" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Edit" icon for "Automation SPI3" inside table
-    Then I see no new tab is opened
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewWindow     | AppContact         | Name                      | Edit                       |
+    And I refresh the page
+    And I pause execution for "5" seconds
+    Then I see new tab is opened
 
   @205464 @205491
   Scenario: Action- SPI- UI - Verify Confirmation window is getting displayed
@@ -1837,16 +1529,13 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "3" seconds
     And I enter "Edition" values from "Application_Field_Values.xlsx"
     When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
-    When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
-    When I close modal by clicking the top right x button
-    And I click on top right button "Add" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    And I enter value "Test Notes" into field "Title"
-    And I enter value "Chrome" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:FlexTableEnhancedNotesId---"
-    When I perform quick search for "Test Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Delete" icon for "Test Notes" inside table without accept popup
+    And I navigate to "Files" sub tab
+    When I enter the following values into flex table with id "---applicationIntake:-:ApplicationNotesTableId---" by clicking "Add" :
+      | Title   | Description |
+      | Testing | 11000       |
+      | Chaeck  | Data        |
+    When I perform quick search for "Testing" in "---applicationIntake:-:ApplicationNotesTableId---" panel
+    When I click on "Delete" icon for "Testing" inside table without accept popup
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
   @205494
@@ -1859,12 +1548,12 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:3 |
       | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior       | EditRecord       | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title           | Automation Title | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Where To Open ?       | Modal            | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Show Confirmation Box | true             | RecipientGrantNotes | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                  | RecipientGrantNotes | Name                      | Edit                       |
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior       | EditRecord       | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title           | Automation Title | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ?       | Modal            | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Show Confirmation Box | true             | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  |                  | AppContact         | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -1882,7 +1571,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
-
     When I perform quick search for "Automation SPI3" in "---program:-:FlexTableEnhancedNotesId---" panel
     When I click on "Edit" icon for "Automation SPI3" inside table
     Then I see "Automation Title" opens in overLay window
@@ -1900,18 +1588,19 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
-    When I login to "As a Grantor" app as "<Users>" user
+    Given I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}"
-    When I click on "View" icon for "{PatchFramework_recordUsed:EnhancedFlexTableRecord}" inside table
-    When I navigate to "Overview" sub tab
+    And I click toggle button to select "Internal Programs - All"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
+    When I click "Associate" after selection of "Automation SPI3" in the table "---program:-:associateProgramContactsTableId---"
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I download the file
-    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+    Then I see "Automation SPI3" on page "1" of "govgrants" pdf file
     Examples:
       | Users |
     #  | Admin |
@@ -1972,12 +1661,12 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Lisa Mitchell" in the table "---program:-:associateProgramContactsTableId---"
-    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click "Associate" after selection of "Automation SPI3" in the table "---program:-:associateProgramContactsTableId---"
+    When I perform quick search for "Automation SPI3" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
     When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     And I download the file
-    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+    Then I see "Automation SPI3" on page "1" of "govgrants" pdf file
 
     Examples:
       | Users |
@@ -4514,8 +4203,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click modal button "Close"
     And I refresh the page
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-   # Then I softly see field inside table "BaseSalary__c" not in edit mode
-    Then I do not see field "BaseSalary__c" is editable field
+    Then I softly see field inside table "BaseSalary__c" not in edit mode
     #Equals-Status-Created
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -4556,8 +4244,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I pause execution for "4" seconds
     And I refresh the page
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    #Then I softly see field inside table "BaseSalary__c" not in edit mode
-    Then I softly do not see field "BaseSalary__c" is editable field
+    Then I softly see field inside table "BaseSalary__c" not in edit mode
     #GreaterThanEquals-FundedAmount-4000
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -4572,7 +4259,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "5" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    #Then I softly see field inside table "BaseSalary__c" not in edit mode
     Then I softly do not see field "BaseSalary__c" is editable field
     #LessThan-FundedAmount-4000
     Given I have "default" configuration as below:
@@ -4611,7 +4297,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "4" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I softly see field "BaseSalary__c" not in edit mode
     #In-FocusAreaRequired-No
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -4630,7 +4316,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "4" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-    Then I softly see field inside table "BaseSalary__c" not in edit mode
+    Then I softly see field "BaseSalary__c" not in edit mode
     #NotIn-FocusAreaRequired-YesNo
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue                      | filterId         |
@@ -4649,7 +4335,6 @@ Business Need: DataTableEnhanced Component Scenarios
     And I refresh the page
     And I pause execution for "3" seconds
     And I click on "Edit" icon for "{SavedValue:EXE Username}" inside flex table with id "---program:-:contactsTableId---" without waiting for record
-   # Then I softly see field inside table "BaseSalary__c" not in edit mode
     Then I softly see fields "BaseSalary__c" is in edit mode
     #Contains-Type-EmergencyGrants
     Given I have "default" configuration as below:
@@ -4687,9 +4372,23 @@ Business Need: DataTableEnhanced Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{DataTableEnhanced:ContactTable}" in "---program:-:programsTableId---" panel
-    When I click on "View" icon for "{DataTableEnhanced:ContactTable}" inside flex table with id "---program:-:programsTableId---"
-    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "{program:programsTableId}"
+    When I enter in modal "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation EXE" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation FD" in the table "---program:-:associateContactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "Automation FO" in the table "---program:-:associateContactsTableId---"
+    And I edit the following rows inline in flex table with id "---program:-:contactsTableId---" by clicking "Edit" :
+      | Name           | Date      |
+      | Automation PM  | 5/19/2025 |
+      | Automation EXE | 5/25/2027 |
+      | Automation FD  | 4/15/2025 |
     #Date Field
     When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:contactsTableId---"
     When I enter advance filter values inside id "advfDataTableEnhanceProgramContacts"

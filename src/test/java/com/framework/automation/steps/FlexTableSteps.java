@@ -706,4 +706,16 @@ public class FlexTableSteps {
         By clearAll = By.xpath("//*[@id='" + filterTableId + "']//*[@title='Clear All']//i");
         I.amPerforming().click().on(clearAll);
     }
+
+    @jdk.jfr.Description("Validate field is not editable")
+    @Then("I (softly see|see) field \"([^\"]*)\" not in edit mode$")
+    public void iSoftlySeeFieldNotInEditMode(String usage,String fieldAPIName) {
+        flexTablePage.assertFieldIsNotInEditMode(fieldAPIName, usage.contains("softly"));
+    }
+
+    @Then("I (softly see|see) field inside table \"([^\"]*)\" not in edit mode$")
+    public void iSoftlySeeFieldInsideTableNotInEditMode(String usage,String fieldAPIName) {
+        flexTablePage.assertFieldIsNotInEditModeForTable(fieldAPIName, usage.contains("softly"));
+
+    }
 }
