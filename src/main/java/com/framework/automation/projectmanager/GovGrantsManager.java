@@ -299,8 +299,8 @@ public class GovGrantsManager extends ProjectWebServices {
      * @param SubTabName
      */
     public WebElement getSubTabsInsideMainDetailPage(String SubTabName) {
-        I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
-        return I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "']"));
+        I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "'] | //div[@id='myTabs']//ul//span[text()='" + SubTabName + "']"));
+        return I.amPerforming().getElementReference().of(By.xpath("//div[@id='myTabs']/ul/li/a[@name='" + SubTabName + "'] | //div[@id='myTabs']//ul//span[text()='" + SubTabName + "']"));
     }
 
     /**
