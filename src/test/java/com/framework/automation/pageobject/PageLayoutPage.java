@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.io.IOException;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -40,7 +41,7 @@ public class PageLayoutPage extends GovGrantsManager {
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')] | //div[contains(text(),'Automation Header Text')]");
-        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | ");
+        headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | //div//span[@class='pbNormalText']");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
         monitoringFlexGridTitle = By.xpath(
@@ -914,8 +915,13 @@ public class PageLayoutPage extends GovGrantsManager {
      * click on refresh button at collab my feed section inside page block detail
      */
     public void clickRefreshButtonAtCollabPhase() {
-        WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
-        I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        try {
+            WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.healingXpathName("pageLayout_getCollabRefreshIcon"));
+            I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        } catch (Exception e) {
+            WebElement getRefreshButtonAtCollabPhase = I.amPerforming().getElementReference().of(ByUsing.xpath("//a[@title='Refresh']"));
+            I.amPerforming().click().on(getRefreshButtonAtCollabPhase);
+        }
     }
 
     /**
@@ -1807,14 +1813,14 @@ public class PageLayoutPage extends GovGrantsManager {
      * @modifier - ashwini.mahore
      */
     private boolean isTopRightParallelLinesBarOptionsAtPageLayoutDisplayed(String options) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[contains(text(),'" + options + "')] | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li | " +
                     "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] | " +
                     "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')] | //ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')]"))) {
-                flag = false;
+                flag = true;
             }
         } catch (Exception e) {
         }
@@ -3964,4 +3970,88 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfSelectedDropdownIsDisplayed(String usage, String cellName, List<String> selectedList) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(selectedDropDownList(cellName, selectedList)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(selectedDropDownList(cellName, selectedList)).isFalse();
+        }
+    }
+
+    private boolean selectedDropDownList(String cellName, List<String> selectedList) {
+
+        boolean flag = false;
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//select[contains(@title,'" + cellName + "')]//option"));
+
+            for (Elements element : elements) {
+                System.out.println("list of all webelements" + element.getText());
+            }
+
+            List<String> buttonlist = new ArrayList<String>();
+            for (int i = 0; i < elements.size(); i++) {
+                buttonlist.add(elements.get(i).getText().trim());
+            }
+            if (buttonlist.containsAll(selectedList)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            //unhandled exception
+        }
+        return flag;
+    }
+
+    public void isFieldLableDisplayedOnUI(String usage, String fieldLabel) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(lableDisplayedOnNot(fieldLabel));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(lableDisplayedOnNot(fieldLabel));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(lableDisplayedOnNot(fieldLabel)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(lableDisplayedOnNot(fieldLabel)).isFalse();
+        }
+    }
+
+    private boolean lableDisplayedOnNot(String fieldLabel) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='customLabelstyle']//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + fieldLabel + "')] | //span[@class='customLabelstyle' and text()='" + fieldLabel + "'] | //span[normalize-space(text())='" + fieldLabel + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertButtonsDisplayedOnViewLayout(String usage, String fieldLabel, List<String> fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(multiselectPicklistOptions(fieldLabel, fieldName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(multiselectPicklistOptions(fieldLabel, fieldName)).isFalse();
+        }
+    }
+
+    private boolean multiselectPicklistOptions(String fieldLabel, List<String> fieldName) {
+        boolean flag = false;
+        try {
+            List<Elements> elements = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//span[text()='" + fieldLabel + "']//parent::dt//following-sibling::dd//li"));
+            for (Elements element : elements) {
+                System.out.println("list of all webelements" + element.getText());
+            }
+            List<String> buttonlist = new ArrayList<String>();
+            for (int i = 0; i < elements.size(); i++) {
+                buttonlist.add(elements.get(i).getText().trim());
+            }
+            if (buttonlist.containsAll(fieldName)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            //unhandled exception
+        }
+        return flag;
+    }
+
+
 }

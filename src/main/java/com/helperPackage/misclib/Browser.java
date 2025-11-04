@@ -92,6 +92,10 @@ public final class Browser {
         return javaScript.getPageLoadStatus();
     }
 
+    public String CheckPageLoadingStatus() {
+        return javaScript.getPageLoadingStatus();
+    }
+
     /**
      * get complete current page source
      *

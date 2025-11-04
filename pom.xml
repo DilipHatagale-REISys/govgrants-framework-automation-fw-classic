@@ -43,9 +43,14 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.24.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.24.3</version>
         </dependency>
         <dependency>
             <groupId>io.appium</groupId>
@@ -287,7 +292,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceRunnerTemplateFile>src/test/resources/configuration/CustomCreator.java </sourceRunnerTemplateFile>
+                    <sourceRunnerTemplateFile>src/test/resources/configuration/CustomCreator.java
+                    </sourceRunnerTemplateFile>
                     <sourceFeatures>src/test/resources/features</sourceFeatures>
                     <generatedFeatureDirectory>${generated.feature.directory}</generatedFeatureDirectory>
                     <generatedRunnerDirectory>${generated.runner.directory}</generatedRunnerDirectory>
@@ -336,7 +342,8 @@
                     <failScenariosOnPendingOrUndefinedSteps>true</failScenariosOnPendingOrUndefinedSteps>
                     <expandBeforeAfterHooks>true</expandBeforeAfterHooks>
                     <customCss>target/Automation-Report/test_blaze_config/custom.css</customCss>
-                    <customParametersFile>target/Automation-Report/test_blaze_config/custom.properties </customParametersFile>
+                    <customParametersFile>target/Automation-Report/test_blaze_config/custom.properties
+                    </customParametersFile>
                     <logLevel>off</logLevel>
                 </configuration>
             </plugin>

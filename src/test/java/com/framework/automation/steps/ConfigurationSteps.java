@@ -139,6 +139,14 @@ public class ConfigurationSteps {
         projectAPI.publishAnnouncment(annType, annName, filter);
     }
 
+    @And("I activated standalone subaward {string} with properties {string} of type {string}")
+    public void iActivatedStandaloneSubawardWithPropertiesAndType(String grantName, String filter, String Type) {
+        String newGrantName = grantName + I.amPerforming().addOnsTo().getRandomNumber();
+        I.amPerforming().propertiesFileOperationsTo().saveValue(grantName, newGrantName);
+        grantName = newGrantName;
+        projectAPI.activateSubaward(grantName, filter, Type);
+    }
+
     @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\"$")
     public void deleteTestData(String recordName, String objectType) {
         projectAPI.deletionApi(recordName, objectType);

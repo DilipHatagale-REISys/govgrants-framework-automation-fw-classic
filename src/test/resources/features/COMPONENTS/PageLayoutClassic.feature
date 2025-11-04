@@ -150,29 +150,22 @@ Business Need: Page Layout Component Scenarios
       | User |
       | PM   |
 
-  @34055
-  Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
+  @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
+  Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Enable Prompt Input Dialog | false             | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dailogue Header     |                   | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dialogue Text       |                   | Grantor State Program | Name                      | Submit For Approval        |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Prompt Dailogue Header     | Automation Header | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dialogue Text       | Automation Text   | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Enable Prompt Input Dialog | true              | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "<User>" user
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    When I click on "Submit For Approval" button in right header
-    Then I see prompt For automation is displayed
+    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
+    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I click on "Menu" in the page details
+    Then I softly do not see "Take Snapshot" options is displayed
 
   @34056 @smoke @Bug-489182
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
@@ -4693,13 +4686,17 @@ Business Need: Page Layout Component Scenarios
 
   @149700    @verifyThatUserCanSaveAnUnsavedDataIfPageRefreshedAtPageLayout
   Scenario: validate the user can save unsaved data by click on save button at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Demo Testing Program"
-    When I click on "Edit" icon for "Demo Testing Program" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I click on "Edit" in the page details
     And I clear the value from field "fieldProgramName__c"
     When I enter value "Test" into field "fieldProgramName__c"
     And I click on "Save" in the page details
