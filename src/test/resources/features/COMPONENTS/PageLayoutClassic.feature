@@ -150,23 +150,6 @@ Business Need: Page Layout Component Scenarios
       | User |
       | PM   |
 
-  @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
-  Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    When I click on "Menu" in the page details
-    Then I softly do not see "Take Snapshot" options is displayed
-
   @34056 @smoke @Bug-489182
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
@@ -795,7 +778,7 @@ Business Need: Page Layout Component Scenarios
   @36115 @36129  @36131   @smoke
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
   |Verify Read Only For User Field at page Block Detail |
-    |Verify Read Decision Field at page Block Detail|
+  |Verify Read Decision Field at page Block Detail|
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Decision Field |                   | ApiGeneratedId:0 |
@@ -864,17 +847,17 @@ Business Need: Page Layout Component Scenarios
 
   @36169 @36170
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
-    | Verify Lookup Display Field Names field at page Block Detail|
+  | Verify Lookup Display Field Names field at page Block Detail|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName          | fieldOrignalValue     | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Internal Organization | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail             | Is Active          | true                  | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName                  | fieldOrignalValue     | filterId         |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text         | Internal Organization | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail             | Is Active                  | true                  | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name                  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName          | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
-      | Page Block Config:Page Block Rule Detail | Is Active          | true                    | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Code__c  | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+      | configurationCategory                    | fieldName                  | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text         | Organization Automation | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+      | Page Block Config:Page Block Rule Detail | Is Active                  | true                    | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name,Code__c            | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -921,7 +904,7 @@ Business Need: Page Layout Component Scenarios
 
   @36200 @36202
   Scenario: validate page layout action button field- Edit opens in overlay window
-    |validate page layout action button field- Edit opens in New window|
+  |validate page layout action button field- Edit opens in New window|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Page Layout Action    | Action Behavior |                   | ApiGeneratedId:0 |
@@ -969,12 +952,12 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Create Campaign" button is displayed
 
-  @36205 @displayAreaFieldForEditAtPageLayoutAction-gPlanning
+  @36205
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -987,9 +970,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
     Then I see "Test Automation" options is displayed
 
@@ -1015,7 +998,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see "Edit" Button at position "0"
 
-  @35982 @201278 @201279   @helpTextFieldAtPageBlock-gPlanning
+  @35982 @201278 @201279
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1026,16 +1009,16 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             | old_helpText                                                                           |
       | Help Text for Automation | The section gives program overview along with funder and funding organization details. |
 
-  @36102    @helpTextLongFieldAtPageBlockDetail-gPlanning
+  @36102
   Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
@@ -1048,16 +1031,16 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside page block detail "Abbreviation"
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             | old_helpText                                       |
       | Help Text for Automation | Name represents for what the program is meant for. |
 
-  @36043    @hideExpressionJsonFieldAtPageBlock-gPlanning @smoke
+  @36043 @smoke
   Scenario: Hiding program information page block from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1068,12 +1051,12 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see "Information" page block displayed in page details
 
-  @36116 @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
+  @36116 @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
@@ -1712,7 +1695,7 @@ Business Need: Page Layout Component Scenarios
     When I click on By phase dropdown at dashboard
     Then I do not see "Collab" is displayed in dropdown at dashboard
 
-  @82770    @verifyALinkIconPresentAtRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  @82770
   Scenario: validate that link icon is present at rich text area description field under page layout - gPlanning
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1722,7 +1705,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see icon for "Link" is present in rich text area description field
 
-  @82786    @verifyHyperLinkIsPresentAtTextGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  @82786
   Scenario: validate that a hyperlink is present at display text in rich text area description field under page layout - gPlanning
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1735,7 +1718,7 @@ Business Need: Page Layout Component Scenarios
     When I create hyperlink for "text" as "TestAutomationDescription" at rich text area field
     Then I see hyperlink is present at "TestAutomationDescription" in rich text area field
 
-  @82775    @verifyHyperLinkIsPresentAtURLGivenInRichTextAreaDescriptionFieldUnderPageLayout-gPlanning
+  @82775
   Scenario: validate that a hyperlink is present at URL in rich text area description field under page layout - gPlanning
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1749,14 +1732,14 @@ Business Need: Page Layout Component Scenarios
     When I pause execution for "3" seconds
     Then I see hyperlink is present at "http://www.testAutomation.com" in rich text area field
 
-  @83110    @verifyHyperLinkIsNotPresentAtUserNameUnderUserProfilePage
+  @83110
   Scenario: validate that a hyperlink is not present at user name under user profile page
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I select "My Profile" from user dropdown
     Then I see hyperlink is not present at "Automation ADMIN" user
 
-  @83111   @verifySpaceIsPresentBetweenLikesAndLabelUnderUserProfilePage
+  @83111
   Scenario: validate that space is present between likes count and label under user profile page
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1764,7 +1747,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see likesCount / label as "0" is present at user detail page
     Then I softly see likesCount / label as "Posts & Comments" is present at user detail page
 
-  @83330   @verifyRequiredForSaveBehaviourAtPageBlockDetailInModalWindowForURLField
+  @83330
   Scenario: Changing value for required for save behaviour field for URL from config and checking error message at modal
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -1807,8 +1790,7 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     Then I softly see "Information" page block displayed
 
-
-  @83173    @pageBlockTitleFieldAccepts255CharAtPageBlock-gPlanning
+ @83173    @pageBlockTitleFieldAccepts255CharAtPageBlock-gPlanning
   Scenario Outline: Changing page block title with the 255 character value from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1819,9 +1801,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -1839,9 +1821,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -2169,9 +2151,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see bulb icon at header instruction is displayed
 
   @111900    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gApplication
@@ -2354,9 +2336,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see phase tab has "Very Dark Blue" background color
 
 
@@ -2372,12 +2354,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
@@ -2396,12 +2380,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     Then I see "Title" is not displayed inside page block detail
@@ -2449,12 +2435,14 @@ Business Need: Page Layout Component Scenarios
 
   @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @119858  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditModal-gPlanning
@@ -2522,9 +2510,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -2535,9 +2523,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -2560,9 +2548,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
@@ -2617,9 +2605,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I wait for "5" seconds
@@ -2731,12 +2719,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Required Behavior |               | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     Then I do not see missing field badge on "Overview" tab
 
 
@@ -2817,9 +2807,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
@@ -2855,12 +2845,14 @@ Business Need: Page Layout Component Scenarios
 
   @132863  @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate date time field is displayed at enhanced flex edit page layout
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I save the field labeled "Created Date" as "DATE"
     When I navigate to "Overview" sub tab
     Then I softly see field "Created Date" as "{SavedValue:DATE}"
@@ -3048,12 +3040,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3072,12 +3066,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation}       |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3095,12 +3091,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}   |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3131,7 +3129,7 @@ Business Need: Page Layout Component Scenarios
     #Then I see field "Project Period End Date" is disabled
     Then I softly see field "EndDate__c" is not editable
 
-  @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
+  @133886
   Scenario: Set up hide field json value to Hide date, text and picklist from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3145,12 +3143,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation}       |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3158,7 +3158,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "ProgramSubType__c" is not editable
     Then I softly see field "Abbreviation__c" is not editable
 
-  @133894    @verifyHideFieldJsonFieldByHidingTextFieldOnTheBasisOfDateFieldValueInEditMode
+  @133894
   Scenario: Set up hide field json value to Hide text from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3170,18 +3170,20 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}      |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}      |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                     | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "730" into field "EndDate__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
     Then I softly see field "Abbreviation__c" is not editable
 
-  @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
+  @133895
   Scenario: Set up hide field json value to Hide picklist from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3193,18 +3195,20 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "730" into field "EndDate__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
     Then I softly see field "ProgramSubType__c" is not editable
 
-  @133896    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfDateFieldValueInEditMode
+  @133896
   Scenario: Set up hide field json value to Hide currency from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3216,19 +3220,20 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}          |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}          |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "730" into field "EndDate__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
     Then I softly see field "FundedAmount__c" is not editable
 
-
-  @134150    @verifyHideFieldJsonFieldByHidingCheckboxURLAndPicklistFieldOnTheBasisOPicklistFieldValueOnModal
+  @134150
   Scenario: Set up hide field json value to Hide checkbox,URL and picklist using picklist field value on modal window
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3252,7 +3257,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "WebsiteAddress__c" is not editable
     Then I softly see field "CFDA_Data__c" is not editable
 
-  @134158    @verifyHideFieldJsonFieldByHidingCheckboxFieldOnTheBasisOfPicklistFieldValueInEditMode
+  @134158
   Scenario: Set up hide field json value to Hide checkbox from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3292,12 +3297,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:CheckBoxField_CFDA}           |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}   |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3334,12 +3341,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType}  |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                           | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType}  |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                           | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Project Grants" into field "ProgramSubType__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
@@ -3378,12 +3387,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Program Sub Type is required to save under Overview. |
@@ -3400,12 +3411,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination17 | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Project Period End Date is required to save under Overview. |
@@ -3422,12 +3435,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                              | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | URL is required to save under Overview. |
@@ -3444,12 +3459,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Is Active         | false                                                  | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Funded Amount is required to save under Overview. |
@@ -3466,12 +3483,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Percent is required to save under Overview. |
@@ -3488,12 +3507,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                               | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Time is required to save under Overview. |
@@ -3510,12 +3531,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                   | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Date and Time is required to save under Overview. |
@@ -3532,12 +3555,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                 | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Number Of Approvals is required to save under Overview. |
@@ -3554,12 +3579,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                 | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Primary Funding Organization is required to save under Overview. |
@@ -3576,12 +3603,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                               | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Then I cannot see the following message in the page details contains:
       | Abbreviation is required to save under Overview. |
@@ -3677,13 +3706,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Expected Number of Awards is required to save under Overview. |
 
-  @137815    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  @137815
   Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                            | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | {CommonConfigFile:FundingOppURL__c} |
@@ -3723,13 +3752,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | FOA Release Date is required to save. |
 
-  @137821    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  @137821
   Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
@@ -3740,7 +3769,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "{pagelayout:PageLayoutRecord}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
  # @137821 verify that picklist field is hidden on the basis of announcement type field value
     Then I softly cannot see field "Fiscal Year" inside page block
@@ -3749,7 +3778,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Fiscal Year is required to save under Overview. |
 
-  @137825    @verifyDisplayOfMissingFieldMessageIfReqForSaveCheckboxFieldIsHiddenUsingHideFieldJSONOnModal
+  @137825
   Scenario: verify missing field msg is not displayed on modal if req for save checkbox field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3766,7 +3795,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "{pagelayout:PageLayoutRecord}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
  # @137825 verify that Checkbox field is hidden on the basis of announcement type field value
     Then I softly cannot see field "Funding Plan Created" inside page block
@@ -3792,7 +3821,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "{pagelayout:PageLayoutRecord}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
  # @137829 verify that date/time field is hidden on the basis of announcement type field value
     Then I softly cannot see field "Letter Of Intent Due Date Time" inside page block
@@ -3818,7 +3847,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
     When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "PG-501-0036" into field "Program__c"
+    When I enter value "{pagelayout:PageLayoutRecord}" into field "Program__c"
     When I enter value "Competitive" into field "AnnouncementType__c"
  # @137835 verify that percent field is hidden on the basis of announcement type field value
     Then I softly cannot see field "Sub Recipient Match %" inside page block
@@ -4592,12 +4621,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                              | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     Then I softly see "Project Goals" is not displayed inside page block detail
 
   @148172    @verifyHideFieldJSONWorkingForLongTextAreaFieldInViewMode
@@ -5120,9 +5151,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     Then I see modal with id "addAtt" displayed properly
@@ -5259,12 +5290,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonUsingEqualToOperatorDisableLookupField | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                 | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                 | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}               |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "ABC" into field "Abbreviation__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
@@ -5283,12 +5316,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonUsingNotEqualToOperatorEnableLookupField | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                   | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                   | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}               |
-    When I login to "As a Grantor" app as "PM" user
+     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:FlexTableDraftRecord}"
-    When I click on "Edit" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "ABC" into field "Abbreviation__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
@@ -5863,9 +5898,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -6049,9 +6084,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -6082,9 +6117,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -6116,9 +6151,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
@@ -6149,9 +6184,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -6250,9 +6285,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -6267,9 +6302,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -6928,9 +6963,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I do not see help text icon is displayed for field "Program Code"
 
@@ -6944,9 +6979,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
     And I select "Download as PDF" from dropdown
@@ -7016,9 +7051,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I click on "Menu" in the page details
     Then I see "Take Snapshot" options is displayed
     And I select "Take Snapshot" from dropdown
