@@ -206,8 +206,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -218,7 +218,7 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
-    Then I cannot see "Overview" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
 
   @34355 @34357  @34359
   Scenario: Setup header instruction text for overview page tab from config and validating it at program detail page
@@ -227,13 +227,13 @@ Business Need: Page Layout Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue                  | filterId         |
       | Page Tabs Config      | Header Instruction Text |                                    | ApiGeneratedId:0 |
-      | Page Tabs Config      | Tab Title               | Collab                             | ApiGeneratedId:1 |
+      | Page Tabs Config      | Tab Title               | Test Tab                           | ApiGeneratedId:1 |
       | Page Tabs Config      | Tab Icon                | govgrants_config:TabIconDefaultCss | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName               | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text         | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Tab Title               | Automation Collab              | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Tab Icon                | govgrants_config:TabIconNewCss | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName               | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text         | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Tab Title               | Automation Collab              | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Tab Icon                | govgrants_config:TabIconNewCss | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -254,8 +254,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -264,25 +264,25 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    Then I do not see "Collab" subtab is present in page details
+    Then I do not see "Test Tab" subtab is present in page details
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     And I refresh the page
     #35955
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
 
   @35956 @35976 @smoke
   Scenario: Hiding of overview page tab for specific profile from config and validating it at program detail page
@@ -291,8 +291,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -301,16 +301,16 @@ Business Need: Page Layout Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
 
     ################## Page Block #########################
   @35979 @35980 @35984
@@ -339,7 +339,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block:Page Block Detail | Header Instruction Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName               | fieldNewValue         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Header Instruction Text | Header for Automation | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Header Instruction Text | Header for Automation | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     And I refresh the page
     Then I see "Header for Automation" shown as header instruction text for page block
     Given I have "default" configuration as below:
@@ -347,7 +347,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     And I refresh the page
     And I pause execution for "5" seconds
     Then I do not see "Information" page block displayed in page details
@@ -365,27 +365,27 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
+    And I navigate to "Test Tab" sub tab
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Hide for Context |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Hide for Context | View          | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for Context | View          | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
     And I refresh the page
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "First Block" page block displayed in page details
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName     | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Hide for User |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Block            | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Hide for User | Internal      | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | configurationCategory        | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
     And I refresh the page
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "First Block" page block displayed in page details
 
   @35957  @35958 @36039
   Scenario: Hide overview for program view page from config using AND operator and validating it at program detail page
   |Hide any tab for program view page from config using OR operator and validating it at program detail page|
-  |Hide program information page block for particular user from config and validating it at program detail page|
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -402,34 +402,48 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Operator         |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB} |
+      | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     And I refresh the page
-    Then I cannot see "Collab" sub tab at view detail page
+    Then I cannot see "Test Tab" sub tab at view detail page
+
+  @36039
+  Scenario:  Hide program information page block for particular user from config and validating it at program detail page|
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I click on "Save" in the page details
+    And I navigate to "Test Tab" sub tab
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "First Block" page block displayed in page details
 
   @36040 @36041
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
@@ -444,32 +458,34 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
+    And I navigate to "Test Tab" sub tab
+    And I pause execution for "5" seconds
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Operator         |                   | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for Profile |                   | ApiGeneratedId:1 |
-      | Page Block:Page Block Detail | Hide for User    |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Operator         |                   | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
-      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
+      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "First Block" page block displayed in page details
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Operator         |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for User    |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block            | Operator         |                   | ApiGeneratedId:0 |
+      | Page Block            | Hide for Profile |                   | ApiGeneratedId:1 |
+      | Page Block            | Hide for User    |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
-      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
+      | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
+      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | Name                      | {pagelayout:FirstBlock}    |
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "First Block" page block displayed in page details
 
   @36042 @smoke
   Scenario: Hiding of program information page block from config and validating it at program detail page
@@ -484,8 +500,8 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Hide Decision Field |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Page Block            | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block:Page Block Detail | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
@@ -497,9 +513,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
   | Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page|
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName                           | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | ApiGeneratedId:0 |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                           | fieldOrignalValue | filterId         |
+      | Page Block            | Hide/Disable attachment Row actions |                   | ApiGeneratedId:0 |
+      | Page Block Rule       | Hide For Profile                    |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
@@ -526,8 +542,8 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Edit" icon is disabled inside "Attachments" page block
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                           | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Hide/Disable attachment Row actions |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                           | fieldOrignalValue | filterId         |
+      | Page Block            | Hide/Disable attachment Row actions |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide/Disable attachment Row actions | Hide          | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
@@ -539,10 +555,10 @@ Business Need: Page Layout Component Scenarios
   |Verify Is Active field for page Block Detail|
   |Changing label of program name page block detail fom config and validating it at program detail page|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field API Name       | Abbreviation__c   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Abbreviation      | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config     | Field API Name       | Abbreviation__c   | ApiGeneratedId:0 |
+      | Page Block Config     | Field Label Override | Abbreviation      | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active            | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Field API Name       | BudgetingPreference__c | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -561,17 +577,17 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see field "Budgeting Preference" inside page block
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
     And I refresh the page
     Then I see "Abbreviation" is not displayed inside page block detail
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Abbreviation      | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config     | Field Label Override | Abbreviation      | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active            | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Automation Title | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -585,9 +601,9 @@ Business Need: Page Layout Component Scenarios
   |Hide program name field at page block detail from config validating it at program detail page|
   |Hiding of program name page block detail for internal user from config and validating it at program detail page|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only | false             | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Only | false             | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -605,9 +621,9 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide for Context |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide for Context |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -616,9 +632,9 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Abbreviation" is not displayed inside page block detail
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName     | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide for User |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active     | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide for User |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active     | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -632,9 +648,9 @@ Business Need: Page Layout Component Scenarios
   |Hide program name page block detail from config using AND operator and validating it at program detail page|
   | Hide program name page block detail from config using OR operator and validating it at program detail page|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide For Profile |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -651,11 +667,11 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see "Abbreviation" is not displayed inside page block detail
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Operator         |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Operator         |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Hide For Profile |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Hide For User    |                   | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Operator         | AND                  | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -666,11 +682,11 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Abbreviation" is not displayed inside page block detail
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Operator         | AND               | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Operator         | AND               | ApiGeneratedId:0 |
+      | Page Block Config     | Hide For Profile |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Hide For User    |                   | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Operator         | OR                   | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -685,9 +701,9 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing rendering behaviour of program name read only for context from config and validaying it at program detail page
   |Hiding program name while making is hidden field as false from config and validaying it at program detail page|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName             | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For Context |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Only For Context |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active             | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only For Context | Edit          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -704,9 +720,9 @@ Business Need: Page Layout Component Scenarios
     Then I softly see that "Abbreviation__c" rendered in view mode only
     And I click on "Save" in the page details
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName       | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active       | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Hidden Field | false             | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active       | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -718,9 +734,9 @@ Business Need: Page Layout Component Scenarios
   @36127 @smoke
   Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName             | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For Profile |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active             | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Only For Profile |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active             | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName             | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only For Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -735,9 +751,9 @@ Business Need: Page Layout Component Scenarios
   @36107 @smoke
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | {pagelayout:ProgramName__c} |
@@ -758,8 +774,8 @@ Business Need: Page Layout Component Scenarios
   @36050 @smoke
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                  | fieldOrignalValue                                     | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Attachment Classifications | Program Artifacts;Financial Artifacts;Other Artifacts | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                  | fieldOrignalValue                                     | filterId         |
+      | Page Block            | Attachment Classifications | Program Artifacts;Financial Artifacts;Other Artifacts | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | AnnouncementArtifacts1;AnnouncementArtifacts2; | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
@@ -780,10 +796,10 @@ Business Need: Page Layout Component Scenarios
   |Verify Read Only For User Field at page Block Detail |
   |Verify Read Decision Field at page Block Detail|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Decision Field |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Operator            | AND               | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Decision Field |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Operator            | AND               | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active           | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -804,9 +820,9 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" in the page details
     And I pause execution for "4" seconds
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName          | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For User |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active          | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Only For User |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active          | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName          | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only For User | Internal      | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -815,9 +831,9 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see that "Abbreviation__c" rendered in view mode only
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Decision Field |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Decision Field |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active           | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -828,10 +844,10 @@ Business Need: Page Layout Component Scenarios
   @36136
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName  | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Label | false             | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active  | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active  | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Label | false             | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active  | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active  | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -849,10 +865,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
   | Verify Lookup Display Field Names field at page Block Detail|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                  | fieldOrignalValue     | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text         | Internal Organization | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail             | Is Active                  | true                  | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name                  | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                  | fieldOrignalValue     | filterId         |
+      | Page Block Config     | Lookup Header Text         | Internal Organization | ApiGeneratedId:0 |
+      | Page Block            | Is Active                  | true                  | ApiGeneratedId:1 |
+      | Page Block Config     | Lookup Display Field Names | Name                  | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Header Text         | Organization Automation | Grantor State Program | Name                      | {pagelayout:InternalOrg}   |
@@ -976,33 +992,11 @@ Business Need: Page Layout Component Scenarios
     When I click on "Menu" in the page details
     Then I see "Test Automation" options is displayed
 
-  @36208 @headerSequenceFieldAtPageLayoutAction-gPlanning
-  Scenario: Setup edit page layout action sequence as "1" from config. and validating it on program detail page
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Header Sequence | 2                 | ApiGeneratedId:0 |
-      | Page Layout Action    | Header Sequence | 1                 | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Header Sequence | 1             | Grantor State Program | Name                      | Edit                       |
-      | Page Layout Action    | Header Sequence | 2             | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click on "Save" in the page details
-    Then I see "Edit" Button at position "0"
-
   @35982 @201278 @201279
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | coreComponentField | filterId         |
+      | Page Block            | Help Text | <old_helpText>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
@@ -1021,9 +1015,9 @@ Business Need: Page Layout Component Scenarios
   @36102
   Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config     | Help Text Long | <old_helpText>    | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active      | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -1047,21 +1041,22 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlock | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlock | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{pagelayout:PageLayoutRecord}"
     When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I do not see "Information" page block displayed in page details
+    And I navigate to "Test Tab" sub tab
+    Then I do not see "First Block" page block displayed in page details
 
   @36116 @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active            | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForProfilePM | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -1078,9 +1073,9 @@ Business Need: Page Layout Component Scenarios
   @36134 @smoke
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                 | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active                 | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Page Block Config     | Read Only Expression JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active                 | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                 | fieldNewValue                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only Expression JSON | govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
@@ -1095,8 +1090,8 @@ Business Need: Page Layout Component Scenarios
   @53094
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Rule       | Hide for Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | Edit                       |
@@ -1124,8 +1119,8 @@ Business Need: Page Layout Component Scenarios
   @53095
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Rule       | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
@@ -1153,8 +1148,8 @@ Business Need: Page Layout Component Scenarios
   @53096
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName     | fieldOrignalValue | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for User |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Page Block Rule       | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | Edit                       |
@@ -1181,10 +1176,10 @@ Business Need: Page Layout Component Scenarios
   @53098
   Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | ApiGeneratedId:0 |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | ApiGeneratedId:1 |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Rule       | Hide For Profile |                   | ApiGeneratedId:0 |
+      | Page Block Rule       | Hide For User    |                   | ApiGeneratedId:1 |
+      | Page Block Rule       | Hide Operator    |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
@@ -1215,10 +1210,10 @@ Business Need: Page Layout Component Scenarios
   @53097
   Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | ApiGeneratedId:0 |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | ApiGeneratedId:1 |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Rule       | Hide For Profile |                   | ApiGeneratedId:0 |
+      | Page Block Rule       | Hide For User    |                   | ApiGeneratedId:1 |
+      | Page Block Rule       | Hide Operator    |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
@@ -1272,11 +1267,11 @@ Business Need: Page Layout Component Scenarios
   @53092
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                 | fieldOrignalValue | filterId         |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Page Block            | Save Attachment Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantor State Program | Name                      | Attachments                |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1298,9 +1293,9 @@ Business Need: Page Layout Component Scenarios
   @53388 @bug-490119
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
@@ -1331,9 +1326,9 @@ Business Need: Page Layout Component Scenarios
   @53389 @bug-490119
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
@@ -1364,10 +1359,10 @@ Business Need: Page Layout Component Scenarios
   @53390 @bug-490119
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | false             | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior    |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active            | false             | ApiGeneratedId:1 |
+      | Page Block Config     | Hide Expression JSON |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
       | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Submit | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
@@ -1396,9 +1391,9 @@ Business Need: Page Layout Component Scenarios
   @53391
   Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -1419,9 +1414,9 @@ Business Need: Page Layout Component Scenarios
   @53392 @bug-490119
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
@@ -1452,9 +1447,9 @@ Business Need: Page Layout Component Scenarios
   @53393 @bug-490119
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
@@ -1485,9 +1480,9 @@ Business Need: Page Layout Component Scenarios
   @53394 @bug-490119
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
@@ -1518,9 +1513,9 @@ Business Need: Page Layout Component Scenarios
   @53395 @bug-490119
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
@@ -1551,9 +1546,9 @@ Business Need: Page Layout Component Scenarios
   @53396 @bug-490119
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
@@ -1584,9 +1579,9 @@ Business Need: Page Layout Component Scenarios
   @53397 @bug-490119
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue             |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
@@ -1616,9 +1611,9 @@ Business Need: Page Layout Component Scenarios
   @53398 @bug-490119
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
@@ -1649,9 +1644,9 @@ Business Need: Page Layout Component Scenarios
   @53399 @bug-490119
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | {pagelayout:TextAreaField_Authorization} |
@@ -1732,7 +1727,7 @@ Business Need: Page Layout Component Scenarios
     When I pause execution for "3" seconds
     Then I see hyperlink is present at "http://www.testAutomation.com" in rich text area field
 
-  @83110
+  @83110 @wip
   Scenario: validate that a hyperlink is not present at user name under user profile page
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1750,8 +1745,8 @@ Business Need: Page Layout Component Scenarios
   @83330
   Scenario: Changing value for required for save behaviour field for URL from config and checking error message at modal
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | Name                      | PBD-17257                  |
@@ -1765,7 +1760,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program ID is required to save. |
 
-  @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
+  @83324
   Scenario: validate alert message for enetering incorrect data at url field on modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1778,7 +1773,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Website Name: Please enter valid URL value. |
 
-  @83323 @verifyURLFieldIsAcceptsCorrectURLEnteredOnModalWindow-gAnnouncement
+  @83323
   Scenario:validate if correct URL value entered in URL field on modal and click on continue button then it redirects to next page
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1790,14 +1785,14 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     Then I softly see "Information" page block displayed
 
- @83173    @pageBlockTitleFieldAccepts255CharAtPageBlock-gPlanning
+  @83173
   Scenario Outline: Changing page block title with the 255 character value from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Information       | Grantor State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Information       | <enteredValue>             |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1810,14 +1805,14 @@ Business Need: Page Layout Component Scenarios
       | enteredValue                                                                                                                                                                                                                                                    | requiredValue                                                                                                                                                                                                                                                   |
       | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... | The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 The total size of this sentence is 255 Checked size limit... |
 
-  @83206    @pageBlockTitleFieldAccepts255CharactersWithSpecialCharactersInItAtPageBlock-gPlanning
+  @83206
   Scenario Outline: Changing page block title with the 255 character including special characters value from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Information       | Grantor State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Information       | <enteredValue>             |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1830,14 +1825,14 @@ Business Need: Page Layout Component Scenarios
       | enteredValue                                                                                                                                                                                                                                                    | requiredValue                                                                                                                                                                                                                                                   |
       | ~!@#$%^&*()_+=-`{} ][:yy;<>?/.The total size of this sentence is tes The total size of this sentence is test The total size of this sentence is tes The total size of this sentence is tes The total size of this sentence is tes The total size of this senten | ~!@#$%^&*()_+=-`{} ][:yy;<>?/.The total size of this sentence is tes The total size of this sentence is test The total size of this sentence is tes The total size of this sentence is tes The total size of this sentence is tes The total size of this senten |
 
-  @83730    @verifyNavigationLogoIsLoadingOnChangingTheCustomAppFromUI
+  @83730
   Scenario: validate that navigation app is loading on changing the custom app on ui -gHOME
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     Then I see navigation logo on page
 
 
-  @84215 @verifyThatDarkBlueColorIsDisplayedForLoggedInUser-StateAsAGrantor
+  @84215
   Scenario: verify that page header / page is displayed in dark blue color for logged in user-StateAsAGrantor
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2051,9 +2046,9 @@ Business Need: Page Layout Component Scenarios
   @102100    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:1 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -2071,9 +2066,9 @@ Business Need: Page Layout Component Scenarios
   @102107    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide end date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -2092,10 +2087,10 @@ Business Need: Page Layout Component Scenarios
   @102114    @verifyHideFieldJsonFieldByDisablingTitleFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to disable title field Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
@@ -2111,10 +2106,10 @@ Business Need: Page Layout Component Scenarios
   @102115
   Scenario: Set up hide field json value to disable date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
@@ -2130,10 +2125,10 @@ Business Need: Page Layout Component Scenarios
   @102248    @verifyIdDateTimeFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
   Scenario:validate disabled dateTime field value is not getting changed on page scroll in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
@@ -2192,11 +2187,11 @@ Business Need: Page Layout Component Scenarios
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
 
-  @112546    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForAdminUser-gPlanning
+  @112546
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for admin user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2214,8 +2209,8 @@ Business Need: Page Layout Component Scenarios
   @112562
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2233,8 +2228,8 @@ Business Need: Page Layout Component Scenarios
   @112558
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config     | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2249,8 +2244,8 @@ Business Need: Page Layout Component Scenarios
   @112370
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2264,12 +2259,12 @@ Business Need: Page Layout Component Scenarios
     Then I see missing field badge on "Overview" tab
 
 
-  @113066  @114989   @verifyHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  @113066  @114989
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config     | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
@@ -2301,12 +2296,12 @@ Business Need: Page Layout Component Scenarios
       | new_helpText             | old_helpText |
       | Help Text for Automation | Help Text    |
 
-  @115592    @verifySpecialCharaterInHelpTextAtAtPageBlockSeperatorForSPIUser-gPlanning
+  @115592
   Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page for SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active      | true              | ApiGeneratedId:0 |
+      | Page Block Config     | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView | Name                      | {pagelayout:PageBlockSeperator_SPI} |
@@ -2345,16 +2340,16 @@ Business Need: Page Layout Component Scenarios
   @116346
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                           | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2380,7 +2375,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                      | Grantor State Program | Name                      | {pagelayout:ProgramName__c}               |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2435,7 +2430,7 @@ Business Need: Page Layout Component Scenarios
 
   @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2719,7 +2714,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Required Behavior |               | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2845,7 +2840,7 @@ Business Need: Page Layout Component Scenarios
 
   @132863  @verifyDateTimeFieldIsDisplayedAtEnhancedFlexEditLayout
   Scenario: validate date time field is displayed at enhanced flex edit page layout
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3040,7 +3035,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3066,7 +3061,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation}       |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3091,7 +3086,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}   |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3143,7 +3138,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                             | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation}       |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3170,7 +3165,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}      |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}      |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                     | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3195,7 +3190,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3220,7 +3215,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}          |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}          |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                         | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3297,7 +3292,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:CheckBoxField_CFDA}           |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                                 | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount}   |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3341,7 +3336,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType}  |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                           | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType}  |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                           | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3387,7 +3382,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3411,7 +3406,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination17 | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:DateField_EndDate} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3435,7 +3430,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                              | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3459,7 +3454,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
       | Page Block Config:Page Block Rule Detail | Is Active         | false                                                  | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3483,7 +3478,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                  | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3507,7 +3502,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                               | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3531,7 +3526,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                   | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3555,7 +3550,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                 | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3579,7 +3574,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                 | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3603,7 +3598,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                               | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -3637,7 +3632,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Ann Group Code is required to save under Overview. |
 
-  @137799    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSONOnModal
+  @137799  @wip
   Scenario: verify missing field msg is not displayed on modal if req for save lookup field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3751,32 +3746,6 @@ Business Need: Page Layout Component Scenarios
  # @137818 verify that req field message is not displayed for hidden URL field
     Then I cannot see the following message in the page details contains:
       | FOA Release Date is required to save. |
-
-  @137821
-  Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
-    Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue                                                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-16737                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-23612                  |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-23612                  |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I click on top right button "Create" in flex table with id "ActiveFundingOpportunities"
-    When I enter value "{pagelayout:PageLayoutRecord}" into field "Program__c"
-    When I enter value "Competitive" into field "AnnouncementType__c"
- # @137821 verify that picklist field is hidden on the basis of announcement type field value
-    Then I softly cannot see field "Fiscal Year" inside page block
-    And I click modal button "Continue"
- # @137821 verify that req field message is not displayed for hidden picklist field
-    Then I cannot see the following message in the page details contains:
-      | Fiscal Year is required to save under Overview. |
 
   @137825
   Scenario: verify missing field msg is not displayed on modal if req for save checkbox field is hidden using hide field json
@@ -4621,7 +4590,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                              | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5290,7 +5259,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonUsingEqualToOperatorDisableLookupField | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                 | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                 | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}               |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5316,7 +5285,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonUsingNotEqualToOperatorEnableLookupField | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                   | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true                                                                   | Grantor State Program | Name                      | {pagelayout:Abbreviation__c}               |
-     When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -8509,7 +8478,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Automation Test Information" page message displayed in page layout
 
-  @379396 @379397 @379390 @379391 @379393 @379394 @379400 @379401 @Sanity @SanityPageLayout
+  @379396 @379397 @379390 @379391 @379393 @379394 @379400 @379401 @Sanity @SanityPageLayout @wip
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
   |Sanity Testing- Page Layout- PM- To verify page message type - Alert is getting displayed on page layout.|
   |Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.|

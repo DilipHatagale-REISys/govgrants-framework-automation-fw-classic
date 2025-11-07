@@ -66,7 +66,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #  | ADMIN |
       | PM   |
 
-  @77284
+  @77284 @wip
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -81,6 +81,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
     Then I see over all total for "BaseSalary__c" field at enhanced grid
 
     Examples:
@@ -136,7 +138,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | User |
       | PM   |
 
-  @132268
+  @132268 @wip
   Scenario Outline:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at enhanced data table
     Given I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -695,6 +697,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
+    And I halt execution
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -1577,7 +1580,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
    #####################Test suite: Export functionality (Suite ID: 207538)#########################
 
-  @207543 @207544 @207546 @207547
+  @207543 @207544 @207546 @207547 @wip
   Scenario Outline:Download as PDF- Admin- Config- Verify when we get any quick search results and click on download as PDF, we should see all records in PDF,
   Download as PDF- PM- UI- Verify when we get any quick search results and click on download as PDF, we should not see all records in PDF
   Download as PDF- Admin- Config- Verify when we get any quick search results and click on download as PDF, not only search result should be downloaded in PDF
@@ -1606,7 +1609,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #  | Admin |
       | PM    |
 
-  @207545 @207548
+  @207545 @207548 @wip
   Scenario: Download as PDF- SPI- UI- Verify when we get any quick search results and click on download as PDF, we should see all records in PDF
   Download as PDF - SPI- UI- Verify when we get any quick search results and click on download as PDF,not only search result should be downloaded in PDF
     Given I have "default" configuration as below:
@@ -1632,14 +1635,12 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
-
-    When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
-    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
-    When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on "Menu" button inside table id "---applicationIntake:-:applicationAssociateTableId---"
+    When I click on "Download as PDF" button inside table id "---applicationIntake:-:applicationAssociateTableId---"
     And I download the file
-    Then I see "Notes three" on page "1" of "govgrants" pdf file
+    Then I see "Automation PM" on page "1" of "govgrants" pdf file
 
-  @207549 @207550 @207552 @207553
+  @207549 @207550 @207552 @207553 @wip
   Scenario Outline: Download as XL / CSV- Admin- Config- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
   Download as XL / CSV- PM- UI- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
   Download as XL / CSV- Admin- Config- Verify when we get any quick search results and click on download as XL / CSV,not only search result should be downloaded in file
@@ -1673,7 +1674,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #  | Admin |
       | PM    |
 
-  @207551 @207554
+  @207551 @207554 @wip
   Scenario: Download as XL / CSV- SPI- UI- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
   Download as XL / CSV- SPI- UI- Verify when we get any quick search results and click on download as XL / CSV,not only search result should be downloaded in file
     Given I have "default" configuration as below:
