@@ -1350,10 +1350,9 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "Associate" in flex table with id "---applicationReview:-:flexGridAppContactTableId---"
     When I click "Add" after selection of all records in the table "---applicationIntake:-:applicationAssociateTableId---"
     When I close modal by clicking the top right x button
-    When I click on advance filter "#advfRecipientGrantNotes" of table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on advance filter "#advfAppContact" of table id "---applicationIntake:-:applicationAssociateTableId---"
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "Title" under field name "Column Name" inside flex table
-
 
   @207579
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
@@ -1547,15 +1546,15 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Table Action     | Action Behavior       | EditRecord        | ApiGeneratedId:0 |
       | Flex Table Action     | Modal Title           |                   | ApiGeneratedId:1 |
       | Flex Table Action     | Where To Open ?       |                   | ApiGeneratedId:2 |
-      | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:3 |
-      | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:4 |
+    #  | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:3 |
+     # | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior       | EditRecord       | AppContact         | Name                      | Edit                       |
       | Flex Table Action     | Modal Title           | Automation Title | AppContact         | Name                      | Edit                       |
       | Flex Table Action     | Where To Open ?       | Modal            | AppContact         | Name                      | Edit                       |
-      | Flex Table Action     | Show Confirmation Box | true             | AppContact         | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                  | AppContact         | Name                      | Edit                       |
+     # | Flex Table Action     | Show Confirmation Box | true             | AppContact         | Name                      | Edit                       |
+    #  | Flex Table Action     | Confirmation Message  |                  | AppContact         | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user

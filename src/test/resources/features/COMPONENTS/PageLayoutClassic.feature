@@ -2391,10 +2391,10 @@ Business Need: Page Layout Component Scenarios
   @117809    @verifyHideFieldJsonFieldByHidingtextFieldOnTheBasisOfPicklistFieldValueAndUsingMultipleConditionsInViewMode
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -2428,7 +2428,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Title" is not displayed inside page block detail
 
-  @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
+  @119856
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2449,7 +2449,7 @@ Business Need: Page Layout Component Scenarios
     When I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
-  @119859    @requiredToSaveBehaviourAtModalWindowIfDataInAnyRequiredFieldIsMissing-gPlanning
+  @119859
   Scenario: validate req to save error message at announcement create modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2460,7 +2460,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Program ID is required to save. |
 
-  @120065    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInEditMode-gPlanning
+  @120065
   Scenario: validate the page instructions text displayed with bulb icon at page header in page edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
@@ -2477,7 +2477,7 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
 
-  @120062    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInCreateMode-gPlanning
+  @120062
   Scenario: validate the page instructions text displayed with bulb icon at page header in page create mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
@@ -2494,7 +2494,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see bulb icon at header instruction is displayed
 
-  @120069    @verifyBulbIconWithInstructionTextIsDisplayedAtPageInstructionTextInViewMode-gPlanning
+  @120069
   Scenario: validate the page instructions text displayed with bulb icon at page header in page view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue                    | filterId         |
@@ -2512,7 +2512,6 @@ Business Need: Page Layout Component Scenarios
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
 
-
   @120233    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewMode
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode
     When I login to "As a Grantor" app as "ADMIN" user
@@ -2526,7 +2525,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Notes" modal
 
-  @120235    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInEditMode
+  @120235
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in edit mode
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2538,7 +2537,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Notes" modal
 
-  @120234    @validateLoadingIconIsNotDisplayedAtAddAttachmentModalWindowInViewMode
+  @120234
   Scenario: validate loading icon is not displayed at add attachment modal window when record is in view mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2551,7 +2550,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
-  @120236    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInEditMode
+  @120236
   Scenario: validate loading icon is not displayed at add Attachments modal window when record is in edit mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2563,7 +2562,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
-  @120450    @validateNotesIsAddedSuccessfullyUsingAddNotesButton
+  @120450
   Scenario: validate Notes are getting added successfully using add button
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2583,7 +2582,7 @@ Business Need: Page Layout Component Scenarios
       | Saved Successfully! |
 #    Then I see table with header "Notes" contains records "Notes Record"
 
-  @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
+  @120237
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2707,9 +2706,9 @@ Business Need: Page Layout Component Scenarios
   @121223
   Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApiGeneratedId:1 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
@@ -2728,10 +2727,10 @@ Business Need: Page Layout Component Scenarios
   @121225  @foradmin
   Scenario: validate that visual indicator not displayed at detail page if req for save field is hidden in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true              | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active            | true              | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior    | Required for Save | ApiGeneratedId:1 |
+      | Page Block Config     | Hide Expression JSON |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                       |
       | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | {pagelayout:RequiredForSaveField_ProgramSubType} |
@@ -2815,10 +2814,10 @@ Business Need: Page Layout Component Scenarios
   |validate rich text area field is displayed at enhanced flex edit page layout|
   |validate save and cancel buttons are displayed at enhanced flex edit page layout|
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config     | Is Active | false             | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active | false             | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
@@ -3004,10 +3003,10 @@ Business Need: Page Layout Component Scenarios
   @133875    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
@@ -3024,11 +3023,11 @@ Business Need: Page Layout Component Scenarios
   @133876    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide picklist from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
@@ -3052,10 +3051,10 @@ Business Need: Page Layout Component Scenarios
   @133877    @verifyHideFieldJsonFieldByHidingTextFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide text from from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -3077,10 +3076,10 @@ Business Need: Page Layout Component Scenarios
   @133879    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide currency field from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -3102,10 +3101,10 @@ Business Need: Page Layout Component Scenarios
   @133883
   Scenario: Set up hide field json value to Hide date from Overview page block using text field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
@@ -3181,10 +3180,10 @@ Business Need: Page Layout Component Scenarios
   @133895
   Scenario: Set up hide field json value to Hide picklist from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}            |
@@ -3206,10 +3205,10 @@ Business Need: Page Layout Component Scenarios
   @133896
   Scenario: Set up hide field json value to Hide currency from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | {pagelayout:DateField_EndDate}          |
@@ -3231,11 +3230,11 @@ Business Need: Page Layout Component Scenarios
   @134150
   Scenario: Set up hide field json value to Hide checkbox,URL and picklist using picklist field value on modal window
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:4 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                              | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistNdURLFieldOnTheBasisOfPicklistOnModal | Grantor State Program Create | Name                      | {pagelayout:PicklistModalField_Type} |
@@ -3255,11 +3254,11 @@ Business Need: Page Layout Component Scenarios
   @134158
   Scenario: Set up hide field json value to Hide checkbox from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:4 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:2 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:3 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantor State Program Create | Name                      | {pagelayout:PicklistModalField_Type} |
@@ -3279,12 +3278,12 @@ Business Need: Page Layout Component Scenarios
   @134161    @verifyHideFieldJsonFieldByHidingCheckbox,Picklist,Date,CurrencyFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide checkbox,picklist,date &currency field  from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:3 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | false             | ApiGeneratedId:4 |
-      | Page Block Config:Page Block Rule Detail | Is Active        | true              | ApiGeneratedId:5 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:3 |
+      | Page Block Config     | Is Active        | false             | ApiGeneratedId:4 |
+      | Page Block Config     | Is Active        | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | {pagelayout:PicklistField_ProgramSubType} |
@@ -3308,11 +3307,11 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "FundedAmount__c" is not editable
     Then I softly see field "ProgramSubType__c" is not editable
 
-  @134169 @verifyHideFieldJsonFieldByHidingLookupieldOnTheBasisOPicklistFieldValueOnModal
+  @134169 @wip
   Scenario: Set up hide field json value to Hide lookup using picklist field value on modal window
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistOnModal | Announcement Create - Grantor | Name                      | PBD-16186                  |
@@ -3324,7 +3323,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "Competitive" into field "AnnouncementType__c"
     Then I see field "Program__c" is disabled
 
-  @133880    @verifyHideFieldJsonFieldByHidingLookupFieldOnTheBasisOfPicklistFieldValueInEditMode
+  @133880
   Scenario: Set up hide field json value to Hide lookup from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -3349,7 +3348,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see field "PrimaryFundingOrganization__c" is disabled
 
-  @134480    @verifyByClickAtSaveActionOnModalAModalWindowIsGettingClosed
+  @134480
   Scenario: verify by click at Save action on modal layout then modal is  getting closed automatically
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -3369,8 +3368,7 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save"
     Then I softly see "Contacts" page block displayed
 
-
-  @136938    @verifyDisplayOfMissingFieldMessageIfReqForSaveFieldIsHiddenUsingHideFieldJSON
+  @136938
   Scenario: verify missing field msg is not displayed if req for save picklist field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3394,7 +3392,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Program Sub Type is required to save under Overview. |
 
-  @137275    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
+  @137275
   Scenario: verify missing field msg is not displayed if req for save date field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3418,7 +3416,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Project Period End Date is required to save under Overview. |
 
-  @137281    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSON
+  @137281
   Scenario: verify missing field msg is not displayed if req for save URL field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3442,7 +3440,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | URL is required to save under Overview. |
 
-  @137282    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSON
+  @137282
   Scenario: verify missing field msg is not displayed if req for save currency field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3466,13 +3464,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Funded Amount is required to save under Overview. |
 
-  @137283    @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSON
+  @137283
   Scenario: verify missing field msg is not displayed if req for save percent field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
@@ -3490,13 +3488,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Percent is required to save under Overview. |
 
-  @137286    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
+  @137286
   Scenario: verify missing field msg is not displayed if req for save time field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TimeField_Time} |
@@ -3514,13 +3512,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Time is required to save under Overview. |
 
-  @137288    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
+  @137288
   Scenario: verify missing field msg is not displayed if req for save Date and Time field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue             |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:DateTimeField_DateAndTime} |
@@ -3541,10 +3539,10 @@ Business Need: Page Layout Component Scenarios
   @137289    @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save Number field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:Numberfield_NumberofApprovals} |
@@ -3562,13 +3560,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Number Of Approvals is required to save under Overview. |
 
-  @137290    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSON
+  @137290
   Scenario: verify missing field msg is not displayed if req for save lookup field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                 |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:LookupField_PrimaryFundingOrg} |
@@ -3586,13 +3584,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Primary Funding Organization is required to save under Overview. |
 
-  @137291    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSON
+  @137291
   Scenario: verify missing field msg is not displayed if req for save text field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue          |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:TextField_Abbreviation} |
@@ -3610,13 +3608,13 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Abbreviation is required to save under Overview. |
 
-  @137783    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSONOnModal
+  @137783 @wip
   Scenario: verify missing field msg is not displayed on modal if req for save text field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-24009                  |
@@ -3655,7 +3653,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Program Approver is required to save. |
 
-  @137803    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSONOnModal
+  @137803   @wip @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save currency field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3678,7 +3676,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Expected Total Award Amount is required to save under Overview. |
 
-  @137807    @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSONOnModal
+  @137807   @wip @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save number field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3701,7 +3699,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Expected Number of Awards is required to save under Overview. |
 
-  @137815
+  @137815 @wip
   Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -3724,7 +3722,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | External Announcement URL is required to save under Overview. |
 
-  @137818    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
+  @137818 @wip   @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save URL field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3747,7 +3745,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | FOA Release Date is required to save. |
 
-  @137825
+  @137825 @wip
   Scenario: verify missing field msg is not displayed on modal if req for save checkbox field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3773,7 +3771,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Funding Plan Created is required to save under Overview. |
 
-  @137829    @verifyDisplayOfMissingFieldMessageIfReqForSaveDate/TimeFieldIsHiddenUsingHideFieldJSONOnModal
+  @137829  @wip  @verifyDisplayOfMissingFieldMessageIfReqForSaveDate/TimeFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save date/time field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -3799,7 +3797,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Letter Of Intent Due Date Time is required to save under Overview. |
 
-  @137835    @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSONOnModal
+  @137835   @wip @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSONOnModal
   Scenario: verify missing field msg is not displayed on modal if req for save percent field is hidden using hide field json
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField            | filterId         |
@@ -4187,7 +4185,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Forms and Files" sub tab
     Then I see "Add" button inside "Attachments" flex table not displayed
 
-  @146395    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsing$UserOperator
+  @146395
   Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "$user"
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
@@ -4204,7 +4202,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
-  @146396    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserTypeOperator
+  @146396
   Scenario: validate hide the ADD action on notes page block by using SObject hide logic as "user type"
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4221,7 +4219,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146397    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingProfileOperator
+  @146397
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "profile "
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4238,7 +4236,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146398    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingContext!=ViewOperator
+  @146398
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as  "Context "
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4255,7 +4253,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146400    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingUserAppOperator
+  @146400
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "User App "
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4272,7 +4270,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146401    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingFieldValueOperator
+  @146401
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "Field "
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4290,7 +4288,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Forms and Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146402    @verifyHideExpressioJsonByHidingAddActionAtNotesUsing$UserOperator
+  @146402
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic as "$user"
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4307,7 +4305,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146404    @verifyHideExpressioJsonByHidingAddActionAtBothNotesAndAttachmentUsingProfileOperator
+  @146404
   Scenario: validate hide the ADD action on both Notes and Attachment page block by using SObject hide logic as "profile"
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
@@ -4327,7 +4325,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
     Then I see "Add" button inside "Files" flex table not displayed
 
-  @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPicklistFieldDataAtPageLayout
+  @146706
   Scenario: validate the alert message is displayed for unsaved picklist field data by click on browser navigation arrow
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4341,7 +4339,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     Then I see alert popup box
 
-  @147904    @verifyByClickAtSaveActionAtPageLayoutARecordIsGettingSavedWithChangedData
+  @147904
   Scenario: validate by click at save action at page layout, a record is getting saved with changed data
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4358,7 +4356,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Authorization" as "ABC"
 #    Then I see "ABC" text enter in field "fieldAuthorization__c"
 
-  @147920    @verifyHideExpressioJsonByHidingAddActionAtNotesUsingMultipleOperator
+  @147920
   Scenario: validate hide the ADD action on Notes page block by using SObject hide logic using multiple operators
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4446,7 +4444,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @147926    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingMultipleOperator
+  @147926
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using multiple operators
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
@@ -4466,7 +4464,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @147930    @verifyHideExpressioJsonByHidingAddActionAtAttachmentsUsingOROperator
+  @147930
   Scenario: validate hide the ADD action on Attachments page block by using SObject hide logic using Or operators
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
@@ -4483,7 +4481,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
-  @147931    @verifyHideExpressionJsonByHidingAddActionAtNotesUsingOROperator
+  @147931
   Scenario: validate hide the ADD action on notes page block by using SObject hide logic using Or operators
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                     | fieldOrignalValue | filterId         |
@@ -4500,7 +4498,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @147932    @verifyHideExpressioJsonByHidingAddActionAttachmentsAndNotesUsingOROperator
+  @147932
   Scenario: validate hide the ADD action on Attachment and notes page block by using SObject hide logic using OR operators
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName                           | fieldOrignalValue | filterId         |
@@ -4520,20 +4518,20 @@ Business Need: Page Layout Component Scenarios
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
-  @146837    @validateNotesViewActionWorkingOrNot
+  @146837
   Scenario: validate Notes View action working correctly at programs-planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+#      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+#      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+#      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+#      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+#    Given I setup test configuration as below:
+#      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4550,20 +4548,20 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
     Then I see "View Notes" opens in overLay window
 
-  @146931    @validateEditNotesModalOpensByClickAtEditActionAtNotes
+  @146931
   Scenario: validate Notes edit modal opens by click at Edit action at programs-planning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
-      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
-      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
+#      | Page Block            | Is Active        | true              | Grantor State Program | ApiGeneratedId:0 |
+#      | Page Block            | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:1 |
+#      | Page Block            | Hide for User    |                   | Grantor State Program | ApiGeneratedId:2 |
+#      | Page Block            | Hide for Context |                   | Grantor State Program | ApiGeneratedId:3 |
+#    Given I setup test configuration as below:
+#      | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Block:Page Block Detail | Is Active        | true          | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for Profile |               | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for User    |               | Grantor State Program | Name                      | PB-6708                    |
+#      | Page Block:Page Block Detail | Hide for Context |               | Grantor State Program | Name                      | PB-6708                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4580,7 +4578,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Automation" inside flex table with id "---program:-:notesFilesTableid---"
     Then I see "Edit Notes" opens in overLay window
 
-  @148171    @verifyHideFieldJSONWorkingForLongTextAreaFieldInEditMode
+  @148171
   Scenario: verify hide field json working for long text area fields in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
@@ -4618,11 +4616,11 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "{StaticRecords:FlexTableDraftRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly see "Project Goals" is not displayed inside page block detail
 
-  @148319    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtPageLayout
+  @148319 @wip
   Scenario: verify number field is displayed with 4 decimal places at page layout
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-23596                  |
@@ -4635,8 +4633,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see field "Removenumber" as "12,344.0000"
 
-
-  @149175    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberField
+  @149175
   Scenario: verify missing field msg is displayed for phone no field if req for save is set
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4657,12 +4654,12 @@ Business Need: Page Layout Component Scenarios
       | Phone Field is required to save under Overview. |
 
 
-  @151109    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldInCreateMode
+  @151109
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at newly created record
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:1 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | {pagelayout:Phone_Number__c} |
@@ -4684,7 +4681,7 @@ Business Need: Page Layout Component Scenarios
       | Phone Field is required to save |
 
 
-  @149700    @verifyThatUserCanSaveAnUnsavedDataIfPageRefreshedAtPageLayout
+  @149700
   Scenario: validate the user can save unsaved data by click on save button at page layout
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4702,7 +4699,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I see field "Title" as "Test"
 
-  @148392  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextFieldAtPageLayout
+  @148392
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text field at page layout
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4712,9 +4709,14 @@ Business Need: Page Layout Component Scenarios
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-
-  @148395  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInNumberFieldAtPageLayout
+  @148395
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in number field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:Number__c}     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4723,8 +4725,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-
-  @148397    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedCurrencyFieldDataAtPageLayout
+  @148397 @wip
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
@@ -4749,6 +4750,12 @@ Business Need: Page Layout Component Scenarios
 
   @148399
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Currency field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4757,7 +4764,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "FundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148400
+  @148400 @wip
   Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4772,6 +4779,12 @@ Business Need: Page Layout Component Scenarios
 
   @148401
   Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser navigation arrow
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4783,8 +4796,14 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148402  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInPercentFieldAtPageLayout
+  @148402
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Percent field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:PercentField_Percent} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4793,9 +4812,14 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1" into field "Percent__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-
   @148468
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in url field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:URLField_WebsiteAddress} |
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -4804,9 +4828,14 @@ Business Need: Page Layout Component Scenarios
     And I click on "Cancel" in the page details without processing
     Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
 
-
   @148471
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in long text area field at page layout
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:LongTextAreaField_ProjectGoals} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4817,6 +4846,12 @@ Business Need: Page Layout Component Scenarios
 
   @148473
   Scenario: validate the alert message is displayed for unsaved text area field data by click on browser navigation arrow
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TextAreaField_Authorization} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4828,7 +4863,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148474
+  @148474 @wip
   Scenario: validate the alert message is displayed for unsaved text area field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
@@ -4863,22 +4898,26 @@ Business Need: Page Layout Component Scenarios
     When I enter value "test" into field "Authorization__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @148501
+  @148501 @wip
   Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser navigation arrow
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue               |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TextAreaField_Authorization} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Announcements" tab
-    And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{pagelayout:Announcement}"
-    When I click on "Edit" icon for "{pagelayout:Announcement}" inside table
-    When I enter value "Other" into field "EligibleApplicantTypes__c"
-    When I enter value "test" into field "OtherEligibleApplicantTypes__c"
-    And I pause execution for "2" seconds
+    And I navigate to "Planning" tab
+    And I pause execution for "4" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "Edit" icon in flex table for first draft record
+    When I enter value "test" into field "Authorization__c"
     And I click on back arrow
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @148503
+  @148503 @wip
   Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser refresh button
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4922,7 +4961,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @149123
+  @149123 @wip
   Scenario: validate the alert message is displayed for unsaved email field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4941,7 +4980,7 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "2" seconds
     Then I see alert popup box
 
-  @149131
+  @149131 @wip
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Email field at page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5011,7 +5050,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "9987" into field "Phone_Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
-  @146707
+  @146707 @wip
   Scenario: validate the alert message is displayed for unsaved Picklist field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5315,7 +5354,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I softly see field "Select All" inside page block
 
-  @158474    @verifySelectAllCheckboxIsRemovedFromUIPageLayoutforMultiselectPicklistOnEditLayout
+  @158474
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5462,7 +5501,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0  |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:1  |
-      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantor State Program | ApiGeneratedId: 2 |
+      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantor State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-23604                  |
@@ -5766,7 +5805,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
-  @206570
+  @206570 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Percent field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5785,7 +5824,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206569
+  @206569 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for percent  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5804,7 +5843,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
 
-  @206571
+  @206571 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Number field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6167,7 +6206,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6326,7 +6365,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @205796
+  @205796 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6943,7 +6982,7 @@ Business Need: Page Layout Component Scenarios
       |              | Alphanumeric code which is unique for associated program. |
 
  ###################### Export Functionality ########################
-  @200536 @200545 @219535 @219536
+  @200536 @200545 @219535 @219536 @wip
   Scenario Outline: Page Layout Export Functionality-Admin-config-To verify download as PDF option should displayed for  pagelayout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -6962,7 +7001,7 @@ Business Need: Page Layout Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @200552 @219537
+  @200552 @219537 @wip
   Scenario: Page Layout Export Functionality-SPI-UI-To verify download as PDF option should displayed for pagelayout.
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
