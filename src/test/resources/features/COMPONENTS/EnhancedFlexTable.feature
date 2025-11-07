@@ -697,7 +697,6 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
-    And I halt execution
     And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
     And I click on page navigation arrow "Last" for table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
