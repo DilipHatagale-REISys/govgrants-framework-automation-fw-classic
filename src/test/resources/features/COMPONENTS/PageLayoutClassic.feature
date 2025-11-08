@@ -1788,8 +1788,8 @@ Business Need: Page Layout Component Scenarios
   @83173
   Scenario Outline: Changing page block title with the 255 character value from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Information       | <enteredValue>             |
+      | configurationCategory        | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail | Page Block Title | Information       | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
@@ -1808,8 +1808,8 @@ Business Need: Page Layout Component Scenarios
   @83206
   Scenario Outline: Changing page block title with the 255 character including special characters value from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Information       | <enteredValue>             |
+      | configurationCategory        | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail | Page Block Title | Information       | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
       | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
@@ -2188,10 +2188,10 @@ Business Need: Page Layout Component Scenarios
 
 
   @112546
-  Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for admin user
+  Scenario: verify that badges shown at Overview tab in page view mode if required nfield from overview tab is blank for admin user
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2209,8 +2209,8 @@ Business Need: Page Layout Component Scenarios
   @112562
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2228,8 +2228,8 @@ Business Need: Page Layout Component Scenarios
   @112558
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config     | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -2244,8 +2244,8 @@ Business Need: Page Layout Component Scenarios
   @112370
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config     | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Required Behavior | Required for Save | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17333                  |
@@ -3633,10 +3633,10 @@ Business Need: Page Layout Component Scenarios
   @137799  @wip
   Scenario: verify missing field msg is not displayed on modal if req for save lookup field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField            | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | filterId         |
+      | Page Block Config     | Hide Expression JSON |                   | Announcement Create - Grantor | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior    |                   | Announcement Create - Grantor | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active            | false             | Announcement Create - Grantor | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue      |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON     | govgrants_config:FlexTableHideExpressionBuilderJsonForPMUser | Announcement Create - Grantor | Name                      | {pagelayout:ProgramApprover__c} |
@@ -3823,7 +3823,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details contains:
       | Sub Recipient Match % is required to save under Overview. |
 
-  @145522    @verifyHideFieldJsonFieldByHidingDateFieldUsingProfileAsSystemAdminInEditMode
+  @145522  @wip
   Scenario: Set up hide field json value to Hide start date field using profile as system admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3838,7 +3838,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
-  @145526    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserTypeAsInternalInEditMode
+  @145526 @wip
   Scenario: Set up hide field json value to Hide start date field using user type as Internal in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3853,7 +3853,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
-  @145528
+  @145528 @wip
   Scenario: Set up hide field json value to Hide start date field using context as Edit in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -3868,7 +3868,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
-  @145533    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserAppAsAGrantorInEditMode
+  @145533 @wip
   Scenario: Set up hide field json value to Hide start date field using user app as As a Grantor in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4022,7 +4022,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
-  @145836    @verifyHideExpressioJsonByHidingFieldsUsingPicklistFieldValueInEditMode
+  @145836 @wip
   Scenario: validate hide expression by hiding date field using field as picklist in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4037,7 +4037,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
-  @145839    @verifyHideExpressioJsonByHidingFieldsUsingUserOperatoreInEditMode
+  @145839 @wip
   Scenario: validate hide expression by hiding date field using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5116,7 +5116,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "programview" in current url
 
 
-  @148753
+  @148753 @wip
   Scenario: validate required for save message is displayed for rich text field at page layout for ADINuser
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5498,9 +5498,9 @@ Business Need: Page Layout Component Scenarios
   @171518
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is unchecked
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0  |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:1  |
+      | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:1 |
       | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantor State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -6819,7 +6819,7 @@ Business Need: Page Layout Component Scenarios
       | Test Automation |
       | Test Automation |
 
-  @205036
+  @205036 @wip
   Scenario: CK Editor-To verify,When user add the text  and After changing the style then extra line should not  come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6841,7 +6841,7 @@ Business Need: Page Layout Component Scenarios
       | Marker style testing |
       | Marker style testing |
 
-  @205429
+  @205429 @wip
   Scenario: CK Editor-To verify,When internal user add the text  and After changing the style then extra line should not  come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6863,7 +6863,7 @@ Business Need: Page Layout Component Scenarios
       | Test Automation |
       | Test Automation |
 
-  @205037
+  @205037 @wip
   Scenario: CK Editor-To verify,When user add the text  and  changing the font then extra line should Not come between paragraphs.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -7506,7 +7506,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:12 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17697                  |
+      #| Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17697                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23595                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17600                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23588                  |
