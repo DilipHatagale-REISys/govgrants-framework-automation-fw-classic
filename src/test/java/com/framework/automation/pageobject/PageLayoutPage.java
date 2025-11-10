@@ -3694,7 +3694,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isButtonDisplayedorNot(String buttonName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "'] |" +
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "'] | " +
                     "//div[@class='pull-right']//a[@class='btn btnCompact' and contains(text(),'" + buttonName + "')] |" +
                     "//div[@class='pull-right']//input[@value='" + buttonName + "'] |" +
                     "//div[@id='headerButtonsPanel']//button//span[@class='hidden508 ng-binding' and contains(text(),'" + buttonName + "')]"))) {

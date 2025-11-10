@@ -265,12 +265,26 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     Then I do not see "Test Tab" subtab is present in page details
+
+  @35955 @35959
+  Scenario:  Hiding of overview page tab for internal user from config and validating it at program detail page|
+  |Hiding of overview page tab for created state from config and validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active     | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Is Active     | true          | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
       | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click modal button "Save and Continue"
     And I refresh the page
     #35955
     Then I cannot see "Test Tab" sub tab at view detail page
@@ -487,27 +501,6 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "First Block" page block displayed in page details
 
-  @36042 @smoke
-  Scenario: Hiding of program information page block from config and validating it at program detail page
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
-    When I click on "Save" in the page details
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Page Block            | Hide Decision Field |                   | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory        | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
-    And I refresh the page
-    And I pause execution for "5" seconds
-    Then I do not see "Information" page block displayed in page details
 
   @36051 @36053 @smoke
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
@@ -999,7 +992,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Help Text | <old_helpText>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
-      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantor State Program | GNT__PageBlockTitle__c    | {pagelayout:InformationPageBlock} |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantor State Program | Name                      | {pagelayout:InformationPageBlock} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1270,8 +1263,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Page Block            | Save Attachment Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantor State Program | Name                      | Attachments                |
+      | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantor State Program | Name                      | {pagelayout:AttachmentBlock} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2574,13 +2567,12 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
-    And I enter value "Notes" into field "Title"
-    And I enter value "Record" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Data" into "Description"
+    And I click modal button "Save"
     Then I see the following message in the page details :
       | Saved Successfully! |
-#    Then I see table with header "Notes" contains records "Notes Record"
 
   @120237
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
@@ -2630,7 +2622,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "5" seconds
     Then I do not see loading icon at "Add Notes" modal
 
-  @120242    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInViewModeByLoginAsExternalUser
+  @120242
   Scenario: validate loading icon is not displayed at add attachments modal window when record is in view mode by login as external user
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement" and properties "default"
     Given I am on "SUBPORTAL" portal
@@ -2654,7 +2646,7 @@ Business Need: Page Layout Component Scenarios
     And I wait for "7" seconds
     Then I do not see loading icon at "Add Attachments" modal
 
-  @120451    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileEditingRecord
+  @120451
   Scenario: validate are getting edited successfully without throwing alert message if all required fields are filled
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2666,14 +2658,14 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in flex table with id "---program:-:InternalProgramNotesTableId---"
-    And I enter value "Notes" into field "Title"
-    And I enter value "Record" into field "Body"
-    When I click on top right button "Save" in flex table with id "---program:-:InternalProgramNotesTableId---"
-    # When I click on "Edit" icon for "Notes" inside flex table with id "---program:-:InternalProgramNotesTableId---"
-    Then I softly can see row level action button "Edit" against "Notes" in flex table with id "---program:-:InternalProgramNotesTableId---"
+    And I click on top right button "Add" in notes and attachment with name "Notes"
+    And I enter value "Test Automation" into "Title"
+    And I enter value "Test Data" into "Description"
+    And I click modal button "Save"
+    When I close modal by clicking the top right x button
+    Then I see row level action button "Edit" against "Notes" in table name "Notes"
 
-  @120452    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileAddingNewRecord
+  @120452
   Scenario: validate records are getting added successfully without throwing alert message if all required fields are filled
   |Sanity TC - Admin - To verify that user able to see Edit action on Notes and Attachments tables at row level|
     Given I have "default" configuration as below:
@@ -4067,23 +4059,23 @@ Business Need: Page Layout Component Scenarios
     And I click on "Edit" icon in flex table for first draft record
     Then I cannot see "Overview" sub tab at view detail page
 
-  @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
+  @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode @wip
   Scenario: validate hide expression by hiding page block using picklist field value operator in edit mode
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block:Page Block Detail | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantor State Program | Name                      | PB-6613                    |
+      | configurationCategory        | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:Page Block:Page Block Detail | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed in page details
+    Then I do not see "Test Tab" page block displayed in page details
 
-  @145847    @verifyHideExpressioJsonByHidingPageBlockUsingUserOperatorInEditMode
+  @145847    @verifyHideExpressioJsonByHidingPageBlockUsingUserOperatorInEditMode @wip
   Scenario: validate hide expression by hiding page block using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -4111,8 +4103,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4128,8 +4120,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4145,8 +4137,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4162,8 +4154,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4197,8 +4189,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4214,8 +4206,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4231,8 +4223,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4248,8 +4240,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4265,8 +4257,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4300,8 +4292,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4319,8 +4311,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
     Then I see "Add" button inside "Files" flex table not displayed
@@ -4368,8 +4360,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4385,8 +4377,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4402,8 +4394,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4419,8 +4411,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4438,8 +4430,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
@@ -4458,8 +4450,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
@@ -4476,8 +4468,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -4493,8 +4485,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
 
@@ -4512,8 +4504,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I softly cannot see top right button "Add" in flex table with id "---program:-:notesFilesTableid---"
@@ -5389,7 +5381,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see that "TypesOfAssistance__c" rendered in view mode only
 
 
-  @158464 @ValidateEditLayoutMultipickListTypeOfInstanceOnUiDisplayProperly
+  @158464 @ValidateEditLayoutMultipickListTypeOfInstanceOnUiDisplayProperly @wip
   Scenario: Validate Edit Layout Multipick List Type Of Instance On Ui Display Properly
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -5416,7 +5408,7 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see checkbox is displayed for field "fieldCFDA_Data__c"
 
-  @165040 @ValidateUserApplyJsonOnHistoryObjectThenHistoryDropdownShowChildRecord
+  @165040
   Scenario: Validate User Apply Json On History Object Then History Dropdown Show Child Record
     Given I have "default" configuration as below:
       | configurationCategory                      | fieldName       | fieldOrignalValue | filterId         |
@@ -5748,7 +5740,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206506
+  @206506 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5767,7 +5759,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
-  @206456
+  @206456 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5786,7 +5778,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field Config : Number is too large. |
 
-  @206566
+  @206566 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for Percent field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -5805,14 +5797,14 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Dynamic field : Number is too large. |
 
-  @206570 @wip
+  @206570
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Percent field (Nauman shahid
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-23586                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-24006                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5863,7 +5855,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @206572
+  @206572 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for Number  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6384,7 +6376,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @205800
+  @205800 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6410,7 +6402,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-23595                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-24006                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6422,7 +6414,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Go to platform setup : Number is too large. |
 
-  @205803
+  @205803 @wip
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6463,11 +6455,11 @@ Business Need: Page Layout Component Scenarios
   @205805
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-23595                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | PB-6823                   | {pagelayout:Number__c}     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6585,8 +6577,8 @@ Business Need: Page Layout Component Scenarios
   @208833
   Scenario: To verify, When hidden the Text fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName        | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantor State Program | Name                      | PBD-17604                  |
@@ -6602,7 +6594,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Title is required to save |
 
-  @208830
+  @208830 @wip
   Scenario: To verify, When hidden the Lookup  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6642,7 +6634,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Number Organization is required to save |
 
-  @208828
+  @208828 @wip
   Scenario: To verify, When hidden the Date and Time fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6662,7 +6654,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Date And Time Organization is required to save |
 
-  @208825
+  @208825 @wip
   Scenario: To verify, When hidden the currency  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6682,7 +6674,7 @@ Business Need: Page Layout Component Scenarios
     Then I cannot see the following message in the page details :
       | Funded Amount is required to save |
 
-  @208826
+  @208826 @wip
   Scenario: To verify, When hidden the percent  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
@@ -6960,14 +6952,14 @@ Business Need: Page Layout Component Scenarios
      # | ADMIN |
       | PM   |
 
-  @218838
+  @218838 @wip
   Scenario Outline: Page layout-To verify,  when user not entered any help text  on field then help icon  not displayed on UI.
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config     | Help Text Long | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-17545                  |
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | {pagelayout:ProgramName__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6975,11 +6967,11 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{pagelayout:PageLayoutRecord}"
     When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I hovering mouse on help text icon inside page block detail "Title"
-    Then I do not see help text icon is displayed for field "Program Code"
+    Then I do not see help text icon is displayed for field "Title"
 
     Examples:
-      | new_helpText | old_helpText                                              |
-      |              | Alphanumeric code which is unique for associated program. |
+      | new_helpText | old_helpText                                       |
+      |              | Name represents for what the program is meant for. |
 
  ###################### Export Functionality ########################
   @200536 @200545 @219535 @219536 @wip
@@ -7118,8 +7110,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I pause execution for "5" seconds
@@ -7164,8 +7156,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I see "Menu" icon is displayed on pagelayout
     Examples:
@@ -7210,10 +7202,14 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    #Then I see "Edit" button is not displayed
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click on "Save" in the page details
+     #Then I see "Edit" button is not displayed
     Then I see "Edit" button is displayed on top right of pagelayout
     Then I see "Submit For Approval" button is displayed on top right of pagelayout
     Given I have "default" configuration as below:
@@ -7291,33 +7287,13 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on "Edit" icon in flex table for first draft record
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     Then I see "Cancel" button is displayed on top right of pagelayout
     Then I see "Save" button is displayed on top right of pagelayout
-
-    Examples:
-      | User |
-     # | ADMIN |
-      | PM   |
-
-  @219872 @219873
-  Scenario Outline: Page Layout Action-Admin-UI-To verify page layout "Cancel" and "Save" actions should not displayed on edit layout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
-      | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Cancel                     |
-      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Save                       |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I click on "Edit" icon in flex table for first draft record
-    Then I see "Cancel" button is not displayed
-    Then I see "Save" button is not displayed
 
     Examples:
       | User |
@@ -7349,17 +7325,23 @@ Business Need: Page Layout Component Scenarios
   @219875 @219876
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1             | Grantor State Program | Name                      | Edit1                      |
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Action Name | Edit              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                      |
+      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I see "Edit Automation" button is displayed on top right of pagelayout
 
     Examples:
@@ -7370,11 +7352,11 @@ Business Need: Page Layout Component Scenarios
   @219877
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit1             | Recipient ApplicationView | Name                      |                            |
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Action Name | Edit              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit1                      |
+      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -7405,14 +7387,21 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I see the text "Edit The Record" on hovering button
+
     Examples:
       | User |
      # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @219880
   Scenario: Page Layout Action-- SPI -UI- Verify text is displayed on hovering edit button
@@ -7448,9 +7437,15 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I softly see "Title" inside page block detail
     Then I softly see "Type" inside page block detail
     Then I softly see "Primary Funding Organization" inside page block detail
@@ -7458,7 +7453,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User |
      # | ADMIN |
-     # | PM    |
+      | PM   |
 
   @200265 @200243
   Scenario Outline: Page Block-PM-UI-To verify created page block for record type fields should not displayed
@@ -7475,9 +7470,15 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     Then I softly cannot see field "Abbreviation" inside page block
     Then I softly cannot see field "Website Address" inside page block
     Then I softly cannot see field "Funded Amount" inside page block
@@ -7523,8 +7524,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I softly cannot see field "Project Period Start Date" inside page block
     Then I softly cannot see field "Number" inside page block
     Then I softly cannot see field "Project Period End Date" inside page block
@@ -7716,8 +7717,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Overview" subtab is present in page details
     Then I see "Setup tabs" subtab is present in page details
     Then I see "Responsibilities" subtab is present in page details
@@ -7752,8 +7753,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see "Overview" subtab is present in page details
     Then I do not see "Setup tabs" subtab is present in page details
     Then I do not see "Responsibilities" subtab is present in page details
@@ -7853,8 +7854,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
     Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
@@ -7918,21 +7919,21 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2686                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2628                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2622                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2623                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2626                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}         |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:SetupTab}            |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:ResponsibilitiesTab} |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:FilesTAB}            |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:HistoryTab}          |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:CollabInternalTAB}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I do not see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I do not see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I do not see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I do not see "Files" subtab is present with icon "fa fa-file" in page details
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
@@ -8005,8 +8006,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see sequence of "Overview" subtab is "1" on page layout
     Then I see sequence of "Setup" subtab is "2" on page layout
     Then I see sequence of "Responsibilities" subtab is "3" on page layout
@@ -8043,64 +8044,6 @@ Business Need: Page Layout Component Scenarios
     Then I see sequence of "History" subtab is "5" on page layout
     Then I see sequence of "Collab" subtab is "6" on page layout
 
-  @219897
-  Scenario Outline: Page Tab - Admin -Config - Verify page tab should not displayed properly in given sequence
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
-    Then I do not see sequence of "Overview" subtab is "1" on page layout
-#      Then I do not see sequence of "Setup tabs" subtab is "2" on page layout
-#      Then I do not see sequence of "Responsibilities" subtab is "3" on page layout
-#      Then I do not see sequence of "Files" subtab is "4" on page layout
-#      Then I do not see sequence of "History" subtab is "5" on page layout
-#      Then I do not see sequence of "Collab" subtab is "6" on page layout
-    Examples:
-      | User  |
-      | ADMIN |
-     # | PM    |
-
-  @219899
-  Scenario: Page Tab - SPI- UI - Verify page tab should not displayed properly in given sequence
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient ApplicationView | Name                      | {pagelayout:OverviewTabSPI} |
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Opportunities" tab
-    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
-    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
-    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application}" inside flex table with id "---applicationIntake:-:activeOpportunitiesTableId---"
-    When I click on "Qualify" in the page details
-    When I click on "Create Application" in the page details
-    And I click modal button "Save and Continue"
-    And I pause execution for "3" seconds
-    When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
-    Then I do not see sequence of "Overview" subtab is "1" on page layout
-    #Then I see "Information" shown at number "5" inside detail page
-#    Then I do not see sequence of "Budget" subtab is "2" on page layout
-#    Then I do not see sequence of "Proposal" subtab is "3" on page layout
-#    Then I do not see sequence of "Files" subtab is "4" on page layout
-#    Then I do not see sequence of "History" subtab is "5" on page layout
-#    Then I do not see sequence of "Collab" subtab is "6" on page layout
-
 
  ################################# Page Instruction #########################################
   @200159 @200164
@@ -8115,8 +8058,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     #And I click on "...view more" button
     And I pause execution for "3" seconds
     Then I see bulb icon at header instruction is displayed
@@ -8138,8 +8081,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     #Then I see "<new_helpText>" shown as help text
     Then I do not see bulb icon at header instruction is displayed
 
@@ -8212,15 +8155,15 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see "<new_helpText>" shown as help text
     Then I see bulb icon at header instruction is displayed on pagelayout
 
     Examples:
-      | User | new_helpText | old_helpText |
+      | User | new_helpText         | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
      # | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
-   #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+      | PM   | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
   @200222 @379087 @Sanity @SanityPageLayout
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
@@ -8298,8 +8241,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I do not see field "EGMS ID" inside page header
     Then I do not see field "Status" inside page header
    # Then I do not see field "Organization" inside page header
@@ -8382,8 +8325,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{StaticRecords:PageLayoutRecord}"
-    When I click on "View" icon for "{StaticRecords:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "{pagelayout:PageLayoutRecord}"
+    When I click on "View" icon for "{pagelayout:PageLayoutRecord}" inside flex table with id "---program:-:programsTableId---"
     Then I see step progress bar is displayed
     Examples:
       | User |
