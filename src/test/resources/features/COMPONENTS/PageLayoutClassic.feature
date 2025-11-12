@@ -589,10 +589,8 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "5" seconds
     Then I see field "Automation Title" inside page block
 
-  @36106  @36109   @36110
+  @36106
   Scenario: changing rendering behaviour of program name read only from config and validaying it at program detail page
-  |Hide program name field at page block detail from config validating it at program detail page|
-  |Hiding of program name page block detail for internal user from config and validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config     | Read Only | false             | ApiGeneratedId:0 |
@@ -611,8 +609,9 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
     Then I softly see that "Abbreviation__c" rendered in view mode only
-    And I click on "Save" in the page details
-    And I pause execution for "5" seconds
+
+  @36109
+    Scenario:Hide program name field at page block detail from config validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Block Config     | Hide for Context |                   | ApiGeneratedId:0 |
@@ -621,9 +620,22 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
       | Page Block Config:Page Block Rule Detail | Is Active        | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
-    And I refresh the page
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see "Abbreviation" is not displayed inside page block detail
+
+
+  @36110
+    Scenario:  Hiding of program name page block detail for internal user from config and validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Block Config     | Hide for User |                   | ApiGeneratedId:0 |
@@ -632,7 +644,14 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
       | Page Block Config:Page Block Rule Detail | Is Active     | true          | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
-    And I refresh the page
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
     And I pause execution for "5" seconds
     Then I see "Abbreviation" is not displayed inside page block detail
 
@@ -734,7 +753,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName             | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
       | Page Block Config:Page Block Rule Detail | Read Only For Profile | System Administrator | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
       | Page Block Config:Page Block Rule Detail | Is Active             | true                 | Grantor State Program | Name                      | {pagelayout:Abbreviation__c} |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1685,7 +1704,7 @@ Business Need: Page Layout Component Scenarios
 
   @82770
   Scenario: validate that link icon is present at rich text area description field under page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1695,7 +1714,7 @@ Business Need: Page Layout Component Scenarios
 
   @82786
   Scenario: validate that a hyperlink is present at display text in rich text area description field under page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1708,7 +1727,7 @@ Business Need: Page Layout Component Scenarios
 
   @82775
   Scenario: validate that a hyperlink is present at URL in rich text area description field under page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2433,7 +2452,7 @@ Business Need: Page Layout Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
-  @119858  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditModal-gPlanning
+  @119858
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2461,7 +2480,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2520,7 +2539,7 @@ Business Need: Page Layout Component Scenarios
 
   @120235
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -5464,7 +5483,6 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "Edit" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
-    And I halt execution
     Then I select below checkbox options for field "AdminPmPageLayoutRadioType__c"
       | Display 2 |
 
