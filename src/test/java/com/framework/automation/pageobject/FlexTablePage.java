@@ -1167,13 +1167,13 @@ public class FlexTablePage extends GovGrantsManager {
 
     public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertFalse(assertAdvanceFilterDisplayed(value));
-        } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertTrue(assertAdvanceFilterDisplayed(value));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertAdvanceFilterDisplayed(value));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
-        } else if (usage.equalsIgnoreCase("softly do not see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
         }
     }
 

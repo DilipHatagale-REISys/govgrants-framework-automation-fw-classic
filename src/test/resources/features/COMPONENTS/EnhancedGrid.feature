@@ -177,7 +177,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Testing   | 75              | 1                                         | Checked   |
     And I expand nested table containing column value "Pre-Screen Review"
     #379202
-    Then I see Advance Filter box is displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" in flex table
+    Then I softly see Advance Filter box is displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" in flex table
     When I click on advance filter "#advfProgramReviewStepPanelTemplates" of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     When I enter advance filter values inside id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
       | Form Weight (%) | equals to | 75 |
@@ -4684,13 +4684,18 @@ Business Need: EnhancedGrid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    Given I published "Competitive" type announcement having name "Automation Runtime FDM Announcement" and properties "NO_RISK_ASSESSMENT"
+    When I initiated an application review for application "{SavedValue:Automation Runtime FDM Announcement}" on announcement "{SavedValue:Automation Runtime FDM Announcement}" with properties "default"
+    And I created approved FDM on application "{SavedValue:Automation Runtime FDM Announcement}"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
+    When I navigate to "Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    And I navigate to "Budget" tab
+    When I perform quick search for "{SavedValue:Automation Runtime FDM Announcement}" in "toggleFlexTableApplicantGrantorApplications" panel
+    And I click on "View" icon for "{SavedValue:Automation Runtime FDM Announcement}" inside table
+    When I navigate to "Budget" sub tab
+    Then I see quick search option disabled from enhanced grid
+    And I get current URL
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecordCreated}" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -6011,20 +6016,25 @@ Business Need: EnhancedGrid Component Scenarios
 
   @218430 @218435
   Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
+  |Is active- SPI- UI- Verify flex table should be displayed|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-7706                    |
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Recipient ApplicationView | Name                      | PB-7675                    |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    Then I softly see "Budget Summary" page block displayed
+    Then I softly see "Application Budget Categories by Budget Period" page block displayed
 
   @218436
   Scenario: Is active- SPI- UI- Verify flex table should not be displayed
@@ -6032,40 +6042,48 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-7706                    |
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Recipient ApplicationView | Name                      | PB-7675                    |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    Then I softly do not see "Budget Summary" page block displayed
+    Then I softly do not see "Application Budget Categories by Budget Period" page block displayed
 
   @218445 @218442
-  Scenario Outline: Display Field Names - SPI- UI- Verify if all fields from 'Display field names' are getting displayed on flex Table
+  Scenario: Display Field Names - SPI- UI- Verify if all fields from 'Display field names' are getting displayed on flex Table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue                                                                                                                          | filterId         |
+      | Flex Grid             | Display Field Names | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecGrantBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue                                                                                                                              | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | Id,ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    Then I softly see "Budget Period Title" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
-    Then I softly see "Start Date" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
-    Then I softly see "End Date" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
-    Then I softly see "Fee Fund Requested" in flex table header "---program:-:GrantBudgetOnGrantsBudgetTableId---"
-    Examples:
-      | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
-      | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
+    When I expand nested table containing column value "BP01"
+    Then I softly see "Category Name" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Budget" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Cash Match" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Non-Cash Match" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Total Match" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Other Leverage" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I softly see "Total Project Cost" in flex table header "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
@@ -6113,17 +6131,22 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    Then I see "Entries" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    When I expand nested table containing column value "BP01"
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I see "Entries" with page size dropdown at "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
@@ -6157,17 +6180,21 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | false         | RecGrantBudgetCategoryFlexTable |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | false         | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    When I expand nested table containing column value "Fiscal Year(2024-2034)"
-    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    When I expand nested table containing column value "BP01"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   @218452 @218453
   Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
@@ -6202,17 +6229,21 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | true          | RecGrantBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    Then I see Total Records count "Total Records:" in table name "---program:-:GrantBudgetOnGrantsBudgetTableId---"
+    Then I softly see "Budget Periods" page block displayed
+    Then I see Total Records count "Total Records:" in table name "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @218460
   Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
@@ -6220,17 +6251,21 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | false         | RecGrantBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
-    Then I softly see "Grant Budget" page block displayed
-    Then I do not see Total Records count "Total Records:" in table name "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Then I softly see "Budget Periods" page block displayed
+    Then I do not see Total Records count "Total Records:" in table name "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @218458 @218459
   Scenario Outline: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
@@ -6921,11 +6956,11 @@ Business Need: EnhancedGrid Component Scenarios
   @296627 @296628
   Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
-      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
+      | configurationCategory | fieldName | fieldOrignalValue                                           | filterId         |
+      | Flex Table List       | Help Text | Indicates whether this review form is required or optional. | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <newHelpText> | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Help Text | <newHelpText> | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:Required__c}     |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6936,7 +6971,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Pre-Screen Review"
-    When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
+    When I hovering mouse on help text icon inside "Required?" for flex table column
     Then I see "<newHelpText>" shown as help text
 
     Examples:
@@ -7464,12 +7499,12 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-#      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
+      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
-#      | Flex Table List       | Sub Total Label     | Testing SubTotal | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}                  |
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true             | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Enable Row Grouping | true             | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
+      | Flex Table List       | Sub Total Label     | Automation lable | ProgramReviewStepTemplates | Name                      | {flexgrid:StepNumber__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7489,16 +7524,17 @@ Business Need: EnhancedGrid Component Scenarios
 
   @297605 @297606
   Scenario Outline: Admin_Child table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
+  |PM_Child table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-#      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
+      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Sub Total    | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
-      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
-#      | Flex Table List       | Sub Total Label     | Sub Total Testing Demo | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}                  |
+      | configurationCategory | fieldName           | fieldNewValue          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true                   | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Enable Row Grouping | true                   | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
+      | Flex Table List       | Sub Total Label     | Sub Total Testing Demo | ProgramReviewStepPanelTemplates | Name                      | {flexgrid:formWeight__c}   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7635,17 +7671,22 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:1 |
+      | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Record Selection | false         | RecGrantBudgetPeriods | Name                      |                            |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | false         | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP01"
     Then I do not see select check box enabled in flex table
 
   @218475 @218478 @218469
@@ -7656,15 +7697,20 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Record Selection | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Record Selection | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Record Selection | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application Intake" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{flexgrid:AutomationPermanantApplication}"
-    When I click on "View" icon for "{flexgrid:AutomationPermanantApplication}" inside table
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement Application Intake}" in "---applicationReview:-:reviewsTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement Application Intake}" inside flex table with id "---applicationReview:-:reviewsTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "BP01"
     Then I see select check box enabled in enhanced flex grid
 
   @379199  @SanityPATCH @SanityPATCHEGrid

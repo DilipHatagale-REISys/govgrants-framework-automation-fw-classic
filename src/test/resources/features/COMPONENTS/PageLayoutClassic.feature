@@ -10498,8 +10498,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-23595                  |
+      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program        | Name                      | PBD-24006                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10509,7 +10509,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "13456789034567894567890234567" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Go to platform setup : Number is too large. |
+      | Go to platform setup: Number is too large.|
 
   @205803 @ToVerifyValidationMessageShouldDisplayProperly @Sprint5 @dnyaneshwari
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field

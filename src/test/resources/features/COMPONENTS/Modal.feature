@@ -715,3 +715,83 @@ Business Need: Modal Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "test Automation Tab testing" Tab title displays on modal
+
+  @207469 @207466 @207460 @207428
+  Scenario:Modal- SPI- UI- Verify actions (like Save, Back, cancel etc) can be rendered on Modal
+  |Modal- SPI- UI- Verify multiple page blocks can be added in modal|
+  |Modal- SPI- UI- Verify if all required field are filled then we should be able to save and continue|
+  |Modal- SPI- UI- Verify we can enter text in text fields|
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName        | fieldOrignalValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Automation Page Block | Create Grantor Preapplication | GNT__PageBlockTitle__c    | Automation Page Block      |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName        | fieldNewValue         | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Page Block Title | Automation Page Block | Create Grantor Preapplication | GNT__PageBlockTitle__c    | Automation Page Block      |
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement for Pre-App" and properties "PRE_APPLICATION_NEGOTIATION_YES"
+    When I am on "SUBPORTAL" portal
+    And I login to "Grants Portal" app as "SPI3" user
+    When I navigate to "Opportunities" tab
+    And I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement for Pre-App}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement for Pre-App}" inside table
+    When I click on "Qualify" in the page details
+    And I click on "Create Pre-Application" in the page details
+    Then I see "Save and Continue" at bottom of Attachment Modal
+    Then I softly see "Automation Page Block" page block displayed
+    When I click modal button "Save and Continue"
+    And I pause execution for "7" seconds
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    Then I see page title "Pre-Application View"
+
+  @207457
+  Scenario:Modal- SPI- UI- Verify if any required field is empty then error massage should display
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement for Pre-App" and properties "PRE_APPLICATION_NEGOTIATION_YES"
+    When I am on "SUBPORTAL" portal
+    And I login to "Grants Portal" app as "SPI3" user
+    When I navigate to "Opportunities" tab
+    And I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement for Pre-App}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement for Pre-App}" inside table
+    When I click on "Qualify" in the page details
+    And I get current URL
+    And I click on "Create Pre-Application" in the page details
+    And I enter value "" into field "fieldTitle__c"
+    Then I see Required behavior under field "Title__c" with star mark on modal
+    Then I see "Save and Continue" at bottom of Attachment Modal
+    Then I see the following messages in the page details contains:
+      | Pre-Application Title is required to save. |
+
+  @207451
+  Scenario: Modal- SPI- UI- Verify all fields where Required behavior under Page Block Details Config is ‘Required to save’ should have (*) on modal
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement for Pre-App" and properties "PRE_APPLICATION_NEGOTIATION_YES"
+    When I am on "SUBPORTAL" portal
+    And I login to "Grants Portal" app as "SPI3" user
+    When I navigate to "Opportunities" tab
+    And I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement for Pre-App}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement for Pre-App}" inside table
+    When I click on "Qualify" in the page details
+    And I click on "Create Pre-Application" in the page details
+    And I enter value "" into field "fieldTitle__c"
+    Then I see Required behavior under field "Title__c" with star mark on modal
+
+  @207448 @207445
+  Scenario: Modal- SPI- UI- Verify all fields where ‘Is Active’ checkbox is unchecked under Page Block Details Config should not display on modal
+  |Modal- SPI- UI- Verify all fields where ‘Is Active’ checkbox is checked under Page Block Details Config should display on UI modal|
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement for Pre-App" and properties "PRE_APPLICATION_NEGOTIATION_YES"
+    When I am on "SUBPORTAL" portal
+    And I login to "Grants Portal" app as "SPI3" user
+    When I navigate to "Opportunities" tab
+    And I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I click toggle button to select "Not Yet Qualified Opportunities - All"
+    And I perform quick search for "{SavedValue:Automation Runtime Announcement for Pre-App}" in "---applicationIntake:-:activeOpportunitiesTableId---" panel
+    When I click on "View" icon for "{SavedValue:Automation Runtime Announcement for Pre-App}" inside table
+    When I click on "Qualify" in the page details
+    And I click on "Create Pre-Application" in the page details
+    Then I softly see "Pre-Application Title" inside page block detail
+    Then I softly see "Project Director" inside page block detail
+
