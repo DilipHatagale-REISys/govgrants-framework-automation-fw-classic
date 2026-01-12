@@ -623,6 +623,7 @@ public final class FlexTable implements FlexTableComponent {
         return By.xpath(desiredAction);
     }
 
+
     /**
      * @param row
      * @param headerLabels

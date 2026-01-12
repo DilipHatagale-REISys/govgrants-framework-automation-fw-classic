@@ -273,7 +273,7 @@ Business Need: history Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
-    And I enter value "Project Grants" into field "ProgramSubType__c"
+    And I enter value "Research Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "Type" as "OldType"
@@ -376,7 +376,6 @@ Business Need: history Component Scenarios
 
   @205601 @205603
   Scenario Outline: History Field : ADMIN User -To verify, User change the negative currency field value from backend then it should display in the new value column
-  |Field History - ADMIN user - To verify, User change the date field from edit layout then it should display changed and previous value in the new and old value column.|
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active | true              | ApiGeneratedId:0 |
@@ -391,14 +390,18 @@ Business Need: history Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I enter value "0" into field "fieldStartDate__c"
-    And I click on "Save" in the page details
-    And I save the field labeled "Project Period Start Date" as "OldStartDate"
     And I click on "Edit" in the page details
-    And I enter value "30" into field "fieldStartDate__c"
+    When I navigate to "Overview" sub tab
+    And I enter value "34" into field "FundedAmount__c"
     And I click on "Save" in the page details
-    And I save the field labeled "Project Period Start Date" as "NewStartDate"
+    And I save the field labeled "Funded Amount" as "OldFundedAmount"
+    And I click on "Edit" in the page details
+    And I enter value "-45" into field "FundedAmount__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "Funded Amount" as "NewFundedAmount"
     When I navigate to "History" sub tab
     #NegativeCurrencyField
     Then I see "({SavedValue:OldFundedAmount})" shown inside "New Value" column in history table
@@ -425,6 +428,11 @@ Business Need: history Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldStartDate__c"
     And I click on "Save" in the page details
@@ -694,8 +702,8 @@ Business Need: history Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfig:HistoryTab}  |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {CommonConfigFileTest:HistoryTab} |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

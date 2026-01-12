@@ -611,7 +611,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see that "Abbreviation__c" rendered in view mode only
 
   @36109
-    Scenario:Hide program name field at page block detail from config validating it at program detail page|
+  Scenario:Hide program name field at page block detail from config validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Block Config     | Hide for Context |                   | ApiGeneratedId:0 |
@@ -635,7 +635,7 @@ Business Need: Page Layout Component Scenarios
 
 
   @36110
-    Scenario:  Hiding of program name page block detail for internal user from config and validating it at program detail page|
+  Scenario:  Hiding of program name page block detail for internal user from config and validating it at program detail page|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Page Block Config     | Hide for User |                   | ApiGeneratedId:0 |
@@ -3459,10 +3459,10 @@ Business Need: Page Layout Component Scenarios
   @137282
   Scenario: verify missing field msg is not displayed if req for save currency field is hidden using hide field json
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Block Config     | Hide Fields JSON  |                   | ApiGeneratedId:0 |
+      | Page Block Config     | Required Behavior |                   | ApiGeneratedId:1 |
+      | Page Block Config     | Is Active         | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue              |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | {pagelayout:CurrencyField_FundedAmount} |
@@ -4094,8 +4094,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | {pagelayout:TestInternalTAB}   |
+      | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | {pagelayout:TestInternalTAB} |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7747,12 +7747,12 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
       #| Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      |{pagelayout:SetupTab}                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      |{pagelayout:ResponsibilitiesTab}                  |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:FilesTAB}                  |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:HistoryTab}                  |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue       |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:OverviewTab}         |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:SetupTab}            |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:ResponsibilitiesTab} |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:FilesTAB}            |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | {pagelayout:HistoryTab}          |
      # | Page Tabs Config:Page Layout Action | Is Active | false          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
