@@ -940,7 +940,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "20"
-    Then I see table contains "Showing 1 to 20" inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335128
   Scenario: Flex table-Page size-SPI-UI-To verify that user is able to change page size by clicking on Show Entries block
