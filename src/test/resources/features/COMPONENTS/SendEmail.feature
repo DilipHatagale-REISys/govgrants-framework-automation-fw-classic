@@ -1,4 +1,4 @@
-@SendEmail-Component @regression-PATCH @SendEmail
+@SendEmail-Component @SendEmail
 Business Need: SendEmai Component Scenarios Send Email Functionality Send Email Attachment Send Email Send Files
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.

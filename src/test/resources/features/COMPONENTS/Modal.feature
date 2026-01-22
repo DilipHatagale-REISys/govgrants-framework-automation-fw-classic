@@ -1,4 +1,4 @@
-@Modal-PATCHcomponent @regression-PATCH @Modal
+@Modal
 Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.

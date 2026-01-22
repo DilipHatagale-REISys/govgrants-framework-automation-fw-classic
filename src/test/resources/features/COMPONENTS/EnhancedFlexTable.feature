@@ -1405,7 +1405,6 @@ Business Need: DataTableEnhanced Component Scenarios
   |  Action- SPI- UI- Verify if actions displayed on UI are following given sequence|
   |Action- SPI- UI- Verify action rendered as per expected ‘Header Action Display Type’|
     Given I have "default" configuration as below:
-    Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Page Block            | Enable Quick Search | true              | ApiGeneratedId:0 |
       | Page Block            | Enable Filter       | true              | ApiGeneratedId:1 |

@@ -1,4 +1,4 @@
-@ExpressionBuilder-PATCHcomponent @regression-PATCH @expressionBuilder
+@ExpressionBuilder @regression-PATCH @expressionBuilder
 Business Need: Expression Builder Component Scenarios
   Test all expression builder component based scenarios
   As a configuration manager i make different configurational changes in expression builder component and will validate them.

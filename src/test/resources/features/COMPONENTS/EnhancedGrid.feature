@@ -1,4 +1,4 @@
-@EnhancedGrid-PATCHcomponent @regression-PATCH @EnhancedGrid @vrush-module
+@EnhancedGrid
 Business Need: EnhancedGrid Component Scenarios
   Test all EnhancedGrid component based scenarios
   As a configuration manager i make different configurational changes in EnhancedGrid component and will validate them.
@@ -1040,7 +1040,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Users |
       | PM    |
 
-  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEGrid
+  @35435 @379170
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

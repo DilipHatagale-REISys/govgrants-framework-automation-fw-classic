@@ -1,4 +1,4 @@
-@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent @vrush-module
+@FlexTable
 Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface,Quick Search
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in FlexTable_AllComponent component and will validate them.
