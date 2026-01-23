@@ -45,7 +45,7 @@ public final class ChromeManager implements qrYoTsOWwA {
     private static Boolean disableDriverEnforcedDownloadActivity = true;
 
     public void setupController() {
-    System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion142.exe");
+    System.setProperty("webdriver.chrome.driver",".\\src\\test\\resources\\ChromeDrivers\\chromedriver_for_browserVersion143.exe");
         if ("true".equalsIgnoreCase(System.getProperty("chromedebuglogs"))) {
             System.setProperty("webdriver.chrome.logfile", System.getProperty("user.dir") + "/target/chromedriver.log");
             System.setProperty("webdriver.chrome.verboseLogging", "true");
