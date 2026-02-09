@@ -1339,6 +1339,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "test@123.com" into field "{testData:ToField}" on send email modal
     When I enter value "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
+    And I halt execution
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
@@ -9240,7 +9241,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"

@@ -462,7 +462,7 @@ public final class GovGrantsAssertionObjects {
             }
 
             if (!fieldValue.equalsIgnoreCase(foundValue)) {
-                I.amPerforming().browserOperationsTo().refreshPage();
+//                I.amPerforming().browserOperationsTo().refreshPage();
             }
         }
 

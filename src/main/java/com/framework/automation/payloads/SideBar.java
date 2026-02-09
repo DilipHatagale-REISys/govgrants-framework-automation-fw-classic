@@ -135,7 +135,7 @@ public class SideBar {
             case "SIDEBAR ACTIVITY MENU LABEL":
                 finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
                         apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
-                        String.valueOf(SObjectAPIs.GNT__SidebarTaskMenuLabel__c), value);
+                        String.valueOf(SObjectAPIs.GNT__AccordionHeader__c), value);
                 break;
             case "ENABLE SIDEBAR TASK MENU":
                 finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
