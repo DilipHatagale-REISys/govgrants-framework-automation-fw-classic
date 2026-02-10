@@ -1541,17 +1541,17 @@ Business Need: DataTableEnhanced Component Scenarios
   @205494
   Scenario: Action- SPI- UI- Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Action Behavior       | EditRecord        | ApiGeneratedId:0 |
-      | Flex Table Action     | Modal Title           |                   | ApiGeneratedId:1 |
-      | Flex Table Action     | Where To Open ?       |                   | ApiGeneratedId:2 |
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Behavior | EditRecord        | ApiGeneratedId:0 |
+      | Flex Table Action     | Modal Title     |                   | ApiGeneratedId:1 |
+      | Flex Table Action     | Where To Open ? |                   | ApiGeneratedId:2 |
     #  | Flex Table Action     | Show Confirmation Box | false             | ApiGeneratedId:3 |
      # | Flex Table Action     | Confirmation Message  |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior       | EditRecord       | AppContact         | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title           | Automation Title | AppContact         | Name                      | Edit                       |
-      | Flex Table Action     | Where To Open ?       | Modal            | AppContact         | Name                      | Edit                       |
+      | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | EditRecord       | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title     | Automation Title | AppContact         | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal            | AppContact         | Name                      | Edit                       |
      # | Flex Table Action     | Show Confirmation Box | true             | AppContact         | Name                      | Edit                       |
     #  | Flex Table Action     | Confirmation Message  |                  | AppContact         | Name                      | Edit                       |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
@@ -1737,17 +1737,17 @@ Business Need: DataTableEnhanced Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "4" seconds
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactTableId---"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
     #Then I softly see "Contacts" page block displayed
-    Then I softly see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
-    Then I softly see quick search inside table id "---program:-:contactsTableId---"
-    Then I softly see Advance Filter box is displayed inside table id "---program:-:contactsTableId---" in flex table
-    Then I softly see "Menu" action is displayed at the "---program:-:contactsTableId---" modal
-    Then I softly see Total Records count "Total Records:" in table name "---program:-:contactsTableId---"
-    Then I softly see table contains "Showing 1 to 5" inside table id "---program:-:contactsTableId---"
-    Then I softly see pagination is displayed with "Page 1 of" inside table id "---program:-:contactsTableId---"
-    Then I softly see "Menu" action is displayed at the "---program:-:contactsTableId---" modal
+    #Then I softly see "#" in enhanced flex grid header "---program:-:ContactTableId---"
+    Then I softly see quick search inside table id "---program:-:ContactTableId---"
+    Then I softly see Advance Filter box is displayed inside table id "---program:-:ContactTableId---" in flex table
+    Then I softly see "Menu" action is displayed at the "---program:-:ContactTableId---" modal
+    Then I softly see Total Records count "Total Records:" in table name "---program:-:ContactTableId---"
+    Then I softly see table contains "Showing 1 to 5" inside table id "---program:-:ContactTableId---"
+    Then I softly see pagination is displayed with "Page 1 of" inside table id "---program:-:ContactTableId---"
+    Then I softly see "Menu" action is displayed at the "---program:-:ContactTableId---" modal
     And I pause execution for "5" seconds
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1756,7 +1756,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     And I refresh the page
-    Then I do not see "Menu" action is displayed at the "---program:-:contactsTableId---" modal
+    Then I do not see "Menu" action is displayed at the "---program:-:ContactTableId---" modal
 
     Examples:
       | User |
@@ -1916,7 +1916,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I enter in modal "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "4" seconds
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:ContactTableId---"
     When I click "Associate" after selection of all records in the table "---program:-:associateContactsTableId---"
     And I pause execution for "5" seconds
     #LookupFiled

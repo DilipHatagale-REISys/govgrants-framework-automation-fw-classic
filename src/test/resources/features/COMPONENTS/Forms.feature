@@ -217,9 +217,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
-    #And I switch to parent tab
+    And I switch to parent tab
    # And I pause execution for "4" seconds
-    And I click on back arrow
     And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
 
@@ -240,9 +239,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01342" is displayed on form layout
-   # And I switch to parent tab
+    And I switch to parent tab
    # And I pause execution for "4" seconds
-    And I click on back arrow
     And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---applicationIntake:-:allFormsTableId---"
     Then I do not see Form Id "FN-01343" is displayed on form layout
 
