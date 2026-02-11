@@ -465,9 +465,9 @@ Business Need: Phase Config Component Scenarios
     Then I see "Planning" phase at position "0"
 
     Examples:
-      | User  |
+      | User |
     #  | ADMIN |
-      | PM    |
+      | PM   |
 
   @333542 @333545
   Scenario Outline: Phase name- admin- To verify 'Body Top Page URL' should be added on the phases config page
@@ -521,7 +521,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config          | Body Flex Table | GrantsList        | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Body Flex Table |               | RecipientAwards    |
+      | Phase Config:General  | Body Flex Table | GrantsList    | RecipientAwards    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Grants" tab
@@ -532,10 +532,10 @@ Business Need: Phase Config Component Scenarios
   |Phase name- Internal-  To verify 'Body Flex Table' field should be added on phases config page  then  added flex table should displayed on phases|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
-      | Phase Config          | Body Flex Table | AllCloseouts          | ApiGeneratedId:0 |
+      | Phase Config          | Body Flex Table | AllCloseouts      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
-      | Phase Config:General  | Body Flex Table | AllCloseouts      | Closeout           |
+      | Phase Config:General  | Body Flex Table | AllCloseouts  | Closeout           |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

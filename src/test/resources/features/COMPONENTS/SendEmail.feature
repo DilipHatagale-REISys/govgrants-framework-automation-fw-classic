@@ -1,4 +1,4 @@
-@SendEmail-Component @regression-PATCH @SendEmail
+@SendEmail-Component @SendEmail
 Business Need: SendEmai Component Scenarios Send Email Functionality Send Email Attachment Send Email Send Files
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
@@ -11,7 +11,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "<programname>" into field "ProgramName__c"
+    When I enter value "<programname>" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"

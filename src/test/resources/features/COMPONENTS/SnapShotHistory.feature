@@ -264,12 +264,13 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I pause execution for "5" seconds
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name           | Program |
+      | Automation EXE | Step 1  |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
@@ -445,8 +446,8 @@ Business Need: Snapshot Config Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name           | Program |
+      | Automation EXE | Step 1  |
     And I pause execution for "5" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal

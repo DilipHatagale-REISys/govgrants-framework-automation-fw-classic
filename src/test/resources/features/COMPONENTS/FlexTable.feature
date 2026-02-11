@@ -1,4 +1,4 @@
-@FlexTable-PATCHComponent @regression-PATCH @FlexTable_AllComponent @vrush-module
+@FlexTable
 Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface,Quick Search
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in FlexTable_AllComponent component and will validate them.
@@ -8917,7 +8917,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see action name "!@#$%%%^&*()" itself get displayed on UI
 
-  @334024
+  @334024 @wip
   Scenario Outline: Flex table-Actions-Action URL-Admin-Config-To verify that if user provided Invalid action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
