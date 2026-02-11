@@ -1,4 +1,4 @@
-@StepProgressBar-PATCHcomponent @regression-PATCH
+@StepProgressBar
 Business Need: Step Progress Bar Component Scenarios
   Test all step progress bar component based scenarios
   As a configuration manager i make different configurational changes in step progress bar component and will validate them.

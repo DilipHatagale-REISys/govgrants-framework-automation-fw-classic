@@ -1085,4 +1085,10 @@ public final class GovGrantsSteps {
             govgrants.perform().flexTable().clickTableActionIconName(tableId, actionName, columnName.split(","));
         }
     }
+
+    @Description("Select the value in any specific field and also covers lookup data entry")
+    @And("^I (enter|enter in modal) value \"([^\"]*)\" into lookup field \"([^\"]*)\"$")
+    public void iEnterValueIntoLookupField(String usage, String fieldValue, String fieldApiName) {
+        govgrants.perform().inputForms().inputFormDataByFieldApiName(fieldApiName, fieldValue, usage.contains("modal"));
+    }
 }

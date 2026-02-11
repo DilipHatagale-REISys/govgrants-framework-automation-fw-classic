@@ -2016,4 +2016,42 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertFieldIsNotInEditMode(String fieldAPIName, boolean isSoftly) {
+        if (isSoftly) {
+            I.amPerforming().assertionsTo().assertThat(isFieldNotInEditMode(fieldAPIName)).isFalse();
+        } else {
+            Assert.assertFalse(isFieldNotInEditMode(fieldAPIName));
+        }
+    }
+
+    private boolean isFieldNotInEditMode(String fieldAPIName) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//field[@field-name='" + fieldAPIName + "']/input")))
+                flag = true;
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public void assertFieldIsNotInEditModeForTable(String fieldAPIName, boolean isSoftly) {
+        if (isSoftly) {
+            I.amPerforming().assertionsTo().assertThat(isFieldNotInEditModeForTable(fieldAPIName)).isFalse();
+        } else {
+            Assert.assertFalse(isFieldNotInEditModeForTable(fieldAPIName));
+        }
+    }
+
+    private boolean isFieldNotInEditModeForTable(String fieldAPIName) {
+        boolean flag = true;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//field[@field-name='" + fieldAPIName + "']//input")))
+                flag = true;
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
+    }
 }

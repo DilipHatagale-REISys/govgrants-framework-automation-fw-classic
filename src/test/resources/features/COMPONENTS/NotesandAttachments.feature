@@ -393,7 +393,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
-    And I select "Program Artifacts" from dropdown of filetype
+    And I select "General Assurances" from dropdown of filetype
     And I upload attachment "SendEmailAttachment.pdf" in attachment modal
     And I enter value "Test Automation" into "Description"
     And I click modal button "Save"

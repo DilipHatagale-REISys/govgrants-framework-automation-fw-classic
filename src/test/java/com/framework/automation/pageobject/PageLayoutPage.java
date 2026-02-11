@@ -40,7 +40,7 @@ public class PageLayoutPage extends GovGrantsManager {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
         headerInstructionText = By.cssSelector("span.pbNormalText,div.tabheaderinstruction");
-        headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
+        headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')] | //div[contains(text(),'Automation Header Text')]");
         headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')] | //div//span[@class='pbNormalText']");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
                 "//div[@class='panel-heading']//div[contains(@class,'panel-title')]//a//span[contains(text(),'Roles And Responsibilities')]");
@@ -180,7 +180,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public void assertSubTabIconDisplayed(String subTabName) {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath(
-                "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')]")));
+                "//div[@id='myTabs']/ul/li/a[@name='" + subTabName + "']//i[contains(@class,'fa-pencil')] | //div[@id='myTabs']//ul//li//a[@name='" + subTabName + "']//i[@class='fa fa-pencil-square-o']")));
     }
 
     /**
@@ -3694,7 +3694,7 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean isButtonDisplayedorNot(String buttonName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "'] |" +
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "'] | " +
                     "//div[@class='pull-right']//a[@class='btn btnCompact' and contains(text(),'" + buttonName + "')] |" +
                     "//div[@class='pull-right']//input[@value='" + buttonName + "'] |" +
                     "//div[@id='headerButtonsPanel']//button//span[@class='hidden508 ng-binding' and contains(text(),'" + buttonName + "')]"))) {

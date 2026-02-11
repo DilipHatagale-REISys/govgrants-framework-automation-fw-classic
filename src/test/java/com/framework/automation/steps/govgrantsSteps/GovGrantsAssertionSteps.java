@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import jdk.jfr.Description;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import java.nio.charset.MalformedInputException;
 import java.util.List;

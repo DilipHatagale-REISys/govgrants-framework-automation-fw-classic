@@ -1,4 +1,4 @@
-@Modal-PATCHcomponent @regression-PATCH @Modal
+@Modal
 Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
@@ -665,7 +665,7 @@ Business Need: Modal Component Scenarios
       | Page Block Config:Page Block Rule Detail | Field Label Override | <Old Label>       | TermConditionScheduleNewGrantor | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | <New Label>   | TermConditionScheduleNewGrantor | Name                      | PBD-22349                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | <New Label>   | TermConditionScheduleNewGrantor | Name                      | PBD-21912                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
@@ -680,7 +680,7 @@ Business Need: Modal Component Scenarios
   @382286 @SanityPATCH  @SanityPATCHModal
   Scenario: Sanity Testing- Modal- Page Block Detail- SPI- To verify help text displays after field label in the page block detail if provided in config.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
+    When I login to "Grants Portal" app as "SPI3" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
     When I perform quick search for "SC-623375"

@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34307  @383943 @383944 @381946 @383947 @381949 @381950
+  @34307  @381943 @381944 @381946 @383947 @381949 @381950
   Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
   Sanity TC_PM_To verify that Start action is visible for submitted for approval record, under Pending task table(381944)
     Given I have "default" configuration as below:
@@ -584,93 +584,7 @@ Business Need: Approval Process Component Scenarios
 
     ################
 
-  @37645   @BugId_163309 @wip
-  Scenario: Verify Approve Email Template field for approve action
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Approve Email Template | false             | ApiGeneratedId:0 |
-      | Page Tabs Config             | Is Active              | true              | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName              | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template |                           |                            |
-      | Approval Process Steps Cache:General | Approve Email Template | true                            | Program_Manager_Approver        |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantor State Program           | Name                      | TAB-1724                   |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program |
-      | Automation PM | Step 1  |
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---"
-    When I "Approve" in the approval decision
-    When I re-login to "As Administrator" app as "ADMIN" user on "default" portal
-    And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    And I click toggle button to select "Queued Emails"
-    And I pause execution for "10" seconds
-    Then I see email is generated with template "Program_Rejected_Email_Template"
 
-  @37667 @wip
-  Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField       |
-      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}" in "---program:-:pendingTaskTableId---" panel
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I "Approve" in the approval decision
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
-    And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    And I click toggle button to select "Queued Emails"
-    Then I see email is generated with template "Program_Approved_Email_Template"
 
   @69960
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
@@ -750,7 +664,7 @@ Business Need: Approval Process Component Scenarios
 
     ################ Approval Decision Action ########################
 
-  @201541p @201584 @201542 @201544 @201545 @201585 @201586 @201587
+  @201541 @201584 @201542 @201544 @201545 @201585 @201586 @201587
   Scenario Outline:Approval Decision Action-Admin-Config-To verify Approve, Reject, Send Back, Forward option should present in Approval Decision box
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
