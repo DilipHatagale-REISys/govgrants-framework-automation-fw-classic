@@ -971,7 +971,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Setup" sub tab
-    Then I see "#" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see "#" in enhanced flex grid header "ProgramReviewStepTemplatesFlexToggle"
 
   @35442    @enableRecordSelectionForFlexForEnhancedGrid-gPlanning
   Scenario: validate enabling of record selection check boxes in enhanced flex grid planning-Program enhanced flex grid
@@ -1188,13 +1188,13 @@ Business Need: EnhancedGrid Component Scenarios
   @41316    @fieldLabelOverrideFieldAtEnhancedGridColumnHeader-gPlanning
   Scenario: Changing specific column name of enhanced grid column header from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue                                              | filterId         |
-      | Flex Table            | Display Field Names  | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn} | ApiGeneratedId:0 |
-      | Flex Table List       | Field Label Override |                                                                | ApiGeneratedId:1 |
+      | configurationCategory | fieldName            | fieldOrignalValue                                          | filterId         |
+      | Flex Table            | Display Field Names  | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
+      | Flex Table List       | Field Label Override |                                                            | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names  | {flexgrid:SupportingDocumentsChecklistInternalUser.defaultdfn},currencytest__c | ProgramChecklists  |                           |                            |
-      | Flex Table List       | Field Label Override | Test Automation                                                                | ProgramChecklists  | Name                      | FTC-14090                  |
+      | configurationCategory | fieldName            | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},ReviewStepCurrency__c | ProgramReviewStepTemplates |                           |                            |
+      | Flex Table List       | Field Label Override | Test Automation                                                                  | ProgramReviewStepTemplates | Name                      | FTC-14075                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1203,7 +1203,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "Test Automation" shown inside flex table with id "ProgramChecklistsFlexToggle"
+    Then I see "Test Automation" shown inside flex table with id "{program:flexGridEnhancedReviewStepID}"
 
   @41319    @hideCellJsonfieldAtEnhancedGrid-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid of programs-planning

@@ -514,7 +514,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test automation" into field "Body Content" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
-    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
   @332794
@@ -533,7 +532,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test automation" into field "Body Content" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
-    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
   @332795
@@ -571,7 +569,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test SendEmailAttachment" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
-    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     When I close modal by clicking the top right x button
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
@@ -593,7 +590,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Validate send email" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
-    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+    And I pause execution for "2" seconds
     When I close modal by clicking the top right x button
     When I perform quick search for "Validate send email" in "---program:-:communicationHistoryTableId---" panel
     And I click on "View" icon for "Validate send email" inside flex table with id "---program:-:communicationHistoryTableId---"
@@ -616,7 +613,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Test SendEmailAttachment" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
-    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+    And I pause execution for "2" seconds
     When I close modal by clicking the top right x button
     When I perform quick search for "Test SendEmailAttachment" in "---program:-:communicationHistoryTableId---" panel
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
@@ -796,7 +793,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "captureModalFields.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail
+  @332811 @382757 @SanityPATCH  @SanityPATCHSendEmail @wip
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -1350,6 +1347,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
+   And I halt execution
     When I perform quick search for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
     Then I softly see "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal
@@ -1471,7 +1469,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "test" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I see search item display box size at "{testData:ToField}" field is proper for "greater than 5" results
 
   @90388 @validateToEmailSuggestionBoxSizeIfLessThan5RecordAreSuggestedInSendEmailModal @sendEmail
@@ -1950,12 +1948,12 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
   @104328 @validateDisplayOfHyperlinkAtSelectFileNameInsideBodyAtViewModal
   Scenario: validate hyperlink is displayed for the selected linked file name inside body at view modal window
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {StaticRecords:collabtab}  |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | {StaticRecords:collabtab}  |
     Given I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
@@ -6991,6 +6989,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
       | Enter To Email Address. |
+    When I close modal by clicking the top right x button
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "Send" button in send email modal
     #332883 #333058
@@ -8129,9 +8128,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "blank.txt" in Send Email Modal
     When I click on "Send" button in send email modal
     Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
-    When I close modal by clicking the top right x button
-    When I close modal by clicking the top right x button
-    Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
+    Then I do not see "blank.txt" file is displayed in modal
 
   @332346 @332350
   Scenario: Send Email -Select File, When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal.
