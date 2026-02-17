@@ -170,9 +170,9 @@ public class EnhancedFlexGridSteps {
         enhancedFlexGrid.assertCellValueForNumberOfAwardsAtEnhancedGrid(fieldApiName);
     }
 
-    @Then("^I see \"([^\"]*)\" error is displayed at enhanced grid$")
-    public void assertApprovalDecisionMandatoryErrorDisplayed(String error) {
-        enhancedFlexGrid.assertIsMasterViewErrorMessageIsDisplayed(error);
+    @Then("^I (see|do not see) \"([^\"]*)\" error is displayed at enhanced grid$")
+    public void assertApprovalDecisionMandatoryErrorDisplayed(String usage, String error) {
+        enhancedFlexGrid.assertIsMasterViewErrorMessageIsDisplayed(usage, error);
     }
 
     @Then("^I see \"([^\"]*)\" error is not displayed at enhanced grid$")

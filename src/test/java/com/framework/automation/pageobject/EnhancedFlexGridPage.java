@@ -345,8 +345,12 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
      *
      * @param error
      */
-    public void assertIsMasterViewErrorMessageIsDisplayed(String error) {
-        Assert.assertTrue(isErrorMessageAtEnhancedGridIsDisplayed(error));
+    public void assertIsMasterViewErrorMessageIsDisplayed(String usage, String error) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isErrorMessageAtEnhancedGridIsDisplayed(error));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isErrorMessageAtEnhancedGridIsDisplayed(error));
+        }
     }
 
     /**
@@ -508,7 +512,7 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertTrue(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
+            Assert.assertFalse(isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(columnValue, tableId));
         }
     }
 

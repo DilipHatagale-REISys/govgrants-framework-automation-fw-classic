@@ -325,6 +325,6 @@ public class GovGrantsManager extends ProjectWebServices {
      * @return true if hyperlink is displayed at value inside table/modal
      */
     public Boolean isHyperlinkIsDisplayedAtColumnValueInsideEnhancedGrid(String columnValue, String tableId) {
-        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "']"));
+        return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//span[text()='" + columnValue + "'] | //div[@id='" + tableId + "']//a[text()='" + columnValue + "' and @href]"));
     }
 }

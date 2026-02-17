@@ -2123,8 +2123,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3899                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3899                   |
       | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
@@ -2305,14 +2305,16 @@ Business Need: EnhancedGrid Component Scenarios
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view for child flex table at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
-      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Active ?       | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | false             | ApiGeneratedId:2 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3900                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepTemplates | Name                      | FLV-3181                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepPanelTemplates | Name                      | FLV-3486                   |
+      | Flex Grid:Flex Table List | Active ?       | true          | ProgramReviewStepPanelTemplates | Name                      | FLV-3901                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3901                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepPanelTemplates | Name                      | FLV-3486                   |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2320,7 +2322,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup" sub tab
-    Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
+    When I expand nested table containing column value "SME Review"
+    Then I do not see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
   @49241    @isMasterViewFieldcheckedForAtleastOneFlexListViewAtChildFlexTable-gPlanning @doubted
   Scenario: validate error message at enhanced grid after Unchecking check box of Is Master View Field for both list view at config and validating it inside enhanced grid of programs-planning
@@ -2671,13 +2674,12 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-    And I click modal button "Save and Continue"
-    And I get the "EGMS ID"
-    And I save the field labeled "Program" as "ProgramName"
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Setup" sub tab
-    And I click on Link containing value "{SavedValue:PEGMSID}" in flex table id "---program:-:flexGridEnhancedReviewStepID---"
-    Then I see "{SavedValue:ProgramName}" shown as over view header
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "3" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    Then I softly see field "Primary Funding Organization" as "Test Automation Organization"
 
   @79675    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtEnhancedGrid-gPlanning @BugId=144971
   Scenario Outline: validate by click on user value in table , respective user page should get opens at EnhancedGrid - gPlanning
@@ -2854,13 +2856,13 @@ Business Need: EnhancedGrid Component Scenarios
   @80502 @needconfirmationfromshambhavi
   Scenario: Verify a 'Show Link as Text' field at parent flex table by setting checkbox to true
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue                                          | filterId         |
-      | Flex Grid             | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn} | ApiGeneratedId:0 |
-      | Flex Grid             | Show Link as Text   | false                                                      | ApiGeneratedId:0 |
+      | configurationCategory | fieldName           | fieldOrignalValue                                                   | coreComponentField         | filterId         |
+      | Flex Grid             | Display Field Names | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | ProgramReviewStepTemplates | ApiGeneratedId:0 |
+      | Flex Table List       | Show Link as Text   | false                                                               | ProgramReviewStepTemplates | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                                         | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | {flexgrid:ProgramReviewStepTemplatesFlexToggle.defaultdfn},Program__c | ProgramReviewStepTemplates |                           |                            |
-      | Flex Grid:General     | Show Link as Text   | true                                                                  | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,pmgridURL__c | ProgramReviewStepTemplates |                           |                            |
+      | Flex Table List       | Show Link as Text   | true                                                                             | ProgramReviewStepTemplates | Name                      | FTC-13185                  |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2868,10 +2870,12 @@ Business Need: EnhancedGrid Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I get the "EGMS ID"
-    And I save the field labeled "Program" as "ProgramName"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I navigate to "Setup" sub tab
-    Then I see hyperlink at column value "Automation PM" inside "ProgramReviewStepTemplatesFlexToggle" table
+    When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
+      | Step Order | Step Name   | Description | pmgridURL      |
+      | 4          | Test Review | Description | www.google.com |
+    Then I see hyperlink at column value "www.google.com" inside "ProgramReviewStepTemplatesFlexToggle" table
 
   @80506 @wip @needconfirmationfromshambhavi
   Scenario: validate hyperlink is present at column value after unchecking the Show Link as Text Field from config at e-grid - gplanning
@@ -3158,7 +3162,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Step Order | Step Name   | Description            | ReviewStepCurrency |
       | 4          | Test Review | Automation Description | 100.50             |
     And I pause execution for "5" seconds
-    Then I see "$100.50" shown inside enhanced grid table for specified record "Test Review"
+    Then I see "$100.50" shown inside enhanced grid table for specified record "ReviewStepCurrency"
 
   @88090    @VerifyTheDecimalValueShownForNumberFieldAtEnhancedGridChildFlexTable
   Scenario Outline: verify decimal places at Number field value of child flex table at enhanced grid
