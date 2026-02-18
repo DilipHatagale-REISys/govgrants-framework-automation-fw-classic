@@ -677,13 +677,9 @@ public class FlexTableSteps {
         flexTablePage.assertHeaderText(usage, text, tableid);
     }
 
-    @Then("^I (softly see|see) snapshot with name containing \"([^\"]*)\" as name$")
+    @Then("^I (see|do not see|softly see|softly do not see) snapshot with name containing \"([^\"]*)\" as name$")
     public void iSeeSnapshotWithNameContainingAsName(String usage, String snapshotName) {
-        if (usage.contains("softly")) {
-            I.amPerforming().assertionsTo().assertThat(I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]")).isDisplayed()).isTrue();
-        } else {
-            Assert.assertTrue(I.amPerforming().getElementReference().of(By.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]")).isDisplayed());
-        }
+        flexTablePage.assertSnapshotIsDisplayedOrNot(usage, snapshotName);
     }
 
     @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" options displayed$")

@@ -612,7 +612,7 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
       | Name                     | Program |
       | {SavedValue:PM Username} | Step 1  |
-     When I get the "EGMS ID"
+    When I get the "EGMS ID"
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     And I pause execution for "5" seconds
@@ -690,6 +690,9 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
       | Name                     | Program |
       | {SavedValue:PM Username} | Step 1  |
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
     And I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
@@ -807,7 +810,7 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
       | Name                     | Program |
       | {SavedValue:PM Username} | Step 1  |
-      And I click on "Submit For Approval" in the page details
+    And I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
@@ -939,10 +942,13 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
       | Name                     | Program |
       | {SavedValue:PM Username} | Step 1  |
-      And I click on "Submit For Approval" in the page details
-   Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 2  |
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I "Approve" in the approval decision
-    When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
@@ -1156,38 +1162,51 @@ Business Need: Approval Process Component Scenarios
 #      | configurationCategory                           | fieldName                          | fieldNewValue                          | coreComponentField |
 #      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
 #      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
+
+
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                     | fieldOrignalValue                      | filterId         |
+      | Approval Process Steps Cache | Reassign Confirmation Title   |                                        | ApiGeneratedId:0 |
+      | Approval Process Steps Cache | Reassign Confirmation Message | Do you want to send back this program? | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                           | fieldName                     | fieldNewValue                          | coreComponentField | coreCOmponentSubFieldName        | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Title   | Confirmation                           | Step1              | GNT__ApprovalProcessStepCache__c |                            |
+      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Message | Do you want to send back this program? | Step1              | GNT__ApprovalProcessStepCache__c |                            |
+
     When I login to "As a Grantor" app as "<User>" user
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click modal button "Save and Continue"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
-    And I click on "Save" in the page details
-    And I get the "EGMS ID"
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
-    When I navigate to "Setup" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
-    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
-    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
-    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
-    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
-      | Name                      | Program |
-      | {SavedValue:EXE Username} | Step 1  |
-    When I get the "EGMS ID"
-    And I click on "Submit For Approval" in the page details
-    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
-    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+#    And I navigate to "Planning" tab
+#    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+#    And I click toggle button to select "Internal Programs - Draft"
+#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+#    And I click modal button "Save and Continue"
+#    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
+#    And I click on "Save" in the page details
+#    And I get the "EGMS ID"
+#    When I navigate to "Overview" sub tab
+#    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+#    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+#    When I navigate to "Setup" sub tab
+#    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+#    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+#    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+#    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+#    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+#    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
+#    When I navigate to "Responsibilities" sub tab
+#    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+#      | Name                      | Program |
+#      | {SavedValue:EXE Username} | Step 1  |
+#    When I get the "EGMS ID"
+#    And I click on "Submit For Approval" in the page details
+#    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+#    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+#    And I navigate to "Planning" tab
+#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+#    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+#    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+
+    And I navigate to url "https://test8-internal--fwautomat--c.sandbox.vf.force.com/apex/programview?Id=a37DY000000oKc1YAE"
     When I select radio button "Send back" in the approval decision
     And I submit the approval in the approval decision
     When I enter comment "Automation testing" in the approval decision

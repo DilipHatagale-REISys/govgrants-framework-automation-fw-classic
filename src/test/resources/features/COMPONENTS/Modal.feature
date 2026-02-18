@@ -651,8 +651,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-623375"
-    When I click on "View" icon for "SC-623375" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | User | new_helpText           | old_helpText |
@@ -662,7 +661,7 @@ Business Need: Modal Component Scenarios
   Scenario Outline: Sanity Testing- Modal- Page Block Detail- SPI- To verify 'Field Label Override' displays on UI.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField              | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | <Old Label>       | TermConditionScheduleNewGrantor | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | <Old Label>       | TermConditionScheduleNewGrantor | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | <New Label>   | TermConditionScheduleNewGrantor | Name                      | PBD-21912                  |
@@ -670,8 +669,7 @@ Business Need: Modal Component Scenarios
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Monitoring" tab
     And I click toggle button to select "Scheduled Activities - All"
-    When I perform quick search for "SC-623375"
-    When I click on "View" icon for "SC-623375" inside table
+    And I click on "View" icon in flex table for first draft record
     Then I softly see "<New Label>" shown as page instruction text
     Examples:
       | User | New Label     | Old Label      |

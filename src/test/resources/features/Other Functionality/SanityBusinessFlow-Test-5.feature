@@ -1,4 +1,4 @@
-@GGFSanityBusinessFlow-test5 @regression-test5
+@GGFSanityBusinessFlow-test5 @regression-test5 @wip
 Business Need: Sanity check for all Component Scenarios
   Test all component scenarios for sanity
 

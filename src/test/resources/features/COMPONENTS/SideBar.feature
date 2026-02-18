@@ -270,7 +270,7 @@ Business Need: Side bar Component Scenarios
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | SubAwardFlexTable  | Name                      | FTC-1491                   |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | SubAwardFlexTable  | Name                      | FTC-13750                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -309,14 +309,14 @@ Business Need: Side bar Component Scenarios
     And I pause execution for "3" seconds
     Then I see "Subawards" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
 
-  @338836 @255887
+   @255887
   Scenario: validate accordion content Pending in My tasks is available for a specific added profile
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
-      | Accordian Content     | Available for Profiles | PM                | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue                                                                                                 | filterId         |
+      | Accordian Content     | Available for Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Available for Profiles | PM            | GrantorHome        | Phase Name                | Reassign                   |
+      | configurationCategory | fieldName              | fieldNewValue                                                                                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Content     | Available for Profiles | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PD; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | GrantorHome        | Phase Name                | Reassign                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     Then I see changed label as "Reassign" inside "Tasks" in side bar sub menu

@@ -2054,4 +2054,27 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertSnapshotIsDisplayedOrNot(String usage, String snapshotName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isSnapshotIsDisplayedOrNot(snapshotName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isSnapshotIsDisplayedOrNot(snapshotName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isSnapshotIsDisplayedOrNot(snapshotName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSnapshotIsDisplayedOrNot(snapshotName)).isFalse();
+        }
+    }
+
+    private boolean isSnapshotIsDisplayedOrNot(String snapshotName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tbody//tr//*[contains(text(),'" + snapshotName + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

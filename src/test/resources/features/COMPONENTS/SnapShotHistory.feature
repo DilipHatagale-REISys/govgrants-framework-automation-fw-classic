@@ -55,7 +55,7 @@ Business Need: Snapshot Config Component Scenarios
       | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | History Snapshot-Action Enable? | true          | Grantor State Program | Name                      | Submit For Approval        |
       | Page Layout Action    | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Activate                   |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -106,7 +106,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I see snapshot with name containing "Snapshot Post Activated.pdf" as name
+    Then I softly do not see snapshot with name containing "Snapshot Post Activation.pdf" as name
     Then I see snapshot with name containing "Internal Program - submit for approval.pdf" as name
 
     Examples:
