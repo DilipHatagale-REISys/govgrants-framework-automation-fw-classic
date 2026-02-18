@@ -1336,7 +1336,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "test@123.com" into field "{testData:ToField}" on send email modal
     When I enter value "DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
-    And I halt execution
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
@@ -1347,7 +1346,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     And I refresh the page
     When I navigate to "Collab" sub tab
-   And I halt execution
     When I perform quick search for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" inside table
     Then I softly see "RE: DO NOT DELETE EMAIL @&%#$*\|/test;:!<>?[]{}()" as "Subject" on send email modal

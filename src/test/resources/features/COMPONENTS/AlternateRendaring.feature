@@ -113,13 +113,17 @@ Feature: Component Sanity Testing AlternateRendering
     And I navigate to "Home" tab
     When I navigate to "Organization Profile" content inside "Organization" subheader on left panel
     And I navigate to "Overview" sub tab
+    #Create Secondary User
     And I click on top right button "New" in flex table with id "---home:-:userContactsTableId---"
-    And I pause execution for "3" seconds
     Then I select below checkbox options for field "fieldCheckboxType__c"
       | Display Value on UI 1 |
       | Display Value on UI 2 |
       | Display Value on UI 3 |
       | Display Value on UI 4 |
+    And I enter "Secondary_User" values from "SubrecipientOrganization_Field_Values.xlsx"
+    And I generate the random EmailID and save as "uniqueEmailID1"
+    And I enter value "{SavedValue:uniqueEmailID1}" into field "fieldEmail"
+    When I click on "Save" in the page details
     Then I softly see field "Display Value on UI 1" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 2" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 3" as "Checked" for multipicklist
@@ -151,8 +155,12 @@ Feature: Component Sanity Testing AlternateRendering
     And I click on top right button "New" in flex table with id "---home:-:userContactsTableId---"
     And I pause execution for "3" seconds
     And I enter value "Display 1" into field "RadioType__c"
-    Then I softly see field "Display 1" as "Checked"
-    Then I softly see field "Display 2" as "Unchecked"
+    And I enter "Secondary_User" values from "SubrecipientOrganization_Field_Values.xlsx"
+    And I generate the random EmailID and save as "uniqueEmailID1"
+    And I enter value "{SavedValue:uniqueEmailID1}" into field "fieldEmail"
+    When I click on "Save" in the page details
+    Then I softly see field "Display 1" as "Checked" for multipicklist
+    Then I softly see field "Display 2" as "Unchecked" for multipicklist
 
   @545294 @AlternateRendering
   Scenario Outline: Page Layout- Alternate Rendering- Admin/PM- To Verify Checkbox Enable and Save Functionality, Display Values on UI
@@ -280,6 +288,9 @@ Feature: Component Sanity Testing AlternateRendering
       | Display Value on UI 3 |
       | Display Value on UI 4 |
     When I click modal button "Save and Continue"
+    And I enter "Edition" values from "PreApplication_Field_Values.xlsx"
+    When I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
     Then I softly see field "Display Value on UI 1" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 2" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 3" as "Checked" for multipicklist
@@ -317,7 +328,7 @@ Feature: Component Sanity Testing AlternateRendering
     And I click modal button "Save and Continue"
     And I enter value "Display 1" into field "RadioType__c"
     And I click on "Save" in the page details
-    Then I softly see field "Display 1" as "Checked"
+    Then I softly see field "Display 1" as "Checked" for multipicklist
     Then I softly see field "Display 2" as "Unchecked" for multipicklist
     Then I softly see field "Display 3" as "Unchecked" for multipicklist
     Then I softly see field "Display 4" as "Unchecked" for multipicklist
@@ -355,7 +366,7 @@ Feature: Component Sanity Testing AlternateRendering
     And I click modal button "Save and Continue"
     And I enter value "Display 1" into field "RadioType__c"
     And I click on "Save" in the page details
-    When I click on "Download As PDF" in the page details
+    When I click on "Download as PDF" in the page details
     And I pause execution for "5" seconds
     And I download the file
     And I pause execution for "5" seconds
@@ -398,7 +409,7 @@ Feature: Component Sanity Testing AlternateRendering
     And I click on "Cancel" in the page details without processing
     Then I see confirmation box with message "Are you sure you want to cancel?" is displayed
     And I click "Yes" on modal confirmation box
-    Then I softly see field "Display 1" as "Checked"
+    Then I softly see field "Display 1" as "Checked" for multipicklist
     When I click on "Take Snapshot" in the page details
     Then I see "Snapshot created successfully. Please refresh the page." page message displayed in page layout
 
@@ -414,8 +425,6 @@ Feature: Component Sanity Testing AlternateRendering
       | Page Block Config:Page Block Rule Detail | Alternative Rendering Config |                   | Grantor State Program Create | ApiGeneratedId:4 |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox     | false             | Grantor State Program Create | ApiGeneratedId:5 |
       | Page Block Config:Page Block Rule Detail | Is Active                    | false             | Grantor State Program        | ApiGeneratedId:6 |
-      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | Grantor State Program        | ApiGeneratedId:7 |
-      | Page Block Config:Page Block Rule Detail | Is Active                    | false             | Grantor State Program        | ApiGeneratedId:8 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                    | fieldNewValue              | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue                                     |
       | Page Block Config:Page Block Rule Detail | Is Active                    | true                       | Grantor State Program Create | Name                      | {CommonConfigFile:AdminPmUserModalCheckboxType__c}             |
@@ -425,8 +434,6 @@ Feature: Component Sanity Testing AlternateRendering
       | Page Block Config:Page Block Rule Detail | Alternative Rendering Config | MultiPicklistRenderTestApp | Grantor State Program        | Name                      | {CommonConfigFile:AdminPmPageLayoutCheckboxType__c}            |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox     | false                      | Grantor State Program        | Name                      | {CommonConfigFile:AdminPmPageLayoutCheckboxType__c}            |
       | Page Block Config:Page Block Rule Detail | Is Active                    | false                      | Grantor State Program        | Name                      | {CommonConfigFile:AdminPmPageLayoutRadioType__c}               |
-      | Page Block Config:Page Block Rule Detail | Is Active                    | false                      | Grantor State Program        | Name                      | {CommonConfigFile:CreateProgramModalTypesOfType__C}            |
-      | Page Block Config:Page Block Rule Detail | Is Active                    | false                      | Grantor State Program        | Name                      | {CommonConfigFile:CreateProgramPageLayoutTypesOfAssistance__c} |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -449,6 +456,7 @@ Feature: Component Sanity Testing AlternateRendering
     Then I softly see field "Display Value on UI 2" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 3" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 4" as "Checked" for multipicklist
+    When I click on "Menu" in the page details
     When I click on "Take Snapshot" in the page details
     Then I see "Snapshot created successfully. Please refresh the page." page message displayed in page layout
 
