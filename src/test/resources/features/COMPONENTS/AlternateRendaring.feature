@@ -574,7 +574,7 @@ Feature: Component Sanity Testing AlternateRendering
     Then I softly see field "Display Value on UI 2" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 3" as "Checked" for multipicklist
     Then I softly see field "Display Value on UI 4" as "Checked" for multipicklist
-    Then I softly see field "Display 1" as "Checked"
+    Then I softly see field "Display 1" as "Checked" for multipicklist
 
   @545303 @AlternateRendering
   Scenario: Forms- Alternate Rendering- Admin/PM- To Verify Radio button Select and Save Functionality, Display Values on UI
@@ -640,7 +640,7 @@ Feature: Component Sanity Testing AlternateRendering
     And I enter "Form Fields" values from "DeskReview_Field_Values.xlsx"
     And I enter value "Display 1" into field "RadioType__c"
     And I click on "Save" in the page details
-    Then I softly see field "Display 1" as "Checked"
+    Then I softly see field "Display 1" as "Checked" for multipicklist
 
   @545309 @545310
   Scenario: Forms- Alternate Rendering- Admin/PM- To verify Take Snapshot after render in Config functioning correctly
