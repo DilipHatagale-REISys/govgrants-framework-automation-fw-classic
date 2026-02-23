@@ -1002,4 +1002,8 @@ public class PageLayoutSteps {
 
     }
 
+    @Then("^I (see|do not see|softly see|softly do not see) list view \"([^\"]*)\" in table$")
+    public void iSoftlySeeListViewInTable(String usage, String listviewLable) {
+        pageLayoutPage.assertListViewDisplayedAfterSelectionOrByDefault(usage, listviewLable);
+    }
 }

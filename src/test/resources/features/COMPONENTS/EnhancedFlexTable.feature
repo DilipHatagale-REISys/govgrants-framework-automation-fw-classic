@@ -1839,17 +1839,17 @@ Business Need: DataTableEnhanced Component Scenarios
   @499355
   Scenario Outline: 3.0- Data Table Enhanced- PM- Numeric Data Type Fields- Flex Table Detail Config
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue                      | filterId         |
-      | Page Block            | Is Active             | true                                   | ApiGeneratedId:0 |
-      | Flex Table            | Display Field Names   | {CommonConfigFileTest:ContactTableDFN} | ApiGeneratedId:1 |
-      | Flex Table List       | Enable Row Grouping   | false                                  | ApiGeneratedId:2 |
-      | Flex Table List       | Enable Sub Total      | false                                  | ApiGeneratedId:3 |
-      | Flex Table List       | Enable Over All Total | false                                  | ApiGeneratedId:4 |
-      | Flex Table List       | Hide Grouping Column  | false                                  | ApiGeneratedId:5 |
-      | Flex Table List       | Formula               |                                        | ApiGeneratedId:6 |
-      | Flex Table List       | Sub Total Label       |                                        | ApiGeneratedId:7 |
-      | Flex Table List       | Help Text             | Help Data                              | ApiGeneratedId:8 |
-      | Flex Table List       | Field Label Override  |                                        | ApiGeneratedId:9 |
+      | configurationCategory | fieldName             | fieldOrignalValue                                               | filterId         |
+      | Page Block            | Is Active             | true                                                            | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names   | {CommonConfigFileTest:ContactTableDFN}                          | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping   | false                                                           | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Sub Total      | false                                                           | ApiGeneratedId:3 |
+      | Flex Table List       | Enable Over All Total | false                                                           | ApiGeneratedId:4 |
+      | Flex Table List       | Hide Grouping Column  | false                                                           | ApiGeneratedId:5 |
+      | Flex Table List       | Formula               |                                                                 | ApiGeneratedId:6 |
+      | Flex Table List       | Sub Total Label       |                                                                 | ApiGeneratedId:7 |
+      | Flex Table List       | Header Help Text      | State or funding organization contacts for applicants to refer. | ApiGeneratedId:8 |
+      | Flex Table List       | Field Label Override  |                                                                 | ApiGeneratedId:9 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName             | fieldNewValue                                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue           |
       | Page Block:Page Block Detail | Is Active             | true                                                                                | Grantor State Program           | Name                      | {CommonConfigFileTest:ContactBlock}  |
@@ -4420,20 +4420,19 @@ Business Need: DataTableEnhanced Component Scenarios
   @501958
   Scenario Outline: 3.0- Data Table Enhanced- PM- List View Config
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue              | filterId         |
-      | Flex Table List       | Label          | Internal Programs - My Records | ApiGeneratedId:0 |
-      | Flex Table List       | Is Master View | true                           | ApiGeneratedId:1 |
-      | Flex Table List       | Active ?       | true                           | ApiGeneratedId:1 |
+      | configurationCategory | fieldName      | fieldOrignalValue       | filterId         |
+      | Flex Table List       | Label          | Internal Programs - All | ApiGeneratedId:0 |
+      | Flex Table List       | Is Master View | true                    | ApiGeneratedId:1 |
+      | Flex Table List       | Active ?       | true                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | Internal Programs - My Records | Programs           | Name                      | FLV-5607                   |
-      | Flex Table List       | Is Master View | true                           | Programs           | Name                      | FLV-5607                   |
-      | Flex Table List       | Active ?       | true                           | Programs           | Name                      | FLV-5607                   |
+      | configurationCategory | fieldName      | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | Internal Programs - All | Programs           | Name                      | FLV-3453                   |
+      | Flex Table List       | Is Master View | true                    | Programs           | Name                      | FLV-3453                   |
+      | Flex Table List       | Active ?       | true                    | Programs           | Name                      | FLV-3453                   |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I pause execution for "5" seconds
-    And I click toggle button to select "Internal Programs - My Records"
-    Then I softly see list view "Internal Programs - My Records" in table
+    Then I softly see list view "Internal Programs - All" in table
 
     Examples:
       | User |

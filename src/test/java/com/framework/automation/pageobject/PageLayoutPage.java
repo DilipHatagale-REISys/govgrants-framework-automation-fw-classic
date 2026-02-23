@@ -4054,4 +4054,26 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
 
+    public void assertListViewDisplayedAfterSelectionOrByDefault(String usage, String listviewLable) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(listViewlableDisplayedOnNot(listviewLable));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(listViewlableDisplayedOnNot(listviewLable));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewlableDisplayedOnNot(listviewLable)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewlableDisplayedOnNot(listviewLable)).isFalse();
+        }
+    }
+
+    private boolean listViewlableDisplayedOnNot(String listviewLable) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='panel-title custom-title ng-binding' and text()='" + listviewLable + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }
