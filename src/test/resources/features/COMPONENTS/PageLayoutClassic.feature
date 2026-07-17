@@ -379,7 +379,6 @@ Business Need: Page Layout Component Scenarios
     And I click modal button "Save and Continue"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     When I click on "Save" in the page details
-    And I navigate to "Test Tab" sub tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Block            | Hide for Context |                   | ApiGeneratedId:0 |
@@ -5352,9 +5351,11 @@ Business Need: Page Layout Component Scenarios
   Scenario: Validate Type Of Assistance In The Multiselect Picklist Read Only For The Page Layout Config
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue        |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
       | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | {pagelayout:TypesOfAssistance__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6328,9 +6329,12 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "Edition" values from "Program_Field_Values.xlsx"
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
     When I enter value "3333333333333333333333333333333333333333333333333" into field "FundedAmount__c"
@@ -6425,8 +6429,8 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount | Grantor State Program | Name                      | {pagelayout:FundedAmount__c} |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6436,7 +6440,7 @@ Business Need: Page Layout Component Scenarios
     When I enter value "1234567345673456734567345673456" into field "FundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Go to platform setup : Funded Amount is too large. |
+      | Funded Amount: Number is too large. |
 
   @205804
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field
@@ -8259,15 +8263,11 @@ Business Need: Page Layout Component Scenarios
   @200145 @200155
   Scenario: Page header-SPI-UI-To verify page header should be diplayed
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20174                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20172                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20171                  |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2921                   |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -8279,12 +8279,6 @@ Business Need: Page Layout Component Scenarios
     When I click on "Create Application" in the page details
     And I click modal button "Save and Continue"
     And I pause execution for "3" seconds
-    When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
     Then I see field "EGMS ID" inside page header
     Then I see field "Status" inside page header
     Then I see field "Application Due Date" inside page header
@@ -8292,17 +8286,11 @@ Business Need: Page Layout Component Scenarios
   @200154 @200156
   Scenario: Page Header-SPI-UI-To verify page header should not be diplayed
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
-      | Page Tabs Config                         | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20174                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20172                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20171                  |
-      | Page Tabs Config:Page Layout Action      | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2731                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2921                   |
     Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI3" user
@@ -8314,12 +8302,6 @@ Business Need: Page Layout Component Scenarios
     When I click on "Create Application" in the page details
     And I click modal button "Save and Continue"
     And I pause execution for "3" seconds
-    When I click on "Save" in the page details
-    And I save the field labeled "EGMS ID" as "APPEGMSID"
-    When I click on "Edit" in the page details
-    And I enter "Edition" values from "Application_Field_Values.xlsx"
-    When I click on "Save" in the page details
-    And I navigate to "Overview" sub tab
     Then I do not see field "EGMS ID" inside page header
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header

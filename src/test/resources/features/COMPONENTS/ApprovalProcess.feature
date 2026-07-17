@@ -45,6 +45,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send back | Approve |
     Examples:
       | User |
@@ -1155,63 +1156,50 @@ Business Need: Approval Process Component Scenarios
   @203073 @203075 @381961 @381962 @SanityPATCH @SanityPATCHApprovalProcess @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Send To Owner
 #    Given I have "default" configuration as below:
-#      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-#      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-#      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+#      | configurationCategory        | fieldName                     | fieldOrignalValue                      | filterId         |
+#      | Approval Process Steps Cache | Reassign Confirmation Title   |                                        | ApiGeneratedId:0 |
+#      | Approval Process Steps Cache | Reassign Confirmation Message | Do you want to send back this program? | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
-#      | configurationCategory                           | fieldName                          | fieldNewValue                          | coreComponentField |
-#      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
-#      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
-
-
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                     | fieldOrignalValue                      | filterId         |
-      | Approval Process Steps Cache | Reassign Confirmation Title   |                                        | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Reassign Confirmation Message | Do you want to send back this program? | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                           | fieldName                     | fieldNewValue                          | coreComponentField | coreCOmponentSubFieldName        | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Title   | Confirmation                           | Step1              | GNT__ApprovalProcessStepCache__c |                            |
-      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Message | Do you want to send back this program? | Step1              | GNT__ApprovalProcessStepCache__c |                            |
-
+#      | configurationCategory                           | fieldName                     | fieldNewValue                          | coreComponentField | coreCOmponentSubFieldName        | coreComponentSubFieldValue |
+#      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Title   | Confirmation                           | Step1              | GNT__ApprovalProcessStepCache__c |                            |
+#      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Message | Do you want to send back this program? | Step1              | GNT__ApprovalProcessStepCache__c |                            |
     When I login to "As a Grantor" app as "<User>" user
-#    And I navigate to "Planning" tab
-#    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-#    And I click toggle button to select "Internal Programs - Draft"
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
-#    And I click modal button "Save and Continue"
-#    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
-#    And I click on "Save" in the page details
-#    And I get the "EGMS ID"
-#    When I navigate to "Overview" sub tab
-#    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-#    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
-#    When I navigate to "Setup" sub tab
-#    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
-#    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
-#    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
-#    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
-#    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
-#    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
-#    When I navigate to "Responsibilities" sub tab
-#    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
-#      | Name                      | Program |
-#      | {SavedValue:EXE Username} | Step 1  |
-#    When I get the "EGMS ID"
-#    And I click on "Submit For Approval" in the page details
-#    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
-#    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
-#    And I navigate to "Planning" tab
-#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-#    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
-#    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
-
-    And I navigate to url "https://test8-internal--fwautomat--c.sandbox.vf.force.com/apex/programview?Id=a37DY000000oKc1YAE"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click modal button "Save and Continue"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_Yes.xlsx"
+    And I click on "Save" in the page details
+    And I get the "EGMS ID"
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
+    When I click "Associate" after selection of "{SavedValue:EXE Username}" by showing entries "All" in flex table with id "---program:-:associateContactsTableId---"
+    When I navigate to "Setup" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:focusAreaTableId---"
+    When I click "Associate" after selection of "Automation Permanent Focus Area" by showing entries "All" in flex table with id "---program:-:associateFocusAreaTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:objectivesTableId---"
+    When I click "Associate" after selection of "Automation Permanent Objective" by showing entries "All" in flex table with id "---program:-:associateObjectivesTableId---"
+    And I click on top right button "Associate" in flex table with id "---program:-:kpiTableId---"
+    When I click "Associate" after selection of "Automation Permanent KPI" by showing entries "All" in flex table with id "---program:-:associateKPITableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:approverTableId---" by clicking "New" :
+      | Name                      | Program |
+      | {SavedValue:EXE Username} | Step 1  |
+    When I get the "EGMS ID"
+    And I click on "Submit For Approval" in the page details
+    Then I see status in Progress-bar is "Submitted for Approval" and is "green"
+    When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
+    And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     When I select radio button "Send back" in the approval decision
     And I submit the approval in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Do you want to send back this program?" is displayed
+    Then I see confirmation box with body "Do you want to send back this program to owner ?" is displayed
     Examples:
       | User |
 #      | ADMIN |
@@ -2157,6 +2145,7 @@ The EGMS Team
     When I "Approve" in the approval decision
     When I re-login to "As a Grantor" app as "EXE" user on "INTERNAL" portal
     And I navigate to "Planning" tab
+    And I pause execution for "200" seconds
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
     And I click on "Start" icon for "Record Id" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
@@ -2746,12 +2735,7 @@ The EGMS Team
       | Automation test description | Optional | Application | Active |
     When I click on "Upload Template" icon for "Not Applicable" inside flex table with id "---program:-:checklistTableId---" without waiting for record
     And I upload attachment without random number "Attachment.pdf" of type "Others" from computer
-    And I navigate to "Files" sub tab
-    And I click on top right button "Add Files" in flex table with id "---program:-:GrantorInternalProgramFilesTableId---"
-    And I pause execution for "5" seconds
-    And I switch to iframe with id "---program:-:addFilesIframeId---"
-    And I upload attachment without random number "Attachment.pdf" of type "Program Artifacts" from computer
-    And I click on "Submit For Approval" in the page details
+   And I click on "Submit For Approval" in the page details
     Then I see status in Progress-bar is "Submitted for Approval" and is "green"
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
@@ -2767,9 +2751,6 @@ The EGMS Team
     When I "Send back" in the approval decision
     When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal
     And I navigate to "Planning" tab
-    And I wait for "5" seconds
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - All"
     And I wait for "30" seconds
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "Record Id" in "---program:-:pendingTaskTableId---" panel
@@ -2859,3 +2840,9 @@ The EGMS Team
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
+
+
+    @authtest
+    Scenario: test
+      When I login to "As a Grantor" app as "Admin" user
+      When I re-login to "As a Grantor" app as "PM" user on "INTERNAL" portal

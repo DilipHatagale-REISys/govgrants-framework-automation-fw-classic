@@ -75,6 +75,13 @@ public class UsersAndURL implements UsersController {
         return userName;
     }
 
+    public static String resolveSalesforceUsername(String userType) {
+
+        UsersAndURL usersAndURL = new UsersAndURL();
+
+        return usersAndURL.getUserName(userType);
+    }
+
     @Override
     public String getPassword(String userType) {
         String password = null;
