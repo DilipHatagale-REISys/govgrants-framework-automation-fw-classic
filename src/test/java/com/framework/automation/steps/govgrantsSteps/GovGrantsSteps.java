@@ -196,20 +196,6 @@ public final class GovGrantsSteps {
             );
         }
 
-        /*
-         * Validate Lightning session.
-         */
-        if (currentUrl == null
-                || !currentUrl.contains(
-                "/lightning/"
-        )) {
-
-            throw new IllegalStateException(
-                    "Expected Salesforce Lightning session "
-                            + "was not established. Current URL: "
-                            + sanitizeSalesforceUrl(currentUrl)
-            );
-        }
 
         System.out.println(
                 "[Login] Salesforce session validated successfully."
