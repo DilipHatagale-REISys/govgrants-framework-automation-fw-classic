@@ -389,12 +389,15 @@ public final class InputForms {
         By inputBoxSelector = By.xpath("//html//body[@contenteditable='true']");
         I.amPerforming().waitFor().makeThreadSleep(1000);
         I.amPerforming().switchTo().frame(I.amPerforming().getElementReference().ofNested(fieldWrapper, (By.xpath(".//iframe"))));
+        I.amPerforming().waitFor().makeThreadSleep(1000);
         try {
             if (!isClear) {
                 I.amPerforming().textInput().toClear(I.amPerforming().getElementReference().ofNested(fieldWrapper, inputBoxSelector));
+                I.amPerforming().waitFor().makeThreadSleep(1000);
             }
         } catch (Exception e) {
         }
+        I.amPerforming().click().on(inputBoxSelector);
         I.amPerforming().textInput().in(inputBoxSelector, value);
         I.amPerforming().switchTo().parentFrame();
     }
