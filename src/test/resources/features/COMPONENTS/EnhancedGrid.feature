@@ -615,7 +615,7 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                 | fieldOrignalValue | coreComponentField | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              |                    | ApiGeneratedId:0 |
       | Flex Table            | Enable Export (PDF)       | true              |                    | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter             | true              |                    | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter             | true              |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | ProgramReviewStepTemplates |                           |                            |
@@ -630,8 +630,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:PeerReviewerEnhancedGridTableId---" by clicking "New" :
-      | Reviewer Name | Responsibility   | Description | Due Date   | Allow Record Editing |
-      | Automation PM | Program Reviewer | Test Data   | 11/25/2025 | Yes                  |
+      | Reviewer Name | Responsibility   | Description | Due Date | Allow Record Editing |
+      | Automation PM | Program Reviewer | Test Data   | 8        | Yes                  |
     And I pause execution for "3" seconds
     When I click on "Edit" icon for "1" inside flex table with id "---program:-:PeerReviewerEnhancedGridTableId---"
     And I enter value "Test Data" into field "Description__c"

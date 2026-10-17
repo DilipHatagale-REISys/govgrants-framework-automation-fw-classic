@@ -88,7 +88,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionJson | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
